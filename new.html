@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head><title>Playable Ads</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<style>
+
+body{
+		margin:0 auto;
+		overflow:hidden;
+		background-color:black;
+}
+
+
+#gameArea {
+	position: absolute;
+	left:     50%;
+	top:      50%;
+}
+
+#gameCanvas{
+	width: 100%;
+	height: 100%;
+}
+
+img{
+	width: 100%;
+	height: 100%;
+}
+
+
+</style>
+</head>
+<body>
+<div id="gameArea">
+  <canvas id="gameCanvas"></canvas>
+</div>
+</body>
+<script id="_XZ">
+	
+	 function log(txt) {console.log((performance.now()),txt);}
+
+    document.addEventListener('readystatechange', function() {log('readyState:' + document.readyState)});
+    document.addEventListener('DOMContentLoaded', function() {log('DOMContentLoaded')});
+	
+	function getRAF(){
+		this.requestAnimationFrame = window.requestAnimationFrame 
+								|| window.mozRequestAnimationFrame 
+								|| window.webkitRequestAnimationFrame 
+								|| window.msRequestAnimationFrame;
+	 
+		this.cancelAnimationFrame = window.cancelAnimationFrame
+								|| window.mozCancelAnimationFrame
+								|| window.webkitCancelAnimationFrame 
+								|| window.msCancelAnimationFrame;
+	}
+	
+	window.addEventListener("load", function rg(){
+	
+    this.gameArea = document.getElementById('gameArea');
+    this.widthToHeight = 0 ;
+    this.newWidth = window.innerWidth;
+    this.newHeight = window.innerHeight;
+	
+	sizeData(newWidth,newHeight);
+
+	this.newWidthToHeight = newWidth / newHeight;
+	if (newWidthToHeight > widthToHeight) {
+		newWidth = newHeight * widthToHeight;
+		gameArea.style.height = newHeight + 'px';
+		gameArea.style.width = newWidth + 'px';
+	} 
+	else {
+		newHeight = newWidth / widthToHeight;
+		gameArea.style.width = newWidth + 'px';
+		gameArea.style.height = newHeight + 'px';
+	}
+		
+	gameArea.style.marginTop = (-newHeight / 2) + 'px';
+    gameArea.style.marginLeft = (-newWidth / 2) + 'px';
+	this.gameCanvas = document.getElementById('gameCanvas');
+	this.ctx = gameCanvas.getContext('2d');
+	gameCanvas.style.display = "block";
+	gameCanvas.width = newWidth;
+	gameCanvas.height = newHeight;
+	this.ww = newWidth*0.3;
+	this.wh = newHeight*0.4;
+	this.bgTop=document.createElement('img');
+	this.bgBtm=document.createElement('img');
+	bgTop.setAttribute("class","top");
+	bgBtm.setAttribute("class","btm");
+	bgTop.src='img/bg/top.jpg';
+	bgBtm.src='img/bg/btm.jpg';
+	bgTop.onload = function (){ctx.drawImage(bgTop,0,0,newWidth,newHeight*0.6);}
+	bgBtm.onload = function (){ctx.drawImage(bgBtm,0,newHeight*0.6,newWidth,wh);} 
+	d1();
+	this.mace=document.createElement('img');
+	this.spike=document.createElement('img');
+	this.blade=document.createElement('img');
+	this.cloth=document.createElement('img');
+	mace.src = "img/weapon/mace/1.png";
+	spike.src = "img/weapon/spike/1.png";
+	blade.src = "img/weapon/blade/1.png";
+	cloth.src = "img/clothes/1.png";
+	mace.setAttribute("class","mace");
+	spike.setAttribute("class","spike");
+	blade.setAttribute("class","blade");
+	cloth.setAttribute("class","cloth");
+	mace.onload = function (){ctx.drawImage(mace,0,newHeight*0.6,ww,wh);}
+	spike.onload = function (){ctx.drawImage(spike,newWidth*0.17,newHeight*0.6,ww,wh);}
+	blade.onload = function (){ctx.drawImage(blade,newWidth*0.35,newHeight*0.6,ww,wh);}
+	cloth.onload = function (){ctx.drawImage(cloth,newWidth*0.55,newHeight*0.6,newWidth*0.45,wh);}
+	gameCanvas.appendChild(mace);
+	gameCanvas.appendChild(spike);
+	gameCanvas.appendChild(blade);
+	gameCanvas.appendChild(cloth);
+	this.nh = newHeight;
+	this.nw = newWidth;
+
+	w1();
+	<!-- w2(); -->
+	<!-- w3(); -->
+	console.log("Script finished loading and executing");
+  });
+	
+	function bgtop(){
+		ctx.clearRect(0,0,newWidth,newHeight*0.6);
+		ctx.drawImage(bgTop,0,0,newWidth,newHeight*0.6);
+	}
+	function bgbtm(){
+		ctx.clearRect(0,newHeight*0.6,newWidth,wh);
+		ctx.drawImage(bgBtm,0,newHeight*0.6,newWidth,wh);
+		ctx.drawImage(mace,0,newHeight*0.6,ww,wh);
+		ctx.drawImage(spike,newWidth*0.17,newHeight*0.6,ww,wh);
+		ctx.drawImage(blade,newWidth*0.35,newHeight*0.6,ww,wh);
+		ctx.drawImage(cloth,newWidth*0.55,newHeight*0.6,newWidth*0.45,wh)
+	}
+	function mySlidesArray(x) {	
+		bgtop()
+		var n = 0;
+		var n = x;
+		var mySlidesArray = new Array(n); 
+		var i;
+		for(i=0; i<mySlidesArray.length; i++)
+		{		
+			if(i < mySlidesArray.length)
+			{
+				var mySlides = document.createElement("IMG");
+				if (n == 62){mySlides.setAttribute("src", "img/character/s1/"+(i+1)+".png")}	
+				else if (n === 56){mySlides.setAttribute("src", "img/character/s2/"+(i+1)+".png")}
+				else if (n === 82){mySlides.setAttribute("src", "img/character/s3/"+(i+1)+".png")}
+				else {i<mySlidesArray.length==true}
+				mySlides.setAttribute("class","mySlides");
+				gameCanvas.appendChild(mySlides);
+			}
+		}		
+	}	
+	window.onload=function myWeaponArray(x) {	
+		for(i=0; i<19; i++)
+				{if(i < 19){
+					var mace = document.createElement("IMG");
+					mace.setAttribute("src", "img/weapon/mace/"+(i+1)+".png")	
+					mace.setAttribute("class","mace");
+					gameCanvas.appendChild(mace);}}
+		for(i=0; i<29; i++){	
+				if(i < 29){		
+					var spike = document.createElement("IMG");	
+					spike.setAttribute("src", "img/weapon/spike/"+(i+1)+".png");
+					spike.setAttribute("class","spike");
+					gameCanvas.appendChild(spike);}	}
+		for(i=0; i<29; i++){
+					var blade = document.createElement("IMG");				
+					blade.setAttribute("src", "img/weapon/blade/"+(i+1)+".png")	;
+					blade.setAttribute("class","blade");
+					gameCanvas.appendChild(blade);}	}
+	function d1(){
+		var fps = 25;
+		mySlidesArray(62) ;
+		var myIndex = 49;
+		carousel();
+		function carousel(timestamp){
+			setTimeout(function(){ 
+				var i;
+				var x = document.getElementsByClassName("mySlides");
+				bgtop();
+				myIndex++;
+				if (myIndex > x.length) {myIndex = 49}   			
+				ctx.drawImage(x[myIndex-1],0,0,newWidth,newHeight*0.6);
+				requestAnimationFrame(carousel);
+			}, 2000/fps)
+		}	
+	} 
+	function d2(){
+		var fps = 25;
+		mySlidesArray(56);
+		var myIndex = 43;
+		carousel();
+		function carousel(timestamp){
+			setTimeout(function(){ 
+				var i;
+				var x = document.getElementsByClassName("mySlides");
+				bgtop();
+				myIndex++;
+				if (myIndex > 53) {myIndex = 44}    
+				ctx.drawImage(x[myIndex-1],0,0,newWidth,newHeight*0.6);
+				requestAnimationFrame(carousel);
+			}, 2000/fps)			
+		}
+	}
+	function d3(){
+		var fps = 30;
+		mySlidesArray(82) ;
+		var myIndex = 65;
+		carousel();
+		function carousel(timestamp){
+			setTimeout(function(){ 
+				var i;
+				var x = document.getElementsByClassName("mySlides");
+				<!-- for (i =0; i < x.length; i++) {bgtop();} -->
+				bgtop();
+				myIndex++;
+				if (myIndex > x.length) {myIndex = 65}    	
+				ctx.drawImage(x[myIndex-1],0,0,newWidth,newHeight*0.6);
+				requestAnimationFrame(carousel);
+			}, 2000/fps)	
+		}
+	}
+	
+	var wReq;
+	var wReq2;
+	var wReq3;
+	var myIndex1 = 0; 
+	
+	function w1(){
+		var fps = 25;
+		function carousel(timestamp){
+			setTimeout(function(){ 
+				var i;
+				var mace = document.getElementsByClassName("mace");
+				for (i = 0; i < mace.length; i++) 
+				{
+					bgbtm(); 
+				}
+				myIndex1++;
+				if (myIndex1 > mace.length) {myIndex1 = 5}    
+				mace[myIndex1-1].style.display = "block";  
+				ctx.drawImage(mace[myIndex1-1],0,nh*0.6,ww,wh);
+				wReq=requestAnimationFrame(carousel);
+			}, 2000/fps)	
+		}
+		wReq=requestAnimationFrame(carousel);
+	}
+	
+	var myIndex2 = 0; 
+	
+	function w2(){
+		var fps = 29;
+		var myIndex2 = 15;
+		function carousel(timestamp){
+			setTimeout(function(){ 
+				var i;
+				var spike = document.getElementsByClassName("spike");
+				for (i = 0; i < spike.length; i++) 
+				{
+					bgbtm(); 
+				}
+				myIndex2++;
+				if (myIndex2 > spike.length) {myIndex2 = 15}   
+				ctx.drawImage(spike[myIndex2-1],nw*0.17,nh*0.6,ww,wh);
+				wReq2=requestAnimationFrame(carousel);
+			}, 2000/fps)	
+		}
+		wReq2=requestAnimationFrame(carousel);
+	}
+	
+	var myIndex3 = 0; 
+	function w3(){
+		var fps = 29;
+		var myIndex3 = 14;
+		function carousel(timestamp){
+			setTimeout(function(){ 
+				var i;
+				var blade = document.getElementsByClassName("blade");
+				for (i = 0; i < blade.length; i++) 
+				{
+					bgbtm(); 
+				}
+				myIndex3++;
+				if (myIndex3 > 28) {myIndex3 = 14}   
+				ctx.drawImage(blade[myIndex3-1],nw*0.35,nh*0.6,ww,wh);
+				wReq3=requestAnimationFrame(carousel);
+			}, 2000/fps)	
+		}
+		wReq3=requestAnimationFrame(carousel);
+	}
+	
+	var hover1 = true;
+	var hover2 = false;
+	var hover3 = false;
+	<!-- gameCanvas.addEventListener('mousemove', mouseMove, true); -->
+	<!-- gameCanvas.onclick = function(){cancelAnimationFrame(wReq1); -->
+	
+	
+	<!-- function mouseMove(e) { -->
+		<!-- var pos = getMousePos(gameCanvas, e); -->
+		<!-- posx = pos.x; -->
+		<!-- posy = pos.y; -->
+		<!-- console.log((hover1 === false && ((posx) > (nw*0.06) &&  (posx) < (nw*0.20) && (posy) > (nh*0.68) && (posy) < (nh*0.91)) === true), 	 -->
+				<!-- (hover2 === false && ((posx) > (nw*0.26) &&  (posx) < (nw*0.35) && (posy) > (nh*0.68) && (posy) < (nh*0.91)) !== true),  -->
+				<!-- (hover3 === false && ((posx) > (nw*0.44) &&  (posx) < (nw*0.56) && (posy) > (nh*0.68) && (posy) < (nh*0.91)) !== true)); -->
+		
+		
+			<!-- if ((hover1 === false && ((posx) > (nw*0.06) &&  (posx) < (nw*0.20) && (posy) > (nh*0.68) && (posy) < (nh*0.91)) === true) &&	 -->
+				<!-- (hover2 === false && ((posx) > (nw*0.26) &&  (posx) < (nw*0.35) && (posy) > (nh*0.68) && (posy) < (nh*0.91)) !== true) && -->
+				<!-- (hover3 === false && ((posx) > (nw*0.44) &&  (posx) < (nw*0.56) && (posy) > (nh*0.68) && (posy) < (nh*0.91)) !== true)) -->
+			<!-- {		 -->
+					<!-- cancelAnimationFrame(wReq); -->
+					<!-- cancelAnimationFrame(wReq2); -->
+					<!-- bgbtm(); -->
+					<!-- hover1=true; -->
+					<!-- w1();	 -->
+			<!-- } -->
+			<!-- if ((hover1 === false && ((posx) > (nw*0.06) &&  (posx) < (nw*0.20) && (posy) > (nh*0.68) && (posy) < (nh*0.91)) !== true) &&	 -->
+					<!-- (hover2 === false && ((posx) > (nw*0.26) &&  (posx) < (nw*0.35) && (posy) > (nh*0.68) && (posy) < (nh*0.91)) === true) && -->
+					<!-- (hover3 === false && ((posx) > (nw*0.44) &&  (posx) < (nw*0.56) && (posy) > (nh*0.68) && (posy) < (nh*0.91)) !== true)) -->
+			<!-- { -->
+					<!-- cancelAnimationFrame(wReq); -->
+					<!-- cancelAnimationFrame(wReq3); -->
+					<!-- bgbtm(); -->
+					<!-- hover2 = true; -->
+					<!-- w2(); -->
+			<!-- } -->
+			<!-- else{} -->
+			<!-- if ((hover1 === false && ((posx) > (nw*0.06) &&  (posx) < (nw*0.20) && (posy) > (nh*0.68) && (posy) < (nh*0.91)) !== true) &&	 -->
+					<!-- (hover2 === false && ((posx) > (nw*0.26) &&  (posx) < (nw*0.35) && (posy) > (nh*0.68) && (posy) < (nh*0.91)) !== true) && -->
+					<!-- (hover3 === false && ((posx) > (nw*0.44) &&  (posx) < (nw*0.56) && (posy) > (nh*0.68) && (posy) < (nh*0.91)) === true)) -->
+			<!-- { -->
+					<!-- cancelAnimationFrame(wReq); -->
+					<!-- cancelAnimationFrame(wReq2); -->
+					<!-- bgbtm(); -->
+					<!-- hover3=true; -->
+					<!-- w3();	 -->
+			<!-- } -->
+			<!-- else{ -->
+				
+			<!-- } -->
+		<!-- } -->
+
+	<!-- function  getMousePos(gameCanvas, evt) { -->
+		<!-- var rect = gameCanvas.getBoundingClientRect(), // abs. size of element -->
+		  <!-- scaleX = gameCanvas.width / rect.width,    // relationship bitmap vs. element for X -->
+		  <!-- scaleY = gameCanvas.height / rect.height;  // relationship bitmap vs. element for Y -->
+		<!-- return { -->
+			<!-- x: (evt.clientX - rect.left) * scaleX,   // scale mouse coordinates after they have -->
+			<!-- y: (evt.clientY - rect.top) * scaleY     // been adjusted to be relative to element -->
+	<!-- }} -->
+	
+	function sizeData(w,h){
+		var newWidth = w;
+		var newHeight = h;
+		// watch
+		if ( newWidth === newHeight ){ widthToHeight = 1 / 1;}
+		else if ( newWidth === 320 && newHeight === 325){widthToHeight = 65 / 64;}
+		else if ( newWidth === 320 && newHeight === 330){widthToHeight = 33 / 32;}
+		else if ( newWidth === 320 && newHeight === 290){widthToHeight = 32 / 29;}
+		else if (( newWidth === 272 && newHeight === 340)||( newWidth === 312 && newHeight === 390)){widthToHeight = 5/4;}
+		// Ipad 1/2/3,Nexus 9
+		else if ((newWidth === 1024 && newHeight === 768 ) || (newWidth === 1536 && newHeight === 2048)
+				||(newWidth === 2732 && newHeight === 2048 )||(newWidth === 2048 && newHeight === 1536)){widthToHeight = 4 / 3;}
+		// Chromebook Pixel,Iphone,Iphone 4, Surface Book
+		else if ((newWidth === 320 && newHeight === 480) || (newWidth === 640 && newHeight=== 960)
+				||(newWidth === 480 && newHeight === 320) || (newWidth === 960 && newHeight=== 640)
+				||(newWidth === 2560 && newHeight=== 1700) ||(newWidth === 3000 && newHeight=== 2000)
+				||(newWidth === 2160 && newHeight=== 1440) ||(newWidth === 2736 && newHeight=== 1824)){widthToHeight = 3 / 2;}
+		// Chromobox 30, Dell Venue 8,MacBook 12, MAcbook Air 13,Macbook Pro 13, Macbook Pro 15
+		// Nexus 15,Nexus 7, Samsung Galaxy Tab 10,Sony Xperia Z3/Z4 Tablet
+		else if ((newWidth === 800 && newHeight===480) || (newWidth === 1280 && newHeight === 800)
+				||(newWidth === 1440 && newHeight === 900) || (newWidth === 2880 && newHeight === 1800)
+				||(newWidth === 1200 && newHeight === 1920) || (newWidth === 800 && newHeight === 1280)
+				||(newWidth === 1920 && newHeight === 1200) || (newWidth === 2560 && newHeight === 1600)){widthToHeight = 16 / 10;}
+		// Nexus 4
+		else if (newWidth === 768 && newHeight === 1280){widthToHeight = 5 / 3;}
+		// Android One,Chromebook 11, Google Pixel /XL,FTC One M8/M9, iMac 27/5K, Iphone5/6/6 Plus,LG G2/G3,
+		// Surface /2/3/Pro/Sony Xperia Z1 Ultra/Z1 Compact/Z2/Z3/Z3 Compact/Sony Xperia C4,
+		// Samsung Galaxy 4/S5/S6/S7/S7 Edge,Nexus 6P/Note, Mac Book Air 11 , Moto G/X/5/5X/6/6P
+		else if ((newWidth === 720 && newHeight === 1280)||(newWidth === 1366 && newHeight === 768)
+				|| (newWidth === 1080 && newHeight === 1920)||(newWidth === 5120 && newHeight === 2880)
+				|| (newWidth === 640 && newHeight === 1136)||(newWidth === 750 && newHeight === 1334)
+				|| (newWidth === 2560 && newHeight === 1440)||(newWidth === 1440 && newHeight === 2560)
+				|| (newWidth === 1920 && newHeight === 1080)){widthToHeight = 16 / 9;}
+		//Samsung Galaxy Tab 7
+		else if (newWidth === 1024 && newHeight===600){widthToHeight = 17 / 10;}
+		// Samsung Galaxy S8/S8+
+		else if (newWidth === 1440 && newHeight===2960){widthToHeight = 18.5 / 9;}
+		else{widthToHeight = 2.5 / 4;}
+		
+		return (newWidth,newHeight);
+	}
+	
+	document.getElementById("_XZ").innerHTML = "";
+</script>
+<noscript> 
+    <p>Please,Turn "on" you Javascript or your browser lacks support.</p> 
+</noscript> 
+</html>
