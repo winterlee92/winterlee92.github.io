@@ -19,11 +19,11 @@
 	#inner_container,#inner_container2,#inner_container3,#weapon,#weapon2,#weapon3,#clothes,#hw,#hw2,#hw3,#hw4,#hb2,#hb{
 	background-Size:100% 100%;
 	background-Repeat:no-repeat;}
-	#container #inner_container{position:relative;background-image: url('winterlee92.github.io/img/bg/top.jpg');width:100%;height:60%;}
-	#container #inner_container2{position:relative;background-image: url('winterlee92.github.io/img/bg/btm.jpg');width:100%;height:40%;}
+	#container #inner_container{position:relative;background-image:url('img/bg/top.jpg');width:100%;height:60%;}
+	#container #inner_container2{position:relative;background-image:url('img/bg/btm.jpg');width:100%;height:40%;}
 	#inner_container3{position:absolute;;bottom:0;height:40%;width:100%;}
-	#weapon2{background-image:url('winterlee92.github.io/img/weapon/spike/0.png');}
-	#weapon3{background-image:url('winterlee92.github.io/img/weapon/blade/0.png');}
+	#weapon2{background-image:url('img/weapon/spike/0.png');}
+	#weapon3{background-image:url('img/weapon/blade/0.png');}
 	
 	#hw,#hw2,#hw3,#hw4,#hb,#hb2{
 		position:absolute;	
@@ -371,7 +371,7 @@
 			if(i < mySlidesArray4.length)
 			{
 				var mace = document.createElement("IMG");
-				mace.setAttribute("src", "winterlee92.github.io/img/weapon/mace/"+(i+1)+".png");	
+				mace.setAttribute("src", "img/weapon/mace/"+(i+1)+".png");	
 				mace.setAttribute("class","mace");
 				mace.setAttribute("alt","mace_"+(i+1));
 				weapon.appendChild(mace);
@@ -385,7 +385,7 @@
 			if(i < mySlidesArray5.length)
 			{
 				var spike = document.createElement("IMG");
-				spike.setAttribute("src", "winterlee92.github.io/img/weapon/spike/"+(i+1)+".png");	
+				spike.setAttribute("src", "img/weapon/spike/"+(i+1)+".png");	
 				spike.setAttribute("class","spike");
 				spike.setAttribute("alt","spike_"+(i+1));
 				weapon2.appendChild(spike);
@@ -399,7 +399,7 @@
 			if(i < mySlidesArray6.length)
 			{
 				var blade = document.createElement("IMG");
-				blade.setAttribute("src", "winterlee92.github.io/img/weapon/blade/"+(i+1)+".png");	
+				blade.setAttribute("src", "img/weapon/blade/"+(i+1)+".png");	
 				blade.setAttribute("class","blade");
 				blade.setAttribute("alt","blade_"+(i+1));
 				weapon3.appendChild(blade);
@@ -426,9 +426,9 @@
 	var w2;
 	var w3;
 	var dc;
-	var wmace;
-	var wspike;
-	var wblade;
+	var wMace;
+	var wSpike;
+	var wBlade;
 	
 	function xCharacter(){
 		var dCharIndex = 0;
@@ -474,7 +474,7 @@
 			 myIndex1++;
 			if (myIndex1 > mace.length) {myIndex1 = 1}    
 				mace[myIndex1-1].style.display = "block";  
-				wmace=setTimeout(loopImage, 4000/60);
+				wMace=setTimeout(loopImage, 4000/60);
 		}
 	
 		var dCursorIndex=0;
@@ -642,7 +642,7 @@
 	var myIndex1 = 0;
 	function mouseOver() {
 	
-		clearTimeout(wmace);
+		clearTimeout(wMace);
 		loopImage();
 		function loopImage()
 		{	
@@ -655,22 +655,22 @@
 			 myIndex1++;
 			if (myIndex1 > mace.length) {myIndex1 = 1}    
 				mace[myIndex1-1].style.display = "block";  
-				wmace=setTimeout(loopImage, 4000/60);
+				wMace=setTimeout(loopImage, 4000/60);
 		}
 	}
 	function mouseOut() {
-		clearTimeout(wmace);
+		clearTimeout(wMace);
 		var mace = document.getElementsByClassName("mace");
 		for (i = 0; i < mace.length; i++) 
 		{
 			mace[i].style.display = "none";  
 		}
-		weapon.style.backgroundImage = "url('winterlee92.github.io/img/weapon/mace/0.png')";
+		weapon.style.backgroundImage = "url('img/weapon/mace/0.png')";
 	}
 	function myFunction() {
-		clearTimeout(wmace);
-		clearTimeout(wspike);
-		clearTimeout(wblade);
+		clearTimeout(wMace);
+		clearTimeout(wSpike);
+		clearTimeout(wBlade);
 		mouseOut2();
 		mouseOut3();
 		hw.removeEventListener("mouseover", mouseOver);
@@ -680,8 +680,8 @@
 		hw2.addEventListener("mouseout", mouseOut2);
 		hw3.addEventListener("mouseover", mouseOver3);
 		hw3.addEventListener("mouseout", mouseOut3);
-		weapon2.style.backgroundImage = "url('winterlee92.github.io/img/weapon/spike/0.png')";
-		weapon3.style.backgroundImage = "url('winterlee92.github.io/img/weapon/blade/0.png')";
+		weapon2.style.backgroundImage = "url('img/weapon/spike/0.png')";
+		weapon3.style.backgroundImage = "url('img/weapon/blade/0.png')";
 		
 		clearTimeout(w1);
 		clearTimeout(w2);
@@ -728,7 +728,7 @@
 	var myIndex2 = 0;
 	function mouseOver2() {
 	
-		clearTimeout(wspike);
+		clearTimeout(wSpike);
 		var i;
 		var spike = document.getElementsByClassName("spike");
 		for (i = 0; i < spike.length; i++) 
@@ -738,22 +738,22 @@
 		 myIndex2++;
 			if (myIndex2 > spike.length) {myIndex2 = 1}    
 			spike[myIndex2-1].style.display = "block";  
-			wspike=setTimeout(mouseOver2, 4000/60);
-		//weapon2.style.backgroundImage = "url('winterlee92.github.io/img/weapon/spike/10.png')";
+			wSpike=setTimeout(mouseOver2, 4000/60);
+		//weapon2.style.backgroundImage = "url('img/weapon/spike/10.png')";
 	}
 	function mouseOut2() {
-		clearTimeout(wspike);
+		clearTimeout(wSpike);
 		var spike = document.getElementsByClassName("spike");
 		for (i = 0; i < spike.length; i++) 
 		{
 			spike[i].style.display = "none";  
 		}
-		weapon2.style.backgroundImage = "url('winterlee92.github.io/img/weapon/spike/0.png')";
+		weapon2.style.backgroundImage = "url('img/weapon/spike/0.png')";
 	}
 	function myFunction2() {
-		clearTimeout(wmace);
-		clearTimeout(wspike);
-		clearTimeout(wblade);
+		clearTimeout(wMace);
+		clearTimeout(wSpike);
+		clearTimeout(wBlade);
 		mouseOut();
 		mouseOut3();
 		hw.addEventListener("mouseover", mouseOver);
@@ -763,8 +763,8 @@
 		mouseOver2();
 		hw3.addEventListener("mouseover", mouseOver3);
 		hw3.addEventListener("mouseout", mouseOut3);
-		weapon.style.backgroundImage = "url('winterlee92.github.io/img/weapon/mace/0.png')";
-		weapon3.style.backgroundImage = "url('winterlee92.github.io/img/weapon/blade/0.png')";
+		weapon.style.backgroundImage = "url('img/weapon/mace/0.png')";
+		weapon3.style.backgroundImage = "url('img/weapon/blade/0.png')";
 		
 		clearTimeout(w1);
 		clearTimeout(w2);
@@ -813,7 +813,7 @@
 	var	myIndex3 =0;
 	function mouseOver3() {
 		
-		clearTimeout(wblade);
+		clearTimeout(wBlade);
 		var i;
 		var blade = document.getElementsByClassName("blade");
 		for (i = 0; i < blade.length; i++) 
@@ -823,21 +823,21 @@
 		 myIndex3++;
 			if (myIndex3 > blade.length) {myIndex3 = 1}    
 			blade[myIndex3-1].style.display = "block";  
-			wblade=setTimeout(mouseOver3, 4000/60);
+			wBlade=setTimeout(mouseOver3, 4000/60);
 	}
 	function mouseOut3() {
-		clearTimeout(wblade);
+		clearTimeout(wBlade);
 		var blade = document.getElementsByClassName("blade");
 		for (i = 0; i < blade.length; i++) 
 		{
 			blade[i].style.display = "none";  
 		}
-		weapon3.style.backgroundImage = "url('winterlee92.github.io/img/weapon/blade/0.png')";
+		weapon3.style.backgroundImage = "url('img/weapon/blade/0.png')";
 	}
 	function myFunction3() {
-		clearTimeout(wmace);
-		clearTimeout(wspike);
-		clearTimeout(wblade);
+		clearTimeout(wMace);
+		clearTimeout(wSpike);
+		clearTimeout(wBlade);
 		mouseOut();
 		mouseOut2();
 		hw.addEventListener("mouseover", mouseOver);
@@ -847,8 +847,8 @@
 		hw3.removeEventListener("mouseover", mouseOver3);
 		hw3.removeEventListener("mouseout", mouseOut3);
 		mouseOver3();
-		weapon.style.backgroundImage = "url('winterlee92.github.io/img/weapon/mace/0.png')";
-		weapon2.style.backgroundImage = "url('winterlee92.github.io/img/weapon/spike/0.png')";
+		weapon.style.backgroundImage = "url('img/weapon/mace/0.png')";
+		weapon2.style.backgroundImage = "url('img/weapon/spike/0.png')";
 		
 		clearTimeout(w1);
 		clearTimeout(w2);
