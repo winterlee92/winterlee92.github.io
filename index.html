@@ -10,7 +10,6 @@
 		margin:0 auto;
 		overflow:hidden;
 		background-color:black;}
-	
 	#loader {
 	  position: absolute;
 	  left: 50%;
@@ -66,11 +65,11 @@
 	#inner_container,#inner_container2,#inner_container3,#weapon,#weapon2,#weapon3,#clothes,#hw,#hw2,#hw3,#hw4,#hb2,#hb{
 	background-Size:100% 100%;
 	background-Repeat:no-repeat;}
-	#container #inner_container{position:relative;background-image:url('img/bg/top.jpg');width:100%;height:60%;}
-	#container #inner_container2{position:relative;background-image:url('img/bg/btm.jpg');width:100%;height:40%;}
+	#container #inner_container{position:relative;background-image: url('img/bg/top.jpg');width:100%;height:60%;}
+	#container #inner_container2{position:relative;background-image: url('img/bg/btm.jpg');width:100%;height:40%;}
 	#inner_container3{position:absolute;;bottom:0;height:40%;width:100%;}
-	#weapon2{background-image:url('img/weapon/spike/1.png');}
-	#weapon3{background-image:url('img/weapon/blade/1.png');}
+	#weapon2{background-image:url('img/weapon/spike/0.png');}
+	#weapon3{background-image:url('img/weapon/blade/0.png');}
 	
 	#hw,#hw2,#hw3,#hw4,#hb,#hb2{
 		position:absolute;	
@@ -145,19 +144,16 @@
 			font-size: 88%;
 		}
 		 #r,#r2,#r3{
-		 -webkit-transform:translate3d(0,0,0);
 		  -webkit-animation: neon5 0.4s ease-in-out infinite alternate;
 		  -moz-animation: neon5 0.4s ease-in-out infinite alternate;
 		  animation: neon5 0.4s ease-in-out infinite alternate; color: #ffffff;}
 			
 		#b,#b2,#b3{ 
-		-webkit-transform:translate3d(0,0,0);
 		-webkit-animation: neon2 0.4s ease-in-out infinite alternate;
 		-moz-animation: neon2 0.4s ease-in-out infinite alternate;
 		animation: neon2 0.4s ease-in-out infinite alternate;color: #ffffff;display:none;}
 		
 		#g,#g2,#g3{ 
-		-webkit-transform:translate3d(0,0,0);
 		-webkit-animation: neon6 0.4s ease-in-out infinite alternate;
 		-moz-animation: neon6 0.4s ease-in-out infinite alternate;
 		animation: neon6 0.4s ease-in-out infinite alternate; color:#ffffff; display:none;}
@@ -291,8 +287,10 @@
 			text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
 		  }
 		}
+		
+		
+		
 </style>
-
 <body onload="lp()">
 <div id="loader"></div>
 <div id="container" class="animate-bottom">
@@ -348,7 +346,7 @@
 </div>	
 <script id="x" type="text/javascript">
 	
-	var mv;
+		var mv;
 
 	function lp() {
 		mv = setTimeout(main, 3000);
@@ -361,6 +359,9 @@
 	
 	function main(){
 	
+	document.getElementById("loader").style.display = "none";
+		document.getElementById("container").style.display = "block";
+	
 		var container = document.getElementById('container');
 		var widthToHeight = 0 ;
 		var newWidth = window.innerWidth;
@@ -370,16 +371,12 @@
 		resize(newWidth,newHeight);
 	
 		createImage();
-		
-		document.getElementById("loader").style.display = "none";
-		document.getElementById("container").style.display = "block";
-		
 	}
 
 	var character = document.getElementById("character");
 		
 	function createImage() {	
-		var mySlidesArray = new Array(62); 
+		var mySlidesArray = new Array(13); 
 		var i;
 		for(i=0; i<mySlidesArray.length; i++)
 		{		
@@ -388,11 +385,12 @@
 				var mySlides = document.createElement("IMG");
 				mySlides.setAttribute("src", "img/character/s1/"+(i+1)+".png");	
 				mySlides.setAttribute("class","mySlides");
+				mySlides.setAttribute("alt","mySlides_"+(i+1));
 				character.appendChild(mySlides);
 			}
 		}		
 		
-		var mySlidesArray2 = new Array(56); 
+		var mySlidesArray2 = new Array(10); 
 		var i;
 		for(i=0; i<mySlidesArray2.length; i++)
 		{		
@@ -402,11 +400,12 @@
 				
 				mySlides2.setAttribute("src", "img/character/s2/"+(i+1)+".png");
 				mySlides2.setAttribute("class","mySlides2");
+				mySlides2.setAttribute("alt","mySlides2_"+(i+1));
 				character.appendChild(mySlides2);
 			}
 		}	
 		
-		var mySlidesArray3 = new Array(82); 
+		var mySlidesArray3 = new Array(12); 
 		var i;
 		for(i=0; i<mySlidesArray3.length; i++)
 		{		
@@ -415,11 +414,12 @@
 				var mySlides3 = document.createElement("IMG");
 				mySlides3.setAttribute("src", "img/character/s3/"+(i+1)+".png");	
 				mySlides3.setAttribute("class","mySlides3");
+				mySlides3.setAttribute("alt","mySlides3_"+(i+1));
 				character.appendChild(mySlides3);
 			}
 		}
 	
-		var mySlidesArray4 = new Array(19); 
+		var mySlidesArray4 = new Array(13); 
 		var i;
 		for(i=0; i<mySlidesArray4.length; i++)
 		{		
@@ -428,11 +428,12 @@
 				var mace = document.createElement("IMG");
 				mace.setAttribute("src", "img/weapon/mace/"+(i+1)+".png");	
 				mace.setAttribute("class","mace");
+				mace.setAttribute("alt","mace_"+(i+1));
 				weapon.appendChild(mace);
 			}
 		}		
 		
-		var mySlidesArray5 = new Array(29); 
+		var mySlidesArray5 = new Array(17); 
 		var i;
 		for(i=0; i<mySlidesArray5.length; i++)
 		{		
@@ -441,11 +442,12 @@
 				var spike = document.createElement("IMG");
 				spike.setAttribute("src", "img/weapon/spike/"+(i+1)+".png");	
 				spike.setAttribute("class","spike");
+				spike.setAttribute("alt","spike_"+(i+1));
 				weapon2.appendChild(spike);
 			}
 		}		
 		
-		var mySlidesArray6 = new Array(29); 
+		var mySlidesArray6 = new Array(18); 
 		var i;
 		for(i=0; i<mySlidesArray6.length; i++)
 		{		
@@ -454,6 +456,7 @@
 				var blade = document.createElement("IMG");
 				blade.setAttribute("src", "img/weapon/blade/"+(i+1)+".png");	
 				blade.setAttribute("class","blade");
+				blade.setAttribute("alt","blade_"+(i+1));
 				weapon3.appendChild(blade);
 			}
 		} 
@@ -467,6 +470,7 @@
 				var c = document.createElement("IMG");
 				c.setAttribute("src", "img/cursor/"+(i+1)+".png");	
 				c.setAttribute("class","c");
+				c.setAttribute("alt","c_"+(i+1));
 				ic3 = document.getElementById("inner_container3");
 				ic3.appendChild(c);
 			}
@@ -482,7 +486,7 @@
 	var wBlade;
 	
 	function xCharacter(){
-		var dCharIndex = 49;
+		var dCharIndex = 0;
 		dChar();
 		function dChar()
 		{
@@ -507,12 +511,12 @@
 			}
 
 			dCharIndex++;
-			if (dCharIndex > x.length) {dCharIndex = 49}    
+			if (dCharIndex > x.length) {dCharIndex = 1}    
 			x[dCharIndex-1].style.display = "block";  
-			w1=setTimeout(dChar, 90); // Change image every 2 seconds		
+			w1=setTimeout(dChar, 4000/60); // Change image every 2 seconds		
 		}
 		
-		var myIndex1 = 5;
+		var myIndex1 = 0;
 		loopImage();
 		function loopImage()
 		{	
@@ -523,9 +527,9 @@
 				mace[i].style.display = "none";  
 			}
 			 myIndex1++;
-			if (myIndex1 > mace.length) {myIndex1 = 5}    
+			if (myIndex1 > mace.length) {myIndex1 = 1}    
 				mace[myIndex1-1].style.display = "block";  
-				wMace=setTimeout(loopImage, 100);
+				wMace=setTimeout(loopImage, 4000/60);
 		}
 	
 		var dCursorIndex=0;
@@ -539,9 +543,9 @@
 				c[i].style.display = "none";  
 			}
 			 dCursorIndex++;
-			if (dCursorIndex > c.length) {dCursorIndex = 5}    
+			if (dCursorIndex > c.length) {dCursorIndex = 1}    
 				c[dCursorIndex-1].style.display = "block";  
-				dc=setTimeout(dCursor, 100);
+				dc=setTimeout(dCursor, 4000/60);
 		}
 	}
 	function defaultCharacter(){
@@ -570,9 +574,9 @@
 			}
 
 			myIndex++;
-			if (myIndex > x.length) {myIndex = 49}    
+			if (myIndex > x.length) {myIndex = 1}    
 			x[myIndex-1].style.display = "block";  
-			w1=setTimeout(carousel, 90); // Change image every 2 seconds		
+			w1=setTimeout(carousel, 4000/60); // Change image every 2 seconds		
 		}
 	
 	}
@@ -605,9 +609,9 @@
 				z[i].style.display = "none";  
 			}
 			myIndex++;
-			if (myIndex > 53) {myIndex = 44}    
+			if (myIndex > y.length) {myIndex = 1}    
 			y[myIndex-1].style.display = "block";  
-			w2=setTimeout(carousel, 90); // Change image every 2 seconds		
+			w2=setTimeout(carousel, 4000/60); // Change image every 2 seconds		
 		}
 	
 	}
@@ -636,14 +640,13 @@
 				z[i].style.display = "none";  
 			}
 			myIndex++;
-			if (myIndex > z.length) {myIndex = 65}    
+			if (myIndex > z.length) {myIndex = 1}    
 			z[myIndex-1].style.display = "block";  
-			w3=setTimeout(carousel, 70); // Change image every 2 seconds		
+			w3=setTimeout(carousel, 4000/60); // Change image every 2 seconds		
 		}
 	
 	}
-	
-	var r = document.getElementById("r");
+		var r = document.getElementById("r");
 	var g = document.getElementById("g");
 	var b = document.getElementById("b");
 	var r2 = document.getElementById("r2");
@@ -652,7 +655,6 @@
 	var r3 = document.getElementById("r3");
 	var g3 = document.getElementById("g3");
 	var b3 = document.getElementById("b3");
-	
 	hb.addEventListener("mouseover", mouseOver3);
 	hb.addEventListener("mouseout", mouseOut3);
 	hb2.addEventListener("mouseover", mouseOver2);
@@ -706,9 +708,9 @@
 				mace[i].style.display = "none";  
 			}
 			 myIndex1++;
-			if (myIndex1 > mace.length) {myIndex1 = 5}    
+			if (myIndex1 > mace.length) {myIndex1 = 1}    
 				mace[myIndex1-1].style.display = "block";  
-				wMace=setTimeout(loopImage, 100);
+				wMace=setTimeout(loopImage, 4000/60);
 		}
 	}
 	function mouseOut() {
@@ -718,7 +720,7 @@
 		{
 			mace[i].style.display = "none";  
 		}
-		weapon.style.backgroundImage = "url('img/weapon/mace/1.png')";
+		weapon.style.backgroundImage = "url('img/weapon/mace/0.png')";
 	}
 	function myFunction() {
 		clearTimeout(wMace);
@@ -733,9 +735,12 @@
 		hw2.addEventListener("mouseout", mouseOut2);
 		hw3.addEventListener("mouseover", mouseOver3);
 		hw3.addEventListener("mouseout", mouseOut3);
-		weapon2.style.backgroundImage = "url('img/weapon/spike/1.png')";
-		weapon3.style.backgroundImage = "url('img/weapon/blade/1.png')";
+		weapon2.style.backgroundImage = "url('img/weapon/spike/0.png')";
+		weapon3.style.backgroundImage = "url('img/weapon/blade/0.png')";
 		
+		clearTimeout(w1);
+		clearTimeout(w2);
+		clearTimeout(w3);
 		<!-- r.style.display="block"; -->
 		<!-- g.style.display="none"; -->
 		<!-- b.style.display="none"; -->
@@ -747,11 +752,6 @@
 		<!-- r3.style.display="block"; -->
 		<!-- g3.style.display="none"; -->
 		<!-- b3.style.display="none"; -->
-		
-		clearTimeout(w1);
-		clearTimeout(w2);
-		clearTimeout(w3);
-	
 		var myIndex = 0;
 		carousel();
 		function carousel() 
@@ -773,10 +773,10 @@
 				z[i].style.display = "none";  
 			}
 			myIndex++;
-			if (myIndex < 62) 
+			if (myIndex < x.length) 
 			{  
 				x[myIndex].style.display = "block";  
-				w1=setTimeout(carousel, 90); // Change image every 2 seconds
+				w1=setTimeout(carousel, 4000/60); // Change image every 2 seconds
 			}
 		}	defaultCharacter();		
 	}
@@ -791,9 +791,9 @@
 			spike[i].style.display = "none";  
 		}
 		 myIndex2++;
-			if (myIndex2 > spike.length) {myIndex2 = 14}    
+			if (myIndex2 > spike.length) {myIndex2 = 1}    
 			spike[myIndex2-1].style.display = "block";  
-			wSpike=setTimeout(mouseOver2, 80);
+			wSpike=setTimeout(mouseOver2, 4000/60);
 		//weapon2.style.backgroundImage = "url('img/weapon/spike/10.png')";
 	}
 	function mouseOut2() {
@@ -803,7 +803,7 @@
 		{
 			spike[i].style.display = "none";  
 		}
-		weapon2.style.backgroundImage = "url('img/weapon/spike/1.png')";
+		weapon2.style.backgroundImage = "url('img/weapon/spike/0.png')";
 	}
 	function myFunction2() {
 		clearTimeout(wMace);
@@ -818,13 +818,12 @@
 		mouseOver2();
 		hw3.addEventListener("mouseover", mouseOver3);
 		hw3.addEventListener("mouseout", mouseOut3);
-		weapon.style.backgroundImage = "url('img/weapon/mace/1.png')";
-		weapon3.style.backgroundImage = "url('img/weapon/blade/1.png')";
+		weapon.style.backgroundImage = "url('img/weapon/mace/0.png')";
+		weapon3.style.backgroundImage = "url('img/weapon/blade/0.png')";
 		
 		clearTimeout(w1);
 		clearTimeout(w2);
 		clearTimeout(w3);
-		
 		<!-- r.style.display="none"; -->
 		<!-- g.style.display="none"; -->
 		<!-- b.style.display="block"; -->
@@ -836,7 +835,6 @@
 		<!-- r3.style.display="none"; -->
 		<!-- g3.style.display="none"; -->
 		<!-- b3.style.display="block"; -->
-		
 		var myIndex = 0;
 		carousel();
 		function carousel() 
@@ -861,7 +859,7 @@
 			if (myIndex < y.length) 
 			{  
 				y[myIndex].style.display = "block";  
-				w2=setTimeout(carousel, 80); 
+				w2=setTimeout(carousel, 4000/60); 
 			}
 		}
 		
@@ -878,9 +876,9 @@
 			blade[i].style.display = "none";  
 		}
 		 myIndex3++;
-			if (myIndex3 > blade.length) {myIndex3 = 12}    
+			if (myIndex3 > blade.length) {myIndex3 = 1}    
 			blade[myIndex3-1].style.display = "block";  
-			wBlade=setTimeout(mouseOver3, 80);
+			wBlade=setTimeout(mouseOver3, 4000/60);
 	}
 	function mouseOut3() {
 		clearTimeout(wBlade);
@@ -889,7 +887,7 @@
 		{
 			blade[i].style.display = "none";  
 		}
-		weapon3.style.backgroundImage = "url('img/weapon/blade/1.png')";
+		weapon3.style.backgroundImage = "url('img/weapon/blade/0.png')";
 	}
 	function myFunction3() {
 		clearTimeout(wMace);
@@ -904,13 +902,12 @@
 		hw3.removeEventListener("mouseover", mouseOver3);
 		hw3.removeEventListener("mouseout", mouseOut3);
 		mouseOver3();
-		weapon.style.backgroundImage = "url('img/weapon/mace/1.png')";
-		weapon2.style.backgroundImage = "url('img/weapon/spike/1.png')";
+		weapon.style.backgroundImage = "url('img/weapon/mace/0.png')";
+		weapon2.style.backgroundImage = "url('img/weapon/spike/0.png')";
 		
 		clearTimeout(w1);
 		clearTimeout(w2);
 		clearTimeout(w3);
-		
 		<!-- r.style.display="none"; -->
 		<!-- g.style.display="block"; -->
 		<!-- b.style.display="none"; -->
@@ -922,7 +919,6 @@
 		<!-- r3.style.display="none"; -->
 		<!-- g3.style.display="block"; -->
 		<!-- b3.style.display="none"; -->
-		
 		var myIndex = 0;
 		carousel();
 		function carousel() 
@@ -947,7 +943,7 @@
 			if (myIndex < z.length) 
 			{  
 				z[myIndex].style.display = "block";  
-				w3=setTimeout(carousel, 70); // Change image every 2 seconds
+				w3=setTimeout(carousel, 4000/60); // Change image every 2 seconds
 			}
 		}
 		defaultCharacter3();
@@ -1026,7 +1022,7 @@
 		
 		container.style.fontSize = (newWidth / 400) + 'em';
 	}
-	
+
 	window.addEventListener("orientationchange", function() {location.reload();}, false);
     document.getElementById("x").innerHTML = "";
 </script>
