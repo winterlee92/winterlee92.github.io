@@ -353,7 +353,7 @@
 	
 	var mv;
 	var ci,ci2,ci3,ci4,ci5,ci6;
-	function lp() {mv = setTimeout(main, 1000);}
+	function lp() {mv = setTimeout(main, 1500);}
 	
 	function main(){
 	
@@ -440,7 +440,7 @@
 			dCharIndex++;
 			if (dCharIndex > x.length) {dCharIndex = 1}    
 			x[dCharIndex-1].style.display = "block";  
-			w1=setTimeout(dChar, 4000/60); // Change image every 2 seconds		
+			w1=setTimeout(dChar, 5000/60); // Change image every 2 seconds		
 		}
 		
 		var myIndex1 = 0;
@@ -456,7 +456,7 @@
 			 myIndex1++;
 			if (myIndex1 > mace.length) {myIndex1 = 1}    
 				mace[myIndex1-1].style.display = "block";  
-				wMace=setTimeout(loopImage, 4000/60);
+				wMace=setTimeout(loopImage, 5000/60);
 		}
 	
 		var dCursorIndex=0;
@@ -472,7 +472,7 @@
 			 dCursorIndex++;
 			if (dCursorIndex > c.length) {dCursorIndex = 1}    
 				c[dCursorIndex-1].style.display = "block";  
-				dc=setTimeout(dCursor, 4000/60);
+				dc=setTimeout(dCursor, 5000/60);
 		}
 	}
 	
@@ -503,7 +503,7 @@
 			myIndex++;
 			if (myIndex > x.length) {myIndex = 1}    
 			x[myIndex-1].style.display = "block";  
-			w1=setTimeout(carousel, 4000/60); // Change image every 2 seconds		
+			w1=setTimeout(carousel, 5000/60); // Change image every 2 seconds		
 		}
 	
 	}
@@ -535,7 +535,7 @@
 			myIndex++;
 			if (myIndex > y.length) {myIndex = 1}    
 			y[myIndex-1].style.display = "block";  
-			w2=setTimeout(carousel, 4000/60); // Change image every 2 seconds		
+			w2=setTimeout(carousel, 5000/60); // Change image every 2 seconds		
 		}
 	
 	}
@@ -563,7 +563,7 @@
 			myIndex++;
 			if (myIndex > z.length) {myIndex = 1}    
 			z[myIndex-1].style.display = "block";  
-			w3=setTimeout(carousel, 4000/60); // Change image every 2 seconds		
+			w3=setTimeout(carousel, 5000/60); // Change image every 2 seconds		
 		}
 	
 	}
@@ -631,7 +631,7 @@
 			 myIndex1++;
 			if (myIndex1 > mace.length) {myIndex1 = 1}    
 				mace[myIndex1-1].style.display = "block";  
-				wMace=setTimeout(loopImage, 4000/60);
+				wMace=setTimeout(loopImage, 5000/60);
 		}
 	}
 	function mouseOut() {
@@ -694,7 +694,7 @@
 			if (myIndex < x.length) 
 			{  
 				x[myIndex].style.display = "block";  
-				w1=setTimeout(carousel, 4000/60); // Change image every 2 seconds
+				w1=setTimeout(carousel, 5000/60); // Change image every 2 seconds
 			}
 		}	defaultCharacter();		
 	}
@@ -711,7 +711,7 @@
 		 myIndex2++;
 			if (myIndex2 > spike.length) {myIndex2 = 1}    
 			spike[myIndex2-1].style.display = "block";  
-			wSpike=setTimeout(mouseOver2, 4000/60);
+			wSpike=setTimeout(mouseOver2, 5000/60);
 		//weapon2.style.backgroundImage = "url('img/weapon/spike/10.png')";
 	}
 	function mouseOut2() {
@@ -774,7 +774,7 @@
 			if (myIndex < y.length) 
 			{  
 				y[myIndex].style.display = "block";  
-				w2=setTimeout(carousel, 4000/60); 
+				w2=setTimeout(carousel, 5000/60); 
 			}
 		}
 		
@@ -793,7 +793,7 @@
 		 myIndex3++;
 			if (myIndex3 > blade.length) {myIndex3 = 1}    
 			blade[myIndex3-1].style.display = "block";  
-			wBlade=setTimeout(mouseOver3, 4000/60);
+			wBlade=setTimeout(mouseOver3, 5000/60);
 	}
 	function mouseOut3() {
 		clearTimeout(wBlade);
@@ -855,7 +855,7 @@
 			if (myIndex < z.length) 
 			{  
 				z[myIndex].style.display = "block";  
-				w3=setTimeout(carousel, 4000/60); // Change image every 2 seconds
+				w3=setTimeout(carousel, 5000/60); // Change image every 2 seconds
 			}
 		}
 		defaultCharacter3();
