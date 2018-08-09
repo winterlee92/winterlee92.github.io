@@ -352,9 +352,8 @@
 <script id="x" type="text/javascript">
 	
 	var mv;
-	function lp() {mv = setTimeout(main, 2000);}
-	
 	var ci,ci2,ci3,ci4,ci5,ci6;
+	function lp() {mv = setTimeout(main, 1000);}
 	
 	function main(){
 	
@@ -410,6 +409,11 @@
 	var wMace;
 	var wSpike;
 	var wBlade;
+	var x = document.getElementsByClassName("mySlides");
+	var y = document.getElementsByClassName("mySlides2");
+	var z = document.getElementsByClassName("mySlides3");
+	
+	
 	
 	function xCharacter(){
 		var dCharIndex = 0;
@@ -420,9 +424,6 @@
 			clearTimeout(w2);
 			clearTimeout(w3);
 			var i;
-			var x = document.getElementsByClassName("mySlides");
-			var y = document.getElementsByClassName("mySlides2");
-			var z = document.getElementsByClassName("mySlides3");
 			for (i = 0; i < x.length; i++) 
 			{
 				x[i].style.display = "none";  
@@ -474,6 +475,8 @@
 				dc=setTimeout(dCursor, 4000/60);
 		}
 	}
+	
+	
 	function defaultCharacter(){
 		var myIndex = 0;
 		carousel();
@@ -483,9 +486,7 @@
 			clearTimeout(w2);
 			clearTimeout(w3);
 			var i;
-			var x = document.getElementsByClassName("mySlides");
-			var y = document.getElementsByClassName("mySlides2");
-			var z = document.getElementsByClassName("mySlides3");
+			
 			for (i = 0; i < x.length; i++) 
 			{
 				x[i].style.display = "none";  
@@ -498,7 +499,7 @@
 			{
 				z[i].style.display = "none";  
 			}
-
+			
 			myIndex++;
 			if (myIndex > x.length) {myIndex = 1}    
 			x[myIndex-1].style.display = "block";  
@@ -514,9 +515,6 @@
 		{
 			
 			var i;
-			var x = document.getElementsByClassName("mySlides");
-			var y = document.getElementsByClassName("mySlides2");
-			var z = document.getElementsByClassName("mySlides3");
 			
 			clearTimeout(w1);
 			clearTimeout(w2);
@@ -550,9 +548,6 @@
 			clearTimeout(w2);
 			clearTimeout(w3);
 			var i;
-			var x = document.getElementsByClassName("mySlides");
-			var y = document.getElementsByClassName("mySlides2");
-			var z = document.getElementsByClassName("mySlides3");
 			for (i = 0; i < x.length; i++) 
 			{
 				x[i].style.display = "none";  
@@ -683,9 +678,6 @@
 		function carousel() 
 		{
 			var i;
-			var x = document.getElementsByClassName("mySlides");
-			var y = document.getElementsByClassName("mySlides2");
-			var z = document.getElementsByClassName("mySlides3");
 			for (i = 0; i < x.length; i++) 
 			{
 				x[i].style.display = "none";  
@@ -766,9 +758,6 @@
 		function carousel() 
 		{
 			var i;
-			var x = document.getElementsByClassName("mySlides");
-			var y = document.getElementsByClassName("mySlides2");
-			var z = document.getElementsByClassName("mySlides3");
 			for (i = 0; i < x.length; i++) 
 			{
 				x[i].style.display = "none";  
@@ -850,9 +839,6 @@
 		function carousel() 
 		{
 			var i;
-			var x = document.getElementsByClassName("mySlides");
-			var y = document.getElementsByClassName("mySlides2");
-			var z = document.getElementsByClassName("mySlides3");
 			for (i = 0; i < x.length; i++) 
 			{
 				x[i].style.display = "none";  
