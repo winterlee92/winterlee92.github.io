@@ -222,7 +222,11 @@
 	
 	var mv;
 	var ci,ci2,ci3,ci4,ci5,ci6,cx;
-	function lp() {mv = setTimeout(main, 1500);}
+	function lp() {
+	ci=setTimeout(createImage(0,"img/character/s1/","mySlides","s1_","character"),1);
+	ci2=setTimeout(createImage(1,"img/weapon/mace/","mace","mace_","weapon"),1);
+	ci7=setTimeout(createImage(6,"img/cursor/","c","c_","inner_container3"),1);
+	mv = setTimeout(main, 1500);}
 	
 	function main(){
 	
@@ -237,9 +241,6 @@
 		sizeData(newWidth,newHeight);
 		resize(newWidth,newHeight);
 	
-		ci=setTimeout(createImage(0,"img/character/s1/","mySlides","s1_","character"),1);
-		ci2=setTimeout(createImage(1,"img/weapon/mace/","mace","mace_","weapon"),1);
-		ci7=setTimeout(createImage(6,"img/cursor/","c","c_","inner_container3"),1);
 		cx=setTimeout(xCharacter,500/60);
 		ci3=setTimeout(createImage(2,"img/character/s2/","mySlides2","s2_","character"),1000/60);
 		ci4=setTimeout(createImage(3,"img/weapon/spike/","spike","spike_","weapon2"),1/60);
