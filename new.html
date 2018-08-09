@@ -110,10 +110,6 @@ img{
 	spike.onload = function (){ctx.drawImage(spike,newWidth*0.17,newHeight*0.6,ww,wh);}
 	blade.onload = function (){ctx.drawImage(blade,newWidth*0.35,newHeight*0.6,ww,wh);}
 	cloth.onload = function (){ctx.drawImage(cloth,newWidth*0.55,newHeight*0.6,newWidth*0.45,wh);}
-	gameCanvas.appendChild(mace);
-	gameCanvas.appendChild(spike);
-	gameCanvas.appendChild(blade);
-	gameCanvas.appendChild(cloth);
 	this.nh = newHeight;
 	this.nw = newWidth;
 
@@ -136,7 +132,7 @@ img{
 		<!-- ctx.drawImage(cloth,newWidth*0.55,newHeight*0.6,newWidth*0.45,wh); -->
 	}
 	function mySlidesArray(x) {	
-		bgtop()
+		bgtop();
 		var n = 0;
 		var n = x;
 		var mySlidesArray = new Array(n); 
