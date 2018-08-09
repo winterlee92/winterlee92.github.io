@@ -18,13 +18,17 @@
 	  width: 150px;
 	  height: 150px;
 	  margin: -75px 0 0 -75px;
-	  border: 16px solid #f3f3f3;
+	 border: 16px solid #f3f3f3;
 	  border-radius: 50%;
-	  border-top: 16px solid #3498db;
+	  border-top: 16px solid blue;
+	  border-right: 16px solid green;
+	  border-bottom: 16px solid red;
+	  border-left: 16px solid pink;
 	  width: 120px;
 	  height: 120px;
 	  -webkit-animation: spin 2s linear infinite;
 	  animation: spin 2s linear infinite;
+	  
 	}
 
 	@-webkit-keyframes spin {
@@ -68,6 +72,7 @@
 	#container #inner_container{position:relative;background-image: url('img/bg/top.jpg');width:100%;height:60%;}
 	#container #inner_container2{position:relative;background-image: url('img/bg/btm.jpg');width:100%;height:40%;}
 	#inner_container3{position:absolute;;bottom:0;height:40%;width:100%;}
+	#weapon{background-image:url('img/weapon/mace/0.png');}
 	#weapon2{background-image:url('img/weapon/spike/0.png');}
 	#weapon3{background-image:url('img/weapon/blade/0.png');}
 	
@@ -347,7 +352,7 @@
 <script id="x" type="text/javascript">
 	
 		var mv;
-
+		var ci,ci2,ci3,ci4,ci5,ci6;
 	function lp() {
 		mv = setTimeout(main, 3000);
 	}
@@ -360,7 +365,7 @@
 	function main(){
 	
 	document.getElementById("loader").style.display = "none";
-		document.getElementById("container").style.display = "block";
+    document.getElementById("container").style.display = "block";
 	
 		var container = document.getElementById('container');
 		var widthToHeight = 0 ;
@@ -370,112 +375,39 @@
 		sizeData(newWidth,newHeight);
 		resize(newWidth,newHeight);
 	
-		createImage();
+		createImage(0,"img/character/s1/","mySlides","s1_","character");
+		createImage(1,"img/weapon/mace/","mace","mace_","weapon");
+		createImage(2,"img/character/s2/","mySlides2","s2_","character");
+		createImage(3,"img/weapon/spike/","spike","spike_","weapon2");
+		createImage(4,"img/character/s3/","mySlides3","s3_","character");
+		createImage(5,"img/weapon/blade/","blade","blade_","weapon3");
+		createImage(6,"img/cursor/","c","c_","inner_container3");
+		
+		xCharacter();
 	}
+		
+	function createImage(b,fileLocation,className,altImage,parentCi) {	
+		var b = b;
+		var fileLocation = fileLocation;
+		var className = className;
+		var altImage = altImage;
+		var parentCi = document.getElementById(parentCi);
+		
+		var myImageArray = [13,13,10,17,12,18,36];
 
-	var character = document.getElementById("character");
-		
-	function createImage() {	
-		var mySlidesArray = new Array(13); 
 		var i;
-		for(i=0; i<mySlidesArray.length; i++)
+		for(i=0; i<myImageArray[b]; i++)
 		{		
-			if(i < mySlidesArray.length)
+			if(i <myImageArray[b])
 			{
-				var mySlides = document.createElement("IMG");
-				mySlides.setAttribute("src", "img/character/s1/"+(i+1)+".png");	
-				mySlides.setAttribute("class","mySlides");
-				mySlides.setAttribute("alt","mySlides_"+(i+1));
-				character.appendChild(mySlides);
+				var myImg = document.createElement("IMG");
+				myImg.setAttribute("src", fileLocation+(i+1)+".png");	
+				myImg.setAttribute("class",className);
+				myImg.setAttribute("alt",altImage+(i+1));
+				parentCi.appendChild(myImg);
 			}
 		}		
-		
-		var mySlidesArray2 = new Array(10); 
-		var i;
-		for(i=0; i<mySlidesArray2.length; i++)
-		{		
-			if(i < mySlidesArray2.length)
-			{
-				var mySlides2 = document.createElement("IMG");
-				
-				mySlides2.setAttribute("src", "img/character/s2/"+(i+1)+".png");
-				mySlides2.setAttribute("class","mySlides2");
-				mySlides2.setAttribute("alt","mySlides2_"+(i+1));
-				character.appendChild(mySlides2);
-			}
-		}	
-		
-		var mySlidesArray3 = new Array(12); 
-		var i;
-		for(i=0; i<mySlidesArray3.length; i++)
-		{		
-			if(i < mySlidesArray3.length)
-			{
-				var mySlides3 = document.createElement("IMG");
-				mySlides3.setAttribute("src", "img/character/s3/"+(i+1)+".png");	
-				mySlides3.setAttribute("class","mySlides3");
-				mySlides3.setAttribute("alt","mySlides3_"+(i+1));
-				character.appendChild(mySlides3);
-			}
-		}
-	
-		var mySlidesArray4 = new Array(13); 
-		var i;
-		for(i=0; i<mySlidesArray4.length; i++)
-		{		
-			if(i < mySlidesArray4.length)
-			{
-				var mace = document.createElement("IMG");
-				mace.setAttribute("src", "img/weapon/mace/"+(i+1)+".png");	
-				mace.setAttribute("class","mace");
-				mace.setAttribute("alt","mace_"+(i+1));
-				weapon.appendChild(mace);
-			}
-		}		
-		
-		var mySlidesArray5 = new Array(17); 
-		var i;
-		for(i=0; i<mySlidesArray5.length; i++)
-		{		
-			if(i < mySlidesArray5.length)
-			{
-				var spike = document.createElement("IMG");
-				spike.setAttribute("src", "img/weapon/spike/"+(i+1)+".png");	
-				spike.setAttribute("class","spike");
-				spike.setAttribute("alt","spike_"+(i+1));
-				weapon2.appendChild(spike);
-			}
-		}		
-		
-		var mySlidesArray6 = new Array(18); 
-		var i;
-		for(i=0; i<mySlidesArray6.length; i++)
-		{		
-			if(i < mySlidesArray6.length)
-			{
-				var blade = document.createElement("IMG");
-				blade.setAttribute("src", "img/weapon/blade/"+(i+1)+".png");	
-				blade.setAttribute("class","blade");
-				blade.setAttribute("alt","blade_"+(i+1));
-				weapon3.appendChild(blade);
-			}
-		} 
-		
-		var mySlidesArray7 = new Array(36); 
-		var i;
-		for(i=0; i<mySlidesArray7.length; i++)
-		{		
-			if(i < mySlidesArray7.length)
-			{
-				var c = document.createElement("IMG");
-				c.setAttribute("src", "img/cursor/"+(i+1)+".png");	
-				c.setAttribute("class","c");
-				c.setAttribute("alt","c_"+(i+1));
-				ic3 = document.getElementById("inner_container3");
-				ic3.appendChild(c);
-			}
-		}	xCharacter();
-	}
+	}	
 	
 	var w1;
 	var w2;
