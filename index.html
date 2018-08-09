@@ -361,9 +361,6 @@
 	
 	function main(){
 	
-		document.getElementById("loader").style.display = "none";
-		document.getElementById("container").style.display = "block";
-	
 		var container = document.getElementById('container');
 		var widthToHeight = 0 ;
 		var newWidth = window.innerWidth;
@@ -373,6 +370,10 @@
 		resize(newWidth,newHeight);
 	
 		createImage();
+		
+		document.getElementById("loader").style.display = "none";
+		document.getElementById("container").style.display = "block";
+		
 	}
 
 	var character = document.getElementById("character");
