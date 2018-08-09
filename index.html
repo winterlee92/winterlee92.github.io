@@ -351,16 +351,10 @@
 </div>	
 <script id="x" type="text/javascript">
 	
-		var mv;
-		var ci,ci2,ci3,ci4,ci5,ci6;
-	function lp() {
-		mv = setTimeout(main, 3000);
-	}
+	var mv;
+	function lp() {mv = setTimeout(main, 2000);}
 	
-	function log(txt) {console.log((performance.now()),txt);}
-
-    document.addEventListener('readystatechange', function() {log('readyState:' + document.readyState)});
-    document.addEventListener('DOMContentLoaded', function() {log('DOMContentLoaded')});
+	var ci,ci2,ci3,ci4,ci5,ci6;
 	
 	function main(){
 	
