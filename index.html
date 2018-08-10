@@ -163,6 +163,7 @@
 			
 		function dragstart(event) {
 			 event.dataTransfer.setData("Text", event.target.id);
+			 console.log(event.target.id);
 			}
 		function allowDrop(event) {
 		event.preventDefault();
