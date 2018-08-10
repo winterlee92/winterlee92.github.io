@@ -169,9 +169,10 @@
 		event.preventDefault();
 		}
 		function drop(event) {
-			var data = event.dataTransfer.getData("Text");
+			var data = event.dataTransfer.getData("text");
+			var data2 = event.dataTransfer.getData("text/plain");
 			defaultCharacter2();
-			if (data ==="dw")
+			if (data ==="dw" ||  data2 ==="dw")
 			{
 				defaultCharacter();
 				f.style.display="block";
@@ -186,7 +187,7 @@
 				s3.style.display="none";
 				p3.style.display="none";
 			}
-				if (data === "dw2")
+				if (data === "dw2" || data2 === "dw2")
 			{
 				defaultCharacter2();
 				f.style.display="none";
@@ -201,7 +202,7 @@
 				s3.style.display="block";
 				p3.style.display="none";
 			}
-			if (data ==="dw3")
+			if (data ==="dw3" || data2 === "dw3")
 			{
 				defaultCharacter3();
 				f.style.display="none";
