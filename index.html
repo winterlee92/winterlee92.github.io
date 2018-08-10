@@ -26,7 +26,7 @@
 		#weapon{background-image:url('img/weapon/mace/0.png');}
 		#weapon2{background-image:url('img/weapon/spike/0.png');}
 		#weapon3{background-image:url('img/weapon/blade/0.png');}
-		#dw{background-image:url('img/weapon/mace/0.png');}
+		#dw{background-image:url('img/weapon/mace/0.png');opacity:0;}
 		#dw2{background-image:url('img/weapon/spike/100.png');}
 		#dw3{background-image:url('img/weapon/blade/100.png');}
 	
@@ -59,7 +59,7 @@
 		
 		#weapon,#weapon2,#weapon3,#dw,#dw2,#dw3{width:30%}
 		#dw4{width:35%;margin-Left:62%;}
-		#weapon,#dw{margin-left:-2%}
+		#weapon,#dw{margin-left:-2%;}
 		#weapon2,#dw2{margin-left:16%}
 		#weapon3,#dw3{margin-left:36%}
 		#t{width:60%;margin-left:62%}
@@ -163,17 +163,16 @@
 			
 		function dragstart(event) {
 			 event.dataTransfer.setData("Text", event.target.id);
-			 console.log(event.target.id);
 			}
 		function allowDrop(event) {
 		event.preventDefault();
 		}
 		function drop(event) {
-			var data = event.dataTransfer.getData("text");
-			var data2 = event.dataTransfer.getData("text/plain");
+			var data = event.dataTransfer.getData("text");console.log(data);
 			defaultCharacter2();
-			if (data ==="dw" ||  data2 ==="dw")
-			{
+			if (data ==="dw")
+			{	
+				
 				defaultCharacter();
 				f.style.display="block";
 				s.style.display="none";
@@ -186,8 +185,11 @@
 				f3.style.display="block";
 				s3.style.display="none";
 				p3.style.display="none";
+				dw.style.opacity="0";
+				dw2.style.opacity="1";
+				dw3.style.opacity="1";
 			}
-				if (data === "dw2" || data2 === "dw2")
+				if (data === "dw2")
 			{
 				defaultCharacter2();
 				f.style.display="none";
@@ -201,8 +203,12 @@
 				f3.style.display="none";
 				s3.style.display="block";
 				p3.style.display="none";
+				dw2.style.opacity="0";
+				dw.style.opacity="1";
+				dw2.style.opacity="0";
+				dw3.style.opacity="1";
 			}
-			if (data ==="dw3" || data2 === "dw3")
+			if (data ==="dw3")
 			{
 				defaultCharacter3();
 				f.style.display="none";
@@ -216,6 +222,9 @@
 				f3.style.display="none";
 				s3.style.display="none";
 				p3.style.display="block";
+				dw.style.opacity="1";
+				dw2.style.opacity="1";
+				dw3.style.opacity="0";
 			}
 			<!-- event.preventDefault();	 -->
 		}
@@ -264,18 +273,10 @@
 		}		
 	}	
 	
-	var w1;
-	var w2;
-	var w3;
-	var dc;
-	var wMace;
-	var wSpike;
-	var wBlade;
+	var w1,w2,w3,dc,wMace,wSpike,wBlade;
 	var x = document.getElementsByClassName("mySlides");
 	var y = document.getElementsByClassName("mySlides2");
 	var z = document.getElementsByClassName("mySlides3");
-	
-	
 	
 	function xCharacter(){
 		var dCharIndex = 0;
