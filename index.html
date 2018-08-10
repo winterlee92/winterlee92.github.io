@@ -10,85 +10,27 @@
 		margin:0 auto;
 		overflow:hidden;
 		background-color:black;}
-	#loader {
-	  position: absolute;
-	  left: 50%;
-	  top: 50%;
-	  z-index: 1;
-	  width: 150px;
-	  height: 150px;
-	  margin: -75px 0 0 -75px;
-	 border: 16px solid #f3f3f3;
-	  border-radius: 50%;
-	  border-top: 16px solid blue;
-	  border-right: 16px solid green;
-	  border-bottom: 16px solid red;
-	  border-left: 16px solid pink;
-	  width: 120px;
-	  height: 120px;
-	  -webkit-animation: spin 2s linear infinite;
-	  animation: spin 2s linear infinite;
-	  
-	}
 
-	@-webkit-keyframes spin {
-	  0% { -webkit-transform: rotate(0deg); }
-	  100% { -webkit-transform: rotate(360deg); }
-	}
 
-	@keyframes spin {
-	  0% { transform: rotate(0deg); }
-	  100% { transform: rotate(360deg); }
-	}
-
-	/* Add animation to "page content" */
-	.animate-bottom {
-	  position: relative;
-	  -webkit-animation-name: animatebottom;
-	  -webkit-animation-duration: 1s;
-	  animation-name: animatebottom;
-	  animation-duration: 1s
-	}
-
-	@-webkit-keyframes animatebottom {
-	  from { bottom:-100px; opacity:0 } 
-	  to { bottom:0px; opacity:1 }
-	}
-
-	@keyframes animatebottom { 
-	  from{ bottom:-100px; opacity:0 } 
-	  to{ bottom:0; opacity:1 }
-	}
-	
 	#container {
-		display:none;
 		position: relative;
 		margin:0 auto; important!
 		height:100vh; important!
 		width:60vh; important!}
-	#inner_container,#inner_container2,#inner_container3,#weapon,#weapon2,#weapon3,#clothes,#hw,#hw2,#hw3,#hw4,#hb2,#hb{
-	background-Size:100% 100%;
-	background-Repeat:no-repeat;}
-	#container #inner_container{position:relative;background-image: url('img/bg/top.jpg');width:100%;height:60%;}
-	#container #inner_container2{position:relative;background-image: url('img/bg/btm.jpg');width:100%;height:40%;}
-	#inner_container3{position:absolute;;bottom:0;height:40%;width:100%;}
-	#weapon{background-image:url('img/weapon/mace/0.png');}
-	#weapon2{background-image:url('img/weapon/spike/0.png');}
-	#weapon3{background-image:url('img/weapon/blade/0.png');}
+		#inner_container,#inner_container2,#inner_container3,#weapon,#weapon2,#weapon3,#t,#hw,#hw2,#hw3,#dw4,#hb2,#hb{
+		background-Size:100% 100%;
+		background-Repeat:no-repeat;}
+		#container #inner_container{position:relative;background-image: url('img/bg/top.jpg');width:100%;height:60%;}
+		#container #inner_container2{position:relative;background-image: url('img/bg/btm.jpg');width:100%;height:40%;}
+		#inner_container3{position:absolute;;bottom:0;width:100%;height:40%;z-index:2;}
+		#weapon{background-image:url('img/weapon/mace/0.png');}
+		#weapon2{background-image:url('img/weapon/spike/0.png');}
+		#weapon3{background-image:url('img/weapon/blade/0.png');}
+		#dw{background-image:url('img/weapon/mace/0.png');}
+		#dw2{background-image:url('img/weapon/spike/100.png');}
+		#dw3{background-image:url('img/weapon/blade/100.png');}
 	
-	#hw,#hw2,#hw3,#hw4,#hb,#hb2{
-		position:absolute;	
-		background-Size : 100% 100%; 
-		height:100%;
-		display:inline-block;}
-	hw2,#hw3,#hw4{z-index:2;}
-	#hb,#hb2{z-index:5;}
-	#hw{width:16%;margin-Left:4%;}
-	#hw2,#hb2{width:14%;margin-Left:24%;}
-	#hw3,#hb{width:14%;margin-Left:42%;}
-	#hw4{width:35%;margin-Left:62%;}
-	
-	#container #inner_container #character{
+	#container #inner_container #character,#hc{
 		position:absolute;	
 		background-Size : 100% 100%; 
 		background-position: center bottom;
@@ -98,13 +40,13 @@
 		vertical-align:bottom;}
 	
 	#container #inner_container2 #weapon,#container #inner_container2 #weapon2,
-	#container #inner_container2 #weapon3{			
+	#container #inner_container2 #weapon3,#dw,#dw2,#dw3{			
 		position:absolute;	
 		background-Size : 100% 100%; 
 		height:100%;
 		display:block;}
 
-	#container #inner_container2 #clothes{
+	#container #inner_container2 #t{
 		position:absolute;	
 		width:35%;
 		height:90%;
@@ -115,76 +57,79 @@
 		margin-Top: 4%;
 		filter: alpha(opacity=50);}
 		
+		#weapon,#weapon2,#weapon3,#dw,#dw2,#dw3{width:30%}
+		#dw4{width:35%;margin-Left:62%;}
+		#weapon,#dw{margin-left:-2%}
+		#weapon2,#dw2{margin-left:16%}
+		#weapon3,#dw3{margin-left:36%}
+		#t{width:60%;margin-left:62%}
+
+		[draggable] {
+		  -moz-user-select: none;
+		  -khtml-user-select: none;
+		  -webkit-user-select: none;
+		  user-select: none;
+		  /* Required to make elements draggable in old WebKit */
+		  -khtml-user-drag: element;
+		  -webkit-user-drag: element;
+		}
 		
-		#weapon,#weapon2,#weapon3{width:30%}
-		#weapon{margin-left:-2%}
-		#weapon2{margin-left:16%}
-		#weapon3{margin-left:36%}
-		#clothes{width:60%;margin-left:62%}
-		
-	.c{
-		position:absolute;	
-		background-Size : 100% 100%; 
-		height:50%;
-		margin-Top :26%;
-		margin-Left :37%;}
-		
-		#r,#b,#g{
+		#f,#s,#p{
 			height:30%;
 			width:100%; 
 			font-size: 400%;
 			text-align:center;
 			margin-top:15%;
 		}
-		#g2,#r2,#b2{
+		#f2,#s2,#p2{
 			height:10%;
 			width:100%;
 			font-size: 120%;
 			text-align:center;
 		}
 		
-		#g3,#r3,#b3{
+		#f3,#s3,#p3{
 			margin-top: 10%;
 			margin-left: 13%;
 			font-size: 88%;
 		}
 		
-		 #r,#r2,#r3{
+		 #f,#f2,#f3{
 		 text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 
 					0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
 		 color: #ffffff;}
 			
-		#b,#b2,#b3{ 
+		#s,#s2,#s3{ 
 		text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 
 		0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
 		color: #ffffff;display:none;}
 		
-		#g,#g2,#g3{ 
+		#p,#p2,#p3{ 
 		text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 
 		0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de; 
 		color:#ffffff; display:none;}
 		
 </style>
-<body onload="lp()">
-<div id="loader"></div>
-<div id="container" class="animate-bottom">
+<body>
+<div id="container">
 	<div id="inner_container">
 		<div id="character"></div>
+		<div id="hc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 	</div>
 	<div id="inner_container2">
-		<div id="weapon"></div>
-		<div id="weapon2"></div>
-		<div id="weapon3"></div>
-		<div id="clothes"></div>
+		<div id="weapon" draggable="false"></div>
+		<div id="weapon2" draggable="false"></div>
+		<div id="weapon3" draggable="false"></div>
+		<div id="t"></div>
 	</div>
 	<div id="inner_container3">
-		<div id="hw"></div>
-		<div id="hw2"></div>
-		<div id="hw3"></div>
-		<div id="hw4">
-			<div id="r">焰</div>
-			<div id="r2">Flame</div>
-			<div id="r3">
+		<div id="dw" draggable="true" ondragstart="dragstart(event);"></div>
+		<div id="dw2" draggable="true" ondragstart="dragstart(event);" ></div>
+		<div id="dw3" draggable="true" ondragstart="dragstart(event);"></div>
+		<div id="dw4">
+			<div id="f">焰</div>
+			<div id="f2">Flame</div>
+			<div id="f3">
 				<table>
 					<tr><td>魔攻 </td><td>&nbsp&nbsp+100%</td></tr>
 					<tr><td>Mag.Atk</td><td>&nbsp&nbsp+100%</td></tr>
@@ -192,46 +137,89 @@
 					<tr><td>Phy.Atk</td><td>&nbsp&nbsp+100%</td></tr>
 				</table>
 			</div>
-			<div id="b">疾</div>
-			<div id="b2">Speed</div>
-				<div id="b3">
-					<table>
-						<tr><td>攻速 </td><td>&nbsp&nbsp+80%</td></tr>
-						<tr><td>Atk Spd</td><td>&nbsp&nbsp+80%</td></tr>
-						<tr><td>闪躲</td><td>&nbsp&nbsp+20%</td></tr>
-						<tr><td>Dodge</td><td>&nbsp&nbsp+20%</td></tr>
-					</table>
-				</div>
-			<div id="g">毒</div>
-			<div id="g2">Poison</div>
-			<div id="g3">
+			<div id="s">疾</div>
+			<div id="s2">Speed</div>
+			<div id="s3">
+				<table>
+					<tr><td>攻速 </td><td>&nbsp&nbsp+80%</td></tr>
+					<tr><td>Atk Spd</td><td>&nbsp&nbsp+80%</td></tr>
+					<tr><td>闪躲</td><td>&nbsp&nbsp+20%</td></tr>
+					<tr><td>Dodge</td><td>&nbsp&nbsp+20%</td></tr>
+				</table>
+			</div>
+			<div id="p">毒</div>
+			<div id="p2">Poison</div>
+			<div id="p3">
 				<table>
 					<tr><td>命中 </td><td>&nbsp&nbsp+200%</td></tr>
-					<tr><td>Crit.Rate</td><td>&nbsp&nbsp+200%</td></tr>
+					<tr><td>Hit Rate</td><td>&nbsp&nbsp+200%</td></tr>
 					<tr><td>血量</td><td>&nbsp&nbsp+50%</td></tr>
 					<tr><td>HP</td><td>&nbsp&nbsp+50%</td></tr>
 				</table>
 			</div>
 		</div>
-		<div class="c"></div>
-		<div id="hb" onclick="rev(1)"></div>
-		<div id="hb2" onclick="rev(2)"></div>
-	</div>
-</div>	
+	</div>	
 <script id="x" type="text/javascript">
+			
+		function dragstart(event) {
+			 event.dataTransfer.setData("Text", event.target.id);
+			 console.log(event.target.id);
+			}
+		function allowDrop(event) {
+		event.preventDefault();
+		}
+		function drop(event) {
+			var data = event.dataTransfer.getData("Text");
+			defaultCharacter2();
+			if (data ==="dw")
+			{
+				defaultCharacter();
+				f.style.display="block";
+				s.style.display="none";
+				p.style.display="none";
+				
+				f2.style.display="block";
+				s2.style.display="none";
+				p2.style.display="none";
+				
+				f3.style.display="block";
+				s3.style.display="none";
+				p3.style.display="none";
+			}
+				if (data === "dw2")
+			{
+				defaultCharacter2();
+				f.style.display="none";
+				s.style.display="block";
+				p.style.display="none";
+				
+				f2.style.display="none";
+				s2.style.display="block";
+				p2.style.display="none";
+				
+				f3.style.display="none";
+				s3.style.display="block";
+				p3.style.display="none";
+			}
+			if (data ==="dw3")
+			{
+				defaultCharacter3();
+				f.style.display="none";
+				s.style.display="none";
+				p.style.display="block";
+				
+				f2.style.display="none";
+				s2.style.display="none";
+				p2.style.display="block";
+				
+				f3.style.display="none";
+				s3.style.display="none";
+				p3.style.display="block";
+			}
+			<!-- event.preventDefault();	 -->
+		}
 	
-	var mv;
-	var ci,ci2,ci3,ci4,ci5,ci6,cx;
-	function lp() {
-	ci=setTimeout(createImage(0,"img/character/s1/","mySlides","s1_","character"),60/60);
-	ci2=setTimeout(createImage(1,"img/weapon/mace/","mace","mace_","weapon"),120/60);
-	ci7=setTimeout(createImage(6,"img/cursor/","c","c_","inner_container3"),180/60);
-	mv = setTimeout(main, 1500/60);}
-	
-	function main(){
-	
-	document.getElementById("loader").style.display = "none";
-    document.getElementById("container").style.display = "block";
+	window.onload= function main(){
 	
 		var container = document.getElementById('container');
 		var widthToHeight = 0 ;
@@ -241,12 +229,15 @@
 		sizeData(newWidth,newHeight);
 		resize(newWidth,newHeight);
 	
-		cx=setTimeout(xCharacter,2000/60);
-		ci3=setTimeout(createImage(2,"img/character/s2/","mySlides2","s2_","character"),1000/60);
-		ci4=setTimeout(createImage(3,"img/weapon/spike/","spike","spike_","weapon2"),1000/60);
-		ci5=setTimeout(createImage(4,"img/character/s3/","mySlides3","s3_","character"),1000/60);
-		ci6=setTimeout(createImage(5,"img/weapon/blade/","blade","blade_","weapon3"),1000/60);
-	
+		createImage(0,"img/character/s1/","mySlides","s1_","character");
+		createImage(1,"img/weapon/mace/","mace","mace_","dw");
+		createImage(2,"img/character/s2/","mySlides2","s2_","character");
+		createImage(3,"img/weapon/spike/","spike","spike_","weapon2");
+		createImage(4,"img/character/s3/","mySlides3","s3_","character");
+		createImage(5,"img/weapon/blade/","blade","blade_","weapon3");
+		<!-- createImage(6,"img/cursor/","c","c_","inner_container3"); -->
+		
+		xCharacter();
 	}
 		
 	function createImage(b,fileLocation,className,altImage,parentCi) {	
@@ -313,39 +304,7 @@
 			w1=setTimeout(dChar, 5000/60); // Change image every 2 seconds		
 		}
 		
-		var myIndex1 = 0;
-		loopImage();
-		function loopImage()
-		{	
-			var i;
-			var mace = document.getElementsByClassName("mace");
-			for (i = 0; i < mace.length; i++) 
-			{
-				mace[i].style.display = "none";  
-			}
-			 myIndex1++;
-			if (myIndex1 > mace.length) {myIndex1 = 1}    
-				mace[myIndex1-1].style.display = "block";  
-				wMace=setTimeout(loopImage, 5000/60);
-		}
-	
-		var dCursorIndex=0;
-		dCursor();
-		function dCursor()
-		{	
-			var i;
-			var c = document.getElementsByClassName("c");
-			for (i = 0; i < c.length; i++) 
-			{
-				c[i].style.display = "none";  
-			}
-			 dCursorIndex++;
-			if (dCursorIndex > c.length) {dCursorIndex = 1}    
-				c[dCursorIndex-1].style.display = "block";  
-				dc=setTimeout(dCursor, 5000/60);
-		}
 	}
-	
 	
 	function defaultCharacter(){
 		var myIndex = 0;
@@ -436,299 +395,6 @@
 			w3=setTimeout(carousel, 5000/60); // Change image every 2 seconds		
 		}
 	
-	}
-		var r = document.getElementById("r");
-	var g = document.getElementById("g");
-	var b = document.getElementById("b");
-	var r2 = document.getElementById("r2");
-	var g2 = document.getElementById("g2");
-	var b2 = document.getElementById("b2");
-	var r3 = document.getElementById("r3");
-	var g3 = document.getElementById("g3");
-	var b3 = document.getElementById("b3");
-	hb.addEventListener("mouseover", mouseOver3);
-	hb.addEventListener("mouseout", mouseOut3);
-	hb2.addEventListener("mouseover", mouseOver2);
-	hb2.addEventListener("mouseout", mouseOut2);
-	
-	function rev(v){
-		
-		var i ;
-		var c = document.getElementsByClassName("c");
-		for (i = 0; i < 36; i++) 
-		{
-			c[i].style.display = "none";  
-		}
-		clearTimeout(dc);
-		hb.removeEventListener("mouseover", mouseOver3);
-		hb.removeEventListener("mouseout", mouseOut3);
-		hb2.removeEventListener("mouseover", mouseOver2);
-		hb2.removeEventListener("mouseout", mouseOut2);
-		hb.style.display = "none"; 
-		hb2.style.display = "none"; 
-		hw.addEventListener("mouseover", mouseOver);
-		hw.addEventListener("mouseout", mouseOut);
-		hw2.addEventListener("mouseover2", mouseOver2);
-		hw2.addEventListener("mouseout2", mouseOut2);
-		hw3.addEventListener("mouseover3", mouseOver3);
-		hw3.addEventListener("mouseout3", mouseOut3);
-		hw.onclick = function() {myFunction()};
-		hw2.onclick = function() {myFunction2()};
-		hw3.onclick = function() {myFunction3()};
-		if(v == 1)
-		{
-			myFunction3();
-		}
-		else if (v == 2)
-		{
-			myFunction2();
-		}
-	}
-	
-	var myIndex1 = 0;
-	function mouseOver() {
-	
-		clearTimeout(wMace);
-		loopImage();
-		function loopImage()
-		{	
-			var i;
-			var mace = document.getElementsByClassName("mace");
-			for (i = 0; i < mace.length; i++) 
-			{
-				mace[i].style.display = "none";  
-			}
-			 myIndex1++;
-			if (myIndex1 > mace.length) {myIndex1 = 1}    
-				mace[myIndex1-1].style.display = "block";  
-				wMace=setTimeout(loopImage, 5000/60);
-		}
-	}
-	function mouseOut() {
-		clearTimeout(wMace);
-		var mace = document.getElementsByClassName("mace");
-		for (i = 0; i < mace.length; i++) 
-		{
-			mace[i].style.display = "none";  
-		}
-		weapon.style.backgroundImage = "url('img/weapon/mace/0.png')";
-	}
-	function myFunction() {
-		clearTimeout(wMace);
-		clearTimeout(wSpike);
-		clearTimeout(wBlade);
-		mouseOut2();
-		mouseOut3();
-		hw.removeEventListener("mouseover", mouseOver);
-		hw.removeEventListener("mouseout", mouseOut);
-		mouseOver();
-		hw2.addEventListener("mouseover", mouseOver2);
-		hw2.addEventListener("mouseout", mouseOut2);
-		hw3.addEventListener("mouseover", mouseOver3);
-		hw3.addEventListener("mouseout", mouseOut3);
-		weapon2.style.backgroundImage = "url('img/weapon/spike/0.png')";
-		weapon3.style.backgroundImage = "url('img/weapon/blade/0.png')";
-		
-		clearTimeout(w1);
-		clearTimeout(w2);
-		clearTimeout(w3);
-		r.style.display="block";
-		g.style.display="none";
-		b.style.display="none";
-		
-		r2.style.display="block";
-		g2.style.display="none";
-		b2.style.display="none";
-		
-		r3.style.display="block";
-		g3.style.display="none";
-		b3.style.display="none";
-		var myIndex = 0;
-		carousel();
-		function carousel() 
-		{
-			var i;
-			for (i = 0; i < x.length; i++) 
-			{
-				x[i].style.display = "none";  
-			}
-			for (i = 0; i < y.length; i++) 
-			{
-				y[i].style.display = "none";  
-			}
-			for (i = 0; i < z.length; i++) 
-			{
-				z[i].style.display = "none";  
-			}
-			myIndex++;
-			if (myIndex < x.length) 
-			{  
-				x[myIndex].style.display = "block";  
-				w1=setTimeout(carousel, 5000/60); // Change image every 2 seconds
-			}
-		}	defaultCharacter();		
-	}
-	var myIndex2 = 0;
-	function mouseOver2() {
-	
-		clearTimeout(wSpike);
-		var i;
-		var spike = document.getElementsByClassName("spike");
-		for (i = 0; i < spike.length; i++) 
-		{
-			spike[i].style.display = "none";  
-		}
-		 myIndex2++;
-			if (myIndex2 > spike.length) {myIndex2 = 1}    
-			spike[myIndex2-1].style.display = "block";  
-			wSpike=setTimeout(mouseOver2, 5000/60);
-		//weapon2.style.backgroundImage = "url('img/weapon/spike/10.png')";
-	}
-	function mouseOut2() {
-		clearTimeout(wSpike);
-		var spike = document.getElementsByClassName("spike");
-		for (i = 0; i < spike.length; i++) 
-		{
-			spike[i].style.display = "none";  
-		}
-		weapon2.style.backgroundImage = "url('img/weapon/spike/0.png')";
-	}
-	function myFunction2() {
-		clearTimeout(wMace);
-		clearTimeout(wSpike);
-		clearTimeout(wBlade);
-		mouseOut();
-		mouseOut3();
-		hw.addEventListener("mouseover", mouseOver);
-		hw.addEventListener("mouseout", mouseOut);
-		hw2.removeEventListener("mouseover", mouseOver2);
-		hw2.removeEventListener("mouseout", mouseOut2);
-		mouseOver2();
-		hw3.addEventListener("mouseover", mouseOver3);
-		hw3.addEventListener("mouseout", mouseOut3);
-		weapon.style.backgroundImage = "url('img/weapon/mace/0.png')";
-		weapon3.style.backgroundImage = "url('img/weapon/blade/0.png')";
-		
-		clearTimeout(w1);
-		clearTimeout(w2);
-		clearTimeout(w3);
-		r.style.display="none";
-		g.style.display="none";
-		b.style.display="block";
-		
-		r2.style.display="none";
-		g2.style.display="none";
-		b2.style.display="block";
-		
-		r3.style.display="none";
-		g3.style.display="none";
-		b3.style.display="block";
-		var myIndex = 0;
-		carousel();
-		function carousel() 
-		{
-			var i;
-			for (i = 0; i < x.length; i++) 
-			{
-				x[i].style.display = "none";  
-			}
-			for (i = 0; i < y.length; i++) 
-			{
-				y[i].style.display = "none";  
-			}
-			for (i = 0; i < z.length; i++) 
-			{
-				z[i].style.display = "none";  
-			}
-			myIndex++;
-			if (myIndex < y.length) 
-			{  
-				y[myIndex].style.display = "block";  
-				w2=setTimeout(carousel, 5000/60); 
-			}
-		}
-		
-		defaultCharacter2();
-	}
-	var	myIndex3 =0;
-	function mouseOver3() {
-		
-		clearTimeout(wBlade);
-		var i;
-		var blade = document.getElementsByClassName("blade");
-		for (i = 0; i < blade.length; i++) 
-		{
-			blade[i].style.display = "none";  
-		}
-		 myIndex3++;
-			if (myIndex3 > blade.length) {myIndex3 = 1}    
-			blade[myIndex3-1].style.display = "block";  
-			wBlade=setTimeout(mouseOver3, 5000/60);
-	}
-	function mouseOut3() {
-		clearTimeout(wBlade);
-		var blade = document.getElementsByClassName("blade");
-		for (i = 0; i < blade.length; i++) 
-		{
-			blade[i].style.display = "none";  
-		}
-		weapon3.style.backgroundImage = "url('img/weapon/blade/0.png')";
-	}
-	function myFunction3() {
-		clearTimeout(wMace);
-		clearTimeout(wSpike);
-		clearTimeout(wBlade);
-		mouseOut();
-		mouseOut2();
-		hw.addEventListener("mouseover", mouseOver);
-		hw.addEventListener("mouseout", mouseOut);
-		hw2.addEventListener("mouseover", mouseOver2);
-		hw2.addEventListener("mouseout", mouseOut2);
-		hw3.removeEventListener("mouseover", mouseOver3);
-		hw3.removeEventListener("mouseout", mouseOut3);
-		mouseOver3();
-		weapon.style.backgroundImage = "url('img/weapon/mace/0.png')";
-		weapon2.style.backgroundImage = "url('img/weapon/spike/0.png')";
-		
-		clearTimeout(w1);
-		clearTimeout(w2);
-		clearTimeout(w3);
-		r.style.display="none";
-		g.style.display="block";
-		b.style.display="none";
-		
-		r2.style.display="none";
-		g2.style.display="block";
-		b2.style.display="none";
-		
-		r3.style.display="none";
-		g3.style.display="block";
-		b3.style.display="none";
-		var myIndex = 0;
-		carousel();
-		function carousel() 
-		{
-			var i;
-			for (i = 0; i < x.length; i++) 
-			{
-				x[i].style.display = "none";  
-			}
-			for (i = 0; i < y.length; i++) 
-			{
-				y[i].style.display = "none";  
-			}
-			for (i = 0; i < z.length; i++) 
-			{
-				z[i].style.display = "none";  
-			}
-			myIndex++;
-			if (myIndex < z.length) 
-			{  
-				z[myIndex].style.display = "block";  
-				w3=setTimeout(carousel, 5000/60); // Change image every 2 seconds
-			}
-		}
-		defaultCharacter3();
 	}
 	
 	function sizeData(w,h){
