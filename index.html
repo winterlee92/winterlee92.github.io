@@ -162,14 +162,13 @@
 <script id="x" type="text/javascript">
 			
 		function dragstart(event) {
-			 event.dataTransfer.setData('application/node type', event.target.id);
+			 event.dataTransfer.setData("Text", event.target.id);
 			}
 		function allowDrop(event) {
 		event.preventDefault();
 		}
 		function drop(event) {
-			var data = event.dataTransfer.getData('application/node type');
-			console.log(data);
+			var data = event.dataTransfer.getData("Text");
 			defaultCharacter2();
 			if (data ==="dw")
 			{
