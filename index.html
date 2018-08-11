@@ -9,7 +9,8 @@
 	body{
 		margin:0 auto;
 		overflow:hidden;
-		background-color:black;}
+		<!-- background-color:black; -->
+		}
 
 
 	#container {
@@ -23,9 +24,9 @@
 		#container #inner_container{position:relative;background-image: url('img/bg/top.jpg');width:100%;height:60%;}
 		#container #inner_container2{position:relative;background-image: url('img/bg/btm.jpg');width:100%;height:40%;}
 		#inner_container3{position:absolute;;bottom:0;width:100%;height:40%;z-index:2;}
-		#weapon{background-image:url('img/weapon/mace/0.png');opacity:0.5;}
-		#weapon2{background-image:url('img/weapon/spike/0.png');opacity:0.5;}
-		#weapon3{background-image:url('img/weapon/blade/0.png');opacity:0.5;}
+		#weapon{background-image:url('img/weapon/mace/0.png');opacity:0.6;}
+		#weapon2{background-image:url('img/weapon/spike/0.png');opacity:0.6;}
+		#weapon3{background-image:url('img/weapon/blade/0.png');opacity:0.6;}
 		#dw{background-image:url('img/weapon/mace/0.png');opacity:0;}
 		#dw2{background-image:url('img/weapon/spike/100.png');}
 		#dw3{background-image:url('img/weapon/blade/100.png');}
@@ -123,9 +124,9 @@
 		<div id="t"></div>
 	</div>
 	<div id="inner_container3">
-		<div id="dw" draggable="true" ondragstart="dragstart(event);"></div>
-		<div id="dw2" draggable="true" ondragstart="dragstart(event);" ></div>
-		<div id="dw3" draggable="true" ondragstart="dragstart(event);"></div>
+		<div id="dw" draggable="true" ondragstart="dragstart(event);" ontouchmove="touchMove(event)" ontouchstart="touchStart(event)"></div>
+		<div id="dw2" draggable="true" ondragstart="dragstart(event);" ontouchmove="touchMove2(event)" ontouchstart="touchStart2(event)"></div>
+		<div id="dw3" draggable="true" ondragstart="dragstart(event);" ontouchmove="touchMove3(event)" ontouchstart="touchStart3(event)"></div>
 		<div id="dw4">
 			<div id="f">焰</div>
 			<div id="f2">Flame</div>
@@ -161,18 +162,15 @@
 	</div>	
 <script id="x" type="text/javascript">
 			
-		function dragstart(event) {
-			 event.dataTransfer.setData("Text", event.target.id);
-			}
-		function allowDrop(event) {
-		event.preventDefault();
-		}
-		function drop(event) {
-			var data = event.dataTransfer.getData("text");console.log(data);
-			defaultCharacter2();
-			if (data ==="dw")
-			{	
-				
+		  var el = document.getElementById('dw2'); 
+
+		  <!-- el.addEventListener("touchstart", touchStart, false); -->
+		  <!-- el.addEventListener("touchend", handleEnd, false); -->
+		  <!-- el.addEventListener("touchcancel", handleCancel, false); -->
+		  <!-- el.addEventListener("touchleave", handleEnd, false); -->
+		  <!-- el.addEventListener("touchmove", touchMove);	 -->
+			
+		function touchMove(event){
 				defaultCharacter();
 				f.style.display="block";
 				s.style.display="none";
@@ -187,10 +185,92 @@
 				p3.style.display="none";
 				dw.style.opacity="0";
 				dw2.style.opacity="1";
-				dw3.style.opacity="1";
+				dw3.style.opacity="1";}
+			
+		 function touchMove2(event) {
+				clearTimeout(wspike);
+				var spike = document.getElementsByClassName("spike");
+				spike.src="img/weapon/spike/100.png"
+				defaultCharacter2();
+				f.style.display="none";
+				s.style.display="block";
+				p.style.display="none";
+				
+				f2.style.display="none";
+				s2.style.display="block";
+				p2.style.display="none";
+				
+				f3.style.display="none";
+				s3.style.display="block";
+				p3.style.display="none";
+				dw2.style.opacity="0";
+				dw.style.opacity="1";
+				dw2.style.opacity="0";
+				dw3.style.opacity="1";}
+	
+		function touchMove3(event) {
+				defaultCharacter3();
+				f.style.display="none";
+				s.style.display="none";
+				p.style.display="block";
+				
+				f2.style.display="none";
+				s2.style.display="none";
+				p2.style.display="block";
+				
+				f3.style.display="none";
+				s3.style.display="none";
+				p3.style.display="block";
+				dw.style.opacity="1";
+				dw2.style.opacity="1";
+				dw3.style.opacity="0";}		
+		
+		function dragstart(event) {
+			 event.dataTransfer.setData("Text", event.target.id);
 			}
-				if (data === "dw2")
-			{
+			var wspike;
+		
+		function allowDrop(event) {
+				var myIndex1=0;
+				clearTimeout(wspike);
+				loopImage();
+				function loopImage()
+				{	
+					var i;
+					var spike = document.getElementsByClassName("spike");
+					for (i = 0; i < spike.length; i++) 
+					{
+						spike[i].style.display = "none";  
+					}
+					 myIndex1++;
+					if (myIndex1 > spike.length) {myIndex1 = 5}    
+						spike[myIndex1-1].style.display = "block";  
+						wspike=setTimeout(loopImage, 100);}
+		event.preventDefault();}
+		
+		function drop(event) {
+			var data = event.dataTransfer.getData("text");console.log(data);
+			defaultCharacter2();
+			if (data === "dw"){	
+				defaultCharacter();
+				f.style.display="block";
+				s.style.display="none";
+				p.style.display="none";
+				
+				f2.style.display="block";
+				s2.style.display="none";
+				p2.style.display="none";
+				
+				f3.style.display="block";
+				s3.style.display="none";
+				p3.style.display="none";
+				dw.style.opacity="0";
+				dw2.style.opacity="1";
+				dw3.style.opacity="1";}
+			if (data === "dw2"){
+				clearTimeout(wspike);
+				var spike = document.getElementsByClassName("spike");
+				spike.src="img/weapon/spike/100.png"
 				defaultCharacter2();
 				f.style.display="none";
 				s.style.display="block";
@@ -208,8 +288,7 @@
 				dw2.style.opacity="0";
 				dw3.style.opacity="1";
 			}
-			if (data ==="dw3")
-			{
+			if (data === "dw3"){
 				defaultCharacter3();
 				f.style.display="none";
 				s.style.display="none";
