@@ -162,6 +162,11 @@
 	</div>	
 <script id="x" type="text/javascript">
 			
+		function log(txt) {console.log((performance.now()),txt);}
+
+		document.addEventListener('readystatechange', function() {log('readyState:' + document.readyState)});
+		document.addEventListener('DOMContentLoaded', function() {log('DOMContentLoaded')});	
+			
 		  var el = document.getElementById('dw2'); 
 
 		  <!-- el.addEventListener("touchstart", touchStart, false); -->
