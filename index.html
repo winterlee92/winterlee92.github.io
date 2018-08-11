@@ -231,21 +231,21 @@
 			var wspike;
 		
 		function allowDrop(event) {
-				var myIndex1=0;
-				clearTimeout(wspike);
-				loopImage();
-				function loopImage()
-				{	
-					var i;
-					var spike = document.getElementsByClassName("spike");
-					for (i = 0; i < spike.length; i++) 
-					{
-						spike[i].style.display = "none";  
-					}
-					 myIndex1++;
-					if (myIndex1 > spike.length) {myIndex1 = 5}    
-						spike[myIndex1-1].style.display = "block";  
-						wspike=setTimeout(loopImage, 100);}
+				<!-- var myIndex1=0; -->
+				<!-- clearTimeout(wspike); -->
+				<!-- loopImage(); -->
+				<!-- function loopImage() -->
+				<!-- {	 -->
+					<!-- var i; -->
+					<!-- var spike = document.getElementsByClassName("spike"); -->
+					<!-- for (i = 0; i < spike.length; i++)  -->
+					<!-- { -->
+						<!-- spike[i].style.display = "none";   -->
+					<!-- } -->
+					 <!-- myIndex1++; -->
+					<!-- if (myIndex1 > spike.length) {myIndex1 = 5}     -->
+						<!-- spike[myIndex1-1].style.display = "block";   -->
+						<!-- wspike=setTimeout(loopImage, 100);} -->
 		event.preventDefault();}
 		
 		function drop(event) {
