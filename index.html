@@ -11,9 +11,52 @@
 		overflow:hidden;
 		background-color:black;
 		}
+	
+	#loader {
+		background-image:url('img/logo.png');
+		background-Repeat:no-repeat;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: 1;
+		margin: -75px 0 0 -75px;
+		width: 85px;
+		height: 72px;
+		-webkit-animation: spin 2s linear infinite;
+		animation: spin 2s linear infinite;
+	}
 
+	@-webkit-keyframes spin {
+	  0% { -webkit-transform: rotate(0deg); }
+	  100% { -webkit-transform: rotate(360deg); }
+	}
 
+	@keyframes spin {
+	  0% { transform: rotate(0deg); }
+	  100% { transform: rotate(360deg); }
+	}
+
+	/* Add animation to "page content" */
+	.animate-bottom {
+	  position: relative;
+	  -webkit-animation-name: animatebottom;
+	  -webkit-animation-duration: 1s;
+	  animation-name: animatebottom;
+	  animation-duration: 1s
+	}
+
+	@-webkit-keyframes animatebottom {
+	  from { bottom:-100px; opacity:0 } 
+	  to { bottom:0px; opacity:1 }
+	}
+
+	@keyframes animatebottom { 
+	  from{ bottom:-100px; opacity:0 } 
+	  to{ bottom:0; opacity:1 }
+	}
+	
 	#container {
+		display:none;
 		position: relative;
 		margin:0 auto; important!
 		height:100vh; important!
@@ -111,8 +154,9 @@
 		color:#ffffff; display:none;}
 		
 </style>
-<body>
-<div id="container">
+<body onload="lp()">
+<div id="loader"></div>
+<div id="container" class="animate-bottom">
 	<div id="inner_container">
 		<div id="character"></div>
 		<div id="hc" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -160,15 +204,20 @@
 			</div>
 		</div>
 	</div>	
+</div>	
 <script id="x" type="text/javascript">
-			
+		
+		var mv;
+
+		function lp() {mv = setTimeout(main, 3000);}
+
 		function log(txt) {console.log((performance.now()),txt);}
 
 		document.addEventListener('readystatechange', function() {log('readyState:' + document.readyState)});
 		document.addEventListener('DOMContentLoaded', function() {log('DOMContentLoaded')});	
 			
 		  var el = document.getElementById('dw2'); 
-
+			var wspike;
 		  <!-- el.addEventListener("touchstart", touchStart, false); -->
 		  <!-- el.addEventListener("touchend", handleEnd, false); -->
 		  <!-- el.addEventListener("touchcancel", handleCancel, false); -->
@@ -192,7 +241,7 @@
 				dw2.style.opacity="1";
 				dw3.style.opacity="1";}
 			
-		 function touchMove2(event) {
+		function touchMove2(event) {
 				clearTimeout(wspike);
 				var spike = document.getElementsByClassName("spike");
 				spike.src="img/weapon/spike/100.png"
@@ -233,7 +282,7 @@
 		function dragstart(event) {
 			 event.dataTransfer.setData("Text", event.target.id);
 			}
-			var wspike;
+			
 		
 		function allowDrop(event) {
 				<!-- var myIndex1=0; -->
@@ -291,8 +340,7 @@
 				dw2.style.opacity="0";
 				dw.style.opacity="1";
 				dw2.style.opacity="0";
-				dw3.style.opacity="1";
-			}
+				dw3.style.opacity="1";}
 			if (data === "dw3"){
 				defaultCharacter3();
 				f.style.display="none";
@@ -308,13 +356,14 @@
 				p3.style.display="block";
 				dw.style.opacity="1";
 				dw2.style.opacity="1";
-				dw3.style.opacity="0";
-			}
-			<!-- event.preventDefault();	 -->
+				dw3.style.opacity="0";}
 		}
 	
-	window.onload= function main(){
+	function main(){
 	
+		document.getElementById("loader").style.display = "none";
+		document.getElementById("container").style.display = "block";
+		
 		var container = document.getElementById('container');
 		var widthToHeight = 0 ;
 		var newWidth = window.innerWidth;
