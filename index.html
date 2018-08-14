@@ -304,17 +304,25 @@
 			weapon2.style.opacity="1";
 			weffect3.style.opacity="0";
 			weapon3.style.opacity="1";
-			defaultCharacter();}
+			defaultCharacter();
+			f.style.display="block";
+			s.style.display="none";
+			p.style.display="none";
+			
+			f2.style.display="block";
+			s2.style.display="none";
+			p2.style.display="none";
+			
+			f3.style.display="block";
+			s3.style.display="none";
+			p3.style.display="none";}
 			else if((tobj.pageX < hc.clientHeight && tobj.pageX > 0 && tobj.pageY < hc.clientWidth && tobj.pageY > 0 && data) === false && data === "dw" ){
 			imageLoop();
 			weffect.style.opacity="1";
 			weapon.style.opacity="1";
 			weffect.style.left = weffectx +"px";
 			weffect.style.top = weffecty +"px";
-			weffect2.style.left = weffect2x +"px";
-			weffect2.style.top = weffect2y +"px";
-			weapon3.style.left = weffect3x +"px";
-			weapon3.style.top = weffect3y +"px";}
+			}
 			
 			if (tobj.pageX < hc.clientHeight && tobj.pageX > 0 && tobj.pageY < hc.clientWidth && tobj.pageY > 0 && data === "dw2"){
 			weffect.style.opacity="0";
@@ -323,17 +331,25 @@
 			weapon2.style.opacity="0";
 			weffect3.style.opacity="0";
 			weapon3.style.opacity="1";
-			defaultCharacter2();}
+			defaultCharacter2();
+			f.style.display="none";
+			s.style.display="block";
+			p.style.display="none";
+			
+			f2.style.display="none";
+			s2.style.display="block";
+			p2.style.display="none";
+			
+			f3.style.display="none";
+			s3.style.display="block";
+			p3.style.display="none";}
 			else if((tobj.pageX < hc.clientHeight && tobj.pageX > 0 && tobj.pageY < hc.clientWidth && tobj.pageY > 0 && data) === false && data === "dw2" ){
 			imageLoop2();
 			weffect2.style.opacity="1";
 			weapon2.style.opacity="1";
-			weffect.style.left = weffectx +"px";
-			weffect.style.top = weffecty +"px";
 			weffect2.style.left = weffect2x +"px";
 			weffect2.style.top = weffect2y +"px";
-			weffect3.style.left = weffect3x +"px";
-			weffect3.style.top = weffect3y +"px";}
+			}
 			
 			if (tobj.pageX < hc.clientHeight && tobj.pageX > 0 && tobj.pageY < hc.clientWidth && tobj.pageY > 0 && data === "dw3"){
 			weffect.style.opacity="0";
@@ -342,17 +358,25 @@
 			weapon2.style.opacity="1";
 			weffect3.style.opacity="0";
 			weapon3.style.opacity="0";
-			defaultCharacter3();}
+			defaultCharacter3();
+			f.style.display="none";
+			s.style.display="none";
+			p.style.display="block";
+			
+			f2.style.display="none";
+			s2.style.display="none";
+			p2.style.display="block";
+			
+			f3.style.display="none";
+			s3.style.display="none";
+			p3.style.display="block";}
 			else if((tobj.pageX < hc.clientHeight && tobj.pageX > 0 && tobj.pageY < hc.clientWidth && tobj.pageY > 0 && data) === false && data === "dw3" ){
 			imageLoop3();
 			weffect3.style.opacity="1";
 			weapon3.style.opacity="1";
-			weffect.style.left = weffectx +"px";
-			weffect.style.top = weffecty +"px";
-			weffect2.style.left = weffect2x +"px";
-			weffect2.style.top = weffect2y +"px";
 			weffect3.style.left = weffect3x +"px";
-			weffect3.style.top = weffect3y +"px";}
+			weffect3.style.top = weffect3y +"px";
+			}
 		}
 		
 	function dragstart(event) {
