@@ -401,7 +401,7 @@
 			weffect3.style.left = weffect3x +"px";
 			weffect3.style.top = weffect3y +"px";
 			}
-			if(tobj.pageX < hc.clientWidth && tobj.pageX > 0 && tobj.pageY < hc.clientHeight && tobj.pageY > 0 && showButton === 0){				
+			if((tobj.pageX < hc.clientWidth && tobj.pageX > 0 && tobj.pageY < hc.clientHeight && tobj.pageY > 0) === true && showButton === 0){				
 			downloadBtn.style.backgroundImage ="url('img/btn.png')";
 			downloadBtn.style.zIndex = "99";
 			showButton = 1;}
