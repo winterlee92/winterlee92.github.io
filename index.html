@@ -127,7 +127,7 @@
 		#weapon,#weffect{margin-left:-2%;}
 		#weapon2,#weffect2{margin-left:16%;}
 		#weapon3,#weffect3{margin-left:36%;}
-		#c{ top: 15%;margin-top: 100%;}
+		#c{ margin-left:10%;margin-top: 100%;}
 		#t,#te{width:60%;margin-left:62%;}
 		#dw,#dw2,#dw3{width:18%}
 		#dw{margin-left:3%;}
@@ -181,10 +181,10 @@
 
 		
 </style>
-<body onload="lp()" onContextMenu="return false;">
+<body onload="lp()">
 <div id="loader"></div>
 <div id="hc" ondrop="drop(event)"  ondragover="dragover(event)"></div>
-
+ <!-- onContextMenu="return false;" -->
 <div id="container" class="animate-bottom" >
 	<div id="inner_container">
 		<div id="character"></div>
@@ -199,15 +199,13 @@
 	<div id="effect">
 		<div id="weffect"></div>
 		<div id="weffect2"></div>
-		<div id="weffect3"></div>
+		<div id="weffect3"><div id="c"></div></div>
 		<div id="te"></div>
 	</div>
 	<div id="inner_container3">
 		<div id="dw" draggable="true" ondragstart="dragstart(event);" ontouchstart="touchstart(event)" ontouchend="TouchEnd(event)" ontouchmove="TouchMove(event)"></div>
 		<div id="dw2" draggable="true" ondragstart="dragstart(event);" ontouchstart="touchstart(event)" ontouchend="TouchEnd(event)" ontouchmove="TouchMove(event)"></div>
-		<div id="dw3"draggable="true" ondragstart="dragstart(event);" ontouchstart="touchstart(event)" ontouchend="TouchEnd(event)" ontouchmove="TouchMove(event)">
-			<div id="c"></div>
-		</div>
+		<div id="dw3"draggable="true" ondragstart="dragstart(event);" ontouchstart="touchstart(event)" ontouchend="TouchEnd(event)" ontouchmove="TouchMove(event)"></div>
 		<div id="dw4">
 			<div id="f">焰</div>
 			<div id="f2">Flame</div>
@@ -290,7 +288,7 @@
 		}
 		
 	function TouchMove(event){
-		event.preventDefault();
+		
 		var data = event.target.id;
 		 var tobj = event.changedTouches[0];
 			if (data === "dw"){	
