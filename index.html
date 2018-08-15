@@ -243,14 +243,14 @@
 </div>	
 <script id="x" type="text/javascript">
 		
-		var mv;
-		function lp() {mv = setTimeout(main, 3000);}
-
 		function log(txt) {console.log((performance.now()),txt);}
 
 		document.addEventListener('readystatechange', function() {log('readyState:' + document.readyState)});
 		document.addEventListener('DOMContentLoaded', function() {log('DOMContentLoaded')});	
 
+		var mv;
+		function lp() {mv = setTimeout(main, 3000);}
+		
 		var weffect = document.getElementById('weffect');
 		var weffect2 = document.getElementById('weffect2');
 		var weffect3 = document.getElementById('weffect3');
@@ -405,10 +405,10 @@
 			weffect3.style.left = weffect3x +"px";
 			weffect3.style.top = weffect3y +"px";
 			}
-			if(tobj.pageX < hc.clientHeight && tobj.pageX > 0 && tobj.pageY < hc.clientWidth && tobj.pageY > 0 && showButton === 0){				
-			btn.style.backgrounImage="url('img/btn.png')";
-			btn.style.zIndex = "99";
-			showButton=1;}
+			if(showButton === 0){				
+			downloadBtn.style.backgroundImage ="url('img/btn.png')";
+			downloadBtn.style.zIndex = "99";
+			showButton = 1;}
 		}
 		
 	function dragstart(event) {
@@ -477,8 +477,8 @@
 			if (data === "dw2"){defaultCharacter2();}
 			if (data === "dw3"){defaultCharacter3();}
 			if (showButton === 0){
-			btn.style.backgroundImage ="url('img/btn.png')";
-			btn.style.zIndex = "99";
+			downloadBtn.style.backgroundImage ="url('img/btn.png')";
+			downloadBtn.style.zIndex = "99";
 			showButton = 1;}}
 	
 	function main(){
