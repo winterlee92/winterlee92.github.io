@@ -235,7 +235,7 @@
 	<div id="inner_container2">
 		<div id="weapon"></div>
 		<div id="weapon2" ></div>
-		<div id="weapon3" ><div id="c"></div></div>
+		<div id="weapon3" ><div id="c" ontouchstart="touchstart(event)"></div></div>
 		<div id="t"></div>
 	</div>
 	<div id="inner_container3">
@@ -292,6 +292,7 @@
 		var weapon = document.getElementById('weapon');
 		var weapon2 = document.getElementById('weapon2');
 		var weapon3 = document.getElementById('weapon3');
+		var c = document.getElementById('c');
 		var weffectx = 0,weffecty = 0,weffect2x = 0,weffect2y = 0,weffect3x = 0,weffect3y = 0;
 		var hc = document.getElementById('hc');
 		var wspike,wblade,wmace;
@@ -325,6 +326,13 @@
 				weffect3x = parseInt(tobj.pageX) ;
 				weffect3y = parseInt(tobj.pageY) ;}
 				
+				if (data === "c"){	
+				c.style.opacity = "1";
+				c.style.height = "18%"; 
+				c.style.width = "42%";
+				c.style.right = "29%";
+				c.style.left = "29%";
+				c.style.bottom = "-9%;"}
 				
 				weapon.style.opacity="1";
 				weapon2.style.opacity="1";
