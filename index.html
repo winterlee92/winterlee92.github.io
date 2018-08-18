@@ -461,8 +461,6 @@
 	function touchstart(event){
 		event.preventDefault();
 		 c.style.display="none";
-		 tut.style.display="none";
-		  tooltip.style.display="none";
 		 var tobj = event.changedTouches[0]; // reference first touch point (ie: first finger)
 			 var data = event.target.id;
 			 	if (data === "dw"){	
@@ -531,6 +529,7 @@
 		}
 		
 	function TouchEnd(event){
+			
 			event.preventDefault();
 			var data = event.target.id;
 			var tobj = event.changedTouches[0];
@@ -574,6 +573,8 @@
 			f2.style.display="none";
 			s2.style.display="none";
 			p2.style.display="block";
+			tut.style.display="none";
+			tooltip.style.display="none";
 			
 		}
 
@@ -598,8 +599,6 @@
 		
 	function dragstart(event) {
 		 c.style.display="none";
-		 tut.style.display="none";
-		 tooltip.style.display="none"
 		 event.dataTransfer.setData("Text", event.target.id);
 		 var data = event.dataTransfer.getData("text");
 		if (data === "dw"){	
@@ -640,7 +639,9 @@
 		f2.style.display="none";
 		s2.style.display="none";
 		p2.style.display="block";
-		imageLoop3();}
+		imageLoop3();
+		tut.style.display="none";
+		 tooltip.style.display="none"}
 	}	
 		
 	function dragover(event){event.preventDefault();}
