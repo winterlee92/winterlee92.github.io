@@ -364,8 +364,7 @@
 		}
 
 </style>
-<body onload="lp()" >
-<!--  -->
+<body onload="lp()" onContextMenu="return false;">
 <div id="loader"></div>
 <div id="hc" ondrop="drop(event)"  ondragover="dragover(event)"></div> 
 <div id="container" class="animate-bottom" >
@@ -587,13 +586,10 @@
 			weapon.style.top = "0";
 			weapon2.style.left = "0";
 			weapon2.style.top =  "0";
-				<!-- weapon3.style.left = "0"; -->
-				<!-- weapon3.style.top =  "0"; -->
 			bweapon3.style.left = "0";
 			bweapon3.style.top =  "0";
 			weapon.style.opacity="1";
 			weapon2.style.opacity="1";
-				<!-- weapon3.style.opacity="1"; -->
 			bweapon3.style.opacity="1";
 		}
 		
@@ -683,7 +679,7 @@
 
 	function textConvert(){
 		var t = [];
-		var tC = ['焰','戰力',' 11000','魔攻','+100%','物攻','+100%','幸运值','0.3','速','戰力',' 10200','攻速' ,'+80%','閃躲','+20%','幸运值','0.6','毒','戰力',' 10500','命中','+200%','血量','+50%','幸运值','0.5'];
+		var tC = ['焰','戰力',' 11000','魔攻','+100%','物攻','+100%','幸運値','0.3','速','戰力',' 10200','攻速' ,'+80%','閃躲','+20%','幸運値','0.6','毒','戰力',' 10500','命中','+200%','血量','+50%','幸運値','0.5'];
 		var a = document.querySelectorAll('#dw4 > div > span'); 
 		for (var i = 0; i < a.length; i++){ 
 			t.push(a[i].id); 
