@@ -433,7 +433,12 @@
 		document.addEventListener('DOMContentLoaded', function() {log('DOMContentLoaded')});	
 
 		var mv,mv2;
-		function lp() {mv = setTimeout(main, 3000);mv2 = setTimeout(before_main, 3000);}
+		function lp() {
+			createImage(0,"img/character/s1/","mySlides","s1_","bcharacter");
+			createImage(1,"img/weapon/mace/","mace","mace_","weffect");
+			defaultCharacter();
+			imageLoop();
+			mv2 = setTimeout(before_main, 3000);mv = setTimeout(main, 3000);}
 		
 		var weffect = document.getElementById('weffect');
 		var weffect2 = document.getElementById('weffect2');
@@ -674,16 +679,12 @@
 		sizeData(newWidth,newHeight);
 		resize(newWidth,newHeight);
 	
-		createImage(0,"img/character/s1/","mySlides","s1_","bcharacter");
-		createImage(1,"img/weapon/mace/","mace","mace_","weffect");
 		createImage(2,"img/character/s2/","mySlides2","s2_","character");
 		createImage(3,"img/weapon/spike/","spike","spike_","weffect2");
 		createImage(4,"img/character/s3/","mySlides3","s3_","bcharacter");
 		createImage(5,"img/weapon/blade/","blade","blade_","bweffect3");
 		
 		textConvert();
-		defaultCharacter();
-		imageLoop();
 		cursorLoop();
 	}
 
