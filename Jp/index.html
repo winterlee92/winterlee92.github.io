@@ -367,7 +367,6 @@
 	
 </style>
 <body onload="lp()" onContextMenu="return false;">
-<!--  -->
 <div id="loader"></div>
 <div id="hc" ondrop="drop(event)"  ondragover="dragover(event)"></div> 
 <div id="container" class="animate-bottom" >
@@ -569,7 +568,10 @@
 			p2.style.display="block";
 			tut.style.display="none";
 			tooltip.style.display="none";
-			
+			dw.style.zIndex="7";
+			dw2.style.zIndex="7";
+			weapon.style.zIndex="7";
+			weapon2.style.zIndex="7";
 		}
 
 			if((tobj.pageX < hc.clientWidth && tobj.pageX > 0 && tobj.pageY < hc.clientHeight && tobj.pageY > 0) === true && showButton === 0){				
@@ -581,13 +583,10 @@
 			weapon.style.top = "0";
 			weapon2.style.left = "0";
 			weapon2.style.top =  "0";
-				<!-- weapon3.style.left = "0"; -->
-				<!-- weapon3.style.top =  "0"; -->
 			bweapon3.style.left = "0";
 			bweapon3.style.top =  "0";
 			weapon.style.opacity="1";
 			weapon2.style.opacity="1";
-				<!-- weapon3.style.opacity="1"; -->
 			bweapon3.style.opacity="1";
 		}
 		
@@ -633,7 +632,11 @@
 		f2.style.display="none";
 		s2.style.display="none";
 		p2.style.display="block";
-		imageLoop3();}
+		imageLoop3();
+		dw.style.zIndex="7";
+		dw2.style.zIndex="7";
+		weapon.style.zIndex="7";
+		weapon2.style.zIndex="7";}
 	}	
 		
 	function dragover(event){event.preventDefault();}
