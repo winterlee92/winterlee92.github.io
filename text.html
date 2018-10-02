@@ -1,55 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head></head>
-<style>
-#container { display:block; }
-
-@media only screen and (orientation:portrait){
-
-  #container {
-
-    height: 100vw;
-
-    -webkit-transform: rotate(90deg);
-
-    -moz-transform: rotate(90deg);
-
-    -o-transform: rotate(90deg);
-
-    -ms-transform: rotate(90deg);
-
-    transform: rotate(90deg);
-
-  }
-
-}
-
-@media only screen and (orientation:landscape){
-
-  #container {
-
-     -webkit-transform: rotate(0deg);
-
-     -moz-transform: rotate(0deg);
-
-     -o-transform: rotate(0deg);
-
-     -ms-transform: rotate(0deg);
-
-     transform: rotate(0deg);
-
-  }
-  
-div {
-	width: 100%; height: 100%;
-	
-	
-	}
- }
-
-</style>
- <body >
- <div id="container" >
+<body>
 <input type="button" value="spin" style="float:left;" id='spin' />
 <canvas id="canvas" width="500" height="500"></canvas>
 <script>
@@ -182,9 +134,6 @@ function easeOut(t, b, c, d) {
 }
 
 drawRouletteWheel();
-</div>
-<noscript> 
-    <p>Please,Turn "on" you Javascript or your browser lacks support.</p> 
-</noscript> 
+</script>
 </body>
 </html>
