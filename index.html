@@ -42,18 +42,21 @@
   
 div {
 	width: 100%; height: 100%;
-	
-	
+	background: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 	}
  }
 
 </style>
  <body >
- <div id="container" >
+ <div id="container">
 <input type="button" value="spin" style="float:left;" id='spin' />
 <canvas id="canvas" width="500" height="500"></canvas>
 <script>
-var options = ["$100", "$10", "$25", "$250", "$30", "$1000", "$1", "$200", "$45", "$500", "$5", "$20", "Lose", "$1000000", "Lose", "$350", "$5", "$99"];
+var options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+var colors = ["#F35B20", "#FB9A00", "#F35B20", "#FB9A00",
+             "#F35B20", "#FB9A00", "#F35B20", "#FB9A00","#F35B20", "#FB9A00"];
 
 var startAngle = 0;
 var arc = Math.PI / (options.length / 2);
@@ -67,47 +70,24 @@ var ctx;
 
 document.getElementById("spin").addEventListener("click", spin);
 
-function byte2Hex(n) {
-  var nybHexString = "0123456789ABCDEF";
-  return String(nybHexString.substr((n >> 4) & 0x0F,1)) + nybHexString.substr(n & 0x0F,1);
-}
-
-function RGB2Color(r,g,b) {
-	return '#' + byte2Hex(r) + byte2Hex(g) + byte2Hex(b);
-}
-
-function getColor(item, maxitem) {
-  var phase = 0;
-  var center = 128;
-  var width = 127;
-  var frequency = Math.PI*2/maxitem;
-  
-  red   = Math.sin(frequency*item+2+phase) * width + center;
-  green = Math.sin(frequency*item+0+phase) * width + center;
-  blue  = Math.sin(frequency*item+4+phase) * width + center;
-  
-  return RGB2Color(red,green,blue);
-}
-
 function drawRouletteWheel() {
   var canvas = document.getElementById("canvas");
   if (canvas.getContext) {
     var outsideRadius = 200;
-    var textRadius = 160;
-    var insideRadius = 125;
+    var textRadius = 150;
+    var insideRadius = 110;
 
     ctx = canvas.getContext("2d");
     ctx.clearRect(0,0,500,500);
 
     ctx.strokeStyle = "black";
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 5;
 
     ctx.font = 'bold 12px Helvetica, Arial';
 
     for(var i = 0; i < options.length; i++) {
       var angle = startAngle + i * arc;
-      //ctx.fillStyle = colors[i];
-      ctx.fillStyle = getColor(i, options.length);
+      ctx.fillStyle = colors[i];
 
       ctx.beginPath();
       ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
@@ -132,14 +112,14 @@ function drawRouletteWheel() {
     //Arrow
     ctx.fillStyle = "black";
     ctx.beginPath();
-    ctx.moveTo(250 - 4, 250 - (outsideRadius + 5));
-    ctx.lineTo(250 + 4, 250 - (outsideRadius + 5));
-    ctx.lineTo(250 + 4, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 + 9, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 + 0, 250 - (outsideRadius - 13));
-    ctx.lineTo(250 - 9, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 - 4, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 - 4, 250 - (outsideRadius + 5));
+    ctx.moveTo(250 + 4, 340 - (outsideRadius - 20));
+    ctx.lineTo(250 - 4, 340 - (outsideRadius - 20));
+    ctx.lineTo(250 - 4, 340 - (outsideRadius + 5));
+    ctx.lineTo(250 - 9, 340 - (outsideRadius + 5));
+    ctx.lineTo(250 - 0, 340 - (outsideRadius + 13));
+    ctx.lineTo(250 + 9, 340 - (outsideRadius + 5));
+    ctx.lineTo(250 + 4, 340 - (outsideRadius + 5));
+    ctx.lineTo(250 + 4, 340 - (outsideRadius - 5));
     ctx.fill();
   }
 }
