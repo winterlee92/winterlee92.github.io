@@ -7,10 +7,6 @@
 </head>
 <style>
 
-
- @media screen and (orientation:portrait) {
-	transform-origin: 0 0;
-    transform: rotateZ(90deg) translateY(-100%);}
 body{
 	background: url(bg.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -54,6 +50,13 @@ body{
 	</div>	
 </div>
 <script id="x";>
+if(window.orientation==90||window.orientation==-90){
+　console.log("横屏状态！");
+}else if(window.orientation==0||window.orientation==180){
+　console.log("竖屏状态！");
+	document.getElementById(body).style.transform = " rotateZ(90deg) translateY(-100%)";
+}
+
 var options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 var colors = ["#F35B20", "#FB9A00", "#F35B20", "#FB9A00",
              "#F35B20", "#FB9A00", "#F35B20", "#FB9A00","#F35B20", "#FB9A00"];
