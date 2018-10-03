@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head></head>
-<body>
-<input type="button" value="spin" style="float:left;" id='spin' />
+<head>
+<title>Playable Ads</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta charset="UTF-8">
+</head>
+<style>
+
+body{
+background: url(bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#container { display:block; }
+#container {
+  
+	width: 100%; height: 100%;
+ }
+#spin{	
+}
+</style>
+ <body >
+ <div id="container">
+<input type="button" value="spin" id='spin' />
 <canvas id="canvas" width="500" height="500"></canvas>
-<script>
-var options = ["$100", "$10", "$25", "$250", "$30", "$1000", "$1", "$200", "$45", "$500", "$5", "$20", "Lose", "$1000000", "Lose", "$350", "$5", "$99"];
+<script id="x";>
+var options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+var colors = ["#F35B20", "#FB9A00", "#F35B20", "#FB9A00",
+             "#F35B20", "#FB9A00", "#F35B20", "#FB9A00","#F35B20", "#FB9A00"];
 
 var startAngle = 0;
 var arc = Math.PI / (options.length / 2);
@@ -19,47 +43,24 @@ var ctx;
 
 document.getElementById("spin").addEventListener("click", spin);
 
-function byte2Hex(n) {
-  var nybHexString = "0123456789ABCDEF";
-  return String(nybHexString.substr((n >> 4) & 0x0F,1)) + nybHexString.substr(n & 0x0F,1);
-}
-
-function RGB2Color(r,g,b) {
-	return '#' + byte2Hex(r) + byte2Hex(g) + byte2Hex(b);
-}
-
-function getColor(item, maxitem) {
-  var phase = 0;
-  var center = 128;
-  var width = 127;
-  var frequency = Math.PI*2/maxitem;
-  
-  red   = Math.sin(frequency*item+2+phase) * width + center;
-  green = Math.sin(frequency*item+0+phase) * width + center;
-  blue  = Math.sin(frequency*item+4+phase) * width + center;
-  
-  return RGB2Color(red,green,blue);
-}
-
 function drawRouletteWheel() {
   var canvas = document.getElementById("canvas");
   if (canvas.getContext) {
     var outsideRadius = 200;
-    var textRadius = 160;
-    var insideRadius = 125;
+    var textRadius = 150;
+    var insideRadius = 110;
 
     ctx = canvas.getContext("2d");
     ctx.clearRect(0,0,500,500);
 
     ctx.strokeStyle = "black";
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 5;
 
     ctx.font = 'bold 12px Helvetica, Arial';
 
     for(var i = 0; i < options.length; i++) {
       var angle = startAngle + i * arc;
-      //ctx.fillStyle = colors[i];
-      ctx.fillStyle = getColor(i, options.length);
+      ctx.fillStyle = colors[i];
 
       ctx.beginPath();
       ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
@@ -84,14 +85,14 @@ function drawRouletteWheel() {
     //Arrow
     ctx.fillStyle = "black";
     ctx.beginPath();
-    ctx.moveTo(250 - 4, 250 - (outsideRadius + 5));
-    ctx.lineTo(250 + 4, 250 - (outsideRadius + 5));
-    ctx.lineTo(250 + 4, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 + 9, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 + 0, 250 - (outsideRadius - 13));
-    ctx.lineTo(250 - 9, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 - 4, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 - 4, 250 - (outsideRadius + 5));
+    ctx.moveTo(250 + 4, 340 - (outsideRadius - 20));
+    ctx.lineTo(250 - 4, 340 - (outsideRadius - 20));
+    ctx.lineTo(250 - 4, 340 - (outsideRadius + 5));
+    ctx.lineTo(250 - 9, 340 - (outsideRadius + 5));
+    ctx.lineTo(250 - 0, 340 - (outsideRadius + 13));
+    ctx.lineTo(250 + 9, 340 - (outsideRadius + 5));
+    ctx.lineTo(250 + 4, 340 - (outsideRadius + 5));
+    ctx.lineTo(250 + 4, 340 - (outsideRadius - 5));
     ctx.fill();
   }
 }
@@ -134,6 +135,88 @@ function easeOut(t, b, c, d) {
 }
 
 drawRouletteWheel();
+
+	function sizeData(w,h){
+	
+		var newWidth = w;
+		var newHeight = h;
+		// watch
+		if ( newWidth === newHeight ){ widthToHeight = 1 / 1;}
+		else if ( newWidth === 320 && newHeight === 325){widthToHeight = 65 / 64;}
+		else if ( newWidth === 320 && newHeight === 330){widthToHeight = 33 / 32;}
+		else if ( newWidth === 320 && newHeight === 290){widthToHeight = 32 / 29;}
+		else if (( newWidth === 272 && newHeight === 340)||( newWidth === 312 && newHeight === 390)){widthToHeight = 5/4;}
+		// Ipad 1/2/3,Nexus 9
+		else if ((newWidth === 1024 && newHeight === 768 ) || (newWidth === 1536 && newHeight === 2048)
+				||(newWidth === 2732 && newHeight === 2048 )||(newWidth === 2048 && newHeight === 1536)){widthToHeight = 4 / 3;}
+		// Chromebook Pixel,Iphone,Iphone 4, Surface Book
+		else if ((newWidth === 320 && newHeight === 480) || (newWidth === 640 && newHeight=== 960)
+				||(newWidth === 480 && newHeight === 320) || (newWidth === 960 && newHeight=== 640)
+				||(newWidth === 2560 && newHeight=== 1700) ||(newWidth === 3000 && newHeight=== 2000)
+				||(newWidth === 2160 && newHeight=== 1440) ||(newWidth === 2736 && newHeight=== 1824)){widthToHeight = 3 / 2;}
+		// Chromobox 30, Dell Venue 8,MacBook 12, MAcbook Air 13,Macbook Pro 13, Macbook Pro 15
+		// Nexus 15,Nexus 7, Samsung Galaxy Tab 10,Sony Xperia Z3/Z4 Tablet
+		else if ((newWidth === 800 && newHeight===480) || (newWidth === 1280 && newHeight === 800)
+				||(newWidth === 1440 && newHeight === 900) || (newWidth === 2880 && newHeight === 1800)
+				||(newWidth === 1200 && newHeight === 1920) || (newWidth === 800 && newHeight === 1280)
+				||(newWidth === 1920 && newHeight === 1200) || (newWidth === 2560 && newHeight === 1600)){widthToHeight = 16 / 10;}
+		// Nexus 4
+		else if (newWidth === 768 && newHeight === 1280){widthToHeight = 5 / 3;}
+		// Android One,Chromebook 11, Google Pixel /XL,FTC One M8/M9, iMac 27/5K, Iphone5/6/6 Plus,LG G2/G3,
+		// Surface /2/3/Pro/Sony Xperia Z1 Ultra/Z1 Compact/Z2/Z3/Z3 Compact/Sony Xperia C4,
+		// Samsung Galaxy 4/S5/S6/S7/S7 Edge,Nexus 6P/Note, Mac Book Air 11 , Moto G/X/5/5X/6/6P
+		else if ((newWidth === 720 && newHeight === 1280)||(newWidth === 1366 && newHeight === 768)
+				|| (newWidth === 1080 && newHeight === 1920)||(newWidth === 5120 && newHeight === 2880)
+				|| (newWidth === 640 && newHeight === 1136)||(newWidth === 750 && newHeight === 1334)
+				|| (newWidth === 2560 && newHeight === 1440)||(newWidth === 1440 && newHeight === 2560)
+				|| (newWidth === 1920 && newHeight === 1080)){widthToHeight = 16 / 9;}
+		//Samsung Galaxy Tab 7
+		else if (newWidth === 1024 && newHeight===600){widthToHeight = 17 / 10;}
+		// Samsung Galaxy S8/S8+
+		else if (newWidth === 1440 && newHeight===2960){widthToHeight = 18.5 / 9;}
+		else{widthToHeight = 2.5 / 4;}
+		
+		return (newWidth,newHeight);
+	}
+    function resize(w,h){
+		
+		var newWidth = w;
+		var newHeight = h;
+		
+		var newWidthToHeight = newWidth / newHeight;
+		if (newWidthToHeight > widthToHeight) {
+			newWidth = newHeight * widthToHeight;
+			container.style.height = newHeight + 'px';
+			container.style.width = newWidth + 'px';
+		} 
+		else {
+			newHeight = newWidth / widthToHeight;
+			container.style.width = newWidth + 'px';
+			container.style.height = newHeight + 'px';
+		}
+
+		var newWidthToHeight = newWidth / newHeight;
+		if (newWidthToHeight > widthToHeight) {
+			newWidth = newHeight * widthToHeight;
+			container.style.height = newHeight + 'px';
+			container.style.width = newWidth + 'px';
+		} 
+		else {
+			newHeight = newWidth / widthToHeight;
+			container.style.width = newWidth + 'px';
+			container.style.height = newHeight + 'px';
+		}
+		
+		container.style.fontSize = (newWidth / 400) + 'em';
+	}
+
+	window.addEventListener("orientationchange", function() {location.reload();}, false);
+    document.getElementById("x").innerHTML = "";
+
 </script>
+</div>
+<noscript> 
+    <p>Please,Turn "on" you Javascript or your browser lacks support.</p> 
+</noscript> 
 </body>
 </html>
