@@ -13,6 +13,40 @@
 	<!-- height: 100%;  -->
 	<!-- margin:0 auto; important! -->
 	<!-- display:block; } -->
+ #container{
+		position : absolute ;
+		top : 0 ; 
+		left : 0 ;
+		width : 100% ;
+		height : 100% ;
+		<!-- background: url(bg.jpg) no-repeat center center fixed;  -->
+	  <!-- -webkit-background-size: cover; -->
+	  <!-- -moz-background-size: cover; -->
+	  <!-- -o-background-size: cover; -->
+	  <!-- background-size: cover; -->
+	 }
+
+	#container  #inner-container{
+	position: relative;	
+	width: 80vh;
+	height: 80vh;
+	margin-top:10vh;
+	}	
+	#container  #inner-container #canvas {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	#container  #inner-container .spin {
+		position: absolute;
+		width: 20vh;
+		height: 7vh;
+		z-index: 99;
+		margin-left: 30vh;
+		margin-top: 45vh;
+	}		
+	
+	
 	
 @media screen and (orientation: portrait) {
 
@@ -52,38 +86,6 @@
 
 @media screen and (orientation: landscape) {
 
-	   #container{
-		position : absolute ;
-		top : 0 ; 
-		left : 0 ;
-		width : 100% ;
-		height : 100% ;
-		<!-- background: url(bg.jpg) no-repeat center center fixed;  -->
-	  <!-- -webkit-background-size: cover; -->
-	  <!-- -moz-background-size: cover; -->
-	  <!-- -o-background-size: cover; -->
-	  <!-- background-size: cover; -->
-	 }
-
-	#container  #inner-container{
-	position: relative;	
-	width: 80vh;
-	height: 80vh;
-	margin-top:10vh;
-	}	
-	#container  #inner-container #canvas {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-	}
-	#container  #inner-container .spin {
-		position: absolute;
-		width: 20vh;
-		height: 7vh;
-		z-index: 99;
-		margin-left: 30vh;
-		margin-top: 45vh;
-	}	
 }
 
 
