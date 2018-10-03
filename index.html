@@ -6,54 +6,102 @@
 <meta charset="UTF-8">
 </head>
 <style>
-	#container {
-	position: relative;
-	width: 100%; 
-	height: 100%; 
-	margin:0 auto; important!
-	display:block; }
+
+	<!-- #container { -->
+	<!-- position: relative; -->
+	<!-- width: 100%;  -->
+	<!-- height: 100%;  -->
+	<!-- margin:0 auto; important! -->
+	<!-- display:block; } -->
 	
 @media screen and (orientation: portrait) {
+
+	  html{        
+		  width : 100% ;         
+		  height : 100% ;          
+		  background-color: white ;          
+		  overflow : hidden;      
+	  }      
+	  
+	  body{          
+		  width : 100% ;         
+		  height : 100% ;         
+		  background-color: red ;         
+		  overflow : hidden;      
+		}
+		
     #container {
-        -webkit-transform:rotate(-90deg);
-        -moz-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-        transform: rotate(-90deg);
-        width: 100vh;
-        height: 100vh;
-        /*去掉overflow 微信显示正常，但是浏览器有问题，竖屏时强制横屏缩小*/
-        overflow: hidden;
+       
     }
 }
 
 @media screen and (orientation: landscape) {
-    #container {
-        -webkit-transform:rotate(0);
-        -moz-transform: rotate(0);
-        -ms-transform: rotate(0);
-        transform: rotate(0)}
-	
-#container  #inner-container{
+   html{
+	 width : 100% ;
+	 height : 100% ;
+	 background-color: white ;
+  } 
+   body{
+	  width : 100% ;
+	 height : 100% ;
+	 background-color: white ;
+  }
+	   #container{
+		position : absolute ;
+		top : 0 ; 
+		left : 0 ;
+		width : 100% ;
+		height : 100% ;
+		background-color: yellow ;
+	 }
+
+	#container  #inner-container{
 	position: relative;	
 	width: 80vh;
-    height: 80vh;
+	height: 80vh;
 	margin-top:10vh;
-}	
-#container  #inner-container #canvas {
-	position: absolute;
-	width: 100%;
-    height: 100%;
+	}	
+	#container  #inner-container #canvas {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	#container  #inner-container .spin {
+		position: absolute;
+		width: 20vh;
+		height: 7vh;
+		z-index: 99;
+		margin-left: 30vh;
+		margin-top: 45vh;
+	}	
 }
-#container  #inner-container .spin {
-	position: absolute;
-    width: 20vh;
-    height: 7vh;
-    z-index: 99;
-    margin-left: 30vh;
-    margin-top: 45vh;
-}	
-    }
-}
+
+    
+	var evt = "onorientationchange" in window ? "orientationchange" : "resize";     
+	window.addEventListener(evt, function() {        
+	console.log(evt);        
+	var width = document.documentElement.clientWidth;         
+	var height =  document.documentElement.clientHeight;          
+	$print =  $('#content');         
+	if( width > height ){             
+		$print.width(width);            
+		$print.height(height);            
+		$print.css('top',  0 );           
+		$print.css('left',  0 );            
+		$print.css('transform' , 'none');            
+		$print.css('transform-origin' , '50% 50%');         
+	}        
+	else{           
+		$print.width(height);            
+		$print.height(width);            
+		$print.css('top',  (height-width)/2 );            
+		$print.css('left',  0-(height-width)/2 );            
+		$print.css('transform' , 'rotate(90deg)');            
+		$print.css('transform-origin' , '50% 50%');         
+	}     
+	}, false);
+
+
 </style>
  <body >
  <div id="container">
