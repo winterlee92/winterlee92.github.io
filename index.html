@@ -16,43 +16,17 @@
 	
 @media screen and (orientation: portrait) {
 
-	  html{        
-		  width : 100% ;         
-		  height : 100% ;          
-		  background-color: white ;          
-		  overflow : hidden;      
-	  }      
-	  
-	  body{          
-		  width : 100% ;         
-		  height : 100% ;         
-		  background-color: red ;         
-		  overflow : hidden;      
-		}
-		
-    #container {
-       
-    }
-}
-
-@media screen and (orientation: landscape) {
-   html{
-	 width : 100% ;
-	 height : 100% ;
-	 background-color: white ;
-  } 
-   body{
-	  width : 100% ;
-	 height : 100% ;
-	 background-color: white ;
-  }
-	   #container{
+      #container{
 		position : absolute ;
 		top : 0 ; 
 		left : 0 ;
 		width : 100% ;
 		height : 100% ;
-		background-color: yellow ;
+		<!-- background: url(bg_r.jpg) no-repeat center center fixed;  -->
+	  <!-- -webkit-background-size: cover; -->
+	  <!-- -moz-background-size: cover; -->
+	  <!-- -o-background-size: cover; -->
+	  <!-- background-size: cover; -->
 	 }
 
 	#container  #inner-container{
@@ -76,30 +50,42 @@
 	}	
 }
 
-    
-	var evt = "onorientationchange" in window ? "orientationchange" : "resize";     
-	window.addEventListener(evt, function() {        
-	console.log(evt);        
-	var width = document.documentElement.clientWidth;         
-	var height =  document.documentElement.clientHeight;          
-	$print =  $('#content');         
-	if( width > height ){             
-		$print.width(width);            
-		$print.height(height);            
-		$print.css('top',  0 );           
-		$print.css('left',  0 );            
-		$print.css('transform' , 'none');            
-		$print.css('transform-origin' , '50% 50%');         
-	}        
-	else{           
-		$print.width(height);            
-		$print.height(width);            
-		$print.css('top',  (height-width)/2 );            
-		$print.css('left',  0-(height-width)/2 );            
-		$print.css('transform' , 'rotate(90deg)');            
-		$print.css('transform-origin' , '50% 50%');         
-	}     
-	}, false);
+@media screen and (orientation: landscape) {
+
+	   #container{
+		position : absolute ;
+		top : 0 ; 
+		left : 0 ;
+		width : 100% ;
+		height : 100% ;
+		<!-- background: url(bg.jpg) no-repeat center center fixed;  -->
+	  <!-- -webkit-background-size: cover; -->
+	  <!-- -moz-background-size: cover; -->
+	  <!-- -o-background-size: cover; -->
+	  <!-- background-size: cover; -->
+	 }
+
+	#container  #inner-container{
+	position: relative;	
+	width: 80vh;
+	height: 80vh;
+	margin-top:10vh;
+	}	
+	#container  #inner-container #canvas {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	#container  #inner-container .spin {
+		position: absolute;
+		width: 20vh;
+		height: 7vh;
+		z-index: 99;
+		margin-left: 30vh;
+		margin-top: 45vh;
+	}	
+}
+
 
 
 </style>
@@ -113,6 +99,31 @@
 <script id="x";>
 
 
+	var evt = "onorientationchange" in window ? "orientationchange" : "resize";     
+	window.addEventListener(evt, function() {        
+	console.log(evt);        
+	var width = document.documentElement.clientWidth;         
+	var height =  document.documentElement.clientHeight;          
+	
+	var container =  document.getElementById("container");     
+	     
+	if( width > height ){             
+		container.width = width;            
+		container.height = height;            
+		container.style.top = 0 ;  
+		container.style.left = 0 ;  
+		container.style.transform = "none" ;  
+		container.style.transform_origin = '50% 50%' ; 
+	}        
+	else{           
+		container.width = width;            
+		container.height = height;            
+		container.style.top = (height-width)/2 ;            
+		container.style.left =  0-(height-width)/2 ;            
+		container.style.transform = "rotate(90deg)";   
+		container.style.transform_origin = '50% 50%';    
+	}     
+	}, false);
 
 var options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 var colors = ["#F35B20", "#FB9A00", "#F35B20", "#FB9A00",
