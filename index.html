@@ -98,33 +98,6 @@
 </div>
 <script id="x">
 
-
-	var evt = "onorientationchange" in window ? "orientationchange" : "resize";     
-	window.addEventListener(evt, function() {        
-	console.log(evt);        
-	var width = document.documentElement.clientWidth;         
-	var height =  document.documentElement.clientHeight;          
-	
-	var container =  document.getElementById("container");     
-	     
-	if( width > height ){             
-		container.width = width;            
-		container.height = height;            
-		container.style.top = 0 ;  
-		container.style.left = 0 ;  
-		container.style.transform = "none" ;  
-		container.style.transform_origin = '50% 50%' ; 
-	}        
-	else{           
-		container.width = width;            
-		container.height = height;            
-		container.style.top = (height-width)/2 ;            
-		container.style.left =  0-(height-width)/2 ;            
-		container.style.transform = "rotate(90deg)";   
-		container.style.transform_origin = '50% 50%';    
-		}     
-	}, false);
-
 var options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 var colors = ["#F35B20", "#FB9A00", "#F35B20", "#FB9A00",
              "#F35B20", "#FB9A00", "#F35B20", "#FB9A00","#F35B20", "#FB9A00"];
