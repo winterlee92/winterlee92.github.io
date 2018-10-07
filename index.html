@@ -121,6 +121,7 @@ var spinTimeTotal = 0;
 
 var ctx;
 
+window.addEventListener("orientationchange", function() {location.reload();}, false);
 document.getElementById("spin").addEventListener("click", spin);
 
 function drawRouletteWheel() {
