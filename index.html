@@ -6,27 +6,29 @@
 <meta charset="UTF-8">
 </head>
 <style>
+	html{
+		width: 100%; 
+		height: 100%; 
+		overflow: hidden;
+	}
+	
+	body{
+		width: 100%; 
+		height: 100%; 
+		background: url(bg.jpg) no-repeat; 
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	}
 
-	<!-- #container { -->
-	<!-- position: relative; -->
-	<!-- width: 100%;  -->
-	<!-- height: 100%;  -->
-	<!-- margin:0 auto; important! -->
-	<!-- display:block; } -->
- #container{
-		position : absolute ;
-		top : 0 ; 
-		left : 0 ;
-		width : 80% ;
-		left : 10%;
-		right : 10%;
-		height : 100% ;
-		<!-- background: url(bg.jpg) no-repeat center center fixed;  -->
-	  <!-- -webkit-background-size: cover; -->
-	  <!-- -moz-background-size: cover; -->
-	  <!-- -o-background-size: cover; -->
-	  <!-- background-size: cover; -->
-	 }
+	#container {
+		position: relative;
+		width: 100%; 
+		height: 100%; 
+		margin:0 auto; important!
+		display:block;
+	}
 
 	#container  #inner-container{
 	position: relative;	
@@ -51,25 +53,29 @@
 	
 	
 @media screen and (orientation: portrait) {
+	body{
+		width: 100%; 
+		height: 100%; 
+		background: url(bg_r.jpg) no-repeat; 
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	}
 
       #container{
-		position : absolute ;
+		position : relative ;
 		top : 0 ; 
 		left : 0 ;
 		width : 100% ;
 		height : 100% ;
-		<!-- background: url(bg_r.jpg) no-repeat center center fixed;  -->
-	  <!-- -webkit-background-size: cover; -->
-	  <!-- -moz-background-size: cover; -->
-	  <!-- -o-background-size: cover; -->
-	  <!-- background-size: cover; -->
 	 }
 
 	#container  #inner-container{
 	position: relative;	
-	width: 40vh;
-	height: 40vh;
-	margin-left:10vh;
+	width: 80vw;
+	height: 80vw;
+	margin-top:10vw;
 	transform: rotate(90deg);
 	}	
 	#container  #inner-container #canvas {
@@ -79,19 +85,17 @@
 	}
 	#container  #inner-container .spin {
 		position: absolute;
-		width: 20vh;
-		height: 7vh;
+		width: 20vw;
+		height: 7vw;
 		z-index: 99;
-		margin-top: 30vh;
-		margin-left: 45vh;
+		margin-left: 30vw;
+		margin-top: 45vw;
 	}	
 }
 
 @media screen and (orientation: landscape) {
 
 }
-
-
 
 </style>
  <body >
@@ -104,10 +108,10 @@
 <script id="x">
 
 var options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-var colors = ["#F35B20", "#FB9A00", "#F35B20", "#FB9A00",
-             "#F35B20", "#FB9A00", "#F35B20", "#FB9A00","#F35B20", "#FB9A00"];
+var colors = ["#F17C2F", "#FDD387", "#F17C2F", "#FDD387",
+             "#F17C2F", "#FDD387", "#F17C2F", "#FDD387","#F17C2F", "#FDD387"];
 
-var startAngle = 0;
+var startAngle = 11;
 var arc = Math.PI / (options.length / 2);
 var spinTimeout = null;
 
@@ -121,27 +125,30 @@ document.getElementById("spin").addEventListener("click", spin);
 
 function drawRouletteWheel() {
   var canvas = document.getElementById("canvas");
+  
   if (canvas.getContext) {
     var outsideRadius = 200;
     var textRadius = 150;
-    var insideRadius = 110;
+    var insideRadius = 50;
 
     ctx = canvas.getContext("2d");
     ctx.clearRect(0,0,500,500);
 
-    ctx.strokeStyle = "black";
-    ctx.lineWidth = 5;
+    ctx.strokeStyle = "#8B450A";
+    ctx.lineWidth = 10;
 
     ctx.font = 'bold 12px Helvetica, Arial';
-
+      ctx.beginPath();
+      ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
     for(var i = 0; i < options.length; i++) {
       var angle = startAngle + i * arc;
       ctx.fillStyle = colors[i];
 
       ctx.beginPath();
       ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
+	  ctx.stroke();
       ctx.arc(250, 250, insideRadius, angle + arc, angle, true);
-      ctx.stroke();
+	  ctx.stroke();
       ctx.fill();
 
       ctx.save();
@@ -171,7 +178,8 @@ function drawRouletteWheel() {
     ctx.lineTo(250 + 4, 340 - (outsideRadius - 5));
     ctx.fill();
   }
-}
+
+  }
 
 function spin() {
   spinAngleStart = Math.random() * 10 + 10;
