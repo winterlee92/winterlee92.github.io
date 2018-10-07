@@ -16,10 +16,10 @@
 		width: 100%; 
 		height: 100%; 
 		background: url(bg.jpg) no-repeat; 
-	  -webkit-background-size: 100% 100%;
-	  -moz-background-size: 100% 100%;
-	  -o-background-size: 100% 100%;
-	  background-size: 100% 100%;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
 	}
 
 	#container {
@@ -57,10 +57,10 @@
 		width: 100%; 
 		height: 100%; 
 		background: url(bg_r.jpg) no-repeat; 
-	  -webkit-background-size: 100% 100%;
-	  -moz-background-size: 100% 100%;
-	  -o-background-size: 100% 100%;
-	  background-size: 100% 100%;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
 	}
 
       #container{
@@ -106,6 +106,13 @@
 	</div>	
 </div>
 <script id="x">
+
+window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+});
 
 var options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 var colors = ["#F17C2F", "#FDD387", "#F17C2F", "#FDD387",
