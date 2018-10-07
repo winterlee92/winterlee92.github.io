@@ -15,25 +15,17 @@
 	body{
 		width: 100%; 
 		height: 100%; 
-		overflow: hidden
+		background: url(bg.jpg) no-repeat center center; 
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	   overflow: hidden
 	   margin:0 auto;
-	   
-		background-image: url(bg.jpg); 
-	   
-	   	background-repeat: no-repeat;
-		background-position: center center;
-	   
-	   -webkit-background-size: cover;
-	   -moz-background-size: cover;
-	   -o-background-size: cover;
-	   background-size: cover;
-	   
-	   -webkit-user-select: none;
-	   -moz-user-select: none;
-	   -ms-user-select: none;
-	   user-select: none;
-	  
-	  background-attachment: fixed;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
 	}
 
 	#container {
@@ -70,39 +62,27 @@
 	body{
 		width: 100%; 
 		height: 100%; 
-		overflow: hidden
-	   margin:auto 0;
-	   
-		background-image: url(bg.jpg); 
-	   
-	   	background-repeat: no-repeat;
-		background-position: center center;
-	   
-	   -webkit-background-size: cover;
-	   -moz-background-size: cover;
-	   -o-background-size: cover;
-	   background-size: cover;
-	   
-	   -webkit-user-select: none;
-	   -moz-user-select: none;
-	   -ms-user-select: none;
-	   user-select: none;
-	  
-	  background-attachment: fixed;
+		background: url(bg_r.jpg) no-repeat center center; 
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
 	}
 
       #container{
 		position : relative ;
-		margin:auto 0; important!
+		top : 0 ; 
+		left : 0 ;
 		width : 100% ;
 		height : 100% ;
 	 }
 
 	#container  #inner-container{
 	position: relative;	
-	width: 80vw;
-	height: 80vw;
-	margin-top:10vw;
+	width: 40vh;
+	height: 40vh;
+	margin-top: 0vh;
+    margin-left: 5vh;
 	transform: rotate(90deg);
 	}	
 	#container  #inner-container #canvas {
@@ -112,11 +92,11 @@
 	}
 	#container  #inner-container .spin {
 		position: absolute;
-		width: 20vw;
-		height: 7vw;
+		width: 10vh;
+		height: 3.5vh;
 		z-index: 99;
-		margin-left: 30vw;
-		margin-top: 45vw;
+		margin-left: 15vh;
+		margin-top: 22.5vh;
 	}	
 }
 
