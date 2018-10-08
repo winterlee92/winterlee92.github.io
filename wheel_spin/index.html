@@ -159,19 +159,7 @@
 	}
 	
 	#container  #inner-container #inner-container-btn .spin {
-		<!-- position: absolute; -->
-		<!-- width: 100%; -->
-		<!-- height: 100%; -->
-		<!-- border-radius: 100%; -->
-		<!-- border-style: solid solid solid solid; -->
-		<!-- border-width:2%; -->
-		<!-- border-color:#FFFFFF; -->
-		<!-- background: url(btn.jpg) no-repeat;  -->
-		<!-- background-size:100% 100%; -->
-		<!-- -webkit-tap-highlight-color: transparent; -->
-		 <!-- outline: none; -->
-		 <!-- opacity:0.9; -->
-		 
+	
 		 position: absolute;
 		height: 40%;
 		width: 40%;
@@ -211,9 +199,9 @@
 window.addEventListener("orientationchange", function() {location.reload();});
 
 var options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-var colors = ["#DB2925", "#DB2925", "#DB2925", "#DB2925",
-             "#DB2925", "#DB2925", "#DB2925", "#DB2925","#DB2925", "#DB2925"];
-
+<!-- var colors = ["#DB2925", "#DB2925", "#DB2925", "#DB2925", -->
+             <!-- "#DB2925", "#DB2925", "#DB2925", "#DB2925","#DB2925", "#DB2925"]; -->
+ 
 var startAngle = 0;
 var arc = Math.PI / (options.length / 2);
 var spinTimeout = null;
@@ -240,14 +228,23 @@ function drawRouletteWheel() {
     ctx.strokeStyle = "#8C2828";
     ctx.lineWidth = 1;
 
+	var colors=ctx.createRadialGradient(250,280,2,258,220,250);
+	
+	colors.addColorStop(0,"white");
+	colors.addColorStop(0.5,"#DB2925");
+	colors.addColorStop(1,"black");
+	
     ctx.font = 'bold 12px Helvetica, Arial';
     for(var i = 0; i < options.length; i++) {
       var angle = startAngle + i * arc;
-      ctx.fillStyle = colors[i];
-
+	  
       ctx.beginPath();
+	  ctx.fillStyle = colors;
       ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
       ctx.arc(250, 250, insideRadius, angle + arc, angle, true);
+
+	  <!-- ctx.fillStyle = colors[i]; -->
+
       ctx.fill();
 	  ctx.stroke();
 	  
