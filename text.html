@@ -1,12 +1,206 @@
 <!DOCTYPE html>
 <html>
-<head></head>
-<body>
-<input type="button" value="spin" style="float:left;" id='spin' />
-<canvas id="canvas" width="500" height="500"></canvas>
-<script>
-var options = ["$100", "$10", "$25", "$250", "$30", "$1000", "$1", "$200", "$45", "$500", "$5", "$20", "Lose", "$1000000", "Lose", "$350", "$5", "$99"];
+<head>
+<title>Playable Ads</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta charset="UTF-8">
+</head>
+<style>
+	html{
+		margin:0;
+		
+		width: 120%; 
+		height: 120%; 
+		
+		 background: url() no-repeat center center fixed; 
+		  -webkit-background-size: 120% 120%;
+		  -moz-background-size: 120% 120%;
+		  -o-background-size: 120% 120%;
+		  background-size: 120% 120%;
+		  
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		  
+		    overflow: hidden
+	}
+	
+	body{
+		width: 100%; 
+		height: 100%;  
+	}
 
+	#container {
+		position: relative;
+		width: 100%; 
+		height: 100%; 
+		margin:0 auto; important!
+		display:block;
+	}
+
+	#container  #inner-container{
+	position: relative;	
+	width: 90vh;
+	height: 90vh;
+	margin-top:5vh;
+	margin-bottom:5vh;
+	margin-left:10vh;
+	}	
+	
+	#container  #inner-container #canvas {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	#container  #inner-container #inner-container-btn{ 
+		position: absolute;
+		width: 30vh;
+		height: 30vh;
+		z-index: 99;
+		margin-left: 30vh;
+		margin-top: 30vh;
+	}
+	
+	#container  #inner-container #inner-container-btn #inner-container-btn-bg{ 
+		position: absolute;
+		width: 120%;
+		height: 120%;
+		margin:-10%;
+		background: url(btn_bg.png) no-repeat; 
+		background-size:100% 100%;
+	}
+	#container  #inner-container #inner-container-btn #btn{
+		
+	}
+	
+	#container  #inner-container #inner-container-btn .spin {
+		position: absolute;
+		height: 20%;
+		width: 20%;
+		margin: 40%;
+		border-radius:100%;
+		border-style: solid solid solid solid;
+		border-width:0;
+		border-color:transparent;
+		background: url(btn.jpg) no-repeat; 
+		background-size:100% 100%;
+		-webkit-tap-highlight-color: transparent;
+		 outline: none;
+		 opacity:0.8;
+	}	
+	
+	#container  #inner-container #inner-container-btn .spin:active {
+		opacity:1;
+		transition: 0s
+	}
+	
+@media screen and (orientation: portrait) {
+	html{
+		margin:0;
+		
+		width: 120%; 
+		height: 120%; 
+		
+		 background: url() no-repeat center center fixed; 
+		  -webkit-background-size: 120% 120%;
+		  -moz-background-size: 120% 120%;
+		  -o-background-size: 120% 120%;
+		  background-size: 120% 120%;
+		  
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		  
+		   overflow: hidden
+			
+	}
+
+      #container{
+		position : relative ;
+		top : 0 ; 
+		left : 0 ;
+		width : 100% ;
+		height : 100% ;
+	 }
+
+	#container  #inner-container{
+	position: relative;	
+	width: 45vh;
+	height: 45vh;
+	margin-top: 10vh;
+    margin-left: 4.5vh;
+	transform: rotate(90deg);
+	}	
+	#container  #inner-container #canvas {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	#container  #inner-container #inner-container-btn #inner-container-btn-bg{ 
+		position: absolute;
+		width: 180%;
+		height: 180%;
+		margin:-40%;
+		background: url(btn_bg.png) no-repeat; 
+		background-size:100% 100%;
+	}
+	
+		#container  #inner-container #inner-container-btn{ 
+		position: absolute;
+		width: 10vh;
+		height: 10vh;
+		z-index: 99;
+		margin-left: 17.5vh;
+		margin-top: 17.5vh;
+	}
+	
+	#container  #inner-container #inner-container-btn .spin {
+	
+		 position: absolute;
+		height: 40%;
+		width: 40%;
+		margin: 30%;
+		border-radius:100%;
+		border-style: solid solid solid solid;
+		border-width:0;
+		border-color:transparent;
+		background: url(btn.jpg) no-repeat; 
+		background-size:100% 100%;
+		-webkit-tap-highlight-color: transparent;
+		 outline: none;
+		 opacity:0.9;
+		 
+	}	
+}
+
+@media screen and (orientation: landscape) {
+	
+}
+
+</style>
+ <body scroll="no" >
+ <div id="container" onContextMenu="return false;">
+	<div id="inner-container">
+		<div id="inner-container-btn">
+			<div id="inner-container-btn-bg"></div>
+			<div id="btn">
+				<input type="button" value="" id='spin' class="spin"/>
+			</div>
+		</div>
+		<canvas id="canvas" height="500" width="500"></canvas>
+	</div>	
+</div>
+<script id="x">
+
+window.addEventListener("orientationchange", function() {location.reload();});
+
+var options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+<!-- var colors = ["#DB2925", "#DB2925", "#DB2925", "#DB2925", -->
+             <!-- "#DB2925", "#DB2925", "#DB2925", "#DB2925","#DB2925", "#DB2925"]; -->
+ 
 var startAngle = 0;
 var arc = Math.PI / (options.length / 2);
 var spinTimeout = null;
@@ -19,54 +213,40 @@ var ctx;
 
 document.getElementById("spin").addEventListener("click", spin);
 
-function byte2Hex(n) {
-  var nybHexString = "0123456789ABCDEF";
-  return String(nybHexString.substr((n >> 4) & 0x0F,1)) + nybHexString.substr(n & 0x0F,1);
-}
-
-function RGB2Color(r,g,b) {
-	return '#' + byte2Hex(r) + byte2Hex(g) + byte2Hex(b);
-}
-
-function getColor(item, maxitem) {
-  var phase = 0;
-  var center = 128;
-  var width = 127;
-  var frequency = Math.PI*2/maxitem;
-  
-  red   = Math.sin(frequency*item+2+phase) * width + center;
-  green = Math.sin(frequency*item+0+phase) * width + center;
-  blue  = Math.sin(frequency*item+4+phase) * width + center;
-  
-  return RGB2Color(red,green,blue);
-}
-
 function drawRouletteWheel() {
   var canvas = document.getElementById("canvas");
+  
   if (canvas.getContext) {
     var outsideRadius = 200;
-    var textRadius = 160;
-    var insideRadius = 125;
+    var textRadius = 150;
+    var insideRadius = 80;
 
     ctx = canvas.getContext("2d");
     ctx.clearRect(0,0,500,500);
 
-    ctx.strokeStyle = "black";
-    ctx.lineWidth = 2;
+    ctx.strokeStyle = "#8C2828";
+    ctx.lineWidth = 1;
 
+	var colors=ctx.createRadialGradient(250,280,2,258,220,250);
+	
+	colors.addColorStop(0,"white");
+	colors.addColorStop(0.5,"#DB2925");
+	colors.addColorStop(1,"black");
+	
     ctx.font = 'bold 12px Helvetica, Arial';
-
     for(var i = 0; i < options.length; i++) {
       var angle = startAngle + i * arc;
-      //ctx.fillStyle = colors[i];
-      ctx.fillStyle = getColor(i, options.length);
-
+	  
       ctx.beginPath();
+	  ctx.fillStyle = colors;
       ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
       ctx.arc(250, 250, insideRadius, angle + arc, angle, true);
-      ctx.stroke();
-      ctx.fill();
 
+	  <!-- ctx.fillStyle = colors[i]; -->
+
+      ctx.fill();
+	  ctx.stroke();
+	  
       ctx.save();
       ctx.shadowOffsetX = -1;
       ctx.shadowOffsetY = -1;
@@ -84,17 +264,18 @@ function drawRouletteWheel() {
     //Arrow
     ctx.fillStyle = "black";
     ctx.beginPath();
-    ctx.moveTo(250 - 4, 250 - (outsideRadius + 5));
-    ctx.lineTo(250 + 4, 250 - (outsideRadius + 5));
-    ctx.lineTo(250 + 4, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 + 9, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 + 0, 250 - (outsideRadius - 13));
-    ctx.lineTo(250 - 9, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 - 4, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 - 4, 250 - (outsideRadius + 5));
+    ctx.moveTo(250 + 4, 400 - (outsideRadius));
+    ctx.lineTo(250 - 4, 400 - (outsideRadius));
+    ctx.lineTo(250 - 4, 400 - (outsideRadius));
+    ctx.lineTo(250 - 9, 400 - (outsideRadius));
+    ctx.lineTo(250 - 0, 400 - (outsideRadius + 80));
+    ctx.lineTo(250 + 9, 400 - (outsideRadius));
+    ctx.lineTo(250 + 4, 400 - (outsideRadius));
+    ctx.lineTo(250 + 4, 400 - (outsideRadius));
     ctx.fill();
   }
-}
+
+  }
 
 function spin() {
   spinAngleStart = Math.random() * 10 + 10;
@@ -104,7 +285,7 @@ function spin() {
 }
 
 function rotateWheel() {
-  spinTime += 30;
+  spinTime += 10;
   if(spinTime >= spinTimeTotal) {
     stopRotateWheel();
     return;
@@ -112,7 +293,7 @@ function rotateWheel() {
   var spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
   startAngle += (spinAngle * Math.PI / 180);
   drawRouletteWheel();
-  spinTimeout = setTimeout('rotateWheel()', 30);
+  spinTimeout = setTimeout('rotateWheel()', 20);
 }
 
 function stopRotateWheel() {
@@ -123,7 +304,7 @@ function stopRotateWheel() {
   ctx.save();
   ctx.font = 'bold 30px Helvetica, Arial';
   var text = options[index]
-  ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250 + 10);
+  ctx.fillText(text, 430 - ctx.measureText(text).width / 2, 250 + 10);
   ctx.restore();
 }
 
@@ -134,6 +315,14 @@ function easeOut(t, b, c, d) {
 }
 
 drawRouletteWheel();
+
+
+
+document.getElementById("x").innerHTML = "";
 </script>
+</div>
+<noscript> 
+    <p>Please,Turn "on" you Javascript or your browser lacks support.</p> 
+</noscript> 
 </body>
 </html>
