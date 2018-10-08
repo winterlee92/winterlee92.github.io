@@ -40,13 +40,27 @@
 		display:block;
 	}
 
+	#wheel_border{
+		position: absolute;
+		width: 75vh;
+		height: 75vh;
+		margin-top: -88vh;
+		margin-left: 17vh;
+		z-index: -1;
+		border-radius: 100%;
+		border-width: 5px;
+		border-style: solid solid solid solid;
+		border-color: white;
+		background-color: #410000;
+	}
+	
 	#container  #inner-container{
-	position: relative;	
-	width: 90vh;
-	height: 90vh;
-	margin-top:5vh;
-	margin-bottom:5vh;
-	margin-left:10vh;
+	position: relative;
+    width: 90vh;
+    height: 90vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: 10vh;
 	}	
 	
 	#container  #inner-container #canvas {
@@ -54,6 +68,7 @@
 		width: 100%;
 		height: 100%;
 	}
+	
 	#container  #inner-container #inner-container-btn{ 
 		position: absolute;
 		width: 30vh;
@@ -138,6 +153,20 @@
 		height : 100% ;
 	 }
 
+	 	#wheel_border{
+		position: absolute;
+		width: 37.5vh;
+		height: 37.5vh;
+		margin-top: -47vh;
+		margin-left: 7.5vh;
+		z-index: -1;
+		border-radius: 100%;
+		border-width: 5px;
+		border-style: solid solid solid solid;
+		border-color: white;
+		background-color: #410000;
+	}
+	 
 	#container  #inner-container{
 	position: relative;	
 	width: 45vh;
@@ -209,18 +238,23 @@
 @media screen and (orientation: landscape) {
 	
 }
+
+
+
+
 </style>
  <body scroll="no" >
  <div id="container" onContextMenu="return false;">
 	<div id="inner-container">
 		<div id="inner-container-btn">
-			<div id="inner-container-btn-bg"></div>
-			<div id="btn">
-				<input type="button" value="Draw" id='spin' class="spin"/>
+				<div id="inner-container-btn-bg"></div>
+				<div id="btn">
+					<input type="button" value="Draw" id='spin' class="spin"/>
+				</div>
 			</div>
-		</div>
 		<canvas id="canvas" height="500" width="500"></canvas>
 	</div>	
+	<div id="wheel_border"></div>
 </div>
 <script id="x">
 window.addEventListener("orientationchange", function() {location.reload();});
@@ -247,8 +281,6 @@ function drawRouletteWheel() {
     ctx.strokeStyle = "#8F1E16";
     ctx.lineWidth = 5;
     ctx.font = 'bold 12px Helvetica, Arial';
-      ctx.beginPath();
-      ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
     for(var i = 0; i < options.length; i++) {
       var angle = startAngle + i * arc;
       ctx.fillStyle = colors[i];
