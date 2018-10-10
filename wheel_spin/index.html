@@ -302,11 +302,17 @@
 				|| (newWidth === 1080 && newHeight === 1920)||(newWidth === 5120 && newHeight === 2880)
 				|| (newWidth === 640 && newHeight === 1136)||(newWidth === 750 && newHeight === 1334)
 				|| (newWidth === 2560 && newHeight === 1440)||(newWidth === 1440 && newHeight === 2560)
-				|| (newWidth === 1920 && newHeight === 1080)||(newWidth === 2436 && newHeight === 1125)){widthToHeight = 16 / 9;}
+				|| (newWidth === 1920 && newHeight === 1080)){widthToHeight = 9 / 16;}
+				
+		else if (newWidth === 414 && newHeight === 736 || newWidth === 375 && newHeight === 667 
+				|| newWidth === 320 && newHeight === 568){widthToHeight = 9 / 16;}	
+		
+		else if (newWidth === 375 && newHeight === 812){widthToHeight = 9 / 19.5;}
 		//Samsung Galaxy Tab 7
 		else if (newWidth === 1024 && newHeight===600){widthToHeight = 17 / 10;}
 		// Samsung Galaxy S8/S8+
 		else if (newWidth === 1440 && newHeight===2960){widthToHeight = 18.5 / 9;}
+		else if (newWidth ===  1440 && newHeight===2880 || newWidth ===  411 && newHeight===823){widthToHeight = 9 / 18;}
 		else{widthToHeight = 2.5 / 4;}
 		
 		return (newWidth,newHeight);
