@@ -65,153 +65,25 @@
 		display:none;
 		position: relative;
 		margin:0 auto; important!
-		height:100vh; important!
-		width:60vh; important!}
-		#inner_container,#inner_container2,#inner_container3,#te,#dw4,#hc,#effect{
-		background-Size:100% 100%;
-		background-Repeat:no-repeat;}
-		#container #inner_container{position:relative;
-		width:100%;height:60%;}
-		#container #inner_container2{position:absolute;
-		width:100%;height:40%;}
-		#container #inner_container3,#container #effect{position:absolute;;bottom:0;width:100%;height:40%;}
-		#hc{    position: absolute;width: 60%;height: 53%;z-index: 1;margin-left: 20%;margin-right: 20%;}
+		height:100%; important!
+		width:60%; important!
+		border-width: 1px;
+		border-style:solid;
+		border-color:blue;}
 		
-	
-	#container #inner_container #character,#container #inner_container #btn{
-		position:absolute;	
-		background-Size : 100% 100%; 
-		height:100%;
-		width:100%;
-		display:block;
-		vertical-align:bottom;
-		background-Repeat:no-repeat;}
-	#container #inner_container #btn{
-		height:16%; 
-		width:40%;
-		right:30%;
-		left:30%;
-		bottom : -8%;
-		z-index:-1;
-		opacity:0.8;}
-	#container #inner_container #btn:hover{
-	 opacity:1;
-	height:18%; 
-	width:42%;
-	right:29%;
-	left:29%;
-	bottom : -9%;
-	}
-	#container #inner_container2 #weapon,#container #inner_container2 #weapon2,#container #inner_container2 #weapon3,
-	#container #effect #weffect,#container #effect #weffect2,#container #effect #weffect3,#dw,#dw2,#dw3,#c{			
-		position:absolute;	
-		background-Size : 100% 100%; 
-		height:100%;
-		display:block;
-		z-index:100}
-
-	#container #inner_container2 #t{
-		position:absolute;	
-		width:35%;
-		height:90%;
-		height:90%;
-		display:block;
-		background-color:rgb(57,81,91);
-		opacity: 0.3;
-		border-radius: 25px;
-		margin-Top: 4%;
-		filter: alpha(opacity=50);}
+	#container #inner_container{position:relative;
+		width:100%;height:60%;
+		border-width: 1px;
+		border-style:solid;
+		border-color:blue;}
 		
-		#container #effect #te{
-		position:absolute;	
-		width:35%;
-		height:90%;
-		display:block;
-		margin-Top: 4%;
-		}
+	#container #inner_container2{position:absolute;
+		width:100%;height:40%;
+		border-width: 1px;
+		border-style:solid;
+		border-color:blue;}
 		
-		#weapon,#weapon2,#weapon3,#weffect,#weffect2,#weffect3{width:30%}
-		#dw4{width:35%;margin-Left:62%;display:none;}
-		#weapon,#weffect{margin-left:-2%;}
-		#weapon2,#weffect2{margin-left:16%;}
-		#weapon3,#weffect3{margin-left:36%;}
-		#c{height: 50%;
-    width: 100%;
-    margin-top: 90%;
-    margin-left: 8%; }
-		.c,.c2{width:100%;height:100%}
-		#t,#te{width:60%;margin-left:62%;}
-		#dw,#dw2,#dw3{width:18%}
-		#dw{margin-left:3%;}
-		#dw2{margin-left:23%;}
-		#dw3{margin-left:42%;}
 		
-		[draggable] {
-		  -moz-user-select: none;
-		  -khtml-user-select: none;
-		  -webkit-user-select: none;
-		  user-select: none;
-		  /* Required to make elements draggable in old WebKit */
-		  -khtml-user-drag: element;
-		  -webkit-user-drag: element;
-		}
-		
-		#f,#s,#p{
-			height:30%;
-			width:100%; 
-			font-size: 400%;
-			text-align:center;
-			margin-top:15%;
-		}
-		#f2,#s2,#p2{
-			height:10%;
-			width:100%;
-			font-size: 120%;
-			text-align:center;
-		}
-		
-		#f3,#s3,#p3{
-			margin-top: 10%;
-			margin-left: 13%;
-			font-size: 82%;
-		}
-		
-		 #f,#f2,#f3{
-		 text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 
-					0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
-		 color: #ffffff;}
-			
-		#s,#s2,#s3{ 
-		text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 
-		0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
-		color: #ffffff;display:none;}
-		
-		#p,#p2,#p3{ 
-		text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 
-		0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de; 
-		color:#ffffff; display:none;}
-
-		
-		#c{
-			-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
-			-webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
-			animation-name: example;
-			animation-duration: 5s;
-			animation-iteration-count: infinite;
-			animation-delay:1s;
-		}
-		
-		/* Safari 4.0 - 8.0 */
-			@-webkit-keyframes example {
-			   from{ bottom:8%;}
-				to { bottom:120%; }
-			}
-
-			/* Standard syntax */
-			@keyframes example {
-				from{ bottom:8%;}
-				to { bottom:120%; }
-			}
 </style>
 <body onload="lp()" style="background-color:white">
 <!-- onContextMenu="return false;" -->
