@@ -78,7 +78,6 @@
 		 width: 20%;
 		height: 13%;
 		margin: 48% 40%;
-		z-index: 100;			
 	}
 	#content_inner_container3{position: absolute;
 		width: 90%;
@@ -92,6 +91,7 @@
 		background-image:url('btn.png');
 		background-Size:100% 100%;
 		background-Repeat:no-repeat;
+		z-index: 97;
 	}
 	#spin{ 
 		width:100%;
@@ -116,7 +116,17 @@
 		background-image:url('frame.png');
 		background-Size:100% 100%;
 		background-Repeat:no-repeat;
+		z-index: 99;
 	}
+	
+	#slide{
+		position: absolute;
+		width:100%;
+		height:100%;
+		margin-top: 12%;
+		z-index: 98;
+	}
+	.mySlides{display:none;width:100%;height:100%;background-size:100% 100%;background-Repeat:no-repeat;}
 </style>
 <body onload="lp()" style="background-color:black" onContextMenu="return false;">
 
@@ -133,6 +143,7 @@
 			</div>
 			<div id="content_inner_container3">
 				<div id="frame"></div>
+				<div id="slide"></div>
 			</div>	
 		</div>
 	</div>	
@@ -146,6 +157,7 @@
 		var container = document.getElementById('container');
 		container.style.display = "block";
 		var inner_container = document.getElementById('inner_container');
+		var slide = document.getElementById("slide");
 		var widthToHeight = 0 ;
 		var newWidth = window.innerWidth;
 		var newHeight = window.innerHeight;
@@ -157,6 +169,8 @@
 		console.log(canvas.width,canvas.height);
 		
 		drawRouletteWheel();
+		createImage();
+		slideImage();
 	}
 	
 	var options = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
@@ -260,7 +274,40 @@
 	  var tc = ts*t;
 	  return b+c*(tc + -3*ts + 3*t);
 	}
-		function sizeData(w,h){
+	
+	function createImage() {	
+		var mySlidesArray = new Array(20); 
+		var i;
+		for(i=0; i<mySlidesArray.length; i++)
+		{	 
+			if(i < mySlidesArray.length)
+			{
+				var mySlides = document.createElement("IMG");
+				mySlides.setAttribute("src", "Cat"+(i+1)+".png");	
+				mySlides.setAttribute("class","mySlides");
+				slide.appendChild(mySlides);
+			}
+		}	
+	}
+	
+	var myIndex = 0;
+	var sCat;
+	
+	function slideImage() {
+		
+		clearTimeout(sCat);
+		var i;
+		var cat = document.getElementsByClassName("mySlides");
+		for (i = 0; i < cat.length; i++) 
+		{
+			cat[i].style.display = "none";  
+		}
+		 myIndex++;
+			if (myIndex < cat.length) {   
+			cat[myIndex].style.display = "block"; } 
+			sCat=setTimeout(slideImage, 80);
+	}
+	function sizeData(w,h){
 	
 		var newWidth = w;
 		var newHeight = h;
@@ -321,7 +368,7 @@
 		
 		return (newWidth,newHeight);
 	}
-		function resize(w,h){
+	function resize(w,h){
 		
 		var newWidth = w;
 		var newHeight = h;
