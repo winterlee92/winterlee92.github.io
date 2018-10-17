@@ -369,14 +369,30 @@
 			console.log(myIndex2,cat2.length);
 			
 		if (myIndex2 == 23) 
-		{
-			
-			
+		{			
 			clearTimeout(sCat2);
-			
-		
+			slideImage3();
 		}
 	}
+	
+	var myIndex3 = 18;
+	var sCat3;
+	
+	function slideImage3()
+	{	
+		var i;
+		var cat3 = document.getElementsByClassName("mySlides2");
+		for (i = 0; i < 24; i++) 
+		{
+			cat3[i].style.display = "none";  
+		}
+		 myIndex3++;
+		if (myIndex3 > cat3.length) {myIndex3 = 17}    
+			cat3[myIndex3-1].style.display = "block";  
+			sCat3=setTimeout(slideImage3, 100);
+	}
+	
+	
 	
 	function sizeData(w,h){
 	
