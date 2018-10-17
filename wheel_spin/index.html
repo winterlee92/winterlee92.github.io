@@ -69,33 +69,44 @@
 		position: absolute;
 		width: 90%;
 		height: 60%;
-		margin: 10% 5%;
-		z-index: 98;
+		margin: 20% 5%;
+		z-index: 96;
 	}
 	#content_inner_container2{
 		position: absolute;
 		width: 20%;
 		height: 13%;
-		margin: 48% 40%;
+		margin: 58% 40%;
+		z-index: 97;
 	}
 	#content_inner_container3{
 		position: absolute;
 		width: 90%;
 		height: 70%;
-		margin: 11.5% 5%;
+		margin: 21.5% 5%;
 		z-index: 99;			
 	}
 	#content_inner_container4{
 		position: absolute;
-		width: 80%;
-		height: 70%;
-		margin: 23% 11.5%;
+		width: 100%;
+		height: 100%;
+		margin: 5% 1%;
 		z-index: 98;
 	}
 	#btn{
 		width:100%;
 		height:100%;
 		background-image:url('btn.png');
+		background-Size:100% 100%;
+		background-Repeat:no-repeat;
+		z-index: 97;
+	}
+		#arrow{
+		position: absolute;
+		width: 20%;
+		height: 40%;
+		margin: -37% 40%;
+		background-image:url('arrow.png');
 		background-Size:100% 100%;
 		background-Repeat:no-repeat;
 		z-index: 97;
@@ -113,9 +124,8 @@
 		position: absolute;
 		width:100%;
 		height:100%;
-		z-index: 98;
+		z-index: 96;
 	}
-	
 	#frame{
 		position: absolute;
 		width:100%;
@@ -125,14 +135,13 @@
 		background-Repeat:no-repeat;
 		z-index: 99;
 	}
-	
 	#slide{
 		position: absolute;
 		width: 100%;
 		height: 100%;
 		z-index: 98;
 	}
-	.mySlides{display:none;width:100%;height:100%;background-size:100% 100%;background-Repeat:no-repeat;}
+	.mySlides,.mySlides2{display:none;width:100%;height:100%;background-size:100% 100%;background-Repeat:no-repeat;}
 </style>
 <body onload="lp()" style="background-color:black" onContextMenu="return false;">
 
@@ -143,6 +152,7 @@
 				<canvas id="canvas"></canvas>				
 			</div>
 			<div id="content_inner_container2">
+				<div id="arrow"></div>
 				<div id="btn">
 					<input type="button" value="" id='spin' class="spin"/>
 				</div>
@@ -284,7 +294,7 @@
 	}
 	
 	function createImage() {	
-		var mySlidesArray = new Array(44); 
+		var mySlidesArray = new Array(21); 
 		var i;
 		for(i=0; i<mySlidesArray.length; i++)
 		{	 
@@ -296,6 +306,18 @@
 				slide.appendChild(mySlides);
 			}
 		}	
+		var mySlidesArray2 = new Array(24); 
+		var i;
+		for(i=0; i<mySlidesArray2.length; i++)
+		{	 
+			if(i < mySlidesArray2.length)
+			{
+				var mySlides2 = document.createElement("IMG");
+				mySlides2.setAttribute("src", "Cat"+(i+21)+".png");	
+				mySlides2.setAttribute("class","mySlides2");
+				slide.appendChild(mySlides2);
+			}
+		}
 	}
 	
 	var myIndex = 0;
@@ -313,17 +335,48 @@
 			if (myIndex < cat.length) { }  
 			cat[myIndex].style.display = "block";  
 			sCat=setTimeout(slideImage, 80);
-			<!-- console.log(myIndex,cat.length); -->
-			if (myIndex == 43) 
+			if (myIndex == 20) 
 			{
 				clearTimeout(sCat);
-				document.getElementById("slide").style.zIndex = "97";
-				document.getElementById("content_inner_container4").style.zIndex = "97";
+				cat[20].style.display = "none"; 
+				document.getElementById("slide").style.zIndex = "95";
+				document.getElementById("content_inner_container4").style.zIndex="95";
+				document.getElementById("content_inner_container4").style.width="80%";
+				document.getElementById("content_inner_container4").style.height="80%";
+				document.getElementById("content_inner_container4").style.margin="0% 11.5%";
 				document.getElementById("btn").style.zIndex = "99";
 				document.getElementById("content_inner_container2").style.zIndex = "99";
 				document.getElementById("frame").style.zIndex = "98";
 				document.getElementById("content_inner_container3").style.zIndex = "98";	
+				slideImage2();
 			}
+	}
+
+	var myIndex2 = 0;
+	var sCat2;
+	
+	function slideImage2(){
+		var i;
+		var cat2 = document.getElementsByClassName("mySlides2");
+		for (i = 0; i < cat2.length; i++) 
+		{
+			cat2[i].style.display = "none";  
+		}
+		myIndex2++;
+		if (myIndex2 < cat2.length) { }  
+			cat2[myIndex2].style.display = "block";  
+			sCat2=setTimeout(slideImage2, 80);
+			
+			console.log(myIndex2,cat2.length);
+			
+		if (myIndex2 == 23) 
+		{
+			
+			
+			clearTimeout(sCat2);
+			
+		
+		}
 	}
 	
 	function sizeData(w,h){
