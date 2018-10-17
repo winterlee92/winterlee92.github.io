@@ -167,7 +167,7 @@
 	</div>	
 	<script id="x" type="text/javascript">
 		var mv;
-		function lp() {mv = setTimeout(main, 500);}
+		function lp() {createImage(); mv = setTimeout(main, 500);}
 		
 		function main(){
 	
@@ -187,7 +187,6 @@
 		console.log(canvas.width,canvas.height);
 		
 		drawRouletteWheel();
-		createImage();
 		slideImage();
 	}
 	
