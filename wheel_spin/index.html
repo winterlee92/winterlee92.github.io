@@ -305,7 +305,6 @@
 	
 	function slideImage() {
 		
-		clearTimeout(sCat);
 		var i;
 		var cat = document.getElementsByClassName("mySlides");
 		for (i = 0; i < cat.length; i++) 
@@ -319,6 +318,7 @@
 			<!-- console.log(myIndex,cat.length); -->
 			if (myIndex == 43) 
 			{
+				clearTimeout(sCat);
 				document.getElementById("slide").style.zIndex = "97";
 				document.getElementById("content_inner_container4").style.zIndex = "97";
 				document.getElementById("btn").style.zIndex = "99";
