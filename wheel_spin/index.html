@@ -203,16 +203,8 @@
 	var ctx;
 
 	document.getElementById("spin").addEventListener("click", spin);
-
 	
-	var frames = [];
-	for (var i=0; i<10; i++)
-	{
-		frames[i] = new Image();
-		frames[i].addEventListener(load, drawRouletteWheel, false);
-		frames[i].src = "E1.png";
-	}
-	function drawRouletteWheel(e) {
+	function drawRouletteWheel() {
 	var canvas = document.getElementById("canvas");
 
 		if (canvas.getContext) {
