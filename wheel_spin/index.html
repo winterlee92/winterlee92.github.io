@@ -141,7 +141,7 @@
 		height: 100%;
 		z-index: 98;
 	}
-	.mySlides,.mySlides2{display:none;width:100%;height:100%;background-size:100% 100%;background-Repeat:no-repeat;}
+	.mySlides,.mySlides2,.mySlides3{display:none;width:100%;height:100%;background-size:100% 100%;background-Repeat:no-repeat;}
 </style>
 <body onload="lp()" style="background-color:black" onContextMenu="return false;">
 
@@ -149,7 +149,10 @@
 	<div id="container" class="animate-bottom" >
 		<div id="inner_container">
 			<div id="content_inner_container">
-				<canvas id="canvas"></canvas>				
+				<canvas id="canvas"></canvas>
+					<div style="display:none;">
+					  <img id="source" src="E1.png">
+					</div>
 			</div>
 			<div id="content_inner_container2">
 				<div id="arrow"></div>
@@ -183,8 +186,6 @@
 		resize(newWidth,newHeight);
 		canvas.width = newHeight*0.6211;
 		canvas.height = newHeight*0.6211;
-		
-		console.log(canvas.width,canvas.height);
 		
 		drawRouletteWheel();
 		slideImage();
@@ -227,8 +228,8 @@
 				ctx.save();
 
 				//text
-				ctx.shadowOffsetX = -10;
-				ctx.shadowOffsetY = -10;
+				<!-- ctx.shadowOffsetX = -2; -->
+				<!-- ctx.shadowOffsetY = -2; -->
 				ctx.shadowBlur    = 5;
 				ctx.shadowColor   = "rgb(220,220,220)";
 				ctx.fillStyle = "black";
@@ -237,25 +238,13 @@
 							canvas.height*0.5 + Math.sin(angle + arc / 2) * textRadius);
 				ctx.rotate(angle + arc / 2 + Math.PI / 2);
 				var text = options[i];
-				ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
+				var image = document.getElementById('source');
+				ctx.fillText(text, -ctx.measureText(text).width / 2, 10);
+				ctx.drawImage(image, (-ctx.measureText(text).width - 45) / 2, -5,50,50);
 				ctx.restore();
 			} 
-
-    //Arrow
-    <!-- ctx.fillStyle = "black"; -->
-    <!-- ctx.beginPath(); -->
-    <!-- ctx.moveTo(canvas.height*0.5 + 4, canvas.height*0.8 - (outsideRadius)); -->
-    <!-- ctx.lineTo(canvas.height*0.5 - 4, canvas.height*0.8 - (outsideRadius)); -->
-    <!-- ctx.lineTo(canvas.height*0.5 - 4, canvas.height*0.8 - (outsideRadius)); -->
-    <!-- ctx.lineTo(canvas.height*0.5 - 9, canvas.height*0.8 - (outsideRadius)); -->
-    <!-- ctx.lineTo(canvas.height*0.5 - 0, canvas.height*0.8 - (outsideRadius + 80)); -->
-    <!-- ctx.lineTo(canvas.height*0.5 + 9, canvas.height*0.8 - (outsideRadius)); -->
-    <!-- ctx.lineTo(canvas.height*0.5 + 4, canvas.height*0.8 - (outsideRadius)); -->
-    <!-- ctx.lineTo(canvas.height*0.5 + 4, canvas.height*0.8 - (outsideRadius)); -->
-    <!-- ctx.fill(); -->
 	}
   }
-  
   
 	function spin() {
 	  spinAngleStart = Math.random() * 10 + 10;
@@ -280,10 +269,15 @@
 	  var arcd = arc * 180 / Math.PI;
 	  var index = Math.floor((360 - degrees % 360) / arcd);
 	  ctx.save();
-	  ctx.font = 'bold 30px Helvetica, Arial';
+	  ctx.font = 'bold 450px Helvetica, Arial';
+	  ctx.fillStyle = "#ff0000";
 	  var text = options[index]
-	  ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250 + 10);
-	  ctx.restore();
+	  var image = document.getElementById('source');
+	
+	ctx.drawImage(image, 220 - ctx.measureText(text).width / 2, 140);
+	ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 420);
+	
+	ctx.restore();
 	}
 
 	function easeOut(t, b, c, d) {
@@ -315,6 +309,19 @@
 				mySlides2.setAttribute("src", "Cat"+(i+21)+".png");	
 				mySlides2.setAttribute("class","mySlides2");
 				slide.appendChild(mySlides2);
+			}
+		}
+		
+		var mySlidesArray3 = new Array(10); 
+		var i;
+		for(i=0; i<mySlidesArray3.length; i++)
+		{	 
+			if(i < mySlidesArray3.length)
+			{
+				var mySlides3 = document.createElement("IMG");
+				mySlides3.setAttribute("src", "E"+(i+1)+".png");	
+				mySlides3.setAttribute("class","mySlides3");
+				slide.appendChild(mySlides3);
 			}
 		}
 	}
@@ -365,8 +372,6 @@
 		if (myIndex2 < cat2.length) { }  
 			cat2[myIndex2].style.display = "block";  
 			sCat2=setTimeout(slideImage2, 80);
-			
-			console.log(myIndex2,cat2.length);
 			
 		if (myIndex2 == 23) 
 		{			
