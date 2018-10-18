@@ -284,10 +284,10 @@
 	  ctx.font = 'bold 450px Helvetica, Arial';
 	  ctx.fillStyle = "#ff0000";
 	  var text = options[index]
-	  var image = document.getElementById('source');
-	
-	ctx.drawImage(image, 220 - ctx.measureText(text).width / 2, 140);
-	ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 420);
+	var image = document.getElementById('mySlides3');		
+	image.src = "P" + (text) + ".png" ;
+	ctx.drawImage(image, canvas.height*0.5 - ctx.measureText(text).width + canvas.height*0.55 / 2, 160,canvas.height*0.4,canvas.height*0.4);
+	<!-- ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 420); -->
 	
 	ctx.restore();
 	}
