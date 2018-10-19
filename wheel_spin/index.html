@@ -281,6 +281,8 @@
 	  rotateWheel();
 		slideImage3();
 		slideImage5();
+		var spinBtn = document.getElementById("spin");
+		spinBtn.disabled = true;
 	}
 	function rotateWheel() {
 	  spinTime += 10;
@@ -313,6 +315,8 @@
 		clearTimeout(sCat3);
 		clearTimeout(sBadge2);
 		document.getElementById("content_inner_container5").style.display = "none";
+		var spinBtn = document.getElementById("spin");
+		spinBtn.disabled = false;
 	}
 	}
 
