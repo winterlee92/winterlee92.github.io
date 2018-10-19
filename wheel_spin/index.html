@@ -194,8 +194,7 @@
 		sizeData(newWidth,newHeight);
 		resize(newWidth,newHeight);
 		canvas.width = newHeight*0.6211;
-		canvas.height = newHeight*0.6211;
-		
+		canvas.height = newHeight*0.6211;	
 		drawRouletteWheel();
 		slideImage();
 	}
@@ -237,7 +236,6 @@
 				ctx.fill();
 				ctx.save();
 				
-				
 				//text
 				<!-- ctx.shadowOffsetX = -2; -->
 				<!-- ctx.shadowOffsetY = -2; -->
@@ -253,7 +251,7 @@
 				image.src = "P" + (i+1) + ".png" ;
 				ctx.fillText(text, -ctx.measureText(text).width / 2, 10);
 				ctx.drawImage(image, (-ctx.measureText(text).width - canvas.height*0.105) / 2, -5,canvas.height*0.12,canvas.height*0.12);
-				ctx.restore();
+				ctx.restore();						
 			} 
 	}
   }
@@ -263,6 +261,7 @@
 	  spinTime = 0;
 	  spinTimeTotal = Math.random() * 3 + 4 * 1000;
 	  rotateWheel();
+		slideImage3();
 	}
 	function rotateWheel() {
 	  spinTime += 10;
@@ -288,8 +287,12 @@
 	image.src = "P" + (text) + ".png" ;
 	ctx.drawImage(image, canvas.height*0.5 - ctx.measureText(text).width + canvas.height*0.55 / 2, canvas.height*0.3,canvas.height*0.4,canvas.height*0.4);
 	<!-- ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 420); -->
-	
 	ctx.restore();
+	text = 0;
+	if(text==0)
+	{
+		clearTimeout(sCat3);
+	}
 	}
 
 	function easeOut(t, b, c, d) {
@@ -388,7 +391,6 @@
 		if (myIndex2 == 23) 
 		{			
 			clearTimeout(sCat2);
-			slideImage3();
 		}
 	}
 	
