@@ -93,6 +93,15 @@
 		margin: 5% 1%;
 		z-index: 98;
 	}
+	
+	#content_inner_container5{
+		position: absolute;
+		    z-index: 94;
+			width: 10%;
+			height: 6%;
+			margin: 0% 44%;
+	}
+
 	#btn{
 		width:100%;
 		height:100%;
@@ -141,7 +150,13 @@
 		height: 100%;
 		z-index: 98;
 	}
-	.mySlides,.mySlides2,#mySlides3{display:none;width:100%;height:100%;background-size:100% 100%;background-Repeat:no-repeat;}
+	#badge{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 98;
+	}
+	.mySlides,.mySlides2,#mySlides3,.mySlides4{display:none;width:100%;height:100%;background-size:100% 100%;background-Repeat:no-repeat;}
 </style>
 <body onload="lp()" style="background-color:black" onContextMenu="return false;">
 
@@ -174,6 +189,9 @@
 			</div>	
 			<div id="content_inner_container4">
 				<div id="slide"></div>
+			</div>	
+			<div id="content_inner_container5">
+				<div id="badge"></div>
 			</div>	
 		</div>
 	</div>	
@@ -262,6 +280,7 @@
 	  spinTimeTotal = Math.random() * 3 + 4 * 1000;
 	  rotateWheel();
 		slideImage3();
+		slideImage5();
 	}
 	function rotateWheel() {
 	  spinTime += 10;
@@ -292,6 +311,8 @@
 	if(text==0)
 	{
 		clearTimeout(sCat3);
+		clearTimeout(sBadge2);
+		document.getElementById("content_inner_container5").style.display = "none";
 	}
 	}
 
@@ -339,6 +360,19 @@
 				slide.appendChild(mySlides3);
 			}
 		}
+		
+		var mySlidesArray4 = new Array(12); 
+		var i;
+		for(i=0; i<mySlidesArray4.length; i++)
+		{	 
+			if(i < mySlidesArray4.length)
+			{
+				var mySlides4 = document.createElement("IMG");
+				mySlides4.setAttribute("src", "B"+(i+1)+".png");	
+				mySlides4.setAttribute("class","mySlides4");
+				badge.appendChild(mySlides4);
+			}
+		}
 	}
 	
 	var myIndex = 0;
@@ -370,6 +404,7 @@
 				document.getElementById("frame").style.zIndex = "98";
 				document.getElementById("content_inner_container3").style.zIndex = "98";	
 				slideImage2();
+				slideImage4();
 			}
 	}
 
@@ -394,7 +429,7 @@
 		}
 	}
 	
-	var myIndex3 = 18;
+	var myIndex3 = 17;
 	var sCat3;
 	
 	function slideImage3()
@@ -409,6 +444,44 @@
 		if (myIndex3 > cat3.length) {myIndex3 = 17}    
 			cat3[myIndex3-1].style.display = "block";  
 			sCat3=setTimeout(slideImage3, 100);
+	}
+	
+	var myIndex4 = 0;
+	var sBadge;
+	function slideImage4()
+	{
+		var i;
+		var badge = document.getElementsByClassName("mySlides4");
+		for (i = 0; i < badge.length; i++) 
+		{
+			badge[i].style.display = "none";   
+		}
+		myIndex4++;
+		if (myIndex4 > badge.length) { myIndex4 = 1 }  
+			badge[myIndex4-1].style.display = "block";  
+			sBadge=setTimeout(slideImage4, 200);	
+			if (myIndex4 == 11) 
+		{			
+			clearTimeout(sBadge);
+			document.getElementById("content_inner_container5").style.display = "none";
+		}
+	}
+	
+	var myIndex5 = 0;
+	var sBadge2;
+	function slideImage5()
+	{
+		document.getElementById("content_inner_container5").style.display = "block";
+		var i;
+		var badge2 = document.getElementsByClassName("mySlides4");
+		for (i = 0; i < badge2.length; i++) 
+		{
+			badge2[i].style.display = "none";   
+		}
+		myIndex5++;
+		if (myIndex5 > badge2.length) { myIndex5 = 1}  
+			badge2[myIndex5-1].style.display = "block";  
+			sBadge2=setTimeout(slideImage5, 200);	
 	}
 	
 	
