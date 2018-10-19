@@ -267,8 +267,8 @@
 				var text = options[i];
 				var image = document.getElementById('mySlides3');		
 				image.src = "P" + (i+1) + ".png" ;
-				ctx.fillText(text, ctx.measureText(text).width / 2, 10);
-				ctx.drawImage(image, (ctx.measureText(text).width - canvas.height*0.135) / 2, -5,canvas.height*0.12,canvas.height*0.12);
+				ctx.fillText(text, -ctx.measureText(text).width / 2, 10);
+				ctx.drawImage(image, (-ctx.measureText(text).width - canvas.height*0.105) / 2, -5,canvas.height*0.12,canvas.height*0.12);
 				ctx.restore();						
 			} 
 	}
