@@ -90,13 +90,20 @@
     margin: 19% 0%;
 		z-index: 98;
 	}
-	
 	#content_inner_container5{
 		position: absolute;
 		z-index: 94;
-		width: 17%;
+		width: 15%;
 		height: 8%;
-		margin: -0.2% 41%;
+		margin: -1% 41%;
+	}
+	#content_inner_container6{
+		position: absolute;
+		width: 90%;
+		height: 60%;
+		margin: -55% -5%;
+		z-index: 100;
+		display:none;
 	}
 	#btn{
 		width:100%;
@@ -179,7 +186,17 @@
 		height: 100%;
 		z-index: 98;
 	}
-	.mySlides,.mySlides2,#mySlides3,.mySlides4{display:none;width:100%;height:100%;background-size:100% 100%;background-Repeat:no-repeat;}
+	#fullImage{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-image: url(F1.png);
+		background-Size: 100% 100%;
+		background-Repeat: no-repeat;
+		margin: 98% 11%;
+		z-index: 98;
+	}
+	.mySlides,.mySlides2,#mySlides3,.mySlides4,.mySlides5{display:none;width:100%;height:100%;background-size:100% 100%;background-Repeat:no-repeat;}
 </style>
 <body onload="lp()" style="background-color:black" onContextMenu="return false;">
 	<div id="loader"></div>
@@ -218,7 +235,9 @@
 			</div>	
 			<div id="content_inner_container5">
 				<div id="badge"></div>
-				
+			</div>	
+			<div id="content_inner_container6">
+				<div id="fullImage"></div>
 			</div>	
 		</div>
 	</div>	
@@ -227,7 +246,6 @@
 		function lp() {createImage(); mv = setTimeout(main, 500);}
 		
 		function main(){
-	
 		document.getElementById("loader").style.display = "none";		
 		var container = document.getElementById('container');
 		container.style.display = "block";
@@ -279,12 +297,11 @@
 				ctx.arc(canvas.height*0.5, canvas.width*0.5, insideRadius, angle + arc, angle, true);
 				ctx.fill();
 				ctx.save();
-				
 				//text
 				<!-- ctx.shadowOffsetX = -2; -->
 				<!-- ctx.shadowOffsetY = -2; -->
-				ctx.shadowBlur    = 5;
-				ctx.shadowColor   = "rgb(220,220,220)";
+				<!-- ctx.shadowBlur    = 5; -->
+				<!-- ctx.shadowColor   = "rgb(220,220,220)"; -->
 				ctx.fillStyle = "black";
 				// set the position of text
 				ctx.translate(canvas.height*0.5 + Math.cos(angle + arc / 2) * textRadius, 
@@ -332,17 +349,18 @@
 	  var text = options[index]
 	var image = document.getElementById('mySlides3');		
 	image.src = "P" + (text) + ".png" ;
-	ctx.drawImage(image, canvas.height*0.5 - ctx.measureText(text).width + canvas.height*0.55 / 2, canvas.height*0.3,canvas.height*0.4,canvas.height*0.4);
+	<!-- ctx.drawImage(image, canvas.height*0.5 - ctx.measureText(text).width + canvas.height*0.55 / 2, canvas.height*0.3,canvas.height*0.4,canvas.height*0.4); -->
 	<!-- ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 420); -->
 	ctx.restore();
-	text = 0;
-	if(text==0)
-	{
+	if(text!=0)
+	{	
 		clearTimeout(sCat3);
 		clearTimeout(sBadge2);
 		document.getElementById("content_inner_container5").style.display = "none";
 		var spinBtn = document.getElementById("spin");
 		spinBtn.disabled = false;
+		text = 0;
+		document.getElementById("content_inner_container6").style.display = "block";
 	}
 	}
 	function easeOut(t, b, c, d) {
@@ -400,6 +418,19 @@
 				mySlides4.setAttribute("src", "B"+(i+1)+".png");	
 				mySlides4.setAttribute("class","mySlides4");
 				badge.appendChild(mySlides4);
+			}
+		}
+		
+		var mySlidesArray5 = new Array(1); 
+		var i;
+		for(i=0; i<mySlidesArray5.length; i++)
+		{	 
+			if(i < mySlidesArray5.length)
+			{
+				var mySlides5 = document.createElement("IMG");
+				mySlides5.setAttribute("src", "F"+(i+1)+".png");	
+				mySlides5.setAttribute("class","mySlides5");
+				slide.appendChild(mySlides5);
 			}
 		}
 	}
@@ -468,7 +499,6 @@
 				slideImage4();
 				document.getElementById("btnStart").style.display = "none";
 			}
-		
 	}
 	
 	var myIndex2 = 0;
