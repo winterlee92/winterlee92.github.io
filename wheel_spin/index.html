@@ -205,7 +205,41 @@
 		background-Repeat: no-repeat;
 		margin: 98% 11%;
 		z-index: 98;
+		-webkit-animation-name: zoom;
+		-webkit-animation-duration: 1s;
+		animation-name: zoom;
+		animation-duration: 1s;
+		transition-timing-function: linear;
+		animation-fill-mode: forwards;
 	}
+	
+	@-webkit-keyframes zoom {
+		0% { width: 100%; height: 100%; margin: 98% 11%;  }
+		50% {  width: 120%; height: 120%; margin: 88% 0%; } 
+		100% { width: 100%; height: 100%; margin: 98% 11%;  }
+	}
+	@keyframes zoom { 
+		0% { width: 100%; height: 100%; margin: 98% 11%;  }
+		50% {  width: 120%; height: 120%; margin: 88% 0%; } 
+		100% { width: 100%; height: 100%; margin: 98% 11%;  }
+	}
+	<!-- position: absolute; -->
+   
+    <!-- background-image: url(F1.png); -->
+    <!-- background-Size: 100% 100%; -->
+    <!-- background-Repeat: no-repeat; -->
+   
+    <!-- z-index: 98; -->
+	
+		<!-- .animate-bottom{  -->
+		<!-- position: relative; -->
+		<!-- -webkit-animation-name: zoom; -->
+		<!-- -webkit-animation-duration: 1s; -->
+		<!-- animation-name: zoom; -->
+		<!-- animation-duration: 1s -->
+	<!-- } -->
+
+	
 	#star_bg{
 		position: absolute;
 		width: 100%;
@@ -326,6 +360,7 @@
 	var ctx;
 	document.getElementById("spin").addEventListener("click", spin);
 	document.getElementById("start").addEventListener("click", start);
+	document.getElementById("again").addEventListener("click", again);
 	
 	function drawRouletteWheel() {
 	var canvas = document.getElementById("canvas");
@@ -566,7 +601,10 @@
 				document.getElementById("btnStart").style.display = "none";
 			}
 	}
-	
+	function again(){
+		document.getElementById("content_inner_container6").style.display = "none";
+		document.getElementById("content_inner_container7").style.display = "none";
+	}
 	var myIndex2 = 0;
 	var sCat2;
 	
