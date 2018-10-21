@@ -23,12 +23,10 @@
 		-webkit-animation: spin 2s linear infinite;
 		animation: spin 2s linear infinite;
 	}
-
 	@-webkit-keyframes spin {
 		0% { -webkit-transform: rotate(0deg); }
 		100% { -webkit-transform: rotate(360deg); }
 	}
-
 	@keyframes spin {
 		0% { transform: rotate(0deg); }
 		100% { transform: rotate(360deg); }
@@ -52,7 +50,6 @@
 		from { bottom:-100px; opacity:0 } 
 		to { bottom:0px; opacity:1 }
 	}
-
 	@keyframes animatebottom { 
 		from{ bottom:-100px; opacity:0 } 
 		to{ bottom:0; opacity:1 }
@@ -101,7 +98,6 @@
 		height: 8%;
 		margin: -0.2% 41%;
 	}
-
 	#btn{
 		width:100%;
 		height:100%;
@@ -128,7 +124,6 @@
 		outline: none;		
 		}
 	.spin{}
-
 	#canvas{
 		position: absolute;
 		width:100%;
@@ -228,12 +223,10 @@
 	var spinTime = 0;
 	var spinTimeTotal = 0;
 	var ctx;
-
 	document.getElementById("spin").addEventListener("click", spin);
 	
 	function drawRouletteWheel() {
 	var canvas = document.getElementById("canvas");
-
 		if (canvas.getContext) {
 			var outsideRadius = canvas.height*0.4;
 			var textRadius = canvas.height*0.3;
@@ -319,7 +312,6 @@
 		spinBtn.disabled = false;
 	}
 	}
-
 	function easeOut(t, b, c, d) {
 	  var ts = (t/=d)*t;
 	  var tc = ts*t;
@@ -566,7 +558,6 @@
 			container.style.width = newWidth + 'px';
 			container.style.height = newHeight + 'px';
 		}
-
 		var newWidthToHeight = newWidth / newHeight;
 		if (newWidthToHeight > widthToHeight) {
 			newWidth = newHeight * widthToHeight;
@@ -578,10 +569,8 @@
 			container.style.width = newWidth + 'px';
 			container.style.height = newHeight + 'px';
 		}
-
 		container.style.fontSize = (newWidth / 400) + 'em';
 	}
-
 	window.addEventListener("orientationchange", function() {location.reload();}, false);
 	
 	document.getElementById("x").innerHTML = "";
