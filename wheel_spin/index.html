@@ -102,9 +102,19 @@
 		width: 90%;
 		height: 60%;
 		margin: -55% -5%;
+		z-index: 101;
+		display:none;
+	}	
+	#content_inner_container7{
+		position: absolute;
+		width: 100%;
+		height: 100%;
 		z-index: 100;
+		background-color:black;
+		opacity:0.8;
 		display:none;
 	}
+	
 	#btn{
 		width:100%;
 		height:100%;
@@ -196,7 +206,43 @@
 		margin: 98% 11%;
 		z-index: 98;
 	}
-	.mySlides,.mySlides2,#mySlides3,.mySlides4,.mySlides5{display:none;width:100%;height:100%;background-size:100% 100%;background-Repeat:no-repeat;}
+	#star_bg{
+		position: absolute;
+		width: 100%;
+		height: 20%;
+		background-image: url(banner.png);
+		background-Size: 100% 100%;
+		background-Repeat: no-repeat;
+		margin: 190% 10%;
+		z-index: 98;
+		opacity:0.8;
+	}
+	#star{
+		position: absolute;
+		width: 100%;
+		height: 20%;
+		margin: 180% 10%;
+		z-index: 98;
+	}
+	#btnAgain{
+		position: absolute;
+		width: 35%;
+		height: 12%;
+		margin: 215% 40%;
+		background-image: url(again.png);
+		background-Size: 100% 100%;
+		background-Repeat: no-repeat;
+		z-index: 98;
+	}
+	#again{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		border-color: transparent;
+		outline: none;
+	}
+	.mySlides,.mySlides2,#mySlides3,.mySlides4,.mySlides5,.mySlides6{display:none;width:100%;height:100%;background-size:100% 100%;background-Repeat:no-repeat;}
 </style>
 <body onload="lp()" style="background-color:black" onContextMenu="return false;">
 	<div id="loader"></div>
@@ -238,13 +284,18 @@
 			</div>	
 			<div id="content_inner_container6">
 				<div id="fullImage"></div>
-			</div>	
+				<div id="star_bg"></div>
+				<div id="star"></div>
+				<div id="btnAgain">
+					<input type="button" value="" id='again' class="again"/>
+				</div>
+			</div>
+			<div id="content_inner_container7"></div>				
 		</div>
 	</div>	
 	<script id="x" type="text/javascript">
 		var mv;
 		function lp() {createImage(); mv = setTimeout(main, 500);}
-		
 		function main(){
 		document.getElementById("loader").style.display = "none";		
 		var container = document.getElementById('container');
@@ -361,6 +412,8 @@
 		spinBtn.disabled = false;
 		text = 0;
 		document.getElementById("content_inner_container6").style.display = "block";
+		document.getElementById("content_inner_container7").style.display = "block";
+		slideImage6();
 	}
 	}
 	function easeOut(t, b, c, d) {
@@ -431,6 +484,19 @@
 				mySlides5.setAttribute("src", "F"+(i+1)+".png");	
 				mySlides5.setAttribute("class","mySlides5");
 				slide.appendChild(mySlides5);
+			}
+		}
+		
+		var mySlidesArray6 = new Array(26); 
+		var i;
+		for(i=0; i<mySlidesArray6.length; i++)
+		{	 
+			if(i < mySlidesArray6.length)
+			{
+				var mySlides6 = document.createElement("IMG");
+				mySlides6.setAttribute("src", "S"+(i+1)+".png");	
+				mySlides6.setAttribute("class","mySlides6");
+				star.appendChild(mySlides6);
 			}
 		}
 	}
@@ -577,6 +643,28 @@
 			sBadge2=setTimeout(slideImage5, 130);	
 	}
 	
+	var myIndex6 = 0;
+	var sStar;
+	function slideImage6()
+	{
+		var i;
+		var star = document.getElementsByClassName("mySlides6");
+		for (i = 0; i < star.length; i++) 
+		{
+			star[i].style.display = "none";   
+		}
+		myIndex6++;
+		if (myIndex6 > star.length) { myIndex6 = 1}  
+			star[myIndex6-1].style.display = "block";  
+			sStar=setTimeout(slideImage6, 70);	
+			
+			if (myIndex6 == 26) 
+		{					
+			star[25].style.display = "none"
+			star[19].style.display = "block"
+			clearTimeout(sStar);
+		}
+	}
 	
 	
 	function sizeData(w,h){
