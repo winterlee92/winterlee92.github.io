@@ -139,10 +139,38 @@
 		background-Repeat:no-repeat;
 		z-index: 99;
 	}
+	#btnStart{
+		position: absolute;
+		width: 30%;
+		height: 10%;
+		margin: 97% 35%;
+		background-image: url(start.png);
+		background-Size: 100% 100%;
+		background-Repeat: no-repeat;
+		z-index: 99;
+	}
+	#start{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		border-color: transparent;
+		outline: none;
+	}
 	#slide{
 		position: absolute;
 		width: 100%;
 		height: 100%;
+		z-index: 98;
+	}
+	#title{
+		position: absolute;
+		width: 80%;
+		height: 30%;
+		background-image: url(title.png);
+		background-Size: 100% 100%;
+		background-Repeat: no-repeat;
+		margin: 98% 11%;
 		z-index: 98;
 	}
 	#badge{
@@ -154,7 +182,6 @@
 	.mySlides,.mySlides2,#mySlides3,.mySlides4{display:none;width:100%;height:100%;background-size:100% 100%;background-Repeat:no-repeat;}
 </style>
 <body onload="lp()" style="background-color:black" onContextMenu="return false;">
-
 	<div id="loader"></div>
 	<div id="container" class="animate-bottom" >
 		<div id="inner_container">
@@ -181,12 +208,17 @@
 			</div>
 			<div id="content_inner_container3">
 				<div id="frame"></div>
+				<div id="btnStart">
+					<input type="button" value="" id='start' class="start"/>
+				</div>
 			</div>	
 			<div id="content_inner_container4">
 				<div id="slide"></div>
+				<div id="title"></div>
 			</div>	
 			<div id="content_inner_container5">
 				<div id="badge"></div>
+				
 			</div>	
 		</div>
 	</div>	
@@ -224,6 +256,7 @@
 	var spinTimeTotal = 0;
 	var ctx;
 	document.getElementById("spin").addEventListener("click", spin);
+	document.getElementById("start").addEventListener("click", start);
 	
 	function drawRouletteWheel() {
 	var canvas = document.getElementById("canvas");
@@ -386,10 +419,42 @@
 			if (myIndex < cat.length) { }  
 			cat[myIndex].style.display = "block";  
 			sCat=setTimeout(slideImage, 80);
-			if (myIndex == 20) 
+			if (myIndex == 13) 
 			{
 				clearTimeout(sCat);
-				cat[20].style.display = "none"; 
+				<!-- cat[13].style.display = "none";  -->
+				<!-- document.getElementById("slide").style.zIndex = "95"; -->
+				<!-- document.getElementById("content_inner_container4").style.zIndex="95"; -->
+				<!-- document.getElementById("content_inner_container4").style.width="70%"; -->
+				<!-- document.getElementById("content_inner_container4").style.height="50%"; -->
+				<!-- document.getElementById("content_inner_container4").style.margin=" -2% 16%"; -->
+				<!-- document.getElementById("btn").style.zIndex = "99"; -->
+				<!-- document.getElementById("content_inner_container2").style.zIndex = "99"; -->
+				<!-- document.getElementById("frame").style.zIndex = "98"; -->
+				<!-- document.getElementById("content_inner_container3").style.zIndex = "98";	 -->
+				<!-- slideImage2(); -->
+				<!-- slideImage4(); -->
+			}
+	}
+	
+	var startIndex=13;
+	var sStart;
+	function start(){
+	
+		var i;
+		var startCat = document.getElementsByClassName("mySlides");
+		for (i = 0; i < startCat.length; i++) 
+		{
+			startCat[i].style.display = "none";  
+		}
+		 startIndex++;
+			if (startIndex < startIndex.length) { }  
+			startCat[startIndex].style.display = "block";  
+			sStart=setTimeout(start, 80);
+			if (startIndex == 20) 
+			{
+				clearTimeout(sStart);
+				startCat[20].style.display = "none"; 
 				document.getElementById("slide").style.zIndex = "95";
 				document.getElementById("content_inner_container4").style.zIndex="95";
 				document.getElementById("content_inner_container4").style.width="70%";
@@ -401,8 +466,11 @@
 				document.getElementById("content_inner_container3").style.zIndex = "98";	
 				slideImage2();
 				slideImage4();
+				document.getElementById("btnStart").style.display = "none";
 			}
+		
 	}
+	
 	var myIndex2 = 0;
 	var sCat2;
 	
