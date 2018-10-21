@@ -361,6 +361,7 @@
 	document.getElementById("spin").addEventListener("click", spin);
 	document.getElementById("start").addEventListener("click", start);
 	document.getElementById("again").addEventListener("click", again);
+	var times=0;
 	
 	function drawRouletteWheel() {
 	var canvas = document.getElementById("canvas");
@@ -609,8 +610,13 @@
 			}
 	}
 	function again(){
+		times = times + 1;
 		document.getElementById("content_inner_container6").style.display = "none";
 		document.getElementById("content_inner_container7").style.display = "none";
+		if (times > 0)
+		{
+			document.getElementById("again").disabled=true;
+		}
 	}
 	var myIndex2 = 0;
 	var sCat2;
