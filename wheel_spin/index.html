@@ -99,10 +99,11 @@
 	}
 	#content_inner_container6{
 		position: absolute;
-		width: 90%;
-		height: 60%;
-		margin: -60% -5%;
-		z-index: 101;
+		position: absolute;
+    width: 100%;
+    height: 50%;
+    margin: -70% -9%;
+    z-index: 101;
 		display:none;
 	}	
 	#content_inner_container7{
@@ -243,26 +244,33 @@
 	#star_bg{
 		position: absolute;
 		width: 100%;
-		height: 20%;
+		height: 25%;
 		background-image: url(banner.png);
 		background-Size: 100% 100%;
 		background-Repeat: no-repeat;
-		margin: 190% 10%;
+		margin: 180% 10%;
 		z-index: 98;
 		opacity:0.8;
 	}
 	#star{
 		position: absolute;
 		width: 100%;
-		height: 20%;
-		margin: 180% 10%;
+		height: 25%;
+		margin: 170% 10%;
+		z-index: 98;
+	}
+	#star2{
+		position: absolute;
+		width: 100%;
+		height: 25%;
+		margin: 170% 10%;
 		z-index: 98;
 	}
 	#btnAgain{
 		position: absolute;
 		width: 35%;
-		height: 12%;
-		margin: 215% 40%;
+		height: 15%;
+		margin: 200% 40%;
 		background-image: url(again.png);
 		background-Size: 100% 100%;
 		background-Repeat: no-repeat;
@@ -276,7 +284,7 @@
 		border-color: transparent;
 		outline: none;
 	}
-	.mySlides,.mySlides2,#mySlides3,.mySlides4,.mySlides5,.mySlides6{display:none;width:100%;height:100%;background-size:100% 100%;background-Repeat:no-repeat;}
+	.mySlides,.mySlides2,#mySlides3,.mySlides4,.mySlides5,.mySlides6,.mySlides7{display:none;width:100%;height:100%;background-size:100% 100%;background-Repeat:no-repeat;}
 </style>
 <body onload="lp()" style="background-color:black" onContextMenu="return false;">
 	<div id="loader"></div>
@@ -320,6 +328,7 @@
 				<div id="fullImage"></div>
 				<div id="star_bg"></div>
 				<div id="star"></div>
+				<div id="star2"></div>
 				<div id="btnAgain">
 					<input type="button" value="" id='again' class="again"/>
 				</div>
@@ -406,13 +415,10 @@
   
 	function spin() {
 		
-	  <!-- spinAngleStart = Math.random() * 10 + 10; -->
-	  spinAngleStart = 10.6520259494409;
-	  spinTime = 0;
-	  <!-- spinTimeTotal = Math.random() * 3 + 4 * 1000; -->
-	  spinTimeTotal = 4001.608711844252;
-	  console.log(Math.random(),spinAngleStart,spinTimeTotal);
-	  rotateWheel();
+		spinAngleStart = Math.random() * 10 + 10;
+		spinTime = 0;
+		spinTimeTotal = Math.random() * 3 + 4 * 1000;
+		rotateWheel();
 		slideImage3();
 		slideImage5();
 		var spinBtn = document.getElementById("spin");
@@ -430,22 +436,19 @@
 	  spinTimeout = setTimeout('rotateWheel()', 20);
 	}
 	function stopRotateWheel() {
-	  clearTimeout(spinTimeout);
-	  var degrees = 4205.521505320291;
-	  var arcd = 36;
-	  var index = Math.floor((360 - degrees % 360) / arcd);
-		
-		console.log(degrees,arcd);
-		
-	  ctx.save();
-	  ctx.font = 'bold 450px Helvetica, Arial';
-	  ctx.fillStyle = "#ff0000";
-	  var text = options[index]
-	var image = document.getElementById('mySlides3');		
-	image.src = "P" + (text) + ".png" ;
-	<!-- ctx.drawImage(image, canvas.height*0.5 - ctx.measureText(text).width + canvas.height*0.55 / 2, canvas.height*0.3,canvas.height*0.4,canvas.height*0.4); -->
-	<!-- ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 420); -->
-	ctx.restore();
+		clearTimeout(spinTimeout);
+		var degrees = startAngle * 180 / Math.PI + 90;
+		var arcd = arc * 180 / Math.PI;
+		var index = Math.floor((360 - degrees % 360) / arcd);
+		ctx.save();
+		ctx.font = 'bold 450px Helvetica, Arial';
+		ctx.fillStyle = "#ff0000";
+		var text = options[index]
+		var image = document.getElementById('mySlides3');		
+		image.src = "P" + (text) + ".png" ;
+		<!-- ctx.drawImage(image, canvas.height*0.5 - ctx.measureText(text).width + canvas.height*0.55 / 2, canvas.height*0.3,canvas.height*0.4,canvas.height*0.4); -->
+		<!-- ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 420); -->
+		ctx.restore();
 	if(text!=0)
 	{	
 		clearTimeout(sCat3);
@@ -453,10 +456,23 @@
 		document.getElementById("content_inner_container5").style.display = "none";
 		var spinBtn = document.getElementById("spin");
 		spinBtn.disabled = false;
-		text = 0;
+		document.getElementById("fullImage").style.backgroundImage = "url(F" + text + ".png)";
 		document.getElementById("content_inner_container6").style.display = "block";
 		document.getElementById("content_inner_container7").style.display = "block";
-		slideImage6();
+		
+		if (times > 0)
+		{ 
+			document.getElementById("star2").style.display = "none";
+		    document.getElementById("star").style.display = "block";
+			slideImage6();
+		}
+		if (times <= 0)
+		{ 
+			slideImage8();
+			document.getElementById("star2").style.display = "block";
+		    document.getElementById("star").style.display = "none";
+		} 
+		text = 0;
 	}
 	}
 	function easeOut(t, b, c, d) {
@@ -466,7 +482,7 @@
 	}
 	
 	function createImage() {	
-		var mySlidesArray = new Array(21); 
+		var mySlidesArray = new Array(11); 
 		var i;
 		for(i=0; i<mySlidesArray.length; i++)
 		{	 
@@ -478,14 +494,14 @@
 				slide.appendChild(mySlides);
 			}
 		}	
-		var mySlidesArray2 = new Array(24); 
+		var mySlidesArray2 = new Array(12); 
 		var i;
 		for(i=0; i<mySlidesArray2.length; i++)
 		{	 
 			if(i < mySlidesArray2.length)
 			{
 				var mySlides2 = document.createElement("IMG");
-				mySlides2.setAttribute("src", "Cat"+(i+21)+".png");	
+				mySlides2.setAttribute("src", "Cat"+(i+11)+".png");	
 				mySlides2.setAttribute("class","mySlides2");
 				slide.appendChild(mySlides2);
 			}
@@ -517,7 +533,7 @@
 			}
 		}
 		
-		var mySlidesArray5 = new Array(1); 
+		var mySlidesArray5 = new Array(10); 
 		var i;
 		for(i=0; i<mySlidesArray5.length; i++)
 		{	 
@@ -530,7 +546,7 @@
 			}
 		}
 		
-		var mySlidesArray6 = new Array(26); 
+		var mySlidesArray6 = new Array(27); 
 		var i;
 		for(i=0; i<mySlidesArray6.length; i++)
 		{	 
@@ -542,6 +558,31 @@
 				star.appendChild(mySlides6);
 			}
 		}
+		
+		var mySlidesArray7 = new Array(27); 
+		var i;
+		for(i=0; i<5; i++)
+		{	 
+			if(i < 5)
+			{
+				var mySlides7 = document.createElement("IMG");
+				mySlides7.setAttribute("src", "S"+(i+1)+".png");	
+				mySlides7.setAttribute("class","mySlides7");
+				star2.appendChild(mySlides7);
+			}
+		}
+		for(i=6; i<21; i++)
+		{	 
+			if(i <21)
+			{
+				var mySlides7 = document.createElement("IMG");
+				mySlides7.setAttribute("src", "SS"+(i+1)+".png");	
+				mySlides7.setAttribute("class","mySlides7");
+				star2.appendChild(mySlides7);
+			}
+		}
+		
+		
 	}
 	
 	var myIndex = 0;
@@ -559,25 +600,13 @@
 			if (myIndex < cat.length) { }  
 			cat[myIndex].style.display = "block";  
 			sCat=setTimeout(slideImage, 80);
-			if (myIndex == 13) 
+			if (myIndex == 10) 
 			{
 				clearTimeout(sCat);
-				<!-- cat[13].style.display = "none";  -->
-				<!-- document.getElementById("slide").style.zIndex = "95"; -->
-				<!-- document.getElementById("content_inner_container4").style.zIndex="95"; -->
-				<!-- document.getElementById("content_inner_container4").style.width="70%"; -->
-				<!-- document.getElementById("content_inner_container4").style.height="50%"; -->
-				<!-- document.getElementById("content_inner_container4").style.margin=" -2% 16%"; -->
-				<!-- document.getElementById("btn").style.zIndex = "99"; -->
-				<!-- document.getElementById("content_inner_container2").style.zIndex = "99"; -->
-				<!-- document.getElementById("frame").style.zIndex = "98"; -->
-				<!-- document.getElementById("content_inner_container3").style.zIndex = "98";	 -->
-				<!-- slideImage2(); -->
-				<!-- slideImage4(); -->
 			}
 	}
 	
-	var startIndex=13;
+	var startIndex=0;
 	var sStart;
 	function start(){
 	
@@ -591,10 +620,10 @@
 			if (startIndex < startIndex.length) { }  
 			startCat[startIndex].style.display = "block";  
 			sStart=setTimeout(start, 80);
-			if (startIndex == 20) 
+			if (startIndex == 10) 
 			{
 				clearTimeout(sStart);
-				startCat[20].style.display = "none"; 
+				startCat[10].style.display = "none"; 
 				document.getElementById("slide").style.zIndex = "95";
 				document.getElementById("content_inner_container4").style.zIndex="95";
 				document.getElementById("content_inner_container4").style.width="70%";
@@ -633,25 +662,25 @@
 			cat2[myIndex2].style.display = "block";  
 			sCat2=setTimeout(slideImage2, 80);
 			
-		if (myIndex2 == 23) 
+		if (myIndex2 == 11) 
 		{			
 			clearTimeout(sCat2);
 		}
 	}
 	
-	var myIndex3 = 17;
+	var myIndex3 = 2;
 	var sCat3;
 	
 	function slideImage3()
 	{	
 		var i;
 		var cat3 = document.getElementsByClassName("mySlides2");
-		for (i = 0; i < 24; i++) 
+		for (i = 0; i < 12; i++) 
 		{
 			cat3[i].style.display = "none";  
 		}
 		 myIndex3++;
-		if (myIndex3 > cat3.length) {myIndex3 = 17}    
+		if (myIndex3 > cat3.length) {myIndex3 = 2}    
 			cat3[myIndex3-1].style.display = "block";  
 			sCat3=setTimeout(slideImage3, 100);
 	}
@@ -709,14 +738,54 @@
 			star[myIndex6-1].style.display = "block";  
 			sStar=setTimeout(slideImage6, 70);	
 			
-			if (myIndex6 == 26) 
+			if (myIndex6 == 27) 
 		{					
-			star[25].style.display = "none"
-			star[19].style.display = "block"
 			clearTimeout(sStar);
 		}
 	}
 	
+	var myIndex7 = 0;
+	var sStar2;
+	function slideImage7()
+	{
+		var i;
+		var star2 = document.getElementsByClassName("mySlides7");
+		for (i = 0; i < star2.length; i++) 
+		{
+			star2[i].style.display = "none";   
+		}
+		myIndex7++;
+		if (myIndex7 > star2.length) { myIndex7 = 1}  
+			star2[myIndex7-1].style.display = "block";  
+			sStar2=setTimeout(slideImage7, 70);	
+			console.log(myIndex7);
+			if (myIndex7 == 20) 
+		{					
+			clearTimeout(sStar2);
+		}
+	}
+	
+	var myIndex8 = 0;
+	var sStar3;
+	function slideImage8()
+	{
+		var i;
+		var star3 = document.getElementsByClassName("mySlides6");
+		for (i = 0; i < 6; i++) 
+		{
+			star3[i].style.display = "none";   
+		}
+		myIndex8++;
+		if (myIndex8 > star3.length) { myIndex8 = 1}  
+			star3[myIndex8-1].style.display = "block";  
+			sStar3=setTimeout(slideImage8, 70);	
+			if (myIndex8 == 6) 
+		{								
+			star3[6].style.display = "none";
+			slideImage7();
+			clearTimeout(sStar3);
+		}
+	}
 	
 	function sizeData(w,h){
 	
