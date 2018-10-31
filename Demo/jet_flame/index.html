@@ -1,0 +1,468 @@
+<html>
+<head></head>
+<style>
+/* Mixin Start */
+/* Mixin End */
+<!-- @import url(https://fonts.googleapis.com/css?family=Fira+Sans:400,500italic); -->
+html {
+  min-height: 100%;
+  background: #222024 radial-gradient(circle at center, rgba(71, 65, 76, 0.35) 0%, rgba(34, 32, 36, 0.35) 100%);
+  background-repeat: repeat;
+  background-size: 100% 100%;
+}
+
+body {
+  margin: 0;
+  padding: 1em 0;
+  text-align: center;
+  font: normal 100% "Fira Sans", sans-serif;
+}
+
+h1 {
+  text-shadow: -2px -2px 2px rgba(255, 255, 255, 0.2), 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+h5 {
+  font-weight: normal;
+  color: #ddd;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+.grid > figure {
+  flex-grow: 1;
+  margin: auto;
+}
+.grid > figure figcaption {
+  text-align: center;
+  color: #ddd;
+}
+
+.jetwrapper {
+  /* This is the parent, which defines the size of the jetflame */
+  margin: 1em auto;
+  position: relative;
+  height: 200px;
+  width: 50px;
+}
+
+.jet {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-radius: none;
+  -webkit-animation: jetflameanim 1s infinite;
+          animation: jetflameanim 1s infinite;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+  background-image: radial-gradient(ellipse at bottom, #c80000 0%, #c80000 10%, rgba(200, 0, 0, 0) 70%, rgba(200, 0, 0, 0) 100%), radial-gradient(ellipse at bottom, red 0%, red 10%, rgba(255, 0, 0, 0) 60%, rgba(255, 0, 0, 0) 100%);
+  background-repeat: no-repeat;
+}
+.jet:before, .jet:after {
+  position: absolute;
+  content: "";
+  bottom: inherit;
+  left: inherit;
+  border-radius: inherit;
+  -webkit-animation: inherit;
+          animation: inherit;
+  background-repeat: inherit;
+}
+.jet:before {
+  height: 65%;
+  width: 70%;
+  left: 15%;
+  -webkit-animation-duration: 1.1s;
+          animation-duration: 1.1s;
+  background-image: radial-gradient(ellipse at bottom, yellow 0%, yellow 10%, rgba(255, 255, 0, 0) 70%, rgba(255, 255, 0, 0) 100%);
+}
+.jet:after {
+  height: 40%;
+  width: 30%;
+  left: 35%;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  background-image: radial-gradient(ellipse at bottom, ivory 0%, ivory 10%, rgba(255, 255, 240, 0) 70%, rgba(255, 255, 240, 0) 100%);
+}
+@-webkit-keyframes jetflameanim {
+  0%,
+                100% {
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    -webkit-transform: scaleY(1.02) skewX(-0.2deg);
+            transform: scaleY(1.02) skewX(-0.2deg);
+  }
+  50% {
+    -webkit-transform: scaleY(0.98) skewX(0.2deg);
+            transform: scaleY(0.98) skewX(0.2deg);
+  }
+}
+@keyframes jetflameanim {
+  0%,
+                100% {
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    -webkit-transform: scaleY(1.02) skewX(-0.2deg);
+            transform: scaleY(1.02) skewX(-0.2deg);
+  }
+  50% {
+    -webkit-transform: scaleY(0.98) skewX(0.2deg);
+            transform: scaleY(0.98) skewX(0.2deg);
+  }
+}
+.jet2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-radius: 40%;
+  -webkit-animation: jetflameanim 1s infinite;
+          animation: jetflameanim 1s infinite;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+  background-image: radial-gradient(ellipse at bottom, #5300c8 0%, #5300c8 10%, rgba(83, 0, 200, 0) 70%, rgba(83, 0, 200, 0) 100%), radial-gradient(ellipse at bottom, #6a00ff 0%, #6a00ff 10%, rgba(106, 0, 255, 0) 60%, rgba(106, 0, 255, 0) 100%);
+  background-repeat: no-repeat;
+}
+.jet2:before, .jet2:after {
+  position: absolute;
+  content: "";
+  bottom: inherit;
+  left: inherit;
+  border-radius: inherit;
+  -webkit-animation: inherit;
+          animation: inherit;
+  background-repeat: inherit;
+}
+.jet2:before {
+  height: 65%;
+  width: 70%;
+  left: 15%;
+  -webkit-animation-duration: 1.1s;
+          animation-duration: 1.1s;
+  background-image: radial-gradient(ellipse at bottom, #ff0095 0%, #ff0095 10%, rgba(255, 0, 149, 0) 70%, rgba(255, 0, 149, 0) 100%);
+}
+.jet2:after {
+  height: 40%;
+  width: 30%;
+  left: 35%;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  background-image: radial-gradient(ellipse at bottom, #fff0f9 0%, #fff0f9 10%, rgba(255, 240, 249, 0) 70%, rgba(255, 240, 249, 0) 100%);
+}
+
+.jet3 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-radius: 25%;
+  -webkit-animation: jetflameanim 1s infinite;
+          animation: jetflameanim 1s infinite;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+  background-image: radial-gradient(ellipse at bottom, #00c800 0%, #00c800 10%, rgba(0, 200, 0, 0) 70%, rgba(0, 200, 0, 0) 100%), radial-gradient(ellipse at bottom, lime 0%, lime 10%, rgba(0, 255, 0, 0) 60%, rgba(0, 255, 0, 0) 100%);
+  background-repeat: no-repeat;
+}
+.jet3:before, .jet3:after {
+  position: absolute;
+  content: "";
+  bottom: inherit;
+  left: inherit;
+  border-radius: inherit;
+  -webkit-animation: inherit;
+          animation: inherit;
+  background-repeat: inherit;
+}
+.jet3:before {
+  height: 65%;
+  width: 70%;
+  left: 15%;
+  -webkit-animation-duration: 1.1s;
+          animation-duration: 1.1s;
+  background-image: radial-gradient(ellipse at bottom, cyan 0%, cyan 10%, rgba(0, 255, 255, 0) 70%, rgba(0, 255, 255, 0) 100%);
+}
+.jet3:after {
+  height: 40%;
+  width: 30%;
+  left: 35%;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  background-image: radial-gradient(ellipse at bottom, azure 0%, azure 10%, rgba(240, 255, 255, 0) 70%, rgba(240, 255, 255, 0) 100%);
+}
+
+.jet4 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-radius: 25%;
+  -webkit-animation: jetflameanim 1s infinite;
+          animation: jetflameanim 1s infinite;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+  background-image: radial-gradient(ellipse at bottom, #00c8c8 0%, #00c8c8 10%, rgba(0, 200, 200, 0) 70%, rgba(0, 200, 200, 0) 100%), radial-gradient(ellipse at bottom, cyan 0%, cyan 10%, rgba(0, 255, 255, 0) 60%, rgba(0, 255, 255, 0) 100%);
+  background-repeat: no-repeat;
+}
+.jet4:before, .jet4:after {
+  position: absolute;
+  content: "";
+  bottom: inherit;
+  left: inherit;
+  border-radius: inherit;
+  -webkit-animation: inherit;
+          animation: inherit;
+  background-repeat: inherit;
+}
+.jet4:before {
+  height: 65%;
+  width: 70%;
+  left: 15%;
+  -webkit-animation-duration: 1.1s;
+          animation-duration: 1.1s;
+  background-image: radial-gradient(ellipse at bottom, blue 0%, blue 10%, rgba(0, 0, 255, 0) 70%, rgba(0, 0, 255, 0) 100%);
+}
+.jet4:after {
+  height: 40%;
+  width: 30%;
+  left: 35%;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  background-image: radial-gradient(ellipse at bottom, #f0f0ff 0%, #f0f0ff 10%, rgba(240, 240, 255, 0) 70%, rgba(240, 240, 255, 0) 100%);
+}
+
+.jet5 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-radius: 40%;
+  -webkit-animation: jetflameanim 1s infinite;
+          animation: jetflameanim 1s infinite;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+  background-image: radial-gradient(ellipse at bottom, #c80000 0%, #c80000 10%, rgba(200, 0, 0, 0) 70%, rgba(200, 0, 0, 0) 100%), radial-gradient(ellipse at bottom, red 0%, red 10%, rgba(255, 0, 0, 0) 60%, rgba(255, 0, 0, 0) 100%);
+  background-repeat: no-repeat;
+}
+.jet5:before, .jet5:after {
+  position: absolute;
+  content: "";
+  bottom: inherit;
+  left: inherit;
+  border-radius: inherit;
+  -webkit-animation: inherit;
+          animation: inherit;
+  background-repeat: inherit;
+}
+.jet5:before {
+  height: 65%;
+  width: 70%;
+  left: 15%;
+  -webkit-animation-duration: 1.1s;
+          animation-duration: 1.1s;
+  background-image: radial-gradient(ellipse at bottom, yellow 0%, yellow 10%, rgba(255, 255, 0, 0) 70%, rgba(255, 255, 0, 0) 100%);
+}
+.jet5:after {
+  height: 40%;
+  width: 30%;
+  left: 35%;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  background-image: radial-gradient(ellipse at bottom, ivory 0%, ivory 10%, rgba(255, 255, 240, 0) 70%, rgba(255, 255, 240, 0) 100%);
+}
+
+.jetanim {
+  -webkit-animation: jetanim 0.3s linear infinite;
+          animation: jetanim 0.3s linear infinite;
+}
+
+.jetupdown {
+  -webkit-animation: jetupdown 1.2s linear infinite alternate;
+          animation: jetupdown 1.2s linear infinite alternate;
+}
+
+.jetrotate {
+  width: 20px;
+  height: 60px;
+  -webkit-animation: jetrotate 6s ease-in infinite;
+          animation: jetrotate 6s ease-in infinite;
+  margin: 50px auto 100px auto;
+}
+
+.slim {
+  width: 20px;
+}
+
+/* Parent animation sequences */
+@-webkit-keyframes jetanim {
+  0%,
+    100% {
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    -webkit-transform: scalex(1);
+            transform: scalex(1);
+  }
+  10% {
+    -webkit-transform: scale(0.8, 0.6);
+            transform: scale(0.8, 0.6);
+  }
+  50% {
+    -webkit-transform: scaleY(0.98);
+            transform: scaleY(0.98);
+  }
+  50% {
+    -webkit-transform: scaleY(0.58);
+            transform: scaleY(0.58);
+  }
+  70% {
+    -webkit-transform: scaleY(0.88);
+            transform: scaleY(0.88);
+  }
+  80% {
+    -webkit-transform: scaleY(0.68);
+            transform: scaleY(0.68);
+  }
+  90% {
+    -webkit-transform: scaleY(0.88);
+            transform: scaleY(0.88);
+  }
+}
+@keyframes jetanim {
+  0%,
+    100% {
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    -webkit-transform: scalex(1);
+            transform: scalex(1);
+  }
+  10% {
+    -webkit-transform: scale(0.8, 0.6);
+            transform: scale(0.8, 0.6);
+  }
+  50% {
+    -webkit-transform: scaleY(0.98);
+            transform: scaleY(0.98);
+  }
+  50% {
+    -webkit-transform: scaleY(0.58);
+            transform: scaleY(0.58);
+  }
+  70% {
+    -webkit-transform: scaleY(0.88);
+            transform: scaleY(0.88);
+  }
+  80% {
+    -webkit-transform: scaleY(0.68);
+            transform: scaleY(0.68);
+  }
+  90% {
+    -webkit-transform: scaleY(0.88);
+            transform: scaleY(0.88);
+  }
+}
+@-webkit-keyframes jetupdown {
+  0% {
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  50% {
+    -webkit-transform: scale(1, 0.5);
+            transform: scale(1, 0.5);
+  }
+  100% {
+    -webkit-transform: scale(0.3, 0);
+            transform: scale(0.3, 0);
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+  }
+}
+@keyframes jetupdown {
+  0% {
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  50% {
+    -webkit-transform: scale(1, 0.5);
+            transform: scale(1, 0.5);
+  }
+  100% {
+    -webkit-transform: scale(0.3, 0);
+            transform: scale(0.3, 0);
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
+  }
+}
+@-webkit-keyframes jetrotate {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(-90deg) translatex(60px) scale(1.2);
+            transform: rotate(-90deg) translatex(60px) scale(1.2);
+  }
+  3%,
+    95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(990deg) translatex(10px) scale(0.1);
+            transform: rotate(990deg) translatex(10px) scale(0.1);
+  }
+}
+@keyframes jetrotate {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(-90deg) translatex(60px) scale(1.2);
+            transform: rotate(-90deg) translatex(60px) scale(1.2);
+  }
+  3%,
+    95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(990deg) translatex(10px) scale(0.1);
+            transform: rotate(990deg) translatex(10px) scale(0.1);
+  }
+}
+
+</style>
+
+<body>
+
+<div class="grid">
+    <figure>
+        <div class="jetwrapper jetanim"><div class="jet"></div></div>
+    </figure>
+    <figure>
+        <div class="jetwrapper"><div class="jet2"></div></div>
+    </figure>
+    <figure>
+        <div class="jetwrapper jetupdown"><div class="jet3"></div></div>
+    </figure>
+    <figure>
+        <div class="jetwrapper slim"><div class="jet3"></div></div>
+    </figure>
+    <figure>
+        <div class="jetwrapper jetanim slim"><div class="jet4"></div></div>
+    </figure>
+    <figure>
+        <div class="jetwrapper jetrotate"><div class="jet5"></div></div>
+    </figure>
+</div>
+<div style="">
+</script>
+</body>
+</html>
