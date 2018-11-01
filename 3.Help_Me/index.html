@@ -6,6 +6,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta charset="UTF-8">
 <style>
+@media only screen and (orientation:portrait){
+
+  #container {
+
+    width: 100%;
+
+    -webkit-transform: rotate(90deg);
+
+    -moz-transform: rotate(90deg);
+
+    -o-transform: rotate(90deg);
+
+    -ms-transform: rotate(90deg);
+
+    transform: rotate(90deg);
+
+  }
+
+}
+
+@media only screen and (orientation:landscape){
+
+  #container {
+
+     -webkit-transform: rotate(0deg);
+
+     -moz-transform: rotate(0deg);
+
+     -o-transform: rotate(0deg);
+
+     -ms-transform: rotate(0deg);
+
+     transform: rotate(0deg);
+
+  }
+
+}
+
+
 	body{
 		margin:0 auto;
 		overflow:hidden;
@@ -375,53 +414,19 @@
 		sizeData(newWidth,newHeight);
 		resize(newWidth,newHeight);
 	
-		var FireballPointer = container.createScript('fireballPointer');
-
-FireballPointer.attributes.add('cameraEntity', { type: 'entity', title: 'Camera Entity' });
-
-// initialize code called once per entity
-FireballPointer.prototype.initialize = function() {
-    // Listen to when the user moves 
-    this.app.mouse.on(pc.EVENT_MOUSEMOVE, this.onMouseMove, this);
-    
-    if (this.app.touch) {
-        this.app.touch.on(pc.EVENT_TOUCHSTART, this.onTouchStart, this);
-        this.app.touch.on(pc.EVENT_TOUCHMOVE, this.onTouchMove, this);
-    }   
-};
-
-
-FireballPointer.prototype.updateFromScreen = function(screenPosition) {
-    // Project from the screen to the world via the camera and set the new position of 
-    // the fireball in world space
-    var position = this.entity.getPosition();
-    var distance = 1.5;
-    this.cameraEntity.camera.screenToWorld(screenPosition.x, screenPosition.y, distance, position);
-    this.entity.setPosition(position);
-};
-
-
-FireballPointer.prototype.onMouseMove = function(e) {
-    this.updateFromScreen(e);
-};
-
-
-FireballPointer.prototype.onTouchStart = function(e) {
-    // We only care about the first touch
-    if (e.touches.length == 1) {
-        this.updateFromScreen(e.touches[0]);
-        e.event.preventDefault();
-    }
-};
-
-
-FireballPointer.prototype.onTouchMove = function(e) {
-    // We only care about the first touch
-    this.updateFromScreen(e.touches[0]);
-    e.event.preventDefault();
-};
-	
 	}
+	
+	
+	document.addEventListener("orientationchange", function(event){
+    switch(window.orientation) 
+    {  
+        case -90: case 90:
+            /* Device is in landscape mode */
+            break; 
+        default:
+            /* Device is in portrait mode */
+    }
+});
 	
 	function sizeData(w,h){
 	
