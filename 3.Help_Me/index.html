@@ -45,16 +45,25 @@
 
   (function () {
   
-	var game = {
+	if (window.matchMedia("(orientation: portrait)").matches) {
+		var game = {
 		element: document.getElementById("gameContainer"),
 		width: 1280,
-		height: 800,
-		safeWidth: 1024,
+		height: 720,
+		safeWidth: 720,
+		safeHeight: 1280
+		}
+	}
+
+	if (window.matchMedia("(orientation: landscape)").matches) {
+		var game = {
+		element: document.getElementById("gameContainer"),
+		width: 1280,
+		height: 720,
+		safeWidth: 1280,
 		safeHeight: 720
-	},
-	
-	
-	
+		}
+	}
 	resizeGame = function () {
 	
 		var viewport, newGameWidth, newGameHeight, newGameX, newGameY;
@@ -67,6 +76,10 @@
 		
 		// Determine game size
 		if (game.height / game.width > viewport.height / viewport.width) {
+		
+		<!-- console.log(game.height,game.width,viewport.height,viewport.width); -->
+		<!-- console.log(game.height / game.width , viewport.height / viewport.width); -->
+		
 			if (game.safeHeight / game.width > viewport.height / viewport.width) {
 			  // A
 			  newGameHeight = viewport.height * game.height / game.safeHeight;
