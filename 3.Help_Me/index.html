@@ -14,38 +14,74 @@
 		user-select: none;
 	}
 
-@media screen and (orientation:portrait) {
-	#gameContainer{
+<!-- @media screen and (orientation:portrait) { -->
+	<!-- #gameContainer{ -->
 	
-		transform:rotate(90deg);
-		-ms-transform:rotate(90deg); 	/* IE 9 */
-		-moz-transform:rotate(90deg); 	/* Firefox */
-		-webkit-transform:rotate(90deg); /* Safari 和 Chrome */
-		-o-transform:rotate(90deg); 
+		<!-- transform:rotate(90deg); -->
+		<!-- -ms-transform:rotate(90deg); 	/* IE 9 */ -->
+		<!-- -moz-transform:rotate(90deg); 	/* Firefox */ -->
+		<!-- -webkit-transform:rotate(90deg); /* Safari 和 Chrome */ -->
+		<!-- -o-transform:rotate(90deg);  -->
 		
-		}
-	}
+		<!-- } -->
+	<!-- } -->
 
-@media screen and (orientation:landscape) {
-	#gameContainer{
+<!-- @media screen and (orientation:landscape) { -->
+	<!-- #gameContainer{ -->
 	
-		transform:rotate(0deg);
-		-ms-transform:rotate(0deg); 	/* IE 9 */
-		-moz-transform:rotate(0deg); 	/* Firefox */
-		-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
-		-o-transform:rotate(0deg); 
+		<!-- transform:rotate(0deg); -->
+		<!-- -ms-transform:rotate(0deg); 	/* IE 9 */ -->
+		<!-- -moz-transform:rotate(0deg); 	/* Firefox */ -->
+		<!-- -webkit-transform:rotate(0deg); /* Safari 和 Chrome */ -->
+		<!-- -o-transform:rotate(0deg);  -->
 		
-		}
-	}
+		<!-- } -->
+	<!-- } -->
 </style>
 </head>
 <body>
   <img id="gameContainer" class="gameContainer" src="html5-game-resize-example-bg.jpg" alt="HTML5 Game Example" width="2560" height="1600" onContextMenu="return false;"/>
   <script>
+  
+  <!-- window.onresize = function (event) { -->
+  <!-- applyOrientation(); -->
+<!-- } -->
 
+ var g = document.getElementById("gameContainer");
+
+<!-- function applyOrientation() { -->
+  <!-- if (window.innerHeight > window.innerWidth) { -->
+  
+	<!-- g.style.webkitTransform = 'rotate(90deg)';  -->
+    <!-- g.style.mozTransform    = 'rotate(90deg)';  -->
+    <!-- g.style.msTransform     = 'rotate(90deg)';  -->
+    <!-- g.style.oTransform      = 'rotate(90deg)';  -->
+    <!-- g.style.transform       = 'rotate(90deg)';  -->
+  
+    <!-- alert("You are now in portrait"); -->
+  <!-- } else { -->
+	<!-- g.style.webkitTransform = 'rotate(0deg)';  -->
+    <!-- g.style.mozTransform    = 'rotate(0deg)';  -->
+    <!-- g.style.msTransform     = 'rotate(0deg)';  -->
+    <!-- g.style.oTransform      = 'rotate(0deg)';  -->
+    <!-- g.style.transform       = 'rotate(0deg)';  -->
+    <!-- alert("You are now in landscape"); -->
+  <!-- } -->
+<!-- } -->
+  
   (function () {
   
 	if (window.matchMedia("(orientation: portrait)").matches) {
+		
+		
+		g.style.webkitTransform = 'rotate(90deg)'; 
+		g.style.mozTransform    = 'rotate(90deg)'; 
+		g.style.msTransform     = 'rotate(90deg)'; 
+		g.style.oTransform      = 'rotate(90deg)'; 
+		g.style.transform       = 'rotate(90deg)'; 
+	
+		 window.addEventListener('orientationchange', function() { location.reload(); }, false);
+		
 		var game = {
 		element: document.getElementById("gameContainer"),
 		width: 1280,
@@ -56,6 +92,15 @@
 	}
 
 	if (window.matchMedia("(orientation: landscape)").matches) {
+	
+		g.style.webkitTransform = 'rotate(0deg)'; 
+		g.style.mozTransform    = 'rotate(0deg)'; 
+		g.style.msTransform     = 'rotate(0deg)'; 
+		g.style.oTransform      = 'rotate(0deg)'; 
+		g.style.transform       = 'rotate(0deg)'; 
+	
+		 window.addEventListener('orientationchange', function() { location.reload(); }, false);
+			
 		var game = {
 		element: document.getElementById("gameContainer"),
 		width: 1280,
@@ -64,15 +109,6 @@
 		safeHeight: 720
 		}
 	}
-	
-	window.onorientationchange = function() { 
-        var orientation = window.orientation; 
-            switch(orientation) { 
-                case 0: window.location.reload(); 
-                case 90:  window.location.reload(); 
-                case -90: window.location.reload(); 
-                break; } 
-    };
 	
 	resizeGame = function () {
 	
