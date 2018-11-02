@@ -22,20 +22,28 @@
 }
 
 @media screen and (orientation:portrait) {
-    transform:rotate(90deg);
-	-ms-transform:rotate(90deg); 	/* IE 9 */
-	-moz-transform:rotate(90deg); 	/* Firefox */
-	-webkit-transform:rotate(90deg); /* Safari 和 Chrome */
-	-o-transform:rotate(90deg); 
-}
+	#gameContainer{
+	
+		transform:rotate(90deg);
+		-ms-transform:rotate(90deg); 	/* IE 9 */
+		-moz-transform:rotate(90deg); 	/* Firefox */
+		-webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+		-o-transform:rotate(90deg); 
+		
+		}
+	}
 
 @media screen and (orientation:landscape) {
-    transform:rotate(0deg);
-	-ms-transform:rotate(0deg); 	/* IE 9 */
-	-moz-transform:rotate(0deg); 	/* Firefox */
-	-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
-	-o-transform:rotate(0deg); 
-}
+	#gameContainer{
+	
+		transform:rotate(0deg);
+		-ms-transform:rotate(0deg); 	/* IE 9 */
+		-moz-transform:rotate(0deg); 	/* Firefox */
+		-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+		-o-transform:rotate(0deg); 
+		
+		}
+	}
 </style>
 </head>
 <body>
@@ -52,6 +60,8 @@
 		safeWidth: 1024,
 		safeHeight: 720
 	},
+	
+	
 	
 	resizeGame = function () {
 	
@@ -70,16 +80,18 @@
 			  newGameHeight = viewport.height * game.height / game.safeHeight;
 			  newGameWidth = newGameHeight * game.width / game.height;
 			} else {
+				
 			  // B
 			  newGameWidth = viewport.width;
 			  newGameHeight = newGameWidth * game.height / game.width;
 			}
-		} else {
+		} else { 
 			if (game.height / game.safeWidth > viewport.height / viewport.width) {
 				// C
 				newGameHeight = viewport.height;
 				newGameWidth = newGameHeight * game.width / game.height;
 			} else {
+				 
 				// D
 				newGameWidth = viewport.width * game.width / game.safeWidth;
 				newGameHeight = newGameWidth * game.height / game.width;
