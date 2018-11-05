@@ -2,7 +2,7 @@
 <html>
 <head>
 	 <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	 <meta name="apple-mobile-web-app-capable" content="yes"/>
 	 <meta name="mobile-web-app-capable" content="yes">
 <title>Game Safe Demo</title>
@@ -70,7 +70,12 @@
     <!-- alert("You are now in landscape"); -->
   <!-- } -->
 <!-- } -->
-  window.scrollTo(0,1);
+ window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+});
   (function () {
   
 	if (window.matchMedia("(orientation: portrait)").matches) {
