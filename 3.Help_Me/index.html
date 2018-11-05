@@ -70,12 +70,9 @@
     <!-- alert("You are now in landscape"); -->
   <!-- } -->
 <!-- } -->
- window.addEventListener("load",function() {
-    setTimeout(function(){
-        // This hides the address bar:
-        window.scrollTo(0, 1);
-    }, 0);
-});
+
+document.body.addEventListener('touchstart', function(e){ e.preventDefault(); });
+
   (function () {
   
 	if (window.matchMedia("(orientation: portrait)").matches) {
