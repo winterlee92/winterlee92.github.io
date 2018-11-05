@@ -1055,6 +1055,14 @@
 	}
 
 	window.addEventListener("orientationchange", function() {location.reload();}, false);
+	
+	window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+});
+
     document.getElementById("x").innerHTML = "";
 </script>
 <noscript> 
