@@ -1,8 +1,10 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta 
+	 <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	 <meta name="apple-mobile-web-app-capable" content="yes"/>
+	 <meta name="mobile-web-app-capable" content="yes">
 <title>Game Safe Demo</title>
 <style>	
 	body{
@@ -39,7 +41,7 @@
 	<!-- } -->
 </style>
 </head>
-<body>
+<body id="b" onContextMenu="return false;">
   <img id="gameContainer" class="gameContainer" src="bg.jpg" alt="HTML5 Game Example" width="2560" height="1600" onContextMenu="return false;"/>
   <script>
   
@@ -72,7 +74,6 @@
   (function () {
   
 	if (window.matchMedia("(orientation: portrait)").matches) {
-		
 		
 		g.style.webkitTransform = 'rotate(90deg)'; 
 		g.style.mozTransform    = 'rotate(90deg)'; 
@@ -161,12 +162,6 @@
 window.addEventListener("resize", resizeGame);
 resizeGame();
 }())
-
-	window.addEventListener("load",function() {
-    setTimeout(function(){
-        // This hides the address bar:
-        window.scrollTo(0, 1);
-    }, 0);
 
 </script>
 </body>
