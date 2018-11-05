@@ -40,7 +40,7 @@
 </style>
 </head>
 <body>
-  <!-- <img id="gameContainer" class="gameContainer" src="html5-game-resize-example-bg.jpg" alt="HTML5 Game Example" width="2560" height="1600" onContextMenu="return false;"/> -->
+  <img id="gameContainer" class="gameContainer" src="html5-game-resize-example-bg.jpg" alt="HTML5 Game Example" width="2560" height="1600" onContextMenu="return false;"/>
   <canvas id="canvas"></canvas>
   <script>
   
@@ -174,95 +174,97 @@
 	setInterval(draw, 30);
 }
   
-  <!-- (function () { -->
+  (function () {
   
-	<!-- if (window.matchMedia("(orientation: portrait)").matches) { -->
+	if (window.matchMedia("(orientation: portrait)").matches) {
 		
 		
-		<!-- g.style.webkitTransform = 'rotate(90deg)';  -->
-		<!-- g.style.mozTransform    = 'rotate(90deg)';  -->
-		<!-- g.style.msTransform     = 'rotate(90deg)';  -->
-		<!-- g.style.oTransform      = 'rotate(90deg)';  -->
-		<!-- g.style.transform       = 'rotate(90deg)';  -->
+		g.style.webkitTransform = 'rotate(90deg)'; 
+		g.style.mozTransform    = 'rotate(90deg)'; 
+		g.style.msTransform     = 'rotate(90deg)'; 
+		g.style.oTransform      = 'rotate(90deg)'; 
+		g.style.transform       = 'rotate(90deg)'; 
 	
-		 <!-- window.addEventListener('orientationchange', function() { location.reload(); }, false); -->
+		 window.addEventListener('orientationchange', function() { location.reload(); }, false);
 		
-		<!-- var game = { -->
-		<!-- element: document.getElementById("gameContainer"), -->
-		<!-- width: 1280, -->
-		<!-- height: 720, -->
-		<!-- safeWidth: 720, -->
-		<!-- safeHeight: 1280 -->
-		<!-- } -->
-	<!-- } -->
+		var game = {
+		element: document.getElementById("gameContainer"),
+		width: 1280,
+		height: 720,
+		safeWidth: 720,
+		safeHeight: 1280
+		}
+	}
 
-	<!-- if (window.matchMedia("(orientation: landscape)").matches) { -->
+	if (window.matchMedia("(orientation: landscape)").matches) {
 	
-		<!-- g.style.webkitTransform = 'rotate(0deg)';  -->
-		<!-- g.style.mozTransform    = 'rotate(0deg)';  -->
-		<!-- g.style.msTransform     = 'rotate(0deg)';  -->
-		<!-- g.style.oTransform      = 'rotate(0deg)';  -->
-		<!-- g.style.transform       = 'rotate(0deg)';  -->
+		g.style.webkitTransform = 'rotate(0deg)'; 
+		g.style.mozTransform    = 'rotate(0deg)'; 
+		g.style.msTransform     = 'rotate(0deg)'; 
+		g.style.oTransform      = 'rotate(0deg)'; 
+		g.style.transform       = 'rotate(0deg)'; 
 	
-		 <!-- window.addEventListener('orientationchange', function() { location.reload(); }, false); -->
+		 window.addEventListener('orientationchange', function() { location.reload(); }, false);
 			
-		<!-- var game = { -->
-		<!-- element: document.getElementById("gameContainer"), -->
-		<!-- width: 1280, -->
-		<!-- height: 720, -->
-		<!-- safeWidth: 1280, -->
-		<!-- safeHeight: 720 -->
-		<!-- } -->
-	<!-- } -->
+		var game = {
+		element: document.getElementById("gameContainer"),
+		width: 1280,
+		height: 720,
+		safeWidth: 1280,
+		safeHeight: 720
+		}
+	}
 	
-	<!-- resizeGame = function () { -->
+	resizeGame = function () {
 	
-		<!-- var viewport, newGameWidth, newGameHeight, newGameX, newGameY; -->
+		var viewport, newGameWidth, newGameHeight, newGameX, newGameY;
 						
-		<!-- // Get the dimensions of the viewport -->
-		<!-- viewport = { -->
-			<!-- width: window.innerWidth, -->
-			<!-- height: window.innerHeight -->
-		<!-- }; -->
+		// Get the dimensions of the viewport
+		viewport = {
+			width: window.innerWidth,
+			height: window.innerHeight
+		};
 		
-		<!-- // Determine game size -->
-		<!-- if (game.height / game.width > viewport.height / viewport.width) { -->
+		// Determine game size
+		if (game.height / game.width > viewport.height / viewport.width) {
 		
-			<!-- if (game.safeHeight / game.width > viewport.height / viewport.width) { -->
-			  <!-- // A -->
-			  <!-- newGameHeight = viewport.height * game.height / game.safeHeight; -->
-			  <!-- newGameWidth = newGameHeight * game.width / game.height; -->
-			<!-- } else { -->
+		<!-- console.log(game.height,game.width,viewport.height,viewport.width); -->
+		<!-- console.log(game.height / game.width , viewport.height / viewport.width); -->
+		
+			if (game.safeHeight / game.width > viewport.height / viewport.width) {
+			  // A
+			  newGameHeight = viewport.height * game.height / game.safeHeight;
+			  newGameWidth = newGameHeight * game.width / game.height;
+			} else {
 				
-			  <!-- // B -->
-			  <!-- newGameWidth = viewport.width; -->
-			  <!-- newGameHeight = newGameWidth * game.height / game.width; -->
-			<!-- } -->
-		<!-- } else {  -->
-			<!-- if (game.height / game.safeWidth > viewport.height / viewport.width) { -->
-				<!-- // C -->
-				<!-- newGameHeight = viewport.height; -->
-				<!-- newGameWidth = newGameHeight * game.width / game.height; -->
-			<!-- } else { -->
+			  // B
+			  newGameWidth = viewport.width;
+			  newGameHeight = newGameWidth * game.height / game.width;
+			}
+		} else { 
+			if (game.height / game.safeWidth > viewport.height / viewport.width) {
+				// C
+				newGameHeight = viewport.height;
+				newGameWidth = newGameHeight * game.width / game.height;
+			} else {
 				 
-				<!-- // D -->
-				<!-- newGameWidth = viewport.width * game.width / game.safeWidth; -->
-				<!-- newGameHeight = newGameWidth * game.height / game.width; -->
-			<!-- } -->
-		<!-- } -->
+				// D
+				newGameWidth = viewport.width * game.width / game.safeWidth;
+				newGameHeight = newGameWidth * game.height / game.width;
+			}
+		}
 		
-		<!-- game.element.style.width = newGameWidth + "px"; -->
-		<!-- game.element.style.height = newGameHeight + "px"; -->
+		game.element.style.width = newGameWidth + "px";
+		game.element.style.height = newGameHeight + "px";
 		  
-		<!-- newGameX = (viewport.width - newGameWidth) / 2; -->
-		<!-- newGameY = (viewport.height - newGameHeight) / 2; -->
+		newGameX = (viewport.width - newGameWidth) / 2;
+		newGameY = (viewport.height - newGameHeight) / 2;
 				
-		<!-- // Set the new padding of the game so it will be centered -->
-		<!-- game.element.style.margin = newGameY + "px " + newGameX + "px"; -->
-	<!-- }; -->
-<!-- window.addEventListener("resize", resizeGame); -->
-<!-- resizeGame(); -->
-<!-- }()) -->
-</script>
+		// Set the new padding of the game so it will be centered
+		game.element.style.margin = newGameY + "px " + newGameX + "px";
+	};
+window.addEventListener("resize", resizeGame);
+resizeGame();
+}())</script>
 </body>
 </html>
