@@ -14,6 +14,7 @@
 		-moz-user-select: none;
 		-ms-user-select: none;
 		user-select: none;
+		background-color:black;
 	}
 
 <!-- @media screen and (orientation:portrait) { -->
@@ -90,12 +91,18 @@
 		background-image: url(m6.png);
 		z-index:6;
 	}
-	
+	#layer1,#layer2{
+		position:absolute;	
+		height:100%;
+		width:100%;
+		display:block;
+		z-index:99;
+	}
 	
 </style>
 </head>
 <body ontouchmove="blockMove()" onContextMenu="return false;">
-  <div id="gameContainer" class="gameContainer" style="" src="" alt="HTML5 Game Example" width="2560" height="1600" onContextMenu="return false;"/>
+  <div id="gameContainer" class="gameContainer" alt="HTML5 Game Example" width="2560" height="1600" onContextMenu="return false;"/>
   <div id="monster">  
 	<div id="m1"></div>
 	<div id="m2"></div>
@@ -103,6 +110,10 @@
 	<div id="m4"></div>
 	<div id="m5"></div>
 	<div id="m6"></div>
+  </div>
+  <div id="sideLayer">  
+	<div id="layer1"></div>
+	<div id="layer2"></div>
   </div>
   <script>
 
