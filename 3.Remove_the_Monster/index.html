@@ -3,8 +3,8 @@
 <head>
 	 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	 <meta name="apple-mobile-web-app-capable" content="yes"/>
-	 <meta name="mobile-web-app-capable" content="yes">
+	 <!-- <meta name="apple-mobile-web-app-capable" content="yes"/> -->
+	 <!-- <meta name="mobile-web-app-capable" content="yes"> -->
 <title>Game Safe Demo</title>
 <style>	
 	body{
@@ -35,14 +35,75 @@
 		<!-- -ms-transform:rotate(0deg); 	/* IE 9 */ -->
 		<!-- -moz-transform:rotate(0deg); 	/* Firefox */ -->
 		<!-- -webkit-transform:rotate(0deg); /* Safari 和 Chrome */ -->
-		<!-- -o-transform:rotate(0deg);  -->
-		
+		<!-- -o-transform:rotate(0deg);  -->		
 		<!-- } -->
 	<!-- } -->
+	
+	#gameContainer,#monster,#m1,#m2,#m3,#m4,#m5,#m6{	
+		position:absolute;	
+		height:100%;
+		width:100%;
+		display:block;
+		vertical-align:bottom;
+		background-Repeat:no-repeat;
+	}
+	#gameContainer
+	{
+		background-Size : 100% 100%; 
+		background-image:url(bg.jpg);
+	}
+	#m1{
+		background-Size: 43% 100%;
+		margin: auto 74%;
+		background-image: url(m1.png);
+		z-index:1;
+	}
+	#m2{
+		background-Size: 43% 100%;
+		margin: auto -6%;
+		background-image:url(m2.png);
+	}
+	#m3{
+		background-Size: 23% 40%;
+		margin-top: 16%;
+		margin-left: -2%;
+		background-image: url(m3.png);
+		z-index:3;
+	}
+	#m4{
+		background-Size: 23% 45%;
+		margin-top: 28%;
+		margin-left: 76%;
+		background-image:url(m4.png);
+		z-index:4;
+	}
+	#m5{
+		background-Size: 45% 58%;
+		margin-top: 5%;
+		margin-left: 59.5%;
+		background-image: url(m5.png);
+	}
+	#m6{
+		background-Size: 45% 58%;
+		margin-top: 24%;
+		margin-left: -8%;
+		background-image: url(m6.png);
+		z-index:6;
+	}
+	
+	
 </style>
 </head>
 <body ontouchmove="blockMove()" onContextMenu="return false;">
-  <img id="gameContainer" class="gameContainer" src="bg.jpg" alt="HTML5 Game Example" width="2560" height="1600" onContextMenu="return false;"/>
+  <div id="gameContainer" class="gameContainer" style="" src="" alt="HTML5 Game Example" width="2560" height="1600" onContextMenu="return false;"/>
+  <div id="monster">  
+	<div id="m1"></div>
+	<div id="m2"></div>
+	<div id="m3"></div>
+	<div id="m4"></div>
+	<div id="m5"></div>
+	<div id="m6"></div>
+  </div>
   <script>
 
  var g = document.getElementById("gameContainer");
