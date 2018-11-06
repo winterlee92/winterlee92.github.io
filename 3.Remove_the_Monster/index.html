@@ -40,13 +40,14 @@
 		<!-- } -->
 	<!-- } -->
 	
-	#gameContainer,#monster,#m1,#m2,#m3,#m4,#m5,#m6{	
+	#gameContainer,#monster,#m1,#m2,#m3,#m4,#m5,#m6,#frame,#layer1,#layer2,#sidelayer,#sidelayer2{	
 		position:absolute;	
 		height:100%;
 		width:100%;
 		display:block;
 		vertical-align:bottom;
 		background-Repeat:no-repeat;
+		overflow:hidden;
 	}
 	#gameContainer
 	{
@@ -91,29 +92,36 @@
 		background-image: url(m6.png);
 		z-index:6;
 	}
-	#layer1,#layer2{
-		position:absolute;	
-		height:100%;
-		width:100%;
-		display:block;
-		z-index:99;
+	#layer1{
+		z-index:98;
+		background-Size : 100% 100%; 
+		background-image: url(frame.png);
+		
 	}
-	
+	#layer2{
+		z-index:99;
+		background-Size : 100% 100%; 
+		background-image: url(frame_bg.png);
+		opacity:0.5;
+	}
 </style>
 </head>
 <body ontouchmove="blockMove()" onContextMenu="return false;">
-  <div id="gameContainer" class="gameContainer" alt="HTML5 Game Example" width="2560" height="1600" onContextMenu="return false;"/>
-  <div id="monster">  
-	<div id="m1"></div>
-	<div id="m2"></div>
-	<div id="m3"></div>
-	<div id="m4"></div>
-	<div id="m5"></div>
-	<div id="m6"></div>
-  </div>
-  <div id="sideLayer">  
-	<div id="layer1"></div>
-	<div id="layer2"></div>
+  <div id="gameContainer" class="gameContainer" alt="HTML5 Game Example" width="2560" height="1600" onContextMenu="return false;">
+	  <div id="monster">  
+		<div id="m1"></div>
+		<div id="m2"></div>
+		<div id="m3"></div>
+		<div id="m4"></div>
+		<div id="m5"></div>
+		<div id="m6"></div>
+	  </div>
+	  <div id="frame">  
+		<div id="layer1"></div>
+		<div id="layer2"></div>
+		<!-- <div id="sideLayer1"></div> -->
+		<!-- <div id="sideLayer2"></div> -->
+	  </div>
   </div>
   <script>
 
