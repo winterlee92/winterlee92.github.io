@@ -70,6 +70,46 @@
 		margin: 20% 5%;
 		z-index: 96;
 	}
+
+	#c1{
+		position: absolute;
+		width: 85%;
+		height: 52%;
+		margin-top: 31%;
+		margin-left: 8%;
+		background-image: url(c1.png);
+		background-Size: 100% 100%;
+		background-Repeat: no-repeat;
+	}
+	
+	#f1{
+		position: absolute;
+		width: 30%;
+		height: 5%;
+		margin-top: 126.5%;
+		margin-left: 36.2%;
+		background-image: url(f1.png);
+		background-Size: 100% 100%;
+		background-Repeat: no-repeat;
+		
+		-webkit-animation-name: start;
+		-webkit-animation-duration: 1s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate-reverse;
+		animation-name: start;
+		animation-duration: 1s
+	}
+	
+	@-webkit-keyframes start {
+		0%   {opacity:1;}
+		100% {opacity:0;}
+	}
+	
+	@keyframes start { 
+		0%   {opacity:1;}
+		100% {opacity:0;}
+	}
+	
 	#canvas{
 		position: absolute;
 		width:100%;
@@ -82,7 +122,9 @@
 <body onload="lp()" style="background-color:black" onContextMenu="return false;">
 	<div id="loader"></div>
 	<div id="container" class="animate-bottom" >
-		<div id="inner_container">			
+		<div id="inner_container">		
+			<div id="c1"></div>
+			<div id="f1"></div>
 		</div>
 	</div>	
 	<script id="x" type="text/javascript">
