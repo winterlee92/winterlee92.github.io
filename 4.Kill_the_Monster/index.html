@@ -39,6 +39,7 @@
 		margin:0 auto; 
 		height:100%; 
 		width:100%; 
+		overflow:hidden;
 	}
 	.animate-bottom{ 
 		position: relative;
@@ -295,11 +296,11 @@
 <body onload="lp()" style="background-color:black" onContextMenu="return false;">
 	<div id="loader"></div>
 	<div id="container" class="animate-bottom">
-		<div id="inner_container" onclick="gameStart()" ontouchstart="touchstart(event)">		
+		<div id="inner_container" ontouchstart="touchstart(event)">		
 			<div id="c1"></div>
 			<div id="f1"></div>
 		</div>
-		<div id="inner_container2" class="animate-bottom" onclick="" ontouchstart="attack(event)">	
+		<div id="inner_container2" class="animate-bottom" ontouchstart="attack(event)">	
 			<div>
 				<div id="b1"></div>
 				<div id="mf1"></div>
@@ -367,6 +368,7 @@
 		var inner_container = document.getElementById('inner_container');
 		var inner_container2 = document.getElementById('inner_container2');
 		var ls1 = document.getElementsByClassName("ls1");	
+		var m1 = document.getElementsByClassName("m1");	
 		var widthToHeight = 0 ;
 		var newWidth = window.innerWidth;
 		var newHeight = window.innerHeight;
@@ -389,6 +391,8 @@
 		document.getElementById('tut').style.display = "block";
 		}
 	
+	var mLeft = 9;
+	var toggle = 0;
 	function attack(event) {
 		event.preventDefault();
 		document.getElementById('tut').style.display = "none";
@@ -396,22 +400,49 @@
 		document.getElementById('ci3').style.display = "none";
 		
 		var mTop = 132;
-		function step(timestamp) {
-			  mTop = mTop - 10;
+		function sword(timestamp) {
+			  mTop-=10;
 			  ls1.style.marginTop = mTop + '%';
 			  if (mTop > -30) {
-				window.requestAnimationFrame(step);
+				window.requestAnimationFrame(sword);
 			  }
 			  else{
 				ls1.style.marginTop = 132 + '%';
 			  }
 			}
-			window.requestAnimationFrame(step);
+			window.requestAnimationFrame(sword);
+		
+		
+		function monster(timestamp) {
+			if (toggle === 0){
+			  mLeft--;
+			  m1.style.marginLeft = mLeft + '%';
+			  if (mLeft >-65) {
+				window.requestAnimationFrame(monster);
+			  }
+			  else {
+				toggle=1;
+				window.requestAnimationFrame(monster);
+			  }
+			  console.log(mLeft);
+			}
+			if (toggle === 1){
+			   mLeft++;
+			  m1.style.marginLeft = mLeft + '%';
+			  if (mLeft <70) {
+				window.requestAnimationFrame(monster);
+			  }
+			  else {
+				toggle=0;
+				window.requestAnimationFrame(monster);
+			  }
+			}
 		}
+			window.requestAnimationFrame(monster);
+			
+	}
 	
-	<!-- function attackMonster(){ -->
-		<!-- ls1.style.marginTop =  -->
-	<!-- } -->
+	
 	
 	function createImage(){
 		
