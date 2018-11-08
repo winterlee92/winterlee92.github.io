@@ -294,7 +294,7 @@
 </style>
 <body onload="lp()" style="background-color:black" onContextMenu="return false;">
 	<div id="loader"></div>
-	<div id="container" class="animate-bottom" >
+	<div id="container" class="animate-bottom" ontouchstart="touchstart(event)">
 		<div id="inner_container" onclick="gameStart()">		
 			<div id="c1"></div>
 			<div id="f1"></div>
@@ -339,11 +339,15 @@
 	
 	}
 	
-	container.addEventListener('touchstart', activate);
-	container.addEventListener('mousedown', activate);
+	container.addEventListener('touchstart', touchstart);
+	container.addEventListener('mousedown', touchstart);
 	
-	function activate(event) {
-		event.preventDefault(); }
+	function touchstart(event) {
+		event.preventDefault();
+		inner_container.style.display = "none";
+		inner_container2.style.display = "block";
+		document.getElementById('tut').style.display = "block";
+		}
 	
 	function gameStart(){
 		inner_container.style.display = "none";
