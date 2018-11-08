@@ -294,12 +294,12 @@
 </style>
 <body onload="lp()" style="background-color:black" onContextMenu="return false;">
 	<div id="loader"></div>
-	<div id="container" class="animate-bottom" ontouchstart="touchstart(event)">
-		<div id="inner_container" onclick="gameStart()">		
+	<div id="container" class="animate-bottom">
+		<div id="inner_container" onclick="gameStart()" ontouchstart="touchstart(event)">		
 			<div id="c1"></div>
 			<div id="f1"></div>
 		</div>
-		<div id="inner_container2" class="animate-bottom" onclick="attackMonster()">	
+		<div id="inner_container2" class="animate-bottom" onclick="" ontouchstart="attack(event)">	
 			<div>
 				<div id="b1"></div>
 				<div id="mf1"></div>
@@ -320,6 +320,43 @@
 	</div>	
 	 <!-- <canvas id="canvas" width="800" height="200"></canvas> -->
 	<script id="x" type="text/javascript">
+	
+	window.requestAnimFrame = (function(){
+	  return  window.requestAnimationFrame       ||
+			  window.webkitRequestAnimationFrame ||
+			  window.mozRequestAnimationFrame    ||
+			  function( callback ){
+				window.setTimeout(callback, 1000 / 60);
+			  };
+	})();
+	
+	(function() {
+		var lastTime = 0;
+		var vendors = ['webkit', 'moz'];
+		for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+			window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+			window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] ||    // Webkit中此取消方法的名字变了
+										  window[vendors[x] + 'CancelRequestAnimationFrame'];
+		}
+
+		if (!window.requestAnimationFrame) {
+			window.requestAnimationFrame = function(callback, element) {
+				var currTime = new Date().getTime();
+				var timeToCall = Math.max(0, 16.7 - (currTime - lastTime));
+				var id = window.setTimeout(function() {
+					callback(currTime + timeToCall);
+				}, timeToCall);
+				lastTime = currTime + timeToCall;
+				return id;
+			};
+		}
+		if (!window.cancelAnimationFrame) {
+			window.cancelAnimationFrame = function(id) {
+				clearTimeout(id);
+			};
+		}
+	}());
+	
 		var mv;
 		function lp() {; mv = setTimeout(main, 500);}
 		
@@ -337,17 +374,39 @@
 		resize(newWidth,newHeight);
 		
 		createImage();
-
 	}
 	
-	container.addEventListener('touchstart', touchstart);
-	container.addEventListener('mousedown', touchstart);
+	inner_container.addEventListener('touchstart', touchstart);
+	inner_container.addEventListener('mousedown', touchstart);
+	
+	inner_container2.addEventListener('touchstart', attack);
+	inner_container2.addEventListener('mousedown', attack);
 	
 	function touchstart(event) {
 		event.preventDefault();
 		inner_container.style.display = "none";
 		inner_container2.style.display = "block";
 		document.getElementById('tut').style.display = "block";
+		}
+	
+	function attack(event) {
+		event.preventDefault();
+		document.getElementById('tut').style.display = "none";
+		document.getElementById('cursor').style.display = "none";
+		document.getElementById('ci3').style.display = "none";
+		
+		var mTop = 132;
+		function step(timestamp) {
+			  mTop = mTop - 10;
+			  ls1.style.marginTop = mTop + '%';
+			  if (mTop > -30) {
+				window.requestAnimationFrame(step);
+			  }
+			  else{
+				ls1.style.marginTop = 132 + '%';
+			  }
+			}
+			window.requestAnimationFrame(step);
 		}
 	
 	<!-- function attackMonster(){ -->
