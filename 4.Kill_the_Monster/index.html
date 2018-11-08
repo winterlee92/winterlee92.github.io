@@ -317,7 +317,7 @@
 			<div id="cursor"></div>
 			 
 	</div>	
-	 <canvas id="canvas" width="800" height="200"></canvas>
+	 <!-- <canvas id="canvas" width="800" height="200"></canvas> -->
 	<script id="x" type="text/javascript">
 		var mv;
 		function lp() {; mv = setTimeout(main, 500);}
@@ -338,6 +338,12 @@
 		createImage();
 	
 	}
+	
+	container.addEventListener('touchstart', activate);
+	container.addEventListener('mousedown', activate);
+	
+	function activate(event) {
+		event.preventDefault(); }
 	
 	function gameStart(){
 		inner_container.style.display = "none";
@@ -377,28 +383,28 @@
 		
 	}
 	
-	function writeMessage(canvas, message) {
-        var context = canvas.getContext('2d');
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        context.font = '18pt Calibri';
-        context.fillStyle = 'white';
-        context.fillText(message, 10, 25);
-		  }
-		  function getMousePos(canvas, evt) {
-			var rect = canvas.getBoundingClientRect();
-			return {
-			  x: evt.clientX - rect.left,
-			  y: evt.clientY - rect.top
-			};
-		  }
-		  var canvas = document.getElementById('canvas');
-		  var context = canvas.getContext('2d');
+	<!-- function writeMessage(canvas, message) { -->
+        <!-- var context = canvas.getContext('2d'); -->
+        <!-- context.clearRect(0, 0, canvas.width, canvas.height); -->
+        <!-- context.font = '18pt Calibri'; -->
+        <!-- context.fillStyle = 'white'; -->
+        <!-- context.fillText(message, 10, 25); -->
+		  <!-- } -->
+		  <!-- function getMousePos(canvas, evt) { -->
+			<!-- var rect = canvas.getBoundingClientRect(); -->
+			<!-- return { -->
+			  <!-- x: evt.clientX - rect.left, -->
+			  <!-- y: evt.clientY - rect.top -->
+			<!-- }; -->
+		  <!-- } -->
+		  <!-- var canvas = document.getElementById('canvas'); -->
+		  <!-- var context = canvas.getContext('2d'); -->
 
-		  canvas.addEventListener('mousemove', function(evt) {
-			var mousePos = getMousePos(canvas, evt);
-			var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
-			writeMessage(canvas, message);
-		  }, false);
+		  <!-- canvas.addEventListener('mousemove', function(evt) { -->
+			<!-- var mousePos = getMousePos(canvas, evt); -->
+			<!-- var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y; -->
+			<!-- writeMessage(canvas, message); -->
+		  <!-- }, false); -->
 	
 	function sizeData(w,h){
 	
