@@ -68,13 +68,6 @@
 		background-image:url(bg.jpg) !important;
 		display:none;
 	}
-	<!-- #content_inner_container,#content_inner_container2{ -->
-		<!-- position: absolute; -->
-		<!-- width: 90%; -->
-		<!-- height: 60%; -->
-		<!-- margin: 20% 5%; -->
-		<!-- z-index: 96; -->
-	<!-- } -->
 
 	#c1{
 		position: absolute;
@@ -99,7 +92,6 @@
 		animation-direction: alternate-reverse;
 		animation-name: start;
 		animation-duration: 1s;
-		
 		font-family:arial,"microsoft yahei",simsun,sans-self; 
 	}
 	
@@ -112,7 +104,6 @@
 		0%   {opacity:0.8;}
 		100% {opacity:0;}
 	}
-	
 	
 	#mp1{
 		position: absolute;
@@ -138,14 +129,25 @@
 	
 	#b1{
 		position: absolute;
+		width: 100%;
+		height: 100%;
+		margin-left:0;
+		background-color: rgb(139,0,0);
+		border-top-right-radius: 25px;
+		border-bottom-right-radius: 25px;
+		box-shadow: inset 0 2px 10px rgba(255,255,255,0.5);
+	}
+	
+	#bFrame{
+		position: absolute;
 		width: 52%;
-		height: 2%;
+		height: 1.5%;
 		margin-top: 9%;
 		margin-left: 28%;
-		background-image: url(b1.png);
-		background-Size: 100% 100%;
-		background-Repeat: no-repeat;
-	}
+		border: 2px solid gray;
+		 border-top-right-radius: 25px;
+		 border-bottom-right-radius: 25px;
+		}
 	
 	#m1{
 		position: absolute;
@@ -216,7 +218,6 @@
 		margin-top: 144.6%;
 		margin-left: 26.2%;
 		color:white;
-		<!-- background-image: url(ci1.png); -->
 		background-Size: 100% 100%;
 		background-Repeat: no-repeat;
 	}
@@ -230,30 +231,7 @@
 		margin-left: 78.5%;
 		color: white;
 	}
-	
-	<!-- #lsglow{ -->
-		<!-- position: absolute; -->
-		<!-- width: 2%; -->
-		<!-- height: 2%; -->
-		<!-- margin-top: 132%; -->
-		<!-- margin-left: 42%; -->
-		<!-- z-index: 100; -->
-		<!-- border: 2px inset yellow; -->
-		<!-- border-radius:2%; -->
-		<!-- filter: drop-shadow(0px 0px 4px #f4d83f); -->
-		
-		<!-- -webkit-animation-name: glow; -->
-		<!-- -webkit-animation-duration: 1s; -->
-		<!-- -webkit-animation-iteration-count: infinite; -->
-		<!-- -webkit-animation-direction: alternate-reverse; -->
-		<!-- -webkit-animation-delay:1s; -->
-		<!-- animation-delay:1s; -->
-		<!-- animation-name: glow; -->
-		<!-- animation-duration: 1s; -->
-		<!-- animation-iteration-count: infinite; -->
-		<!-- animation-direction: alternate-reverse; -->
-	<!-- } -->
-	
+
 	#ls1{
 		position: absolute;
 		width: 18%;
@@ -291,6 +269,15 @@
 			filter: brightness(150%);
 		}
 	}
+	
+	#attackPoint{
+		position: absolute;
+		width: 21.5%;
+		height: 8%;
+		margin-left: 37.5%;
+		border: 1px solid white;
+		z-index: 101;
+	}	
 	
 	#mf3{
 		position: absolute;
@@ -347,6 +334,15 @@
 		color: white;
 	}
 	
+	#weakness{
+		position: absolute;
+		width: 10%;
+		height: 10%;
+		margin-top: 45%;
+		margin-left: 35%;
+		border: 1px solid white;
+		z-index: 101;
+	}
 	#canvas{
 		position: absolute;
 		width:200%;
@@ -364,32 +360,33 @@
 			</div>
 		</div>
 		<div id="inner_container2" class="animate-bottom" ontouchstart="attack()">	
-			<div>
-				<div id="b1"></div>
-				<div id="mf1"></div>
-				<div id="mp1"></div>
-				
-				<div id="cp1"></div>
-				<div id="mf2"></div>
-				<div id="ci1">
-					丹尼爾
-					等級1
-				</div>				
-				<div id="ci2" value="5/5">
-				</div>
-			<div>
+			<div id="bFrame"><div id="b1"></div></div>
+			<div id="mf1"></div>
+			<div id="mp1"></div>
+			
+			<div id="cp1"></div>
+			<div id="mf2"></div>
+			<div id="ci1">
+				丹尼爾
+				等級1
+			</div>				
+			<div id="ci2" value="5/5"></div>
+
 			<div id="tut"></div>	
-			<div id="m1"></div>
+			<div id="m1">
+				<div id="weakness"></div>
+			</div>
 			<div id="mf3"></div>
-			<div id="ls1" class="ls1"></div>
+			<div id="ls1" class="ls1">
+				<div id="attackPoint"></div>
+			</div>
 			<div id="lsglow"></div>
 			<div id="cursor"></div>
 			<div id="ci3">
 				點擊攻擊怪獸!
 			</div>
-			 
+		</div>	
 	</div>	
-	 <!-- <canvas id="canvas" width="800" height="200"></canvas> -->
 	<script id="x" type="text/javascript">
 	
 	window.requestAnimFrame = (function(){
@@ -450,10 +447,7 @@
 		createImage();
 	}
 	
-	<!-- inner_container.addEventListener('touchstart', touchstart); -->
 	inner_container.addEventListener('mousedown', touchstart);
-	
-	<!-- inner_container2.addEventListener('touchstart', attack); -->
 	inner_container2.addEventListener('mousedown', attack);
 	
 	function touchstart() {
@@ -461,11 +455,11 @@
 		inner_container.style.display = "none";
 		inner_container2.style.display = "block";
 		document.getElementById('tut').style.display = "block";
-		<!-- inner_container.removeEventListener('touchstart', touchstart); -->
 		inner_container.removeEventListener('mousedown', touchstart);
 		}
 	
 	var mLeft = 9;
+	var mWidth = 100;
 	var toggle = 2;
 	function attack() {
 		event.preventDefault();
@@ -475,16 +469,18 @@
 		var swords = document.getElementsByClassName('swords');
 		
 		if(swordAmount <= 0){
-			<!-- inner_container2.removeEventListener('touchstart', attack); -->
 			inner_container2.removeEventListener('mousedown', attack);
 			document.getElementById('ci2').innerHTML = "0/5";
 			swordAmount = 0;
 		}	
 		else{
 			swordAmount--;
+			mWidth-=20;
+			
+			document.getElementById('b1').style.width= mWidth + "%";
+			
 			document.getElementById('ci2').innerHTML = swordAmount +"/5";
 			swords[swordAmount].style.display="none";
-		
 		
 			var mTop = 132;
 			function sword(timestamp) {
@@ -525,11 +521,8 @@
 			  }
 			}
 		}
-			window.requestAnimationFrame(monster);
-			
+			window.requestAnimationFrame(monster);	
 	}
-	
-	
 	
 	function createImage(){
 		
