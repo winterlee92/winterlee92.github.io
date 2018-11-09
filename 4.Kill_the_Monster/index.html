@@ -89,14 +89,10 @@
 	
 	#f1{
 		position: absolute;
-		width: 30%;
-		height: 5%;
+		font-size: 150%;
 		margin-top: 126.5%;
-		margin-left: 36.2%;
-		background-image: url(f1.png);
-		background-Size: 100% 100%;
-		background-Repeat: no-repeat;
-		
+		margin-left: 40%;
+		color:white;
 		-webkit-animation-name: start;
 		-webkit-animation-duration: 1s;
 		animation-iteration-count: infinite;
@@ -264,7 +260,7 @@
 		margin-top: 132%;
 		margin-left: 42%;
 		z-index: 99;
-		filter: brightness(80%);
+		filter: brightness(150%);
 		-webkit-animation-name: glow;
 		-webkit-animation-duration: 1s;
 		-webkit-animation-iteration-count: infinite;
@@ -325,7 +321,7 @@
 		background-Size: 100% 100%;
 		background-Repeat: no-repeat;
 		z-index: 99;
-		filter: brightness(80%);
+		filter: brightness(150%);
 		-webkit-animation-name: glow;
 		-webkit-animation-duration: 1s;
 		-webkit-animation-iteration-count: infinite;
@@ -342,12 +338,18 @@
 		position: absolute;
 		width: 26%;
 		height: 2.5%;
-		margin-top: 116%;
+		margin-top: 120%;
 		margin-left: 55%;
-		background-image: url(ci3.png);
 		background-Size: 100% 100%;
 		background-Repeat: no-repeat;
 		z-index: 99;
+		color: white;
+		-webkit-animation-name: start;
+		-webkit-animation-duration: 1s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate-reverse;
+		animation-name: start;
+		animation-duration: 1s
 	}
 	
 	#canvas{
@@ -362,7 +364,9 @@
 	<div id="container" class="animate-bottom">
 		<div id="inner_container" ontouchstart="touchstart(event)">		
 			<div id="c1"></div>
-			<div id="f1"></div>
+			<div id="f1">
+				點擊開始
+			</div>
 		</div>
 		<div id="inner_container2" class="animate-bottom" ontouchstart="attack(event)">	
 			<div>
@@ -376,7 +380,9 @@
 					丹尼爾
 					等級1
 				</div>				
-				<div id="ci2"></div>
+				<div id="ci2">
+					0/5
+				</div>
 			<div>
 			<div id="tut"></div>	
 			<div id="m1"></div>
@@ -384,7 +390,9 @@
 			<div id="ls1" class="ls1"></div>
 			<div id="lsglow"></div>
 			<div id="cursor"></div>
-			<div id="ci3"></div>
+			<div id="ci3">
+				點擊攻擊怪獸!
+			</div>
 			 
 	</div>	
 	 <!-- <canvas id="canvas" width="800" height="200"></canvas> -->
