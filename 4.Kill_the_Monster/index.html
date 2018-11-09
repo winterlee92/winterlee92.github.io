@@ -213,11 +213,12 @@
 	
 	#ci1{
 		position: absolute;
-		width: 10%;
-		height: 4.5%;
+		width: 12%;
+		height: 4%;
 		margin-top: 144.6%;
 		margin-left: 26.2%;
-		background-image: url(ci1.png);
+		color:white;
+		<!-- background-image: url(ci1.png); -->
 		background-Size: 100% 100%;
 		background-Repeat: no-repeat;
 	}
@@ -240,7 +241,36 @@
 		margin-top: 132%;
 		margin-left: 42%;
 		z-index: 99;
-		filter: drop-shadow(0px 0px 10px blue);
+		<!-- filter: drop-shadow(0px 0px 4px #f4d83f); -->
+		
+		-webkit-animation-name: glow;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-direction: alternate-reverse;
+		-webkit-animation-delay:1s;
+		animation-delay:1s;
+		animation-name: glow;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate-reverse;
+	}
+	
+	@-webkit-keyframes glow {
+	   from{
+			filter: drop-shadow(0px 0px 1px #f4d83f);
+			
+	   }
+		to { 
+			filter: drop-shadow(0px 0px 4px #f4d83f);
+		}
+	}	
+	@keyframes glow {
+		from{
+			filter: drop-shadow(0px 0px 1px #f4d83f);
+	   }
+		to { 
+			filter: drop-shadow(0px 0px 4px #f4d83f);
+		}
 	}
 	
 	#mf3{
@@ -258,7 +288,7 @@
 	.swords{
 		position: absolute;
 		width: 6%;
-		height: 6.5%;
+		height: 6%;
 		margin-top: 143.8%;
 		margin-left: 69.5%;
 	}
@@ -309,7 +339,10 @@
 				
 				<div id="cp1"></div>
 				<div id="mf2"></div>
-				<div id="ci1"></div>				
+				<div id="ci1">
+					丹尼爾
+					等級1
+				</div>				
 				<div id="ci2"></div>
 			<div>
 			<div id="tut"></div>	
