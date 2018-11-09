@@ -276,8 +276,8 @@
 		width: 21.5%;
 		height: 8%;
 		margin-left: 37.5%;
-		border: 1px solid white;
 		z-index: 101;
+		border:1px solid white ;
 	}	
 	
 	#mf3{
@@ -340,8 +340,8 @@
 		width: 10%;
 		height: 10%;
 		margin-top: 45%;
-		margin-left: 35%;
-		border: 1px solid white;
+		margin-left: 35%; 
+		border:1px solid white ;
 		z-index: 101;
 	}
 	#canvas{
@@ -461,8 +461,9 @@
 	
 	var mLeft = 9;
 	var mWidth = 100;
-	var toggle = 2;
+	var toggle = 0;
 	function attack() {
+		
 		event.preventDefault();
 		document.getElementById('tut').style.display = "none";
 		document.getElementById('cursor').style.display = "none";
@@ -476,10 +477,7 @@
 		}	
 		else{
 			swordAmount--;
-			mWidth-=20;
-			
-			document.getElementById('b1').style.width= mWidth + "%";
-			
+
 			document.getElementById('ci2').innerHTML = swordAmount +"/5";
 			swords[swordAmount].style.display="none";
 		
@@ -488,6 +486,12 @@
 				  mTop-=10;
 				  ls1.style.marginTop = mTop + '%';
 				  if (mTop > -30) {
+				  GetBox();
+					if(x2<x && x<(x2+w2))
+					{
+						mWidth-=8;
+						document.getElementById('b1').style.width= mWidth + "%";
+					}	
 					window.requestAnimationFrame(sword);
 				  }
 				  else{
@@ -498,6 +502,7 @@
 		}
 		
 		function monster(timestamp) {
+			window.cancelAnimationFrame(monster);
 			if (toggle === 0){
 			  mLeft--;
 			  m1.style.marginLeft = mLeft + '%';
@@ -506,7 +511,7 @@
 			  }
 			  else {
 				toggle=1;
-				window.requestAnimationFrame(monster);
+				window.cancelAnimationFrame(monster);
 			  }
 			  console.log(mLeft);
 			}
@@ -524,6 +529,30 @@
 		}
 			window.requestAnimationFrame(monster);	
 	}
+	
+	function GetBox () {
+		var weakness = document.getElementById ("weakness");
+		var attackPoint = document.getElementById ("attackPoint");
+				
+		if (weakness.getBoundingClientRect) {        // Internet Explorer, Firefox 3+, Google Chrome, Opera 9.5+, Safari 4+
+			var rect = attackPoint.getBoundingClientRect ();
+			x = rect.left;
+			y = rect.top;
+			w = rect.right - rect.left;
+			h = rect.bottom - rect.top;
+		}
+		
+		if (attackPoint.getBoundingClientRect) {        // Internet Explorer, Firefox 3+, Google Chrome, Opera 9.5+, Safari 4+
+			var rect2 = weakness.getBoundingClientRect ();
+			x2 = rect2.left;
+			y2 = rect2.top;
+			w2 = rect2.right - rect2.left;
+			h2 = rect2.bottom - rect2.top;
+
+			return(x,y,x2,y2,w,h,w2,h2);
+		}
+	}
+	
 	
 	function createImage(){
 		
