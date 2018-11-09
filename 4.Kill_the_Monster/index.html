@@ -226,7 +226,7 @@
 		width: 4.2%;
 		height: 1%;
 		font-size: 80%;
-		margin-top: 155%;
+		margin-top: 154%;
 		margin-left: 78.5%;
 		color: white;
 	}
@@ -345,12 +345,6 @@
 		background-Repeat: no-repeat;
 		z-index: 99;
 		color: white;
-		<!-- -webkit-animation-name: start; -->
-		<!-- -webkit-animation-duration: 2s; -->
-		<!-- animation-iteration-count: infinite; -->
-		<!-- animation-direction: alternate-reverse; -->
-		<!-- animation-name: start; -->
-		<!-- animation-duration: 2; -->
 	}
 	
 	#canvas{
@@ -381,8 +375,7 @@
 					丹尼爾
 					等級1
 				</div>				
-				<div id="ci2">
-					0/5
+				<div id="ci2" value="5/5">
 				</div>
 			<div>
 			<div id="tut"></div>	
@@ -436,9 +429,11 @@
 	}());
 	
 		var mv;
+		var swordAmount=5;
 		function lp() {; mv = setTimeout(main, 500);}
 		
 	function main(){
+		document.getElementById('ci2').innerHTML = "5/5";
 		document.getElementById("loader").style.display = "none";		
 		var container = document.getElementById('container');
 		container.style.display = "block";
@@ -475,6 +470,11 @@
 		document.getElementById('tut').style.display = "none";
 		document.getElementById('cursor').style.display = "none";
 		document.getElementById('ci3').style.display = "none";
+		swordAmount--;
+		document.getElementById('ci2').innerHTML = swordAmount +"/5";
+		
+		var swords = document.getElementsByClassName('swords');
+		swords[swordAmount].style.display="none";
 		
 		var mTop = 132;
 		function sword(timestamp) {
