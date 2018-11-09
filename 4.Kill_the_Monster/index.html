@@ -357,13 +357,13 @@
 <body onload="lp()" style="background-color:black" onContextMenu="return false;">
 	<div id="loader"></div>
 	<div id="container" class="animate-bottom">
-		<div id="inner_container" ontouchstart="touchstart(event)">		
+		<div id="inner_container" ontouchstart="touchstart()">		
 			<div id="c1"></div>
 			<div id="f1">
 				點擊開始
 			</div>
 		</div>
-		<div id="inner_container2" class="animate-bottom" ontouchstart="attack(event)">	
+		<div id="inner_container2" class="animate-bottom" ontouchstart="attack()">	
 			<div>
 				<div id="b1"></div>
 				<div id="mf1"></div>
@@ -450,22 +450,24 @@
 		createImage();
 	}
 	
-	inner_container.addEventListener('touchstart', touchstart);
+	<!-- inner_container.addEventListener('touchstart', touchstart); -->
 	inner_container.addEventListener('mousedown', touchstart);
 	
-	inner_container2.addEventListener('touchstart', attack);
+	<!-- inner_container2.addEventListener('touchstart', attack); -->
 	inner_container2.addEventListener('mousedown', attack);
 	
-	function touchstart(event) {
+	function touchstart() {
 		event.preventDefault();
 		inner_container.style.display = "none";
 		inner_container2.style.display = "block";
 		document.getElementById('tut').style.display = "block";
+		<!-- inner_container.removeEventListener('touchstart', touchstart); -->
+		inner_container.removeEventListener('mousedown', touchstart);
 		}
 	
 	var mLeft = 9;
-	var toggle = 0;
-	function attack(event) {
+	var toggle = 2;
+	function attack() {
 		event.preventDefault();
 		document.getElementById('tut').style.display = "none";
 		document.getElementById('cursor').style.display = "none";
@@ -475,6 +477,12 @@
 		
 		var swords = document.getElementsByClassName('swords');
 		swords[swordAmount].style.display="none";
+		
+		if(swordAmount <= 0){
+			<!-- inner_container2.removeEventListener('touchstart', attack); -->
+			inner_container2.removeEventListener('mousedown', attack);
+			swordAmount = 0;
+		}	
 		
 		var mTop = 132;
 		function sword(timestamp) {
