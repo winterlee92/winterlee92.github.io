@@ -472,31 +472,33 @@
 		document.getElementById('tut').style.display = "none";
 		document.getElementById('cursor').style.display = "none";
 		document.getElementById('ci3').style.display = "none";
-		swordAmount--;
-		document.getElementById('ci2').innerHTML = swordAmount +"/5";
-		
 		var swords = document.getElementsByClassName('swords');
-		swords[swordAmount].style.display="none";
 		
 		if(swordAmount <= 0){
 			<!-- inner_container2.removeEventListener('touchstart', attack); -->
 			inner_container2.removeEventListener('mousedown', attack);
+			document.getElementById('ci2').innerHTML = "0/5";
 			swordAmount = 0;
 		}	
+		else{
+			swordAmount--;
+			document.getElementById('ci2').innerHTML = swordAmount +"/5";
+			swords[swordAmount].style.display="none";
 		
-		var mTop = 132;
-		function sword(timestamp) {
-			  mTop-=10;
-			  ls1.style.marginTop = mTop + '%';
-			  if (mTop > -30) {
+		
+			var mTop = 132;
+			function sword(timestamp) {
+				  mTop-=10;
+				  ls1.style.marginTop = mTop + '%';
+				  if (mTop > -30) {
+					window.requestAnimationFrame(sword);
+				  }
+				  else{
+					ls1.style.marginTop = 132 + '%';
+				  }
+				}
 				window.requestAnimationFrame(sword);
-			  }
-			  else{
-				ls1.style.marginTop = 132 + '%';
-			  }
-			}
-			window.requestAnimationFrame(sword);
-		
+		}
 		
 		function monster(timestamp) {
 			if (toggle === 0){
