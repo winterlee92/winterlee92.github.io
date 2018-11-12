@@ -209,13 +209,13 @@
 		background-Size: 100% 100%;
 		background-Repeat: no-repeat;
 	}
-	#cp1{
+	#head{
 		position: absolute;
 		width: 17%;
-		height: 8.5%;
-		margin-top: 140.5%;
+		height: 9%;
+		margin-top: 141%;
 		margin-left: 7.5%;
-		background-image: url(cp1.png);
+		background-image: url(head.png);
 		background-Size: 100% 100%;
 		background-Repeat: no-repeat;
 	}
@@ -383,8 +383,7 @@
 			<div id="mf1"></div>
 			<div id="mp1"></div>
 			
-			<div id="cp1"></div>
-			<div id="mf2"></div>
+			<div id="head"></div>
 			<div id="ci1">
 				丹尼爾
 				等級1
@@ -518,18 +517,18 @@
 				mWidth-=3;
 				document.getElementById('b1').style.width= mWidth + "%";
 			}
-		if((mWidth < 4 && swordAmount <=0) || (mWidth < 4 && swordAmount >0) )
-		{
-			lose_win.style.backgroundImage="url('win.png')";
-			inner_container3.style.display="block";
-			window.cancelAnimationFrame(s);
-		}
-		else if (mWidth > 4 && swordAmount <0)
-		{
-			window.cancelAnimationFrame(s);
-			lose_win.style.backgroundImage="url('lose.png')";
-			inner_container3.style.display="block";
-		}				
+			if((mWidth < 4 && swordAmount <=0) || (mWidth < 4 && swordAmount >0) )
+			{
+				lose_win.style.backgroundImage="url('win.png')";
+				inner_container3.style.display="block";
+				window.cancelAnimationFrame(s);
+			}
+			else if (mWidth > 4 && swordAmount <0)
+			{
+				window.cancelAnimationFrame(s);
+				lose_win.style.backgroundImage="url('lose.png')";
+				inner_container3.style.display="block";
+			}				
 		  }
 		  else{
 			ls1.style.marginTop = 132 + '%';
