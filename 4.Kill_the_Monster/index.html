@@ -518,14 +518,6 @@
 				mWidth-=3;
 				document.getElementById('b1').style.width= mWidth + "%";
 			}
-			window.requestAnimationFrame(sword);				
-		  }
-		  else{
-			ls1.style.marginTop = 132 + '%';
-		  }
-		}	
-		 s= window.requestAnimationFrame(sword);
-
 		if((mWidth < 4 && swordAmount <=0) || (mWidth < 4 && swordAmount >0) )
 		{
 			lose_win.style.backgroundImage="url('win.png')";
@@ -537,8 +529,15 @@
 			window.cancelAnimationFrame(s);
 			lose_win.style.backgroundImage="url('lose.png')";
 			inner_container3.style.display="block";
-		}		
-		
+		}				
+		  }
+		  else{
+			ls1.style.marginTop = 132 + '%';
+		  }
+		  window.requestAnimationFrame(sword);
+		}	
+		 s= window.requestAnimationFrame(sword);
+
 	}
 		
 	function monster(timestamp) {
@@ -569,7 +568,7 @@
 			lose_win.style.backgroundImage="url('win.png')";
 			inner_container3.style.display="block";
 		}
-		else if ((mWidth > 4 && swordAmount <=0))
+		else if (mWidth > 4 && swordAmount <=0)
 		{
 				window.cancelAnimationFrame(mons);
 				lose_win.style.backgroundImage="url('lose.png')";
