@@ -378,7 +378,7 @@
 				點擊開始
 			</div>
 		</div>
-		<div id="inner_container2" class="animate-bottom" ontouchstart="attack()">	
+		<div id="inner_container2" class="animate-bottom" ontouchend="attack()">	
 			<div id="bFrame"><div id="b1"></div></div>
 			<div id="mf1"></div>
 			<div id="mp1"></div>
@@ -483,6 +483,7 @@
 	var mLeft = 9;
 	var mWidth = 100;
 	var toggle = 0;
+	var s;
 	function attack() {
 		
 		event.preventDefault();

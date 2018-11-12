@@ -40,30 +40,49 @@
 		<!-- } -->
 	<!-- } -->
 	
-	#gameContainer,#monster,#m1,#m2,#m3,#m4,#m5,#m6,#frame,#layer1,#layer2,#sidelayer,#sidelayer2{	
+	#gameContainer,#monster,#m1,#m2,#m3,#m4,#m5,#m6,#frame,#layer1,#layer2,#sidelayer,#sidelayer2,#time,#main{	
 		position:absolute;	
 		height:100%;
 		width:100%;
 		display:block;
-		vertical-align:bottom;
 		background-Repeat:no-repeat;
 		overflow:hidden;
 	}
+
 	#gameContainer
 	{
 		background-Size : 100% 100%; 
 		background-image:url(bg.jpg);
+	}
+	
+	#main{
+		background-Size: 27% 48%;
+		margin: 20% 36%;
+		background-image: url(sad.png);
+		z-index: 1;	
+		}
+	#tear{
+		position:absolute;	
+		height:50%;
+		width:50%;
+		background-Repeat:no-repeat;
+		background-Size: 34% 25%;
+		margin: 22% 40.5%;
+		background-image: url(tear.png);
+		z-index: 1;
 	}
 	#m1{
 		background-Size: 43% 100%;
 		margin: auto 74%;
 		background-image: url(m1.png);
 		z-index:1;
+		display:none;
 	}
 	#m2{
 		background-Size: 43% 100%;
 		margin: auto -6%;
 		background-image:url(m2.png);
+		display:none;
 	}
 	#m3{
 		background-Size: 23% 40%;
@@ -71,6 +90,7 @@
 		margin-left: -2%;
 		background-image: url(m3.png);
 		z-index:3;
+		display:none;
 	}
 	#m4{
 		background-Size: 23% 45%;
@@ -78,12 +98,14 @@
 		margin-left: 76%;
 		background-image:url(m4.png);
 		z-index:4;
+		display:none;
 	}
 	#m5{
 		background-Size: 45% 58%;
 		margin-top: 5%;
 		margin-left: 59.5%;
 		background-image: url(m5.png);
+		display:none;
 	}
 	#m6{
 		background-Size: 45% 58%;
@@ -91,6 +113,7 @@
 		margin-left: -8%;
 		background-image: url(m6.png);
 		z-index:6;
+		display:none;
 	}
 	#layer1{
 		z-index:98;
@@ -104,11 +127,66 @@
 		background-image: url(frame_bg.png);
 		opacity:0.5;
 	}
+	
+	#time{
+		z-index: 100;
+	}
+	
+	#timeDisplay{
+		position: absolute;
+		height: 5%;
+		width: 9%;
+		margin-top: 50%;
+		margin-left: 45.5%;
+		background-Size: 100% 100%;
+		background-image: url(td.png);
+	}
+	
+	#lifeTime{
+		position: absolute;
+		width: 13.3%;
+		height: 2%;
+		margin-left: 43%;
+		margin-top: 53.9%;
+		background-color: rgb(255, 98, 0);
+		border-top-right-radius: 25px;
+		border-bottom-right-radius: 25px;
+		border-top-left-radius: 25px;
+		border-bottom-left-radius: 25px;
+		box-shadow: inset 0 1px 3px rgba(255,255,255,0.7);
+	}
+	#glow{
+		position: absolute;
+		width: 0.4%;
+		height: 2%;
+		margin-left: 56%;
+		margin-top: 53.8%;
+		opacity: 0.4;
+		background-color: white;
+		border-top-right-radius: 25px;
+		border-bottom-right-radius: 25px;
+	}
+	
+	#displayBG{
+		position: absolute;
+		width: 14%;
+		height: 3.2%;
+		margin-left: 42.6%;
+		margin-top: 53.5%;
+		border: 1px solid gray;
+		background-color: rgb(77, 29, 0);
+		border-top-right-radius: 25px;
+		border-bottom-right-radius: 25px;
+		border-top-left-radius: 25px;
+		border-bottom-left-radius: 25px;
+	}
 </style>
 </head>
 <body ontouchmove="blockMove()" onContextMenu="return false;">
   <div id="gameContainer" class="gameContainer" alt="HTML5 Game Example" width="2560" height="1600" onContextMenu="return false;">
-	  <div id="monster">  
+	  <div id="monster"> 
+		<div id="main"></div>
+		<div id="tear"></div>
 		<div id="m1"></div>
 		<div id="m2"></div>
 		<div id="m3"></div>
@@ -121,6 +199,12 @@
 		<div id="layer2"></div>
 		<!-- <div id="sideLayer1"></div> -->
 		<!-- <div id="sideLayer2"></div> -->
+	  </div>
+	  <div id="time">
+		<div id="timeDisplay"></div>
+		<div id="displayBG"></div>
+		<div id="lifeTime"></div>
+		<div id="glow"></div>
 	  </div>
   </div>
   <script>
