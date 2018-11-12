@@ -68,7 +68,15 @@
 		background-image:url(bg.jpg) !important;
 		display:none;
 	}
-
+	#inner_container3
+	{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin-top: -160%;
+		display:none;
+		z-index: 101;
+	}
 	#c1{
 		position: absolute;
 		width: 85%;
@@ -344,6 +352,17 @@
 		border:1px solid white ;
 		z-index: 101;
 	}
+	
+	#lose_win{
+		position: absolute;
+		background-Size: 100% 100%;
+		background-Repeat: no-repeat;
+		z-index: 101;
+		height: 50%;
+		margin-top: 20%;
+		width: 100%;
+	}
+	
 	#canvas{
 		position: absolute;
 		width:200%;
@@ -387,6 +406,9 @@
 				點擊攻擊怪獸!
 			</div>
 		</div>	
+		<div id="inner_container3" class="animate-bottom">
+			<div id="lose_win" class="lose_win"></div>
+		</div>
 	</div>	
 	<script id="x" type="text/javascript">
 	
@@ -439,13 +461,14 @@
 		var inner_container2 = document.getElementById('inner_container2');
 		var ls1 = document.getElementsByClassName("ls1");	
 		var m1 = document.getElementsByClassName("m1");	
+		var lose_win = document.getElementsByClassName('lose_win');	
 		var widthToHeight = 0 ;
 		var newWidth = window.innerWidth;
 		var newHeight = window.innerHeight;
 		sizeData(newWidth,newHeight);
-		resize(newWidth,newHeight);
-		
-		createImage();
+		resize(newWidth,newHeight);		
+		createImage();		
+		window.requestAnimationFrame(monster);	
 	}
 	
 	inner_container.addEventListener('mousedown', touchstart);
@@ -471,63 +494,88 @@
 		var swords = document.getElementsByClassName('swords');
 		
 		if(swordAmount <= 0){
-			inner_container2.removeEventListener('mousedown', attack);
-			document.getElementById('ci2').innerHTML = "0/5";
+			document.getElementById('ci2').innerHTML = "0/5";		
 			swordAmount = 0;
 		}	
 		else{
 			swordAmount--;
-
 			document.getElementById('ci2').innerHTML = swordAmount +"/5";
 			swords[swordAmount].style.display="none";
-		
-			var mTop = 132;
-			function sword(timestamp) {
-				  mTop-=10;
-				  ls1.style.marginTop = mTop + '%';
-				  if (mTop > -30) {
-				  GetBox();
-					if(x2<x && x<(x2+w2))
-					{
-						mWidth-=8;
-						document.getElementById('b1').style.width= mWidth + "%";
-					}	
-					window.requestAnimationFrame(sword);
-				  }
-				  else{
-					ls1.style.marginTop = 132 + '%';
-				  }
-				}
-				window.requestAnimationFrame(sword);
 		}
-		
-		function monster(timestamp) {
-			window.cancelAnimationFrame(monster);
-			if (toggle === 0){
-			  mLeft--;
-			  m1.style.marginLeft = mLeft + '%';
-			  if (mLeft >-65) {
-				window.requestAnimationFrame(monster);
-			  }
-			  else {
-				toggle=1;
-				window.cancelAnimationFrame(monster);
-			  }
-			  console.log(mLeft);
-			}
-			if (toggle === 1){
-			   mLeft++;
-			  m1.style.marginLeft = mLeft + '%';
-			  if (mLeft <70) {
-				window.requestAnimationFrame(monster);
-			  }
-			  else {
-				toggle=0;
-				<!-- window.requestAnimationFrame(monster); -->
-			  }
-			}
+	
+		if(swordAmount <= 0)
+		{
+			inner_container2.removeEventListener('mousedown', attack);
 		}
-			window.requestAnimationFrame(monster);	
+	
+		var mTop = 132;
+		function sword(timestamp) {
+		  mTop-=10;
+		  ls1.style.marginTop = mTop + '%';
+		  if (mTop > -30) {
+		  GetBox();
+			if(x2<x && x<(x2+w2))
+			{
+				mWidth-=3;
+				document.getElementById('b1').style.width= mWidth + "%";
+			}
+			window.requestAnimationFrame(sword);				
+		  }
+		  else{
+			ls1.style.marginTop = 132 + '%';
+		  }
+		}	
+		 s= window.requestAnimationFrame(sword);
+
+		if((mWidth < 4 && swordAmount <=0) || (mWidth < 4 && swordAmount >0) )
+		{
+			lose_win.style.backgroundImage="url('win.png')";
+			inner_container3.style.display="block";
+			window.cancelAnimationFrame(s);
+		}
+		else if (mWidth > 4 && swordAmount <0)
+		{
+			window.cancelAnimationFrame(s);
+			lose_win.style.backgroundImage="url('lose.png')";
+			inner_container3.style.display="block";
+		}		
+		
+	}
+		
+	function monster(timestamp) {
+		if (toggle === 0){
+		  mLeft--;
+		  m1.style.marginLeft = mLeft + '%';
+		  if (mLeft >-65) {
+		  }
+		  else {
+			toggle=1;
+		  }
+		}
+		if (toggle === 1){
+		   mLeft++;
+		  m1.style.marginLeft = mLeft + '%';
+		  if (mLeft <70) {
+		  }
+		  else {
+			toggle=0;
+		  }
+		}
+		mons = window.requestAnimationFrame(monster);
+
+		
+		if((mWidth < 4 && swordAmount <=0) || (mWidth < 4 && swordAmount >=0) )
+		{
+			window.cancelAnimationFrame(mons);
+			lose_win.style.backgroundImage="url('win.png')";
+			inner_container3.style.display="block";
+		}
+		else if ((mWidth > 4 && swordAmount <=0))
+		{
+				window.cancelAnimationFrame(mons);
+				lose_win.style.backgroundImage="url('lose.png')";
+				inner_container3.style.display="block";
+		}		
 	}
 	
 	function GetBox () {
@@ -582,28 +630,6 @@
 		
 	}
 	
-	<!-- function writeMessage(canvas, message) { -->
-        <!-- var context = canvas.getContext('2d'); -->
-        <!-- context.clearRect(0, 0, canvas.width, canvas.height); -->
-        <!-- context.font = '18pt Calibri'; -->
-        <!-- context.fillStyle = 'white'; -->
-        <!-- context.fillText(message, 10, 25); -->
-		  <!-- } -->
-		  <!-- function getMousePos(canvas, evt) { -->
-			<!-- var rect = canvas.getBoundingClientRect(); -->
-			<!-- return { -->
-			  <!-- x: evt.clientX - rect.left, -->
-			  <!-- y: evt.clientY - rect.top -->
-			<!-- }; -->
-		  <!-- } -->
-		  <!-- var canvas = document.getElementById('canvas'); -->
-		  <!-- var context = canvas.getContext('2d'); -->
-
-		  <!-- canvas.addEventListener('mousemove', function(evt) { -->
-			<!-- var mousePos = getMousePos(canvas, evt); -->
-			<!-- var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y; -->
-			<!-- writeMessage(canvas, message); -->
-		  <!-- }, false); -->
 	
 	function sizeData(w,h){
 	
