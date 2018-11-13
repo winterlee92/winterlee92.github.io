@@ -177,17 +177,17 @@
 		margin-top: -20%;
 		margin-left: 90%;
 		background-image: url(m5.png);
-		
-		-webkit-animation-name: m5;
-		-webkit-animation-duration: 1s;
-		-webkit-animation-iteration-count: 1;
-		-webkit-animation-delay:1s;
-		-webkit-animation-fill-mode: forwards;
-		animation-delay:1s;
-		animation-name: m5;
-		animation-duration: 1s;
-		animation-iteration-count: 1;
-		animation-fill-mode: forwards;
+		z-index:200;
+		<!-- -webkit-animation-name: m5; -->
+		<!-- -webkit-animation-duration: 1s; -->
+		<!-- -webkit-animation-iteration-count: 1; -->
+		<!-- -webkit-animation-delay:1s; -->
+		<!-- -webkit-animation-fill-mode: forwards; -->
+		<!-- animation-delay:1s; -->
+		<!-- animation-name: m5; -->
+		<!-- animation-duration: 1s; -->
+		<!-- animation-iteration-count: 1; -->
+		<!-- animation-fill-mode: forwards; -->
 	}
 	
 	@-webkit-keyframes m5 {
@@ -287,8 +287,8 @@
 	}
 </style>
 </head>
-<body ontouchmove="blockMove()" onContextMenu="return false;">
-  <div id="gameContainer" class="gameContainer" alt="HTML5 Game Example" width="2560" height="1600" onContextMenu="return false;">
+<body onContextMenu="return false;">
+  <div id="gameContainer" class="gameContainer" alt="HTML5 Game Example" width="2560" height="1600">
 	  <div id="monster"> 
 		<div id="main"></div>
 		<div id="tear"></div>
@@ -296,7 +296,7 @@
 		<div id="m2"></div>
 		<div id="m3"></div>
 		<div id="m4"></div>
-		<div id="m5"></div>
+		<div id="m5" onmousedown="mouseDown()" onmouseup="mouseUp()"></div>
 		<div id="m6"></div>
 	  </div>
 	  <div id="frame">  
@@ -314,9 +314,24 @@
   </div>
   <script>
 
- var g = document.getElementById("gameContainer");
- function blockMove() {
-      event.preventDefault() ;
+var g = document.getElementById("gameContainer");
+<!-- window.onload = function dragstart(event) { -->
+   <!-- event.dataTransfer.setData("Text", event.target.id); -->
+	<!-- var data = event.dataTransfer.getData("text"); -->
+<!-- } -->
+document.getElementById("m5").addEventListener('mousedown', mouseDown);
+document.getElementById("m5").addEventListener('mouseup', mouseUp);
+
+function mouseDown() {
+    document.getElementById("m5").style.backgroundSize = "55% 65%";
+	document.getElementById("m5").style.marginTop = "6%";
+	document.getElementById("m5").style.marginLeft = "56%";
+}
+
+function mouseUp() {
+    document.getElementById("m5").style.backgroundSize = "50% 60%";
+	document.getElementById("m5").style.marginTop = "8%";
+	document.getElementById("m5").style.marginLeft = "58%";
 }
 
   (function () {
