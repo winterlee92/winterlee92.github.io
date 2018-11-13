@@ -1,10 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	 <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	 <!-- <meta name="apple-mobile-web-app-capable" content="yes"/> -->
-	 <!-- <meta name="mobile-web-app-capable" content="yes"> -->
 <title>Game Safe Demo</title>
 <style>	
 	body{
@@ -16,29 +14,6 @@
 		user-select: none;
 		background-color:black;
 	}
-
-<!-- @media screen and (orientation:portrait) { -->
-	<!-- #gameContainer{ -->
-	
-		<!-- transform:rotate(90deg); -->
-		<!-- -ms-transform:rotate(90deg); 	/* IE 9 */ -->
-		<!-- -moz-transform:rotate(90deg); 	/* Firefox */ -->
-		<!-- -webkit-transform:rotate(90deg); /* Safari 和 Chrome */ -->
-		<!-- -o-transform:rotate(90deg);  -->
-		
-		<!-- } -->
-	<!-- } -->
-
-<!-- @media screen and (orientation:landscape) { -->
-	<!-- #gameContainer{ -->
-	
-		<!-- transform:rotate(0deg); -->
-		<!-- -ms-transform:rotate(0deg); 	/* IE 9 */ -->
-		<!-- -moz-transform:rotate(0deg); 	/* Firefox */ -->
-		<!-- -webkit-transform:rotate(0deg); /* Safari 和 Chrome */ -->
-		<!-- -o-transform:rotate(0deg);  -->		
-		<!-- } -->
-	<!-- } -->
 	
 	#gameContainer,#monster,#m1,#m2,#m3,#m4,#m5,#m6,#frame,#layer1,#layer2,#sidelayer,#sidelayer2,#time,#main{	
 		position:absolute;	
@@ -60,7 +35,56 @@
 		margin: 20% 36%;
 		background-image: url(sad.png);
 		z-index: 1;	
+		
+		-webkit-animation-name: fearAnimation;
+		-webkit-animation-duration: 2s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-delay:1s;
+		animation-delay:1s;
+		animation-name: fearAnimation;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
 		}
+		
+	@-webkit-keyframes fearAnimation {
+	 15%{
+			margin: 20% 36%;
+	  }
+	  30%{
+			margin: 19.5% 36%;
+	   }
+	 45%{
+			margin: 20% 36%;
+	   }
+	 70%{
+			margin: 19.5% 36%;
+		}
+	 85%{
+			margin: 20% 36%;
+		}
+	100%{ 
+			margin: 19.5% 36%;
+		}
+	}	
+	
+	@keyframes fearAnimation {
+	 0%{
+			margin: 20% 36%;
+	   }
+	 59%{
+			margin: 20% 36%;
+	   }
+	  60%{
+			margin: 19.5% 36%;
+		}
+	 80%{
+			margin: 20% 36%;
+		}
+	100%{ 
+			margin: 19.5% 36%;
+		}
+	}	
+		
 	#tear{
 		position:absolute;	
 		height:50%;
@@ -70,7 +94,54 @@
 		margin: 22% 40.5%;
 		background-image: url(tear.png);
 		z-index: 1;
+		
+		-webkit-animation-name: tearAnimation;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-delay:1s;
+		animation-delay:1s;
+		animation-name: tearAnimation;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
 	}
+	
+	@-webkit-keyframes tearAnimation {
+	 0%{
+			opacity:0;
+	   }
+	 59%{
+			opacity:0;
+	   }
+	  60%{
+			opacity:1;
+		}
+	 80%{
+			opacity:0;
+		}
+	100%{ 
+			opacity:1;
+		}
+	}	
+	
+	@keyframes tearAnimation {
+	 0%{
+			opacity:0;
+	   }
+	 59%{
+			opacity:0;
+	   }
+	  60%{
+			opacity:1;
+		}
+	 80%{
+			opacity:0;
+		}
+	100%{ 
+			opacity:1;
+		}
+	}	
+	
+	
 	#m1{
 		background-Size: 43% 100%;
 		margin: auto 74%;
@@ -101,12 +172,45 @@
 		display:none;
 	}
 	#m5{
-		background-Size: 45% 58%;
-		margin-top: 5%;
-		margin-left: 59.5%;
+		background-Size: 50% 60%;
+		margin-top: -20%;
+		margin-left: 90%;
 		background-image: url(m5.png);
-		display:none;
+		
+		-webkit-animation-name: m5;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-iteration-count: 1;
+		-webkit-animation-delay:1s;
+		-webkit-animation-fill-mode: forwards;
+		animation-delay:1s;
+		animation-name: m5;
+		animation-duration: 1s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
 	}
+	
+	@-webkit-keyframes m5 {
+	 0%{
+			margin-top: -20%;
+			margin-left: 90%;
+	   }
+	100%{ 
+			margin-top: 8%;
+			margin-left: 58%;
+		}
+	}	
+	
+	@keyframes m5 {
+	 0%{
+			margin-top: -20%;
+			margin-left: 90%;
+	   }
+	100%{ 
+			margin-top: 8%;
+			margin-left: 58%;
+		}
+	}	
+	
 	#m6{
 		background-Size: 45% 58%;
 		margin-top: 24%;

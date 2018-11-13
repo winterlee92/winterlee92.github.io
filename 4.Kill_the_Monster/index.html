@@ -378,7 +378,7 @@
 				點擊開始
 			</div>
 		</div>
-		<div id="inner_container2" class="animate-bottom" ontouchend="attack()">	
+		<div id="inner_container2" class="animate-bottom" ontouchstart="attack()">	
 			<div id="bFrame"><div id="b1"></div></div>
 			<div id="mf1"></div>
 			<div id="mp1"></div>
@@ -472,7 +472,7 @@
 	inner_container.addEventListener('mousedown', touchstart);
 	inner_container2.addEventListener('mousedown', attack);
 	
-	function touchstart() {
+	function touchstart(event) {
 		event.preventDefault();
 		inner_container.style.display = "none";
 		inner_container2.style.display = "block";
@@ -484,7 +484,7 @@
 	var mWidth = 100;
 	var toggle = 0;
 	var s;
-	function attack() {
+	function attack(event) {
 		
 		event.preventDefault();
 		document.getElementById('tut').style.display = "none";
