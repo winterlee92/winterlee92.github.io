@@ -525,6 +525,7 @@ window.requestAnimFrame = (function(){
 	  mm = requestAnimationFrame(monsterMove);	
 		
 	function dragstart(event) {
+	document.getElementById("die").style.display="none";	
 	if(mTop > 3){
 		cancelAnimationFrame(mm);
 		cancelAnimationFrame(mm2);
