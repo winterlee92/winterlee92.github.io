@@ -500,7 +500,7 @@ window.requestAnimFrame = (function(){
 			mm = requestAnimationFrame(monsterMove);
 		}	
 		function monsterMove2(timestamp){
-		if(mTop >= 8 && mTop <=11)
+		if(mTop >= 8 && mTop <=10)
 		{
 			mTop+=0.01;
 			mLeft-=0.03;
@@ -509,9 +509,9 @@ window.requestAnimFrame = (function(){
 			mm2 = requestAnimationFrame(monsterMove2);
 		}
 			function monsterMove3(timestamp){
-			if(mTop >= 10.9 && mTop <=13){
+			if(mTop >= 9.9 && mTop <=11){
 				mTop+=0.01;
-				mLeft-=0.03;
+				mLeft-=0.1;
 				m5.style.marginTop = mTop + "%";
 				m5.style.marginLeft = mLeft + "%"; 
 				mm3 = requestAnimationFrame(monsterMove3);
