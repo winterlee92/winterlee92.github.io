@@ -16,7 +16,7 @@
 		background-color:black;
 	}
 	
-	#gameContainer,#monster,#m1,#m2,#m3,#m4,#m5,#m6,#frame,#layer1,#layer2,#sidelayer,#sidelayer2,#time,#main{	
+	#gameContainer,#monster,#m1,#m2,#m3,#m4,#m5,#m6,#frame,#layer1,#layer2,#sidelayer,#sidelayer2,#time{	
 		position:absolute;	
 		height:100%;
 		width:100%;
@@ -31,20 +31,31 @@
 		background-image:url(bg.jpg);
 	}
 	
-	#main{
-		background-Size: 27% 48%;
-		margin: 20% 36%;
-		background-image: url(sad.png);
-		z-index: 1;	
+	#main_character{
+		position:absolute;	
+		height:48%;
+		width:27%;
+		margin: 19.5% 36%;
+		overflow:hidden;
 		
 		-webkit-animation-name: fearAnimation;
-		-webkit-animation-duration: 2s;
+		-webkit-animation-duration: 1s;
 		-webkit-animation-iteration-count: infinite;
 		-webkit-animation-delay:1s;
 		animation-delay:1s;
 		animation-name: fearAnimation;
-		animation-duration: 2s;
+		animation-duration: 1s;
 		animation-iteration-count: infinite;
+	}
+	
+	#main{
+		position:absolute;	
+		height:100%;
+		width:100%;
+		background-Size : 100% 100%; 
+		background-Repeat:no-repeat;
+		background-image: url(sad.png);
+		z-index: 200;	
 		}
 		
 	@-webkit-keyframes fearAnimation {
@@ -88,13 +99,13 @@
 		
 	#tear{
 		position:absolute;	
-		height:50%;
-		width:50%;
+		height: 20%;
+		width: 60%;
+		margin: 10% 18%;
 		background-Repeat:no-repeat;
-		background-Size: 34% 25%;
-		margin: 22% 40.5%;
+		background-Size : 100% 100%; 
 		background-image: url(tear.png);
-		z-index: 1;
+		z-index: 201;
 		
 		-webkit-animation-name: tearAnimation;
 		-webkit-animation-duration: 1s;
@@ -141,7 +152,69 @@
 			opacity:1;
 		}
 	}	
+	#die{
+		position: absolute;
+		height: 10%;
+		width: 19%;
+		margin: 19% 40%;
+		background-Repeat: no-repeat;
+		background-Size: 100% 100%;
+		background-image: url(die.png);
+		z-index: 201;
+		display:none;
+		
+		<!-- -webkit-animation-name: dieAnimation; -->
+		<!-- -webkit-animation-duration: 2s; -->
+		<!-- -webkit-animation-iteration-count: infinite; -->
+		<!-- -webkit-animation-delay:2s; -->
+		<!-- animation-delay:2s; -->
+		<!-- animation-name: dieAnimation; -->
+		<!-- animation-duration: 2s; -->
+		<!-- animation-iteration-count: infinite; -->
+
+	}
 	
+	<!-- @-webkit-keyframes dieAnimation { -->
+	 <!-- 10%{ -->
+		<!-- margin: 25% 46.45%; -->
+	  <!-- } -->
+	  <!-- 30%{ -->
+		<!-- margin: 24.5% 46.45%; -->
+	   <!-- } -->
+	 <!-- 45%{ -->
+		<!-- margin: 25% 46.45%; -->
+	   <!-- } -->
+	 <!-- 70%{ -->
+		<!-- margin: 24.5% 46.45%; -->
+		<!-- } -->
+	 <!-- 85%{ -->
+		<!-- margin: 25% 46.45%; -->
+		<!-- } -->
+	<!-- 100%{  -->
+		<!-- margin: 24.5% 46.45%; -->
+		<!-- } -->
+	<!-- }	 -->
+	
+	<!-- @keyframes dieAnimation { -->
+	<!-- 15%{ -->
+		<!-- margin: 25% 46.45%; -->
+	  <!-- } -->
+	  <!-- 30%{ -->
+		<!-- margin: 24.5% 46.45%; -->
+	   <!-- } -->
+	 <!-- 45%{ -->
+		<!-- margin: 25% 46.45%; -->
+	   <!-- } -->
+	 <!-- 70%{ -->
+		<!-- margin: 24.5% 46.45%; -->
+		<!-- } -->
+	 <!-- 85%{ -->
+		<!-- margin: 25% 46.45%; -->
+		<!-- } -->
+	<!-- 100%{  -->
+		<!-- margin: 24.5% 46.45%; -->
+		<!-- } -->
+	<!-- }	 -->
 	
 	#m1{
 		background-Size: 43% 100%;
@@ -174,47 +247,11 @@
 	}
 	#m5{
 		background-Size: 50% 60%;
-		margin-top: -40%;
-		margin-left: 100%;
+		margin-top: 6%;
+		margin-left: 56%;
 		background-image: url(m5.png);
-		z-index:200;
-		<!-- -webkit-animation-name: m5; -->
-		<!-- -webkit-animation-duration: 1s; -->
-		<!-- -webkit-animation-iteration-count: 1; -->
-		<!-- -webkit-animation-delay:1s; -->
-		<!-- -webkit-animation-fill-mode: forwards; -->
-		<!-- animation-delay:1s; -->
-		<!-- animation-name: m5; -->
-		<!-- animation-duration: 1s; -->
-		<!-- animation-iteration-count: 1; -->
-		<!-- animation-fill-mode: forwards; -->
-		
-		
-		
-		
+		z-index:199;
 	}
-	
-	<!-- @-webkit-keyframes m5 { -->
-	 <!-- 0%{ -->
-			<!-- margin-top: -40%; -->
-			<!-- margin-left: 100%; -->
-	   <!-- } -->
-	<!-- 100%{  -->
-			<!-- margin-top: 8%; -->
-			<!-- margin-left: 58%; -->
-		<!-- } -->
-	<!-- }	 -->
-	
-	<!-- @keyframes m5 { -->
-	 <!-- 0%{ -->
-			<!-- margin-top: -20%; -->
-			<!-- margin-left: 90%; -->
-	   <!-- } -->
-	<!-- 100%{  -->
-			<!-- margin-top: 8%; -->
-			<!-- margin-left: 58%; -->
-		<!-- } -->
-	<!-- }	 -->
 	
 	#m6{
 		background-Size: 45% 58%;
@@ -236,11 +273,9 @@
 		background-image: url(frame_bg.png);
 		opacity:0.5;
 	}
-	
 	#time{
 		z-index: 100;
 	}
-	
 	#timeDisplay{
 		position: absolute;
 		height: 5%;
@@ -248,7 +283,7 @@
 		margin-top: 50%;
 		margin-left: 45.5%;
 		background-Size: 100% 100%;
-		background-image: url(td.png);
+		background-image: url(td.jpg);
 	}
 	
 	#lifeTime{
@@ -289,13 +324,88 @@
 		border-top-left-radius: 25px;
 		border-bottom-left-radius: 25px;
 	}
+	
+	#title{
+		position: absolute;
+		color: white;
+		font-weight: bold;
+		width: 20%;
+		top: 8%;
+		left: 42%;
+		text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+		
+		-webkit-animation-name: t;
+		-webkit-animation-duration: 2s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-delay:1s;
+		-webkit-animation-fill-mode: forwards;
+		animation-delay:1s;
+		animation-name: t;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+		animation-fill-mode: forwards;
+	}
+	
+	@media only screen and (max-width: 1080px) {
+		#title {
+			font-size: 20px;
+		}
+	}
+
+	@media only screen and (min-width: 1080px) {
+		#title {
+			font-size: 30px;
+		}
+	}
+	
+	@-webkit-keyframes t {
+	 0%{
+			opacity: 0.1;
+			filter: brightness(80%);
+	   }
+	100%{ 
+			opacity: 1;
+			filter: brightness(200%);
+			text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+		}
+	}	
+	
+	@keyframes t {
+	 0%{
+			opacity: 0.1;
+			filter: brightness(80%);
+	   }
+	100%{ 
+			opacity: 1;
+			filter: brightness(200%);
+			text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+		}
+	}	
+	#cursorImage{
+		position: absolute;
+		width:10%;height:18%;
+		z-index:100;
+		margin-top: 20%;
+		margin-left: 75%;
+	}
+	.cI{
+		display:none;width:100%;height:100%;background-size:100% 100%;background-Repeat:no-repeat;
+	}
 </style>
 </head>
 <body onContextMenu="return false;">
   <div id="gameContainer" class="gameContainer" alt="HTML5 Game Example" width="2560" height="1600">
 	  <div id="monster"> 
-		<div id="main"></div>
-		<div id="tear"></div>
+		<div></div>
+		<div id="title">
+			用手指驅趕怪物
+		</div>
+		<div id = "main_character">
+			<div id="die"></div>
+			<div id="main"></div>
+			<div id="tear"></div>
+		</div>	
+		
 		<div id="m1"></div>
 		<div id="m2"></div>
 		<div id="m3"></div>
@@ -315,6 +425,7 @@
 		<div id="lifeTime"></div>
 		<div id="glow"></div>
 	  </div>
+	  <div id='cursorImage' draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown" onmouseup="mouseUp"></div>
   </div>
   <script>
 window.requestAnimFrame = (function(){
@@ -353,7 +464,6 @@ window.requestAnimFrame = (function(){
 		}
 	}());
   
-  
 	var g = document.getElementById("gameContainer");
 	var m5 =document.getElementById("m5");
 	m5.addEventListener('mousedown', mouseDown);
@@ -361,49 +471,119 @@ window.requestAnimFrame = (function(){
 	var r;
 	var mTop = -32 ;
 	var mLeft = 96;	
-		
-	var mm;
+	var toggle = 0;	
+	var mm,mm2;
+	var cursorImage = document.getElementById("cursorImage");
+	function createImage(){
+	var cursorArray =['c1.png','c2.png','c3.png','c4.png','c5.png','c6.png'];
+	var i;	
+		for(i=0; i<cursorArray.length; i++)
+		{		
+			if(i <cursorArray.length)
+			{		
+				var myImg = document.createElement("IMG");
+				myImg.setAttribute("src", cursorArray[i]);	
+				myImg.setAttribute("alt","c"+i);
+				myImg.setAttribute("class","cI");
+				cursorImage.appendChild(myImg);
+			}
+		}	
+	}
+	createImage();
+	
 	function monsterMove(timestamp){
 		if ( mTop < 8){
 			mTop+=2;
 			mLeft-=2;
 			m5.style.marginTop = mTop + "%";
 			m5.style.marginLeft = mLeft + "%"; 
+			mm = requestAnimationFrame(monsterMove);
+		}	
+		function monsterMove2(timestamp){
+		if(mTop >= 8 && mTop <=11)
+		{
+			mTop+=0.01;
+			mLeft-=0.03;
+			m5.style.marginTop = mTop + "%";
+			m5.style.marginLeft = mLeft + "%"; 
+			mm2 = requestAnimationFrame(monsterMove2);
 		}
-		window.requestAnimationFrame(monsterMove);
+			function monsterMove3(timestamp){
+			if(mTop >= 10.9 && mTop <=13){
+				mTop+=0.01;
+				mLeft-=0.03;
+				m5.style.marginTop = mTop + "%";
+				m5.style.marginLeft = mLeft + "%"; 
+				mm3 = requestAnimationFrame(monsterMove3);
+				document.getElementById("die").style.display="block";	
+				}
+			}
+			mm3 = requestAnimationFrame(monsterMove3);	
+		 }
+		 mm2 = requestAnimationFrame(monsterMove2);
 	 }
-	 mm = window.requestAnimationFrame(monsterMove);		
+	  mm = requestAnimationFrame(monsterMove);	
 		
 	function dragstart(event) {
-	
+	if(mTop > 3){
+		cancelAnimationFrame(mm);
+		cancelAnimationFrame(mm2);
+		}
 	event.dataTransfer.setData("Text", event.target.id);
 	var data = event.dataTransfer.getData("text");
 	m5.removeEventListener('mousedown', mouseDown);
 	m5.removeEventListener('mouseup', mouseUp);	
-		
-		function remove(timestamp){
-			if ( mTop > -32){
-				console.log(mTop,mLeft);
-				mTop-=5;
-				mLeft+=5;
-				m5.style.marginTop = mTop + "%";
-				m5.style.marginLeft = mLeft + "%";
-				}
-				window.requestAnimationFrame(remove);
-		}
-		r = window.requestAnimationFrame(remove);
-	}
-	 
-function mouseDown() {
-    document.getElementById("m5").style.backgroundSize = "55% 65%";
-	document.getElementById("m5").style.marginTop = "6%";
-	document.getElementById("m5").style.marginLeft = "56%";
-}
 
+	 function remove(timestamp){
+		if ( mTop > -32){
+			console.log(mTop,mLeft);
+			mTop-=5;
+			mLeft+=5;
+			m5.style.marginTop = mTop + "%";
+			m5.style.marginLeft = mLeft + "%";
+			requestAnimationFrame(remove);
+		}
+	}	
+		requestAnimationFrame(remove);
+		cursorImage.style.display = "none";
+	}
+
+	function mouseDown() {
+	cursorImage.style.display = "block";
+	cursorImage.style.zIndex = "200";
+	scI = requestAnimationFrame(cursorEffect);
+    m5.style.backgroundSize = "55% 65%";
+	m5.style.marginTop = m5.style.marginTop;
+	m5.style.marginLeft = m5.style.marginLeft;
+	var myIndex = -1;
+	var scI;
+	var fps = 14;
+	function cursorEffect(){
+		var i;
+		var cI = document.getElementsByClassName("cI");
+		setTimeout(function() {
+			for (i = 0; i < cI.length; i++) 
+			{
+				cI[i].style.display = "none";  
+			}
+			 myIndex++;
+			if (myIndex < cI.length) { }  
+			cI[myIndex].style.display = "block";  
+			console.log(myIndex);
+			scI = requestAnimationFrame(cursorEffect);
+			if (myIndex === 5) 
+			{
+				 cancelAnimationFrame(scI);
+			}
+		},1000/fps);
+	}
+}
 function mouseUp() {
-    document.getElementById("m5").style.backgroundSize = "50% 60%";
-	document.getElementById("m5").style.marginTop = "8%";
-	document.getElementById("m5").style.marginLeft = "58%";
+	cursorImage.style.display = "none";
+	cursorImage.style.zIndex = "100";
+    m5.style.backgroundSize = "50% 60%";
+	m5.style.marginTop = (m5.style.marginTop + 2) +'%'
+	m5.style.marginLeft = (m5.style.marginLeft + 2) +'%'
 }
 
   (function () {
