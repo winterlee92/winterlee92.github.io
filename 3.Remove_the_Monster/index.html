@@ -16,7 +16,7 @@
 		background-color:black;
 	}
 	
-	#gameContainer,#monster,#m1,#m2,#m3,#m4,#m5,#m6,#frame,#layer1,#layer2,#sidelayer,#sidelayer2,#time{	
+	#gameContainer,#monster,#m1,#m2,#m3,#m4,#m6,#frame,#layer1,#layer2,#sidelayer,#sidelayer2,#time,#hand{	
 		position:absolute;	
 		height:100%;
 		width:100%;
@@ -24,7 +24,6 @@
 		background-Repeat:no-repeat;
 		overflow:hidden;
 	}
-
 	#gameContainer
 	{
 		background-Size : 100% 100%; 
@@ -33,19 +32,11 @@
 	
 	#main_character{
 		position:absolute;	
-		height:48%;
-		width:27%;
-		margin: 19.5% 36%;
+		height:35%;
+		width:17%;
+		margin: 22.5% 40.5%;
 		overflow:hidden;
-		
-		-webkit-animation-name: fearAnimation;
-		-webkit-animation-duration: 1s;
-		-webkit-animation-iteration-count: infinite;
-		-webkit-animation-delay:1s;
-		animation-delay:1s;
-		animation-name: fearAnimation;
-		animation-duration: 1s;
-		animation-iteration-count: infinite;
+		z-index: 200;	
 	}
 	
 	#main{
@@ -57,56 +48,113 @@
 		background-image: url(sad.png);
 		z-index: 200;	
 		}
-		
-	@-webkit-keyframes fearAnimation {
-	 15%{
-			margin: 20% 36%;
-	  }
-	  30%{
-			margin: 19.5% 36%;
-	   }
-	 45%{
-			margin: 20% 36%;
-	   }
-	 70%{
-			margin: 19.5% 36%;
-		}
-	 85%{
-			margin: 20% 36%;
-		}
-	100%{ 
-			margin: 19.5% 36%;
-		}
-	}	
+			
+		<!-- @-webkit-keyframes rotateAnimation { -->
+		<!-- 0%{ -->
+			<!-- transform:rotate(-20deg); -->
+		<!-- } -->
+		<!-- 10%{ -->
+			<!-- transform:rotate(0deg); -->
+		<!-- }	  -->
+		<!-- 20%{ -->
+			<!-- transform:rotate(20deg); -->
+		<!-- }	 -->
+		<!-- 30%{ -->
+			<!-- transform:rotate(0deg); -->
+		<!-- }	 -->
+		<!-- 40%{ -->
+			<!-- transform:rotate(-20deg); -->
+		<!-- }	 -->
+		<!-- 50%{ -->
+			<!-- transform:rotate(0deg); -->
+		<!-- } -->
+		<!-- 60%{ -->
+			<!-- transform:rotate(20deg); -->
+		<!-- }	 -->
+		<!-- 70%{ -->
+			<!-- transform:rotate(0deg); -->
+		<!-- }	 -->
+		<!-- 80%{ -->
+			<!-- transform:rotate(-20deg); -->
+		<!-- }	 -->
+		<!-- 90%{ -->
+			<!-- transform:rotate(0deg); -->
+		<!-- }	 -->
+		<!-- 100%{ -->
+			<!-- transform:rotate(20deg); -->
+		<!-- } -->
+	<!-- }	 -->
 	
-	@keyframes fearAnimation {
-	 0%{
-			margin: 20% 36%;
-	   }
-	 59%{
-			margin: 20% 36%;
-	   }
-	  60%{
-			margin: 19.5% 36%;
+	<!-- @keyframes rotateAnimation { -->
+		<!-- 0%{ -->
+			<!-- transform:rotate(-2deg); -->
+		<!-- } -->
+		<!-- 5%{ -->
+			<!-- transform:rotate(0deg); -->
+		<!-- }	  -->
+		<!-- 10%{ -->
+			<!-- transform:rotate(2deg); -->
+		<!-- }	 -->
+		<!-- 15%{ -->
+			<!-- transform:rotate(0deg); -->
+		<!-- }	 -->
+		<!-- 20%{ -->
+			<!-- transform:rotate(-2deg); -->
+		<!-- }	 -->
+		<!-- 25%{ -->
+			<!-- transform:rotate(0deg); -->
+		<!-- } -->
+		<!-- 30%{ -->
+			<!-- transform:rotate(2deg); -->
+		<!-- }	 -->
+		<!-- 35%{ -->
+			<!-- transform:rotate(0deg); -->
+		<!-- }	 -->
+		<!-- 40%{ -->
+			<!-- transform:rotate(-2deg); -->
+		<!-- }	 -->
+		<!-- 45%{ -->
+			<!-- transform:rotate(0deg); -->
+		<!-- }	 -->
+		<!-- 50%{ -->
+			<!-- transform:rotate(2deg); -->
+		<!-- } -->
+	<!-- }	 -->
+	
+	@-webkit-keyframes dropAnimation {
+		0%{
+			height:35%;
+			width:17%;
+			margin: 22.5% 40.5%;
+		}	
+		100%{
+			height : 20% ;
+			width : 9% ;
+			margin : 40% 55% ;
 		}
-	 80%{
-			margin: 20% 36%;
+	}
+	@keyframes dropAnimation {
+		0%{
+			height:35%;
+			width:17%;
+			margin: 22.5% 40.5%;
+		}	
+		100%{
+			height : 20% ;
+			width : 9% ;
+			margin : 40% 55% ;
 		}
-	100%{ 
-			margin: 19.5% 36%;
-		}
-	}	
-		
+	}
+	
 	#tear{
 		position:absolute;	
-		height: 20%;
-		width: 60%;
-		margin: 10% 18%;
+		height: 30%;
+		width: 90%;
 		background-Repeat:no-repeat;
 		background-Size : 100% 100%; 
 		background-image: url(tear.png);
 		z-index: 201;
-		
+		opacity:0;
 		-webkit-animation-name: tearAnimation;
 		-webkit-animation-duration: 1s;
 		-webkit-animation-iteration-count: infinite;
@@ -118,11 +166,11 @@
 	}
 	
 	@-webkit-keyframes tearAnimation {
-	 0%{
+		 20%{
 			opacity:0;
 	   }
-	 59%{
-			opacity:0;
+	 40%{
+			opacity:1;
 	   }
 	  60%{
 			opacity:1;
@@ -136,11 +184,11 @@
 	}	
 	
 	@keyframes tearAnimation {
-	 0%{
+	 20%{
 			opacity:0;
 	   }
-	 59%{
-			opacity:0;
+	 40%{
+			opacity:1;
 	   }
 	  60%{
 			opacity:1;
@@ -155,66 +203,14 @@
 	#die{
 		position: absolute;
 		height: 10%;
-		width: 19%;
-		margin: 19% 40%;
+		width: 29%;
+		margin: 17% 34%;
 		background-Repeat: no-repeat;
 		background-Size: 100% 100%;
 		background-image: url(die.png);
 		z-index: 201;
 		display:none;
-		
-		<!-- -webkit-animation-name: dieAnimation; -->
-		<!-- -webkit-animation-duration: 2s; -->
-		<!-- -webkit-animation-iteration-count: infinite; -->
-		<!-- -webkit-animation-delay:2s; -->
-		<!-- animation-delay:2s; -->
-		<!-- animation-name: dieAnimation; -->
-		<!-- animation-duration: 2s; -->
-		<!-- animation-iteration-count: infinite; -->
-
 	}
-	
-	<!-- @-webkit-keyframes dieAnimation { -->
-	 <!-- 10%{ -->
-		<!-- margin: 25% 46.45%; -->
-	  <!-- } -->
-	  <!-- 30%{ -->
-		<!-- margin: 24.5% 46.45%; -->
-	   <!-- } -->
-	 <!-- 45%{ -->
-		<!-- margin: 25% 46.45%; -->
-	   <!-- } -->
-	 <!-- 70%{ -->
-		<!-- margin: 24.5% 46.45%; -->
-		<!-- } -->
-	 <!-- 85%{ -->
-		<!-- margin: 25% 46.45%; -->
-		<!-- } -->
-	<!-- 100%{  -->
-		<!-- margin: 24.5% 46.45%; -->
-		<!-- } -->
-	<!-- }	 -->
-	
-	<!-- @keyframes dieAnimation { -->
-	<!-- 15%{ -->
-		<!-- margin: 25% 46.45%; -->
-	  <!-- } -->
-	  <!-- 30%{ -->
-		<!-- margin: 24.5% 46.45%; -->
-	   <!-- } -->
-	 <!-- 45%{ -->
-		<!-- margin: 25% 46.45%; -->
-	   <!-- } -->
-	 <!-- 70%{ -->
-		<!-- margin: 24.5% 46.45%; -->
-		<!-- } -->
-	 <!-- 85%{ -->
-		<!-- margin: 25% 46.45%; -->
-		<!-- } -->
-	<!-- 100%{  -->
-		<!-- margin: 24.5% 46.45%; -->
-		<!-- } -->
-	<!-- }	 -->
 	
 	#m1{
 		background-Size: 43% 100%;
@@ -224,11 +220,44 @@
 		display:none;
 	}
 	#m2{
-		background-Size: 43% 100%;
-		margin: auto -6%;
-		background-image:url(m2.png);
+		position:absolute;	
+		height: 68%;
+		width: 38%;
+		display:block;
+		background-Repeat:no-repeat;
+		overflow:hidden;
+		background-Size: 100% 100%;
+		margin: 6% 0%;
+		background-image: url(m2.png);
+		z-index:199;
 		display:none;
 	}
+	
+	<!-- @-webkit-keyframes dropAnimation2 { -->
+		<!-- 0%{ -->
+			<!-- height: 68%; -->
+			<!-- width: 38%; -->
+			<!-- margin: 6% 0%; -->
+		<!-- }	 -->
+		<!-- 100%{ -->
+			<!-- height : 40% ; -->
+			<!-- width : 20% ; -->
+			<!-- margin : 32% 43% ; -->
+		<!-- } -->
+	<!-- } -->
+	<!-- @keyframes dropAnimation2 { -->
+		<!-- 0%{ -->
+			<!-- height: 68%; -->
+			<!-- width: 38%; -->
+			<!-- margin: 6% 0%; -->
+		<!-- }	 -->
+		<!-- 100%{ -->
+			<!-- height : 40% ; -->
+			<!-- width : 20% ; -->
+			<!-- margin : 32% 43% ; -->
+		<!-- } -->
+	<!-- } -->
+	
 	#m3{
 		background-Size: 23% 40%;
 		margin-top: 16%;
@@ -246,7 +275,13 @@
 		display:none;
 	}
 	#m5{
-		background-Size: 50% 60%;
+		position:absolute;	
+		height:50%;
+		width:50%;
+		display:block;
+		background-Repeat:no-repeat;
+		overflow:hidden;
+		background-Size: 100% 100%;
 		margin-top: 6%;
 		margin-left: 56%;
 		background-image: url(m5.png);
@@ -385,12 +420,23 @@
 		position: absolute;
 		width:10%;height:18%;
 		z-index:100;
-		margin-top: 20%;
-		margin-left: 75%;
 	}
 	.cI{
 		display:none;width:100%;height:100%;background-size:100% 100%;background-Repeat:no-repeat;
 	}
+	
+	#hand{
+		position: absolute;
+		height: 20%;
+		width: 10%;
+		background-Size: 100% 100%;
+		margin-top: 26%;
+		margin-left: 72%;
+		background-image: url(hand.png);
+		z-index: 200;
+		opacity:0.7;
+	}
+	
 </style>
 </head>
 <body onContextMenu="return false;">
@@ -407,17 +453,16 @@
 		</div>	
 		
 		<div id="m1"></div>
-		<div id="m2"></div>
+		<div id="m2" draggable="true" ondragstart="dragstartM2(event);" onmousedown="mouseDownM2(event)" onmouseup="mouseUpM2"></div>
 		<div id="m3"></div>
 		<div id="m4"></div>
-		<div id="m5" draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown" onmouseup="mouseUp"></div>
+		<div id="hand" draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp"></div>
+		<div id="m5" draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp"></div>
 		<div id="m6"></div>
 	  </div>
 	  <div id="frame">  
 		<div id="layer1"></div>
 		<div id="layer2"></div>
-		<!-- <div id="sideLayer1"></div> -->
-		<!-- <div id="sideLayer2"></div> -->
 	  </div>
 	  <div id="time">
 		<div id="timeDisplay"></div>
@@ -425,7 +470,7 @@
 		<div id="lifeTime"></div>
 		<div id="glow"></div>
 	  </div>
-	  <div id='cursorImage' draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown" onmouseup="mouseUp"></div>
+	  <div id='cursorImage' draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp"></div>
   </div>
   <script>
 window.requestAnimFrame = (function(){
@@ -465,15 +510,29 @@ window.requestAnimFrame = (function(){
 	}());
   
 	var g = document.getElementById("gameContainer");
-	var m5 =document.getElementById("m5");
+	var m5 = document.getElementById("m5");
+	var hand = document.getElementById("hand");
+	var cursorImage = document.getElementById("cursorImage");
+	var mc = document.getElementById("main_character");
 	m5.addEventListener('mousedown', mouseDown);
 	m5.addEventListener('mouseup', mouseUp);
+	hand.addEventListener('mousedown', mouseDown);
+	hand.addEventListener('mouseup', mouseUp);
+	cursorImage.addEventListener('mousedown', mouseDown);
+	cursorImage.addEventListener('mouseup', mouseUp);
+	
 	var r;
-	var mTop = -32 ;
-	var mLeft = 96;	
+	var mcTop = 22.3;
+	var mcLeft = 40.5;
+	var mmTop = -32 ;
+	var mmLeft = 96;	
+	var m2Top = -20 ;
+	var m2Left = -32;	
 	var toggle = 0;	
 	var mm,mm2;
-	var cursorImage = document.getElementById("cursorImage");
+	var scI;
+	var count=0;
+	var stopDuration=0;
 	function createImage(){
 	var cursorArray =['c1.png','c2.png','c3.png','c4.png','c5.png','c6.png'];
 	var i;	
@@ -491,42 +550,181 @@ window.requestAnimFrame = (function(){
 	}
 	createImage();
 	
+	function mainCharacter(timestamp){
+		// if default topMargin heigher than 22
+		if(mcTop >= 22){
+			mcTop-=0.03;
+			mc.style.margin = mcTop + "% " + mcLeft + "%";
+			shakingAnimation = requestAnimationFrame(mainCharacter);
+		}
+		// if default topMargin lower or equal than 22 , 2 times get back to default value of topMargin
+		if(mcTop <= 22 && count<2){
+			count++;
+			mcTop = 22.3;
+			mc.style.margin = mcTop + "% " + mcLeft + "%";
+			stopDuration=60;
+		}
+		// if already running 2 times and the topMargin is default value, then running the 'stop' animation
+		if (count === 2 && mcTop >= 22.3){
+			function durationAniamtion(timestamp){
+				// if the duration is 60ms
+				if( stopDuration > 0){
+					stopDuration--
+					cancelAnimationFrame(shakingAnimation);
+					// if the duration is 0ms
+					if (stopDuration===0){
+						count=0;
+						shakingAnimation = requestAnimationFrame(mainCharacter);
+					}
+					da = requestAnimationFrame(durationAniamtion);
+				}
+			}
+			da = requestAnimationFrame(durationAniamtion);
+		}
+	}
+		shakingAnimation = requestAnimationFrame(mainCharacter);
+		
 	function monsterMove(timestamp){
-		if ( mTop < 8){
-			mTop+=2;
-			mLeft-=2;
-			m5.style.marginTop = mTop + "%";
-			m5.style.marginLeft = mLeft + "%"; 
+		if ( mmTop < 8){
+			mmTop+=2;
+			mmLeft-=2;
+			m5.style.marginTop = mmTop + "%";
+			m5.style.marginLeft = mmLeft + "%"; 
 			mm = requestAnimationFrame(monsterMove);
 		}	
 		function monsterMove2(timestamp){
-		if(mTop >= 8 && mTop <=10)
+		if(mmTop >= 8 && mmTop <=10)
 		{
-			mTop+=0.01;
-			mLeft-=0.03;
-			m5.style.marginTop = mTop + "%";
-			m5.style.marginLeft = mLeft + "%"; 
+			mmTop+=0.01;
+			mmLeft-=0.02;
+			m5.style.marginTop = mmTop + "%";
+			m5.style.marginLeft = mmLeft + "%"; 
 			mm2 = requestAnimationFrame(monsterMove2);
 		}
-			function monsterMove3(timestamp){
-			if(mTop >= 9.9 && mTop <=11){
-				mTop+=0.01;
-				mLeft-=0.1;
-				m5.style.marginTop = mTop + "%";
-				m5.style.marginLeft = mLeft + "%"; 
-				mm3 = requestAnimationFrame(monsterMove3);
-				document.getElementById("die").style.display="block";	
+			var hand_mmTop = 28;
+			var hand_mmLeft = 70;
+			var count = 0;
+			hand.style.display="none";	
+			function handMove(timestamp){
+				if(mmTop >= 9 && hand_mmTop > -10.5){
+					if(count<=32)
+					{
+						count++;
+						hand_mmTop-=1;
+						hand_mmLeft+=1.5;
+						hand.style.marginTop = hand_mmTop + "%";
+						hand.style.marginLeft = hand_mmLeft + "%"; 
+						hm = requestAnimationFrame(handMove);
+						hand.style.display="block";	
+						if(hand_mmTop < 12){hand_mmTop=28;hand_mmLeft=70;}
+					}
+					else{hand.style.display="none";}				
 				}
 			}
-			mm3 = requestAnimationFrame(monsterMove3);	
+			hm = requestAnimationFrame(handMove);	
 		 }
 		 mm2 = requestAnimationFrame(monsterMove2);
 	 }
 	  mm = requestAnimationFrame(monsterMove);	
 		
+	var mmM2,mmM2_2;	
+	function monsterMoveM2(timestamp){	
+		m2.style.display = "block";
+		if ( m2Top < 6){
+			m2Top+=1;
+			m2Left+=1.5;
+			m2.style.marginTop = m2Top + "%";
+			m2.style.marginLeft = m2Left + "%"; 
+			mmM2 = requestAnimationFrame(monsterMoveM2);
+		}	
+		
+		var degree = 2 ;
+		function monsterMoveM2_2(timestamp){
+		if(m2Top >= 6 && m2Top <9){
+				m2Top+=0.01;
+				m2Left+=0.02;
+				m2.style.marginTop = m2Top + "%";
+				m2.style.marginLeft = m2Left + "%"; 
+				mmM2_2 = requestAnimationFrame(monsterMoveM2_2);
+			}
+			function monsterMoveM2_3(timestamp){
+			if(m2Top >= 9 && m2Top <=10){
+				m2Top+=0.01;
+				m2Left+=0.04;
+				m2.style.marginTop = m2Top + "%";
+				m2.style.marginLeft = m2Left + "%"; 
+				mmM2_3 = requestAnimationFrame(monsterMoveM2_3);
+				}
+			if(m2Top >= 7){
+				cancelAnimationFrame(shakingAnimation);
+				document.getElementById("die").style.display="block";	
+				function rotateAnimation(timestamp){	
+					if(degree >= -2){
+						degree--;
+						mc.style.transform="rotate("+degree+"deg)";
+						ra=requestAnimationFrame(rotateAnimation);
+					}	
+						console.log(degree);
+						function rotateAnimation2(timestamp){	
+							if(degree <= 2)
+							{
+								degree++;
+								mc.style.transform="rotate("+degree+"deg)";
+								ra2=requestAnimationFrame(rotateAnimation2);
+							}
+						}
+						ra2=requestAnimationFrame(rotateAnimation2);
+				}
+				ra=requestAnimationFrame(rotateAnimation);
+			}
+			if(m2Top >= 8.5){
+				<!-- document.getElementById("die").style.display="block";	 -->
+				}	
+			if(m2Top >= 9){
+				<!-- mc.style.webkitAnimationName="paused"; -->
+				<!-- mc.style.animationPlayState="paused"; -->
+				<!-- mc.style.transform="rotate(20deg)"; -->
+				<!-- mc.style.webkitAnimationName="dropAnimation"; -->
+				<!-- mc.style.animationName="dropAnimation"; -->
+				<!-- mc.style.webkitAnimationPlayStatee="running"; -->
+				<!-- mc.style.animationPlayState="running"; -->
+				<!-- mc.style.webkitAnimationIterationCount="1"; -->
+				<!-- mc.style.animationIterationCount="1"; -->
+				<!-- mc.style.webkitAnimationFillMode="forwards"; -->
+				<!-- mc.style.animationFillMode="forwards"; -->
+				
+				<!-- m2.style.animationName="dropAnimation2"; -->
+				<!-- m2.style.webkitAnimationIterationCount="1"; -->
+				<!-- m2.style.animationFillMode="forwards"; -->
+				    var m2Height = 68;
+					var m2Width = 43;
+		
+					<!-- function monsterMoveM2_4(timestamp){ -->
+						<!-- if(m2Top <= 10 && m2Top >= 32){ -->
+							<!-- m2Height-=2; -->
+							<!-- m2Width-=1.58; -->
+							<!-- m2Top+=0.01; -->
+							<!-- m2Left+=0.04; -->
+							<!-- m2.style.height= m2Height+"%"; -->
+							<!-- m2.style.width= m2Width+"%"; -->
+							<!-- m2.style.marginTop = m2Top + "%"; -->
+							<!-- m2.style.marginLeft = m2Left + "%";  -->
+							<!-- mmM2_4 = requestAnimationFrame(monsterMoveM2_4); -->
+						<!-- } -->
+					<!-- } -->
+					<!-- mmM2_4 = requestAnimationFrame(monsterMoveM2_4); -->
+				}	
+			}
+			mmM2_3 = requestAnimationFrame(monsterMoveM2_3);	
+		}
+		mmM2_2 = requestAnimationFrame(monsterMoveM2_2);
+	}
+	
 	function dragstart(event) {
+	document.getElementById("title").style.display="none";	
 	document.getElementById("die").style.display="none";	
-	if(mTop > 3){
+	hand.style.display="none";	
+	if(mmTop > 3){
 		cancelAnimationFrame(mm);
 		cancelAnimationFrame(mm2);
 		}
@@ -534,28 +732,39 @@ window.requestAnimFrame = (function(){
 	var data = event.dataTransfer.getData("text");
 	m5.removeEventListener('mousedown', mouseDown);
 	m5.removeEventListener('mouseup', mouseUp);	
-
+	
 	 function remove(timestamp){
-		if ( mTop > -32){
-			console.log(mTop,mLeft);
-			mTop-=5;
-			mLeft+=5;
-			m5.style.marginTop = mTop + "%";
-			m5.style.marginLeft = mLeft + "%";
+		if ( mmTop > -32){
+			mmTop-=5;
+			mmLeft+=5;
+			m5.style.marginTop = mmTop + "%";
+			m5.style.marginLeft = mmLeft + "%";
 			requestAnimationFrame(remove);
 		}
 	}	
 		requestAnimationFrame(remove);
 		cursorImage.style.display = "none";
+		
+		mmM2 = requestAnimationFrame(monsterMoveM2);
 	}
 
-	function mouseDown() {
+	var w = document.getElementById("gameContainer"),
+    d = document,
+    e = d.documentElement,
+    x = w.innerWidth || e.clientWidth 
+    y = w.innerHeight|| e.clientHeight;
+	
+	x=w.clientWidth;
+	y=w.clientHeight;
+	function mouseDown(event) {
 	cursorImage.style.display = "block";
 	cursorImage.style.zIndex = "200";
 	scI = requestAnimationFrame(cursorEffect);
-    m5.style.backgroundSize = "55% 65%";
-	m5.style.marginTop = m5.style.marginTop;
-	m5.style.marginLeft = m5.style.marginLeft;
+	m5.style.height="52%";
+	m5.style.width="54%";
+	mx = event.clientX;
+	my = event.clientY;
+	m5.style.marginTop = (12.01-1) +'%'
 	var myIndex = -1;
 	var scI;
 	var fps = 14;
@@ -564,27 +773,26 @@ window.requestAnimFrame = (function(){
 		var cI = document.getElementsByClassName("cI");
 		setTimeout(function() {
 			for (i = 0; i < cI.length; i++) 
-			{
-				cI[i].style.display = "none";  
-			}
+			{cI[i].style.display = "none";  }
 			 myIndex++;
 			if (myIndex < cI.length) { }  
+			cursorImage.style.marginTop = (((y-(y-my))/y)*100)-25 + "%";
+			cursorImage.style.marginLeft = ((x-(x-mx))/x*100)-5 + "%";
 			cI[myIndex].style.display = "block";  
-			console.log(myIndex);
 			scI = requestAnimationFrame(cursorEffect);
-			if (myIndex === 5) 
-			{
-				 cancelAnimationFrame(scI);
-			}
+			if (myIndex === 5) {cancelAnimationFrame(scI);}
 		},1000/fps);
 	}
 }
+
 function mouseUp() {
-	cursorImage.style.display = "none";
+	console.log(m5.style.marginTop);
+	cancelAnimationFrame(scI);
+	cursorImage.style.display="none"
 	cursorImage.style.zIndex = "100";
-    m5.style.backgroundSize = "50% 60%";
-	m5.style.marginTop = (m5.style.marginTop + 2) +'%'
-	m5.style.marginLeft = (m5.style.marginLeft + 2) +'%'
+	m5.style.height="50%";
+	m5.style.width="52%";
+	m5.style.marginTop = 12.01 +'%'
 }
 
   (function () {
