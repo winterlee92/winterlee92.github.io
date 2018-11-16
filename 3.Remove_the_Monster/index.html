@@ -524,10 +524,16 @@ window.requestAnimFrame = (function(){
 	var r;
 	var mcTop = 22.3;
 	var mcLeft = 40.5;
+	var mcHeight = 35;
+	var mcWidth = 17;
 	var mmTop = -32 ;
 	var mmLeft = 96;	
 	var m2Top = -20 ;
 	var m2Left = -32;	
+	var m2Top2=10.01;
+	var m2Left2=27.02;
+	var m2Height=68;
+	var m2Width=20;
 	var toggle = 0;	
 	var mm,mm2;
 	var scI;
@@ -627,7 +633,8 @@ window.requestAnimFrame = (function(){
 	 }
 	  mm = requestAnimationFrame(monsterMove);	
 		
-	var mmM2,mmM2_2;	
+	var mmM2,mmM2_2;
+	var animationToggle = 0;
 	function monsterMoveM2(timestamp){	
 		m2.style.display = "block";
 		if ( m2Top < 6){
@@ -637,7 +644,6 @@ window.requestAnimFrame = (function(){
 			m2.style.marginLeft = m2Left + "%"; 
 			mmM2 = requestAnimationFrame(monsterMoveM2);
 		}	
-		
 		var degree = 2 ;
 		function monsterMoveM2_2(timestamp){
 		if(m2Top >= 6 && m2Top <9){
@@ -648,72 +654,88 @@ window.requestAnimFrame = (function(){
 				mmM2_2 = requestAnimationFrame(monsterMoveM2_2);
 			}
 			function monsterMoveM2_3(timestamp){
-			if(m2Top >= 9 && m2Top <=10){
-				m2Top+=0.01;
-				m2Left+=0.04;
-				m2.style.marginTop = m2Top + "%";
-				m2.style.marginLeft = m2Left + "%"; 
-				mmM2_3 = requestAnimationFrame(monsterMoveM2_3);
-				}
-			if(m2Top >= 7){
-				cancelAnimationFrame(shakingAnimation);
-				document.getElementById("die").style.display="block";	
-				function rotateAnimation(timestamp){	
-					if(degree >= -2){
-						degree--;
-						mc.style.transform="rotate("+degree+"deg)";
-						ra=requestAnimationFrame(rotateAnimation);
-					}	
-						console.log(degree);
-						function rotateAnimation2(timestamp){	
-							if(degree <= 2)
-							{
-								degree++;
-								mc.style.transform="rotate("+degree+"deg)";
-								ra2=requestAnimationFrame(rotateAnimation2);
+				if(m2Top >= 9 && m2Top <=10){
+					m2Top+=0.01;
+					m2Left+=0.04;
+					m2.style.marginTop = m2Top + "%";
+					m2.style.marginLeft = m2Left + "%"; 
+					mmM2_3 = requestAnimationFrame(monsterMoveM2_3);
+					}
+				if(m2Top >= 8){
+					cancelAnimationFrame(shakingAnimation);
+					document.getElementById("die").style.display="block";	
+					function rotateAnimation(timestamp){	
+						if(degree >= -2){
+							degree--;
+							mc.style.transform="rotate("+degree+"deg)";
+							ra=requestAnimationFrame(rotateAnimation);
+						}	
+							function rotateAnimation2(timestamp){	
+								if(degree <= 2)
+								{
+									degree++;
+									mc.style.transform="rotate("+degree+"deg)";
+									cancelAnimationFrame(ra2);
+								}
+								function rotateAnimation3(timestamp){
+									if(m2Top > 10)
+									{
+										mc.style.transform="rotate(30deg)";
+										ra3=requestAnimationFrame(rotateAnimation3);
+										animationToggle = 1;
+									}
+									if(animationToggle === 1)
+									{
+										function rotateAnimation4(timestamp){
+											if (mcTop <= 40){
+											
+												mcTop+=0.01773;
+												mcLeft+=0.0145;
+												mcHeight-=0.015;
+												mcWidth-=0.008;
+												mc.style.marginTop=mcTop+"%";
+												mc.style.marginLeft=mcLeft+"%";
+												mc.style.height=mcHeight+"%";
+												mc.style.width=mcWidth+"%";
+																							
+												m2Top2+=0.02199;
+												m2Left2+=0.018;
+												m2Height-=0.028;
+												m2Width-=0.001598;												
+												m2.style.marginTop=m2Top2+"%";
+												m2.style.marginLeft=m2Left2+"%";
+												m2.style.height=m2Height+"%";
+												m2.style.width=m2Width+"%";
+												
+												ra4=requestAnimationFrame(rotateAnimation4);
+												animationToggle = 2;
+											}
+											if(animationToggle === 2)
+											{	
+												function rotateAnimation5(timestamp){
+													if (mcTop > 40 && mcTop <= 57.7){
+														mcTop+=0.00277;
+														m2Top2+=0.00339;
+														mc.style.marginTop=mcTop+"%";
+														m2.style.marginTop=m2Top2+"%";
+														mc.style.zIndex="1";
+														m2.style.zIndex="1";
+														ra5=requestAnimationFrame(rotateAnimation5);
+													}	
+												}
+												ra5=requestAnimationFrame(rotateAnimation5);
+											}
+											ra5=requestAnimationFrame(rotateAnimation4);
+										}
+										ra4=requestAnimationFrame(rotateAnimation4);
+									}									
+								}
+								ra3=requestAnimationFrame(rotateAnimation3);
 							}
-						}
-						ra2=requestAnimationFrame(rotateAnimation2);
+							ra2=requestAnimationFrame(rotateAnimation2);
+					}
+					ra=requestAnimationFrame(rotateAnimation);
 				}
-				ra=requestAnimationFrame(rotateAnimation);
-			}
-			if(m2Top >= 8.5){
-				<!-- document.getElementById("die").style.display="block";	 -->
-				}	
-			if(m2Top >= 9){
-				<!-- mc.style.webkitAnimationName="paused"; -->
-				<!-- mc.style.animationPlayState="paused"; -->
-				<!-- mc.style.transform="rotate(20deg)"; -->
-				<!-- mc.style.webkitAnimationName="dropAnimation"; -->
-				<!-- mc.style.animationName="dropAnimation"; -->
-				<!-- mc.style.webkitAnimationPlayStatee="running"; -->
-				<!-- mc.style.animationPlayState="running"; -->
-				<!-- mc.style.webkitAnimationIterationCount="1"; -->
-				<!-- mc.style.animationIterationCount="1"; -->
-				<!-- mc.style.webkitAnimationFillMode="forwards"; -->
-				<!-- mc.style.animationFillMode="forwards"; -->
-				
-				<!-- m2.style.animationName="dropAnimation2"; -->
-				<!-- m2.style.webkitAnimationIterationCount="1"; -->
-				<!-- m2.style.animationFillMode="forwards"; -->
-				    var m2Height = 68;
-					var m2Width = 43;
-		
-					<!-- function monsterMoveM2_4(timestamp){ -->
-						<!-- if(m2Top <= 10 && m2Top >= 32){ -->
-							<!-- m2Height-=2; -->
-							<!-- m2Width-=1.58; -->
-							<!-- m2Top+=0.01; -->
-							<!-- m2Left+=0.04; -->
-							<!-- m2.style.height= m2Height+"%"; -->
-							<!-- m2.style.width= m2Width+"%"; -->
-							<!-- m2.style.marginTop = m2Top + "%"; -->
-							<!-- m2.style.marginLeft = m2Left + "%";  -->
-							<!-- mmM2_4 = requestAnimationFrame(monsterMoveM2_4); -->
-						<!-- } -->
-					<!-- } -->
-					<!-- mmM2_4 = requestAnimationFrame(monsterMoveM2_4); -->
-				}	
 			}
 			mmM2_3 = requestAnimationFrame(monsterMoveM2_3);	
 		}
@@ -786,7 +808,6 @@ window.requestAnimFrame = (function(){
 }
 
 function mouseUp() {
-	console.log(m5.style.marginTop);
 	cancelAnimationFrame(scI);
 	cursorImage.style.display="none"
 	cursorImage.style.zIndex = "100";
