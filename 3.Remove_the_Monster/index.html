@@ -436,7 +436,13 @@
 		z-index: 200;
 		opacity:0.7;
 	}
-	
+	#bone{
+		position:absolute;
+		margin:32% 39%;
+		height:40%;
+		width:28%;
+		z-index: 100;
+	}
 </style>
 </head>
 <body onContextMenu="return false;">
@@ -459,6 +465,7 @@
 		<div id="hand" draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp"></div>
 		<div id="m5" draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp"></div>
 		<div id="m6"></div>
+		<div id="bone"></div>
 	  </div>
 	  <div id="frame">  
 		<div id="layer1"></div>
@@ -514,6 +521,7 @@ window.requestAnimFrame = (function(){
 	var hand = document.getElementById("hand");
 	var cursorImage = document.getElementById("cursorImage");
 	var mc = document.getElementById("main_character");
+	var bone = document.getElementById("bone");
 	m5.addEventListener('mousedown', mouseDown);
 	m5.addEventListener('mouseup', mouseUp);
 	hand.addEventListener('mousedown', mouseDown);
@@ -551,6 +559,19 @@ window.requestAnimFrame = (function(){
 				myImg.setAttribute("alt","c"+i);
 				myImg.setAttribute("class","cI");
 				cursorImage.appendChild(myImg);
+			}
+		}	
+		
+	var boneArray =['bone.png'];	
+		for(i=0; i<3; i++)
+		{		
+			if(i <3)
+			{		
+				var myImg = document.createElement("IMG");
+				myImg.setAttribute("src", boneArray[0]);	
+				myImg.setAttribute("alt","bone"+i);
+				myImg.setAttribute("class","bone");
+				bone.appendChild(myImg);
 			}
 		}	
 	}
@@ -713,14 +734,15 @@ window.requestAnimFrame = (function(){
 											if(animationToggle === 2)
 											{	
 												function rotateAnimation5(timestamp){
-													if (mcTop > 40 && mcTop <= 57.7){
-														mcTop+=0.00277;
-														m2Top2+=0.00339;
+													if (mcTop > 40 && mcTop <= 65){
+														mcTop+=0.01;
+														m2Top2+=0.01;
 														mc.style.marginTop=mcTop+"%";
 														m2.style.marginTop=m2Top2+"%";
 														mc.style.zIndex="1";
 														m2.style.zIndex="1";
 														ra5=requestAnimationFrame(rotateAnimation5);
+														animationToggle === 3;
 													}	
 												}
 												ra5=requestAnimationFrame(rotateAnimation5);
@@ -741,7 +763,84 @@ window.requestAnimFrame = (function(){
 		}
 		mmM2_2 = requestAnimationFrame(monsterMoveM2_2);
 	}
-	
+
+	var toggleBone = 0;
+	var boneTopMargin = 78;
+	var boneDegree = 20;
+		function boneAnimation(timestamp){
+			var bone = document.getElementsByClassName("bone");
+			if (toggleBone === 0){
+			var i;
+			for (i = 0; i < bone.length; i++){
+				bone[i].style.position = "absolute";
+				bone[i].style.display = "display"; 
+				bone[i].style.height= 30 + "%";
+				bone[i].style.width= 30 + "%";
+				bone[0].style.transform=" rotate(20deg)";
+				bone[0].style.margin=" 78% 45%";
+				bone[i].style.opacity= 0.6;
+				<!-- bone[0].style.zIndex= 201; -->
+				}
+			}
+			if (toggleBone === 1){
+				function boneAnimation2(timestamp){
+					if (boneTopMargin >= 52){
+						boneTopMargin-=1;
+						bone[0].style.margin= boneTopMargin +"% 45%";						
+					}
+					ba2=requestAnimationFrame(boneAnimation2);
+					toggleBone = 2;
+					
+					if (toggleBone === 2){
+						function boneAnimation3(timestamp){
+							if (boneTopMargin > 31){
+								boneTopMargin-=1;
+								boneDegree += 3.25;
+								bone[0].style.margin= boneTopMargin +"% 45%";
+								bone[0].style.transform=" rotate("+ boneDegree +"deg)";
+							}
+							ba3=requestAnimationFrame(boneAnimation3);
+							toggleBone = 3;
+							
+							if (toggleBone === 3){
+							
+								function boneAnimation4(timestamp){
+									if (boneTopMargin > 10){
+										boneTopMargin-=1;
+										boneDegree += 0.6;
+										bone[0].style.margin= boneTopMargin +"% 45%";
+										bone[0].style.transform=" rotate("+ boneDegree +"deg)";
+									}
+									ba4=requestAnimationFrame(boneAnimation4);
+									toggleBone = 4;	
+									
+									if (toggleBone === 4){							
+										function boneAnimation5(timestamp){
+											if (boneTopMargin > 8){
+												boneTopMargin-=1;
+												boneDegree -= 0.25;
+												bone[0].style.margin= boneTopMargin +"% 45%";
+												bone[0].style.transform=" rotate("+ boneDegree +"deg)";
+											}
+											ba5=requestAnimationFrame(boneAnimation5);
+											toggleBone = 5;			
+										}
+										ba5=requestAnimationFrame(boneAnimation5);
+									}									
+								}
+								ba4=requestAnimationFrame(boneAnimation4);	
+							}												
+						}
+						ba3=requestAnimationFrame(boneAnimation3);
+					}
+				}
+				ba2=requestAnimationFrame(boneAnimation2);
+			}
+			ba=requestAnimationFrame(boneAnimation);
+			toggleBone = 1;
+		}
+		ba=requestAnimationFrame(boneAnimation);
+		
 	function dragstart(event) {
 	document.getElementById("title").style.display="none";	
 	document.getElementById("die").style.display="none";	
