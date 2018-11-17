@@ -787,6 +787,53 @@ window.requestAnimFrame = (function(){
 																														ba8=requestAnimationFrame(boneAnimation8);
 																														toggleBone = 9;	
 																														cancelAnimationFrame(ba8);
+																														if (toggleBone === 9){		
+																															function boneAnimation9(timestamp){
+																																if (boneTopMargin < 16){
+																																	boneTopMargin+=1;
+																																	boneDegree -= 1.16666666666;
+																																	b[0].style.margin= boneTopMargin +"% 40%";
+																																	b[0].style.transform=" rotate("+ boneDegree +"deg)";
+																																	
+																																	boneDegree2 -= 2.5;
+																																	b[1].style.margin= boneTopMargin2 +"% 12%";
+																																	b[1].style.transform=" rotate("+ boneDegree2 +"deg)";
+																																	
+																																	boneTopMargin3-=1;
+																																	boneDegree3 += 2.25;
+																																	b[2].style.margin= boneTopMargin3 +"% 70%";
+																																	b[2].style.transform=" rotate("+ boneDegree3 +"deg)";
+																																}										
+																																ba9=requestAnimationFrame(boneAnimation9);
+																																<!-- toggleBone = 10;	 -->
+																																cancelAnimationFrame(ba9);
+																																if (toggleBone === 10){		
+																																	function boneAnimation10(timestamp){
+																																		if (boneTopMargin < 32){
+																																			boneTopMargin+=1;
+																																			boneDegree -= 1.15384615384;
+																																			b[0].style.margin= boneTopMargin +"% 35%";
+																																			b[0].style.transform=" rotate("+ boneDegree +"deg)";
+																																			
+																																			boneTopMargin2 -= 0.23076923076;
+																																			boneDegree2 -= 1.92307692307;
+																																			b[1].style.margin= boneTopMargin2 +"% 10%";
+																																			b[1].style.transform=" rotate("+ boneDegree2 +"deg)";
+																																			
+																																			boneTopMargin3 -= 1.30769230769;
+																																			boneDegree3 += 3.07692307692;
+																																			b[2].style.margin= boneTopMargin3 +"% 70%";
+																																			b[2].style.transform=" rotate("+ boneDegree3 +"deg)";
+																																		}										
+																																		ba10=requestAnimationFrame(boneAnimation10);
+																																		toggleBone = 11;	
+																																		cancelAnimationFrame(ba10);
+																																	}									
+																																	ba10=requestAnimationFrame(boneAnimation10);
+																																}
+																															}									
+																															ba9=requestAnimationFrame(boneAnimation9);
+																														}	
 																													}									
 																													ba8=requestAnimationFrame(boneAnimation8);
 																												}
