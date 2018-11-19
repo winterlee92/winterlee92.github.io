@@ -311,7 +311,7 @@
 	100%{ 
 			opacity: 1;
 			filter: brightness(200%);
-			text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+			<!-- text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7); -->
 		}
 	}	
 	#cursorImage{
@@ -520,7 +520,7 @@
 		background-image: url(lose.png);
 		background-size: 100% 100%;
 		background-Repeat: no-repeat;
-		z-index: 3;
+		z-index: 4;
 		opacity:0;
 		-webkit-animation-name: lose;
 		-webkit-animation-duration: 2s;
@@ -600,8 +600,8 @@
 	}
 	
 	@-webkit-keyframes fontBg {
-		30%{ 
-			opacity: 0.8;
+		0%{ 
+			opacity: 0;
 			
 		}
 
@@ -611,10 +611,11 @@
 	}	
 	
 	@keyframes fontBg {
-		30%{ 
-			opacity: 0.8;
+		0%{ 
+			opacity: 0;
 			
 		}
+
 		100%{
 			opacity: 0.8;
 		}
@@ -671,7 +672,7 @@
 		background-image: url(againFont.png);
 		background-size: 100% 100%;
 		background-Repeat: no-repeat;
-		z-index:4;
+		z-index:5;
 		opacity:0;
 		-webkit-animation-name: againFont;
 		-webkit-animation-duration: 5s;
