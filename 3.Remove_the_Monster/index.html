@@ -435,13 +435,13 @@
 		
 		opacity:0;
 		-webkit-animation-name: blood;
-		-webkit-animation-duration: 2s;
+		-webkit-animation-duration: 1s;
 		-webkit-animation-iteration-count: 1;
 		-webkit-animation-delay:1s;
 		-webkit-animation-fill-mode:forwards;
 		animation-delay:1s;
 		animation-name: blood;
-		animation-duration: 2s;
+		animation-duration: 1s;
 		animation-iteration-count: 1;
 		animation-fill-mode: forwards;
 	}
@@ -585,15 +585,16 @@
 		background-image: url(Ink.png);
 		background-size: 100% 100%;
 		background-Repeat: no-repeat;
+		z-index: 0;
 		opacity:0;
 		-webkit-animation-name: fontBg;
-		-webkit-animation-duration: 2s;
+		-webkit-animation-duration: 5s;
 		-webkit-animation-iteration-count: 1;
-		-webkit-animation-delay:1s;
+		-webkit-animation-delay:3s;
 		-webkit-animation-fill-mode:forwards;
-		animation-delay:1s;
+		animation-delay:2s;
 		animation-name: fontBg;
-		animation-duration: 2s;
+		animation-duration: 5s;
 		animation-iteration-count: 1;
 		animation-fill-mode: forwards;
 	}
@@ -610,11 +611,10 @@
 	}	
 	
 	@keyframes fontBg {
-		0%{ 
-			opacity: 0;
+		30%{ 
+			opacity: 0.8;
 			
 		}
-
 		100%{
 			opacity: 0.8;
 		}
