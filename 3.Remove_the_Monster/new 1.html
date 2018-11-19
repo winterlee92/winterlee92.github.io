@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<style>
+html {
+  height: 100%;
+}
+body {
+  background: #333;
+  text-align: center;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-size: 20vw;
+}
+.linear-wipe {
+  text-align: center;
+  background-Image:url('againFont.png');
+  background: linear-gradient(to left, #FFF 20%, #FF0 40%, #FF0 60%, #FFF 80%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: shine 1s linear infinite;
+          animation: shine 1s linear infinite;
+}
+@-webkit-keyframes shine {
+  to {
+    background-position: -200% center;
+  }
+}
+@keyframes shine {
+  to {
+    background-position: -200% center;
+  }
+}
+</style>
+<body>
+<h1 class="linear-wipe">Shine!</h1>
+</body>
+</html>

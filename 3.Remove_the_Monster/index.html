@@ -192,7 +192,7 @@
 		background-image: url(m5.png);
 		z-index:199;
 	}
-	
+
 	#m6{
 		background-Size: 45% 58%;
 		margin-top: 24%;
@@ -269,10 +269,15 @@
 		position: absolute;
 		color: white;
 		font-weight: bold;
-		width: 20%;
-		top: 8%;
-		left: 42%;
-		text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+		height:5.5%;
+		width: 18%;
+		top: 7%;
+		left: 40.5%;
+		<!-- text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7); -->
+		filter: brightness(80%);
+		background-Repeat:no-repeat;
+		background-Size: 100% 100%;
+		background-image: url(guideFont.png);
 		
 		-webkit-animation-name: t;
 		-webkit-animation-duration: 2s;
@@ -286,18 +291,6 @@
 		animation-fill-mode: forwards;
 	}
 	
-	@media only screen and (max-width: 1080px) {
-		#title {
-			font-size: 20px;
-		}
-	}
-
-	@media only screen and (min-width: 1080px) {
-		#title {
-			font-size: 30px;
-		}
-	}
-	
 	@-webkit-keyframes t {
 	 0%{
 			opacity: 0.1;
@@ -306,7 +299,7 @@
 	100%{ 
 			opacity: 1;
 			filter: brightness(200%);
-			text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+			<!-- text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7); -->
 		}
 	}	
 	
@@ -674,7 +667,7 @@
 		position: absolute;
 		height: 10%;
 		width: 25%;
-		margin: 43.2% 37.5%;
+		margin: 43% 37.5%;
 		background-image: url(againFont.png);
 		background-size: 100% 100%;
 		background-Repeat: no-repeat;
@@ -712,37 +705,35 @@
 		}
 	}
 	
-	#againFontEffect{
-		position: absolute;
-		height: 10%;
-		width: 25%;
-		margin: 43.2% 37.5%;
-		background-image: url(againFont.png);
-		background-size: 100% 100%;
-		background-Repeat: no-repeat;
-		z-index:4;
-		opacity:0;
-		-webkit-animation-name: againFont;
-		-webkit-animation-duration: 5s;
-		-webkit-animation-iteration-count: 1;
-		-webkit-animation-delay:5s;
-		-webkit-animation-fill-mode:forwards;
-		animation-delay:4s;
-		animation-name: againFont;
-		animation-duration: 5s;
-		animation-iteration-count: 1;
-		animation-fill-mode: forwards;
+	<!-- #againFontEffect{ -->
+		<!-- position: absolute; -->
+		<!-- height: 10%; -->
+		<!-- width: 25%; -->
+		<!-- margin: 43.2% 37.5%; -->
+		<!-- background-image: url(againFont.png); -->
+		<!-- background-size: 100% 100%; -->
+		<!-- background-Repeat: no-repeat; -->
+		<!-- z-index:4; -->
+		<!-- opacity:0; -->
+		<!-- -webkit-animation-name: againFont; -->
+		<!-- -webkit-animation-duration: 5s; -->
+		<!-- -webkit-animation-iteration-count: 1; -->
+		<!-- -webkit-animation-delay:5s; -->
+		<!-- -webkit-animation-fill-mode:forwards; -->
+		<!-- animation-delay:4s; -->
+		<!-- animation-name: againFont; -->
+		<!-- animation-duration: 5s; -->
+		<!-- animation-iteration-count: 1; -->
+		<!-- animation-fill-mode: forwards; -->
 	
-	}
+	<!-- } -->
 </style>
 </head>
 <body onContextMenu="return false;">
   <div id="gameContainer" class="gameContainer" alt="HTML5 Game Example" width="2560" height="1600">
 	  <div id="monster"> 
 		<div></div>
-		<div id="title">
-			用手指驅趕怪物
-		</div>
+		<div id="title"></div>
 		<div id = "main_character">
 			<div id="die"></div>
 			<div id="main"></div>
@@ -1075,6 +1066,7 @@ window.requestAnimFrame = (function(){
 														ra5=requestAnimationFrame(rotateAnimation5);
 														animationToggle = 3;
 													}
+
 													if (mcTop > 65){
 														m2.style.display="none"; 
 														mc.style.display="none"; 
@@ -1569,9 +1561,10 @@ window.requestAnimFrame = (function(){
 			mmTop-=5;
 			mmLeft+=5;
 			m5.style.marginTop = mmTop + "%";
-			m5.style.marginLeft = mmLeft + "%";
-			requestAnimationFrame(remove);			
+			m5.style.marginLeft = mmLeft + "%";						
 		}
+		requestAnimationFrame(remove);
+		
 	}	
 		requestAnimationFrame(remove);
 		cursorImage.style.display = "none";		
