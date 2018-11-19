@@ -754,8 +754,8 @@
 			<div id="blood"> </div>
 			<div id="failFont"> </div>
 			<div id="failFontBg"> </div>
-			<div id="againButton"> </div>
-			<div id="againFont"></div>
+			<div id="againButton" onclick="reply_click(this.id)" ontouchstart="touchstart(event)"> </div>
+			<div id="againFont" onclick="reply_click(this.id)" ontouchstart="touchstart(event)"></div>
 			<div id="againFontEffect"> </div>
 		</div>
 	  </div>
@@ -1496,6 +1496,11 @@ window.requestAnimFrame = (function(){
 				},1000/fps);
 			}	
 		 }
+		 if(data == "againButton" || data == "againFont" || data == "againFontEffect"){
+			fail.style.display="none";
+			mm = requestAnimationFrame(monsterMove);
+			shakingAnimation = requestAnimationFrame(mainCharacter);
+		 }
 	}	 
 	
 	function touchmove(event){
@@ -1545,6 +1550,8 @@ window.requestAnimFrame = (function(){
 	}
 	
 	function dragstart(event) {
+	event.preventDefault();
+	 
 	document.getElementById("title").style.display="none";	
 	document.getElementById("die").style.display="none";	
 	hand.style.display="none";	
@@ -1599,7 +1606,21 @@ window.requestAnimFrame = (function(){
 	x=w.clientWidth;
 	y=w.clientHeight;
 	
+	
+	function reply_click(clicked_id)
+{
+    data = clicked_id;
+	
+	if(data === "againButton" || data === "againFont" || data === "againFontEffect"){
+		fail.style.display="none";
+		mm = requestAnimationFrame(monsterMove);
+		shakingAnimation = requestAnimationFrame(mainCharacter);
+	}
+}
+	
+	
 	function mouseDown(event) {
+
 	cursorImage.style.display = "block";
 	cursorImage.style.zIndex = "200";
 	scI = requestAnimationFrame(cursorEffect);
@@ -1626,15 +1647,16 @@ window.requestAnimFrame = (function(){
 			if (myIndex === 5) {cancelAnimationFrame(scI);}
 		},1000/fps);
 	}
+
 	}
 
 function mouseUp() {
 	cancelAnimationFrame(scI);
-	cursorImage.style.display="none"
+	cursorImage.style.display="none";
 	cursorImage.style.zIndex = "100";
 	m5.style.height="50%";
 	m5.style.width="52%";
-	m5.style.marginTop = 12.01 +'%'
+	m5.style.marginTop = 12.01 +'%';
 }
 
 function mouseDownM2(event) {
@@ -1672,7 +1694,7 @@ function mouseDownM2(event) {
 
 function mouseUpM2() {
 	console.log(1+1);
-	cursorImage.style.display="none"
+	cursorImage.style.display="none";
 	cursorImage.style.zIndex = "100";
 	m2.style.height="68%";
 	m2.style.width="38%";
