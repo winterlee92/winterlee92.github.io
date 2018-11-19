@@ -751,7 +751,7 @@
 		
 		<div id="m1"></div>
 		 <!-- ondragstart="dragstartM2(event);" onmousedown="mouseDownM2(event)" onmouseup="mouseUpM2" -->
-		<div id="m2" draggable="true"></div>
+		<div id="m2"></div>
 		<div id="m3"></div>
 		<div id="m4"></div>
 		<div id="hand" draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp"></div>
@@ -778,7 +778,7 @@
 		<div id="lifeTime"></div>
 		<div id="glow"></div>
 	  </div>
-	  <div id='cursorImage' draggable="true" ondragstart="dragstart(event);dragstartM2(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp"></div>
+	  <div id='cursorImage' draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp"></div>
   </div>
   <script>
 window.requestAnimFrame = (function(){
@@ -826,8 +826,8 @@ window.requestAnimFrame = (function(){
 	bone.style.display="none";
 	m5.addEventListener('mousedown', mouseDown);
 	m5.addEventListener('mouseup', mouseUp);
-	m2.addEventListener('mousedown', mouseDownM2);
-	m2.addEventListener('mouseup', mouseUpM2);
+	<!-- m2.addEventListener('mousedown', mouseDownM2); -->
+	<!-- m2.addEventListener('mouseup', mouseUpM2); -->
 	hand.addEventListener('mousedown', mouseDown);
 	hand.addEventListener('mouseup', mouseUp);
 	cursorImage.addEventListener('mousedown', mouseDown);
