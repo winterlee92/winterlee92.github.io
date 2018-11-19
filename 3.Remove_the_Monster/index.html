@@ -755,7 +755,7 @@
 		<div id="m3"></div>
 		<div id="m4"></div>
 		<div id="hand" draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp"></div>
-		<div id="m5" draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp" ontouchstart="touchstart(event)"></div>
+		<div id="m5" draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
 		<div id="m6"></div>
 		<div id="bone"></div>
 		<div id="fail">
@@ -1476,16 +1476,80 @@ window.requestAnimFrame = (function(){
 		event.preventDefault();
 		 var tobj = event.changedTouches[0]; 
 		 var data = event.target.id;
-		 if(data == "m5")
-		 mouseDown(event);
+		 if(data == "m5"){
+			cursorImage.style.display = "block";
+			cursorImage.style.zIndex = "200";
+			scI = requestAnimationFrame(cursorEffect);
+			m5.style.height="52%";
+			m5.style.width="54%";
+			mx = parseInt(tobj.pageX) ;
+			my = parseInt(tobj.pageY) ;
+			m5.style.marginTop = (12.01-1) +'%'
+			var myIndex = -1;
+			var scI;
+			var fps = 14;
+			function cursorEffect(){
+				var i;
+				var cI = document.getElementsByClassName("cI");
+				setTimeout(function() {
+					for (i = 0; i < cI.length; i++) 
+					{cI[i].style.display = "none";  }
+					 myIndex++;
+					if (myIndex < cI.length) { }  
+					cursorImage.style.marginTop = (((y-(y-my))/y)*100)-25 + "%";
+					cursorImage.style.marginLeft = ((x-(x-mx))/x*100)-5 + "%";
+					cI[myIndex].style.display = "block";  
+					scI = requestAnimationFrame(cursorEffect);
+					if (myIndex === 5) {cancelAnimationFrame(scI);}
+				},1000/fps);
+			}	
+		 }
 	}	 
 	
-	function TouchMove(event){
+	function touchmove(event){
 		event.preventDefault();
 		var data = event.target.id;
 		 var tobj = event.changedTouches[0];
-		 if(data == "m5")
-		 dragstart(event);
+		 if(data == "m5"){
+		 	document.getElementById("title").style.display="none";	
+			document.getElementById("die").style.display="none";	
+			hand.style.display="none";	
+			if(mmTop > 3){
+				cancelAnimationFrame(mm);
+				cancelAnimationFrame(mm2);
+				mmM2 = requestAnimationFrame(monsterMoveM2);
+				}
+			<!-- m5.removeEventListener('mousedown', mouseDown); -->
+			<!-- m5.removeEventListener('mouseup', mouseUp);	 -->
+			
+			 function remove(timestamp){
+				if ( mmTop > -32){
+					mmTop-=5;
+					mmLeft+=5;
+					m5.style.marginTop = mmTop + "%";
+					m5.style.marginLeft = mmLeft + "%";
+					requestAnimationFrame(remove);			
+				}
+			}	
+				requestAnimationFrame(remove);
+				cursorImage.style.display = "none";	
+		 }
+	}
+	
+	function touchend(event){
+			
+		event.preventDefault();
+		var data = event.target.id;
+		var tobj = event.changedTouches[0];
+		var data = event.target.id;
+		 if(data == "m5"){
+			cancelAnimationFrame(scI);
+			cursorImage.style.display="none"
+			cursorImage.style.zIndex = "100";
+			m5.style.height="50%";
+			m5.style.width="52%";
+			m5.style.marginTop = 12.01 +'%'
+		 }
 	}
 	
 	function dragstart(event) {
@@ -1582,8 +1646,8 @@ function mouseUp() {
 
 function mouseDownM2(event) {
 
-			cancelAnimationFrame(mmM2);
-			cancelAnimationFrame(mmM2_2);
+	cancelAnimationFrame(mmM2);
+	cancelAnimationFrame(mmM2_2);
 		
 	cursorImage.style.display = "block";
 	cursorImage.style.zIndex = "200";
