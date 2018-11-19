@@ -626,6 +626,115 @@
 			opacity: 0.8;
 		}
 	}
+	
+	#againButton{
+		position: absolute;
+		height: 17%;
+		width: 36%;
+		margin: 41% 32%;
+		background-image: url(againButton.png);
+		background-size: 100% 100%;
+		background-Repeat: no-repeat;
+		z-index:4;
+		opacity:0;
+		-webkit-animation-name: againButton;
+		-webkit-animation-duration: 5s;
+		-webkit-animation-iteration-count: 1;
+		-webkit-animation-delay:3s;
+		-webkit-animation-fill-mode:forwards;
+		animation-delay:3s;
+		animation-name: againButton;
+		animation-duration: 5s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+	
+	@-webkit-keyframes againButton {
+		30%{ 
+			opacity: 0.8;
+			
+		}
+
+		100%{
+			opacity: 1;
+		}
+	}	
+	
+	@keyframes againButton {
+		30%{ 
+			opacity: 0.8;
+			
+		}
+		100%{
+			opacity: 1;
+		}
+	}
+	
+	#againFont{
+		position: absolute;
+		height: 10%;
+		width: 25%;
+		margin: 43.2% 37.5%;
+		background-image: url(againFont.png);
+		background-size: 100% 100%;
+		background-Repeat: no-repeat;
+		z-index:4;
+		opacity:0;
+		-webkit-animation-name: againFont;
+		-webkit-animation-duration: 5s;
+		-webkit-animation-iteration-count: 1;
+		-webkit-animation-delay:5s;
+		-webkit-animation-fill-mode:forwards;
+		animation-delay:4s;
+		animation-name: againFont;
+		animation-duration: 5s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+	
+	@-webkit-keyframes againFont {
+		30%{ 
+			opacity: 0.8;
+			
+		}
+		100%{
+			opacity: 1;
+		}
+	}	
+	
+	@keyframes againFont {
+		30%{ 
+			opacity: 0.8;
+			
+		}
+		100%{
+			opacity: 1;
+		}
+	}
+	
+	#againFontEffect{
+		 background-image: linear-gradient(to right, lightblue 50%, blue 50%), linear-gradient(to right, green 50%, lightgreen 50%);
+		position: absolute;
+		height: 10%;
+		width: 25%;
+		margin: 43.2% 37.5%;
+		background-image: url(againFont.png);
+		background-size: 100% 100%;
+		background-Repeat: no-repeat;
+		z-index:4;
+		opacity:0;
+		-webkit-animation-name: againFont;
+		-webkit-animation-duration: 5s;
+		-webkit-animation-iteration-count: 1;
+		-webkit-animation-delay:5s;
+		-webkit-animation-fill-mode:forwards;
+		animation-delay:4s;
+		animation-name: againFont;
+		animation-duration: 5s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	
+	}
 </style>
 </head>
 <body onContextMenu="return false;">
@@ -655,7 +764,7 @@
 			<div id="failFont"> </div>
 			<div id="failFontBg"> </div>
 			<div id="againButton"> </div>
-			<div id="againFont"> </div>
+			<div id="againFont"></div>
 			<div id="againFontEffect"> </div>
 		</div>
 	  </div>
@@ -905,6 +1014,7 @@ window.requestAnimFrame = (function(){
 					}
 				if(m2Top >= 8){
 					cancelAnimationFrame(shakingAnimation);
+					document.getElementById("timeDisplay").style.display="none";	
 					document.getElementById("die").style.display="block";	
 					function rotateAnimation(timestamp){	
 						if(degree >= -2){
