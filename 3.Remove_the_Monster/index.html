@@ -360,14 +360,272 @@
 		position: absolute;
 		height: 145%;
 		width: 77%;
-		margin-top: -10%;
-		margin-Left： -3%;
+		margin: -10% -3%;
 		background-image: url(fail.png);
 		background-size: 100% 100%;
 		background-Repeat: no-repeat;
 		display:none;
+		opacity:0;
+		z-index:1;
+		-webkit-animation-name: hamster;
+		-webkit-animation-iteration-count: 1;
+		-webkit-animation-delay:1s;
+		-webkit-animation-fill-mode:forwards;
+		animation-name: hamster;
+		animation-duration: 1s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
 	}
 	
+	@-webkit-keyframes hamster {
+		10%{
+			opacity:1;
+			height: 55%;
+			width: 28%;
+			margin: 18% 23%;
+		}
+		30%{
+			opacity:1;
+			height: 55%;
+			width: 28%;
+			margin: 18% 23%;
+		}
+		60%{ 
+			opacity:1;
+			height: 84%;
+			width: 46%;
+			margin: 8% 13.8%;
+		}
+		100%{
+			opacity: 1;
+			height: 82%;
+			width: 44%;
+			margin: 9% 15%;
+		}
+	}	
+	
+	@keyframes hamster {
+		10%{
+			opacity:1;
+			height: 55%;
+			width: 28%;
+			margin: 18% 23%;
+		}
+		30%{
+			opacity:1;
+			height: 55%;
+			width: 28%;
+			margin: 18% 23%;
+		}
+		60%{ 
+			opacity:1;
+			height: 84%;
+			width: 46%;
+			margin: 8% 13.8%;
+		}
+		100%{
+			opacity: 1;
+			height: 82%;
+			width: 44%;
+			margin: 9% 15%;
+		}
+	}
+
+	#blood{
+		position: absolute;
+		height: 46%;
+		width: 32%;
+		margin: 18% 26.5%;
+		background-image: url(blood.png);
+		background-size: 100% 100%;
+		background-Repeat: no-repeat;
+		
+		opacity:0;
+		-webkit-animation-name: blood;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-iteration-count: 1;
+		-webkit-animation-delay:1s;
+		-webkit-animation-fill-mode:forwards;
+		animation-delay:1s;
+		animation-name: blood;
+		animation-duration: 1s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+	
+	@-webkit-keyframes blood {
+		10%{ 
+			opacity: 1;
+			height: 50%;
+			width: 38%;
+			margin: 16.5% 22%;
+		}
+		30%{ 
+			opacity: 1;
+			height: 50%;
+			width: 38%;
+			margin: 16.5% 22%;
+		}
+		35%{ 
+			opacity: 1;
+			height: 70%;
+			width: 48%;
+			margin: 9.4% 17.5%;
+		}
+		40%{
+			opacity: 1;
+			height: 76%;
+			width: 60%;
+			margin: 8% 12%;
+		}
+		100%{
+			opacity: 1;
+			height: 76%;
+			width: 60%;
+			margin: 8% 12%;
+		}
+	}	
+	
+	@keyframes blood {
+		10%{ 
+			opacity: 1;
+			height: 50%;
+			width: 38%;
+			margin: 16.5% 22%;
+		}
+		30%{ 
+			opacity: 1;
+			height: 50%;
+			width: 38%;
+			margin: 16.5% 22%;
+		}
+		35%{ 
+			opacity: 1;
+			height: 70%;
+			width: 48%;
+			margin: 9.4% 17.5%;
+		}
+		40%{
+			opacity: 1;
+			height: 76%;
+			width: 60%;
+			margin: 8% 12%;
+		}
+		100%{
+			opacity: 1;
+			height: 76%;
+			width: 60%;
+			margin: 8% 12%;
+		}
+	}
+	
+	#failFont{
+		position: absolute;
+		height: 190%;
+		width: 130%;
+		margin: -23% 11%;
+		background-image: url(lose.png);
+		background-size: 100% 100%;
+		background-Repeat: no-repeat;
+		z-index: 3;
+		opacity:0;
+		-webkit-animation-name: lose;
+		-webkit-animation-duration: 2s;
+		-webkit-animation-iteration-count: 1;
+		-webkit-animation-delay:1s;
+		-webkit-animation-fill-mode:forwards;
+		animation-delay:2s;
+		animation-name: lose;
+		animation-duration: 1s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+	
+	@-webkit-keyframes lose {
+		10%{ 
+			opacity: 1;
+			height: 35%;
+			width: 25%;
+			margin: 8% 45%;
+			
+		}
+		30%{ 
+			opacity: 1;
+			height: 35%;
+			width: 25%;
+			margin: 8% 45%;
+		}
+		100%{
+			opacity: 1;
+			height: 60%;
+			width: 40%;
+			margin: 3.5% 39%;
+		}
+	}	
+	
+	@keyframes lose {
+		10%{ 
+		opacity: 1;
+		height: 35%;
+		width: 25%;
+		margin: 8% 45%;
+		}
+		30%{ 
+			opacity: 1;
+			height: 35%;
+			width: 25%;
+			margin: 8% 45%;
+		}
+		100%{
+			opacity: 1;
+			height: 60%;
+			width: 40%;
+			margin: 3.5% 39%;
+		}
+	}
+	
+	#failFontBg{
+		Position: absolute;
+		height: 55%;
+		width: 38%;
+		margin: 8% 39%;
+		background-image: url(Ink.png);
+		background-size: 100% 100%;
+		background-Repeat: no-repeat;
+		z-index: 0;
+		opacity:0;
+		-webkit-animation-name: fontBg;
+		-webkit-animation-duration: 5s;
+		-webkit-animation-iteration-count: 1;
+		-webkit-animation-delay:3s;
+		-webkit-animation-fill-mode:forwards;
+		animation-delay:2s;
+		animation-name: fontBg;
+		animation-duration: 5s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+	
+	@-webkit-keyframes fontBg {
+		30%{ 
+			opacity: 0.8;
+			
+		}
+
+		100%{
+			opacity: 0.8;
+		}
+	}	
+	
+	@keyframes fontBg {
+		30%{ 
+			opacity: 0.8;
+			
+		}
+		100%{
+			opacity: 0.8;
+		}
+	}
 </style>
 </head>
 <body onContextMenu="return false;">
@@ -384,16 +642,16 @@
 		</div>	
 		
 		<div id="m1"></div>
-		<div id="m2" draggable="true" ondragstart="dragstartM2(event);" onmousedown="mouseDownM2(event)" onmouseup="mouseUpM2" ontouchmove="TouchMove(event)"></div>
+		<div id="m2" draggable="true" ondragstart="dragstartM2(event);" onmousedown="mouseDownM2(event)" onmouseup="mouseUpM2"></div>
 		<div id="m3"></div>
 		<div id="m4"></div>
 		<div id="hand" draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp"></div>
-		<div id="m5" draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp"></div>
+		<div id="m5" draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp" ontouchstart="touchstart(event)"></div>
 		<div id="m6"></div>
 		<div id="bone"></div>
 		<div id="fail">
 			<div id="hamster"> </div>
-			<div id="hamsterBg"> </div>
+			<div id="blood"> </div>
 			<div id="failFont"> </div>
 			<div id="failFontBg"> </div>
 			<div id="againButton"> </div>
@@ -411,7 +669,7 @@
 		<div id="lifeTime"></div>
 		<div id="glow"></div>
 	  </div>
-	  <div id='cursorImage' draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp"></div>
+	  <div id='cursorImage' draggable="true" ondragstart="dragstart(event);dragstartM2(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp"></div>
   </div>
   <script>
 window.requestAnimFrame = (function(){
@@ -459,6 +717,8 @@ window.requestAnimFrame = (function(){
 	bone.style.display="none";
 	m5.addEventListener('mousedown', mouseDown);
 	m5.addEventListener('mouseup', mouseUp);
+	m2.addEventListener('mousedown', mouseDownM2);
+	m2.addEventListener('mouseup', mouseUpM2);
 	hand.addEventListener('mousedown', mouseDown);
 	hand.addEventListener('mouseup', mouseUp);
 	cursorImage.addEventListener('mousedown', mouseDown);
@@ -624,7 +884,7 @@ window.requestAnimFrame = (function(){
 			m2Left+=1.5;
 			m2.style.marginTop = m2Top + "%";
 			m2.style.marginLeft = m2Left + "%"; 
-			mmM2 = requestAnimationFrame(monsterMoveM2);
+			mmM2 = requestAnimationFrame(monsterMoveM2);			
 		}	
 		var degree = 2 ;
 		function monsterMoveM2_2(timestamp){
@@ -1028,7 +1288,9 @@ window.requestAnimFrame = (function(){
 																																				cancelAnimationFrame(ba18);
 																																				
 																																				if (toggleBone === 19){	
-																																					fa=requestAnimationFrame(failAnimation);
+																																					<!-- fa=requestAnimationFrame(failAnimation); -->
+																																					fail.style.display="block";
+																																					hamster.style.display="block";
 																																				}
 																																			}									
 																																			ba18=requestAnimationFrame(boneAnimation18);
@@ -1099,87 +1361,22 @@ window.requestAnimFrame = (function(){
 		},1000/fps);
 		}
 	}	
-
-	var failToggle=0;
-	var hamster = document.getElementById("hamster");	
-	var hamsterHeight=145;
-	var hamsterWidth=77;
-	var hamsterMarginTop=10;
-	var hamsterMarginLeft=3;
-	function failAnimation(timestamp){
-		fail.style.display = "block"; 
-		hamster.style.display = "block";				
-			failToggle=1; 			
-			if(failToggle===1){
-				var fps =90;
-				setTimeout(function() {function failAnimation2(timestamp){
-					if(hamsterHeight>55){
-						hamsterHeight -= 1;
-						hamsterWidth -= 0.54444444444;
-						hamsterMarginTop += 0.08888888888;
-						hamsterMarginLeft += 0.22222222222;
-						hamster.style.height = hamsterHeight + "%";
-						hamster.style.width = hamsterWidth + "%";
-						hamster.style.marginTop = hamsterMarginTop+"%";
-						hamster.style.marginLeft = hamsterMarginLeft+"%";
-					}
-					fa2=requestAnimationFrame(failAnimation2);	
-					failToggle=2;
-					cancelAnimationFrame(fa2);
-					if(failToggle===2){ 
-						setTimeout(function() {function failAnimation3(timestamp){
-							if(hamsterHeight<84){
-								hamsterHeight += 1;
-								hamsterWidth += 0.62068965517;
-								hamsterMarginTop -= 0.3448275862;
-								hamsterMarginLeft -= 0.3448275862;
-								hamster.style.height = hamsterHeight + "%";
-								hamster.style.width = hamsterWidth + "%";
-								hamster.style.marginTop = hamsterMarginTop+"%";
-								hamster.style.marginLeft = hamsterMarginLeft+"%";
-								hamster.style.marginRight = hamsterMarginLeft+"%";
-								hamster.style.marginBottom = hamsterMarginTop+"%";
-							}
-							fa3=requestAnimationFrame(failAnimation3);
-							failToggle=3;
-							cancelAnimationFrame(fa3);	
-							<!-- if(failToggle===3){ console.log(failToggle); -->
-								<!-- setTimeout(function() {function failAnimation4(timestamp){ -->
-									<!-- if(hamsterHeight>84){ -->
-										<!-- hamsterHeight += 1; -->
-										<!-- hamsterWidth += 0.62068965517; -->
-										<!-- hamsterMarginTop += 0; -->
-										<!-- hamsterMarginLeft += 0.24137931034; -->
-										<!-- hamster.style.height = hamsterHeight + "%"; -->
-										<!-- hamster.style.width = hamsterWidth + "%"; -->
-										<!-- hamster.style.margin= hamsterMarginTop+"%"+" "+hamsterMarginLeft+"%"; -->
-									<!-- } -->
-									<!-- fa4=requestAnimationFrame(failAnimation4); -->
-									<!-- failToggle=4; -->
-									<!-- cancelAnimationFrame(fa4);	 -->
-									<!-- }		 -->
-									<!-- fa4=requestAnimationFrame(failAnimation4);		 -->
-								<!-- },1000/fps); -->
-							<!-- } -->
-							}		
-							fa3=requestAnimationFrame(failAnimation3);		
-						},1000/fps);
-					}
-					}
-					fa2=requestAnimationFrame(failAnimation2);	
-				},1000/fps);		
-			}	
-		fa = requestAnimationFrame(failAnimation);
-		cancelAnimationFrame(fa);	
-	}
 	
 	function touchstart(event){
 		event.preventDefault();
 		 var tobj = event.changedTouches[0]; 
 		 var data = event.target.id;
-		 if(data == "m1")
+		 if(data == "m5")
 		 mouseDown(event);
 	}	 
+	
+	function TouchMove(event){
+		event.preventDefault();
+		var data = event.target.id;
+		 var tobj = event.changedTouches[0];
+		 if(data == "m5")
+		 dragstart(event);
+	}
 	
 	function dragstart(event) {
 	document.getElementById("title").style.display="none";	
@@ -1188,9 +1385,8 @@ window.requestAnimFrame = (function(){
 	if(mmTop > 3){
 		cancelAnimationFrame(mm);
 		cancelAnimationFrame(mm2);
+		mmM2 = requestAnimationFrame(monsterMoveM2);
 		}
-	event.dataTransfer.setData("Text", event.target.id);
-	var data = event.dataTransfer.getData("text");
 	m5.removeEventListener('mousedown', mouseDown);
 	m5.removeEventListener('mouseup', mouseUp);	
 	
@@ -1200,15 +1396,33 @@ window.requestAnimFrame = (function(){
 			mmLeft+=5;
 			m5.style.marginTop = mmTop + "%";
 			m5.style.marginLeft = mmLeft + "%";
-			requestAnimationFrame(remove);
+			requestAnimationFrame(remove);			
 		}
 	}	
 		requestAnimationFrame(remove);
-		cursorImage.style.display = "none";
-		
-		mmM2 = requestAnimationFrame(monsterMoveM2);
+		cursorImage.style.display = "none";		
 	}
 
+	function dragstartM2(event) {
+		<!-- if(m2Top > 8){ -->
+			<!-- cancelAnimationFrame(mmM2); -->
+			<!-- cancelAnimationFrame(mmM2_2); -->
+		<!-- } -->
+		<!-- m2.removeEventListener('mousedown', mouseDownM2); -->
+		<!-- m2.removeEventListener('mouseup', mouseUpM2);	 -->
+		 <!-- function remove(timestamp){ -->
+			<!-- if(m2Top > 10){ -->
+				<!-- m2Top-=5; -->
+				<!-- m2Left+=5; -->
+				<!-- m2.style.marginTop = m2Top + "%"; -->
+				<!-- m2.style.marginLeft = m2Left + "%"; -->
+				<!-- requestAnimationFrame(remove); -->
+			<!-- } -->
+			<!-- requestAnimationFrame(remove); -->
+			<!-- cursorImage.style.display = "none"; -->
+		<!-- }	 -->
+	}
+	
 	var w = document.getElementById("gameContainer"),
     d = document,
     e = d.documentElement,
@@ -1254,6 +1468,48 @@ function mouseUp() {
 	m5.style.height="50%";
 	m5.style.width="52%";
 	m5.style.marginTop = 12.01 +'%'
+}
+
+function mouseDownM2(event) {
+
+			cancelAnimationFrame(mmM2);
+			cancelAnimationFrame(mmM2_2);
+		
+	cursorImage.style.display = "block";
+	cursorImage.style.zIndex = "200";
+	scI = requestAnimationFrame(cursorEffect);
+	m2.style.height="70%";
+	m2.style.width="40%";
+	mx = event.clientX;
+	my = event.clientY;
+	m2.style.marginTop = (8.01) +'%'
+	var myIndex = -1;
+	var scI;
+	var fps = 14;
+	function cursorEffect(){
+		var i;
+		var cI = document.getElementsByClassName("cI");
+		setTimeout(function() {
+			for (i = 0; i < cI.length; i++) 
+			{cI[i].style.display = "none";  }
+			 myIndex++;
+			if (myIndex < cI.length) { }  
+			cursorImage.style.marginTop = (((y-(y-my))/y)*100)-25 + "%";
+			cursorImage.style.marginLeft = ((x-(x-mx))/x*100)-5 + "%";
+			cI[myIndex].style.display = "block";  
+			scI = requestAnimationFrame(cursorEffect);
+			if (myIndex === 5) {cancelAnimationFrame(scI);}
+		},1000/fps);
+	}
+}
+
+function mouseUpM2() {
+	console.log(1+1);
+	cursorImage.style.display="none"
+	cursorImage.style.zIndex = "100";
+	m2.style.height="68%";
+	m2.style.width="38%";
+	m2.style.marginTop = 9.01 +'%'
 }
 
   (function () {
