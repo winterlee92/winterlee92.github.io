@@ -741,12 +741,11 @@
 		</div>	
 		
 		<div id="m1"></div>
-		 <!-- ondragstart="dragstartM2(event);" onmousedown="mouseDownM2(event)" onmouseup="mouseUpM2" -->
-		<div id="m2" draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)"></div>
+		<div id="m2" draggable="true" ondragstart="mouseMove(event);"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)"></div>
 		<div id="m3"></div>
 		<div id="m4"></div>
-		<div id="hand" draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp(event)"></div>
-		<div id="m5" draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
+		<div id="hand" draggable="true" ondragstart="mouseMove(event);"  onmouseup="mouseUp(event)"></div>
+		<div id="m5" draggable="true" ondragstart="mouseMove(event);"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
 		<div id="m6"></div>
 		<div id="bone"></div>
 		<div id="fail">
@@ -769,7 +768,7 @@
 		<div id="lifeTime"></div>
 		<div id="glow"></div>
 	  </div>
-	  <div id='cursorImage' draggable="true" ondragstart="dragstart(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp"></div>
+	  <div id='cursorImage' draggable="true" ondragstart="mouseMove(event);"  onmouseup="mouseUp"></div>
   </div>
   <script>
 window.requestAnimFrame = (function(){
@@ -815,8 +814,8 @@ window.requestAnimFrame = (function(){
 	var mc = document.getElementById("main_character");
 	var bone = document.getElementById("bone");
 	bone.style.display="none";
-	m5.addEventListener('mousedown', mouseDown);
-	m5.addEventListener('mouseup', mouseUp);
+	<!-- m5.addEventListener('mousedown', mouseDown); -->
+	<!-- m5.addEventListener('mouseup', mouseUp); -->
 	<!-- m2.addEventListener('mousedown', mouseDownM2); -->
 	<!-- m2.addEventListener('mouseup', mouseUpM2); -->
 	hand.addEventListener('mousedown', mouseDown);
@@ -1535,17 +1534,16 @@ window.requestAnimFrame = (function(){
 		event.preventDefault();
 		var data = event.target.id;
 		 var tobj = event.changedTouches[0];
-		 if(data == "m5"){
+		
 		 	document.getElementById("title").style.display="none";	
 			document.getElementById("die").style.display="none";	
 			hand.style.display="none";	
+		 if(data == "m5"){	
 			if(mmTop > 3){
 				cancelAnimationFrame(mm);
 				cancelAnimationFrame(mm2);
 				mmM2 = requestAnimationFrame(monsterMoveM2);
 				}
-			<!-- m5.removeEventListener('mousedown', mouseDown); -->
-			<!-- m5.removeEventListener('mouseup', mouseUp);	 -->
 			
 			 function remove(timestamp){
 				if ( mmTop > -32){
@@ -1559,9 +1557,7 @@ window.requestAnimFrame = (function(){
 				requestAnimationFrame(remove);
 				cursorImage.style.display = "none";	
 		 }
-		 	if(data === "m2"){
-			m5.removeEventListener('mousedown', mouseDown);
-			m5.removeEventListener('mouseup', mouseUp);		
+		 if(data === "m2"){	
 		
 			function remove(timestamp){
 				if ( m2Top >= -32){
@@ -1581,20 +1577,20 @@ window.requestAnimFrame = (function(){
 	function touchend(event){
 			
 		event.preventDefault();
-		var data = event.target.id;
-		var tobj = event.changedTouches[0];
-		var data = event.target.id;
-		 if(data == "m5"){
-			cancelAnimationFrame(scI);
-			cursorImage.style.display="none"
-			cursorImage.style.zIndex = "100";
-			m5.style.height="50%";
-			m5.style.width="52%";
-			m5.style.marginTop = 12.01 +'%'
-		 }
+		<!-- var data = event.target.id; -->
+		<!-- var tobj = event.changedTouches[0]; -->
+		<!-- var data = event.target.id; -->
+		 <!-- if(data == "m5"){ -->
+			<!-- cancelAnimationFrame(scI); -->
+			<!-- cursorImage.style.display="none" -->
+			<!-- cursorImage.style.zIndex = "100"; -->
+			<!-- m5.style.height="50%"; -->
+			<!-- m5.style.width="52%"; -->
+			<!-- m5.style.marginTop = 12.01 +'%' -->
+		 <!-- } -->
 	}
 	
-	function dragstart(event) {
+	function mouseMove(event) {
 	event.preventDefault();
 	 
 		event.dataTransfer.setData("Text", event.target.id);
@@ -1608,11 +1604,9 @@ window.requestAnimFrame = (function(){
 				cancelAnimationFrame(mm);
 				cancelAnimationFrame(mm2);
 				mmM2 = requestAnimationFrame(monsterMoveM2);
-			}
-			m5.removeEventListener('mousedown', mouseDown);
-			m5.removeEventListener('mouseup', mouseUp);				
+			}			
 			 function remove(timestamp){
-				if ( mmTop > -32){
+				if ( mmTop >= -36.8){
 					mmTop-=5;
 					mmLeft+=5;
 					m5.style.marginTop = mmTop + "%";
@@ -1620,24 +1614,23 @@ window.requestAnimFrame = (function(){
 					requestAnimationFrame(remove);			
 				}	
 			}	
-				requestAnimationFrame(remove);
+				r=requestAnimationFrame(remove);
 				cursorImage.style.display = "none";		
 		}
 		
 		if(data === "m2"){
-			m5.removeEventListener('mousedown', mouseDown);
-			m5.removeEventListener('mouseup', mouseUp);		
+			cancelAnimationFrame(r);
 		
-			function remove(timestamp){
+			function remove2(timestamp){
 				if ( m2Top >= -32){
 					m2Top-=5;
 					m2Left-=5;
 					m2.style.marginTop = m2Top + "%";
 					m2.style.marginLeft = m2Left + "%";		
-					requestAnimationFrame(remove);			
-				}	
+					r2=requestAnimationFrame(remove2);	
+				}		
 			}	
-				requestAnimationFrame(remove);
+				r2=requestAnimationFrame(remove2);
 				cursorImage.style.display = "none";	
 		}	
 	}
@@ -1673,6 +1666,7 @@ window.requestAnimFrame = (function(){
 	var data = event.target.id;
 		
 		if (data === "m5" || data === "hand"){
+			
 			cursorImage.style.display = "block";
 			cursorImage.style.zIndex = "200";
 			scI = requestAnimationFrame(cursorEffect);
