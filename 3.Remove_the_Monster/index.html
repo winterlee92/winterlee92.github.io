@@ -512,6 +512,49 @@
 		}
 	}
 	
+	#failFontBg{
+		Position: absolute;
+		height: 55%;
+		width: 38%;
+		margin: 8% 39%;
+		background-image: url(Ink.png);
+		background-size: 100% 100%;
+		background-Repeat: no-repeat;
+		z-index: 0;
+		opacity:0;
+		-webkit-animation-name: fontBg;
+		-webkit-animation-duration: 5s;
+		-webkit-animation-iteration-count: 1;
+		-webkit-animation-delay:3s;
+		-webkit-animation-fill-mode:forwards;
+		animation-delay:2s;
+		animation-name: fontBg;
+		animation-duration: 5s;
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
+	
+	@-webkit-keyframes fontBg {
+		0%{ 
+			opacity: 0;
+			
+		}
+
+		100%{
+			opacity: 0.8;
+		}
+	}	
+	
+	@keyframes fontBg {
+		30%{ 
+			opacity: 0.8;
+			
+		}
+		100%{
+			opacity: 0.8;
+		}
+	}
+	
 	#failFont{
 		position: absolute;
 		height: 190%;
@@ -574,49 +617,6 @@
 			height: 60%;
 			width: 40%;
 			margin: 3.5% 39%;
-		}
-	}
-	
-	#failFontBg{
-		Position: absolute;
-		height: 55%;
-		width: 38%;
-		margin: 8% 39%;
-		background-image: url(Ink.png);
-		background-size: 100% 100%;
-		background-Repeat: no-repeat;
-		z-index: 0;
-		opacity:0;
-		-webkit-animation-name: fontBg;
-		-webkit-animation-duration: 5s;
-		-webkit-animation-iteration-count: 1;
-		-webkit-animation-delay:3s;
-		-webkit-animation-fill-mode:forwards;
-		animation-delay:2s;
-		animation-name: fontBg;
-		animation-duration: 5s;
-		animation-iteration-count: 1;
-		animation-fill-mode: forwards;
-	}
-	
-	@-webkit-keyframes fontBg {
-		0%{ 
-			opacity: 0;
-			
-		}
-
-		100%{
-			opacity: 0.8;
-		}
-	}	
-	
-	@keyframes fontBg {
-		30%{ 
-			opacity: 0.8;
-			
-		}
-		100%{
-			opacity: 0.8;
 		}
 	}
 	
@@ -751,8 +751,8 @@
 		<div id="fail">
 			<div id="hamster"> </div>
 			<div id="blood"> </div>
-			<div id="failFont"> </div>
 			<div id="failFontBg"> </div>
+			<div id="failFont"> </div>
 			<div id="againButton" ontouchstart="touchstart(event)"> </div>
 			<div id="againFont"  ontouchstart="touchstart(event)"></div>
 			<div id="againFontEffect"> </div>
