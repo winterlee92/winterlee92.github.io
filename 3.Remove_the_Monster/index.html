@@ -359,7 +359,7 @@
 		background-Repeat: no-repeat;
 		display:none;
 		opacity:0;
-		z-index:1;
+		z-index:2;
 		-webkit-animation-name: hamster;
 		-webkit-animation-iteration-count: 1;
 		-webkit-animation-delay:1s;
@@ -431,9 +431,9 @@
 		margin: 18% 26.5%;
 		background-image: url(blood.png);
 		background-size: 100% 100%;
-		background-Repeat: no-repeat;
-		z-index：0；
+		background-Repeat: no-repeat;		
 		opacity:0;
+		z-index:0;
 		-webkit-animation-name: blood;
 		-webkit-animation-duration: 1s;
 		-webkit-animation-iteration-count: 1;
@@ -520,22 +520,22 @@
 		background-image: url(Ink.png);
 		background-size: 100% 100%;
 		background-Repeat: no-repeat;
-		z-index: -1;
 		opacity:0;
+		z-index:1;
 		-webkit-animation-name: fontBg;
-		-webkit-animation-duration: 3s;
+		-webkit-animation-duration: 5s;
 		-webkit-animation-iteration-count: 1;
-		-webkit-animation-delay:2s;
+		-webkit-animation-delay:3s;
 		-webkit-animation-fill-mode:forwards;
 		animation-delay:2s;
 		animation-name: fontBg;
-		animation-duration: 3s;
+		animation-duration: 5s;
 		animation-iteration-count: 1;
 		animation-fill-mode: forwards;
 	}
 	
 	@-webkit-keyframes fontBg {
-		10%{ 
+		30%{ 
 			opacity: 0;
 			
 		}
@@ -546,7 +546,7 @@
 	}	
 	
 	@keyframes fontBg {
-		10%{ 
+		30%{ 
 			opacity: 0;
 			
 		}
@@ -563,8 +563,8 @@
 		background-image: url(lose.png);
 		background-size: 100% 100%;
 		background-Repeat: no-repeat;
-		z-index: 5;
 		opacity:0;
+		z-index:3;
 		-webkit-animation-name: lose;
 		-webkit-animation-duration: 2s;
 		-webkit-animation-iteration-count: 1;
@@ -628,8 +628,8 @@
 		background-image: url(againButton.png);
 		background-size: 100% 100%;
 		background-Repeat: no-repeat;
-		z-index:4;
 		opacity:0;
+		z-index:4;
 		-webkit-animation-name: againButton;
 		-webkit-animation-duration: 5s;
 		-webkit-animation-iteration-count: 1;
@@ -671,8 +671,8 @@
 		background-image: url(againFont.png);
 		background-size: 100% 100%;
 		background-Repeat: no-repeat;
-		z-index:5;
 		opacity:0;
+		z-index:5;
 		-webkit-animation-name: againFont;
 		-webkit-animation-duration: 5s;
 		-webkit-animation-iteration-count: 1;
@@ -751,11 +751,11 @@
 		<div id="fail">
 			<div id="hamster"> </div>
 			<div id="blood"> </div>
-			<div id="failFontBg"> </div>
+			<div id="failFontBg"> </div>	
 			<div id="failFont"> </div>
-			<div id="againButton" ontouchstart="touchstart(event)"> </div>
-			<div id="againFont"  ontouchstart="touchstart(event)"></div>
-			<div id="againFontEffect"> </div>
+			<div id="againButton" ontouchstart="touchstart(event)"> </div>			
+			<div id="againFont"  ontouchstart="touchstart(event)"></div>				
+			<div id="againFontEffect"> </div>			
 		</div>
 	  </div>
 	  <div id="frame">  
