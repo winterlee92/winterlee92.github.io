@@ -915,14 +915,14 @@ window.requestAnimFrame = (function(){
 			mm = requestAnimationFrame(monsterMove);
 		}	
 		function monsterMove2(timestamp){
-		if(mmTop >= 8 && mmTop <=10)
-		{
-			mmTop+=0.01;
-			mmLeft-=0.02;
-			m5.style.marginTop = mmTop + "%";
-			m5.style.marginLeft = mmLeft + "%"; 
-			mm2 = requestAnimationFrame(monsterMove2);
-		}
+			if(mmTop >= 8 && mmTop <=10)
+			{
+				mmTop+=0.01;
+				mmLeft-=0.02;
+				m5.style.marginTop = mmTop + "%";
+				m5.style.marginLeft = mmLeft + "%"; 
+				mm2 = requestAnimationFrame(monsterMove2);
+			}
 			var hand_mmTop = 28;
 			var hand_mmLeft = 70;
 			var count = 0;
@@ -1497,9 +1497,7 @@ window.requestAnimFrame = (function(){
 			}	
 		 }
 		 if(data == "againButton" || data == "againFont" || data == "againFontEffect"){
-			fail.style.display="none";
-			mm = requestAnimationFrame(monsterMove);
-			shakingAnimation = requestAnimationFrame(mainCharacter);
+			window.location.reload();
 		 }
 	}	 
 	
@@ -1558,6 +1556,7 @@ window.requestAnimFrame = (function(){
 	if(mmTop > 3){
 		cancelAnimationFrame(mm);
 		cancelAnimationFrame(mm2);
+		cancelAnimationFrame(shakingAnimation);
 		mmM2 = requestAnimationFrame(monsterMoveM2);
 		}
 	m5.removeEventListener('mousedown', mouseDown);
@@ -1607,18 +1606,14 @@ window.requestAnimFrame = (function(){
 	y=w.clientHeight;
 	
 	
-	function reply_click(clicked_id)
-{
-    data = clicked_id;
-	
-	if(data === "againButton" || data === "againFont" || data === "againFontEffect"){
-		fail.style.display="none";
-		mm = requestAnimationFrame(monsterMove);
-		shakingAnimation = requestAnimationFrame(mainCharacter);
+	function reply_click(clicked_id){
+		data = clicked_id;	
+		if(data === "againButton" || data === "againFont" || data === "againFontEffect"){
+			window.location.reload();
+		}
 	}
-}
 	
-	
+		
 	function mouseDown(event) {
 
 	cursorImage.style.display = "block";
@@ -1632,22 +1627,21 @@ window.requestAnimFrame = (function(){
 	var myIndex = -1;
 	var scI;
 	var fps = 14;
-	function cursorEffect(){
-		var i;
-		var cI = document.getElementsByClassName("cI");
-		setTimeout(function() {
-			for (i = 0; i < cI.length; i++) 
-			{cI[i].style.display = "none";  }
-			 myIndex++;
-			if (myIndex < cI.length) { }  
-			cursorImage.style.marginTop = (((y-(y-my))/y)*100)-25 + "%";
-			cursorImage.style.marginLeft = ((x-(x-mx))/x*100)-5 + "%";
-			cI[myIndex].style.display = "block";  
-			scI = requestAnimationFrame(cursorEffect);
-			if (myIndex === 5) {cancelAnimationFrame(scI);}
-		},1000/fps);
-	}
-
+		function cursorEffect(){
+			var i;
+			var cI = document.getElementsByClassName("cI");
+			setTimeout(function() {
+				for (i = 0; i < cI.length; i++) 
+				{cI[i].style.display = "none";  }
+				 myIndex++;
+				if (myIndex < cI.length) { }  
+				cursorImage.style.marginTop = (((y-(y-my))/y)*100)-25 + "%";
+				cursorImage.style.marginLeft = ((x-(x-mx))/x*100)-5 + "%";
+				cI[myIndex].style.display = "block";  
+				scI = requestAnimationFrame(cursorEffect);
+				if (myIndex === 5) {cancelAnimationFrame(scI);}
+			},1000/fps);
+		}
 	}
 
 function mouseUp() {
