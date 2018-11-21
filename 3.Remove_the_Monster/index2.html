@@ -616,14 +616,14 @@
 		hand.style.display = "none";
 		cursorImage.style.display="none";
 		var data = event.target.id;
-		<!-- rightWolfMarginTop = rightWolf.style.marginTop;  -->
-		<!-- rightWolfMarginLeft = rightWolf.style.marginLeft; -->
+		rightWolfMarginTop = rightWolf.style.marginTop; 
+		rightWolfMarginLeft = rightWolf.style.marginLeft;
 		
-		<!-- var rightWolfMarginTop = rightWolfMarginTop.substring(0, rightWolfMarginTop.length-1); -->
-		<!-- var rightWolfMarginLeft = rightWolfMarginLeft.substring(0, rightWolfMarginLeft.length-1); -->
+		var rightWolfMarginTop = rightWolfMarginTop.substring(0, rightWolfMarginTop.length-1);
+		var rightWolfMarginLeft = rightWolfMarginLeft.substring(0, rightWolfMarginLeft.length-1);
 
-		<!-- rightWolfMarginTop = parseFloat(rightWolfMarginTop); -->
-		<!-- rightWolfMarginLeft = parseFloat(rightWolfMarginLeft); -->
+		rightWolfMarginTop = parseFloat(rightWolfMarginTop);
+		rightWolfMarginLeft = parseFloat(rightWolfMarginLeft);
 		
 		console.log("dragStart: "+data);
 		if (data === "rightWolf" || data === "hand" || data === ""){	
