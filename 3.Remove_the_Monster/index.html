@@ -158,7 +158,7 @@
 		overflow:hidden;
 		background-Size: 100% 100%;
 		margin: 6% 0%;
-		background-image: url(m2.png);
+		background-image: url(leftDragon.png);
 		z-index:199;
 		display:none;
 	}
@@ -189,7 +189,7 @@
 		background-Size: 100% 100%;
 		margin-top: 6%;
 		margin-left: 56%;
-		background-image: url(m5.png);
+		background-image: url(rightWolf.png);
 		z-index:199;
 	}
 
@@ -440,7 +440,7 @@
 		z-index:0;
 		
 		-webkit-animation-name: blood;
-		-webkit-animation-duration: 2s;	
+		-webkit-animation-duration: 1s;	
 		-webkit-animation-delay:1s;
 		-webkit-animation-iteration-count: 1;
 		-webkit-animation-fill-mode:forwards;
@@ -586,14 +586,14 @@
 	}
 	
 	@-webkit-keyframes lose {
-		10%{ 
+		5%{ 
 			opacity: 1;
 			height: 35%;
 			width: 25%;
 			margin: 8% 45%;
 			
 		}
-		30%{ 
+		20%{ 
 			opacity: 1;
 			height: 35%;
 			width: 25%;
@@ -608,13 +608,13 @@
 	}	
 	
 	@keyframes lose {
-		10%{ 
+		5%{ 
 			opacity: 1;
 			height: 35%;
 			width: 25%;
 			margin: 8% 45%;
 		}
-		30%{ 
+		20%{ 
 			opacity: 1;
 			height: 35%;
 			width: 25%;
@@ -644,8 +644,7 @@
 		-webkit-animation-delay:3s;
 		-webkit-animation-iteration-count: 1;
 		-webkit-animation-fill-mode:forwards;
-		
-		
+				
 		animation-name: againButton;
 		animation-duration: 5s;
 		animation-delay:3s;
@@ -658,7 +657,6 @@
 			opacity: 0.8;
 			
 		}
-
 		100%{
 			opacity: 1;
 		}
@@ -715,29 +713,6 @@
 			opacity: 1;
 		}
 	}
-	
-	<!-- #againFontEffect{ -->
-		<!-- position: absolute; -->
-		<!-- height: 10%; -->
-		<!-- width: 25%; -->
-		<!-- margin: 43.2% 37.5%; -->
-		<!-- background-image: url(againFont.png); -->
-		<!-- background-size: 100% 100%; -->
-		<!-- background-Repeat: no-repeat; -->
-		<!-- z-index:4; -->
-		<!-- opacity:0; -->
-		<!-- -webkit-animation-name: againFont; -->
-		<!-- -webkit-animation-duration: 5s; -->
-		<!-- -webkit-animation-iteration-count: 1; -->
-		<!-- -webkit-animation-delay:5s; -->
-		<!-- -webkit-animation-fill-mode:forwards; -->
-		<!-- animation-delay:4s; -->
-		<!-- animation-name: againFont; -->
-		<!-- animation-duration: 5s; -->
-		<!-- animation-iteration-count: 1; -->
-		<!-- animation-fill-mode: forwards; -->
-	
-	<!-- } -->
 </style>
 </head>
 <body onContextMenu="return false;">
@@ -752,11 +727,11 @@
 		</div>	
 		
 		<div id="m1"></div>
-		<div id="m2" draggable="true" ondragstart="mouseMove(event);"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)"></div>
+		<div id="m2" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)"></div>
 		<div id="m3"></div>
 		<div id="m4"></div>
-		<div id="hand" draggable="true" ondragstart="mouseMove(event);"  onmouseup="mouseUp(event)"></div>
-		<div id="m5" draggable="true" ondragstart="mouseMove(event);"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
+		<div id="hand" draggable="true" ondragstart="mouseMove(event)"  onmouseup="mouseUp(event)"></div>
+		<div id="m5" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
 		<div id="m6"></div>
 		<div id="bone"></div>
 		<div id="fail">
@@ -779,7 +754,7 @@
 		<div id="lifeTime"></div>
 		<div id="glow"></div>
 	  </div>
-	  <div id='cursorImage' draggable="true" ondragstart="mouseMove(event);"  onmouseup="mouseUp"></div>
+	  <div id='cursorImage' draggable="true" ondragstart="mouseMove(event)"  onmouseup="mouseUp"  ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
   </div>
   <script>
 window.requestAnimFrame = (function(){
@@ -898,7 +873,7 @@ window.requestAnimFrame = (function(){
 		}
 		// if already running 2 times and the topMargin is default value, then running the 'stop' animation
 		if (count === 2 && mcTop >= 22.3){
-			function durationAniamtion(timestamp){
+			function durationAnimation(timestamp){
 				// if the duration is 60ms
 				if( stopDuration > 0){
 					stopDuration--
@@ -908,10 +883,10 @@ window.requestAnimFrame = (function(){
 						count=0;
 						shakingAnimation = requestAnimationFrame(mainCharacter);
 					}
-					da = requestAnimationFrame(durationAniamtion);
+					da = requestAnimationFrame(durationAnimation);
 				}
 			}
-			da = requestAnimationFrame(durationAniamtion);
+			da = requestAnimationFrame(durationAnimation);
 		}
 	}
 		shakingAnimation = requestAnimationFrame(mainCharacter);
@@ -957,8 +932,78 @@ window.requestAnimFrame = (function(){
 		 }
 		 mm2 = requestAnimationFrame(monsterMove2);
 	 }
-	  mm = requestAnimationFrame(monsterMove);	
+	  mm = requestAnimationFrame(monsterMove);		
 		
+	var winMarginTop = 22.5;	
+	var winMarginLeft = 40.5;
+	var winMarginHeight = 35;
+	var winMarginwWidth = 17;
+	var winToggle = 0;
+	
+	function win(timestamp){	
+		cancelAnimationFrame(shakingAnimation);
+		document.getElementById("main").style.backgroundImage = "url('happy.png')";
+		document.getElementById("tear").style.display = "none";
+		var fps =30;
+		setTimeout(function(){function winAnimation(timestamp){		
+			if (winMarginTop < 27){
+				
+				winMarginTop += 0.35;
+				winMarginLeft += 0.15;							
+				winMarginHeight -= 0.7;
+				winMarginwWidth -= 0.3;
+				
+				mc.style.marginTop = winMarginTop+ "%";
+				mc.style.marginLeft = winMarginLeft+ "%"; 
+				mc.style.height = winMarginHeight + "%";
+				mc.style.width = winMarginwWidth + "%"; 
+				
+			}
+			wa = requestAnimationFrame(winAnimation);
+			winToggle=1;
+			cancelAnimationFrame(wa);
+			if (winToggle === 1){
+				setTimeout(function(){function winAnimation2(timestamp){	
+					if(winMarginTop > 5){
+						winMarginTop -= 2.1;
+						winMarginLeft -= 0.7;							
+						winMarginHeight += 3.3;
+						winMarginwWidth += 1.6;
+						
+						mc.style.marginTop = winMarginTop+ "%";
+						mc.style.marginLeft = winMarginLeft+ "%"; 
+						mc.style.height = winMarginHeight + "%";
+						mc.style.width = winMarginwWidth + "%"; 
+					}
+					wa2 = requestAnimationFrame(winAnimation2);
+					winToggle=2;
+					cancelAnimationFrame(wa2);
+					if (winToggle === 2){
+						setTimeout(function(){function winAnimation3(timestamp){	
+							if(winMarginTop > 6.75){
+								winMarginTop -= 0.175;
+								winMarginLeft -= 0.3;							
+								winMarginHeight += 0.9;
+								winMarginwWidth += 0.5;
+								
+								mc.style.marginTop = winMarginTop+ "%";
+								mc.style.marginLeft = winMarginLeft+ "%"; 
+								mc.style.height = winMarginHeight + "%";
+								mc.style.width = winMarginwWidth + "%"; 
+							}
+							wa3 = requestAnimationFrame(winAnimation3);
+							winToggle=3;
+							cancelAnimationFrame(wa2);
+						}wa3 = requestAnimationFrame(winAnimation3);	
+						},1000/fps);
+					}
+				}wa2 = requestAnimationFrame(winAnimation2);			
+			},1000/fps);
+		}
+		}wa = requestAnimationFrame(winAnimation);
+		},1000/fps);
+	}
+	
 	var mmM2,mmM2_2;
 	var animationToggle = 0;
 	
@@ -1631,22 +1676,25 @@ window.requestAnimFrame = (function(){
 		
 		if(data === "m2"){
 			cancelAnimationFrame(r);
-		
+			cancelAnimationFrame (shakingAnimation);
+			cancelAnimationFrame(mmM2);
+			console.log(m2Top);
 			function remove2(timestamp){
-				if ( m2Top >= -32){
+				if ( m2Top >= -30){
 					m2Top-=5;
 					m2Left-=5;
 					m2.style.marginTop = m2Top + "%";
 					m2.style.marginLeft = m2Left + "%";		
 					r2=requestAnimationFrame(remove2);	
-				}		
+				}
+				<!-- win();				 -->
 			}	
 				r2=requestAnimationFrame(remove2);
 				cursorImage.style.display = "none";	
 		}	
 	}
 	
-	
+
 	var w = document.getElementById("gameContainer"),
     d = document,
     e = d.documentElement,
@@ -1673,7 +1721,6 @@ window.requestAnimFrame = (function(){
 	}
 	
 	function mouseDown(event) {
-
 	var data = event.target.id;
 		
 		if (data === "m5" || data === "hand"){
