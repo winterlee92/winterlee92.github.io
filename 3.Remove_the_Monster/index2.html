@@ -390,8 +390,7 @@
 		<!-- }	 -->
 	}
 	createImage();
-	
-	
+
 	gameContainer.style.display = "block";
 	hamsterUpDownShaking = requestAnimationFrame(shakingAnimation);	
 	
@@ -475,7 +474,7 @@
 						hand.style.marginLeft = handMarginLeft + "%"; 												
 				}
 				if(handMarginTop < 10.5 && count < 2){
-						handMarginTop = 28;
+						handMarginTop = 28; 
 						handMarginLeft = 70;
 						hand.style.marginTop = handMarginTop + "%";
 						hand.style.marginLeft = handMarginLeft + "%";
@@ -493,9 +492,7 @@
 	}
 	
 	<!-- function rightWolfAnimation(timestamp){	 -->
-	
-	
-	
+
 	<!-- } -->
 
 	function dragStart(event) {	
@@ -619,14 +616,14 @@
 		hand.style.display = "none";
 		cursorImage.style.display="none";
 		var data = event.target.id;
-		rightWolfMarginTop = rightWolf.style.marginTop; 
-		rightWolfMarginLeft = rightWolf.style.marginLeft;
+		<!-- rightWolfMarginTop = rightWolf.style.marginTop;  -->
+		<!-- rightWolfMarginLeft = rightWolf.style.marginLeft; -->
 		
-		var rightWolfMarginTop = rightWolfMarginTop.substring(0, rightWolfMarginTop.length-1);
-		var rightWolfMarginLeft = rightWolfMarginLeft.substring(0, rightWolfMarginLeft.length-1);
+		<!-- var rightWolfMarginTop = rightWolfMarginTop.substring(0, rightWolfMarginTop.length-1); -->
+		<!-- var rightWolfMarginLeft = rightWolfMarginLeft.substring(0, rightWolfMarginLeft.length-1); -->
 
-		rightWolfMarginTop = parseFloat(rightWolfMarginTop);
-		rightWolfMarginLeft = parseFloat(rightWolfMarginLeft);
+		<!-- rightWolfMarginTop = parseFloat(rightWolfMarginTop); -->
+		<!-- rightWolfMarginLeft = parseFloat(rightWolfMarginLeft); -->
 		
 		console.log("dragStart: "+data);
 		if (data === "rightWolf" || data === "hand" || data === ""){	
