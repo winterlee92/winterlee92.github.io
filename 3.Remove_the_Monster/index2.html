@@ -452,6 +452,7 @@
 						rightWolf.style.marginTop = rightWolfMarginTop + "%";
 						rightWolf.style.marginLeft = rightWolfMarginLeft + "%"; 											
 					}	
+					requestAnimationFrame(handAnimation);
 					rightWolfMoveDown = requestAnimationFrame(moveDown);
 					rightWolfToggle = 1	;
 					cancelAnimationFrame(rightWolfMoveDown);
