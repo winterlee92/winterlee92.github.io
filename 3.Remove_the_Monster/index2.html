@@ -431,73 +431,123 @@
 		}shaking = requestAnimationFrame(shakingAnimation);
 	}
 	
+	
+	
+	
 	var rightWolfMarginTop = -50 ;
 	var rightWolfMarginLeft = 100;	
 	
-	function rightWolfAnimation(timestamp){	
-		rightWolf.style.display = "block";
-		var rightWolfToggle = 0;
-		if (rightWolfToggle === 0){
-				function moveDown(timestamp){
-					if ( rightWolfMarginTop < 6){
-						rightWolfMarginTop +=5.6;
-						rightWolfMarginLeft -=4.4;
-						rightWolf.style.marginTop = rightWolfMarginTop + "%";
-						rightWolf.style.marginLeft = rightWolfMarginLeft + "%"; 											
-					}					
-					if ( rightWolfMarginTop < 12 && rightWolfMarginTop > 6 ){
-						rightWolfMarginTop +=0.06;
-						rightWolfMarginLeft -=0.06;
-						rightWolf.style.marginTop = rightWolfMarginTop + "%";
-						rightWolf.style.marginLeft = rightWolfMarginLeft + "%"; 											
-					}	
-					requestAnimationFrame(handAnimation);
-					rightWolfMoveDown = requestAnimationFrame(moveDown);
-					rightWolfToggle = 1	;
-					cancelAnimationFrame(rightWolfMoveDown);
-				}rightWolfMoveDown = requestAnimationFrame(moveDown);
-		}rightWolfMovement = requestAnimationFrame(rightWolfAnimation);	
-	}requestAnimationFrame(rightWolfAnimation);	
+	<!-- function rightWolfAnimation(timestamp){	 -->
+		<!-- rightWolf.style.display = "block"; -->
+		<!-- var rightWolfToggle = 0; -->
+		<!-- if (rightWolfToggle === 0){ -->
+				<!-- function moveDown(timestamp){ -->
+					<!-- if ( rightWolfMarginTop < 6){ -->
+						<!-- rightWolfMarginTop +=5.6; -->
+						<!-- rightWolfMarginLeft -=4.4; -->
+						<!-- rightWolf.style.marginTop = rightWolfMarginTop + "%"; -->
+						<!-- rightWolf.style.marginLeft = rightWolfMarginLeft + "%"; 											 -->
+					<!-- }					 -->
+					<!-- if ( rightWolfMarginTop < 12 && rightWolfMarginTop > 6 ){ -->
+						<!-- rightWolfMarginTop +=0.06; -->
+						<!-- rightWolfMarginLeft -=0.06; -->
+						<!-- rightWolf.style.marginTop = rightWolfMarginTop + "%"; -->
+						<!-- rightWolf.style.marginLeft = rightWolfMarginLeft + "%"; 											 -->
+					<!-- }	 -->
+					<!-- requestAnimationFrame(handAnimation); -->
+					<!-- rightWolfMoveDown = requestAnimationFrame(moveDown); -->
+					<!-- rightWolfToggle = 1	; -->
+					<!-- cancelAnimationFrame(rightWolfMoveDown); -->
+				<!-- }rightWolfMoveDown = requestAnimationFrame(moveDown); -->
+		<!-- }rightWolfMovement = requestAnimationFrame(rightWolfAnimation);	 -->
+	<!-- }requestAnimationFrame(rightWolfAnimation);	 -->
 
-	var handMarginTop = 28;
-	var handMarginLeft = 70;
-	var count = 0;
-	function handAnimation(){
-		var fps = 0;
-		setTimeout(function() {
-			function handMovement(timestamp){
-				if(rightWolfMarginTop >= 12 && handMarginTop >10.5){	
-						hand.style.display = "block";
+	<!-- var handMarginTop = 28; -->
+	<!-- var handMarginLeft = 70; -->
+	<!-- var count = 0; -->
+	<!-- function handAnimation(){ -->
+		<!-- var fps = 0; -->
+		<!-- setTimeout(function() { -->
+			<!-- function handMovement(timestamp){ -->
+				<!-- if(rightWolfMarginTop >= 12 && handMarginTop >10.5){	 -->
+						<!-- hand.style.display = "block"; -->
+						<!-- handMarginTop-=0.58333333333; -->
+						<!-- handMarginLeft+=0.66666666666; -->
+						<!-- hand.style.marginTop = handMarginTop + "%"; -->
+						<!-- hand.style.marginLeft = handMarginLeft + "%"; 												 -->
+				<!-- } -->
+				<!-- if(handMarginTop < 10.5 && count < 2){ -->
+						<!-- handMarginTop = 28;  -->
+						<!-- handMarginLeft = 70; -->
+						<!-- hand.style.marginTop = handMarginTop + "%"; -->
+						<!-- hand.style.marginLeft = handMarginLeft + "%"; -->
+						<!-- count++;			 -->
+				<!-- }	 -->
+				<!-- if (count === 2 || rightWolfMarginTop < -50){ -->
+					<!-- cancelAnimationFrame(hAnimation); -->
+					<!-- hand.style.display = "none"; -->
+					<!-- event.stopPropagation -->
+				<!-- }			 -->
+				<!-- handMove = requestAnimationFrame(handMovement); -->
+				<!-- cancelAnimationFrame(handMove); -->
+			<!-- }handMove = requestAnimationFrame(handMovement); -->
+		<!-- },1000/fps); -->
+		<!-- hAnimation = requestAnimationFrame(handAnimation); -->
+		<!-- cancelAnimationFrame(hAnimation); -->
+	<!-- } -->
+	
+	function rightWolfAnimation(timestamp){
+		if ( rightWolfMarginTop < 8){
+			rightWolfMarginTop +=5.8;
+			rightWolfMarginLeft -=4.2;
+			rightWolf.style.marginTop = rightWolfMarginTop + "%";
+			rightWolf.style.marginLeft = rightWolfMarginLeft + "%"; 
+			rightWolfMovement = requestAnimationFrame(rightWolfAnimation);
+		}	
+		function moveDown(timestamp){
+			if(rightWolfMarginTop >= 8 && rightWolfMarginTop <=12)
+			{
+				rightWolfMarginTop +=0.02;
+				rightWolfMarginLeft -=0.02;
+				rightWolf.style.marginTop = rightWolfMarginTop + "%";
+				rightWolf.style.marginLeft = rightWolfMarginLeft + "%"; 
+				rightWolfMoveDown = requestAnimationFrame(moveDown);
+			}
+			var handMarginTop = 28;
+			var handMarginLeft = 70;
+			var count = 0;
+			hand.style.display="none";	
+			function handAnimation(timestamp){
+				if(rightWolfMarginTop >= 9 && handMarginTop > -10.5){
+					if(count<=55)
+					{
+						count++;
 						handMarginTop-=0.58333333333;
 						handMarginLeft+=0.66666666666;
 						hand.style.marginTop = handMarginTop + "%";
-						hand.style.marginLeft = handMarginLeft + "%"; 												
+						hand.style.marginLeft = handMarginLeft + "%"; 
+						handMovement = requestAnimationFrame(handAnimation);
+						hand.style.display="block";	
+						if(handMarginTop < 12){handMarginTop=28;handMarginLeft=70;}
+					}
+					else{hand.style.display="none";}				
 				}
-				if(handMarginTop < 10.5 && count < 2){
-						handMarginTop = 28; 
-						handMarginLeft = 70;
-						hand.style.marginTop = handMarginTop + "%";
-						hand.style.marginLeft = handMarginLeft + "%";
-						count++;			
-				}	
-				if (count === 2){
-					hand.style.display = "none";
-				}			
-				handMove = requestAnimationFrame(handMovement);
-				cancelAnimationFrame(handMove);
-			}handMove = requestAnimationFrame(handMovement);
-		},1000/fps);
-		hAnimation = requestAnimationFrame(handAnimation);
-		cancelAnimationFrame(hAnimation);
-	}
-	
-	<!-- function rightWolfAnimation(timestamp){	 -->
-
-	<!-- } -->
+			}
+			handMovement = requestAnimationFrame(handAnimation);	
+		 }
+		 rightWolfMoveDown = requestAnimationFrame(moveDown);
+	 }
+	  rightWolfMovement = requestAnimationFrame(rightWolfAnimation);;	
+	  
 
 	function dragStart(event) {	
-		hand.style.display = "none";
+	
+		
+		<!-- cnosole.log( document.getElementById("hand")); -->
+		 document.getElementById("hand").style.display = "none";
 		cursorImage.style.display="none";
+		var rightWolf = document.getElementById("rightWolf");
+		
 		event.dataTransfer.setData("Text", event.target.id);
 		var data = event.dataTransfer.getData("text");
 		rightWolfMarginTop = rightWolf.style.marginTop; 
@@ -582,6 +632,7 @@
 	}				
 
 	function touchStart(event){
+		event.preventDefault();
 		var data = event.target.id;	
 		console.log("touchStart: "+data);
 		if (data === "rightWolf" || data === "hand"){
@@ -600,8 +651,8 @@
 					{cI[i].style.display = "none";  }
 					 myIndex++;
 					if (myIndex < cI.length) { }  
-					cursorImage.style.marginTop = (((y-(y-my))/y)*100)-25 + "%";
-					cursorImage.style.marginLeft = ((x-(x-mx))/x*100)-5 + "%";
+					cursorImage.style.top = (my-my*0.21) +'px';
+					cursorImage.style.left = (mx-mx*0.07) + 'px';
 					cI[myIndex].style.display = "block";  
 					scI = requestAnimationFrame(cursorEffect);
 					if (myIndex === 5) {cancelAnimationFrame(scI);myIndex = -1; }

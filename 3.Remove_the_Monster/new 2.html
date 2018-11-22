@@ -1,0 +1,45 @@
+<script>
+function monsterMove(timestamp){
+		if ( mmTop < 8){
+			mmTop+=2;
+			mmLeft-=2;
+			m5.style.marginTop = mmTop + "%";
+			m5.style.marginLeft = mmLeft + "%"; 
+			mm = requestAnimationFrame(monsterMove);
+		}	
+		function monsterMove2(timestamp){
+			if(mmTop >= 8 && mmTop <=10)
+			{
+				mmTop+=0.01;
+				mmLeft-=0.02;
+				m5.style.marginTop = mmTop + "%";
+				m5.style.marginLeft = mmLeft + "%"; 
+				mm2 = requestAnimationFrame(monsterMove2);
+			}
+			var hand_mmTop = 28;
+			var hand_mmLeft = 70;
+			var count = 0;
+			hand.style.display="none";	
+			function handMove(timestamp){
+				if(mmTop >= 9 && hand_mmTop > -10.5){
+					if(count<=32)
+					{
+						count++;
+						hand_mmTop-=1;
+						hand_mmLeft+=1.5;
+						hand.style.marginTop = hand_mmTop + "%";
+						hand.style.marginLeft = hand_mmLeft + "%"; 
+						hm = requestAnimationFrame(handMove);
+						hand.style.display="block";	
+						if(hand_mmTop < 12){hand_mmTop=28;hand_mmLeft=70;}
+					}
+					else{hand.style.display="none";}				
+				}
+			}
+			hm = requestAnimationFrame(handMove);	
+		 }
+		 mm2 = requestAnimationFrame(monsterMove2);
+	 }
+	  mm = requestAnimationFrame(monsterMove);	
+	  
+	  </script>

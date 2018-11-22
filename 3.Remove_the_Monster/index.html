@@ -50,32 +50,20 @@
 		background-image: url(sad.png);
 		z-index: 200;	
 		}
-	
-	@-webkit-keyframes dropAnimation {
-		0%{
-			height:35%;
-			width:17%;
-			margin: 22.5% 40.5%;
-		}	
-		100%{
-			height : 20% ;
-			width : 9% ;
-			margin : 40% 55% ;
+		
+	#happy{
+		position:absolute;	
+		height:35%;
+		width:17%;
+		margin-top: 22.5%;
+		margin-left: 40.5%;
+		overflow:hidden;
+		z-index: 200;	
+		background-image: url(happy.png);
+		background-Size : 100% 100%; 
+		background-Repeat:no-repeat;
+		display:none;
 		}
-	}
-	@keyframes dropAnimation {
-		0%{
-			height:35%;
-			width:17%;
-			margin: 22.5% 40.5%;
-		}	
-		100%{
-			height : 20% ;
-			width : 9% ;
-			margin : 40% 55% ;
-		}
-	}
-	
 	#tear{
 		position:absolute;	
 		height: 30%;
@@ -142,13 +130,13 @@
 		display:none;
 	}
 	
-	#m1{
-		background-Size: 43% 100%;
-		margin: auto 74%;
-		background-image: url(m1.png);
-		z-index:1;
-		display:none;
-	}
+	<!-- #m1{ -->
+		<!-- background-Size: 43% 100%; -->
+		<!-- margin: auto 74%; -->
+		<!-- background-image: url(m1.png); -->
+		<!-- z-index:1; -->
+		<!-- display:none; -->
+	<!-- } -->
 	#m2{
 		position:absolute;	
 		height: 68%;
@@ -163,22 +151,22 @@
 		display:none;
 	}
 	
-	#m3{
-		background-Size: 23% 40%;
-		margin-top: 16%;
-		margin-left: -2%;
-		background-image: url(m3.png);
-		z-index:3;
-		display:none;
-	}
-	#m4{
-		background-Size: 23% 45%;
-		margin-top: 28%;
-		margin-left: 76%;
-		background-image:url(m4.png);
-		z-index:4;
-		display:none;
-	}
+	<!-- #m3{ -->
+		<!-- background-Size: 23% 40%; -->
+		<!-- margin-top: 16%; -->
+		<!-- margin-left: -2%; -->
+		<!-- background-image: url(m3.png); -->
+		<!-- z-index:3; -->
+		<!-- display:none; -->
+	<!-- } -->
+	<!-- #m4{ -->
+		<!-- background-Size: 23% 45%; -->
+		<!-- margin-top: 28%; -->
+		<!-- margin-left: 76%; -->
+		<!-- background-image:url(m4.png); -->
+		<!-- z-index:4; -->
+		<!-- display:none; -->
+	<!-- } -->
 	#m5{
 		position:absolute;	
 		height:50%;
@@ -193,14 +181,14 @@
 		z-index:199;
 	}
 
-	#m6{
-		background-Size: 45% 58%;
-		margin-top: 24%;
-		margin-left: -8%;
-		background-image: url(m6.png);
-		z-index:6;
-		display:none;
-	}
+	<!-- #m6{ -->
+		<!-- background-Size: 45% 58%; -->
+		<!-- margin-top: 24%; -->
+		<!-- margin-left: -8%; -->
+		<!-- background-image: url(m6.png); -->
+		<!-- z-index:6; -->
+		<!-- display:none; -->
+	<!-- } -->
 	#layer1{
 		z-index:98;
 		background-Size : 100% 100%; 
@@ -334,11 +322,10 @@
 		z-index: 200;
 		opacity:0.7;
 	}
-	#bone{
+	#bone,.bone{
 		position:absolute;
-		margin:38% 44%;
-		height:40%;
-		width:20%;
+		height:100%;
+		width:100%;
 		z-index: 90;
 	}
 	#fail{
@@ -713,6 +700,22 @@
 			opacity: 1;
 		}
 	}
+	
+	#win{
+		position: absolute;
+		height: 18%;
+		width: 37%;
+		margin: 36% 32%;
+		display:none;
+		z-index:201;
+	}
+	
+	.getPet{
+		position:absolute;
+		height:100%;
+		width:100%;
+	}
+	
 </style>
 </head>
 <body onContextMenu="return false;">
@@ -722,9 +725,10 @@
 		<div id="title"></div>
 		<div id = "main_character">
 			<div id="die"></div>
-			<div id="main"></div>
+			<div id="main"></div>		
 			<div id="tear"></div>
 		</div>	
+		<div id="happy"></div>
 		
 		<div id="m1"></div>
 		<div id="m2" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)"></div>
@@ -742,6 +746,9 @@
 			<div id="againButton" ontouchstart="touchstart(event)"> </div>			
 			<div id="againFont"  ontouchstart="touchstart(event)"></div>				
 			<div id="againFontEffect"> </div>			
+		</div>
+		<div id="win">
+			
 		</div>
 	  </div>
 	  <div id="frame">  
@@ -798,12 +805,13 @@ window.requestAnimFrame = (function(){
 	var hand = document.getElementById("hand");
 	var cursorImage = document.getElementById("cursorImage");
 	var mc = document.getElementById("main_character");
+	var getPet = document.getElementById("win");
 	var bone = document.getElementById("bone");
 	bone.style.display="none";
-	<!-- m5.addEventListener('mousedown', mouseDown); -->
-	<!-- m5.addEventListener('mouseup', mouseUp); -->
-	<!-- m2.addEventListener('mousedown', mouseDownM2); -->
-	<!-- m2.addEventListener('mouseup', mouseUpM2); -->
+	m5.addEventListener('mousedown', mouseDown);
+	m5.addEventListener('mouseup', mouseUp);
+	m2.addEventListener('mousedown', mouseDown);
+	m2.addEventListener('mouseup', mouseUp);
 	hand.addEventListener('mousedown', mouseDown);
 	hand.addEventListener('mouseup', mouseUp);
 	cursorImage.addEventListener('mousedown', mouseDown);
@@ -815,9 +823,9 @@ window.requestAnimFrame = (function(){
 	var mcHeight = 35;
 	var mcWidth = 17;
 	var mmTop = -32 ;
-	var mmLeft = 96;	
+	var mmLeft = 100;	
 	var m2Top = -20 ;
-	var m2Left = -32;	
+	var m2Left = -20;	
 	var m2Top2=10.01;
 	var m2Left2=27.02;
 	var m2Height=68;
@@ -842,54 +850,76 @@ window.requestAnimFrame = (function(){
 			}
 		}	
 		
-	var boneArray =['bone.png'];	
-		for(i=0; i<3; i++)
+	var boneArray =['b (1).png','b (2).png','b (3).png','b (4).png','b (5).png','b (6).png','b (7).png','b (8).png','b (9).png','b (10).png',
+	'b (11).png','b (12).png','b (13).png','b (14).png','b (15).png','b (16).png'];	
+	
+		for(i=0; i<boneArray.length; i++)
 		{		
-			if(i <3)
+			if(i <boneArray.length)
 			{		
 				var myImg = document.createElement("IMG");
-				myImg.setAttribute("src", boneArray[0]);	
+				myImg.setAttribute("src", boneArray[i]);	
 				myImg.setAttribute("alt","bone"+i);
 				myImg.setAttribute("class","bone");
 				bone.appendChild(myImg);
 			}
 		}	
+		
+	var getPetArray =['getPet (1).png','getPet (2).png','getPet (3).png','getPet (4).png','getPet (5).png','getPet (6).png',
+	'getPet (7).png','getPet (8).png','getPet (9).png','getPet (10).png','getPet (11).png','getPet (12).png','getPet (13).png',
+	'getPet (14).png','getPet (15).png','getPet (16).png','getPet (17).png','getPet (18).png','getPet (19).png','getPet (20).png',
+	'getPet (21).png'];	
+	
+		for(i=0; i<getPetArray.length; i++)
+		{		
+			if(i <getPetArray.length)
+			{		
+				var myImg = document.createElement("IMG");
+				myImg.setAttribute("src", getPetArray[i]);	
+				myImg.setAttribute("alt","getPet"+i);
+				myImg.setAttribute("class","getPet");
+				getPet.appendChild(myImg);
+			}
+		}		
 	}
 	createImage();
 	
-	function mainCharacter(timestamp){
-		// if default topMargin heigher than 22
-		if(mcTop >= 22){
-			mcTop-=0.04;
-			mc.style.marginTop = mcTop + "%";
-			shakingAnimation = requestAnimationFrame(mainCharacter);
-		}
-		// if default topMargin lower or equal than 22 , 2 times get back to default value of topMargin
-		if(mcTop <= 22 && count<2){
-			count++;
-			mcTop = 22.3;
-			mc.style.marginTop = mcTop + "%";
-			stopDuration=60;
-		}
-		// if already running 2 times and the topMargin is default value, then running the 'stop' animation
-		if (count === 2 && mcTop >= 22.3){
-			function durationAnimation(timestamp){
-				// if the duration is 60ms
-				if( stopDuration > 0){
-					stopDuration--
-					cancelAnimationFrame(shakingAnimation);
-					// if the duration is 0ms
-					if (stopDuration===0){
-						count=0;
-						shakingAnimation = requestAnimationFrame(mainCharacter);
+	function shakingAnimation(timestamp){
+		var hamsterMarginTop = 22.3;
+		var hamsterMarginLeft = 40.5;
+		var hamsterHeight = 35;
+		var hamsterWidth = 17;
+		var shakingToggle = 0;
+		var count = 0;
+		if (shakingToggle === 0){ 
+				function upDownShake(timestamp){
+					if(hamsterMarginTop >= 22){
+						hamsterMarginTop-=0.03;
+						mc.style.marginTop = hamsterMarginTop + "%";
+						updown= requestAnimationFrame(upDownShake);
 					}
-					da = requestAnimationFrame(durationAnimation);
-				}
-			}
-			da = requestAnimationFrame(durationAnimation);
-		}
-	}
-		shakingAnimation = requestAnimationFrame(mainCharacter);
+					if(hamsterMarginTop <= 22 && count<2){
+						count++;
+						hamsterMarginTop = 22.3;
+						mc.style.marginTop = hamsterMarginTop + "%";
+						stopDuration=60;
+					}
+					if (count === 2 && hamsterMarginTop >= 22.3){
+						function durationAnimation(timestamp){
+							if( stopDuration > 0){
+								stopDuration--
+								cancelAnimationFrame(updown);
+								if (stopDuration===0){
+									count=0;
+									updown = requestAnimationFrame(upDownShake);
+								}duration = requestAnimationFrame(durationAnimation);
+							}
+						}duration = requestAnimationFrame(durationAnimation);
+					}
+				}updown= requestAnimationFrame(upDownShake);
+			shakingToggle = 1;
+		}shaking = requestAnimationFrame(shakingAnimation);
+	}shaking = requestAnimationFrame(shakingAnimation);
 		
 	function monsterMove(timestamp){
 		if ( mmTop < 8){
@@ -941,124 +971,103 @@ window.requestAnimFrame = (function(){
 	var winToggle = 0;
 	
 	function win(timestamp){	
-		cancelAnimationFrame(shakingAnimation);
-		document.getElementById("main").style.backgroundImage = "url('happy.png')";
+		document.getElementById("timeDisplay").style.display="none";	
+		cancelAnimationFrame(shaking);
+		mc.style.display = "none";
+		document.getElementById("happy").style.display = "block";
 		document.getElementById("tear").style.display = "none";
-		var fps =30;
-		setTimeout(function(){function winAnimation(timestamp){		
+		function winAnimation(timestamp){
 			if (winMarginTop < 27){
-				
 				winMarginTop += 0.35;
 				winMarginLeft += 0.15;							
-				winMarginHeight -= 0.7;
-				winMarginwWidth -= 0.3;
+				winMarginHeight -= 0.4;
+				winMarginwWidth -= 0.4;
 				
-				mc.style.marginTop = winMarginTop+ "%";
-				mc.style.marginLeft = winMarginLeft+ "%"; 
-				mc.style.height = winMarginHeight + "%";
-				mc.style.width = winMarginwWidth + "%"; 
+				happy.style.marginTop = winMarginTop+ "%";
+				happy.style.marginLeft = winMarginLeft+ "%"; 
+				happy.style.height = winMarginHeight + "%";
+				happy.style.width = winMarginwWidth + "%"; 
 				
 			}
 			wa = requestAnimationFrame(winAnimation);
 			winToggle=1;
 			cancelAnimationFrame(wa);
 			if (winToggle === 1){
-				setTimeout(function(){function winAnimation2(timestamp){	
+				function winAnimation2(timestamp){	
 					if(winMarginTop > 5){
-						winMarginTop -= 2.1;
+						winMarginTop -= 1.8;
 						winMarginLeft -= 0.7;							
-						winMarginHeight += 3.3;
+						winMarginHeight += 2.5;
 						winMarginwWidth += 1.6;
 						
-						mc.style.marginTop = winMarginTop+ "%";
-						mc.style.marginLeft = winMarginLeft+ "%"; 
-						mc.style.height = winMarginHeight + "%";
-						mc.style.width = winMarginwWidth + "%"; 
+						happy.style.marginTop = winMarginTop+ "%";
+						happy.style.marginLeft = winMarginLeft+ "%"; 
+						happy.style.height = winMarginHeight + "%";
+						happy.style.width = winMarginwWidth + "%"; 
 					}
 					wa2 = requestAnimationFrame(winAnimation2);
 					winToggle=2;
 					cancelAnimationFrame(wa2);
-					if (winToggle === 2){
-						setTimeout(function(){function winAnimation3(timestamp){	
-							if(winMarginTop > 6.75){
-								winMarginTop -= 0.175;
-								winMarginLeft -= 0.3;							
-								winMarginHeight += 0.9;
-								winMarginwWidth += 0.5;
+					if (winToggle === 2){					
+						function winAnimation3(timestamp){	
+							console.log(winMarginTop);
+							if(winMarginTop >= 5){
+								winMarginTop -= 0.8;
+								winMarginLeft -= 0.6;							
+								winMarginHeight += 3;
+								winMarginwWidth += 1.5;
 								
-								mc.style.marginTop = winMarginTop+ "%";
-								mc.style.marginLeft = winMarginLeft+ "%"; 
-								mc.style.height = winMarginHeight + "%";
-								mc.style.width = winMarginwWidth + "%"; 
+								happy.style.marginTop = winMarginTop+ "%";
+								happy.style.marginLeft = winMarginLeft+ "%"; 
+								happy.style.height = winMarginHeight + "%";
+								happy.style.width = winMarginwWidth + "%"; 
 							}
 							wa3 = requestAnimationFrame(winAnimation3);
 							winToggle=3;
-							cancelAnimationFrame(wa2);
-						}wa3 = requestAnimationFrame(winAnimation3);	
-						},1000/fps);
+							cancelAnimationFrame(wa3);
+							if(winToggle === 3){
+								imageLoop2();
+							}
+						}wa3 = requestAnimationFrame(winAnimation3);					
 					}
 				}wa2 = requestAnimationFrame(winAnimation2);			
-			},1000/fps);
 		}
 		}wa = requestAnimationFrame(winAnimation);
-		},1000/fps);
 	}
 	
 	var mmM2,mmM2_2;
 	var animationToggle = 0;
 	
-	var boneTopMargin=78,boneTopMargin2=66,boneTopMargin3=75;
-	var boneDegree=20,boneDegree2=0,boneDegree3=53;
-	
-	var b = document.getElementsByClassName("bone");
-																		
-	var i;
-	for (i = 0; i < b.length; i++){
-		b[i].style.position = "absolute";
-		b[i].style.display = "none"; 
-		bone.style.display = "none"; 
-		b[0].style.height= 30 + "%";
-		b[0].style.width= 30 + "%";
-		b[0].style.transform=" rotate(20deg)";
-		b[0].style.margin=" 78% 45%";
-		b[1].style.height= 20 + "%";
-		b[1].style.width= 20 + "%";
-		b[1].style.transform=" rotate(0deg)";
-		b[1].style.margin=" 66% 17%";
-		b[2].style.height= 16 + "%";
-		b[2].style.width= 16 + "%";
-		b[2].style.transform=" rotate(53deg)";
-		b[2].style.margin=" 75% 69%";
-		b[i].style.opacity = "0.6";		
-	}
-	
 	function monsterMoveM2(timestamp){	
 		m2.style.display = "block";
+		//move down
 		if ( m2Top < 6){
 			m2Top+=1;
-			m2Left+=1.5;
+			m2Left+=1;
 			m2.style.marginTop = m2Top + "%";
 			m2.style.marginLeft = m2Left + "%"; 
 			mmM2 = requestAnimationFrame(monsterMoveM2);			
-		}	
-		var degree = 2 ;
+		}			
 		function monsterMoveM2_2(timestamp){
-		if(m2Top >= 6 && m2Top <9){
+		//slow down
+		if(m2Top >= 6 && m2Top <=9){
 				m2Top+=0.01;
 				m2Left+=0.02;
 				m2.style.marginTop = m2Top + "%";
 				m2.style.marginLeft = m2Left + "%"; 
 				mmM2_2 = requestAnimationFrame(monsterMoveM2_2);
-			}
+			}			
 			function monsterMoveM2_3(timestamp){
-				if(m2Top >= 9 && m2Top <=10){
+				//drop down
+				if(m2Top >= 8 && m2Top <=11){
 					m2Top+=0.01;
-					m2Left+=0.04;
+					m2Left+=0.01;
 					m2.style.marginTop = m2Top + "%";
 					m2.style.marginLeft = m2Left + "%"; 
 					mmM2_3 = requestAnimationFrame(monsterMoveM2_3);
 					}
 				if(m2Top >= 8){
+					var degree = 2 ;
 					cancelAnimationFrame(shakingAnimation);
 					document.getElementById("timeDisplay").style.display="none";	
 					document.getElementById("die").style.display="block";	
@@ -1128,18 +1137,8 @@ window.requestAnimFrame = (function(){
 														cancelAnimationFrame(ra5);												
 														var toggleBone = 1;
 														if (toggleBone === 1){
-															var stopDuration=20;
-															function durationAnimation(timestamp){
-																if( stopDuration > 0){
-																	stopDuration--
-																	if (stopDuration===0){
-																		ba = requestAnimationFrame(boneAnimation);
-																	}
-																	da = requestAnimationFrame(durationAnimation);
-																}
-															}
-															da = requestAnimationFrame(durationAnimation);
-														}
+																imageLoop();
+														}															
 													}													
 												}		
 												ra5=requestAnimationFrame(rotateAnimation5);												
@@ -1160,362 +1159,48 @@ window.requestAnimFrame = (function(){
 		mmM2_2 = requestAnimationFrame(monsterMoveM2_2);
 	}
 	
-	function boneAnimation(timestamp,toggleBone){
-	b[0].style.display = "block"; 
-	bone.style.display = "block"; 
-		if (boneTopMargin > 52 && toggleBone === 1){
-			boneTopMargin-=1;
-			b[0].style.margin= boneTopMargin +"% 45%";						
-		}
-		ba=requestAnimationFrame(boneAnimation);																	
-		toggleBone = 2;
-		cancelAnimationFrame(ba);
-		if (toggleBone === 2){
-			var fps =50;
-			setTimeout(function() {function boneAnimation2(timestamp){
-				if (boneTopMargin > 31 && toggleBone === 2){
-					boneTopMargin-=1;
-					boneDegree += 6.19047619047;
-					b[0].style.margin= boneTopMargin +"% 45%";
-					b[0].style.transform=" rotate("+ boneDegree +"deg)";
-				}
-				ba2=requestAnimationFrame(boneAnimation2);
-				toggleBone = 3;
-				cancelAnimationFrame(ba2);													
-				if (toggleBone === 3){																			
-					setTimeout(function() {function boneAnimation3(timestamp){
-						if (boneTopMargin > 10 && toggleBone === 3){
-							boneTopMargin-=1;
-							boneDegree -= 2.38095238095;
-							b[0].style.margin= boneTopMargin +"% 45%";
-							b[0].style.transform=" rotate("+ boneDegree +"deg)";
-						}
-						ba3=requestAnimationFrame(boneAnimation3);
-						toggleBone = 4;																						
-						cancelAnimationFrame(ba3);
-						if (toggleBone === 4){						
-							setTimeout(function() {function boneAnimation4(timestamp){
-								if (boneTopMargin > 8){
-									boneTopMargin-=1;
-									boneDegree -= 10;
-									b[0].style.margin= boneTopMargin +"% 43%";
-									b[0].style.transform=" rotate("+ boneDegree +"deg)";
-								}										
-								ba4=requestAnimationFrame(boneAnimation4);
-								toggleBone = 5;	
-								cancelAnimationFrame(ba4);
-								if (toggleBone === 5){		
-									b[1].style.display = "block"; 
-									setTimeout(function() {function boneAnimation5(timestamp){
-										if (boneTopMargin > 3){
-											boneTopMargin-=1;
-											boneDegree -= 4;
-											b[0].style.margin= boneTopMargin +"% 43%";
-											b[0].style.transform=" rotate("+ boneDegree +"deg)";
-										}										
-										ba5=requestAnimationFrame(boneAnimation5);
-										toggleBone = 6;	
-										cancelAnimationFrame(ba5);
-										if (toggleBone === 6){		
-											setTimeout(function() {function boneAnimation6(timestamp){
-												if (boneTopMargin > 0){
-													boneTopMargin-=1;
-													boneDegree -= 7;
-													b[0].style.margin= boneTopMargin +"% 42%";
-													b[0].style.transform=" rotate("+ boneDegree +"deg)";
-													
-													boneTopMargin2 -= 6.66666666666;
-													b[1].style.margin= boneTopMargin2 +"% 17%";
-												}										
-												ba6=requestAnimationFrame(boneAnimation6);
-												toggleBone = 7;	
-												cancelAnimationFrame(ba6);
-												if (toggleBone === 7){		
-													b[2].style.display = "block"; 
-													setTimeout(function() {function boneAnimation7(timestamp){
-														if (boneTopMargin < 2){
-															boneTopMargin+=1;
-															boneDegree -= 9.5;
-															b[0].style.margin= boneTopMargin +"% 42%";
-															b[0].style.transform=" rotate("+ boneDegree +"deg)";
-															
-															boneTopMargin2 -= 8.5;
-															boneDegree2 -= 17.5;
-															b[1].style.margin= boneTopMargin2 +"% 15%";
-															b[1].style.transform=" rotate("+ boneDegree2 +"deg)";
-														}										
-														ba7=requestAnimationFrame(boneAnimation7);
-														toggleBone = 8;	
-														cancelAnimationFrame(ba7);
-														if (toggleBone === 8){		
-															b[2].style.display = "block"; 
-															setTimeout(function() {function boneAnimation8(timestamp){
-																if (boneTopMargin < 4){
-																	boneTopMargin+=1;
-																	boneDegree -= 10.5;
-																	b[0].style.margin= boneTopMargin +"% 42%";
-																	b[0].style.transform=" rotate("+ boneDegree +"deg)";
-																	
-																	boneDegree2 -= 16.5;
-																	b[1].style.margin= boneTopMargin2 +"% 15%";
-																	b[1].style.transform=" rotate("+ boneDegree2 +"deg)";
-																	
-																	boneTopMargin3-=8;
-																	b[2].style.margin= boneTopMargin3 +"% 70%";
-																}										
-																ba8=requestAnimationFrame(boneAnimation8);
-																toggleBone = 9;	
-																cancelAnimationFrame(ba8);
-																if (toggleBone === 9){		
-																	setTimeout(function() {function boneAnimation9(timestamp){
-																		if (boneTopMargin < 16){
-																			boneTopMargin+=1;
-																			boneDegree -= 1.16666666666;
-																			b[0].style.margin= boneTopMargin +"% 40%";
-																			b[0].style.transform=" rotate("+ boneDegree +"deg)";
-																			
-																			boneDegree2 -= 2.25;
-																			b[1].style.margin= boneTopMargin2 +"% 12%";
-																			b[1].style.transform=" rotate("+ boneDegree2 +"deg)";
-																			
-																			boneTopMargin3-=1;
-																			boneDegree3 += 2.25;
-																			b[2].style.margin= (boneTopMargin3+1)  +"% 70%";
-																			b[2].style.transform=" rotate("+ boneDegree3 +"deg)";
-																		}										
-																		ba9=requestAnimationFrame(boneAnimation9);
-																		toggleBone = 10;	
-																		cancelAnimationFrame(ba9);
-																		if (toggleBone === 10){		
-																			setTimeout(function() {function boneAnimation10(timestamp){
-																				if (boneTopMargin < 32){
-																					boneTopMargin+=1;
-																					boneDegree -= 1.25;
-																					b[0].style.margin= boneTopMargin +"% 35%";
-																					b[0].style.transform=" rotate("+ boneDegree +"deg)";
-																					
-																					boneTopMargin2 -= 0.1875;
-																					boneDegree2 -= 1.5625;
-																					b[1].style.margin= boneTopMargin2 +"% 10%";
-																					b[1].style.transform=" rotate("+ boneDegree2 +"deg)";
-																					
-																					boneTopMargin3 -= 1.0625;
-																					boneDegree3 += 2.5;
-																					b[2].style.margin= (boneTopMargin3+1) +"% 70%";
-																					b[2].style.transform=" rotate("+ boneDegree3 +"deg)";
-																				}										
-																				ba10=requestAnimationFrame(boneAnimation10);
-																				toggleBone = 11;	
-																				cancelAnimationFrame(ba10);
-																				if (toggleBone === 11){		
-																					setTimeout(function() {function boneAnimation11(timestamp){
-																						if (boneTopMargin < 44){
-																							boneTopMargin+=1;
-																							boneDegree -= 2.5;
-																							b[0].style.margin= boneTopMargin +"% 31%";
-																							b[0].style.transform=" rotate("+ boneDegree +"deg)";
-																							
-																							boneTopMargin2 -= 0.16666666666;
-																							boneDegree2 -= 2.5;
-																							b[1].style.margin= boneTopMargin2 +"% 10%";
-																							b[1].style.transform=" rotate("+ boneDegree2 +"deg)";
-																							
-																							boneTopMargin3 += 3.416666666666;
-																							boneDegree3 += 2.5;
-																							b[2].style.margin="31% "+ (boneTopMargin3+1) +"%";
-																							b[2].style.transform=" rotate("+ boneDegree3 +"deg)";
-																						}										
-																						ba11=requestAnimationFrame(boneAnimation11);
-																						toggleBone = 12;	
-																						cancelAnimationFrame(ba11);
-																						if (toggleBone === 12){		
-																							setTimeout(function() {function boneAnimation12(timestamp){
-																								if (boneTopMargin < 56){
-																									boneTopMargin+=1;
-																									boneDegree -= 1.66666666666;
-																									b[0].style.margin= boneTopMargin +"% 31%";
-																									b[0].style.transform=" rotate("+ boneDegree +"deg)";
-																									
-																									boneDegree2 -= 2.08333333333;
-																									b[1].style.transform=" rotate("+ boneDegree2 +"deg)";
-																									
-																									boneDegree3 += 2.5;
-																									b[2].style.transform=" rotate("+ boneDegree3 +"deg)";
-																								}										
-																								ba12=requestAnimationFrame(boneAnimation12);
-																								toggleBone = 13;	
-																								cancelAnimationFrame(ba12);
-																								if (toggleBone === 13){		
-																									setTimeout(function() {function boneAnimation13(timestamp){
-																										if (boneTopMargin < 68){
-																											boneTopMargin+=1;
-																											b[0].style.margin= boneTopMargin +"% 31%";
-																											
-																											boneTopMargin2 += 0.3333333333;
-																											boneDegree2 -= 2.08333333333;
-																											b[1].style.margin= boneTopMargin2 +"% 10%";
-																											b[1].style.transform=" rotate("+ boneDegree2 +"deg)";
-																											
-																											boneTopMargin3 += 0.3333333333;
-																											boneDegree3 += 1.6666666666;
-																											b[2].style.margin="31% "+ (boneTopMargin3) +"%";
-																											b[2].style.transform=" rotate("+ boneDegree3 +"deg)";
-																										}										
-																										ba13=requestAnimationFrame(boneAnimation13);
-																										toggleBone = 14;	
-																										cancelAnimationFrame(ba13);
-																										if (toggleBone === 14){	
-																											setTimeout(function() {function boneAnimation14(timestamp){
-																												if (boneTopMargin2 < 35){
-																													
-																													boneTopMargin2 += 1;
-																													boneDegree2 -= 3.15;
-																													b[1].style.margin= (boneTopMargin2-1) +"% 5%";
-																													b[1].style.transform=" rotate("+ (boneDegree2+0.2) +"deg)";
-																													
-																													boneTopMargin3 -= 4.375;
-																													boneDegree3 += 3.75;
-																													b[2].style.margin= (boneTopMargin3+1)+"% 78%";
-																													b[2].style.transform=" rotate("+ boneDegree3 +"deg)";
-																												}										
-																												ba14=requestAnimationFrame(boneAnimation14);
-																												toggleBone = 15;	
-																												cancelAnimationFrame(ba14);
-																												if (toggleBone === 15){	
-																													setTimeout(function() {function boneAnimation15(timestamp){
-																														if (boneTopMargin2 < 42){
-																															
-																															boneTopMargin2 += 1;
-																															boneDegree2 -= 4.28571428571;
-																															b[1].style.margin= (boneTopMargin2-1) +"% 3%";
-																															b[1].style.transform=" rotate("+ (boneDegree2+0.2) +"deg)";
-																															
-																															boneTopMargin3 += 1.28571428571;
-																															boneDegree3 += 4.28571428571;
-																															b[2].style.margin= (boneTopMargin3+1)+"% 78%";
-																															b[2].style.transform=" rotate("+ boneDegree3 +"deg)";
-																														}										
-																														ba15=requestAnimationFrame(boneAnimation15);
-																														toggleBone = 16;	
-																														cancelAnimationFrame(ba15);
-																														if (toggleBone === 16){	
-																															setTimeout(function() {function boneAnimation16(timestamp){
-																																if (boneTopMargin2 < 50){
-																																	
-																																	boneTopMargin2 += 1;
-																																	boneDegree2 -= 3.125;
-																																	b[1].style.margin= (boneTopMargin2-1) +"% 0%";
-																																	b[1].style.transform=" rotate("+ (boneDegree2+0.2) +"deg)";
-																																	
-																																	boneTopMargin3 += 1.25;
-																																	boneDegree3 += 3.75;
-																																	b[2].style.margin= (boneTopMargin3+1)+"% 82%";
-																																	b[2].style.transform=" rotate("+ boneDegree3 +"deg)";
-																																}										
-																																ba16=requestAnimationFrame(boneAnimation16);
-																																toggleBone = 17;	
-																																cancelAnimationFrame(ba16);
-																																if (toggleBone === 17){	
-																																	setTimeout(function() {function boneAnimation17(timestamp){
-																																		if (boneTopMargin2 < 65){
-																																			
-																																			boneTopMargin2 += 1;
-																																			b[1].style.margin= (boneTopMargin2-1) +"% 0%";
-																																			
-																																			boneTopMargin3 += 0.66666666666;
-																																			boneDegree3 += 1.3333333333;
-																																			b[2].style.margin= (boneTopMargin3+1)+"% 84%";
-																																			b[2].style.transform=" rotate("+ boneDegree3 +"deg)";
-																																		}										
-																																		ba17=requestAnimationFrame(boneAnimation17);
-																																		toggleBone = 18;	
-																																		cancelAnimationFrame(ba17);
-																																		if (toggleBone === 18){	
-																																			setTimeout(function() {function boneAnimation18(timestamp){
-																																				if (boneTopMargin2 < 85){
-																																					
-																																					boneTopMargin2 += 1;
-																																					b[1].style.margin= (boneTopMargin2-1) +"% 0%";
-																																					
-																																					boneTopMargin3 += 0.6;
-																																					b[2].style.margin= (boneTopMargin3+1)+"% 84%";
-																																				}										
-																																				ba18=requestAnimationFrame(boneAnimation18);
-																																				toggleBone = 19;	
-																																				cancelAnimationFrame(ba18);
-																																				
-																																				if (toggleBone === 19){	
-																																					<!-- fa=requestAnimationFrame(failAnimation); -->
-																																					fail.style.display="block";
-																																					hamster.style.display="block";
-																																				}
-																																			}									
-																																			ba18=requestAnimationFrame(boneAnimation18);
-																																		},1000/fps);
-																																		}
-																																	}									
-																																	ba17=requestAnimationFrame(boneAnimation17);
-																																},1000/fps);
-																																}
-																															}									
-																															ba16=requestAnimationFrame(boneAnimation16);
-																														},1000/fps);
-																														}
-																													}									
-																													ba15=requestAnimationFrame(boneAnimation15);
-																												},1000/fps);
-																												}
-																											}									
-																											ba14=requestAnimationFrame(boneAnimation14);
-																										},1000/fps);
-																										}
-																									}									
-																									ba13=requestAnimationFrame(boneAnimation13);
-																								},1000/fps);
-																								}
-																							}									
-																							ba12=requestAnimationFrame(boneAnimation12);
-																						},1000/fps);
-																						}
-																					}									
-																					ba11=requestAnimationFrame(boneAnimation11);
-																				},1000/fps);
-																				}
-																			}									
-																			ba10=requestAnimationFrame(boneAnimation10);
-																		},1000/fps);
-																		}
-																	}									
-																	ba9=requestAnimationFrame(boneAnimation9);
-																},1000/fps);
-																}	
-															}									
-															ba8=requestAnimationFrame(boneAnimation8);
-														},1000/fps);
-														}
-													}									
-													ba7=requestAnimationFrame(boneAnimation7);
-												},1000/fps);
-												}
-											}									
-											ba6=requestAnimationFrame(boneAnimation6);
-										},1000/fps);
-										}	
-									}									
-									ba5=requestAnimationFrame(boneAnimation5);
-								},1000/fps);
-								}
-							}									
-							ba4=requestAnimationFrame(boneAnimation4);
-						},1000/fps);
-						}	
-					}
-					ba3=requestAnimationFrame(boneAnimation3);
-				},1000/fps);
-				}
+	var sBone;
+	
+	function imageLoop(){
+		bone.style.display = "block"
+		var myIndex1=0;
+		loopImage();
+		function loopImage(){	
+		var i;
+		var b = document.getElementsByClassName("bone");
+			for (i = 0; i < b.length; i++) {b[i].style.display = "none";}
+			myIndex1++;
+			if (myIndex1 > b.length) {}    
+			b[myIndex1].style.display = "block";  
+			sBone=requestAnimFrame(loopImage);
+
+			if(myIndex1===8){
+				fail.style.display="block";
+				hamster.style.display="block";
 			}
-			ba2=requestAnimationFrame(boneAnimation2);
-		},1000/fps);
+			
+			if(myIndex1===15){
+				cancelAnimationFrame(sBone);
+				bone.style.display = "none";				
+			}				
+		}
+	}	
+	
+	function imageLoop2(){
+		getPet.style.display = "block"
+		var myIndex2=0;
+		loopImage2();
+		function loopImage2(){	
+		var i;
+		var gPet = document.getElementsByClassName("getPet");
+			for (i = 0; i < gPet.length; i++) {gPet[i].style.display = "none";}
+			myIndex2++;
+			if (myIndex2 > gPet.length) {}    
+			gPet[myIndex2].style.display = "block";  
+			sPet=requestAnimationFrame(loopImage2);
+			if(myIndex2===20){
+				cancelAnimationFrame(sPet);		
+			}				
 		}
 	}	
 	
@@ -1523,142 +1208,36 @@ window.requestAnimFrame = (function(){
 		event.preventDefault();
 		 var tobj = event.changedTouches[0]; 
 		 var data = event.target.id;
-		 if(data === "m5"){
-			cursorImage.style.display = "block";
-			cursorImage.style.zIndex = "200";
-			scI = requestAnimationFrame(cursorEffect);
-			m5.style.height="52%";
-			m5.style.width="54%";
-			mx = parseInt(tobj.pageX) ;
-			my = parseInt(tobj.pageY) ;
-			m5.style.marginTop = (12.01-1) +'%'
-			var myIndex = -1;
-			var scI;
-			var fps = 14;
-			function cursorEffect(){
-				var i;
-				var cI = document.getElementsByClassName("cI");
-				setTimeout(function() {
-					for (i = 0; i < cI.length; i++) 
-					{cI[i].style.display = "none";  }
-					 myIndex++;
-					if (myIndex < cI.length) { }  
-					cursorImage.style.marginTop = (((y-(y-my))/y)*100)-25 + "%";
-					cursorImage.style.marginLeft = ((x-(x-mx))/x*100)-5 + "%";
-					cI[myIndex].style.display = "block";  
-					scI = requestAnimationFrame(cursorEffect);
-					if (myIndex === 5) {cancelAnimationFrame(scI);}
-				},1000/fps);
-			}	
-		 }
 		 
-		 if(data === "m2"){
+		if (data === "m5" || data === "hand"){			
 			cursorImage.style.display = "block";
 			cursorImage.style.zIndex = "200";
-			scI2 = requestAnimationFrame(cursorEffect2);
-			m2.style.height="70%";
-			m2.style.width="40%";
-			mx = event.clientX;
-			my = event.clientY;
-			m2.style.marginTop = (8.01) +'%'
-			var myIndex = -1;
-			var scI2;
-			var fps = 14;
-			function cursorEffect2(){
-				var i;
-				var cI = document.getElementsByClassName("cI");
-				setTimeout(function() {
-					for (i = 0; i < cI.length; i++) 
-					{cI[i].style.display = "none";  }
-					 myIndex++;
-					if (myIndex < cI.length) { }  
-					cursorImage.style.marginTop = (((y-(y-my))/y)*100)-25 + "%";
-					cursorImage.style.marginLeft = ((x-(x-mx))/x*100)-5 + "%";
-					cI[myIndex].style.display = "block";  
-					scI2 = requestAnimationFrame(cursorEffect2);
-					if (myIndex === 5) {cancelAnimationFrame(scI2);}
-				},1000/fps);
-			}
+			m5.style.height="52%";
+			m5.style.width="52%";
 		}
 		
+		if(data==="m2"){
+			cursorImage.style.display = "block";
+			cursorImage.style.zIndex = "200";
+			m2.style.height="70%";
+			m2.style.width="40%";
+		}
+			
 		if(data == "againButton" || data == "againFont" || data == "againFontEffect"){
 			window.location.reload();
 		 }
-	}	 
+	} 
 	
 	function touchmove(event){
 		event.preventDefault();
 		var data = event.target.id;
-		 var tobj = event.changedTouches[0];
+		var tobj = event.changedTouches[0];
 		
-		 	document.getElementById("title").style.display="none";	
-			document.getElementById("die").style.display="none";	
-			hand.style.display="none";	
-		 if(data == "m5"){	
-			if(mmTop > 3){
-				cancelAnimationFrame(mm);
-				cancelAnimationFrame(mm2);
-				mmM2 = requestAnimationFrame(monsterMoveM2);
-				}
-			
-			 function remove(timestamp){
-				if ( mmTop > -32){
-					mmTop-=5;
-					mmLeft+=5;
-					m5.style.marginTop = mmTop + "%";
-					m5.style.marginLeft = mmLeft + "%";
-					requestAnimationFrame(remove);			
-				}
-			}	
-				requestAnimationFrame(remove);
-				cursorImage.style.display = "none";	
-		 }
-		 if(data === "m2"){	
-		
-			function remove(timestamp){
-				if ( m2Top >= -32){
-					m2Top-=5;
-					m2Left-=5;
-					m2.style.marginTop = m2Top + "%";
-					m2.style.marginLeft = m2Left + "%";		
-					requestAnimationFrame(remove);			
-				}	
-			}	
-				requestAnimationFrame(remove);
-				cursorImage.style.display = "none";	
-		}	
-		 
-	}
-	
-	function touchend(event){
-			
-		event.preventDefault();
-		<!-- var data = event.target.id; -->
-		<!-- var tobj = event.changedTouches[0]; -->
-		<!-- var data = event.target.id; -->
-		 <!-- if(data == "m5"){ -->
-			<!-- cancelAnimationFrame(scI); -->
-			<!-- cursorImage.style.display="none" -->
-			<!-- cursorImage.style.zIndex = "100"; -->
-			<!-- m5.style.height="50%"; -->
-			<!-- m5.style.width="52%"; -->
-			<!-- m5.style.marginTop = 12.01 +'%' -->
-		 <!-- } -->
-	}
-	
-	function mouseMove(event) {
-	event.preventDefault();
-	 
-		event.dataTransfer.setData("Text", event.target.id);
-		var data = event.dataTransfer.getData("text");
-
 		if(data === "m5" || data === "hand"){
 			document.getElementById("title").style.display="none";	
 			document.getElementById("die").style.display="none";	
 			hand.style.display="none";	
-			if(mmTop > 3){
-				cancelAnimationFrame(mm);
-				cancelAnimationFrame(mm2);
+			if(mmTop > 8){
 				mmM2 = requestAnimationFrame(monsterMoveM2);
 			}			
 			 function remove(timestamp){
@@ -1675,10 +1254,6 @@ window.requestAnimFrame = (function(){
 		}
 		
 		if(data === "m2"){
-			cancelAnimationFrame(r);
-			cancelAnimationFrame (shakingAnimation);
-			cancelAnimationFrame(mmM2);
-			console.log(m2Top);
 			function remove2(timestamp){
 				if ( m2Top >= -30){
 					m2Top-=5;
@@ -1687,14 +1262,74 @@ window.requestAnimFrame = (function(){
 					m2.style.marginLeft = m2Left + "%";		
 					r2=requestAnimationFrame(remove2);	
 				}
-				<!-- win();				 -->
+				if( m2Top > -33){
+					win();				
+				}	
+			}	
+				r2=requestAnimationFrame(remove2);
+				cursorImage.style.display = "none";	
+		}				 
+	}
+	
+	function touchend(event){	
+		event.preventDefault();
+		var data = event.target.id;			
+		m5.style.height="50%";
+		m5.style.width="50%";			
+		m2.style.height="68%";
+		m2.style.width="38%";
+	}
+	
+	function mouseMove(event) {
+	 
+		event.dataTransfer.setData("Text", event.target.id);
+		var data = event.dataTransfer.getData("text");
+
+		if(data === "m5" || data === "hand"){
+			document.getElementById("title").style.display="none";	
+			document.getElementById("die").style.display="none";	
+			hand.style.display="none";	
+			if(mmTop > 8){
+				mmM2 = requestAnimationFrame(monsterMoveM2);
+			}			
+			 function remove(timestamp){
+				if ( mmTop >= -36.8){
+					mmTop-=5;
+					mmLeft+=5;
+					m5.style.marginTop = mmTop + "%";
+					m5.style.marginLeft = mmLeft + "%";		
+					requestAnimationFrame(remove);			
+				}	
+			}	
+				r=requestAnimationFrame(remove);
+				cursorImage.style.display = "none";		
+		}
+		
+		if(data === "m2"){
+			<!-- if(m2Top > 3){ -->
+				<!-- cancelAnimationFrame(r); -->
+				<!-- cancelAnimationFrame(shakingAnimation); -->
+				<!-- mmM2 = requestAnimationFrame(monsterMoveM2); -->
+			<!-- }	 -->
+			function remove2(timestamp){
+				if ( m2Top >= -30){
+					m2Top-=5;
+					m2Left-=5;
+					m2.style.marginTop = m2Top + "%";
+					m2.style.marginLeft = m2Left + "%";		
+					r2=requestAnimationFrame(remove2);	
+				}
+				<!-- console.log(m2Top); -->
+				if( m2Top > -33){
+					win();				
+				}
+	
 			}	
 				r2=requestAnimationFrame(remove2);
 				cursorImage.style.display = "none";	
 		}	
 	}
 	
-
 	var w = document.getElementById("gameContainer"),
     d = document,
     e = d.documentElement,
@@ -1721,80 +1356,81 @@ window.requestAnimFrame = (function(){
 	}
 	
 	function mouseDown(event) {
-	var data = event.target.id;
-		
+		var data = event.target.id;
 		if (data === "m5" || data === "hand"){
 			
 			cursorImage.style.display = "block";
 			cursorImage.style.zIndex = "200";
-			scI = requestAnimationFrame(cursorEffect);
+			<!-- scI = requestAnimationFrame(cursorEffect); -->
 			m5.style.height="52%";
-			m5.style.width="54%";
-			mx = event.clientX;
-			my = event.clientY;
-			m5.style.marginTop = (12.01-1) +'%'
-			var myIndex = -1;
-			var scI;
-			var fps = 14;
-				function cursorEffect(){
-					var i;
-					var cI = document.getElementsByClassName("cI");
-					setTimeout(function() {
-						for (i = 0; i < cI.length; i++) 
-						{cI[i].style.display = "none";  }
-						 myIndex++;
-						if (myIndex < cI.length) { }  
-						cursorImage.style.marginTop = (((y-(y-my))/y)*100)-25 + "%";
-						cursorImage.style.marginLeft = ((x-(x-mx))/x*100)-5 + "%";
-						cI[myIndex].style.display = "block";  
-						scI = requestAnimationFrame(cursorEffect);
-						if (myIndex === 5) {cancelAnimationFrame(scI);}
-					},1000/fps);
-				}
+			m5.style.width="52%";
+			<!-- mx = event.clientX; -->
+			<!-- my = event.clientY; -->
+			<!-- m5.style.marginTop = (12.01-1) +'%' -->
+			<!-- var myIndex = -1; -->
+			<!-- var scI; -->
+			<!-- var fps = 14; -->
+				<!-- function cursorEffect(){ -->
+					<!-- var i; -->
+					<!-- var cI = document.getElementsByClassName("cI"); -->
+					<!-- setTimeout(function() { -->
+						<!-- for (i = 0; i < cI.length; i++)  -->
+						<!-- {cI[i].style.display = "none";  } -->
+						 <!-- myIndex++; -->
+						<!-- if (myIndex < cI.length) { }   -->
+						<!-- cursorImage.style.marginTop = (((y-(y-my))/y)*100)-25 + "%"; -->
+						<!-- cursorImage.style.marginLeft = ((x-(x-mx))/x*100)-5 + "%"; -->
+						<!-- cI[myIndex].style.display = "block";   -->
+						<!-- scI = requestAnimationFrame(cursorEffect); -->
+						<!-- if (myIndex === 5) {cancelAnimationFrame(scI);} -->
+					<!-- },1000/fps); -->
+				<!-- } -->
 		}
 		
 		if(data==="m2"){
 			cursorImage.style.display = "block";
 			cursorImage.style.zIndex = "200";
-			scI = requestAnimationFrame(cursorEffect);
+			<!-- scI = requestAnimationFrame(cursorEffect); -->
 			m2.style.height="70%";
 			m2.style.width="40%";
-			mx = event.clientX;
-			my = event.clientY;
-			m2.style.marginTop = (8.01) +'%'
-			var myIndex = -1;
-			var scI;
-			var fps = 14;
-			function cursorEffect(){
-				var i;
-				var cI = document.getElementsByClassName("cI");
-				setTimeout(function() {
-					for (i = 0; i < cI.length; i++) 
-					{cI[i].style.display = "none";  }
-					 myIndex++;
-					if (myIndex < cI.length) { }  
-					cursorImage.style.marginTop = (((y-(y-my))/y)*100)-25 + "%";
-					cursorImage.style.marginLeft = ((x-(x-mx))/x*100)-5 + "%";
-					cI[myIndex].style.display = "block";  
-					scI = requestAnimationFrame(cursorEffect);
-					if (myIndex === 5) {cancelAnimationFrame(scI);}
-				},1000/fps);
-			}
+			<!-- mx = event.clientX; -->
+			<!-- my = event.clientY; -->
+			<!-- m2.style.marginTop = (8.01) +'%' -->
+			<!-- var myIndex = -1; -->
+			<!-- var scI; -->
+			<!-- var fps = 14; -->
+			<!-- function cursorEffect(){ -->
+				<!-- var i; -->
+				<!-- var cI = document.getElementsByClassName("cI"); -->
+				<!-- setTimeout(function() { -->
+					<!-- for (i = 0; i < cI.length; i++)  -->
+					<!-- {cI[i].style.display = "none";  } -->
+					 <!-- myIndex++; -->
+					<!-- if (myIndex < cI.length) { }   -->
+					<!-- cursorImage.style.marginTop = (((y-(y-my))/y)*100)-25 + "%"; -->
+					<!-- cursorImage.style.marginLeft = ((x-(x-mx))/x*100)-5 + "%"; -->
+					<!-- cI[myIndex].style.display = "block";   -->
+					<!-- scI = requestAnimationFrame(cursorEffect); -->
+					<!-- if (myIndex === 5) {cancelAnimationFrame(scI);} -->
+				<!-- },1000/fps); -->
+			<!-- } -->
 		}
 	}
 
 	function mouseUp(event) {
-
-			cancelAnimationFrame(scI);
-			cursorImage.style.display="none";
-			cursorImage.style.zIndex = "100";
+			
+			var data = event.target.id;
+			
+			<!-- cancelAnimationFrame(scI); -->
+			<!-- cursorImage.style.display="none"; -->
+			<!-- cursorImage.style.zIndex = "100"; -->
 			m5.style.height="50%";
-			m5.style.width="52%";
-			m5.style.marginTop = 12.01 +'%';
+			m5.style.width="50%";
+			<!-- m5.style.marginTop = 12.01 +'%'; -->
 			
 			m2.style.height="68%";
 			m2.style.width="38%";
-			m2.style.marginTop = 9.01 +'%';
+			<!-- m2.style.marginTop = 9.01 +'%'; -->
 	
 	}
 
