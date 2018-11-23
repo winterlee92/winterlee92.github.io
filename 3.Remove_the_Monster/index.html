@@ -180,6 +180,22 @@
 		background-image: url(rightBear.png);
 		z-index:199;
 	}
+	
+	#leftBear{
+		position:absolute;	
+		height:40%;
+		width:25%;
+		display:block;
+		background-Repeat:no-repeat;
+		overflow:hidden;
+		background-Size: 100% 100%;
+		margin-top: 22%;
+		margin-left: -30%;
+		background-image: url(leftBear.png);
+		z-index:199;
+		display:none;
+	}
+	
 	#m2{
 		position:absolute;	
 		height: 68%;
@@ -194,14 +210,6 @@
 		display:none;
 	}
 	
-	<!-- #m3{ -->
-		<!-- background-Size: 23% 40%; -->
-		<!-- margin-top: 16%; -->
-		<!-- margin-left: -2%; -->
-		<!-- background-image: url(m3.png); -->
-		<!-- z-index:3; -->
-		<!-- display:none; -->
-	<!-- } -->
 	<!-- #m4{ -->
 		<!-- background-Size: 23% 45%; -->
 		<!-- margin-top: 28%; -->
@@ -779,8 +787,8 @@
 		<div id="happy"></div>
 		
 		<div id="rightBear" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)"></div>
-		<div id="m2" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)"></div>
-		<div id="m3"></div>
+		<div id="leftBear" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)"></div>
+		<div id="m2" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)"></div>		
 		<div id="m4"></div>
 		<div id="hand" draggable="true" ondragstart="mouseMove(event)"  onmouseup="mouseUp(event)"></div>
 		<div id="m5" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
@@ -857,6 +865,7 @@ window.requestAnimFrame = (function(){
 	var getPet = document.getElementById("win");
 	var bone = document.getElementById("bone");
 	var rightBear = document.getElementById("rightBear");
+	var leftBear = document.getElementById("leftBear");
 	var rotateHamster = document.getElementById("rotateHamster");
 	bone.style.display="none";
 	m5.addEventListener('mousedown', mouseDown);
@@ -1237,6 +1246,7 @@ window.requestAnimFrame = (function(){
 				rightBear.style.marginTop = rightBearMarginTop + "%";
 				rightBear.style.marginLeft = rightBearMarginLeft + "%"; 
 				rightBearSlow = requestAnimationFrame(rightBearSlowDown);
+				console.log(rightBearMarginTop);
 			}
 			function rightBearCatching(timestamp){     
 				//drop down
@@ -1259,8 +1269,8 @@ window.requestAnimFrame = (function(){
 				}	
 				if(animationToggle === 1 && rightBearMarginTop >= 10){	
 						cancelAnimationFrame(rightBearCatch);
-						rightBearMarginTop = 15;
-						rightBearMarginLeft = 50;
+						rightBearMarginTop = 14;
+						rightBearMarginLeft = 49.4;
 						rightBearMarginHeight = 50;
 						rightBearMarginWidth = 23;
 						
@@ -1273,7 +1283,7 @@ window.requestAnimFrame = (function(){
 	var rotateHamsterMarginTop = 22.5;
 	var rotateHamsterMarginLeft = 40.5;
 	var rotateHamsterHeight = 35;
-	var rotateHamsterLeft = 17;
+	var rotateHamsterWidth = 17;
 	var rotateHamsterZIndex = 200;
 
 	function rightBearDropDownAnimation(timestamp){
@@ -1282,26 +1292,26 @@ window.requestAnimFrame = (function(){
 							
 			rotateHamsterMarginTop+=0.1875;
 			rotateHamsterHeight-=0.125;
-			rotateHamsterLeft-=0.05;
-			rotateHamsterZIndex -= 5;
+			rotateHamsterWidth-=0.05;
+			rotateHamsterZIndex -= 4;
 			
 			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
 			rotateHamster.style.height=rotateHamsterHeight+"%";
-			rotateHamster.style.width=rotateHamsterLeft+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
 			rotateHamster.style.zIndex=rotateHamsterZIndex;
 			
-			rightBearMarginTop+=0.55;
-			rightBearMarginLeft-=0.1;
-			rightBearMarginHeight-=0.5;
-			rightBearMarginWidth-=0.25;
+			rightBearMarginTop+=0.275;
+			rightBearMarginLeft-=0.05;
+			rightBearMarginHeight-=0.25;
+			rightBearMarginWidth-=0.125;
+			rightBearZIndex -= 5;
 			
 			rightBear.style.marginTop=rightBearMarginTop+"%";
 			rightBear.style.marginLeft=rightBearMarginLeft+"%";
 			rightBear.style.height=rightBearMarginHeight+"%";
 			rightBear.style.width=rightBearMarginWidth+"%";
-			rightBear.style.zIndex=rotateHamsterZIndex;
+			rightBear.style.zIndex=rightBearZIndex;
 			
-			rightBearDropDown=requestAnimationFrame(rightBearDropDownAnimation);
 		}
 		
 		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
@@ -1312,8 +1322,9 @@ window.requestAnimFrame = (function(){
 			
 			if (rotateHamsterMarginTop === 60)
 			{
-				fail.style.display = "block";
-				hamster.style.display = "block";
+				<!-- fail.style.display = "block"; -->
+				<!-- hamster.style.display = "block"; -->
+				imageLoop();
 			}			
 		}
 		rightBearDropDown=requestAnimationFrame(rightBearDropDownAnimation);
@@ -1432,13 +1443,18 @@ window.requestAnimFrame = (function(){
 			}	
 				r2=requestAnimationFrame(remove2);
 		}	
-
 		if(data === "rightBear"){
-
+			console.log(data);
+			if(rightBearMarginTop >0){
+				console.log("true")
+				console.log("true")
+				leftBearMove = requestAnimationFrame(leftBearAnimation);			
+			}	
 			function remove3(timestamp){
 				if ( rightBearMarginTop < 27){
 					rightBearMarginTop+=0.3;
-					rightBearMarginLeft+=5.4;				
+					rightBearMarginLeft+=5.4;
+					
 					
 					rightBear.style.marginTop = rightBearMarginTop + "%";
 					rightBear.style.marginLeft = rightBearMarginLeft + "%";		
@@ -1446,6 +1462,7 @@ window.requestAnimFrame = (function(){
 				}
 			}	
 				r3=requestAnimationFrame(remove3);
+				<!-- cursorImage.style.display = "none";	 -->
 		}		
 	}
 	
@@ -1485,8 +1502,6 @@ window.requestAnimFrame = (function(){
 				<!-- cursorImage.style.display = "none";		 -->
 		}
 		
-		var m2Toggle=0;
-		
 		if(data === "m2"){
 			if(m2Top > 6){
 				rightBearMove = requestAnimationFrame(rightBearAnimation);			
@@ -1503,11 +1518,14 @@ window.requestAnimFrame = (function(){
 				r2=requestAnimationFrame(remove2);
 				<!-- cursorImage.style.display = "none";	 -->
 		}	
+		
 		if(data === "rightBear"){
-			
-			<!-- if(m2Top > 6){ -->
-				<!-- rightBearMove = requestAnimationFrame(rightBearAnimation);			 -->
-			<!-- }	 -->
+			console.log(data);
+			if(rightBearMarginTop >0){
+				console.log("true")
+				console.log("true")
+				leftBearMove = requestAnimationFrame(leftBearAnimation);			
+			}	
 			function remove3(timestamp){
 				if ( rightBearMarginTop < 27){
 					rightBearMarginTop+=0.3;
@@ -1522,6 +1540,108 @@ window.requestAnimFrame = (function(){
 				r3=requestAnimationFrame(remove3);
 				<!-- cursorImage.style.display = "none";	 -->
 		}	
+	}
+	
+	var leftBearMarginTop = 23;
+	var leftBearMarginLeft = -30;
+	var leftBearMarginHeight = 40;
+	var leftBearMarginWidth = 25;
+	var leftBearZIndex = 199;
+	var leftBearToggle = 0;
+	
+	function leftBearAnimation(timestamp){
+		leftBear.style.display = "block";
+		if ( leftBearMarginTop >= 21){
+			leftBearMarginTop-=0.1;
+			leftBearMarginLeft+=1.75;
+			leftBear.style.marginTop = leftBearMarginTop + "%";
+			leftBear.style.marginLeft = leftBearMarginLeft + "%"; 
+			leftBearMove = requestAnimationFrame(leftBearAnimation);			
+		}	
+		function leftBearSlowDown(timestamp){
+			//slow down
+			if(leftBearMarginTop <= 21 && leftBearMarginTop >=20){
+				cancelAnimationFrame(leftBearMove);
+				leftBearMarginTop-=0.01;
+				leftBearMarginLeft+=0.1;
+				leftBear.style.marginTop = leftBearMarginTop + "%";
+				leftBear.style.marginLeft = leftBearMarginLeft + "%"; 
+				leftBearSlow = requestAnimationFrame(leftBearSlowDown);
+			}	
+			function leftBearCatching(timestamp){     
+				//drop down
+				if(leftBearMarginTop <= 20 && leftBearMarginTop >=16){
+					cancelAnimationFrame(leftBearSlow);
+					leftBearMarginTop-=0.2;
+					leftBearMarginLeft+=0.5;
+					leftBear.style.marginTop = leftBearMarginTop + "%";
+					leftBear.style.marginLeft = leftBearMarginLeft + "%"; 
+					leftBearCatch = requestAnimationFrame(leftBearCatching);
+				}
+				if(leftBearMarginTop <= 16){
+					var degree = 2 ;		
+					mc.style.display = "none";					
+					document.getElementById("timeDisplay").style.display="none";	
+					document.getElementById("eye").style.display="block";
+					rotateHamster.style.display = "block";	
+					rotateHamster.style.transform = "rotate(30deg)";					
+					animationToggle = 1;
+				}
+				if(animationToggle === 1 && leftBearMarginTop >= 10){	
+						cancelAnimationFrame(leftBearCatch);
+						leftBearMarginTop = 16;
+						leftBearMarginLeft = 25;
+						leftBearMarginHeight = 40;
+						leftBearMarginWidth = 25;
+						
+						leftBearDropDown=requestAnimationFrame(leftBearDropDownAnimation);
+				}		
+			}leftBearCatch = requestAnimationFrame(leftBearCatching);	
+		}leftBearSlow = requestAnimationFrame(leftBearSlowDown);
+	}
+	
+	function leftBearDropDownAnimation(timestamp){
+		
+		if (rotateHamsterMarginTop < 30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterMarginLeft+=0.1625;
+			rotateHamsterHeight-=0.075;
+			rotateHamsterWidth-=0.025;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.marginLeft=rotateHamsterMarginLeft+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+			
+			leftBearMarginTop+=0.35;
+			leftBearMarginLeft+=0.25;
+			leftBearMarginHeight-=0.25;
+			leftBearMarginWidth-=0.125;
+			leftBearZIndex -= 5;
+			
+			leftBear.style.marginTop=leftBearMarginTop+"%";
+			leftBear.style.marginLeft=leftBearMarginLeft+"%";
+			leftBear.style.height=leftBearMarginHeight+"%";
+			leftBear.style.width=leftBearMarginWidth+"%";
+			leftBear.style.zIndex=leftBearZIndex;
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			leftBear.style.marginTop=rotateHamsterMarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				imageLoop();
+				cancelAnimationFrame(leftBearDropDown);
+			}			
+		}
+		leftBearDropDown=requestAnimationFrame(leftBearDropDownAnimation);
 	}
 	
 	var w = document.getElementById("gameContainer"),
