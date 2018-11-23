@@ -542,8 +542,6 @@
 
 	function dragStart(event) {	
 	
-		
-		<!-- cnosole.log( document.getElementById("hand")); -->
 		 document.getElementById("hand").style.display = "none";
 		cursorImage.style.display="none";
 		var rightWolf = document.getElementById("rightWolf");
@@ -559,7 +557,6 @@
 		rightWolfMarginTop = parseFloat(rightWolfMarginTop);
 		rightWolfMarginLeft = parseFloat(rightWolfMarginLeft);
 		
-		console.log("dragStart: "+data);
 		if (data === "rightWolf" || data === "hand" || data === ""){	
 			if ( rightWolfMarginTop <= 12 && rightWolfMarginTop > 6){
 				cancelAnimationFrame(rightWolfMovement);
