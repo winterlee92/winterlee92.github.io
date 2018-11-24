@@ -20,7 +20,7 @@
 		background-color:black;
 	}
 	
-	#gameContainer,#monster,#m3,#m4,#m6,#frame,#layer1,#layer2,#sidelayer,#sidelayer2,#time,#hand{	
+	#gameContainer,#monster,#frame,#layer1,#layer2,#sidelayer,#sidelayer2,#time,#hand{	
 		position:absolute;	
 		height:100%;
 		width:100%;
@@ -211,14 +211,20 @@
 		display:none;
 	}
 	
-	<!-- #m4{ -->
-		<!-- background-Size: 23% 45%; -->
-		<!-- margin-top: 28%; -->
-		<!-- margin-left: 76%; -->
-		<!-- background-image:url(m4.png); -->
-		<!-- z-index:4; -->
-		<!-- display:none; -->
-	<!-- } -->
+	#rightDragon{
+		position:absolute;	
+		height: 68%;
+		width: 38%;
+		display:none;
+		background-Repeat:no-repeat;
+		overflow:hidden;
+		background-Size: 100% 100%;
+		margin-top: 5%;
+		margin-left: 168%;
+		background-image: url(rightDragon.png);
+		z-index:199;
+	}
+	
 	#m5{
 		position:absolute;	
 		height:50%;
@@ -787,10 +793,10 @@
 		</div>	
 		<div id="happy"></div>
 		
-		<div id="rightBear" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)"></div>
-		<div id="leftBear" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)"></div>
-		<div id="leftDragon" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)"></div>		
-		<div id="m4"></div>
+		<div id="rightBear" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
+		<div id="leftBear" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
+		<div id="leftDragon" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>		
+		<div id="rightDragon" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>	
 		<div id="hand" draggable="true" ondragstart="mouseMove(event)"  onmouseup="mouseUp(event)"></div>
 		<div id="m5" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
 		<div id="m6"></div>
@@ -869,6 +875,8 @@ window.requestAnimFrame = (function(){
 	var leftDragon = document.getElementById("leftDragon");
 	var rightBear = document.getElementById("rightBear");
 	var leftBear = document.getElementById("leftBear");
+	var rightDragon = document.getElementById("rightDragon");
+	
 	var rotateHamster = document.getElementById("rotateHamster");
 	bone.style.display="none";
 	m5.addEventListener('mousedown', mouseDown);
@@ -879,6 +887,8 @@ window.requestAnimFrame = (function(){
 	rightBear.addEventListener('mousedown', mouseDown);
 	leftBear.addEventListener('mouseup', mouseUp);
 	leftBear.addEventListener('mousedown', mouseDown);
+	rightDragon.addEventListener('mouseup', mouseUp);
+	rightDragon.addEventListener('mousedown', mouseDown);
 	hand.addEventListener('mousedown', mouseDown);
 	hand.addEventListener('mouseup', mouseUp);
 	cursorImage.addEventListener('mousedown', mouseDown);
@@ -1331,19 +1341,19 @@ window.requestAnimFrame = (function(){
 		}	
 		function leftBearSlowDown(timestamp){
 			//slow down
-			if(leftBearMarginTop <= 21 && leftBearMarginTop >=20){
+			if(leftBearMarginTop <= 21 && leftBearMarginTop >=18){
 				cancelAnimationFrame(leftBearMove);
-				leftBearMarginTop-=0.01;
-				leftBearMarginLeft+=0.1;
+				leftBearMarginTop-=0.0075;
+				leftBearMarginLeft+=0.0175;
 				leftBear.style.marginTop = leftBearMarginTop + "%";
 				leftBear.style.marginLeft = leftBearMarginLeft + "%"; 
 				leftBearSlow = requestAnimationFrame(leftBearSlowDown);
 			}	
 			function leftBearCatching(timestamp){     
 				//drop down
-				if(leftBearMarginTop <= 20 && leftBearMarginTop >=16){
+				if(leftBearMarginTop <= 18 && leftBearMarginTop >=16){
 					cancelAnimationFrame(leftBearSlow);
-					leftBearMarginTop-=0.2;
+					leftBearMarginTop-=0.05;
 					leftBearMarginLeft+=0.5;
 					leftBear.style.marginTop = leftBearMarginTop + "%";
 					leftBear.style.marginLeft = leftBearMarginLeft + "%"; 
@@ -1367,8 +1377,10 @@ window.requestAnimFrame = (function(){
 						
 						leftBearDropDown=requestAnimationFrame(leftBearDropDownAnimation);
 				}		
-			}leftBearCatch = requestAnimationFrame(leftBearCatching);	
-		}leftBearSlow = requestAnimationFrame(leftBearSlowDown);
+			}
+			leftBearCatch = requestAnimationFrame(leftBearCatching);	
+		}
+		leftBearSlow = requestAnimationFrame(leftBearSlowDown);
 	}
 	
 	function leftBearDropDownAnimation(timestamp){
@@ -1545,6 +1557,24 @@ window.requestAnimFrame = (function(){
 			}	
 				r3=requestAnimationFrame(remove3);
 		}	
+		
+		if(data === "leftBear"){
+			if(leftBearMarginTop >0){
+				<!-- rightDragonMove = requestAnimationFrame(rightDragonAnimation); -->
+			}	
+			function remove4(timestamp){
+				if ( leftBearMarginTop < 23){
+					leftBearMarginTop+=0.1;
+					leftBearMarginLeft-=5;
+										
+					leftBear.style.marginTop = leftBearMarginTop + "%";
+					leftBear.style.marginLeft = leftBearMarginLeft + "%";		
+					r4=requestAnimationFrame(remove4);	
+				}
+			}	
+				r4=requestAnimationFrame(remove4);
+		}
+		
 	}
 	
 	function touchend(event){	
@@ -1616,25 +1646,24 @@ window.requestAnimFrame = (function(){
 				}
 			}	
 				r3=requestAnimationFrame(remove3);
-		}	
+		}		
 		
 		if(data === "leftBear"){
-			<!-- if(leftBearMarginTop >0){ -->
-				 <!-- = requestAnimationFrame();			 -->
-			<!-- }	 -->
+			if(leftBearMarginTop >0){
+				<!-- rightDragonMove = requestAnimationFrame(rightDragonAnimation); -->
+			}	
 			function remove4(timestamp){
 				if ( leftBearMarginTop < 23){
-				
-					leftBearMarginTop-=5;
+					leftBearMarginTop+=0.1;
 					leftBearMarginLeft-=5;
-					
+										
 					leftBear.style.marginTop = leftBearMarginTop + "%";
 					leftBear.style.marginLeft = leftBearMarginLeft + "%";		
 					r4=requestAnimationFrame(remove4);	
 				}
 			}	
 				r4=requestAnimationFrame(remove4);
-		}	
+		}
 	}
 	
 	var w = document.getElementById("gameContainer"),
