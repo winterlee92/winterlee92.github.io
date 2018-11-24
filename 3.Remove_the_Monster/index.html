@@ -876,7 +876,9 @@ window.requestAnimFrame = (function(){
 	leftDragon.addEventListener('mousedown', mouseDown);
 	leftDragon.addEventListener('mouseup', mouseUp);
 	rightBear.addEventListener('mousedown', mouseDown);
-	rightBear.addEventListener('mouseup', mouseUp);
+	rightBear.addEventListener('mousedown', mouseDown);
+	leftBear.addEventListener('mouseup', mouseUp);
+	leftBear.addEventListener('mouseup', mouseUp);
 	hand.addEventListener('mousedown', mouseDown);
 	hand.addEventListener('mouseup', mouseUp);
 	cursorImage.addEventListener('mousedown', mouseDown);
@@ -1354,9 +1356,9 @@ window.requestAnimFrame = (function(){
 					document.getElementById("eye").style.display="block";
 					rotateHamster.style.display = "block";	
 					rotateHamster.style.transform = "rotate(30deg)";					
-					animationToggle = 1;
+					leftBearToggle = 1;
 				}
-				if(animationToggle === 1 && leftBearMarginTop >= 10){	
+				if(leftBearToggle === 1 && leftBearMarginTop >= 10){	
 						cancelAnimationFrame(leftBearCatch);
 						leftBearMarginTop = 16;
 						leftBearMarginLeft = 25;
@@ -1600,7 +1602,6 @@ window.requestAnimFrame = (function(){
 		}	
 		
 		if(data === "rightBear"){
-			console.log(data);
 			if(rightBearMarginTop >0){
 				leftBearMove = requestAnimationFrame(leftBearAnimation);			
 			}	
@@ -1608,14 +1609,31 @@ window.requestAnimFrame = (function(){
 				if ( rightBearMarginTop < 27){
 					rightBearMarginTop+=0.3;
 					rightBearMarginLeft+=5.4;
-					
-					
+										
 					rightBear.style.marginTop = rightBearMarginTop + "%";
 					rightBear.style.marginLeft = rightBearMarginLeft + "%";		
 					r3=requestAnimationFrame(remove3);	
 				}
 			}	
 				r3=requestAnimationFrame(remove3);
+		}	
+		
+		if(data === "leftBear"){
+			<!-- if(leftBearMarginTop >0){ -->
+				 <!-- = requestAnimationFrame();			 -->
+			<!-- }	 -->
+			function remove4(timestamp){
+				if ( leftBearMarginTop < 21){
+				
+					leftBearMarginTop-=0.1;
+					leftBearMarginLeft-=1.75;
+					
+					leftBear.style.marginTop = leftBearMarginTop + "%";
+					leftBear.style.marginLeft = leftBearMarginLeft + "%";		
+					r4=requestAnimationFrame(remove4);	
+				}
+			}	
+				r4=requestAnimationFrame(remove4);
 		}	
 	}
 	
