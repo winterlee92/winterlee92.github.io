@@ -875,10 +875,10 @@ window.requestAnimFrame = (function(){
 	m5.addEventListener('mouseup', mouseUp);
 	leftDragon.addEventListener('mousedown', mouseDown);
 	leftDragon.addEventListener('mouseup', mouseUp);
-	rightBear.addEventListener('mousedown', mouseDown);
+	rightBear.addEventListener('mouseup', mouseUp);
 	rightBear.addEventListener('mousedown', mouseDown);
 	leftBear.addEventListener('mouseup', mouseUp);
-	leftBear.addEventListener('mouseup', mouseUp);
+	leftBear.addEventListener('mousedown', mouseDown);
 	hand.addEventListener('mousedown', mouseDown);
 	hand.addEventListener('mouseup', mouseUp);
 	cursorImage.addEventListener('mousedown', mouseDown);
@@ -1358,7 +1358,7 @@ window.requestAnimFrame = (function(){
 					rotateHamster.style.transform = "rotate(30deg)";					
 					leftBearToggle = 1;
 				}
-				if(leftBearToggle === 1 && leftBearMarginTop >= 10){	
+				if(leftBearToggle === 1 && leftBearMarginTop <= 16){	
 						cancelAnimationFrame(leftBearCatch);
 						leftBearMarginTop = 16;
 						leftBearMarginLeft = 25;
@@ -1623,10 +1623,10 @@ window.requestAnimFrame = (function(){
 				 <!-- = requestAnimationFrame();			 -->
 			<!-- }	 -->
 			function remove4(timestamp){
-				if ( leftBearMarginTop < 21){
+				if ( leftBearMarginTop < 23){
 				
-					leftBearMarginTop-=0.1;
-					leftBearMarginLeft-=1.75;
+					leftBearMarginTop-=5;
+					leftBearMarginLeft-=5;
 					
 					leftBear.style.marginTop = leftBearMarginTop + "%";
 					leftBear.style.marginLeft = leftBearMarginLeft + "%";		
@@ -1636,7 +1636,6 @@ window.requestAnimFrame = (function(){
 				r4=requestAnimationFrame(remove4);
 		}	
 	}
-	
 	
 	var w = document.getElementById("gameContainer"),
     d = document,
@@ -1680,6 +1679,12 @@ window.requestAnimFrame = (function(){
 			rightBear.style.height="52%";
 			rightBear.style.width="25%";
 		}
+		
+		if(data==="leftBear"){		
+			leftBear.style.height="42%";
+			leftBear.style.width="27%";
+		}
+		
 	}
 
 	function mouseUp(event) {
@@ -1694,6 +1699,9 @@ window.requestAnimFrame = (function(){
 
 			rightBear.style.height="50%";
 			rightBear.style.width="23%";
+			
+			leftBear.style.height="40%";
+			leftBear.style.width="25%";
 			
 	}
 

@@ -1,4 +1,10 @@
 <script>
+	var rightBearMarginTop = 27;
+	var rightBearMarginLeft = 125;
+	var rightBearMarginHeight = 50;
+	var rightBearMarginWidth = 23;
+	var rightBearZIndex = 19;
+	var rightBearToggle = 0;
 function rightBearAnimation(){
 		rightBear.style.display = "block";
 		if ( rightBearMarginTop >= 20){
@@ -19,7 +25,7 @@ function rightBearAnimation(){
 				rightBearSlow = requestAnimationFrame(rightBearSlowDown);
 			}
 			function rightBearCatching(timestamp){     
-				//drop down
+				//catch
 				if(rightBearMarginTop <= 16 && rightBearMarginTop >=10){
 					cancelAnimationFrame(rightBearSlow);
 					rightBearMarginTop-=0.25;
@@ -44,7 +50,7 @@ function rightBearAnimation(){
 						rightBearMarginHeight = 50;
 						rightBearMarginWidth = 23;
 						
-						<!-- rightBearDropDown=requestAnimationFrame(rightBearDropDownAnimation); -->
+						rightBearDropDown=requestAnimationFrame(rightBearDropDownAnimation);
 				}				
 			}rightBearCatch = requestAnimationFrame(rightBearCatching);
 		}rightBearSlow = requestAnimationFrame(rightBearSlowDown);
@@ -92,6 +98,111 @@ function rightBearAnimation(){
 		}
 		rightBearDropDown=requestAnimationFrame(rightBearDropDownAnimation);
 	}
+	
+	var leftDragonMarginTop = -6;	
+	var leftDragonMarginLeft = -38;
+	var leftDragonHeight = 68;
+	var leftDragonWidth = 38;
+	var leftDragonZIndex = 199;
+	var leftDragonToggle = 0;
+		
+	function leftDragonAnimation(timestamp){	
+		 document.getElementById("leftDragon").style.display = "block";	
+		//move down
+		if ( leftDragonMarginTop < 5){
+			leftDragonMarginTop+=1.1
+			leftDragonMarginLeft+=4;
+			leftDragon.style.marginTop = leftDragonMarginTop + "%";
+			leftDragon.style.marginLeft = leftDragonMarginLeft + "%"; 
+			leftDragonMove = requestAnimationFrame(leftDragonAnimation);			
+		}			
+		function leftDragonSlowDown(timestamp){
+		//slow down
+		if(leftDragonMarginTop >= 4 && leftDragonMarginTop <= 7){
+				cancelAnimationFrame(leftDragonMove);
+				leftDragonMarginTop+=0.01;
+				leftDragonMarginLeft+=0.03333333333;
+				leftDragon.style.marginTop = leftDragonMarginTop + "%";
+				leftDragon.style.marginLeft = leftDragonMarginLeft + "%"; 
+				leftDragonSlow = requestAnimationFrame(leftDragonSlowDown);
+			}			
+			function leftDragonCatching(timestamp){     
+				//catch
+				if(leftDragonMarginTop >= 7 && leftDragonMarginTop < 10){
+					cancelAnimationFrame(leftDragonSlow);
+					leftDragonMarginTop+=0.3;
+					leftDragonMarginLeft+=0.8;
+					leftDragon.style.marginTop = leftDragonMarginTop + "%";
+					leftDragon.style.marginLeft = leftDragonMarginLeft + "%"; 
+					leftDragonCatch = requestAnimationFrame(leftDragonCatching);
+					}
+				if(leftDragonMarginTop >= 10){	
+					mc.style.display = "none";					
+					document.getElementById("timeDisplay").style.display="none";	
+					document.getElementById("eye").style.display="block";
+					rotateHamster.style.display = "block";	
+					rotateHamster.style.transform = "rotate(30deg)";					
+					leftDragonToggle = 1;
+				}
+				if(leftDragonToggle === 1 && leftDragonMarginTop >= 10){	
+						cancelAnimationFrame(leftDragonCatch);
+						leftDragonMarginTop = 10;
+						leftDragonMarginLeft = 18;
+						leftDragonHeight = 68;
+						leftDragonWidth = 38;
+						
+						leftDragonDropDown=requestAnimationFrame(leftDragonDropDownAnimation);
+				}	
+			}
+			leftDragonCatch = requestAnimationFrame(leftDragonCatching);
+		}
+		leftDragonSlow = requestAnimationFrame(leftDragonSlowDown);
+	}
+	
+	function leftDragonDropDownAnimation(timestamp){
 
+		if (rotateHamsterMarginTop <30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterMarginLeft+=0.1625;
+			rotateHamsterHeight-=0.125;
+			rotateHamsterWidth-=0.05;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.marginLeft=rotateHamsterMarginLeft+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+			
+			leftDragonMarginTop+=0.225;
+			leftDragonMarginLeft+=0.4;
+			leftDragonHeight-=0.325;
+			leftDragonWidth-=0.325;
+			leftDragonZIndex -= 5;
+			
+			leftDragon.style.marginTop=leftDragonMarginTop+"%";
+			leftDragon.style.marginLeft=leftDragonMarginLeft+"%";
+			leftDragon.style.height=leftDragonHeight+"%";
+			leftDragon.style.width=leftDragonWidth+"%";
+			leftDragon.style.zIndex=leftDragonZIndex;
+			
+			leftDragonDropDown=requestAnimationFrame(leftDragonDropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			leftDragon.style.marginTop=rotateHamsterMarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				imageLoop();
+				cancelAnimationFrame(leftDragonDropDown);
+			}			
+		}
+		leftDragonDropDown=requestAnimationFrame(leftDragonDropDownAnimation);
+	}
 	
 	  </script>
