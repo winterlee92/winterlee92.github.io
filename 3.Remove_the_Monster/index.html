@@ -196,7 +196,7 @@
 		display:none;
 	}
 	
-	#m2{
+	#leftDragon{
 		position:absolute;	
 		height: 68%;
 		width: 38%;
@@ -204,9 +204,10 @@
 		background-Repeat:no-repeat;
 		overflow:hidden;
 		background-Size: 100% 100%;
-		margin: 6% 0%;
+		margin-top: -6%;
+		margin-left: -38%;
 		background-image: url(leftDragon.png);
-		z-index:199;
+		z-index:200;
 		display:none;
 	}
 	
@@ -788,7 +789,7 @@
 		
 		<div id="rightBear" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)"></div>
 		<div id="leftBear" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)"></div>
-		<div id="m2" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)"></div>		
+		<div id="leftDragon" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)"></div>		
 		<div id="m4"></div>
 		<div id="hand" draggable="true" ondragstart="mouseMove(event)"  onmouseup="mouseUp(event)"></div>
 		<div id="m5" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
@@ -864,14 +865,16 @@ window.requestAnimFrame = (function(){
 	
 	var getPet = document.getElementById("win");
 	var bone = document.getElementById("bone");
+	
+	var leftDragon = document.getElementById("leftDragon");
 	var rightBear = document.getElementById("rightBear");
 	var leftBear = document.getElementById("leftBear");
 	var rotateHamster = document.getElementById("rotateHamster");
 	bone.style.display="none";
 	m5.addEventListener('mousedown', mouseDown);
 	m5.addEventListener('mouseup', mouseUp);
-	m2.addEventListener('mousedown', mouseDown);
-	m2.addEventListener('mouseup', mouseUp);
+	leftDragon.addEventListener('mousedown', mouseDown);
+	leftDragon.addEventListener('mouseup', mouseUp);
 	rightBear.addEventListener('mousedown', mouseDown);
 	rightBear.addEventListener('mouseup', mouseUp);
 	hand.addEventListener('mousedown', mouseDown);
@@ -879,19 +882,13 @@ window.requestAnimFrame = (function(){
 	cursorImage.addEventListener('mousedown', mouseDown);
 	cursorImage.addEventListener('mouseup', mouseUp);
 	
-	var r;
+	var r,r2;
 	var mcTop = 22.3;
 	var mcLeft = 40.5;
 	var mcHeight = 35;
 	var mcWidth = 17;
 	var mmTop = -32 ;
 	var mmLeft = 100;	
-	var m2Top = -20 ;
-	var m2Left = -20;	
-	var m2Top2=10.01;
-	var m2Left2=27.02;
-	var m2Height=68;
-	var m2Width=20;
 	var toggle = 0;	
 	var mm,mm2;
 	var scI;
@@ -981,7 +978,8 @@ window.requestAnimFrame = (function(){
 				}updown= requestAnimationFrame(upDownShake);
 			shakingToggle = 1;		
 		}shaking = requestAnimationFrame(shakingAnimation);
-	}shaking = requestAnimationFrame(shakingAnimation);
+	}
+	<!-- shaking = requestAnimationFrame(shakingAnimation); -->
 		
 	function monsterMove(timestamp){
 		if ( mmTop < 8){
@@ -1029,7 +1027,7 @@ window.requestAnimFrame = (function(){
 	var winMarginTop = 22.5;	
 	var winMarginLeft = 40.5;
 	var winMarginHeight = 35;
-	var winMarginwWidth = 17;
+	var winMarginWidth = 17;
 	var winToggle = 0;
 	
 	function win(timestamp){	
@@ -1043,12 +1041,12 @@ window.requestAnimFrame = (function(){
 				winMarginTop += 0.35;
 				winMarginLeft += 0.15;							
 				winMarginHeight -= 0.4;
-				winMarginwWidth -= 0.4;
+				winMarginWidth -= 0.4;
 				
 				happy.style.marginTop = winMarginTop+ "%";
 				happy.style.marginLeft = winMarginLeft+ "%"; 
 				happy.style.height = winMarginHeight + "%";
-				happy.style.width = winMarginwWidth + "%"; 
+				happy.style.width = winMarginWidth + "%"; 
 				
 			}
 			wa = requestAnimationFrame(winAnimation);
@@ -1060,12 +1058,12 @@ window.requestAnimFrame = (function(){
 						winMarginTop -= 1.8;
 						winMarginLeft -= 0.7;							
 						winMarginHeight += 2.5;
-						winMarginwWidth += 1.6;
+						winMarginWidth += 1.6;
 						
 						happy.style.marginTop = winMarginTop+ "%";
 						happy.style.marginLeft = winMarginLeft+ "%"; 
 						happy.style.height = winMarginHeight + "%";
-						happy.style.width = winMarginwWidth + "%"; 
+						happy.style.width = winMarginWidth + "%"; 
 					}
 					wa2 = requestAnimationFrame(winAnimation2);
 					winToggle=2;
@@ -1077,12 +1075,12 @@ window.requestAnimFrame = (function(){
 								winMarginTop -= 0.8;
 								winMarginLeft -= 0.6;							
 								winMarginHeight += 3;
-								winMarginwWidth += 1.5;
+								winMarginWidth += 1.5;
 								
 								happy.style.marginTop = winMarginTop+ "%";
 								happy.style.marginLeft = winMarginLeft+ "%"; 
 								happy.style.height = winMarginHeight + "%";
-								happy.style.width = winMarginwWidth + "%"; 
+								happy.style.width = winMarginWidth + "%"; 
 							}
 							wa3 = requestAnimationFrame(winAnimation3);
 							winToggle=3;
@@ -1096,135 +1094,118 @@ window.requestAnimFrame = (function(){
 		}
 		}wa = requestAnimationFrame(winAnimation);
 	}
+		
+		var leftDragonMarginTop = -6;	
+		var leftDragonMarginLeft = -38;
+		var leftDragonHeight = 68;
+		var leftDragonWidth = 38;
+		var leftDragonZIndex = 199;
+		var leftDragonToggle = 0;
 	
-	var mmM2,mmM2_2;
-	var animationToggle = 0;
-	
-	function monsterMoveM2(timestamp){	
-		m2.style.display = "block";
+	function leftDragonAnimation(timestamp){	
+		 document.getElementById("leftDragon").style.display = "block";	
 		//move down
-		if ( m2Top < 6){
-			m2Top+=1;
-			m2Left+=1;
-			m2.style.marginTop = m2Top + "%";
-			m2.style.marginLeft = m2Left + "%"; 
-			mmM2 = requestAnimationFrame(monsterMoveM2);			
+		if ( leftDragonMarginTop < 5){
+			leftDragonMarginTop+=1.1
+			leftDragonMarginLeft+=4;
+			leftDragon.style.marginTop = leftDragonMarginTop + "%";
+			leftDragon.style.marginLeft = leftDragonMarginLeft + "%"; 
+			leftDragonMove = requestAnimationFrame(leftDragonAnimation);			
 		}			
-		function monsterMoveM2_2(timestamp){
+		function leftDragonSlowDown(timestamp){
 		//slow down
-		if(m2Top >= 6 && m2Top <=9){
-				m2Top+=0.01;
-				m2Left+=0.02;
-				m2.style.marginTop = m2Top + "%";
-				m2.style.marginLeft = m2Left + "%"; 
-				mmM2_2 = requestAnimationFrame(monsterMoveM2_2);
+		if(leftDragonMarginTop >= 4 && leftDragonMarginTop <= 7){
+				cancelAnimationFrame(leftDragonMove);
+				leftDragonMarginTop+=0.01;
+				leftDragonMarginLeft+=0.03333333333;
+				leftDragon.style.marginTop = leftDragonMarginTop + "%";
+				leftDragon.style.marginLeft = leftDragonMarginLeft + "%"; 
+				leftDragonSlow = requestAnimationFrame(leftDragonSlowDown);
 			}			
-			function monsterMoveM2_3(timestamp){     
-				//drop down
-				if(m2Top >= 8 && m2Top <=11){
-					m2Top+=0.01;
-					m2Left+=0.01;
-					m2.style.marginTop = m2Top + "%";
-					m2.style.marginLeft = m2Left + "%"; 
-					mmM2_3 = requestAnimationFrame(monsterMoveM2_3);
+			function leftDragonCatching(timestamp){     
+				//catch
+				if(leftDragonMarginTop >= 7 && leftDragonMarginTop < 10){
+					cancelAnimationFrame(leftDragonSlow);
+					leftDragonMarginTop+=0.3;
+					leftDragonMarginLeft+=0.8;
+					leftDragon.style.marginTop = leftDragonMarginTop + "%";
+					leftDragon.style.marginLeft = leftDragonMarginLeft + "%"; 
+					leftDragonCatch = requestAnimationFrame(leftDragonCatching);
 					}
-				if(m2Top >= 8){
-					var degree = 2 ;
-					cancelAnimationFrame(shakingAnimation);
+				if(leftDragonMarginTop >= 10){	
+					mc.style.display = "none";					
 					document.getElementById("timeDisplay").style.display="none";	
-					document.getElementById("die").style.display="block";	
-					function rotateAnimation(timestamp){	
-						if(degree >= -2){
-							degree--;
-							mc.style.transform="rotate("+degree+"deg)";
-							ra=requestAnimationFrame(rotateAnimation);
-						}	
-							function rotateAnimation2(timestamp){	
-								if(degree <= 2)
-								{
-									degree++;
-									mc.style.transform="rotate("+degree+"deg)";
-									cancelAnimationFrame(ra2);
-								}
-								function rotateAnimation3(timestamp){
-									if(m2Top > 10)
-									{
-										mc.style.transform="rotate(30deg)";
-										ra3=requestAnimationFrame(rotateAnimation3);
-										animationToggle = 1;
-									}
-									if(animationToggle === 1)
-									{
-										function rotateAnimation4(timestamp){
-											if (mcTop <= 40){
-											
-												mcTop+=0.01773;
-												mcLeft+=0.0145;
-												mcHeight-=0.015;
-												mcWidth-=0.008;
-												mc.style.marginTop=mcTop+"%";
-												mc.style.marginLeft=mcLeft+"%";
-												mc.style.height=mcHeight+"%";
-												mc.style.width=mcWidth+"%";
-																							
-												m2Top2+=0.02199;
-												m2Left2+=0.018;
-												m2Height-=0.028;
-												m2Width-=0.001598;												
-												m2.style.marginTop=m2Top2+"%";
-												m2.style.marginLeft=m2Left2+"%";
-												m2.style.height=m2Height+"%";
-												m2.style.width=m2Width+"%";
-												
-												ra4=requestAnimationFrame(rotateAnimation4);
-												animationToggle = 2;
-											}
-											if(animationToggle === 2)
-											{	
-												function rotateAnimation5(timestamp){
-													if (mcTop > 40 && mcTop <= 65){
-														mcTop+=0.01;
-														m2Top2+=0.01;
-														mc.style.marginTop=mcTop+"%";
-														m2.style.marginTop=m2Top2+"%";
-														mc.style.zIndex="1";
-														m2.style.zIndex="1";
-														ra5=requestAnimationFrame(rotateAnimation5);
-														animationToggle = 3;
-													}
-
-													if (mcTop > 65){
-														m2.style.display="none"; 
-														mc.style.display="none"; 
-														cancelAnimationFrame(ra5);												
-														var toggleBone = 1;
-														if (toggleBone === 1){
-																imageLoop();
-														}															
-													}													
-												}		
-												ra5=requestAnimationFrame(rotateAnimation5);												
-											}
-										}
-										ra4=requestAnimationFrame(rotateAnimation4);
-									}									
-								}
-								ra3=requestAnimationFrame(rotateAnimation3);
-							}
-							ra2=requestAnimationFrame(rotateAnimation2);
-					}
-					ra=requestAnimationFrame(rotateAnimation);
+					document.getElementById("eye").style.display="block";
+					rotateHamster.style.display = "block";	
+					rotateHamster.style.transform = "rotate(30deg)";					
+					leftDragonToggle = 1;
 				}
+				if(leftDragonToggle === 1 && leftDragonMarginTop >= 10){	
+						cancelAnimationFrame(leftDragonCatch);
+						leftDragonMarginTop = 10;
+						leftDragonMarginLeft = 18;
+						leftDragonHeight = 68;
+						leftDragonWidth = 38;
+						
+						leftDragonDropDown=requestAnimationFrame(leftDragonDropDownAnimation);
+				}	
 			}
-			mmM2_3 = requestAnimationFrame(monsterMoveM2_3);	
+			leftDragonCatch = requestAnimationFrame(leftDragonCatching);
 		}
-		mmM2_2 = requestAnimationFrame(monsterMoveM2_2);
+		leftDragonSlow = requestAnimationFrame(leftDragonSlowDown);
+	}
+	
+	
+	function leftDragonDropDownAnimation(timestamp){
+
+		if (rotateHamsterMarginTop <30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterMarginLeft+=0.1625;
+			rotateHamsterHeight-=0.125;
+			rotateHamsterWidth-=0.05;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.marginLeft=rotateHamsterMarginLeft+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+			
+			leftDragonMarginTop+=0.225;
+			leftDragonMarginLeft+=0.4;
+			leftDragonHeight-=0.325;
+			leftDragonWidth-=0.325;
+			leftDragonZIndex -= 5;
+			
+			leftDragon.style.marginTop=leftDragonMarginTop+"%";
+			leftDragon.style.marginLeft=leftDragonMarginLeft+"%";
+			leftDragon.style.height=leftDragonHeight+"%";
+			leftDragon.style.width=leftDragonWidth+"%";
+			leftDragon.style.zIndex=leftDragonZIndex;
+			
+			leftDragonDropDown=requestAnimationFrame(leftDragonDropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			leftDragon.style.marginTop=rotateHamsterMarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				boneImage();
+				cancelAnimationFrame(leftDragonDropDown);
+			}			
+		}
+		leftDragonDropDown=requestAnimationFrame(leftDragonDropDownAnimation);
 	}
 	
 	var rightBearMarginTop = 27;
 	var rightBearMarginLeft = 125;
-	var rightBearMarginHeight = 50;
-	var rightBearMarginWidth = 23;
+	var rightBearHeight = 50;
+	var rightBearWidth = 23;
 	var rightBearZIndex = 19;
 	var rightBearToggle = 0;
 	
@@ -1246,7 +1227,6 @@ window.requestAnimFrame = (function(){
 				rightBear.style.marginTop = rightBearMarginTop + "%";
 				rightBear.style.marginLeft = rightBearMarginLeft + "%"; 
 				rightBearSlow = requestAnimationFrame(rightBearSlowDown);
-				console.log(rightBearMarginTop);
 			}
 			function rightBearCatching(timestamp){     
 				//drop down
@@ -1265,16 +1245,16 @@ window.requestAnimFrame = (function(){
 					document.getElementById("eye").style.display="block";
 					rotateHamster.style.display = "block";	
 					rotateHamster.style.transform = "rotate(-30deg)";					
-					animationToggle = 1;
+					rightBearToggle = 1;
 				}	
-				if(animationToggle === 1 && rightBearMarginTop >= 10){	
+				if(rightBearToggle === 1 && rightBearMarginTop >= 10){	
 						cancelAnimationFrame(rightBearCatch);
 						rightBearMarginTop = 14;
 						rightBearMarginLeft = 49.4;
-						rightBearMarginHeight = 50;
-						rightBearMarginWidth = 23;
+						rightBearHeight = 50;
+						rightBearWidth = 23;
 						
-						rightBearDropDown=requestAnimationFrame(rightBearDropDownAnimation);
+				rightBearDropDown=requestAnimationFrame(rightBearDropDownAnimation);
 				}				
 			}rightBearCatch = requestAnimationFrame(rightBearCatching);
 		}rightBearSlow = requestAnimationFrame(rightBearSlowDown);
@@ -1299,249 +1279,38 @@ window.requestAnimFrame = (function(){
 			rotateHamster.style.height=rotateHamsterHeight+"%";
 			rotateHamster.style.width=rotateHamsterWidth+"%";
 			rotateHamster.style.zIndex=rotateHamsterZIndex;
-			
-			rightBearMarginTop+=0.275;
-			rightBearMarginLeft-=0.05;
-			rightBearMarginHeight-=0.25;
-			rightBearMarginWidth-=0.125;
+		
+			rightBearMarginTop+=0.175;
+			rightBearMarginLeft-=0.1;
+			rightBearHeight-=0.25;
+			rightBearWidth-=0.075;
 			rightBearZIndex -= 5;
 			
 			rightBear.style.marginTop=rightBearMarginTop+"%";
 			rightBear.style.marginLeft=rightBearMarginLeft+"%";
-			rightBear.style.height=rightBearMarginHeight+"%";
-			rightBear.style.width=rightBearMarginWidth+"%";
+			rightBear.style.height=rightBearHeight+"%";
+			rightBear.style.width=rightBearWidth+"%";
 			rightBear.style.zIndex=rightBearZIndex;
 			
+			rightBearDropDown=requestAnimationFrame(rightBearDropDownAnimation);
 		}
 		
 		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
 		
-			rotateHamsterMarginTop+=0.25;			
+			rotateHamsterMarginTop+=0.25;
+			rightBearMarginTop+=0.25;
 			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
-			rightBear.style.marginTop=rotateHamsterMarginTop+"%";
+			rightBear.style.marginTop=rightBearMarginTop+"%";
 			
 			if (rotateHamsterMarginTop === 60)
 			{
-				<!-- fail.style.display = "block"; -->
-				<!-- hamster.style.display = "block"; -->
-				imageLoop();
+				boneImage();
+				cancelAnimationFrame(rightBearDropDown);
 			}			
 		}
 		rightBearDropDown=requestAnimationFrame(rightBearDropDownAnimation);
 	}
 
-	var sBone;
-	
-	function imageLoop(){
-		bone.style.display = "block"
-		var myIndex1=0;
-		loopImage();
-		function loopImage(){	
-		var i;
-		var b = document.getElementsByClassName("bone");
-			for (i = 0; i < b.length; i++) {b[i].style.display = "none";}
-			myIndex1++;
-			if (myIndex1 > b.length) {}    
-			b[myIndex1].style.display = "block";  
-			sBone=requestAnimFrame(loopImage);
-
-			if(myIndex1===8){
-				fail.style.display="block";
-				hamster.style.display="block";
-			}
-			
-			if(myIndex1===15){
-				cancelAnimationFrame(sBone);
-				bone.style.display = "none";				
-			}				
-		}
-	}	
-	
-	function imageLoop2(){
-		getPet.style.display = "block"
-		var myIndex2=0;
-		loopImage2();
-		function loopImage2(){	
-		var i;
-		var gPet = document.getElementsByClassName("getPet");
-			for (i = 0; i < gPet.length; i++) {gPet[i].style.display = "none";}
-			myIndex2++;
-			if (myIndex2 > gPet.length) {}    
-			gPet[myIndex2].style.display = "block";  
-			sPet=requestAnimationFrame(loopImage2);
-			if(myIndex2===20){
-				cancelAnimationFrame(sPet);		
-			}				
-		}
-	}	
-	
-	function touchstart(event){
-		event.preventDefault();
-		 var tobj = event.changedTouches[0]; 
-		 var data = event.target.id;
-		 
-		if (data === "m5" || data === "hand"){			
-			cursorImage.style.display = "block";
-			cursorImage.style.zIndex = "200";
-			m5.style.height="52%";
-			m5.style.width="52%";
-		}
-		
-		if(data==="m2"){
-			cursorImage.style.display = "block";
-			cursorImage.style.zIndex = "200";
-			m2.style.height="70%";
-			m2.style.width="40%";
-		}
-		
-		if(data==="rightBear"){
-			rightBear.style.height="52%";
-			rightBear.style.width="25%";
-		}
-		
-		if(data == "againButton" || data == "againFont" || data == "againFontEffect"){
-			window.location.reload();
-		 }
-	} 
-	
-	function touchmove(event){
-		event.preventDefault();
-		var data = event.target.id;
-		var tobj = event.changedTouches[0];
-		
-		if(data === "m5" || data === "hand"){
-			document.getElementById("title").style.display="none";	
-			document.getElementById("die").style.display="none";	
-			hand.style.display="none";	
-			if(mmTop > 8){
-				mmM2 = requestAnimationFrame(monsterMoveM2);
-			}			
-			 function remove(timestamp){
-				if ( mmTop >= -36.8){
-					mmTop-=5;
-					mmLeft+=5;
-					m5.style.marginTop = mmTop + "%";
-					m5.style.marginLeft = mmLeft + "%";		
-					requestAnimationFrame(remove);			
-				}	
-			}	
-				r=requestAnimationFrame(remove);
-		}
-		
-		if(data === "m2"){
-			if(m2Top > 6){
-				rightBearMove = requestAnimationFrame(rightBearAnimation);			
-			}	
-			function remove2(timestamp){
-				if ( m2Top >= -30){
-					m2Top-=5;
-					m2Left-=5;
-					m2.style.marginTop = m2Top + "%";
-					m2.style.marginLeft = m2Left + "%";		
-					r2=requestAnimationFrame(remove2);	
-				}
-			}	
-				r2=requestAnimationFrame(remove2);
-		}	
-		if(data === "rightBear"){
-			console.log(data);
-			if(rightBearMarginTop >0){
-				console.log("true")
-				console.log("true")
-				leftBearMove = requestAnimationFrame(leftBearAnimation);			
-			}	
-			function remove3(timestamp){
-				if ( rightBearMarginTop < 27){
-					rightBearMarginTop+=0.3;
-					rightBearMarginLeft+=5.4;
-					
-					
-					rightBear.style.marginTop = rightBearMarginTop + "%";
-					rightBear.style.marginLeft = rightBearMarginLeft + "%";		
-					r3=requestAnimationFrame(remove3);	
-				}
-			}	
-				r3=requestAnimationFrame(remove3);
-				<!-- cursorImage.style.display = "none";	 -->
-		}		
-	}
-	
-	function touchend(event){	
-		event.preventDefault();
-		var data = event.target.id;			
-		m5.style.height="50%";
-		m5.style.width="50%";			
-		m2.style.height="68%";
-		m2.style.width="38%";
-		rightBear.style.height="50%";
-		rightBear.style.width="23%";
-	}
-	
-	function mouseMove(event) {
-	 
-		event.dataTransfer.setData("Text", event.target.id);
-		var data = event.dataTransfer.getData("text");
-
-		if(data === "m5" || data === "hand"){
-			document.getElementById("title").style.display="none";	
-			document.getElementById("die").style.display="none";	
-			hand.style.display="none";	
-			if(mmTop > 8){
-				mmM2 = requestAnimationFrame(monsterMoveM2);
-			}			
-			 function remove(timestamp){
-				if ( mmTop >= -36.8){
-					mmTop-=5;
-					mmLeft+=5;
-					m5.style.marginTop = mmTop + "%";
-					m5.style.marginLeft = mmLeft + "%";		
-					requestAnimationFrame(remove);			
-				}	
-			}	
-				r=requestAnimationFrame(remove);
-				<!-- cursorImage.style.display = "none";		 -->
-		}
-		
-		if(data === "m2"){
-			if(m2Top > 6){
-				rightBearMove = requestAnimationFrame(rightBearAnimation);			
-			}	
-			function remove2(timestamp){
-				if ( m2Top >= -30){
-					m2Top-=5;
-					m2Left-=5;
-					m2.style.marginTop = m2Top + "%";
-					m2.style.marginLeft = m2Left + "%";		
-					r2=requestAnimationFrame(remove2);	
-				}
-			}	
-				r2=requestAnimationFrame(remove2);
-				<!-- cursorImage.style.display = "none";	 -->
-		}	
-		
-		if(data === "rightBear"){
-			console.log(data);
-			if(rightBearMarginTop >0){
-				console.log("true")
-				console.log("true")
-				leftBearMove = requestAnimationFrame(leftBearAnimation);			
-			}	
-			function remove3(timestamp){
-				if ( rightBearMarginTop < 27){
-					rightBearMarginTop+=0.3;
-					rightBearMarginLeft+=5.4;
-					
-					
-					rightBear.style.marginTop = rightBearMarginTop + "%";
-					rightBear.style.marginLeft = rightBearMarginLeft + "%";		
-					r3=requestAnimationFrame(remove3);	
-				}
-			}	
-				r3=requestAnimationFrame(remove3);
-				<!-- cursorImage.style.display = "none";	 -->
-		}	
-	}
-	
 	var leftBearMarginTop = 23;
 	var leftBearMarginLeft = -30;
 	var leftBearMarginHeight = 40;
@@ -1627,6 +1396,8 @@ window.requestAnimFrame = (function(){
 			leftBear.style.height=leftBearMarginHeight+"%";
 			leftBear.style.width=leftBearMarginWidth+"%";
 			leftBear.style.zIndex=leftBearZIndex;
+			
+			leftBearDropDown=requestAnimationFrame(leftBearDropDownAnimation);
 		}
 		
 		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
@@ -1637,12 +1408,217 @@ window.requestAnimFrame = (function(){
 			
 			if (rotateHamsterMarginTop === 60)
 			{
-				imageLoop();
+				boneImage();
 				cancelAnimationFrame(leftBearDropDown);
 			}			
 		}
 		leftBearDropDown=requestAnimationFrame(leftBearDropDownAnimation);
 	}
+	
+	var sBone;
+	
+	function boneImage(){
+		bone.style.display = "block"
+		var myIndex1=0;
+		sBone=requestAnimationFrame(loopImage);
+		function loopImage(timestamp){	
+		var i;
+		var b = document.getElementsByClassName("bone");
+			for (i = 0; i < b.length; i++) {b[i].style.display = "none";}
+			myIndex1++;
+			if (myIndex1 > b.length) {}    
+			b[myIndex1].style.display = "block";  
+			sBone=requestAnimationFrame(loopImage);
+
+			if(myIndex1===8){
+				fail.style.display="block";
+				hamster.style.display="block";
+			}
+			
+			if(myIndex1===15){
+				cancelAnimationFrame(sBone);
+				bone.style.display = "none";				
+			}				
+		}
+	}	
+	
+	function imageLoop2(){
+		getPet.style.display = "block"
+		var myIndex2=0;
+		loopImage2();
+		function loopImage2(){	
+		var i;
+		var gPet = document.getElementsByClassName("getPet");
+			for (i = 0; i < gPet.length; i++) {gPet[i].style.display = "none";}
+			myIndex2++;
+			if (myIndex2 > gPet.length) {}    
+			gPet[myIndex2].style.display = "block";  
+			sPet=requestAnimationFrame(loopImage2);
+			if(myIndex2===20){
+				cancelAnimationFrame(sPet);		
+			}				
+		}
+	}	
+	
+	function touchstart(event){
+		event.preventDefault();
+		 var tobj = event.changedTouches[0]; 
+		 var data = event.target.id;
+		 
+		if (data === "m5" || data === "hand"){
+			m5.style.height="52%";
+			m5.style.width="52%";
+		}
+		
+		if(data==="leftDragon"){
+			leftDragon.style.height="70%";
+			leftDragon.style.width="40%";
+		}
+		
+		if(data==="rightBear"){
+			rightBear.style.height="52%";
+			rightBear.style.width="25%";
+		}
+		
+		if(data == "againButton" || data == "againFont" || data == "againFontEffect"){
+			window.location.reload();
+		 }
+	} 
+	
+	function touchmove(event){
+		event.preventDefault();
+		var data = event.target.id;
+		var tobj = event.changedTouches[0];
+		
+		if(data === "m5" || data === "hand"){
+			document.getElementById("title").style.display="none";	
+			document.getElementById("die").style.display="none";	
+			hand.style.display="none";	
+			if(mmTop > 8){
+				leftDragonMove = requestAnimationFrame(leftDragonAnimation);
+			}			
+			 function remove(timestamp){
+				if ( mmTop >= -36.8){
+					mmTop-=5;
+					mmLeft+=5;
+					m5.style.marginTop = mmTop + "%";
+					m5.style.marginLeft = mmLeft + "%";		
+					requestAnimationFrame(remove);			
+				}	
+			}	
+				r=requestAnimationFrame(remove);
+		}
+		
+		if(data === "leftDragon"){
+			if(leftDragonMarginLeft > 0){
+				rightBearMove = requestAnimationFrame(rightBearAnimation);			
+			}	
+			function remove2(timestamp){
+				if ( leftDragonMarginLeft >= -30){
+					leftDragonMarginTop-=5;
+					leftDragonMarginLeft-=5;
+					leftDragon.style.marginTop = leftDragonMarginTop + "%";
+					leftDragon.style.marginLeft = leftDragonMarginLeft + "%";		
+					r2=requestAnimationFrame(remove2);	
+				}
+			}	
+				r2=requestAnimationFrame(remove2);
+		}	
+		
+		if(data === "rightBear"){
+			console.log(data);
+			if(rightBearMarginTop >0){
+				leftBearMove = requestAnimationFrame(leftBearAnimation);			
+			}	
+			function remove3(timestamp){
+				if ( rightBearMarginTop < 27){
+					rightBearMarginTop+=0.3;
+					rightBearMarginLeft+=5.4;
+					
+					
+					rightBear.style.marginTop = rightBearMarginTop + "%";
+					rightBear.style.marginLeft = rightBearMarginLeft + "%";		
+					r3=requestAnimationFrame(remove3);	
+				}
+			}	
+				r3=requestAnimationFrame(remove3);
+		}	
+	}
+	
+	function touchend(event){	
+		event.preventDefault();
+		var data = event.target.id;
+			
+		m5.style.height="50%";
+		m5.style.width="50%";
+		
+		leftDragon.style.height="68%";
+		leftDragon.style.width="38%";
+
+		rightBear.style.height="50%";
+		rightBear.style.width="23%";
+	}
+	
+	function mouseMove(event) {
+	 
+		event.dataTransfer.setData("Text", event.target.id);
+		var data = event.dataTransfer.getData("text");
+
+		if(data === "m5" || data === "hand"){
+			document.getElementById("title").style.display="none";	
+			document.getElementById("die").style.display="none";	
+			hand.style.display="none";	
+			if(mmTop > 8){
+				leftDragonMove = requestAnimationFrame(leftDragonAnimation);
+			}			
+			 function remove(timestamp){
+				if ( mmTop >= -36.8){
+					mmTop-=5;
+					mmLeft+=5;
+					m5.style.marginTop = mmTop + "%";
+					m5.style.marginLeft = mmLeft + "%";		
+					requestAnimationFrame(remove);			
+				}	
+			}	
+				r=requestAnimationFrame(remove);
+		}
+		
+		if(data === "leftDragon"){
+			if(leftDragonMarginLeft > 0){
+				rightBearMove = requestAnimationFrame(rightBearAnimation);			
+			}	
+			function remove2(timestamp){
+				if ( leftDragonMarginLeft >= -30){
+					leftDragonMarginTop-=5;
+					leftDragonMarginLeft-=5;
+					leftDragon.style.marginTop = leftDragonMarginTop + "%";
+					leftDragon.style.marginLeft = leftDragonMarginLeft + "%";		
+					r2=requestAnimationFrame(remove2);	
+				}
+			}	
+				r2=requestAnimationFrame(remove2);
+		}	
+		
+		if(data === "rightBear"){
+			console.log(data);
+			if(rightBearMarginTop >0){
+				leftBearMove = requestAnimationFrame(leftBearAnimation);			
+			}	
+			function remove3(timestamp){
+				if ( rightBearMarginTop < 27){
+					rightBearMarginTop+=0.3;
+					rightBearMarginLeft+=5.4;
+					
+					
+					rightBear.style.marginTop = rightBearMarginTop + "%";
+					rightBear.style.marginLeft = rightBearMarginLeft + "%";		
+					r3=requestAnimationFrame(remove3);	
+				}
+			}	
+				r3=requestAnimationFrame(remove3);
+		}	
+	}
+	
 	
 	var w = document.getElementById("gameContainer"),
     d = document,
@@ -1673,62 +1649,13 @@ window.requestAnimFrame = (function(){
 		var data = event.target.id;
 		console.log(data);
 		if (data === "m5" || data === "hand"){
-			
-			cursorImage.style.display = "block";
-			cursorImage.style.zIndex = "200";
-			<!-- scI = requestAnimationFrame(cursorEffect); -->
 			m5.style.height="52%";
 			m5.style.width="52%";
-			<!-- mx = event.clientX; -->
-			<!-- my = event.clientY; -->
-			<!-- m5.style.marginTop = (12.01-1) +'%' -->
-			<!-- var myIndex = -1; -->
-			<!-- var scI; -->
-			<!-- var fps = 14; -->
-				<!-- function cursorEffect(){ -->
-					<!-- var i; -->
-					<!-- var cI = document.getElementsByClassName("cI"); -->
-					<!-- setTimeout(function() { -->
-						<!-- for (i = 0; i < cI.length; i++)  -->
-						<!-- {cI[i].style.display = "none";  } -->
-						 <!-- myIndex++; -->
-						<!-- if (myIndex < cI.length) { }   -->
-						<!-- cursorImage.style.marginTop = (((y-(y-my))/y)*100)-25 + "%"; -->
-						<!-- cursorImage.style.marginLeft = ((x-(x-mx))/x*100)-5 + "%"; -->
-						<!-- cI[myIndex].style.display = "block";   -->
-						<!-- scI = requestAnimationFrame(cursorEffect); -->
-						<!-- if (myIndex === 5) {cancelAnimationFrame(scI);} -->
-					<!-- },1000/fps); -->
-				<!-- } -->
 		}
 		
-		if(data==="m2"){
-			cursorImage.style.display = "block";
-			cursorImage.style.zIndex = "200";
-			<!-- scI = requestAnimationFrame(cursorEffect); -->
-			m2.style.height="70%";
-			m2.style.width="40%";
-			<!-- mx = event.clientX; -->
-			<!-- my = event.clientY; -->
-			<!-- m2.style.marginTop = (8.01) +'%' -->
-			<!-- var myIndex = -1; -->
-			<!-- var scI; -->
-			<!-- var fps = 14; -->
-			<!-- function cursorEffect(){ -->
-				<!-- var i; -->
-				<!-- var cI = document.getElementsByClassName("cI"); -->
-				<!-- setTimeout(function() { -->
-					<!-- for (i = 0; i < cI.length; i++)  -->
-					<!-- {cI[i].style.display = "none";  } -->
-					 <!-- myIndex++; -->
-					<!-- if (myIndex < cI.length) { }   -->
-					<!-- cursorImage.style.marginTop = (((y-(y-my))/y)*100)-25 + "%"; -->
-					<!-- cursorImage.style.marginLeft = ((x-(x-mx))/x*100)-5 + "%"; -->
-					<!-- cI[myIndex].style.display = "block";   -->
-					<!-- scI = requestAnimationFrame(cursorEffect); -->
-					<!-- if (myIndex === 5) {cancelAnimationFrame(scI);} -->
-				<!-- },1000/fps); -->
-			<!-- } -->
+		if(data==="leftDragon"){
+			leftDragon.style.height="70%";
+			leftDragon.style.width="40%";
 		}
 		
 		if(data==="rightBear"){
@@ -1741,20 +1668,15 @@ window.requestAnimFrame = (function(){
 			
 			var data = event.target.id;
 			
-			<!-- cancelAnimationFrame(scI); -->
-			<!-- cursorImage.style.display="none"; -->
-			<!-- cursorImage.style.zIndex = "100"; -->
 			m5.style.height="50%";
 			m5.style.width="50%";
-			<!-- m5.style.marginTop = 12.01 +'%'; -->
 			
-			m2.style.height="68%";
-			m2.style.width="38%";
-			<!-- m2.style.marginTop = 9.01 +'%'; -->
+			leftDragon.style.height="68%";
+			leftDragon.style.width="38%";
 
 			rightBear.style.height="50%";
 			rightBear.style.width="23%";
-	
+			
 	}
 
   (function () {
