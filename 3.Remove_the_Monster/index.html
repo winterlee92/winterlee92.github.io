@@ -214,13 +214,13 @@
 	#rightDragon{
 		position:absolute;	
 		height: 68%;
-		width: 38%;
+		width: 33%;
+		margin-top: 3%;
+		margin-left: 100%;
 		display:none;
 		background-Repeat:no-repeat;
 		overflow:hidden;
 		background-Size: 100% 100%;
-		margin-top: 5%;
-		margin-left: 168%;
 		background-image: url(rightDragon.png);
 		z-index:199;
 	}
@@ -796,7 +796,7 @@
 		<div id="rightBear" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
 		<div id="leftBear" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
 		<div id="leftDragon" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>		
-		<div id="rightDragon" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>	
+		<div id="rightDragon" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>		
 		<div id="hand" draggable="true" ondragstart="mouseMove(event)"  onmouseup="mouseUp(event)"></div>
 		<div id="m5" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
 		<div id="m6"></div>
@@ -1429,6 +1429,104 @@ window.requestAnimFrame = (function(){
 		leftBearDropDown=requestAnimationFrame(leftBearDropDownAnimation);
 	}
 	
+	
+	var rightDragonMarginTop = 3;
+	var rightDragonMarginLeft = 100;
+	var rightDragonHeight = 68;
+	var rightDragonWidth = 33;
+	var rightDragonZIndex = 199;
+	var rightDragonToggle = 0;
+	
+	function rightDragonAnimation(timestamp){
+		rightDragon.style.display = "block";
+		if ( rightDragonMarginTop < 5){
+			rightDragonMarginTop+=0.2;
+			rightDragonMarginLeft-=3.2;
+			rightDragon.style.marginTop = rightDragonMarginTop + "%";
+			rightDragon.style.marginLeft = rightDragonMarginLeft + "%"; 
+			rightDragonMove = requestAnimationFrame(rightDragonAnimation);			
+		}		
+			function rightDragonSlowDown(timestamp){
+				//slow down
+				if(rightDragonMarginTop >= 5 && rightDragonMarginTop < 8){
+					cancelAnimationFrame(rightDragonMove);
+					rightDragonMarginTop+=0.01;
+					rightDragonMarginLeft-=0.02666666666;
+					rightDragon.style.marginTop = rightDragonMarginTop + "%";
+					rightDragon.style.marginLeft = rightDragonMarginLeft + "%"; 
+					rightDragonSlow = requestAnimationFrame(rightDragonSlowDown);
+				}
+				function rightDragonCatching(timestamp){     
+				//catch 
+					if(rightDragonMarginLeft < 61 && rightDragonMarginLeft >44){
+						cancelAnimationFrame(rightDragonSlow);
+						rightDragonMarginLeft-=1.6;
+						rightDragon.style.marginLeft = rightDragonMarginLeft + "%"; 
+						rightDragonCatch = requestAnimationFrame(rightDragonCatching);
+					}
+					if(rightDragonMarginLeft <= 44){
+						mc.style.display = "none";					
+						document.getElementById("timeDisplay").style.display="none";	
+						document.getElementById("eye").style.display="block";
+						rotateHamster.style.display = "block";	
+						rotateHamster.style.transform = "rotate(-30deg)";					
+						rightDragonToggle = 1;
+					}	
+					if(rightDragonToggle === 1 && rightDragonMarginLeft <= 44){	
+						cancelAnimationFrame(rightDragonCatch);
+						rightDragonMarginTop = 8;
+						rightDragonMarginLeft = 44;
+						rightDragonHeight = 68;
+						rightDragonWidth = 33;
+						
+						rightDragonDropDown=requestAnimationFrame(rightDragonDropDownAnimation);
+					}	
+				}rightDragonCatch = requestAnimationFrame(rightDragonCatching);
+			}rightDragonSlow = requestAnimationFrame(rightDragonSlowDown);
+	}
+	function rightDragonDropDownAnimation(timestamp){
+		
+		if (rotateHamsterMarginTop <30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterHeight-=0.125;
+			rotateHamsterWidth-=0.05;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+			
+			rightDragonMarginTop+=0.3;
+			<!-- rightDragonMarginLeft-=2.1; -->
+			rightDragonHeight-=0.5;
+			rightDragonWidth-=0.25;
+			rightDragonZIndex -= 5;
+			
+			rightDragon.style.marginTop=rightDragonMarginTop+"%";
+			<!-- rightDragon.style.marginLeft=rightDragonMarginLeft+"%"; -->
+			rightDragon.style.height=rightDragonHeight+"%";
+			rightDragon.style.width=rightDragonWidth+"%";
+			rightDragon.style.zIndex=rightDragonZIndex;
+			
+			rightDragonDropDown=requestAnimationFrame(rightDragonDropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rightDragon.style.marginTop=rotateHamsterMarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				boneImage();
+				cancelAnimationFrame(rightDragonDropDown);
+			}			
+		}rightDragonDropDown=requestAnimationFrame(rightDragonDropDownAnimation);
+	}
+	
 	var sBone;
 	
 	function boneImage(){
@@ -1492,6 +1590,11 @@ window.requestAnimFrame = (function(){
 		if(data==="rightBear"){
 			rightBear.style.height="52%";
 			rightBear.style.width="25%";
+		}
+		
+		if(data==="rightDragon"){		
+			rightDragon.style.height="70%";
+			rightDragon.style.width="35%";
 		}
 		
 		if(data == "againButton" || data == "againFont" || data == "againFontEffect"){
@@ -1559,8 +1662,8 @@ window.requestAnimFrame = (function(){
 		}	
 		
 		if(data === "leftBear"){
-			if(leftBearMarginTop >0){
-				<!-- rightDragonMove = requestAnimationFrame(rightDragonAnimation); -->
+			if(leftBearMarginTop > 18){
+				rightDragonMove = requestAnimationFrame(rightDragonAnimation);
 			}	
 			function remove4(timestamp){
 				if ( leftBearMarginTop < 23){
@@ -1589,6 +1692,9 @@ window.requestAnimFrame = (function(){
 
 		rightBear.style.height="50%";
 		rightBear.style.width="23%";
+		
+		rightDragon.style.height="68%";
+		rightDragon.style.width="33%";
 	}
 	
 	function mouseMove(event) {
@@ -1649,8 +1755,8 @@ window.requestAnimFrame = (function(){
 		}		
 		
 		if(data === "leftBear"){
-			if(leftBearMarginTop >0){
-				<!-- rightDragonMove = requestAnimationFrame(rightDragonAnimation); -->
+			if(leftBearMarginTop > 18){
+				rightDragonMove = requestAnimationFrame(rightDragonAnimation);
 			}	
 			function remove4(timestamp){
 				if ( leftBearMarginTop < 23){
@@ -1714,6 +1820,11 @@ window.requestAnimFrame = (function(){
 			leftBear.style.width="27%";
 		}
 		
+		if(data==="rightDragon"){		
+			rightDragon.style.height="70%";
+			rightDragon.style.width="35%";
+		}
+		
 	}
 
 	function mouseUp(event) {
@@ -1731,6 +1842,9 @@ window.requestAnimFrame = (function(){
 			
 			leftBear.style.height="40%";
 			leftBear.style.width="25%";
+			
+			rightDragon.style.height="68%";
+			rightDragon.style.width="33%";
 			
 	}
 
