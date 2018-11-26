@@ -958,12 +958,12 @@ window.requestAnimFrame = (function(){
 	
 	var lifeTimeWidth = 13.3;
 	var t;
-	function timer(timestamp){
+	function timer(){
 		if (lifeTimeWidth >= 0){
 		lifeTimeWidth -= 0.0133;
 		
 		lifeTime.style.width = lifeTimeWidth + "%";
-		t = requestAnimationFrame(timer);
+		t = setTimeout(timer,1000/14);
 		}		
 	}
 	
@@ -1380,7 +1380,7 @@ window.requestAnimFrame = (function(){
 					rotateHamster.style.transform = "rotate(30deg)";					
 					leftBearToggle = 1;
 				}
-				if(leftBearToggle === 1 && leftBearMarginTop <= 16){	
+				if(leftBearToggle === 1 && leftBearMarginTop > 14){	
 						cancelAnimationFrame(leftBearCatch);
 						leftBearMarginTop = 16;
 						leftBearMarginLeft = 25;
@@ -1441,7 +1441,6 @@ window.requestAnimFrame = (function(){
 		leftBearDropDown=requestAnimationFrame(leftBearDropDownAnimation);
 	}
 	
-	
 	var rightDragonMarginTop = 3;
 	var rightDragonMarginLeft = 100;
 	var rightDragonHeight = 68;
@@ -1494,7 +1493,8 @@ window.requestAnimFrame = (function(){
 						rightDragonDropDown=requestAnimationFrame(rightDragonDropDownAnimation);
 					}	
 				}rightDragonCatch = requestAnimationFrame(rightDragonCatching);
-			}rightDragonSlow = requestAnimationFrame(rightDragonSlowDown);
+			}
+		rightDragonSlow = requestAnimationFrame(rightDragonSlowDown);
 	}
 	function rightDragonDropDownAnimation(timestamp){
 		
@@ -1675,11 +1675,12 @@ window.requestAnimFrame = (function(){
 		}	
 		
 		if(data === "leftBear"){
+			
 			if(leftBearMarginTop > 18){
 				rightDragonMove = requestAnimationFrame(rightDragonAnimation);
 			}	
 			function remove4(timestamp){
-				if ( leftBearMarginTop < 23){
+				if ( leftBearMarginTop > 18 && leftBearMarginTop < 23){
 					leftBearMarginTop+=0.1;
 					leftBearMarginLeft-=5;
 										
@@ -1689,6 +1690,28 @@ window.requestAnimFrame = (function(){
 				}
 			}	
 				r4=requestAnimationFrame(remove4);
+		}
+		if(data === "rightDragon"){
+				if(rightDragonMarginLeft < 68){
+					leftDragonMarginTop = -6;	
+					leftDragonMarginLeft = -38;
+					leftDragonHeight = 68;
+					leftDragonWidth = 38;
+					leftDragonZIndex = 199;
+					leftDragonToggle = 0;
+					leftDragon.style.display = "block";
+					leftDragonMove = requestAnimationFrame(leftDragonAnimation);
+				}	
+			function remove5(timestamp){
+				if (rightDragonMarginLeft < 68 ){
+					rightDragonMarginTop-=0.2;
+					rightDragonMarginLeft+=50;				
+					rightDragon.style.marginTop = rightDragonMarginTop + "%";
+					rightDragon.style.marginLeft = rightDragonMarginLeft + "%";		
+					r5=requestAnimationFrame(remove5);	
+				}
+			}	
+				r5=requestAnimationFrame(remove5);
 		}
 		
 	}
@@ -1718,7 +1741,7 @@ window.requestAnimFrame = (function(){
 		if(data === "m5" || data === "hand"){
 			document.getElementById("title").style.display="none";	
 			document.getElementById("die").style.display="none";	
-			t = requestAnimationFrame(timer);
+			timer();
 			hand.style.display="none";	
 			if(mmTop > 8){
 				leftDragonMove = requestAnimationFrame(leftDragonAnimation);
@@ -1769,11 +1792,12 @@ window.requestAnimFrame = (function(){
 		}		
 		
 		if(data === "leftBear"){
+			
 			if(leftBearMarginTop > 18){
 				rightDragonMove = requestAnimationFrame(rightDragonAnimation);
 			}	
 			function remove4(timestamp){
-				if ( leftBearMarginTop < 23){
+				if ( leftBearMarginTop > 18 && leftBearMarginTop < 23){
 					leftBearMarginTop+=0.1;
 					leftBearMarginLeft-=5;
 										
@@ -1783,6 +1807,29 @@ window.requestAnimFrame = (function(){
 				}
 			}	
 				r4=requestAnimationFrame(remove4);
+		}
+		
+			if(data === "rightDragon"){
+				if(rightDragonMarginLeft < 68){
+					leftDragonMarginTop = -6;	
+					leftDragonMarginLeft = -38;
+					leftDragonHeight = 68;
+					leftDragonWidth = 38;
+					leftDragonZIndex = 199;
+					leftDragonToggle = 0;
+					leftDragon.style.display = "block";
+					leftDragonMove = requestAnimationFrame(leftDragonAnimation);
+				}	
+			function remove5(timestamp){
+				if (rightDragonMarginLeft < 68 ){
+					rightDragonMarginTop-=0.2;
+					rightDragonMarginLeft+=50;				
+					rightDragon.style.marginTop = rightDragonMarginTop + "%";
+					rightDragon.style.marginLeft = rightDragonMarginLeft + "%";		
+					r5=requestAnimationFrame(remove5);	
+				}
+			}	
+				r5=requestAnimationFrame(remove5);
 		}
 	}
 	
