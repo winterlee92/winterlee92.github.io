@@ -1461,8 +1461,8 @@ window.requestAnimFrame = (function(){
 				//slow down
 				if(rightDragonMarginTop >= 5 && rightDragonMarginTop < 8){
 					cancelAnimationFrame(rightDragonMove);
-					rightDragonMarginTop+=0.01;
-					rightDragonMarginLeft-=0.02666666666;
+					rightDragonMarginTop+=0.005;
+					rightDragonMarginLeft-=0.01666666666;
 					rightDragon.style.marginTop = rightDragonMarginTop + "%";
 					rightDragon.style.marginLeft = rightDragonMarginLeft + "%"; 
 					rightDragonSlow = requestAnimationFrame(rightDragonSlowDown);
@@ -1492,7 +1492,8 @@ window.requestAnimFrame = (function(){
 						
 						rightDragonDropDown=requestAnimationFrame(rightDragonDropDownAnimation);
 					}	
-				}rightDragonCatch = requestAnimationFrame(rightDragonCatching);
+				}
+				rightDragonCatch = requestAnimationFrame(rightDragonCatching);
 			}
 		rightDragonSlow = requestAnimationFrame(rightDragonSlowDown);
 	}
