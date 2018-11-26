@@ -167,7 +167,7 @@
 		display:none;
 	}
 	
-	#rightBear{
+	#rightBear,#rightBear2,#rightBear3,#rightBear4{
 		position:absolute;	
 		height:50%;
 		width:23%;
@@ -181,7 +181,7 @@
 		z-index:199;
 	}
 	
-	#leftBear{
+	#leftBear,#leftBear2,#leftBear3,#leftBear4{
 		position:absolute;	
 		height:40%;
 		width:25%;
@@ -196,7 +196,7 @@
 		display:none;
 	}
 	
-	#leftDragon{
+	#leftDragon,#leftDragon2,#leftDragon3,#leftDragon4{
 		position:absolute;	
 		height: 68%;
 		width: 38%;
@@ -211,7 +211,7 @@
 		display:none;
 	}
 	
-	#rightDragon{
+	#rightDragon,#rightDragon2{
 		position:absolute;	
 		height: 68%;
 		width: 33%;
@@ -238,6 +238,21 @@
 		background-image: url(rightWolf.png);
 		z-index:199;
 	}
+	
+	#rightWolf2,#rightWolf3{
+		position:absolute;	
+		height:50%;
+		width:50%;
+		display:none;
+		background-Repeat:no-repeat;
+		overflow:hidden;
+		background-Size: 100% 100%;
+		margin-top: 6%;
+		margin-left: 56%;
+		background-image: url(rightWolf.png);
+		z-index:199;
+	}
+	
 
 	<!-- #m6{ -->
 		<!-- background-Size: 45% 58%; -->
@@ -575,17 +590,17 @@
 		opacity:0;
 		z-index:1;
 		
-		-webkit-animation-name: fontBg;
-		-webkit-animation-duration: 1s;		
-		-webkit-animation-delay:1s;
-		-webkit-animation-iteration-count: 1;
-		-webkit-animation-fill-mode:forwards;
+		<!-- -webkit-animation-name: fontBg; -->
+		<!-- -webkit-animation-duration: 1s;		 -->
+		<!-- -webkit-animation-delay:1s; -->
+		<!-- -webkit-animation-iteration-count: 1; -->
+		<!-- -webkit-animation-fill-mode:forwards; -->
 		
-		animation-name: fontBg;
-		animation-duration: 1s;
-		animation-delay:1s;
-		animation-iteration-count: 1;
-		animation-fill-mode: forwards;
+		<!-- animation-name: fontBg; -->
+		<!-- animation-duration: 1s; -->
+		<!-- animation-delay:1s; -->
+		<!-- animation-iteration-count: 1; -->
+		<!-- animation-fill-mode: forwards; -->
 	}
 	
 	@-webkit-keyframes fontBg {
@@ -679,85 +694,9 @@
 		height: 17%;
 		width: 36%;
 		margin: 41% 32%;
-		background-image: url(againButton.png);
-		background-size: 100% 100%;
-		background-Repeat: no-repeat;
-		opacity:0;
+		opacity:1;
 		z-index:4;
-		
-		-webkit-animation-name: againButton;
-		-webkit-animation-duration: 5s;	
-		-webkit-animation-delay:3s;
-		-webkit-animation-iteration-count: 1;
-		-webkit-animation-fill-mode:forwards;
-				
-		animation-name: againButton;
-		animation-duration: 5s;
-		animation-delay:3s;
-		animation-iteration-count: 1;
-		animation-fill-mode: forwards;
-	}
-	
-	@-webkit-keyframes againButton {
-		30%{ 
-			opacity: 0.8;
-			
-		}
-		100%{
-			opacity: 1;
-		}
-	}		
-	@keyframes againButton {
-		30%{ 
-			opacity: 0.8;
-			
-		}
-		100%{
-			opacity: 1;
-		}
-	}
-	
-	#againFont{
-		position: absolute;
-		height: 10%;
-		width: 25%;
-		margin: 43% 37.5%;
-		background-image: url(againFont.png);
-		background-size: 100% 100%;
-		background-Repeat: no-repeat;
-		opacity:0;
-		z-index:5;
-		
-		-webkit-animation-name: againFont;		
-		-webkit-animation-delay:4s;
-		-webkit-animation-duration: 5s;	
-		-webkit-animation-iteration-count: 1;
-		-webkit-animation-fill-mode:forwards;
-		
-		animation-name: againFont;
-		animation-delay:4s;
-		animation-duration: 5s;
-		animation-iteration-count: 1;
-		animation-fill-mode: forwards;
-	}
-	
-	@-webkit-keyframes againFont {
-		30%{ 
-			opacity: 0.8;
-			
-		}
-		100%{
-			opacity: 1;
-		}
-	}		
-	@keyframes againFont {
-		30%{ 
-			opacity: 0.8;
-			
-		}
-		100%{
-			opacity: 1;
-		}
+		display:none;
 	}
 	
 	#win{
@@ -775,6 +714,12 @@
 		width:100%;
 	}
 	
+	.againButton{
+		position:absolute;
+		height:100%;
+		width:100%;
+		display:none;
+	}
 </style>
 </head>
 <body onContextMenu="return false;">
@@ -800,6 +745,22 @@
 		<div id="rightDragon" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>		
 		<div id="hand" draggable="true" ondragstart="mouseMove(event)"  onmouseup="mouseUp(event)"></div>
 		<div id="m5" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
+		<div id="leftDragon2" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>				
+		<div id="rightWolf2" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
+		<div id="leftBear2" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
+		<div id="rightBear2" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
+		<div id="leftDragon3" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>				
+		<div id="leftBear3" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
+		<div id="rightWolf3" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>	
+		<div id="leftDragon4" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>		
+		
+		<div id="rightBear3" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>	
+		<div id="leftWolf" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
+		<div id="leftBear4" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
+		<div id="rightDragon4" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>		
+		<div id="rightBear4" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
+		<div id="leftWolf2" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
+		
 		<div id="m6"></div>
 		<div id="bone"></div>
 		<div id="fail">
@@ -872,11 +833,26 @@ window.requestAnimFrame = (function(){
 	var lifeTime = document.getElementById("lifeTime");
 	var getPet = document.getElementById("win");
 	var bone = document.getElementById("bone");
-	
+	var againButton = document.getElementById("againButton");
 	var leftDragon = document.getElementById("leftDragon");
 	var rightBear = document.getElementById("rightBear");
 	var leftBear = document.getElementById("leftBear");
-	var rightDragon = document.getElementById("rightDragon");
+	var rightDragon = document.getElementById("rightDragon");	
+	var rightWolf2 = document.getElementById("rightWolf2");
+	var leftBear2 = document.getElementById("leftBear2");
+	var rightBear2 = document.getElementById("rightBear2");
+	var leftDragon2 = document.getElementById("leftDragon2");
+	var leftDragon3 = document.getElementById("leftDragon3");	
+	var rightWolf3 = document.getElementById("rightWolf3");
+	var leftBear3 = document.getElementById("leftBear3");	
+	var leftDragon4 = document.getElementById("leftDragon4");
+	
+	var leftWolf = document.getElementById("leftWolf");
+	var rightBear3 = document.getElementById("rightBear3");
+	var rightDragon2 = document.getElementById("rightDragon2");
+	var rightBear4 = document.getElementById("rightBear4");
+	var leftBear4 = document.getElementById("leftBear4");
+	var leftWolf2 = document.getElementById("leftWolf2");
 	
 	var rotateHamster = document.getElementById("rotateHamster");
 	bone.style.display="none";
@@ -890,6 +866,23 @@ window.requestAnimFrame = (function(){
 	leftBear.addEventListener('mousedown', mouseDown);
 	rightDragon.addEventListener('mouseup', mouseUp);
 	rightDragon.addEventListener('mousedown', mouseDown);
+	leftDragon2.addEventListener('mousedown', mouseDown);
+	leftDragon2.addEventListener('mouseup', mouseUp);
+	rightWolf2.addEventListener('mousedown', mouseDown);
+	rightWolf2.addEventListener('mouseup', mouseUp);
+	leftBear2.addEventListener('mouseup', mouseUp);
+	leftBear2.addEventListener('mousedown', mouseDown);
+	rightBear2.addEventListener('mouseup', mouseUp);
+	rightBear2.addEventListener('mousedown', mouseDown);
+	
+	leftBear3.addEventListener('mouseup', mouseUp);
+	leftBear3.addEventListener('mousedown', mouseDown);
+	rightWolf3.addEventListener('mousedown', mouseDown);
+	rightWolf3.addEventListener('mouseup', mouseUp);
+	
+	leftDragon4.addEventListener('mousedown', mouseDown);
+	leftDragon4.addEventListener('mouseup', mouseUp);
+	
 	hand.addEventListener('mousedown', mouseDown);
 	hand.addEventListener('mouseup', mouseUp);
 	cursorImage.addEventListener('mousedown', mouseDown);
@@ -953,6 +946,32 @@ window.requestAnimFrame = (function(){
 				getPet.appendChild(myImg);
 			}
 		}		
+		
+	var againButtonArray =['againButton.png',
+	'againButton2.png',
+	'againButton3.png',
+	'againButton4.png',
+	'againButton5.png',
+	'againButton6.png',
+	'againButton7.png',
+	'againButton8.png',
+	'againButton9.png',
+	'againButton10.png',
+	'againButton11.png',
+	'againButton12.png'];	
+	
+		for(i=0; i<againButtonArray.length; i++)
+		{		
+			if(i <againButtonArray.length)
+			{		
+				var myImg = document.createElement("IMG");
+				myImg.setAttribute("src", againButtonArray[i]);	
+				myImg.setAttribute("alt","againButton"+i);
+				myImg.setAttribute("class","againButton");
+				againButton.appendChild(myImg);
+			}
+		}	
+		
 	}
 	createImage();
 	
@@ -1003,7 +1022,7 @@ window.requestAnimFrame = (function(){
 			shakingToggle = 1;		
 		}shaking = requestAnimationFrame(shakingAnimation);
 	}
-	shaking = requestAnimationFrame(shakingAnimation);
+	<!-- shaking = requestAnimationFrame(shakingAnimation); -->
 		
 	function monsterMove(timestamp){
 		if ( mmTop < 8){
@@ -1540,28 +1559,1203 @@ window.requestAnimFrame = (function(){
 		}rightDragonDropDown=requestAnimationFrame(rightDragonDropDownAnimation);
 	}
 	
+		var leftDragon2MarginTop = -6;	
+		var leftDragon2MarginLeft = -38;
+		var leftDragon2Height = 68;
+		var leftDragon2Width = 38;
+		var leftDragon2ZIndex = 199;
+		var leftDragon2Toggle = 0;
+	
+	function leftDragon2Animation(timestamp){	
+		 document.getElementById("leftDragon2").style.display = "block";	
+		//move down
+		if ( leftDragon2MarginTop < 5){
+			leftDragon2MarginTop+=1.1
+			leftDragon2MarginLeft+=4;
+			leftDragon2.style.marginTop = leftDragon2MarginTop + "%";
+			leftDragon2.style.marginLeft = leftDragon2MarginLeft + "%"; 
+			leftDragon2Move = requestAnimationFrame(leftDragon2Animation);			
+		}			
+		function leftDragon2SlowDown(timestamp){
+		//slow down
+		if(leftDragon2MarginTop >= 4 && leftDragon2MarginTop <= 7){
+				cancelAnimationFrame(leftDragon2Move);
+				leftDragon2MarginTop+=0.01;
+				leftDragon2MarginLeft+=0.03333333333;
+				leftDragon2.style.marginTop = leftDragon2MarginTop + "%";
+				leftDragon2.style.marginLeft = leftDragon2MarginLeft + "%"; 
+				leftDragon2Slow = requestAnimationFrame(leftDragon2SlowDown);
+			}			
+			function leftDragon2Catching(timestamp){     
+				//catch
+				if(leftDragon2MarginTop >= 7 && leftDragon2MarginTop < 10){
+					cancelAnimationFrame(leftDragon2Slow);
+					leftDragon2MarginTop+=0.3;
+					leftDragon2MarginLeft+=0.8;
+					leftDragon2.style.marginTop = leftDragon2MarginTop + "%";
+					leftDragon2.style.marginLeft = leftDragon2MarginLeft + "%"; 
+					leftDragon2Catch = requestAnimationFrame(leftDragon2Catching);
+					}
+				if(leftDragon2MarginTop >= 10){	
+					mc.style.display = "none";					
+					document.getElementById("timeDisplay").style.display="none";	
+					document.getElementById("eye").style.display="block";
+					rotateHamster.style.display = "block";	
+					rotateHamster.style.transform = "rotate(30deg)";					
+					leftDragon2Toggle = 1;
+				}
+				if(leftDragon2Toggle === 1 && leftDragon2MarginTop >= 10){	
+						cancelAnimationFrame(leftDragon2Catch);
+						leftDragon2MarginTop = 10;
+						leftDragon2MarginLeft = 18;
+						leftDragon2Height = 68;
+						leftDragon2Width = 38;
+						
+						leftDragon2DropDown=requestAnimationFrame(leftDragon2DropDownAnimation);
+				}	
+			}
+			leftDragon2Catch = requestAnimationFrame(leftDragon2Catching);
+		}
+		leftDragon2Slow = requestAnimationFrame(leftDragon2SlowDown);
+	}
+	
+	
+	function leftDragon2DropDownAnimation(timestamp){
+
+		if (rotateHamsterMarginTop <30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterMarginLeft+=0.1625;
+			rotateHamsterHeight-=0.125;
+			rotateHamsterWidth-=0.05;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.marginLeft=rotateHamsterMarginLeft+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+			
+			leftDragon2MarginTop+=0.225;
+			leftDragon2MarginLeft+=0.4;
+			leftDragon2Height-=0.325;
+			leftDragon2Width-=0.325;
+			leftDragon2ZIndex -= 5;
+			
+			leftDragon2.style.marginTop=leftDragon2MarginTop+"%";
+			leftDragon2.style.marginLeft=leftDragon2MarginLeft+"%";
+			leftDragon2.style.height=leftDragon2Height+"%";
+			leftDragon2.style.width=leftDragon2Width+"%";
+			leftDragon2.style.zIndex=leftDragon2ZIndex;
+			
+			leftDragon2DropDown=requestAnimationFrame(leftDragon2DropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			leftDragon2.style.marginTop=rotateHamsterMarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				boneImage();
+				cancelAnimationFrame(leftDragon2DropDown);
+			}			
+		}
+		leftDragon2DropDown=requestAnimationFrame(leftDragon2DropDownAnimation);
+	}
+	
+	var rightWolf2MarginTop = -32 ;
+	var rightWolf2MarginLeft = 100;
+	var rightWolf2Height = 50;
+	var rightWolf2Width = 50;
+	var rightWolf2ZIndex = 199;
+	var rightWolf2Toggle = 0;
+	
+	function rightWolf2Animation(timestamp){
+		 rightWolf2.style.display = "block";	
+		if ( rightWolf2MarginTop < 8){
+			rightWolf2MarginTop+=2;
+			rightWolf2MarginLeft-=2;
+			rightWolf2.style.marginTop = rightWolf2MarginTop + "%";
+			rightWolf2.style.marginLeft = rightWolf2MarginLeft + "%"; 
+			rightWolf2Move = requestAnimationFrame(rightWolf2Animation);
+		}	
+		function rightWolf2SlowDown(timestamp){
+			if(rightWolf2MarginTop >= 8 && rightWolf2MarginTop <=10)
+			{
+				rightWolf2MarginTop+=0.01;
+				rightWolf2MarginLeft-=0.02;
+				rightWolf2.style.marginTop = rightWolf2MarginTop + "%";
+				rightWolf2.style.marginLeft = rightWolf2MarginLeft + "%"; 
+				rightWolf2Slow = requestAnimationFrame(rightWolf2SlowDown);
+			}
+			function rightWolf2Catching(timestamp){     
+				//drop down
+				if(rightWolf2MarginLeft < 56 && rightWolf2MarginLeft >=40){
+					cancelAnimationFrame(rightWolf2Slow);
+					<!-- rightWolf2MarginTop-=0.05; -->
+					rightWolf2MarginLeft-=1.6;
+					<!-- rightWolf2.style.marginTop = rightWolf2MarginTop + "%"; -->
+					rightWolf2.style.marginLeft = rightWolf2MarginLeft + "%"; 
+					rightWolf2Catch = requestAnimationFrame(rightWolf2Catching);
+				}
+				if(rightWolf2MarginLeft <= 40){		
+					mc.style.display = "none";					
+					document.getElementById("timeDisplay").style.display="none";	
+					document.getElementById("eye").style.display="block";
+					rotateHamster.style.display = "block";	
+					rotateHamster.style.transform = "rotate(30deg)";					
+					rightWolf2Toggle = 1;
+				}
+				if(rightWolf2Toggle === 1 && rightWolf2MarginLeft <= 40){	
+						cancelAnimationFrame(rightWolf2Catch);
+						rightWolf2MarginTop = 10;
+						rightWolf2MarginLeft = 40;
+						rightWolf2MarginHeight = 50;
+						rightWolf2MarginWidth = 50;
+						
+						rightWolf2DropDown=requestAnimationFrame(rightWolf2DropDownAnimation);
+				}		
+			}
+			rightWolf2Catch = requestAnimationFrame(rightWolf2Catching);
+		 }
+		 rightWolf2Slow = requestAnimationFrame(rightWolf2SlowDown);
+	 }
+	
+	function rightWolf2DropDownAnimation(timestamp){
+	
+		if (rotateHamsterMarginTop <30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterHeight-=0.125;
+			rotateHamsterWidth-=0.05;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+			
+			rightWolf2MarginTop+=0.25;
+			<!-- rightWolf2MarginLeft-=2.1; -->
+			rightWolf2MarginHeight-=0.25;
+			rightWolf2MarginWidth-=0.25;
+			rightWolf2ZIndex -= 5;
+			
+			rightWolf2.style.marginTop=rightWolf2MarginTop+"%";
+			<!-- rightWolf2.style.marginLeft=rightWolf2MarginLeft+"%"; -->
+			rightWolf2.style.height=rightWolf2MarginHeight+"%";
+			rightWolf2.style.width=rightWolf2MarginWidth+"%";
+			rightWolf2.style.zIndex=rightWolf2ZIndex;
+			
+			rightWolf2DropDown=requestAnimationFrame(rightWolf2DropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rightWolf2.style.marginTop=rotateHamsterMarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				boneImage();
+				cancelAnimationFrame(rightWolf2DropDown);
+			}			
+		}
+		rightWolf2DropDown=requestAnimationFrame(rightWolf2DropDownAnimation);
+	}
+	
+	var leftBear2MarginTop = 23;
+	var leftBear2MarginLeft = -30;
+	var leftBear2MarginHeight = 40;
+	var leftBear2MarginWidth = 25;
+	var leftBear2ZIndex = 199;
+	var leftBear2Toggle = 0;
+	
+	function leftBear2Animation(timestamp){
+		leftBear2.style.display = "block";
+		if ( leftBear2MarginTop >= 21){
+			leftBear2MarginTop-=0.1;
+			leftBear2MarginLeft+=1.75;
+			leftBear2.style.marginTop = leftBear2MarginTop + "%";
+			leftBear2.style.marginLeft = leftBear2MarginLeft + "%"; 
+			leftBear2Move = requestAnimationFrame(leftBear2Animation);			
+		}	
+		function leftBear2SlowDown(timestamp){
+			//slow down
+			if(leftBear2MarginTop <= 21 && leftBear2MarginTop >=18){
+				cancelAnimationFrame(leftBear2Move);
+				leftBear2MarginTop-=0.0075;
+				leftBear2MarginLeft+=0.0175;
+				leftBear2.style.marginTop = leftBear2MarginTop + "%";
+				leftBear2.style.marginLeft = leftBear2MarginLeft + "%"; 
+				leftBear2Slow = requestAnimationFrame(leftBear2SlowDown);
+			}	
+			function leftBear2Catching(timestamp){     
+				//drop down
+				if(leftBear2MarginTop <= 18 && leftBear2MarginTop >=16){
+					cancelAnimationFrame(leftBear2Slow);
+					leftBear2MarginTop-=0.05;
+					leftBear2MarginLeft+=0.5;
+					leftBear2.style.marginTop = leftBear2MarginTop + "%";
+					leftBear2.style.marginLeft = leftBear2MarginLeft + "%"; 
+					leftBear2Catch = requestAnimationFrame(leftBear2Catching);
+				}
+				if(leftBear2MarginTop <= 16){
+					var degree = 2 ;		
+					mc.style.display = "none";					
+					document.getElementById("timeDisplay").style.display="none";	
+					document.getElementById("eye").style.display="block";
+					rotateHamster.style.display = "block";	
+					rotateHamster.style.transform = "rotate(30deg)";					
+					leftBear2Toggle = 1;
+				}
+				if(leftBear2Toggle === 1 && leftBear2MarginTop > 14){	
+						cancelAnimationFrame(leftBear2Catch);
+						leftBear2MarginTop = 16;
+						leftBear2MarginLeft = 25;
+						leftBear2MarginHeight = 40;
+						leftBear2MarginWidth = 25;
+						
+						leftBear2DropDown=requestAnimationFrame(leftBear2DropDownAnimation);
+				}		
+			}
+			leftBear2Catch = requestAnimationFrame(leftBear2Catching);	
+		}
+		leftBear2Slow = requestAnimationFrame(leftBear2SlowDown);
+	}
+	
+	function leftBear2DropDownAnimation(timestamp){
+		
+		if (rotateHamsterMarginTop < 30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterMarginLeft+=0.1625;
+			rotateHamsterHeight-=0.075;
+			rotateHamsterWidth-=0.025;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.marginLeft=rotateHamsterMarginLeft+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+			
+			leftBear2MarginTop+=0.35;
+			leftBear2MarginLeft+=0.25;
+			leftBear2MarginHeight-=0.25;
+			leftBear2MarginWidth-=0.125;
+			leftBear2ZIndex -= 5;
+			
+			leftBear2.style.marginTop=leftBear2MarginTop+"%";
+			leftBear2.style.marginLeft=leftBear2MarginLeft+"%";
+			leftBear2.style.height=leftBear2MarginHeight+"%";
+			leftBear2.style.width=leftBear2MarginWidth+"%";
+			leftBear2.style.zIndex=leftBear2ZIndex;
+			
+			leftBear2DropDown=requestAnimationFrame(leftBear2DropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			leftBear2.style.marginTop=rotateHamsterMarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				boneImage();
+				cancelAnimationFrame(leftBear2DropDown);
+			}			
+		}
+		leftBear2DropDown=requestAnimationFrame(leftBear2DropDownAnimation);
+	}
+	
+	
+	var rightBear2MarginTop = 27;
+	var rightBear2MarginLeft = 125;
+	var rightBear2Height = 50;
+	var rightBear2Width = 23;
+	var rightBear2ZIndex = 19;
+	var rightBear2Toggle = 0;
+	
+	function rightBear2Animation(){
+		rightBear2.style.display = "block";
+		if ( rightBear2MarginTop >= 20){
+			rightBear2MarginTop-=0.7;
+			rightBear2MarginLeft-=5.4;
+			rightBear2.style.marginTop = rightBear2MarginTop + "%";
+			rightBear2.style.marginLeft = rightBear2MarginLeft + "%"; 
+			rightBear2Move = requestAnimationFrame(rightBear2Animation);			
+		}			
+		function rightBear2SlowDown(timestamp){
+			//slow down
+			if(rightBear2MarginTop <= 20 && rightBear2MarginTop >=16){
+				cancelAnimationFrame(rightBear2Move);
+				rightBear2MarginTop-=0.01;
+				rightBear2MarginLeft-=0.0225;
+				rightBear2.style.marginTop = rightBear2MarginTop + "%";
+				rightBear2.style.marginLeft = rightBear2MarginLeft + "%"; 
+				rightBear2Slow = requestAnimationFrame(rightBear2SlowDown);
+			}
+			function rightBear2Catching(timestamp){     
+				//drop down
+				if(rightBear2MarginTop <= 16 && rightBear2MarginTop >=10){
+					cancelAnimationFrame(rightBear2Slow);
+					rightBear2MarginTop-=0.25;
+					rightBear2MarginLeft-=0.6;
+					rightBear2.style.marginTop = rightBear2MarginTop + "%";
+					rightBear2.style.marginLeft = rightBear2MarginLeft + "%"; 
+					rightBear2Catch = requestAnimationFrame(rightBear2Catching);
+				}
+				if(rightBear2MarginTop <= 16){
+					var degree = 2 ;		
+					mc.style.display = "none";					
+					document.getElementById("timeDisplay").style.display="none";	
+					document.getElementById("eye").style.display="block";
+					rotateHamster.style.display = "block";	
+					rotateHamster.style.transform = "rotate(-30deg)";					
+					rightBear2Toggle = 1;
+				}	
+				if(rightBear2Toggle === 1 && rightBear2MarginTop >= 10){	
+						cancelAnimationFrame(rightBear2Catch);
+						rightBear2MarginTop = 14;
+						rightBear2MarginLeft = 49.4;
+						rightBear2Height = 50;
+						rightBear2Width = 23;
+						
+				rightBear2DropDown=requestAnimationFrame(rightBear2DropDownAnimation);
+				}				
+			}rightBear2Catch = requestAnimationFrame(rightBear2Catching);
+		}rightBear2Slow = requestAnimationFrame(rightBear2SlowDown);
+	}
+	
+	var rotateHamsterMarginTop = 22.5;
+	var rotateHamsterMarginLeft = 40.5;
+	var rotateHamsterHeight = 35;
+	var rotateHamsterWidth = 17;
+	var rotateHamsterZIndex = 200;
+
+	function rightBear2DropDownAnimation(timestamp){
+		
+		if (rotateHamsterMarginTop <30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterHeight-=0.125;
+			rotateHamsterWidth-=0.05;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+		
+			rightBear2MarginTop+=0.175;
+			rightBear2MarginLeft-=0.1;
+			rightBear2Height-=0.25;
+			rightBear2Width-=0.075;
+			rightBear2ZIndex -= 5;
+			
+			rightBear2.style.marginTop=rightBear2MarginTop+"%";
+			rightBear2.style.marginLeft=rightBear2MarginLeft+"%";
+			rightBear2.style.height=rightBear2Height+"%";
+			rightBear2.style.width=rightBear2Width+"%";
+			rightBear2.style.zIndex=rightBear2ZIndex;
+			
+			rightBear2DropDown=requestAnimationFrame(rightBear2DropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;
+			rightBear2MarginTop+=0.25;
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rightBear2.style.marginTop=rightBear2MarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				boneImage();
+				cancelAnimationFrame(rightBear2DropDown);
+			}			
+		}
+		rightBear2DropDown=requestAnimationFrame(rightBear2DropDownAnimation);
+	}
+
+		var leftDragon3MarginTop = -6;	
+		var leftDragon3MarginLeft = -38;
+		var leftDragon3Height = 68;
+		var leftDragon3Width = 38;
+		var leftDragon3ZIndex = 199;
+		var leftDragon3Toggle = 0;
+	
+	function leftDragon3Animation(timestamp){	
+		 document.getElementById("leftDragon3").style.display = "block";	
+		//move down
+		if ( leftDragon3MarginTop < 5){
+			leftDragon3MarginTop+=1.1
+			leftDragon3MarginLeft+=4;
+			leftDragon3.style.marginTop = leftDragon3MarginTop + "%";
+			leftDragon3.style.marginLeft = leftDragon3MarginLeft + "%"; 
+			leftDragon3Move = requestAnimationFrame(leftDragon3Animation);			
+		}			
+		function leftDragon3SlowDown(timestamp){
+		//slow down
+		if(leftDragon3MarginTop >= 4 && leftDragon3MarginTop <= 7){
+				cancelAnimationFrame(leftDragon3Move);
+				leftDragon3MarginTop+=0.01;
+				leftDragon3MarginLeft+=0.03333333333;
+				leftDragon3.style.marginTop = leftDragon3MarginTop + "%";
+				leftDragon3.style.marginLeft = leftDragon3MarginLeft + "%"; 
+				leftDragon3Slow = requestAnimationFrame(leftDragon3SlowDown);
+			}			
+			function leftDragon3Catching(timestamp){     
+				//catch
+				if(leftDragon3MarginTop >= 7 && leftDragon3MarginTop < 10){
+					cancelAnimationFrame(leftDragon3Slow);
+					leftDragon3MarginTop+=0.3;
+					leftDragon3MarginLeft+=0.8;
+					leftDragon3.style.marginTop = leftDragon3MarginTop + "%";
+					leftDragon3.style.marginLeft = leftDragon3MarginLeft + "%"; 
+					leftDragon3Catch = requestAnimationFrame(leftDragon3Catching);
+					}
+				if(leftDragon3MarginTop >= 10){	
+					mc.style.display = "none";					
+					document.getElementById("timeDisplay").style.display="none";	
+					document.getElementById("eye").style.display="block";
+					rotateHamster.style.display = "block";	
+					rotateHamster.style.transform = "rotate(30deg)";					
+					leftDragon3Toggle = 1;
+				}
+				if(leftDragon3Toggle === 1 && leftDragon3MarginTop >= 10){	
+						cancelAnimationFrame(leftDragon3Catch);
+						leftDragon3MarginTop = 10;
+						leftDragon3MarginLeft = 18;
+						leftDragon3Height = 68;
+						leftDragon3Width = 38;
+						
+						leftDragon3DropDown=requestAnimationFrame(leftDragon3DropDownAnimation);
+				}	
+			}
+			leftDragon3Catch = requestAnimationFrame(leftDragon3Catching);
+		}
+		leftDragon3Slow = requestAnimationFrame(leftDragon3SlowDown);
+	}
+	
+	
+	function leftDragon3DropDownAnimation(timestamp){
+
+		if (rotateHamsterMarginTop <30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterMarginLeft+=0.1625;
+			rotateHamsterHeight-=0.125;
+			rotateHamsterWidth-=0.05;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.marginLeft=rotateHamsterMarginLeft+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+			
+			leftDragon3MarginTop+=0.225;
+			leftDragon3MarginLeft+=0.4;
+			leftDragon3Height-=0.325;
+			leftDragon3Width-=0.325;
+			leftDragon3ZIndex -= 5;
+			
+			leftDragon3.style.marginTop=leftDragon3MarginTop+"%";
+			leftDragon3.style.marginLeft=leftDragon3MarginLeft+"%";
+			leftDragon3.style.height=leftDragon3Height+"%";
+			leftDragon3.style.width=leftDragon3Width+"%";
+			leftDragon3.style.zIndex=leftDragon3ZIndex;
+			
+			leftDragon3DropDown=requestAnimationFrame(leftDragon3DropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			leftDragon3.style.marginTop=rotateHamsterMarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				boneImage();
+				cancelAnimationFrame(leftDragon3DropDown);
+			}			
+		}
+		leftDragon3DropDown=requestAnimationFrame(leftDragon3DropDownAnimation);
+	}
+
+	var rightWolf3MarginTop = -32 ;
+	var rightWolf3MarginLeft = 100;
+	var rightWolf3Height = 50;
+	var rightWolf3Width = 50;
+	var rightWolf3ZIndex = 199;
+	var rightWolf3Toggle = 0;
+	
+	function rightWolf3Animation(timestamp){
+		 rightWolf3.style.display = "block";	
+		if ( rightWolf3MarginTop < 8){
+			rightWolf3MarginTop+=2;
+			rightWolf3MarginLeft-=2;
+			rightWolf3.style.marginTop = rightWolf3MarginTop + "%";
+			rightWolf3.style.marginLeft = rightWolf3MarginLeft + "%"; 
+			rightWolf3Move = requestAnimationFrame(rightWolf3Animation);
+		}	
+		function rightWolf3SlowDown(timestamp){
+			if(rightWolf3MarginTop >= 8 && rightWolf3MarginTop <=10)
+			{
+				rightWolf3MarginTop+=0.01;
+				rightWolf3MarginLeft-=0.02;
+				rightWolf3.style.marginTop = rightWolf3MarginTop + "%";
+				rightWolf3.style.marginLeft = rightWolf3MarginLeft + "%"; 
+				rightWolf3Slow = requestAnimationFrame(rightWolf3SlowDown);
+			}
+			function rightWolf3Catching(timestamp){     
+				//drop down
+				if(rightWolf3MarginLeft < 56 && rightWolf3MarginLeft >=40){
+					cancelAnimationFrame(rightWolf3Slow);
+					<!-- rightWolf3MarginTop-=0.05; -->
+					rightWolf3MarginLeft-=1.6;
+					<!-- rightWolf3.style.marginTop = rightWolf3MarginTop + "%"; -->
+					rightWolf3.style.marginLeft = rightWolf3MarginLeft + "%"; 
+					rightWolf3Catch = requestAnimationFrame(rightWolf3Catching);
+				}
+				if(rightWolf3MarginLeft <= 40){		
+					mc.style.display = "none";					
+					document.getElementById("timeDisplay").style.display="none";	
+					document.getElementById("eye").style.display="block";
+					rotateHamster.style.display = "block";	
+					rotateHamster.style.transform = "rotate(30deg)";					
+					rightWolf3Toggle = 1;
+				}
+				if(rightWolf3Toggle === 1 && rightWolf3MarginLeft <= 40){	
+						cancelAnimationFrame(rightWolf3Catch);
+						rightWolf3MarginTop = 10;
+						rightWolf3MarginLeft = 40;
+						rightWolf3MarginHeight = 50;
+						rightWolf3MarginWidth = 50;
+						
+						rightWolf3DropDown=requestAnimationFrame(rightWolf3DropDownAnimation);
+				}		
+			}
+			rightWolf3Catch = requestAnimationFrame(rightWolf3Catching);
+		 }
+		 rightWolf3Slow = requestAnimationFrame(rightWolf3SlowDown);
+	 }
+	
+	function rightWolf3DropDownAnimation(timestamp){
+	
+		if (rotateHamsterMarginTop <30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterHeight-=0.125;
+			rotateHamsterWidth-=0.05;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+			
+			rightWolf3MarginTop+=0.25;
+			<!-- rightWolf3MarginLeft-=2.1; -->
+			rightWolf3MarginHeight-=0.25;
+			rightWolf3MarginWidth-=0.25;
+			rightWolf3ZIndex -= 5;
+			
+			rightWolf3.style.marginTop=rightWolf3MarginTop+"%";
+			<!-- rightWolf3.style.marginLeft=rightWolf3MarginLeft+"%"; -->
+			rightWolf3.style.height=rightWolf3MarginHeight+"%";
+			rightWolf3.style.width=rightWolf3MarginWidth+"%";
+			rightWolf3.style.zIndex=rightWolf3ZIndex;
+			
+			rightWolf3DropDown=requestAnimationFrame(rightWolf3DropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rightWolf3.style.marginTop=rotateHamsterMarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				boneImage();
+				cancelAnimationFrame(rightWolf3DropDown);
+			}			
+		}
+		rightWolf3DropDown=requestAnimationFrame(rightWolf3DropDownAnimation);
+	}
+	
+	var leftBear3MarginTop = 23;
+	var leftBear3MarginLeft = -30;
+	var leftBear3MarginHeight = 40;
+	var leftBear3MarginWidth = 25;
+	var leftBear3ZIndex = 199;
+	var leftBear3Toggle = 0;
+	
+	function leftBear3Animation(timestamp){
+		leftBear3.style.display = "block";
+		if ( leftBear3MarginTop >= 21){
+			leftBear3MarginTop-=0.1;
+			leftBear3MarginLeft+=1.75;
+			leftBear3.style.marginTop = leftBear3MarginTop + "%";
+			leftBear3.style.marginLeft = leftBear3MarginLeft + "%"; 
+			leftBear3Move = requestAnimationFrame(leftBear3Animation);			
+		}	
+		function leftBear3SlowDown(timestamp){
+			//slow down
+			if(leftBear3MarginTop <= 21 && leftBear3MarginTop >=18){
+				cancelAnimationFrame(leftBear3Move);
+				leftBear3MarginTop-=0.0075;
+				leftBear3MarginLeft+=0.0175;
+				leftBear3.style.marginTop = leftBear3MarginTop + "%";
+				leftBear3.style.marginLeft = leftBear3MarginLeft + "%"; 
+				leftBear3Slow = requestAnimationFrame(leftBear3SlowDown);
+			}	
+			function leftBear3Catching(timestamp){     
+				//drop down
+				if(leftBear3MarginTop <= 18 && leftBear3MarginTop >=16){
+					cancelAnimationFrame(leftBear3Slow);
+					leftBear3MarginTop-=0.05;
+					leftBear3MarginLeft+=0.5;
+					leftBear3.style.marginTop = leftBear3MarginTop + "%";
+					leftBear3.style.marginLeft = leftBear3MarginLeft + "%"; 
+					leftBear3Catch = requestAnimationFrame(leftBear3Catching);
+				}
+				if(leftBear3MarginTop <= 16){
+					var degree = 2 ;		
+					mc.style.display = "none";					
+					document.getElementById("timeDisplay").style.display="none";	
+					document.getElementById("eye").style.display="block";
+					rotateHamster.style.display = "block";	
+					rotateHamster.style.transform = "rotate(30deg)";					
+					leftBear3Toggle = 1;
+				}
+				if(leftBear3Toggle === 1 && leftBear3MarginTop > 14){	
+						cancelAnimationFrame(leftBear3Catch);
+						leftBear3MarginTop = 16;
+						leftBear3MarginLeft = 25;
+						leftBear3MarginHeight = 40;
+						leftBear3MarginWidth = 25;
+						
+						leftBear3DropDown=requestAnimationFrame(leftBear3DropDownAnimation);
+				}		
+			}
+			leftBear3Catch = requestAnimationFrame(leftBear3Catching);	
+		}
+		leftBear3Slow = requestAnimationFrame(leftBear3SlowDown);
+	}
+	
+	function leftBear3DropDownAnimation(timestamp){
+		
+		if (rotateHamsterMarginTop < 30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterMarginLeft+=0.1625;
+			rotateHamsterHeight-=0.075;
+			rotateHamsterWidth-=0.025;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.marginLeft=rotateHamsterMarginLeft+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+			
+			leftBear3MarginTop+=0.35;
+			leftBear3MarginLeft+=0.25;
+			leftBear3MarginHeight-=0.25;
+			leftBear3MarginWidth-=0.125;
+			leftBear3ZIndex -= 5;
+			
+			leftBear3.style.marginTop=leftBear3MarginTop+"%";
+			leftBear3.style.marginLeft=leftBear3MarginLeft+"%";
+			leftBear3.style.height=leftBear3MarginHeight+"%";
+			leftBear3.style.width=leftBear3MarginWidth+"%";
+			leftBear3.style.zIndex=leftBear3ZIndex;
+			
+			leftBear3DropDown=requestAnimationFrame(leftBear3DropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			leftBear3.style.marginTop=rotateHamsterMarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				boneImage();
+				cancelAnimationFrame(leftBear3DropDown);
+			}			
+		}
+		leftBear3DropDown=requestAnimationFrame(leftBear3DropDownAnimation);
+	}
+	
+		var leftDragon4MarginTop = -6;	
+		var leftDragon4MarginLeft = -38;
+		var leftDragon4Height = 68;
+		var leftDragon4Width = 38;
+		var leftDragon4ZIndex = 199;
+		var leftDragon4Toggle = 0;
+	
+	function leftDragon4Animation(timestamp){	
+		 document.getElementById("leftDragon4").style.display = "block";	
+		//move down
+		if ( leftDragon4MarginTop < 5){
+			leftDragon4MarginTop+=1.1
+			leftDragon4MarginLeft+=4;
+			leftDragon4.style.marginTop = leftDragon4MarginTop + "%";
+			leftDragon4.style.marginLeft = leftDragon4MarginLeft + "%"; 
+			leftDragon4Move = requestAnimationFrame(leftDragon4Animation);			
+		}			
+		function leftDragon4SlowDown(timestamp){
+		//slow down
+		if(leftDragon4MarginTop >= 4 && leftDragon4MarginTop <= 7){
+				cancelAnimationFrame(leftDragon4Move);
+				leftDragon4MarginTop+=0.01;
+				leftDragon4MarginLeft+=0.03333333333;
+				leftDragon4.style.marginTop = leftDragon4MarginTop + "%";
+				leftDragon4.style.marginLeft = leftDragon4MarginLeft + "%"; 
+				leftDragon4Slow = requestAnimationFrame(leftDragon4SlowDown);
+			}			
+			function leftDragon4Catching(timestamp){     
+				//catch
+				if(leftDragon4MarginTop >= 7 && leftDragon4MarginTop < 10){
+					cancelAnimationFrame(leftDragon4Slow);
+					leftDragon4MarginTop+=0.3;
+					leftDragon4MarginLeft+=0.8;
+					leftDragon4.style.marginTop = leftDragon4MarginTop + "%";
+					leftDragon4.style.marginLeft = leftDragon4MarginLeft + "%"; 
+					leftDragon4Catch = requestAnimationFrame(leftDragon4Catching);
+					}
+				if(leftDragon4MarginTop >= 10){	
+					mc.style.display = "none";					
+					document.getElementById("timeDisplay").style.display="none";	
+					document.getElementById("eye").style.display="block";
+					rotateHamster.style.display = "block";	
+					rotateHamster.style.transform = "rotate(30deg)";					
+					leftDragon4Toggle = 1;
+				}
+				if(leftDragon4Toggle === 1 && leftDragon4MarginTop >= 10){	
+						cancelAnimationFrame(leftDragon4Catch);
+						leftDragon4MarginTop = 10;
+						leftDragon4MarginLeft = 18;
+						leftDragon4Height = 68;
+						leftDragon4Width = 38;
+						
+						leftDragon4DropDown=requestAnimationFrame(leftDragon4DropDownAnimation);
+				}	
+			}
+			leftDragon4Catch = requestAnimationFrame(leftDragon4Catching);
+		}
+		leftDragon4Slow = requestAnimationFrame(leftDragon4SlowDown);
+	}
+	
+	
+	function leftDragon4DropDownAnimation(timestamp){
+
+		if (rotateHamsterMarginTop <30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterMarginLeft+=0.1625;
+			rotateHamsterHeight-=0.125;
+			rotateHamsterWidth-=0.05;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.marginLeft=rotateHamsterMarginLeft+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+			
+			leftDragon4MarginTop+=0.225;
+			leftDragon4MarginLeft+=0.4;
+			leftDragon4Height-=0.325;
+			leftDragon4Width-=0.325;
+			leftDragon4ZIndex -= 5;
+			
+			leftDragon4.style.marginTop=leftDragon4MarginTop+"%";
+			leftDragon4.style.marginLeft=leftDragon4MarginLeft+"%";
+			leftDragon4.style.height=leftDragon4Height+"%";
+			leftDragon4.style.width=leftDragon4Width+"%";
+			leftDragon4.style.zIndex=leftDragon4ZIndex;
+			
+			leftDragon4DropDown=requestAnimationFrame(leftDragon4DropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			leftDragon4.style.marginTop=rotateHamsterMarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				boneImage();
+				cancelAnimationFrame(leftDragon4DropDown);
+			}			
+		}
+		leftDragon4DropDown=requestAnimationFrame(leftDragon4DropDownAnimation);
+	}
+
+	
+	var rightBear3MarginTop = 27;
+	var rightBear3MarginLeft = 125;
+	var rightBea3Height = 50;
+	var rightBear3Width = 23;
+	var rightBear3ZIndex = 19;
+	var rightBear3Toggle = 0;
+	
+	function rightBear3Animation(){
+		rightBear3.style.display = "block";
+		if ( rightBearMarginTop >= 20){
+			rightBear3MarginTop-=0.7;
+			rightBear3MarginLeft-=5.4;
+			rightBear3.style.marginTop = rightBear3MarginTop + "%";
+			rightBear3.style.marginLeft = rightBear3MarginLeft + "%"; 
+			rightBear3Move = requestAnimationFrame(rightBear3Animation);			
+		}			
+		function rightBear3SlowDown(timestamp){
+			//slow down
+			if(rightBear3MarginTop <= 20 && rightBear3MarginTop >=16){
+				cancelAnimationFrame(rightBear3Move);
+				rightBear3MarginTop-=0.01;
+				rightBear3MarginLeft-=0.0225;
+				rightBear3.style.marginTop = rightBear3MarginTop + "%";
+				rightBear3.style.marginLeft = rightBear3MarginLeft + "%"; 
+				rightBear3Slow = requestAnimationFrame(rightBear3SlowDown);
+			}
+			function rightBear3Catching(timestamp){     
+				//drop down
+				if(rightBear3MarginTop <= 16 && rightBear3MarginTop >=10){
+					cancelAnimationFrame(rightBear3Slow);
+					rightBear3MarginTop-=0.25;
+					rightBear3MarginLeft-=0.6;
+					rightBear3.style.marginTop = rightBear3MarginTop + "%";
+					rightBear3.style.marginLeft = rightBear3MarginLeft + "%"; 
+					rightBear3Catch = requestAnimationFrame(rightBear3Catching);
+				}
+				if(rightBear3MarginTop <= 16){
+					var degree = 2 ;		
+					mc.style.display = "none";					
+					document.getElementById("timeDisplay").style.display="none";	
+					document.getElementById("eye").style.display="block";
+					rotateHamster.style.display = "block";	
+					rotateHamster.style.transform = "rotate(-30deg)";					
+					rightBear3Toggle = 1;
+				}	
+				if(rightBear3Toggle === 1 && rightBear3MarginTop >= 10){	
+						cancelAnimationFrame(rightBear3Catch);
+						rightBear3MarginTop = 14;
+						rightBear3MarginLeft = 49.4;
+						rightBear3Height = 50;
+						rightBear3Width = 23;
+						
+				rightBear3DropDown=requestAnimationFrame(rightBear3DropDownAnimation);
+				}				
+			}rightBear3Catch = requestAnimationFrame(rightBear3Catching);
+		}rightBear3Slow = requestAnimationFrame(rightBear3SlowDown);
+	}
+	
+	var rotateHamsterMarginTop = 22.5;
+	var rotateHamsterMarginLeft = 40.5;
+	var rotateHamsterHeight = 35;
+	var rotateHamsterWidth = 17;
+	var rotateHamsterZIndex = 200;
+
+	function rightBear3DropDownAnimation(timestamp){
+		
+		if (rotateHamsterMarginTop <30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterHeight-=0.125;
+			rotateHamsterWidth-=0.05;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+		
+			rightBear3MarginTop+=0.175;
+			rightBear3MarginLeft-=0.1;
+			rightBear3Height-=0.25;
+			rightBear3Width-=0.075;
+			rightBear3ZIndex -= 5;
+			
+			rightBear3.style.marginTop=rightBear3MarginTop+"%";
+			rightBear3.style.marginLeft=rightBear3MarginLeft+"%";
+			rightBear3.style.height=rightBear3Height+"%";
+			rightBear3.style.width=rightBear3Width+"%";
+			rightBear3.style.zIndex=rightBear3ZIndex;
+			
+			rightBear3DropDown=requestAnimationFrame(rightBear3DropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;
+			rightBear3MarginTop+=0.25;
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rightBear3.style.marginTop=rightBear3MarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				boneImage();
+				cancelAnimationFrame(rightBear3DropDown);
+			}			
+		}
+		rightBear3DropDown=requestAnimationFrame(rightBear3DropDownAnimation);
+	}
+
+	
+	var rightBear4MarginTop = 27;
+	var rightBear4MarginLeft = 125;
+	var rightBear4Height = 50;
+	var rightBear4Width = 23;
+	var rightBear4ZIndex = 19;
+	var rightBear4Toggle = 0;
+	
+	function rightBear4Animation(){
+		rightBear4.style.display = "block";
+		if ( rightBear4MarginTop >= 20){
+			rightBear4MarginTop-=0.7;
+			rightBear4MarginLeft-=5.4;
+			rightBear4.style.marginTop = rightBear4MarginTop + "%";
+			rightBear4.style.marginLeft = rightBear4MarginLeft + "%"; 
+			rightBear4Move = requestAnimationFrame(rightBear4Animation);			
+		}			
+		function rightBear4SlowDown(timestamp){
+			//slow down
+			if(rightBear4MarginTop <= 20 && rightBear4MarginTop >=16){
+				cancelAnimationFrame(rightBear4Move);
+				rightBear4MarginTop-=0.01;
+				rightBear4MarginLeft-=0.0225;
+				rightBear4.style.marginTop = rightBear4MarginTop + "%";
+				rightBear4.style.marginLeft = rightBear4MarginLeft + "%"; 
+				rightBear4Slow = requestAnimationFrame(rightBear4SlowDown);
+			}
+			function rightBear4Catching(timestamp){     
+				//drop down
+				if(rightBear4MarginTop <= 16 && rightBear4MarginTop >=10){
+					cancelAnimationFrame(rightBear4Slow);
+					rightBear4MarginTop-=0.25;
+					rightBear4MarginLeft-=0.6;
+					rightBear4.style.marginTop = rightBear4MarginTop + "%";
+					rightBear4.style.marginLeft = rightBear4MarginLeft + "%"; 
+					rightBear4Catch = requestAnimationFrame(rightBear4Catching);
+				}
+				if(rightBear4MarginTop <= 16){
+					var degree = 2 ;		
+					mc.style.display = "none";					
+					document.getElementById("timeDisplay").style.display="none";	
+					document.getElementById("eye").style.display="block";
+					rotateHamster.style.display = "block";	
+					rotateHamster.style.transform = "rotate(-30deg)";					
+					rightBear4Toggle = 1;
+				}	
+				if(rightBear4Toggle === 1 && rightBear4MarginTop >= 10){	
+						cancelAnimationFrame(rightBear4Catch);
+						rightBear4MarginTop = 14;
+						rightBear4MarginLeft = 49.4;
+						rightBear4Height = 50;
+						rightBear4Width = 23;
+						
+				rightBear4DropDown=requestAnimationFrame(rightBear4DropDownAnimation);
+				}				
+			}rightBear4Catch = requestAnimationFrame(rightBear4Catching);
+		}rightBear4Slow = requestAnimationFrame(rightBear4SlowDown);
+	}
+	
+	var rotateHamsterMarginTop = 22.5;
+	var rotateHamsterMarginLeft = 40.5;
+	var rotateHamsterHeight = 35;
+	var rotateHamsterWidth = 17;
+	var rotateHamsterZIndex = 200;
+
+	function rightBear4DropDownAnimation(timestamp){
+		
+		if (rotateHamsterMarginTop <30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterHeight-=0.125;
+			rotateHamsterWidth-=0.05;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+		
+			rightBear4MarginTop+=0.175;
+			rightBear4MarginLeft-=0.1;
+			rightBear4Height-=0.25;
+			rightBear4Width-=0.075;
+			rightBear4ZIndex -= 5;
+			
+			rightBear4.style.marginTop=rightBear4MarginTop+"%";
+			rightBear4.style.marginLeft=rightBear4MarginLeft+"%";
+			rightBear4.style.height=rightBear4Height+"%";
+			rightBear4.style.width=rightBear4Width+"%";
+			rightBear4.style.zIndex=rightBear4ZIndex;
+			
+			rightBear4DropDown=requestAnimationFrame(rightBear4DropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;
+			rightBear4MarginTop+=0.25;
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rightBear4.style.marginTop=rightBear4MarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				boneImage();
+				cancelAnimationFrame(rightBear4DropDown);
+			}			
+		}
+		rightBear4DropDown=requestAnimationFrame(rightBear4DropDownAnimation);
+	}
+
+	var leftBear4MarginTop = 23;
+	var leftBear4MarginLeft = -30;
+	var leftBear4MarginHeight = 40;
+	var leftBear4MarginWidth = 25;
+	var leftBear4ZIndex = 199;
+	var leftBear4Toggle = 0;
+	
+	function leftBear4Animation(timestamp){
+		leftBear4.style.display = "block";
+		if ( leftBear4MarginTop >= 21){
+			leftBear4MarginTop-=0.1;
+			leftBear4MarginLeft+=1.75;
+			leftBear4.style.marginTop = leftBear4MarginTop + "%";
+			leftBear4.style.marginLeft = leftBear4MarginLeft + "%"; 
+			leftBear4Move = requestAnimationFrame(leftBear4Animation);			
+		}	
+		function leftBear4SlowDown(timestamp){
+			//slow down
+			if(leftBear4MarginTop <= 21 && leftBear4MarginTop >=18){
+				cancelAnimationFrame(leftBear4Move);
+				leftBear4MarginTop-=0.0075;
+				leftBear4MarginLeft+=0.0175;
+				leftBear4.style.marginTop = leftBear4MarginTop + "%";
+				leftBear4.style.marginLeft = leftBear4MarginLeft + "%"; 
+				leftBear4Slow = requestAnimationFrame(leftBear4SlowDown);
+			}	
+			function leftBear4Catching(timestamp){     
+				//drop down
+				if(leftBear4MarginTop <= 18 && leftBear4MarginTop >=16){
+					cancelAnimationFrame(leftBear4Slow);
+					leftBear4MarginTop-=0.05;
+					leftBear4MarginLeft+=0.5;
+					leftBear4.style.marginTop = leftBear4MarginTop + "%";
+					leftBear4.style.marginLeft = leftBear4MarginLeft + "%"; 
+					leftBear4Catch = requestAnimationFrame(leftBear4Catching);
+				}
+				if(leftBear4MarginTop <= 16){
+					var degree = 2 ;		
+					mc.style.display = "none";					
+					document.getElementById("timeDisplay").style.display="none";	
+					document.getElementById("eye").style.display="block";
+					rotateHamster.style.display = "block";	
+					rotateHamster.style.transform = "rotate(30deg)";					
+					leftBear4Toggle = 1;
+				}
+				if(leftBear4Toggle === 1 && leftBear4MarginTop > 14){	
+						cancelAnimationFrame(leftBear4Catch);
+						leftBear4MarginTop = 16;
+						leftBear4MarginLeft = 25;
+						leftBear4MarginHeight = 40;
+						leftBear4MarginWidth = 25;
+						
+						leftBear4DropDown=requestAnimationFrame(leftBear4DropDownAnimation);
+				}		
+			}
+			leftBear4Catch = requestAnimationFrame(leftBear4Catching);	
+		}
+		leftBear4Slow = requestAnimationFrame(leftBear4SlowDown);
+	}
+	
+	function leftBear4DropDownAnimation(timestamp){
+		
+		if (rotateHamsterMarginTop < 30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterMarginLeft+=0.1625;
+			rotateHamsterHeight-=0.075;
+			rotateHamsterWidth-=0.025;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.marginLeft=rotateHamsterMarginLeft+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+			
+			leftBear4MarginTop+=0.35;
+			leftBear4MarginLeft+=0.25;
+			leftBear4MarginHeight-=0.25;
+			leftBear4MarginWidth-=0.125;
+			leftBear4ZIndex -= 5;
+			
+			leftBear4.style.marginTop=leftBear4MarginTop+"%";
+			leftBear4.style.marginLeft=leftBear4MarginLeft+"%";
+			leftBear4.style.height=leftBear4MarginHeight+"%";
+			leftBear4.style.width=leftBear4MarginWidth+"%";
+			leftBear4.style.zIndex=leftBear4ZIndex;
+			
+			leftBear4DropDown=requestAnimationFrame(leftBear4DropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			leftBear4.style.marginTop=rotateHamsterMarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				boneImage();
+				cancelAnimationFrame(leftBear4DropDown);
+			}			
+		}
+		leftBear4DropDown=requestAnimationFrame(leftBear4DropDownAnimation);
+	}
+	
+	
 	var sBone;
 	
 	function boneImage(){
 		bone.style.display = "block"
 		var myIndex1=0;
-		sBone=requestAnimationFrame(loopImage);
-		function loopImage(timestamp){	
+		loopImage();
+		function loopImage(){	
 		var i;
 		var b = document.getElementsByClassName("bone");
 			for (i = 0; i < b.length; i++) {b[i].style.display = "none";}
 			myIndex1++;
 			if (myIndex1 > b.length) {}    
 			b[myIndex1].style.display = "block";  
-			sBone=requestAnimationFrame(loopImage);
+			sBone=setTimeout(loopImage,1000/25);
 
 			if(myIndex1===8){
 				fail.style.display="block";
+				setTimeout(imageLoop3,3000);
 				hamster.style.display="block";
 			}
 			
 			if(myIndex1===15){
-				cancelAnimationFrame(sBone);
+				clearTimeout(sBone);
 				bone.style.display = "none";				
 			}				
 		}
@@ -1585,46 +2779,91 @@ window.requestAnimFrame = (function(){
 		}
 	}	
 	
+	function imageLoop3(){
+		againButton.style.display = "block"
+		var myIndex2=0;
+		loopImage3();
+		function loopImage3(){	
+		var i;
+		var againBtn = document.getElementsByClassName("againButton");
+			for (i = 0; i < againBtn.length; i++) {againBtn[i].style.display = "none";}
+			myIndex2++;
+			if (myIndex2 > againBtn.length) {}    
+			againBtn[myIndex2].style.display = "block";  
+			sBtn=setTimeout(loopImage3,1000/20);
+			if(myIndex2===11){
+				clearTimeout(sBtn);		
+				againBtn[11].style.display = "none"; 
+				againBtn[0].style.display = "block"; 
+			}				
+		}
+	}	
+	
 	function touchstart(event){
 		event.preventDefault();
 		 var tobj = event.changedTouches[0]; 
-		 var data = event.target.id;
+		 var data = event.target.id || event.target.className;
 		 
-		if (data === "m5" || data === "hand"){
+		var data = event.target.id;
+		console.log(data);
+		if (data === "m5" || data === "hand" || data === "rightWolf2" || data === "rightWolf3"){
 			m5.style.height="52%";
 			m5.style.width="52%";
+			rightWolf2.style.height="52%";
+			rightWolf2.style.width="52%";
 		}
 		
-		if(data==="leftDragon"){
+		if(data==="leftDragon" || data==="leftDragon2" || data==="leftDragon3" || data==="leftDragon4"){
 			leftDragon.style.height="70%";
 			leftDragon.style.width="40%";
+			leftDragon2.style.height="70%";
+			leftDragon2.style.width="40%";
+			leftDragon3.style.height="70%";
+			leftDragon3.style.width="40%";
+			leftDragon4.style.height="70%";
+			leftDragon4.style.width="40%";
 		}
 		
-		if(data==="rightBear"){
+		if(data==="rightBear" || data==="rightBear2" || data==="rightBear3" || data==="rightBear4"){
 			rightBear.style.height="52%";
 			rightBear.style.width="25%";
+			rightBear2.style.height="52%";
+			rightBear2.style.width="25%";
+			rightBear3.style.height="52%";
+			rightBear3.style.width="25%";
+			rightBear4.style.height="52%";
+			rightBear4.style.width="25%";
 		}
 		
-		if(data==="rightDragon"){		
+		if(data==="leftBear" || data==="leftBear2" ||  data==="leftBear3" ||  data==="leftBear4"){		
+			leftBear.style.height="42%";
+			leftBear.style.width="27%";
+			leftBear2.style.height="42%";
+			leftBear2.style.width="27%";
+			leftBear3.style.height="42%";
+			leftBear3.style.width="27%";
+			leftBear4.style.height="42%";
+			leftBear4.style.width="27%";
+		}
+		
+		if(data==="rightDragon" || data==="rightDragon2"){		
 			rightDragon.style.height="70%";
 			rightDragon.style.width="35%";
+			rightDragon2.style.height="70%";
+			rightDragon2.style.width="35%";
 		}
-		
-		if(data == "againButton" || data == "againFont" || data == "againFontEffect"){
-			window.location.reload();
-		 }
 	} 
 	
 	function touchmove(event){
 		event.preventDefault();
 		var data = event.target.id;
 		var tobj = event.changedTouches[0];
-		
+
 		if(data === "m5" || data === "hand"){
 			document.getElementById("title").style.display="none";	
 			document.getElementById("die").style.display="none";	
+			timer();
 			hand.style.display="none";	
-			t = requestAnimationFrame(timer);
 			if(mmTop > 8){
 				leftDragonMove = requestAnimationFrame(leftDragonAnimation);
 			}			
@@ -1657,7 +2896,6 @@ window.requestAnimFrame = (function(){
 		}	
 		
 		if(data === "rightBear"){
-			console.log(data);
 			if(rightBearMarginTop >0){
 				leftBearMove = requestAnimationFrame(leftBearAnimation);			
 			}	
@@ -1665,15 +2903,14 @@ window.requestAnimFrame = (function(){
 				if ( rightBearMarginTop < 27){
 					rightBearMarginTop+=0.3;
 					rightBearMarginLeft+=5.4;
-					
-					
+										
 					rightBear.style.marginTop = rightBearMarginTop + "%";
 					rightBear.style.marginLeft = rightBearMarginLeft + "%";		
 					r3=requestAnimationFrame(remove3);	
 				}
 			}	
 				r3=requestAnimationFrame(remove3);
-		}	
+		}		
 		
 		if(data === "leftBear"){
 			
@@ -1692,16 +2929,11 @@ window.requestAnimFrame = (function(){
 			}	
 				r4=requestAnimationFrame(remove4);
 		}
+		
 		if(data === "rightDragon"){
 				if(rightDragonMarginLeft < 68){
-					leftDragonMarginTop = -6;	
-					leftDragonMarginLeft = -38;
-					leftDragonHeight = 68;
-					leftDragonWidth = 38;
-					leftDragonZIndex = 199;
-					leftDragonToggle = 0;
-					leftDragon.style.display = "block";
-					leftDragonMove = requestAnimationFrame(leftDragonAnimation);
+					leftDragon2Move = requestAnimationFrame(leftDragon2Animation);
+					rightWolf2Move = requestAnimationFrame(rightWolf2Animation);	
 				}	
 			function remove5(timestamp){
 				if (rightDragonMarginLeft < 68 ){
@@ -1715,23 +2947,227 @@ window.requestAnimFrame = (function(){
 				r5=requestAnimationFrame(remove5);
 		}
 		
+		if(data === "leftDragon2"){
+			if(leftDragon2MarginLeft > 0){
+				leftBear2Move = requestAnimationFrame(leftBear2Animation);		
+			}	
+			function remove2(timestamp){
+				if ( leftDragon2MarginLeft >= -30){
+					leftDragon2MarginTop-=5;
+					leftDragon2MarginLeft-=5;
+					leftDragon2.style.marginTop = leftDragon2MarginTop + "%";
+					leftDragon2.style.marginLeft = leftDragon2MarginLeft + "%";		
+					r2=requestAnimationFrame(remove2);	
+				}
+			}	
+				r2=requestAnimationFrame(remove2);
+		}	
+		
+		if(data === "rightWolf2"){
+			if(rightWolf2MarginTop > 8){
+				rightBear2Move = requestAnimationFrame(rightBear2Animation);
+			}			
+			 function remove7(timestamp){
+				if ( rightWolf2MarginTop >= -36.8){
+					rightWolf2MarginTop-=5;
+					rightWolf2MarginLeft+=5;
+					rightWolf2.style.marginTop = rightWolf2MarginTop + "%";
+					rightWolf2.style.marginLeft = rightWolf2MarginLeft + "%";		
+					requestAnimationFrame(remove7);			
+				}	
+			}	
+				r7=requestAnimationFrame(remove7);
+		}
+		
+		if(data === "leftBear2"){
+			
+			if(leftBear2MarginTop > 18){
+			}	
+			function remove4(timestamp){
+				if ( leftBear2MarginTop > 18 && leftBear2MarginTop < 23){
+					leftBear2MarginTop+=0.1;
+					leftBear2MarginLeft-=5;
+										
+					leftBear2.style.marginTop = leftBear2MarginTop + "%";
+					leftBear2.style.marginLeft = leftBear2MarginLeft + "%";		
+					r4=requestAnimationFrame(remove4);	
+				}
+			}	
+				r4=requestAnimationFrame(remove4);
+		}	
+		if(data === "rightBear2"){
+			if(rightBear2MarginTop >0){
+				leftDragon3Move = requestAnimationFrame(leftDragon3Animation);			
+			}	
+			function remove3(timestamp){
+				if ( rightBear2MarginTop < 27){
+					rightBear2MarginTop+=0.3;
+					rightBear2MarginLeft+=5.4;
+										
+					rightBear2.style.marginTop = rightBear2MarginTop + "%";
+					rightBear2.style.marginLeft = rightBear2MarginLeft + "%";		
+					r3=requestAnimationFrame(remove3);	
+				}
+			}	
+				r3=requestAnimationFrame(remove3);
+		}	
+		
+		if(data === "leftDragon3"){
+			if(leftDragon3MarginLeft > 0){
+				leftBear3Move = requestAnimationFrame(leftBear3Animation);		
+				rightWolf3Move = requestAnimationFrame(rightWolf3Animation);
+			}	
+			function remove2(timestamp){
+				if ( leftDragon3MarginLeft >= -30){
+					leftDragon3MarginTop-=5;
+					leftDragon3MarginLeft-=5;
+					leftDragon3.style.marginTop = leftDragon3MarginTop + "%";
+					leftDragon3.style.marginLeft = leftDragon3MarginLeft + "%";		
+					r2=requestAnimationFrame(remove2);	
+				}
+			}	
+				r2=requestAnimationFrame(remove2);
+		}	
+		
+		if(data === "leftBear3"){
+			
+			if(leftBear3MarginTop > 18){
+				leftDragon4Move = requestAnimationFrame(leftDragon4Animation);								
+			}	
+			function remove4(timestamp){
+				if ( leftBear3MarginTop > 18 && leftBear3MarginTop < 23){
+					leftBear3MarginTop+=0.1;
+					leftBear3MarginLeft-=5;
+										
+					leftBear3.style.marginTop = leftBear3MarginTop + "%";
+					leftBear3.style.marginLeft = leftBear3MarginLeft + "%";		
+					r4=requestAnimationFrame(remove4);	
+				}
+			}	
+				r4=requestAnimationFrame(remove4);
+		}
+		
+		if(data === "rightWolf3"){
+			if(rightWolf3MarginTop > 8){
+				rightBear3Move = requestAnimationFrame(rightBear3Animation);
+			}			
+			 function remove7(timestamp){
+				if ( rightWolf3MarginTop >= -36.8){
+					rightWolf3MarginTop-=5;
+					rightWolf3MarginLeft+=5;
+					rightWolf3.style.marginTop = rightWolf3MarginTop + "%";
+					rightWolf3.style.marginLeft = rightWolf3MarginLeft + "%";		
+					requestAnimationFrame(remove7);			
+				}	
+			}	
+				r7=requestAnimationFrame(remove7);
+		}
+		
+		if(data === "leftDragon4"){
+			if(leftDragon4MarginLeft > 0){
+				leftBear4Move = requestAnimationFrame(leftBear4Animation);			
+			}	
+			function remove2(timestamp){
+				if ( leftDragon4MarginLeft >= -30){
+					leftDragon4MarginTop-=5;
+					leftDragon4MarginLeft-=5;
+					leftDragon4.style.marginTop = leftDragon4MarginTop + "%";
+					leftDragon4.style.marginLeft = leftDragon4MarginLeft + "%";		
+					r2=requestAnimationFrame(remove2);	
+				}
+			}	
+				r2=requestAnimationFrame(remove2);
+		}	
+		
+		if(data === "rightBear3"){
+			function remove3(timestamp){
+				if ( rightBear3MarginTop < 27){
+					rightBear3MarginTop+=0.3;
+					rightBear3MarginLeft+=5.4;
+										
+					rightBear3.style.marginTop = rightBear3MarginTop + "%";
+					rightBear3.style.marginLeft = rightBear3MarginLeft + "%";		
+					r3=requestAnimationFrame(remove3);	
+				}
+			}	
+				r3=requestAnimationFrame(remove3);
+		}	
+
+		if(data === "leftBear4"){
+			
+			if(leftBear4MarginTop > 18){
+				<!-- leftDragon4Move = requestAnimationFrame(leftDragon4Animation);								 -->
+			}	
+			function remove4(timestamp){
+				if ( leftBear4MarginTop > 18 && leftBear4MarginTop < 23){
+					leftBear4MarginTop+=0.1;
+					leftBear4MarginLeft-=5;
+										
+					leftBear4.style.marginTop = leftBear4MarginTop + "%";
+					leftBear4.style.marginLeft = leftBear4MarginLeft + "%";		
+					r4=requestAnimationFrame(remove4);	
+				}
+			}	
+				r4=requestAnimationFrame(remove4);
+		}
 	}
 	
 	function touchend(event){	
 		event.preventDefault();
 		var data = event.target.id;
 			
-		m5.style.height="50%";
-		m5.style.width="50%";
 		
-		leftDragon.style.height="68%";
-		leftDragon.style.width="38%";
+			m5.style.height="50%";
+			m5.style.width="50%";
+			
+			leftDragon.style.height="68%";
+			leftDragon.style.width="38%";
 
-		rightBear.style.height="50%";
-		rightBear.style.width="23%";
-		
-		rightDragon.style.height="68%";
-		rightDragon.style.width="33%";
+			rightBear.style.height="50%";
+			rightBear.style.width="23%";
+			
+			leftBear.style.height="40%";
+			leftBear.style.width="25%";
+			
+			rightDragon.style.height="68%";
+			rightDragon.style.width="33%";
+			
+			leftDragon2.style.height="68%";
+			leftDragon2.style.width="38%";
+			
+			rightWolf2.style.height="50%";
+			rightWolf2.style.width="50%";
+			
+			leftBear2.style.height="40%";
+			leftBear2.style.width="25%";
+			
+			rightBear2.style.height="50%";
+			rightBear2.style.width="23%";
+			
+			leftDragon3.style.height="68%";
+			leftDragon3.style.width="38%";
+			
+			leftBear3.style.height="40%";
+			leftBear3.style.width="25%";
+			
+			rightWolf3.style.height="50%";
+			rightWolf3.style.width="50%";
+			
+			leftDragon4.style.height="68%";
+			leftDragon4.style.width="38%";
+			
+			rightBear3.style.height="50%";
+			rightBear3.style.width="23%";
+			
+			rightBear4.style.height="50%";
+			rightBear4.style.width="23%";
+			
+			rightDragon2.style.height="68%";
+			rightDragon2.style.width="33%";
+			
+			leftBear4.style.height="40%";
+			leftBear4.style.width="25%";
+			
 	}
 	
 	function mouseMove(event) {
@@ -1810,16 +3246,10 @@ window.requestAnimFrame = (function(){
 				r4=requestAnimationFrame(remove4);
 		}
 		
-			if(data === "rightDragon"){
+		if(data === "rightDragon"){
 				if(rightDragonMarginLeft < 68){
-					leftDragonMarginTop = -6;	
-					leftDragonMarginLeft = -38;
-					leftDragonHeight = 68;
-					leftDragonWidth = 38;
-					leftDragonZIndex = 199;
-					leftDragonToggle = 0;
-					leftDragon.style.display = "block";
-					leftDragonMove = requestAnimationFrame(leftDragonAnimation);
+					leftDragon2Move = requestAnimationFrame(leftDragon2Animation);
+					rightWolf2Move = requestAnimationFrame(rightWolf2Animation);	
 				}	
 			function remove5(timestamp){
 				if (rightDragonMarginLeft < 68 ){
@@ -1832,6 +3262,171 @@ window.requestAnimFrame = (function(){
 			}	
 				r5=requestAnimationFrame(remove5);
 		}
+		
+		if(data === "leftDragon2"){
+			if(leftDragon2MarginLeft > 0){
+				leftBear2Move = requestAnimationFrame(leftBear2Animation);		
+			}	
+			function remove2(timestamp){
+				if ( leftDragon2MarginLeft >= -30){
+					leftDragon2MarginTop-=5;
+					leftDragon2MarginLeft-=5;
+					leftDragon2.style.marginTop = leftDragon2MarginTop + "%";
+					leftDragon2.style.marginLeft = leftDragon2MarginLeft + "%";		
+					r2=requestAnimationFrame(remove2);	
+				}
+			}	
+				r2=requestAnimationFrame(remove2);
+		}	
+		
+		if(data === "rightWolf2"){
+			if(rightWolf2MarginTop > 8){
+				rightBear2Move = requestAnimationFrame(rightBear2Animation);
+			}			
+			 function remove7(timestamp){
+				if ( rightWolf2MarginTop >= -36.8){
+					rightWolf2MarginTop-=5;
+					rightWolf2MarginLeft+=5;
+					rightWolf2.style.marginTop = rightWolf2MarginTop + "%";
+					rightWolf2.style.marginLeft = rightWolf2MarginLeft + "%";		
+					requestAnimationFrame(remove7);			
+				}	
+			}	
+				r7=requestAnimationFrame(remove7);
+		}
+		
+		if(data === "leftBear2"){
+			
+			if(leftBear2MarginTop > 18){
+			}	
+			function remove4(timestamp){
+				if ( leftBear2MarginTop > 18 && leftBear2MarginTop < 23){
+					leftBear2MarginTop+=0.1;
+					leftBear2MarginLeft-=5;
+										
+					leftBear2.style.marginTop = leftBear2MarginTop + "%";
+					leftBear2.style.marginLeft = leftBear2MarginLeft + "%";		
+					r4=requestAnimationFrame(remove4);	
+				}
+			}	
+				r4=requestAnimationFrame(remove4);
+		}	
+		if(data === "rightBear2"){
+			if(rightBear2MarginTop >0){
+				leftDragon3Move = requestAnimationFrame(leftDragon3Animation);			
+			}	
+			function remove3(timestamp){
+				if ( rightBear2MarginTop < 27){
+					rightBear2MarginTop+=0.3;
+					rightBear2MarginLeft+=5.4;
+										
+					rightBear2.style.marginTop = rightBear2MarginTop + "%";
+					rightBear2.style.marginLeft = rightBear2MarginLeft + "%";		
+					r3=requestAnimationFrame(remove3);	
+				}
+			}	
+				r3=requestAnimationFrame(remove3);
+		}	
+		
+		if(data === "leftDragon3"){
+			if(leftDragon3MarginLeft > 0){
+				leftBear3Move = requestAnimationFrame(leftBear3Animation);		
+				rightWolf3Move = requestAnimationFrame(rightWolf3Animation);
+			}	
+			function remove2(timestamp){
+				if ( leftDragon3MarginLeft >= -30){
+					leftDragon3MarginTop-=5;
+					leftDragon3MarginLeft-=5;
+					leftDragon3.style.marginTop = leftDragon3MarginTop + "%";
+					leftDragon3.style.marginLeft = leftDragon3MarginLeft + "%";		
+					r2=requestAnimationFrame(remove2);	
+				}
+			}	
+				r2=requestAnimationFrame(remove2);
+		}	
+		
+		if(data === "leftBear3"){
+			
+			if(leftBear3MarginTop > 18){
+				leftDragon4Move = requestAnimationFrame(leftDragon4Animation);								
+			}	
+			function remove4(timestamp){
+				if ( leftBear3MarginTop > 18 && leftBear3MarginTop < 23){
+					leftBear3MarginTop+=0.1;
+					leftBear3MarginLeft-=5;
+										
+					leftBear3.style.marginTop = leftBear3MarginTop + "%";
+					leftBear3.style.marginLeft = leftBear3MarginLeft + "%";		
+					r4=requestAnimationFrame(remove4);	
+				}
+			}	
+				r4=requestAnimationFrame(remove4);
+		}
+		
+		if(data === "rightWolf3"){
+			if(rightWolf3MarginTop > 8){
+				rightBear3Move = requestAnimationFrame(rightBear3Animation);
+			}			
+			 function remove7(timestamp){
+				if ( rightWolf3MarginTop >= -36.8){
+					rightWolf3MarginTop-=5;
+					rightWolf3MarginLeft+=5;
+					rightWolf3.style.marginTop = rightWolf3MarginTop + "%";
+					rightWolf3.style.marginLeft = rightWolf3MarginLeft + "%";		
+					requestAnimationFrame(remove7);			
+				}	
+			}	
+				r7=requestAnimationFrame(remove7);
+		}
+		
+		if(data === "leftDragon4"){
+			if(leftDragon4MarginLeft > 0){
+				leftBear4Move = requestAnimationFrame(leftBear4Animation);			
+			}	
+			function remove2(timestamp){
+				if ( leftDragon4MarginLeft >= -30){
+					leftDragon4MarginTop-=5;
+					leftDragon4MarginLeft-=5;
+					leftDragon4.style.marginTop = leftDragon4MarginTop + "%";
+					leftDragon4.style.marginLeft = leftDragon4MarginLeft + "%";		
+					r2=requestAnimationFrame(remove2);	
+				}
+			}	
+				r2=requestAnimationFrame(remove2);
+		}	
+		
+		if(data === "rightBear3"){
+			function remove3(timestamp){
+				if ( rightBear3MarginTop < 27){
+					rightBear3MarginTop+=0.3;
+					rightBear3MarginLeft+=5.4;
+										
+					rightBear3.style.marginTop = rightBear3MarginTop + "%";
+					rightBear3.style.marginLeft = rightBear3MarginLeft + "%";		
+					r3=requestAnimationFrame(remove3);	
+				}
+			}	
+				r3=requestAnimationFrame(remove3);
+		}	
+
+		if(data === "leftBear4"){
+			
+			if(leftBear4MarginTop > 18){
+				<!-- leftDragon4Move = requestAnimationFrame(leftDragon4Animation);								 -->
+			}	
+			function remove4(timestamp){
+				if ( leftBear4MarginTop > 18 && leftBear4MarginTop < 23){
+					leftBear4MarginTop+=0.1;
+					leftBear4MarginLeft-=5;
+										
+					leftBear4.style.marginTop = leftBear4MarginTop + "%";
+					leftBear4.style.marginLeft = leftBear4MarginLeft + "%";		
+					r4=requestAnimationFrame(remove4);	
+				}
+			}	
+				r4=requestAnimationFrame(remove4);
+		}
+		
 	}
 	
 	var w = document.getElementById("gameContainer"),
@@ -1844,17 +3439,19 @@ window.requestAnimFrame = (function(){
 	y=w.clientHeight;
 	
 	var againButton = document.getElementById('againButton');
-	var againFont = document.getElementById('againFont');
+	var againButton2 = document.getElementsByClassName('againButton');
 	
 	againButton.onclick = function reply_click(clicked_id){
-		data = clicked_id;	
-		if(data === "againButton" || data === "againFont" || data === "againFontEffect"){
+		data = clicked_id.target.className || clicked_id.target.id;	
+		console.log(data);		
+		if(data === "againButton" || data === "againButton2"){
 			window.location.reload();
 		}
 	}
-	againFont.onclick = function reply_click(clicked_id){
-		data = clicked_id.target.id;	
-		if(data === "againButton" || data === "againFont" || data === "againFontEffect"){
+	againButton2.onclick = function reply_click(clicked_id){
+		data = clicked_id.target.className || clicked_id.target.id;	
+		console.log(data);	
+		if(data === "againButton" || data === "againButton2"){
 			window.location.reload();
 		}
 	}
@@ -1862,31 +3459,52 @@ window.requestAnimFrame = (function(){
 	function mouseDown(event) {
 		var data = event.target.id;
 		console.log(data);
-		if (data === "m5" || data === "hand"){
+		if (data === "m5" || data === "hand" || data === "rightWolf2" || data === "rightWolf3"){
 			m5.style.height="52%";
 			m5.style.width="52%";
+			rightWolf2.style.height="52%";
+			rightWolf2.style.width="52%";
 		}
 		
-		if(data==="leftDragon"){
+		if(data==="leftDragon" || data==="leftDragon2" || data==="leftDragon3" || data==="leftDragon4"){
 			leftDragon.style.height="70%";
 			leftDragon.style.width="40%";
+			leftDragon2.style.height="70%";
+			leftDragon2.style.width="40%";
+			leftDragon3.style.height="70%";
+			leftDragon3.style.width="40%";
+			leftDragon4.style.height="70%";
+			leftDragon4.style.width="40%";
 		}
 		
-		if(data==="rightBear"){
+		if(data==="rightBear" || data==="rightBear2" || data==="rightBear3" || data==="rightBear4"){
 			rightBear.style.height="52%";
 			rightBear.style.width="25%";
+			rightBear2.style.height="52%";
+			rightBear2.style.width="25%";
+			rightBear3.style.height="52%";
+			rightBear3.style.width="25%";
+			rightBear4.style.height="52%";
+			rightBear4.style.width="25%";
 		}
 		
-		if(data==="leftBear"){		
+		if(data==="leftBear" || data==="leftBear2" ||  data==="leftBear3" ||  data==="leftBear4"){		
 			leftBear.style.height="42%";
 			leftBear.style.width="27%";
+			leftBear2.style.height="42%";
+			leftBear2.style.width="27%";
+			leftBear3.style.height="42%";
+			leftBear3.style.width="27%";
+			leftBear4.style.height="42%";
+			leftBear4.style.width="27%";
 		}
 		
-		if(data==="rightDragon"){		
+		if(data==="rightDragon" || data==="rightDragon2"){		
 			rightDragon.style.height="70%";
 			rightDragon.style.width="35%";
+			rightDragon2.style.height="70%";
+			rightDragon2.style.width="35%";
 		}
-		
 	}
 
 	function mouseUp(event) {
@@ -1907,6 +3525,42 @@ window.requestAnimFrame = (function(){
 			
 			rightDragon.style.height="68%";
 			rightDragon.style.width="33%";
+			
+			leftDragon2.style.height="68%";
+			leftDragon2.style.width="38%";
+			
+			rightWolf2.style.height="50%";
+			rightWolf2.style.width="50%";
+			
+			leftBear2.style.height="40%";
+			leftBear2.style.width="25%";
+			
+			rightBear2.style.height="50%";
+			rightBear2.style.width="23%";
+			
+			leftDragon3.style.height="68%";
+			leftDragon3.style.width="38%";
+			
+			leftBear3.style.height="40%";
+			leftBear3.style.width="25%";
+			
+			rightWolf3.style.height="50%";
+			rightWolf3.style.width="50%";
+			
+			leftDragon4.style.height="68%";
+			leftDragon4.style.width="38%";
+			
+			rightBear3.style.height="50%";
+			rightBear3.style.width="23%";
+			
+			rightBear4.style.height="50%";
+			rightBear4.style.width="23%";
+			
+			rightDragon2.style.height="68%";
+			rightDragon2.style.width="33%";
+			
+			leftBear4.style.height="40%";
+			leftBear4.style.width="25%";
 			
 	}
 
