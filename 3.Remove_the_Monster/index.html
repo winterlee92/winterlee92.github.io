@@ -3073,7 +3073,9 @@ window.requestAnimFrame = (function(){
 	var happyToggle = 0;
 	
 	function winAnimation(timestamp){
-	console.log(happyMarginTop);
+	 clearTimeout(t);	
+	 cancelAnimationFrame(shakingAnimation);
+	 main_character.style.display ="none"
 		happy.style.display = "block";
 		if ( happyMarginTop > 8.1){
 			happyMarginTop-=1.45;
@@ -3093,13 +3095,11 @@ window.requestAnimFrame = (function(){
 		 }
 	}
 	
-	<!-- winMove = requestAnimationFrame(winAnimation);	 -->
-	
 	var sBone;
 	
 	function boneImage(){
 		bone.style.display = "block"
-		clearTimeout(t);	
+		window.clearTimeout(t);
 		var myIndex1=0;
 		loopImage();
 		function loopImage(){	
@@ -3126,7 +3126,7 @@ window.requestAnimFrame = (function(){
 
 	function imageLoop2(){
 		getPet.style.display = "block"
-		clearTimeout(t);	
+		window.clearTimeout(t);	
 		var myIndex2=0;
 		loopImage2();
 		function loopImage2(){	
