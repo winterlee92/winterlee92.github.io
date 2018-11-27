@@ -3073,7 +3073,7 @@ window.requestAnimFrame = (function(){
 	var happyToggle = 0;
 	
 	function winAnimation(timestamp){
-	 clearTimeout(t);	
+	 window.clearTimeout(t);	
 	 cancelAnimationFrame(shakingAnimation);
 	 main_character.style.display ="none"
 		happy.style.display = "block";
