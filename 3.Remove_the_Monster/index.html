@@ -3086,7 +3086,11 @@ window.requestAnimFrame = (function(){
 			happy.style.width = happyWidth + "%"; 
 			winMove = requestAnimationFrame(winAnimation);			
 		}
-		 imageLoop2();
+		if (happyMarginTop <= 8.1){
+		
+			imageLoop2();
+		 
+		 }
 	}
 	
 	<!-- winMove = requestAnimationFrame(winAnimation);	 -->
@@ -3105,7 +3109,7 @@ window.requestAnimFrame = (function(){
 			myIndex1++;
 			if (myIndex1 > b.length) {}    
 			b[myIndex1].style.display = "block";  
-			sBone=setTimeout(loopImage,1000/25);
+			sBone=setTimeout(loopImage,1000/40);
 
 			if(myIndex1===8){
 				fail.style.display="block";
@@ -3119,7 +3123,7 @@ window.requestAnimFrame = (function(){
 			}				
 		}
 	}	
-	
+
 	function imageLoop2(){
 		getPet.style.display = "block"
 		clearTimeout(t);	
@@ -3132,7 +3136,7 @@ window.requestAnimFrame = (function(){
 			myIndex2++;
 			if (myIndex2 > gPet.length) {}    
 			gPet[myIndex2].style.display = "block";  
-			sPet=setTimeout(loopImage2,1000/60);
+			sPet=setTimeout(loopImage2,1000/20);
 			if(myIndex2===20){
 				clearTimeout(sPet);			
 			}				
