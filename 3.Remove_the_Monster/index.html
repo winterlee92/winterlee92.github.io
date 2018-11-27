@@ -192,7 +192,7 @@
 		margin-top: 22%;
 		margin-left: -30%;
 		background-image: url(leftBear.png);
-		z-index:199;
+		z-index:190;
 		display:none;
 	}
 	
@@ -222,7 +222,7 @@
 		overflow:hidden;
 		background-Size: 100% 100%;
 		background-image: url(rightDragon.png);
-		z-index:199;
+		z-index:190;
 	}
 	
 	#m5{
@@ -254,14 +254,20 @@
 	}
 	
 
-	<!-- #m6{ -->
-		<!-- background-Size: 45% 58%; -->
-		<!-- margin-top: 24%; -->
-		<!-- margin-left: -8%; -->
-		<!-- background-image: url(m6.png); -->
-		<!-- z-index:6; -->
-		<!-- display:none; -->
-	<!-- } -->
+	#leftWolf,#leftWolf2{
+		position:absolute;	
+		height:60%;
+		width:50%;
+		background-Repeat:no-repeat;
+		overflow:hidden;
+		background-Size: 100% 100%;
+		margin-top: 28%;
+		margin-left:-48%;
+		background-image: url(leftWolf.png);
+		z-index:199;
+		display:none;
+	}
+
 	#layer1{
 		z-index:98;
 		background-Size : 100% 100%; 
@@ -757,7 +763,7 @@
 		<div id="rightBear3" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>	
 		<div id="leftWolf" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
 		<div id="leftBear4" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
-		<div id="rightDragon4" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>		
+		<div id="rightDragon2" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>		
 		<div id="rightBear4" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
 		<div id="leftWolf2" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
 		
@@ -883,6 +889,21 @@ window.requestAnimFrame = (function(){
 	leftDragon4.addEventListener('mousedown', mouseDown);
 	leftDragon4.addEventListener('mouseup', mouseUp);
 	
+	leftWolf.addEventListener('mousedown', mouseDown);
+	leftWolf.addEventListener('mouseup', mouseUp);
+	
+	leftWolf2.addEventListener('mousedown', mouseDown);
+	leftWolf2.addEventListener('mouseup', mouseUp);
+	
+	rightBear3.addEventListener('mouseup', mouseUp);
+	rightBear3.addEventListener('mousedown', mouseDown);
+	
+	rightBear4.addEventListener('mouseup', mouseUp);
+	rightBear4.addEventListener('mousedown', mouseDown);
+	
+	rightDragon2.addEventListener('mouseup', mouseUp);
+	rightDragon2.addEventListener('mousedown', mouseDown);
+	
 	hand.addEventListener('mousedown', mouseDown);
 	hand.addEventListener('mouseup', mouseUp);
 	cursorImage.addEventListener('mousedown', mouseDown);
@@ -982,7 +1003,7 @@ window.requestAnimFrame = (function(){
 		lifeTimeWidth -= 0.0133;
 		
 		lifeTime.style.width = lifeTimeWidth + "%";
-		t = setTimeout(timer,1000/14);
+		t = setTimeout(timer,1000/30);
 		}		
 	}
 	
@@ -1022,7 +1043,7 @@ window.requestAnimFrame = (function(){
 			shakingToggle = 1;		
 		}shaking = requestAnimationFrame(shakingAnimation);
 	}
-	<!-- shaking = requestAnimationFrame(shakingAnimation); -->
+	shaking = requestAnimationFrame(shakingAnimation);
 		
 	function monsterMove(timestamp){
 		if ( mmTop < 8){
@@ -2414,7 +2435,7 @@ window.requestAnimFrame = (function(){
 	var rightBear3ZIndex = 19;
 	var rightBear3Toggle = 0;
 	
-	function rightBear3Animation(){
+	function rightBear3Animation(timestamp){
 		rightBear3.style.display = "block";
 		if ( rightBearMarginTop >= 20){
 			rightBear3MarginTop-=0.7;
@@ -2524,7 +2545,7 @@ window.requestAnimFrame = (function(){
 	var rightBear4ZIndex = 19;
 	var rightBear4Toggle = 0;
 	
-	function rightBear4Animation(){
+	function rightBear4Animation(timestamp){
 		rightBear4.style.display = "block";
 		if ( rightBear4MarginTop >= 20){
 			rightBear4MarginTop-=0.7;
@@ -2733,6 +2754,320 @@ window.requestAnimFrame = (function(){
 	}
 	
 	
+	var leftWolfMarginTop =28;
+	var leftWolfMarginLeft = -48;
+	var leftWolfMarginHeight = 60;
+	var leftWolfMarginWidth = 50;
+	var leftWolfZIndex = 0;
+	var leftWolfToggle = 0;
+	
+	function leftWolfAnimation(timestamp){
+		leftWolf.style.display = "block";
+		if ( leftWolfMarginTop > 22){
+			leftWolfMarginTop-=0.6;
+			leftWolfMarginLeft+=3.8;			
+			leftWolf.style.marginTop = leftWolfMarginTop + "%";
+			leftWolf.style.marginLeft = leftWolfMarginLeft + "%"; 
+			
+			leftWolfMove = requestAnimationFrame(leftWolfAnimation);			
+		}	
+		function leftWolfSlowDown(timestamp){
+			//slow down
+			if(leftWolfMarginTop <= 22 && leftWolfMarginTop >19){
+				cancelAnimationFrame(leftWolfMove);
+				leftWolfMarginTop-=0.0375;
+				leftWolfMarginLeft+=0.0875;
+				<!-- leftWolfZIndex+=2.375; -->
+				<!-- leftWolf.style.zIndex =leftWolfZIndex; -->
+				leftWolf.style.marginTop = leftWolfMarginTop + "%";
+				leftWolf.style.marginLeft = leftWolfMarginLeft + "%"; 
+				leftWolfSlow = requestAnimationFrame(leftWolfSlowDown);
+			}
+			function leftWolfCatching(timestamp){     
+				//drop down
+				if(leftWolfMarginTop <= 19 && leftWolfMarginTop >8){
+					cancelAnimationFrame(leftWolfSlow);
+					leftWolfMarginTop-=1.1;
+					leftWolfMarginLeft+=1.8;
+					leftWolf.style.marginTop = leftWolfMarginTop + "%";
+					leftWolf.style.marginLeft = leftWolfMarginLeft + "%"; 
+					leftWolfCatch = requestAnimationFrame(leftWolfCatching);
+				}
+				if(leftWolfMarginTop <= 8){	
+					mc.style.display = "none";					
+					document.getElementById("timeDisplay").style.display="none";	
+					document.getElementById("eye").style.display="block";
+					rotateHamster.style.display = "block";	
+					rotateHamster.style.transform = "rotate(30deg)";					
+					leftWolfToggle = 1;
+				}
+				if(leftWolfToggle === 1 && leftWolfMarginTop <= 8){	
+						cancelAnimationFrame(leftWolfCatch);
+						leftWolfMarginTop = 8;
+						leftWolfMarginLeft = 15;
+						leftWolfMarginHeight = 60;
+						leftWolfMarginWidth = 50;
+						
+						leftWolfDropDown=requestAnimationFrame(leftWolfDropDownAnimation);
+				}	
+			}leftWolfCatch = requestAnimationFrame(leftWolfCatching);				
+		}leftWolfSlow = requestAnimationFrame(leftWolfSlowDown);			
+	}
+	
+	function leftWolfDropDownAnimation(timestamp){
+		
+		if (rotateHamsterMarginTop < 30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterMarginLeft+=0.1625;
+			rotateHamsterHeight-=0.075;
+			rotateHamsterWidth-=0.025;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.marginLeft=rotateHamsterMarginLeft+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+			
+			leftWolfMarginTop+=0.275;
+			leftWolfMarginLeft+=0.325;
+			leftWolfMarginHeight-=0.25;
+			leftWolfMarginWidth-=0.25;
+			leftWolfZIndex -= 5;
+			
+			leftWolf.style.marginTop=leftWolfMarginTop+"%";
+			leftWolf.style.marginLeft=leftWolfMarginLeft+"%";
+			leftWolf.style.height=leftWolfMarginHeight+"%";
+			leftWolf.style.width=leftWolfMarginWidth+"%";
+			leftWolf.style.zIndex=leftWolfZIndex;
+			
+			leftWolfDropDown=requestAnimationFrame(leftWolfDropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			leftWolf.style.marginTop=rotateHamsterMarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				boneImage();
+				cancelAnimationFrame(leftWolfDropDown);
+			}			
+		}
+		leftWolfDropDown=requestAnimationFrame(leftWolfDropDownAnimation);
+	}
+	
+	
+	var rightDragon2MarginTop = 3;
+	var rightDragon2MarginLeft = 100;
+	var rightDragon2Height = 68;
+	var rightDragon2Width = 33;
+	var rightDragon2ZIndex = 199;
+	var rightDragon2Toggle = 0;
+	
+	function rightDragon2Animation(timestamp){
+		rightDragon2.style.display = "block";
+		if ( rightDragon2MarginTop < 5){
+			rightDragon2MarginTop+=0.2;
+			rightDragon2MarginLeft-=3.2;
+			rightDragon2.style.marginTop = rightDragon2MarginTop + "%";
+			rightDragon2.style.marginLeft = rightDragon2MarginLeft + "%"; 
+			rightDragon2Move = requestAnimationFrame(rightDragon2Animation);			
+		}		
+			function rightDragon2SlowDown(timestamp){
+				//slow down
+				if(rightDragon2MarginTop >= 5 && rightDragon2MarginTop < 8){
+					cancelAnimationFrame(rightDragon2Move);
+					rightDragon2MarginTop+=0.005;
+					rightDragon2MarginLeft-=0.01666666666;
+					rightDragon2.style.marginTop = rightDragon2MarginTop + "%";
+					rightDragon2.style.marginLeft = rightDragon2MarginLeft + "%"; 
+					rightDragon2Slow = requestAnimationFrame(rightDragon2SlowDown);
+				}
+				function rightDragon2Catching(timestamp){     
+				//catch 
+					if(rightDragon2MarginLeft < 61 && rightDragon2MarginLeft >44){
+						cancelAnimationFrame(rightDragon2Slow);
+						rightDragon2MarginLeft-=1.6;
+						rightDragon2.style.marginLeft = rightDragon2MarginLeft + "%"; 
+						rightDragon2Catch = requestAnimationFrame(rightDragon2Catching);
+					}
+					if(rightDragon2MarginLeft <= 44){
+						mc.style.display = "none";					
+						document.getElementById("timeDisplay").style.display="none";	
+						document.getElementById("eye").style.display="block";
+						rotateHamster.style.display = "block";	
+						rotateHamster.style.transform = "rotate(-30deg)";					
+						rightDragon2Toggle = 1;
+					}	
+					if(rightDragon2Toggle === 1 && rightDragon2MarginLeft <= 44){	
+						cancelAnimationFrame(rightDragon2Catch);
+						rightDragon2MarginTop = 8;
+						rightDragon2MarginLeft = 44;
+						rightDragon2Height = 68;
+						rightDragon2Width = 33;
+						
+						rightDragon2DropDown=requestAnimationFrame(rightDragon2DropDownAnimation);
+					}	
+				}
+				rightDragon2Catch = requestAnimationFrame(rightDragon2Catching);
+			}
+		rightDragon2Slow = requestAnimationFrame(rightDragon2SlowDown);
+	}
+	function rightDragon2DropDownAnimation(timestamp){
+		
+		if (rotateHamsterMarginTop <30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterHeight-=0.125;
+			rotateHamsterWidth-=0.05;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+			
+			rightDragon2MarginTop+=0.3;
+			<!-- rightDragon2MarginLeft-=2.1; -->
+			rightDragon2Height-=0.5;
+			rightDragon2Width-=0.25;
+			rightDragon2ZIndex -= 5;
+			
+			rightDragon2.style.marginTop=rightDragon2MarginTop+"%";
+			<!-- rightDragon2.style.marginLeft=rightDragon2MarginLeft+"%"; -->
+			rightDragon2.style.height=rightDragon2Height+"%";
+			rightDragon2.style.width=rightDragon2Width+"%";
+			rightDragon2.style.zIndex=rightDragon2ZIndex;
+			
+			rightDragon2DropDown=requestAnimationFrame(rightDragon2DropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rightDragon2.style.marginTop=rotateHamsterMarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				boneImage();
+				cancelAnimationFrame(rightDragon2DropDown);
+			}			
+		}rightDragon2DropDown=requestAnimationFrame(rightDragon2DropDownAnimation);
+	}
+	
+	var leftWolf2MarginTop =28;
+	var leftWolf2MarginLeft = -48;
+	var leftWolf2MarginHeight = 60;
+	var leftWolf2MarginWidth = 50;
+	var leftWolf2ZIndex = 0;
+	var leftWolf2Toggle = 0;
+	
+	function leftWolf2Animation(timestamp){
+		leftWolf2.style.display = "block";
+		if ( leftWolf2MarginTop > 22){
+			leftWolf2MarginTop-=0.6;
+			leftWolf2MarginLeft+=3.8;			
+			leftWolf2.style.marginTop = leftWolf2MarginTop + "%";
+			leftWolf2.style.marginLeft = leftWolf2MarginLeft + "%"; 
+			
+			leftWolf2Move = requestAnimationFrame(leftWolf2Animation);			
+		}	
+		function leftWolf2SlowDown(timestamp){
+			//slow down
+			if(leftWolf2MarginTop <= 22 && leftWolf2MarginTop >19){
+				cancelAnimationFrame(leftWolf2Move);
+				leftWolf2MarginTop-=0.0375;
+				leftWolf2MarginLeft+=0.0875;
+				<!-- leftWolf2ZIndex+=2.375; -->
+				<!-- leftWolf2.style.zIndex =leftWolf2ZIndex; -->
+				leftWolf2.style.marginTop = leftWolf2MarginTop + "%";
+				leftWolf2.style.marginLeft = leftWolf2MarginLeft + "%"; 
+				leftWolf2Slow = requestAnimationFrame(leftWolf2SlowDown);
+			}
+			function leftWolf2Catching(timestamp){     
+				//drop down
+				if(leftWolf2MarginTop <= 19 && leftWolf2MarginTop >8){
+					cancelAnimationFrame(leftWolf2Slow);
+					leftWolf2MarginTop-=1.1;
+					leftWolf2MarginLeft+=1.8;
+					leftWolf2.style.marginTop = leftWolf2MarginTop + "%";
+					leftWolf2.style.marginLeft = leftWolf2MarginLeft + "%"; 
+					leftWolf2Catch = requestAnimationFrame(leftWolf2Catching);
+				}
+				if(leftWolf2MarginTop <= 8){	
+					mc.style.display = "none";					
+					document.getElementById("timeDisplay").style.display="none";	
+					document.getElementById("eye").style.display="block";
+					rotateHamster.style.display = "block";	
+					rotateHamster.style.transform = "rotate(30deg)";					
+					leftWolf2Toggle = 1;
+				}
+				if(leftWolf2Toggle === 1 && leftWolf2MarginTop <= 8){	
+						cancelAnimationFrame(leftWolf2Catch);
+						leftWolf2MarginTop = 8;
+						leftWolf2MarginLeft = 15;
+						leftWolf2MarginHeight = 60;
+						leftWolf2MarginWidth = 50;
+						
+						leftWolf2DropDown=requestAnimationFrame(leftWolf2DropDownAnimation);
+				}	
+			}leftWolf2Catch = requestAnimationFrame(leftWolf2Catching);				
+		}leftWolf2Slow = requestAnimationFrame(leftWolf2SlowDown);			
+	}
+	
+	function leftWolf2DropDownAnimation(timestamp){
+		
+		if (rotateHamsterMarginTop < 30){
+							
+			rotateHamsterMarginTop+=0.1875;
+			rotateHamsterMarginLeft+=0.1625;
+			rotateHamsterHeight-=0.075;
+			rotateHamsterWidth-=0.025;
+			rotateHamsterZIndex -= 4;
+			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			rotateHamster.style.marginLeft=rotateHamsterMarginLeft+"%";
+			rotateHamster.style.height=rotateHamsterHeight+"%";
+			rotateHamster.style.width=rotateHamsterWidth+"%";
+			rotateHamster.style.zIndex=rotateHamsterZIndex;
+			
+			leftWolf2MarginTop+=0.275;
+			leftWolf2MarginLeft+=0.325;
+			leftWolf2MarginHeight-=0.25;
+			leftWolf2MarginWidth-=0.25;
+			leftWolf2ZIndex -= 5;
+			
+			leftWolf2.style.marginTop=leftWolf2MarginTop+"%";
+			leftWolf2.style.marginLeft=leftWolf2MarginLeft+"%";
+			leftWolf2.style.height=leftWolf2MarginHeight+"%";
+			leftWolf2.style.width=leftWolf2MarginWidth+"%";
+			leftWolf2.style.zIndex=leftWolf2ZIndex;
+			
+			leftWolf2DropDown=requestAnimationFrame(leftWolf2DropDownAnimation);
+		}
+		
+		if (rotateHamsterMarginTop >= 30 && rotateHamsterMarginTop < 60){
+		
+			rotateHamsterMarginTop+=0.25;			
+			rotateHamster.style.marginTop=rotateHamsterMarginTop+"%";
+			leftWolf2.style.marginTop=rotateHamsterMarginTop+"%";
+			
+			if (rotateHamsterMarginTop === 60)
+			{
+				boneImage();
+				cancelAnimationFrame(leftWolf2DropDown);
+			}			
+		}
+		leftWolf2DropDown=requestAnimationFrame(leftWolf2DropDownAnimation);
+	}
+	
+	
+	
 	var sBone;
 	
 	function boneImage(){
@@ -2803,14 +3138,13 @@ window.requestAnimFrame = (function(){
 		event.preventDefault();
 		 var tobj = event.changedTouches[0]; 
 		 var data = event.target.id || event.target.className;
-		 
-		var data = event.target.id;
-		console.log(data);
 		if (data === "m5" || data === "hand" || data === "rightWolf2" || data === "rightWolf3"){
 			m5.style.height="52%";
 			m5.style.width="52%";
 			rightWolf2.style.height="52%";
 			rightWolf2.style.width="52%";
+			rightWolf3.style.height="52%";
+			rightWolf3.style.width="52%";
 		}
 		
 		if(data==="leftDragon" || data==="leftDragon2" || data==="leftDragon3" || data==="leftDragon4"){
@@ -2851,6 +3185,13 @@ window.requestAnimFrame = (function(){
 			rightDragon.style.width="35%";
 			rightDragon2.style.height="70%";
 			rightDragon2.style.width="35%";
+		}
+		
+		if(data==="leftWolf" || data==="leftWolf2"){		
+			leftWolf.style.height="60%";
+			leftWolf.style.width="50%";
+			leftWolf2.style.height="60%";
+			leftWolf2.style.width="50%";
 		}
 	} 
 	
@@ -3049,7 +3390,7 @@ window.requestAnimFrame = (function(){
 		
 		if(data === "rightWolf3"){
 			if(rightWolf3MarginTop > 8){
-				rightBear3Move = requestAnimationFrame(rightBear3Animation);
+				<!-- rightBear3Move = requestAnimationFrame(rightBear3Animation); -->
 			}			
 			 function remove7(timestamp){
 				if ( rightWolf3MarginTop >= -36.8){
@@ -3065,7 +3406,8 @@ window.requestAnimFrame = (function(){
 		
 		if(data === "leftDragon4"){
 			if(leftDragon4MarginLeft > 0){
-				leftBear4Move = requestAnimationFrame(leftBear4Animation);			
+				leftBear4Move = requestAnimationFrame(leftBear4Animation);		
+				leftWolfMove = requestAnimationFrame(leftWolfAnimation);	
 			}	
 			function remove2(timestamp){
 				if ( leftDragon4MarginLeft >= -30){
@@ -3077,7 +3419,7 @@ window.requestAnimFrame = (function(){
 				}
 			}	
 				r2=requestAnimationFrame(remove2);
-		}	
+		}		
 		
 		if(data === "rightBear3"){
 			function remove3(timestamp){
@@ -3094,10 +3436,6 @@ window.requestAnimFrame = (function(){
 		}	
 
 		if(data === "leftBear4"){
-			
-			if(leftBear4MarginTop > 18){
-				<!-- leftDragon4Move = requestAnimationFrame(leftDragon4Animation);								 -->
-			}	
 			function remove4(timestamp){
 				if ( leftBear4MarginTop > 18 && leftBear4MarginTop < 23){
 					leftBear4MarginTop+=0.1;
@@ -3110,64 +3448,132 @@ window.requestAnimFrame = (function(){
 			}	
 				r4=requestAnimationFrame(remove4);
 		}
+		
+		if(data === "leftWolf"){
+			
+			if(leftWolfMarginTop > 17){
+				rightDragon2Move=requestAnimationFrame(rightDragon2Animation);
+				rightBear4Move = requestAnimationFrame(rightBear4Animation);
+			}	
+			function remove8(timestamp){
+				if ( leftWolfMarginTop < 28){
+					leftWolfMarginTop+=0.6;
+					leftWolfMarginLeft-=3.8;			
+					leftWolf.style.marginTop = leftWolfMarginTop + "%";
+					leftWolf.style.marginLeft = leftWolfMarginLeft + "%"; 
+					r8=requestAnimationFrame(remove8);	
+				}
+			}	
+				r8=requestAnimationFrame(remove8);
+		}
+		
+		if(data === "rightDragon2"){
+				if(rightDragon2MarginLeft < 68){
+					leftWolf2Move = requestAnimationFrame(leftWolf2Animation);	
+				}	
+			function remove5(timestamp){
+				if (rightDragon2MarginLeft < 68 ){
+					rightDragon2MarginTop-=0.2;
+					rightDragon2MarginLeft+=50;				
+					rightDragon2.style.marginTop = rightDragon2MarginTop + "%";
+					rightDragon2.style.marginLeft = rightDragon2MarginLeft + "%";		
+					r5=requestAnimationFrame(remove5);	
+				}
+			}	
+				r5=requestAnimationFrame(remove5);
+		}
+		if(data === "rightBear4"){
+			function remove3(timestamp){
+				if ( rightBear4MarginTop < 27){
+					rightBear4MarginTop+=0.3;
+					rightBear4MarginLeft+=5.4;
+										
+					rightBear4.style.marginTop = rightBear4MarginTop + "%";
+					rightBear4.style.marginLeft = rightBear4MarginLeft + "%";		
+					r3=requestAnimationFrame(remove3);	
+				}
+			}	
+				r3=requestAnimationFrame(remove3);
+		}
+		
+		if(data === "leftWolf2"){
+			
+			if(leftWolf2MarginTop > 17){
+				win();
+			}	
+			function remove8(timestamp){
+				if ( leftWolf2MarginTop < 28){
+					leftWolf2MarginTop+=0.6;
+					leftWolf2MarginLeft-=3.8;			
+					leftWolf2.style.marginTop = leftWolf2MarginTop + "%";
+					leftWolf2.style.marginLeft = leftWolf2MarginLeft + "%"; 
+					r8=requestAnimationFrame(remove8);	
+				}
+			}	
+				r8=requestAnimationFrame(remove8);
+		}
 	}
 	
 	function touchend(event){	
 		event.preventDefault();
 		var data = event.target.id;
 			
+		m5.style.height="50%";
+		m5.style.width="50%";
 		
-			m5.style.height="50%";
-			m5.style.width="50%";
-			
-			leftDragon.style.height="68%";
-			leftDragon.style.width="38%";
+		leftDragon.style.height="68%";
+		leftDragon.style.width="38%";
 
-			rightBear.style.height="50%";
-			rightBear.style.width="23%";
-			
-			leftBear.style.height="40%";
-			leftBear.style.width="25%";
-			
-			rightDragon.style.height="68%";
-			rightDragon.style.width="33%";
-			
-			leftDragon2.style.height="68%";
-			leftDragon2.style.width="38%";
-			
-			rightWolf2.style.height="50%";
-			rightWolf2.style.width="50%";
-			
-			leftBear2.style.height="40%";
-			leftBear2.style.width="25%";
-			
-			rightBear2.style.height="50%";
-			rightBear2.style.width="23%";
-			
-			leftDragon3.style.height="68%";
-			leftDragon3.style.width="38%";
-			
-			leftBear3.style.height="40%";
-			leftBear3.style.width="25%";
-			
-			rightWolf3.style.height="50%";
-			rightWolf3.style.width="50%";
-			
-			leftDragon4.style.height="68%";
-			leftDragon4.style.width="38%";
-			
-			rightBear3.style.height="50%";
-			rightBear3.style.width="23%";
-			
-			rightBear4.style.height="50%";
-			rightBear4.style.width="23%";
-			
-			rightDragon2.style.height="68%";
-			rightDragon2.style.width="33%";
-			
-			leftBear4.style.height="40%";
-			leftBear4.style.width="25%";
-			
+		rightBear.style.height="50%";
+		rightBear.style.width="23%";
+		
+		leftBear.style.height="40%";
+		leftBear.style.width="25%";
+		
+		rightDragon.style.height="68%";
+		rightDragon.style.width="33%";
+		
+		leftDragon2.style.height="68%";
+		leftDragon2.style.width="38%";
+		
+		rightWolf2.style.height="50%";
+		rightWolf2.style.width="50%";
+		
+		leftBear2.style.height="40%";
+		leftBear2.style.width="25%";
+		
+		rightBear2.style.height="50%";
+		rightBear2.style.width="23%";
+		
+		leftDragon3.style.height="68%";
+		leftDragon3.style.width="38%";
+		
+		leftBear3.style.height="40%";
+		leftBear3.style.width="25%";
+		
+		rightWolf3.style.height="50%";
+		rightWolf3.style.width="50%";
+		
+		leftDragon4.style.height="68%";
+		leftDragon4.style.width="38%";
+		
+		rightBear3.style.height="50%";
+		rightBear3.style.width="23%";
+		
+		rightBear4.style.height="50%";
+		rightBear4.style.width="23%";
+		
+		rightDragon2.style.height="68%";
+		rightDragon2.style.width="33%";
+		
+		leftBear4.style.height="40%";
+		leftBear4.style.width="25%";
+		
+		leftWolf.style.height="62%";
+		leftWolf.style.width="52%";
+		
+		leftWolf2.style.height="62%";
+		leftWolf2.style.width="52%";
 	}
 	
 	function mouseMove(event) {
@@ -3365,7 +3771,7 @@ window.requestAnimFrame = (function(){
 		
 		if(data === "rightWolf3"){
 			if(rightWolf3MarginTop > 8){
-				rightBear3Move = requestAnimationFrame(rightBear3Animation);
+				<!-- rightBear3Move = requestAnimationFrame(rightBear3Animation); -->
 			}			
 			 function remove7(timestamp){
 				if ( rightWolf3MarginTop >= -36.8){
@@ -3381,7 +3787,8 @@ window.requestAnimFrame = (function(){
 		
 		if(data === "leftDragon4"){
 			if(leftDragon4MarginLeft > 0){
-				leftBear4Move = requestAnimationFrame(leftBear4Animation);			
+				leftBear4Move = requestAnimationFrame(leftBear4Animation);		
+				leftWolfMove = requestAnimationFrame(leftWolfAnimation);	
 			}	
 			function remove2(timestamp){
 				if ( leftDragon4MarginLeft >= -30){
@@ -3393,7 +3800,7 @@ window.requestAnimFrame = (function(){
 				}
 			}	
 				r2=requestAnimationFrame(remove2);
-		}	
+		}		
 		
 		if(data === "rightBear3"){
 			function remove3(timestamp){
@@ -3410,10 +3817,6 @@ window.requestAnimFrame = (function(){
 		}	
 
 		if(data === "leftBear4"){
-			
-			if(leftBear4MarginTop > 18){
-				<!-- leftDragon4Move = requestAnimationFrame(leftDragon4Animation);								 -->
-			}	
 			function remove4(timestamp){
 				if ( leftBear4MarginTop > 18 && leftBear4MarginTop < 23){
 					leftBear4MarginTop+=0.1;
@@ -3427,6 +3830,68 @@ window.requestAnimFrame = (function(){
 				r4=requestAnimationFrame(remove4);
 		}
 		
+		if(data === "leftWolf"){
+			
+			if(leftWolfMarginTop > 17){
+				rightDragon2Move=requestAnimationFrame(rightDragon2Animation);
+				rightBear4Move = requestAnimationFrame(rightBear4Animation);
+			}	
+			function remove8(timestamp){
+				if ( leftWolfMarginTop < 28){
+					leftWolfMarginTop+=0.6;
+					leftWolfMarginLeft-=3.8;			
+					leftWolf.style.marginTop = leftWolfMarginTop + "%";
+					leftWolf.style.marginLeft = leftWolfMarginLeft + "%"; 
+					r8=requestAnimationFrame(remove8);	
+				}
+			}	
+				r8=requestAnimationFrame(remove8);
+		}
+		
+		if(data === "rightDragon2"){
+				if(rightDragon2MarginLeft < 68){
+					leftWolf2Move = requestAnimationFrame(leftWolf2Animation);	
+				}	
+			function remove5(timestamp){
+				if (rightDragon2MarginLeft < 68 ){
+					rightDragon2MarginTop-=0.2;
+					rightDragon2MarginLeft+=50;				
+					rightDragon2.style.marginTop = rightDragon2MarginTop + "%";
+					rightDragon2.style.marginLeft = rightDragon2MarginLeft + "%";		
+					r5=requestAnimationFrame(remove5);	
+				}
+			}	
+				r5=requestAnimationFrame(remove5);
+		}
+		if(data === "rightBear4"){
+			function remove3(timestamp){
+				if ( rightBear4MarginTop < 27){
+					rightBear4MarginTop+=0.3;
+					rightBear4MarginLeft+=5.4;
+										
+					rightBear4.style.marginTop = rightBear4MarginTop + "%";
+					rightBear4.style.marginLeft = rightBear4MarginLeft + "%";		
+					r3=requestAnimationFrame(remove3);	
+				}
+			}	
+				r3=requestAnimationFrame(remove3);
+		}	
+		if(data === "leftWolf2"){
+			
+			if(leftWolf2MarginTop > 17){
+				win();
+			}	
+			function remove8(timestamp){
+				if ( leftWolf2MarginTop < 28){
+					leftWolf2MarginTop+=0.6;
+					leftWolf2MarginLeft-=3.8;			
+					leftWolf2.style.marginTop = leftWolf2MarginTop + "%";
+					leftWolf2.style.marginLeft = leftWolf2MarginLeft + "%"; 
+					r8=requestAnimationFrame(remove8);	
+				}
+			}	
+				r8=requestAnimationFrame(remove8);
+		}
 	}
 	
 	var w = document.getElementById("gameContainer"),
@@ -3458,12 +3923,13 @@ window.requestAnimFrame = (function(){
 	
 	function mouseDown(event) {
 		var data = event.target.id;
-		console.log(data);
 		if (data === "m5" || data === "hand" || data === "rightWolf2" || data === "rightWolf3"){
 			m5.style.height="52%";
 			m5.style.width="52%";
 			rightWolf2.style.height="52%";
 			rightWolf2.style.width="52%";
+			rightWolf3.style.height="52%";
+			rightWolf3.style.width="52%";
 		}
 		
 		if(data==="leftDragon" || data==="leftDragon2" || data==="leftDragon3" || data==="leftDragon4"){
@@ -3504,6 +3970,13 @@ window.requestAnimFrame = (function(){
 			rightDragon.style.width="35%";
 			rightDragon2.style.height="70%";
 			rightDragon2.style.width="35%";
+		}
+		
+		if(data==="leftWolf" || data==="leftWolf2"){		
+			leftWolf.style.height="60%";
+			leftWolf.style.width="50%";
+			leftWolf2.style.height="60%";
+			leftWolf2.style.width="50%";
 		}
 	}
 
@@ -3561,6 +4034,12 @@ window.requestAnimFrame = (function(){
 			
 			leftBear4.style.height="40%";
 			leftBear4.style.width="25%";
+			
+			leftWolf.style.height="62%";
+			leftWolf.style.width="52%";
+			
+			leftWolf2.style.height="62%";
+			leftWolf2.style.width="52%";
 			
 	}
 
