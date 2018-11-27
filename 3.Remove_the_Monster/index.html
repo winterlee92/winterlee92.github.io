@@ -3073,6 +3073,7 @@ window.requestAnimFrame = (function(){
 	var happyToggle = 0;
 	
 	function winAnimation(timestamp){
+	document.getElementById("timeDisplay");.style.display ="none";
 	 window.clearTimeout(t);	
 	 cancelAnimationFrame(shakingAnimation);
 	 main_character.style.display ="none"
@@ -3098,6 +3099,7 @@ window.requestAnimFrame = (function(){
 	var sBone;
 	
 	function boneImage(){
+		document.getElementById("timeDisplay");.style.display ="none";
 		bone.style.display = "block"
 		window.clearTimeout(t);
 		var myIndex1=0;
