@@ -34,6 +34,25 @@
 		background-image:url(bg.jpg);
 	}
 	
+		/* Add animation to "page content" */
+	.animate-bottom {
+	  position: relative;
+	  -webkit-animation-name: animatebottom;
+	  -webkit-animation-duration: 1s;
+	  animation-name: animatebottom;
+	  animation-duration: 1s
+	}
+
+	@-webkit-keyframes animatebottom {
+	  from { bottom:-100px; opacity:0 } 
+	  to { bottom:0px; opacity:1 }
+	}
+
+	@keyframes animatebottom { 
+	  from{ bottom:-100px; opacity:0 } 
+	  to{ bottom:0; opacity:1 }
+	}
+	
 	#main_character{
 		position:absolute;	
 		height:35%;
@@ -726,6 +745,42 @@
 		width:100%;
 		display:none;
 	}
+	
+	#failBg{
+		position:absolute;
+		height:100%;
+		width:100%;
+		background-color: black;
+		opacity: 0.5;
+		z-index:0;
+		
+	  -webkit-animation-name: failBg;
+	  -webkit-animation-duration: 1s;
+	  -webkit-animation-iteration-count: 1;
+	  -webkit-animation-fill-mode:forwards;
+	  animation-name: failBg;
+	  animation-duration: 1s
+	  animation-iteration-count: 1;
+	  animation-fill-mode:forwards;
+	}
+	
+	@-webkit-keyframes failBg {
+		0%{ 
+			opacity: 0;			
+		}
+		100%{
+			opacity: 0.5;
+		}
+	}	
+	
+	@keyframes failBg {
+		0%{ 
+			opacity: 0;			
+		}
+		100%{
+			opacity: 0.5;
+		}
+	}
 </style>
 </head>
 <body onContextMenu="return false;">
@@ -742,9 +797,7 @@
 			<div id="eye"></div>
 			<div id="rHamster"></div>	
 			<div id="tear"></div>
-		</div>	
-		<div id="happy"></div>
-		
+		</div>		
 		<div id="rightBear" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
 		<div id="leftBear" draggable="true" ondragstart="mouseMove(event)" onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>
 		<div id="leftDragon" draggable="true" ondragstart="mouseMove(event)"onmouseup="mouseUp(event)" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)"></div>		
@@ -770,6 +823,7 @@
 		<div id="m6"></div>
 		<div id="bone"></div>
 		<div id="fail">
+			<div id="failBg" class="animate-bottom "> </div>
 			<div id="hamster"> </div>
 			<div id="blood"> </div>
 			<div id="failFontBg"> </div>	
@@ -778,9 +832,8 @@
 			<div id="againFont"  ontouchstart="touchstart(event)"></div>				
 			<div id="againFontEffect"> </div>			
 		</div>
-		<div id="win">
-			
-		</div>
+		<div id="happy"></div>
+		<div id="win"></div>
 	  </div>
 	  <div id="frame">  
 		<div id="layer1"></div>
@@ -832,6 +885,7 @@ window.requestAnimFrame = (function(){
 	}());
   
 	var g = document.getElementById("gameContainer");
+	var happy = document.getElementById("happy");
 	var m5 = document.getElementById("m5");
 	var hand = document.getElementById("hand");
 	var cursorImage = document.getElementById("cursorImage");
@@ -951,9 +1005,26 @@ window.requestAnimFrame = (function(){
 			}
 		}	
 		
-	var getPetArray =['getPet (1).png','getPet (2).png','getPet (3).png','getPet (4).png','getPet (5).png','getPet (6).png',
-	'getPet (7).png','getPet (8).png','getPet (9).png','getPet (10).png','getPet (11).png','getPet (12).png','getPet (13).png',
-	'getPet (14).png','getPet (15).png','getPet (16).png','getPet (17).png','getPet (18).png','getPet (19).png','getPet (20).png',
+	var getPetArray =['getPet (1).png',
+	'getPet (2).png',
+	'getPet (3).png',
+	'getPet (4).png',
+	'getPet (5).png',
+	'getPet (6).png',
+	'getPet (7).png',
+	'getPet (8).png',
+	'getPet (9).png',
+	'getPet (10).png',
+	'getPet (11).png',
+	'getPet (12).png',
+	'getPet (13).png',
+	'getPet (14).png',
+	'getPet (15).png',
+	'getPet (16).png',
+	'getPet (17).png',
+	'getPet (18).png',
+	'getPet (19).png',
+	'getPet (20).png',
 	'getPet (21).png'];	
 	
 		for(i=0; i<getPetArray.length; i++)
@@ -1003,7 +1074,7 @@ window.requestAnimFrame = (function(){
 		lifeTimeWidth -= 0.0133;
 		
 		lifeTime.style.width = lifeTimeWidth + "%";
-		t = setTimeout(timer,1000/40);
+		t = setTimeout(timer,1000/25);
 		}		
 	}
 	
@@ -1015,31 +1086,31 @@ window.requestAnimFrame = (function(){
 		var shakingToggle = 0;
 		var count = 0;
 		if (shakingToggle === 0){ 
-				function upDownShake(timestamp){
-					if(hamsterMarginTop >= 22){
-						hamsterMarginTop-=0.03;
-						mc.style.marginTop = hamsterMarginTop + "%";
-						updown= requestAnimationFrame(upDownShake);
-					}
-					if(hamsterMarginTop <= 22 && count<2){
-						count++;
-						hamsterMarginTop = 22.3;
-						mc.style.marginTop = hamsterMarginTop + "%";
-						stopDuration=60;
-					}
-					if (count === 2 && hamsterMarginTop >= 22.3){
-						function durationAnimation(timestamp){
-							if( stopDuration > 0){
-								stopDuration--
-								cancelAnimationFrame(updown);
-								if (stopDuration===0){
-									count=0;
-									updown = requestAnimationFrame(upDownShake);
-								}duration = requestAnimationFrame(durationAnimation);
-							}
-						}duration = requestAnimationFrame(durationAnimation);
-					}
-				}updown= requestAnimationFrame(upDownShake);
+			function upDownShake(timestamp){
+				if(hamsterMarginTop >= 22){
+					hamsterMarginTop-=0.03;
+					mc.style.marginTop = hamsterMarginTop + "%";
+					updown= requestAnimationFrame(upDownShake);
+				}
+				if(hamsterMarginTop <= 22 && count<2){
+					count++;
+					hamsterMarginTop = 22.3;
+					mc.style.marginTop = hamsterMarginTop + "%";
+					stopDuration=60;
+				}
+				if (count === 2 && hamsterMarginTop >= 22.3){
+					function durationAnimation(timestamp){
+						if( stopDuration > 0){
+							stopDuration--
+							cancelAnimationFrame(updown);
+							if (stopDuration===0){
+								count=0;
+								updown = requestAnimationFrame(upDownShake);
+							}duration = requestAnimationFrame(durationAnimation);
+						}
+					}duration = requestAnimationFrame(durationAnimation);
+				}
+			}updown= requestAnimationFrame(upDownShake);
 			shakingToggle = 1;		
 		}shaking = requestAnimationFrame(shakingAnimation);
 	}
@@ -1087,77 +1158,6 @@ window.requestAnimFrame = (function(){
 		 mm2 = requestAnimationFrame(monsterMove2);
 	 }
 	  mm = requestAnimationFrame(monsterMove);		
-		
-	var winMarginTop = 22.5;	
-	var winMarginLeft = 40.5;
-	var winMarginHeight = 35;
-	var winMarginWidth = 17;
-	var winToggle = 0;
-	
-	function win(timestamp){	
-		document.getElementById("timeDisplay").style.display="none";	
-		cancelAnimationFrame(shaking);
-		mc.style.display = "none";
-		document.getElementById("happy").style.display = "block";
-		document.getElementById("tear").style.display = "none";
-		function winAnimation(timestamp){
-			if (winMarginTop < 27){
-				winMarginTop += 0.35;
-				winMarginLeft += 0.15;							
-				winMarginHeight -= 0.4;
-				winMarginWidth -= 0.4;
-				
-				happy.style.marginTop = winMarginTop+ "%";
-				happy.style.marginLeft = winMarginLeft+ "%"; 
-				happy.style.height = winMarginHeight + "%";
-				happy.style.width = winMarginWidth + "%"; 
-				
-			}
-			wa = requestAnimationFrame(winAnimation);
-			winToggle=1;
-			cancelAnimationFrame(wa);
-			if (winToggle === 1){
-				function winAnimation2(timestamp){	
-					if(winMarginTop > 5){
-						winMarginTop -= 1.8;
-						winMarginLeft -= 0.7;							
-						winMarginHeight += 2.5;
-						winMarginWidth += 1.6;
-						
-						happy.style.marginTop = winMarginTop+ "%";
-						happy.style.marginLeft = winMarginLeft+ "%"; 
-						happy.style.height = winMarginHeight + "%";
-						happy.style.width = winMarginWidth + "%"; 
-					}
-					wa2 = requestAnimationFrame(winAnimation2);
-					winToggle=2;
-					cancelAnimationFrame(wa2);
-					if (winToggle === 2){					
-						function winAnimation3(timestamp){	
-							console.log(winMarginTop);
-							if(winMarginTop >= 5){
-								winMarginTop -= 0.8;
-								winMarginLeft -= 0.6;							
-								winMarginHeight += 3;
-								winMarginWidth += 1.5;
-								
-								happy.style.marginTop = winMarginTop+ "%";
-								happy.style.marginLeft = winMarginLeft+ "%"; 
-								happy.style.height = winMarginHeight + "%";
-								happy.style.width = winMarginWidth + "%"; 
-							}
-							wa3 = requestAnimationFrame(winAnimation3);
-							winToggle=3;
-							cancelAnimationFrame(wa3);
-							if(winToggle === 3){
-								imageLoop2();
-							}
-						}wa3 = requestAnimationFrame(winAnimation3);					
-					}
-				}wa2 = requestAnimationFrame(winAnimation2);			
-		}
-		}wa = requestAnimationFrame(winAnimation);
-	}
 		
 		var leftDragonMarginTop = -6;	
 		var leftDragonMarginLeft = -38;
@@ -3066,12 +3066,36 @@ window.requestAnimFrame = (function(){
 		leftWolf2DropDown=requestAnimationFrame(leftWolf2DropDownAnimation);
 	}
 	
+	var happyMarginTop = 22.5;	
+	var happyMarginLeft =  40.5;
+	var happyHeight = 35;
+	var happyWidth = 17;
+	var happyToggle = 0;
 	
+	function winAnimation(timestamp){
+	console.log(happyMarginTop);
+		happy.style.display = "block";
+		if ( happyMarginTop > 8.1){
+			happyMarginTop-=1.45;
+			happyMarginLeft-=0.75;
+			happyHeight+=3;
+			happyWidth+=1.8;
+			happy.style.marginTop = happyMarginTop + "%";
+			happy.style.marginLeft = happyMarginLeft + "%"; 
+			happy.style.height = happyHeight + "%";
+			happy.style.width = happyWidth + "%"; 
+			winMove = requestAnimationFrame(winAnimation);			
+		}
+		 imageLoop2();
+	}
+	
+	<!-- winMove = requestAnimationFrame(winAnimation);	 -->
 	
 	var sBone;
 	
 	function boneImage(){
 		bone.style.display = "block"
+		clearTimeout(t);	
 		var myIndex1=0;
 		loopImage();
 		function loopImage(){	
@@ -3098,6 +3122,7 @@ window.requestAnimFrame = (function(){
 	
 	function imageLoop2(){
 		getPet.style.display = "block"
+		clearTimeout(t);	
 		var myIndex2=0;
 		loopImage2();
 		function loopImage2(){	
@@ -3107,9 +3132,9 @@ window.requestAnimFrame = (function(){
 			myIndex2++;
 			if (myIndex2 > gPet.length) {}    
 			gPet[myIndex2].style.display = "block";  
-			sPet=requestAnimationFrame(loopImage2);
+			sPet=setTimeout(loopImage2,1000/60);
 			if(myIndex2===20){
-				cancelAnimationFrame(sPet);		
+				clearTimeout(sPet);			
 			}				
 		}
 	}	
@@ -3504,7 +3529,7 @@ window.requestAnimFrame = (function(){
 		if(data === "leftWolf2"){
 			
 			if(leftWolf2MarginTop > 17){
-				win();
+				winMove = requestAnimationFrame(winAnimation);
 			}	
 			function remove8(timestamp){
 				if ( leftWolf2MarginTop < 28){
@@ -3884,7 +3909,7 @@ window.requestAnimFrame = (function(){
 		if(data === "leftWolf2"){
 			
 			if(leftWolf2MarginTop > 17){
-				win();
+				winMove = requestAnimationFrame(winAnimation);
 			}	
 			function remove8(timestamp){
 				if ( leftWolf2MarginTop < 28){
