@@ -1003,7 +1003,7 @@ window.requestAnimFrame = (function(){
 		lifeTimeWidth -= 0.0133;
 		
 		lifeTime.style.width = lifeTimeWidth + "%";
-		t = setTimeout(timer,1000/30);
+		t = setTimeout(timer,1000/40);
 		}		
 	}
 	
@@ -3192,6 +3192,11 @@ window.requestAnimFrame = (function(){
 			leftWolf.style.width="50%";
 			leftWolf2.style.height="60%";
 			leftWolf2.style.width="50%";
+		}
+		
+		var data2 = event.target.className	
+		if(data2 === "againButton" || data2 === "againButton2"){
+			window.location.reload();
 		}
 	} 
 	
