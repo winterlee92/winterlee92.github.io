@@ -1707,13 +1707,11 @@ window.requestAnimFrame = (function(){
 			rotateHamster.style.zIndex=rotateHamsterZIndex;
 			
 			rightWolf2MarginTop+=0.25;
-			<!-- rightWolf2MarginLeft-=2.1; -->
 			rightWolf2MarginHeight-=0.25;
 			rightWolf2MarginWidth-=0.25;
 			rightWolf2ZIndex -= 5;
 			
 			rightWolf2.style.marginTop=rightWolf2MarginTop+"%";
-			<!-- rightWolf2.style.marginLeft=rightWolf2MarginLeft+"%"; -->
 			rightWolf2.style.height=rightWolf2MarginHeight+"%";
 			rightWolf2.style.width=rightWolf2MarginWidth+"%";
 			rightWolf2.style.zIndex=rightWolf2ZIndex;
@@ -1753,7 +1751,6 @@ window.requestAnimFrame = (function(){
 			leftBear2Move = requestAnimationFrame(leftBear2Animation);			
 		}	
 		function leftBear2SlowDown(timestamp){
-			//slow down
 			if(leftBear2MarginTop <= 21 && leftBear2MarginTop >=18){
 				cancelAnimationFrame(leftBear2Move);
 				leftBear2MarginTop-=0.0075;
@@ -1763,7 +1760,6 @@ window.requestAnimFrame = (function(){
 				leftBear2Slow = requestAnimationFrame(leftBear2SlowDown);
 			}	
 			function leftBear2Catching(timestamp){     
-				//drop down
 				if(leftBear2MarginTop <= 18 && leftBear2MarginTop >=16){
 					cancelAnimationFrame(leftBear2Slow);
 					leftBear2MarginTop-=0.05;
@@ -1860,7 +1856,6 @@ window.requestAnimFrame = (function(){
 			rightBear2Move = requestAnimationFrame(rightBear2Animation);			
 		}			
 		function rightBear2SlowDown(timestamp){
-			//slow down
 			if(rightBear2MarginTop <= 20 && rightBear2MarginTop >=16){
 				cancelAnimationFrame(rightBear2Move);
 				rightBear2MarginTop-=0.01;
@@ -1870,7 +1865,6 @@ window.requestAnimFrame = (function(){
 				rightBear2Slow = requestAnimationFrame(rightBear2SlowDown);
 			}
 			function rightBear2Catching(timestamp){     
-				//drop down
 				if(rightBear2MarginTop <= 16 && rightBear2MarginTop >=10){
 					cancelAnimationFrame(rightBear2Slow);
 					rightBear2MarginTop-=0.25;
@@ -1879,8 +1873,7 @@ window.requestAnimFrame = (function(){
 					rightBear2.style.marginLeft = rightBear2MarginLeft + "%"; 
 					rightBear2Catch = requestAnimationFrame(rightBear2Catching);
 				}
-				if(rightBear2MarginTop <= 16){
-					var degree = 2 ;		
+				if(rightBear2MarginTop <= 16){		
 					mc.style.display = "none";					
 					document.getElementById("timeDisplay").style.display="none";	
 					document.getElementById("eye").style.display="block";
@@ -1961,7 +1954,6 @@ window.requestAnimFrame = (function(){
 	
 	function leftDragon3Animation(timestamp){	
 		 document.getElementById("leftDragon3").style.display = "block";	
-		//move down
 		if ( leftDragon3MarginTop < 5){
 			leftDragon3MarginTop+=1.1
 			leftDragon3MarginLeft+=4;
@@ -1970,7 +1962,6 @@ window.requestAnimFrame = (function(){
 			leftDragon3Move = requestAnimationFrame(leftDragon3Animation);			
 		}			
 		function leftDragon3SlowDown(timestamp){
-		//slow down
 		if(leftDragon3MarginTop >= 4 && leftDragon3MarginTop <= 7){
 				cancelAnimationFrame(leftDragon3Move);
 				leftDragon3MarginTop+=0.01;
@@ -1980,7 +1971,6 @@ window.requestAnimFrame = (function(){
 				leftDragon3Slow = requestAnimationFrame(leftDragon3SlowDown);
 			}			
 			function leftDragon3Catching(timestamp){     
-				//catch
 				if(leftDragon3MarginTop >= 7 && leftDragon3MarginTop < 10){
 					cancelAnimationFrame(leftDragon3Slow);
 					leftDragon3MarginTop+=0.3;
@@ -2085,12 +2075,9 @@ window.requestAnimFrame = (function(){
 				rightWolf3Slow = requestAnimationFrame(rightWolf3SlowDown);
 			}
 			function rightWolf3Catching(timestamp){     
-				//drop down
 				if(rightWolf3MarginLeft < 56 && rightWolf3MarginLeft >=40){
 					cancelAnimationFrame(rightWolf3Slow);
-					<!-- rightWolf3MarginTop-=0.05; -->
 					rightWolf3MarginLeft-=1.6;
-					<!-- rightWolf3.style.marginTop = rightWolf3MarginTop + "%"; -->
 					rightWolf3.style.marginLeft = rightWolf3MarginLeft + "%"; 
 					rightWolf3Catch = requestAnimationFrame(rightWolf3Catching);
 				}
@@ -2132,13 +2119,11 @@ window.requestAnimFrame = (function(){
 			rotateHamster.style.zIndex=rotateHamsterZIndex;
 			
 			rightWolf3MarginTop+=0.25;
-			<!-- rightWolf3MarginLeft-=2.1; -->
 			rightWolf3MarginHeight-=0.25;
 			rightWolf3MarginWidth-=0.25;
 			rightWolf3ZIndex -= 5;
 			
 			rightWolf3.style.marginTop=rightWolf3MarginTop+"%";
-			<!-- rightWolf3.style.marginLeft=rightWolf3MarginLeft+"%"; -->
 			rightWolf3.style.height=rightWolf3MarginHeight+"%";
 			rightWolf3.style.width=rightWolf3MarginWidth+"%";
 			rightWolf3.style.zIndex=rightWolf3ZIndex;
@@ -2178,7 +2163,6 @@ window.requestAnimFrame = (function(){
 			leftBear3Move = requestAnimationFrame(leftBear3Animation);			
 		}	
 		function leftBear3SlowDown(timestamp){
-			//slow down
 			if(leftBear3MarginTop <= 21 && leftBear3MarginTop >=18){
 				cancelAnimationFrame(leftBear3Move);
 				leftBear3MarginTop-=0.0075;
@@ -2188,7 +2172,6 @@ window.requestAnimFrame = (function(){
 				leftBear3Slow = requestAnimationFrame(leftBear3SlowDown);
 			}	
 			function leftBear3Catching(timestamp){     
-				//drop down
 				if(leftBear3MarginTop <= 18 && leftBear3MarginTop >=16){
 					cancelAnimationFrame(leftBear3Slow);
 					leftBear3MarginTop-=0.05;
@@ -2276,7 +2259,6 @@ window.requestAnimFrame = (function(){
 	
 	function leftDragon4Animation(timestamp){	
 		 document.getElementById("leftDragon4").style.display = "block";	
-		//move down
 		if ( leftDragon4MarginTop < 5){
 			leftDragon4MarginTop+=1.1
 			leftDragon4MarginLeft+=4;
@@ -2285,7 +2267,6 @@ window.requestAnimFrame = (function(){
 			leftDragon4Move = requestAnimationFrame(leftDragon4Animation);			
 		}			
 		function leftDragon4SlowDown(timestamp){
-		//slow down
 		if(leftDragon4MarginTop >= 4 && leftDragon4MarginTop <= 7){
 				cancelAnimationFrame(leftDragon4Move);
 				leftDragon4MarginTop+=0.01;
@@ -2295,7 +2276,6 @@ window.requestAnimFrame = (function(){
 				leftDragon4Slow = requestAnimationFrame(leftDragon4SlowDown);
 			}			
 			function leftDragon4Catching(timestamp){     
-				//catch
 				if(leftDragon4MarginTop >= 7 && leftDragon4MarginTop < 10){
 					cancelAnimationFrame(leftDragon4Slow);
 					leftDragon4MarginTop+=0.3;
@@ -2392,7 +2372,6 @@ window.requestAnimFrame = (function(){
 			rightBear3Move = requestAnimationFrame(rightBear3Animation);			
 		}			
 		function rightBear3SlowDown(timestamp){
-			//slow down
 			if(rightBear3MarginTop <= 20 && rightBear3MarginTop >=16){
 				cancelAnimationFrame(rightBear3Move);
 				rightBear3MarginTop-=0.01;
@@ -2402,7 +2381,6 @@ window.requestAnimFrame = (function(){
 				rightBear3Slow = requestAnimationFrame(rightBear3SlowDown);
 			}
 			function rightBear3Catching(timestamp){     
-				//drop down
 				if(rightBear3MarginTop <= 16 && rightBear3MarginTop >=10){
 					cancelAnimationFrame(rightBear3Slow);
 					rightBear3MarginTop-=0.25;
@@ -2502,7 +2480,6 @@ window.requestAnimFrame = (function(){
 			rightBear4Move = requestAnimationFrame(rightBear4Animation);			
 		}			
 		function rightBear4SlowDown(timestamp){
-			//slow down
 			if(rightBear4MarginTop <= 20 && rightBear4MarginTop >=16){
 				cancelAnimationFrame(rightBear4Move);
 				rightBear4MarginTop-=0.01;
@@ -2512,7 +2489,6 @@ window.requestAnimFrame = (function(){
 				rightBear4Slow = requestAnimationFrame(rightBear4SlowDown);
 			}
 			function rightBear4Catching(timestamp){     
-				//drop down
 				if(rightBear4MarginTop <= 16 && rightBear4MarginTop >=10){
 					cancelAnimationFrame(rightBear4Slow);
 					rightBear4MarginTop-=0.25;
@@ -2611,7 +2587,6 @@ window.requestAnimFrame = (function(){
 			leftBear4Move = requestAnimationFrame(leftBear4Animation);			
 		}	
 		function leftBear4SlowDown(timestamp){
-			//slow down
 			if(leftBear4MarginTop <= 21 && leftBear4MarginTop >=18){
 				cancelAnimationFrame(leftBear4Move);
 				leftBear4MarginTop-=0.0075;
@@ -2621,7 +2596,6 @@ window.requestAnimFrame = (function(){
 				leftBear4Slow = requestAnimationFrame(leftBear4SlowDown);
 			}	
 			function leftBear4Catching(timestamp){     
-				//drop down
 				if(leftBear4MarginTop <= 18 && leftBear4MarginTop >=16){
 					cancelAnimationFrame(leftBear4Slow);
 					leftBear4MarginTop-=0.05;
@@ -2719,19 +2693,15 @@ window.requestAnimFrame = (function(){
 			leftWolfMove = requestAnimationFrame(leftWolfAnimation);			
 		}	
 		function leftWolfSlowDown(timestamp){
-			//slow down
 			if(leftWolfMarginTop <= 22 && leftWolfMarginTop >19){
 				cancelAnimationFrame(leftWolfMove);
 				leftWolfMarginTop-=0.0375;
 				leftWolfMarginLeft+=0.0875;
-				<!-- leftWolfZIndex+=2.375; -->
-				<!-- leftWolf.style.zIndex =leftWolfZIndex; -->
 				leftWolf.style.marginTop = leftWolfMarginTop + "%";
 				leftWolf.style.marginLeft = leftWolfMarginLeft + "%"; 
 				leftWolfSlow = requestAnimationFrame(leftWolfSlowDown);
 			}
 			function leftWolfCatching(timestamp){     
-				//drop down
 				if(leftWolfMarginTop <= 19 && leftWolfMarginTop >8){
 					cancelAnimationFrame(leftWolfSlow);
 					leftWolfMarginTop-=1.1;
@@ -2825,7 +2795,6 @@ window.requestAnimFrame = (function(){
 			rightDragon2Move = requestAnimationFrame(rightDragon2Animation);			
 		}		
 			function rightDragon2SlowDown(timestamp){
-				//slow down
 				if(rightDragon2MarginTop >= 5 && rightDragon2MarginTop < 8){
 					cancelAnimationFrame(rightDragon2Move);
 					rightDragon2MarginTop+=0.005;
@@ -2835,7 +2804,6 @@ window.requestAnimFrame = (function(){
 					rightDragon2Slow = requestAnimationFrame(rightDragon2SlowDown);
 				}
 				function rightDragon2Catching(timestamp){     
-				//catch 
 					if(rightDragon2MarginLeft < 61 && rightDragon2MarginLeft >44){
 						cancelAnimationFrame(rightDragon2Slow);
 						rightDragon2MarginLeft-=1.6;
@@ -2879,13 +2847,11 @@ window.requestAnimFrame = (function(){
 			rotateHamster.style.zIndex=rotateHamsterZIndex;
 			
 			rightDragon2MarginTop+=0.3;
-			<!-- rightDragon2MarginLeft-=2.1; -->
 			rightDragon2Height-=0.5;
 			rightDragon2Width-=0.25;
 			rightDragon2ZIndex -= 5;
 			
 			rightDragon2.style.marginTop=rightDragon2MarginTop+"%";
-			<!-- rightDragon2.style.marginLeft=rightDragon2MarginLeft+"%"; -->
 			rightDragon2.style.height=rightDragon2Height+"%";
 			rightDragon2.style.width=rightDragon2Width+"%";
 			rightDragon2.style.zIndex=rightDragon2ZIndex;
@@ -2925,19 +2891,15 @@ window.requestAnimFrame = (function(){
 			leftWolf2Move = requestAnimationFrame(leftWolf2Animation);			
 		}	
 		function leftWolf2SlowDown(timestamp){
-			//slow down
 			if(leftWolf2MarginTop <= 22 && leftWolf2MarginTop >19){
 				cancelAnimationFrame(leftWolf2Move);
 				leftWolf2MarginTop-=0.0375;
 				leftWolf2MarginLeft+=0.0875;
-				<!-- leftWolf2ZIndex+=2.375; -->
-				<!-- leftWolf2.style.zIndex =leftWolf2ZIndex; -->
 				leftWolf2.style.marginTop = leftWolf2MarginTop + "%";
 				leftWolf2.style.marginLeft = leftWolf2MarginLeft + "%"; 
 				leftWolf2Slow = requestAnimationFrame(leftWolf2SlowDown);
 			}
 			function leftWolf2Catching(timestamp){     
-				//drop down
 				if(leftWolf2MarginTop <= 19 && leftWolf2MarginTop >8){
 					cancelAnimationFrame(leftWolf2Slow);
 					leftWolf2MarginTop-=1.1;
@@ -4066,33 +4028,31 @@ window.requestAnimFrame = (function(){
 	
 		var viewport, newGameWidth, newGameHeight, newGameX, newGameY;
 						
-		// Get the dimensions of the viewport
 		viewport = {
 			width: window.innerWidth,
 			height: window.innerHeight
 		};
 		
-		// Determine game size
 		if (game.height / game.width > viewport.height / viewport.width) {
 		
 			if (game.safeHeight / game.width > viewport.height / viewport.width) {
-			  // A
+			 
 			  newGameHeight = viewport.height * game.height / game.safeHeight;
 			  newGameWidth = newGameHeight * game.width / game.height;
 			} else {
 				
-			  // B
+			  
 			  newGameWidth = viewport.width;
 			  newGameHeight = newGameWidth * game.height / game.width;
 			}
 		} else { 
 			if (game.height / game.safeWidth > viewport.height / viewport.width) {
-				// C
+				
 				newGameHeight = viewport.height;
 				newGameWidth = newGameHeight * game.width / game.height;
 			} else {
 				 
-				// D
+				
 				newGameWidth = viewport.width * game.width / game.safeWidth;
 				newGameHeight = newGameWidth * game.height / game.width;
 			}
@@ -4104,7 +4064,6 @@ window.requestAnimFrame = (function(){
 		newGameX = (viewport.width - newGameWidth) / 2;
 		newGameY = (viewport.height - newGameHeight) / 2;
 				
-		// Set the new padding of the game so it will be centered
 		game.element.style.margin = newGameY + "px " + newGameX + "px";
 	};
 window.addEventListener("resize", resizeGame);
