@@ -127,7 +127,86 @@
 			filter:brightness(100%);
 		}
 	}
-	
+	@-moz-keyframes bgZoom{
+		0%{
+			height: 132%;
+			width: 140%;
+			margin: -9% -34%;
+		}
+		39%{
+			height: 132%;
+			width: 140%;
+			margin: -9% -34%;
+		}
+		40%{
+			height: 133%;
+			width: 130%;
+			margin: -9% -26%;
+		}
+		45%{
+			height: 133%;
+			width: 125%;
+			margin: -9% -22%;
+		}
+		50%{
+			height: 124%;
+			width: 122%;
+			margin: -9% -18%;
+			filter:brightness(40%);
+		}
+		60%{
+			height: 100%;
+			width: 103%;
+			margin: 0% 0%;
+			filter:brightness(100%);
+		}
+		100%{
+			height: 100%;
+			width: 103%;
+			margin: 0% 0%;
+			filter:brightness(100%);
+		}
+	}
+	@-webkit-keyframes bgZoom{
+		0%{
+			height: 132%;
+			width: 140%;
+			margin: -9% -34%;
+		}
+		39%{
+			height: 132%;
+			width: 140%;
+			margin: -9% -34%;
+		}
+		40%{
+			height: 133%;
+			width: 130%;
+			margin: -9% -26%;
+		}
+		45%{
+			height: 133%;
+			width: 125%;
+			margin: -9% -22%;
+		}
+		50%{
+			height: 124%;
+			width: 122%;
+			margin: -9% -18%;
+			filter:brightness(40%);
+		}
+		60%{
+			height: 100%;
+			width: 103%;
+			margin: 0% 0%;
+			filter:brightness(100%);
+		}
+		100%{
+			height: 100%;
+			width: 103%;
+			margin: 0% 0%;
+			filter:brightness(100%);
+		}
+	}
 	
 	#path{
 		position: absolute;
@@ -158,6 +237,110 @@
 	}
 	
 	@keyframes pathDisplay {
+		0%{
+			height: 0%;
+			width: 0%;
+		}
+		4%{
+			height: 37%;
+			width: 37%;
+		}
+		6%{
+			height: 37%;
+			width: 60%;
+		}
+		8%{
+			height: 37%;
+			width: 80%;			
+		}
+		10%{
+			height: 50%;
+			width: 100%;
+		}
+		12%{
+			height: 55%;
+			width: 100%;
+		}
+		14%{
+			height: 60%;
+			width: 100%;
+		}
+		16%{
+			height: 65%;
+			width: 100%;
+		}
+		18%{
+			height: 80%;
+			width: 90%;
+			opacity:1;
+		}
+		20%{
+			height:100%;
+			width: 100%;
+			opacity:0.5;
+		}
+		30%{
+			opacity:0;
+		}
+		100%{
+			height: 100%;
+			width: 100%;
+			opacity:0;
+		}
+	}
+	@-moz-keyframes pathDisplay {
+		0%{
+			height: 0%;
+			width: 0%;
+		}
+		4%{
+			height: 37%;
+			width: 37%;
+		}
+		6%{
+			height: 37%;
+			width: 60%;
+		}
+		8%{
+			height: 37%;
+			width: 80%;			
+		}
+		10%{
+			height: 50%;
+			width: 100%;
+		}
+		12%{
+			height: 55%;
+			width: 100%;
+		}
+		14%{
+			height: 60%;
+			width: 100%;
+		}
+		16%{
+			height: 65%;
+			width: 100%;
+		}
+		18%{
+			height: 80%;
+			width: 90%;
+			opacity:1;
+		}
+		20%{
+			height:100%;
+			width: 100%;
+			opacity:0.5;
+		}
+		30%{
+			opacity:0;
+		}
+		100%{
+			height: 100%;
+			width: 100%;
+			opacity:0;
+		}
+	}
+	@-webkit-keyframes pathDisplay {
 		0%{
 			height: 0%;
 			width: 0%;
@@ -324,76 +507,76 @@
 		}	
 	}
 	@-moz-keyframes elfMovement {
-	  0%{	
+		  0%{	
 			height:60%;
 			width:31%;
 			margin:6% -27%;
 			filter:brightness(0%)
 				   drop-shadow(5px 5px 3px black);
 		}
-	 2%{
+	 4%{
 			height:60%;
 			width:31%;
 			margin:5% -5%;
 			filter:brightness(0%)
 				   drop-shadow(5px 5px 3px black);
 	    }
-	 4%{
+	 8%{
 			height:68%;
 			width:32%;
 			margin:-3% 18%;
 			filter:brightness(0%)
 				   drop-shadow(5px 5px 2px black);
 		}
-	 6%{
+	 12%{
 			height:68%;
 			width:35%;
 			margin:-8% 40%;
 			filter:brightness(0%)
 				   drop-shadow(5px 5px 2px black);
 		}
-	 8%{	
+	 20%{	
 			height:68%;
 			width:35%;
 			margin:4% 60%;
 			filter:brightness(0%) invert(100%)
 				   drop-shadow(5px 5px 2px grey);
 		}
-	 10%{
+	 21%{
 			height:70%;
 			width:39%;
 			margin:8% 55%;
 			filter:brightness(0%) invert(100%)
 				   drop-shadow(5px 5px 2px grey);
 	    }
-	12%{
+	22%{
 			height:72%;
 			width:40%;
 			margin:14% 51%;
 			filter:brightness(0%) invert(100%)
 				   drop-shadow(5px 5px 2px grey);
 		}	
-	14%{
+	23%{
 		height:73%;
 		width:41%;
 		margin:15% 51%;
 		filter:brightness(0%) invert(100%)
 			   drop-shadow(5px 5px 2px grey);
 		}	
-	16%{
+	24%{
 		height:94%;
 		width:49%;
 		margin:5% 46%;
 		filter:brightness(0%) invert(100%)
 			   drop-shadow(5px 5px 2px grey);
 		}		
-	18%{
+	25%{
 		height: 235%;
 		width: 125%;
 		margin: -23% 3%;
 		filter: brightness(130%) invert(20%) contrast(80%);
 	}
-	20%{
+	28%{
 		height: 260%;
 		width: 140%;
 		margin: -25% -4%;
@@ -407,76 +590,76 @@
 		}	
 	}
 	@-webkit-keyframes elfMovement {
-	  0%{	
+		  0%{	
 			height:60%;
 			width:31%;
 			margin:6% -27%;
 			filter:brightness(0%)
 				   drop-shadow(5px 5px 3px black);
 		}
-	 2%{
+	 4%{
 			height:60%;
 			width:31%;
 			margin:5% -5%;
 			filter:brightness(0%)
 				   drop-shadow(5px 5px 3px black);
 	    }
-	 4%{
+	 8%{
 			height:68%;
 			width:32%;
 			margin:-3% 18%;
 			filter:brightness(0%)
 				   drop-shadow(5px 5px 2px black);
 		}
-	 6%{
+	 12%{
 			height:68%;
 			width:35%;
 			margin:-8% 40%;
 			filter:brightness(0%)
 				   drop-shadow(5px 5px 2px black);
 		}
-	 8%{	
+	 20%{	
 			height:68%;
 			width:35%;
 			margin:4% 60%;
 			filter:brightness(0%) invert(100%)
 				   drop-shadow(5px 5px 2px grey);
 		}
-	 10%{
+	 21%{
 			height:70%;
 			width:39%;
 			margin:8% 55%;
 			filter:brightness(0%) invert(100%)
 				   drop-shadow(5px 5px 2px grey);
 	    }
-	12%{
+	22%{
 			height:72%;
 			width:40%;
 			margin:14% 51%;
 			filter:brightness(0%) invert(100%)
 				   drop-shadow(5px 5px 2px grey);
 		}	
-	14%{
+	23%{
 		height:73%;
 		width:41%;
 		margin:15% 51%;
 		filter:brightness(0%) invert(100%)
 			   drop-shadow(5px 5px 2px grey);
 		}	
-	16%{
+	24%{
 		height:94%;
 		width:49%;
 		margin:5% 46%;
 		filter:brightness(0%) invert(100%)
 			   drop-shadow(5px 5px 2px grey);
 		}		
-	18%{
+	25%{
 		height: 235%;
 		width: 125%;
 		margin: -23% 3%;
 		filter: brightness(130%) invert(20%) contrast(80%);
 	}
-	20%{
+	28%{
 		height: 260%;
 		width: 140%;
 		margin: -25% -4%;
@@ -628,79 +811,81 @@
 		}
 	}
 	@-moz-keyframes elfEffect {
- 0%{	
+	  0%{	
 			opacity:0;
 		}
-		15%{
+		20%{
 			opacity: 0;
 		}
-		16%{
+		21%{
 			opacity: 1;
 		}
-		17%{
+		22%{
 			height: 95%;
 			width: 95%;
 			margin: 0% 2%;
 			filter:brightness(98%) invert(30%);
 			opacity: 1;
 		}
-		18%{
+		26%{
 			height: 120%;
 			width: 130%;
 			margin: -1% -13%;
 			filter: brightness(100%) invert(30%);
 			opacity: 1;
 		}
-		20%{
+		30%{
 			height: 125%;
 			width: 150%;
 			margin:1% -24%;
 			filter: brightness(100%);
+			opacity: 1;
 		}
 		100%{	
-			    height: 127%;
-				width: 152%;
-				margin: 1% -24%;
-				filter: brightness(100%);
-				opacity: 1;
+			height: 127%;
+			width: 152%;
+			margin: 1% -24%;
+			filter: brightness(100%);
+			opacity: 1;
 		}
 	}
 	@-webkit-keyframes elfEffect {
- 0%{	
+	  0%{	
 			opacity:0;
 		}
-		15%{
+		20%{
 			opacity: 0;
 		}
-		16%{
+		21%{
 			opacity: 1;
 		}
-		17%{
+		22%{
 			height: 95%;
 			width: 95%;
 			margin: 0% 2%;
 			filter:brightness(98%) invert(30%);
 			opacity: 1;
 		}
-		18%{
+		26%{
 			height: 120%;
 			width: 130%;
 			margin: -1% -13%;
 			filter: brightness(100%) invert(30%);
 			opacity: 1;
 		}
-		20%{
+		30%{
 			height: 125%;
 			width: 150%;
 			margin:1% -24%;
 			filter: brightness(100%);
+			opacity: 1;
 		}
 		100%{	
-			    height: 127%;
-				width: 152%;
-				margin: 1% -24%;
-				filter: brightness(100%);
-				opacity: 1;
+			height: 127%;
+			width: 152%;
+			margin: 1% -24%;
+			filter: brightness(100%);
+			opacity: 1;
 		}
 	}
 	
