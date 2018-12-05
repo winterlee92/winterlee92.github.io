@@ -154,7 +154,7 @@
 		filter: brightness(130%) invert(20%) contrast(80%)
 		 blur(2px);
 	}
-	19%{
+	20%{
 		height: 260%;
 		width: 140%;
 		margin: -25% -4%;
@@ -649,27 +649,27 @@
 	  0%{	
 			opacity:0;
 		}
-		18%{
+		15%{
 			opacity: 0;
 		}
-		20%{
+		16%{
 			opacity: 1;
 		}
-		21%{
+		17%{
 			height: 95%;
 			width: 95%;
 			margin: 0% 2%;
 			filter:brightness(98%) invert(30%);
 			opacity: 1;
 		}
-		22%{
+		18%{
 			height: 120%;
 			width: 130%;
 			margin: -1% -13%;
 			filter: brightness(100%) invert(30%) blur(2px);
 			opacity: 1;
 		}
-		23%{
+		20%{
 			height: 125%;
 			width: 150%;
 			margin:1% -24%;
