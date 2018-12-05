@@ -758,7 +758,7 @@
 		background-Size: 100% 100%;
 		background-image: url(effect.png);
 		opacity:0;
-		z-index:-10;
+		z-index:0;
 		
 		animation-name: elfEffect;
 		animation-duration: 1.5s;
