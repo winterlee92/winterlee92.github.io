@@ -34,9 +34,14 @@
 		}
 	}());
 	
-	
+	var mv;
+	function lp() {; mv = setTimeout(main, 500);}
+		
 	var gameContainer = document.getElementById("gameContainer");
-	gameContainer.width = gameContainer.width*20+'%';
+	function main(){
+		document.getElementById("loader").style.display = "none";	
+		gameContainer.style.display = "block";
+	}
 	
 	(function () {
   
