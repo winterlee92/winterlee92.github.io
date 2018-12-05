@@ -757,7 +757,7 @@
 		overflow: hidden;
 		background-Size: 100% 100%;
 		background-image: url(effect.png);
-		opacity:0;
+		opacity:1;
 		z-index:-10;
 		
 		animation-name: elfEffect;
@@ -1000,3 +1000,377 @@
 			opacity: 0;
 		}
 	}
+	@-moz-keyframes startBtnRemove{
+		0%{
+			opacity:1;
+		}
+		40%{
+		    opacity: 0.6;
+		}
+		45%{
+			opacity: 0.4;
+		}
+		50%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 0;
+		}
+	}
+	@-webkit-keyframes startBtnRemove{
+		0%{
+			opacity:1;
+		}
+		40%{
+		    opacity: 0.6;
+		}
+		45%{
+			opacity: 0.4;
+		}
+		50%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 0;
+		}
+	}
+	
+	
+	#glowLeft{
+		position:absolute;	
+		height: 50%;
+		width: 40%;
+		margin: 25% -9%;
+		background-Repeat: no-repeat;
+		overflow:hidden;
+		background-Size : 100% 100%; 
+		background-image: url('glow.png');
+		
+		animation-name: glowLeft;
+		animation-duration: 1.5s;
+		animation-fill-mode: forwards;
+		-moz-animation-name:glowLeft;
+		-moz-animation-duration:1.5s;	
+		-moz-animation-fill-mode: forwards;
+		-webkit-animation-name: glowLeft;
+		-webkit-animation-duration: 1.5s;
+		-webkit-animation-fill-mode: forwards;
+	}
+	
+	@keyframes glowLeft{
+		
+		0%{
+			height: 50%;
+			width: 40%;
+			margin: 25% -9%;
+			opacity:0;
+		}
+		27%{
+			height: 50%;
+			width: 40%;
+			margin: 38% 68%;
+			opacity:0;
+		}
+		28%{
+			height: 50%;
+			width: 40%;
+			margin: 25% -9%;
+			opacity:1;
+		}
+		100%{
+			height: 52%;
+			width: 42%;	
+			margin: 25% -10%;
+			opacity:1;
+		}
+	}
+	@-moz-keyframes glowLeft{
+		0%{
+			height: 50%;
+			width: 40%;
+			margin: 25% -9%;
+			opacity:0;
+		}
+		27%{
+			height: 50%;
+			width: 40%;
+			margin: 38% 68%;
+			opacity:0;
+		}
+		28%{
+			height: 50%;
+			width: 40%;
+			margin: 25% -9%;
+			opacity:1;
+		}
+		100%{
+			height: 52%;
+			width: 42%;	
+			margin: 25% -10%;
+			opacity:1;
+		}
+	}
+	@-webkit-keyframes glowLeft{
+		0%{
+			height: 50%;
+			width: 40%;
+			margin: 25% -9%;
+			opacity:0;
+		}
+		27%{
+			height: 50%;
+			width: 40%;
+			margin: 38% 68%;
+			opacity:0;
+		}
+		28%{
+			height: 50%;
+			width: 40%;
+			margin: 25% -9%;
+			opacity:1;
+		}
+		100%{
+			height: 52%;
+			width: 42%;	
+			margin: 25% -10%;
+			opacity:1;
+		}
+	}
+	
+	
+	
+	@keyframes glowLeftRemove{
+		0%{
+			height: 52%;
+			width: 42%;	
+			margin: 25% -10%;
+			opacity:1;
+		}
+		
+		10%
+		{
+			height: 52%;
+			width: 42%;	
+			margin: 25% -10%;
+			opacity:1;
+		}
+		30%{
+			height: 20%;
+			width: 20%;
+			margin: 26% 37%;
+			opacity: 0.5;
+			
+		}
+		35%{
+			height: 30%;
+			width: 30%;
+			margin: 24% -9%;
+			opacity: 0.5;
+		}
+		40%{
+			height: 30%;
+			width: 30%;
+			margin: 40% -20%;
+			opacity: 0.5;
+		}
+		100%{
+			height: 30%;
+			width: 30%;
+			margin: 40% -20%;
+			opacity: 0.5;
+		}
+	}
+	
+	#glowRight{
+		position:absolute;	
+		height: 50%;
+		width: 40%;
+		margin: 38% 68%;
+		transform: rotate(20deg);
+		background-Repeat: no-repeat;
+		overflow:hidden;
+		background-Size : 100% 100%; 
+		background-image: url('glow.png');
+		
+		animation-name: glowRight;
+		animation-duration: 1.5s;
+		animation-fill-mode: forwards;
+		-moz-animation-name:glowRight;
+		-moz-animation-duration:1.5s;	
+		-moz-animation-fill-mode: forwards;
+		-webkit-animation-name: glowRight;
+		-webkit-animation-duration: 1.5s;
+		-webkit-animation-fill-mode: forwards;
+	}
+	
+	@keyframes glowRight{
+		
+		0%{
+			height: 50%;
+			width: 40%;	
+			margin: 38% 68%;
+			opacity:0;
+		}
+		27%{
+			height: 50%;
+			width: 40%;	
+			margin: 38% 68%;
+			opacity:0;
+		}
+		28%{
+			height: 50%;
+			width: 40%;	
+			margin: 38% 68%;
+			opacity:1;
+		}
+		100%{
+			height: 52%;
+			width: 42%;	
+			margin: 39% 70%;
+			opacity:1;
+		}
+	}
+	@-moz-keyframes glowRight{
+		
+		0%{
+			height: 50%;
+			width: 40%;	
+			margin: 38% 68%;
+			opacity:0;
+		}
+		27%{
+			height: 50%;
+			width: 40%;	
+			margin: 38% 68%;
+			opacity:0;
+		}
+		28%{
+			height: 50%;
+			width: 40%;	
+			margin: 38% 68%;
+			opacity:1;
+		}
+		100%{
+			height: 52%;
+			width: 42%;	
+			margin: 39% 70%;
+			opacity:1;
+		}
+		
+	}
+	@-webkit-keyframes glowRight{
+		0%{
+			height: 50%;
+			width: 40%;	
+			margin: 38% 68%;
+			opacity:0;
+		}
+		27%{
+			height: 50%;
+			width: 40%;	
+			margin: 38% 68%;
+			opacity:0;
+		}
+		28%{
+			height: 50%;
+			width: 40%;	
+			margin: 38% 68%;
+			opacity:1;
+		}
+		100%{
+			height: 52%;
+			width: 42%;	
+			margin: 39% 70%;
+			opacity:1;
+		}
+	}
+	
+	@keyframes glowRightRemove {
+		0%{
+			height: 52%;
+			width: 42%;	
+			margin: 39% 70%;
+			opacity:1;
+		}
+		
+		10%
+		{
+			height: 52%;
+			width: 42%;	
+			margin: 39% 70%;
+			opacity:1;
+		}
+		30%{
+			height: 20%;
+			width: 20%;
+			margin: 31% 65%;
+			opacity: 0.5;
+			
+		}
+		35%{
+			height: 30%;
+			width: 30%;
+			margin: 34% 46%;
+			opacity: 0.5;
+		}
+		40%{
+			height: 30%;
+			width: 30%;
+			margin: 54% 75%;
+			opacity: 0.5;
+		}
+		100%{
+			height: 30%;
+			width: 30%;
+			margin: 54% 75%;
+			opacity: 0.5;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

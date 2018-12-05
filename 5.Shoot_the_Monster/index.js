@@ -35,18 +35,38 @@
 	}());
 	
 	var mv;
-	function lp() {mv = setTimeout(main, 500);}
+	function lp() {
+		mv = setTimeout(main, 500);
+		// createImage();
+	}
 		
 	var gameContainer = document.getElementById("gameContainer");
 	var elf = document.getElementById("elf");
 	var elfEffect  = document.getElementById("elfEffect");
 	var startBtn = document.getElementById("startBtn");
+	var glowLeft = document.getElementById("glowLeft");
+	var glowRight = document.getElementById("glowRight");
 	
 	function main(){
 		document.getElementById("loader").style.display = "none";	
 		gameContainer.style.display = "block";
 		
 	}
+	
+	// function createImage(){
+		// var bowLightArray = ['glow.png'];
+		// var i;
+		// for(i=0; i<bowLightArray.length; i++)
+		// {	 
+			// if(i < bowLightArray.length)
+			// {
+				// var glow = document.createElement("IMG");
+				// glow.setAttribute("src", bowLightArray[i]);	
+				// glow.setAttribute("class","glow");
+				// bowLight.appendChild(glow);
+			// }
+		// }
+	// }
 	
 	function mouseDown(event) {
 		var data = event.target.id;
@@ -64,7 +84,15 @@
 	
 		startBtn.style.WebkitAnimationName = "startBtnRemove";
 		startBtn.style.MozAnimationName = "startBtnRemove";
-		startBtn.style.animationName = "startBtnRemove";	
+		startBtn.style.animationName = "startBtnRemove";
+
+		glowLeft.style.WebkitAnimationName = "glowLeftRemove";
+		glowLeft.style.MozAnimationName = "glowLeftRemove";
+		glowLeft.style.animationName = "glowLeftRemove";
+		
+		glowRight.style.WebkitAnimationName = "glowRightRemove";
+		glowRight.style.MozAnimationName = "glowRightRemove";
+		glowRight.style.animationName = "glowRightRemove";
 	}
 	
 	
