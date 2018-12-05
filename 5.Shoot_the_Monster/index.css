@@ -160,7 +160,8 @@
 		height: 235%;
 		width: 125%;
 		margin: -23% 3%;
-		filter: brightness(130%) invert(20%) contrast(80%);
+		filter: brightness(130%) invert(20%) contrast(80%)
+		 blur(2px);
 	}
 	20%{
 		height: 260%;
