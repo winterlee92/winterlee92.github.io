@@ -652,24 +652,24 @@
 		18%{
 			opacity: 0;
 		}
-		19%{
+		20%{
 			opacity: 1;
 		}
-		20%{
+		21%{
 			height: 95%;
 			width: 95%;
 			margin: 0% 2%;
 			filter:brightness(98%) invert(30%);
 			opacity: 1;
 		}
-		21%{
+		22%{
 			height: 120%;
 			width: 130%;
 			margin: -1% -13%;
 			filter: brightness(100%) invert(30%) blur(2px);
 			opacity: 1;
 		}
-		22%{
+		23%{
 			height: 125%;
 			width: 150%;
 			margin:1% -24%;
