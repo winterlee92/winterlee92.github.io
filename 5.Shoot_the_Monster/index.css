@@ -128,34 +128,6 @@
 		filter:brightness(0%) invert(100%)
 			   drop-shadow(5px 5px 2px grey);
 		}		
-	/* 17%{ */
-		/* height:100%; */
-		/* width:55%; */
-		/* margin:5% 42%; */
-		/* filter:brightness(120%) invert(29%)  */
-		/* contrast(150%); */
-		/* }	 */
-	/* 18%{ */
-		/* height:125%; */
-		/* width:61%; */
-		/* margin:-2% 37%; */
-		/* filter:brightness(120%) invert(29%)  */
-		/* contrast(250%); */
-	/* }	 */
-	/* 19%{ */
-		/* height:168%; */
-		/* width:86%; */
-		/* margin:-15% 24%; */
-		/* filter:brightness(0%) invert(100%)  */
-		/* drop-shadow(7px 5px 8px white); */
-	/* } */
-	/* 20%{ */
-		/* height:180%; */
-		/* width:96%; */
-		/* margin:-17% 21%; */
-		/* filter:brightness(130%) invert(20%) contrast(80%) */
-				 /* blur(1px); */
-	/* } */
 	18%{
 		height: 235%;
 		width: 125%;
@@ -176,230 +148,174 @@
 		filter: brightness(100%);
 		}	
 	}
-	/* @-moz-keyframes elfMovement { */
-	/* 0%{	 */
-		/* height:60%; */
-		/* width:31%; */
-		/* margin:6% -27%; */
-		/* filter:brightness(0%) */
-			   /* drop-shadow(5px 5px 3px black); */
-		/* } */
-	 /* 2%{ */
-			/* height:60%; */
-			/* width:31%; */
-			/* margin:5% -5%; */
-			/* filter:brightness(0%) */
-				   /* drop-shadow(5px 5px 3px black); */
-	    /* } */
-	 /* 4%{ */
-			/* height:68%; */
-			/* width:32%; */
-			/* margin:-3% 18%; */
-			/* filter:brightness(0%) */
-				   /* drop-shadow(5px 5px 2px black); */
-		/* } */
-	 /* 6%{ */
-			/* height:68%; */
-			/* width:35%; */
-			/* margin:-8% 40%; */
-			/* filter:brightness(0%) */
-				   /* drop-shadow(5px 5px 2px black); */
-		/* } */
-	 /* 8%{	 */
-			/* height:68%; */
-			/* width:35%; */
-			/* margin:4% 60%; */
-			/* filter:brightness(0%) invert(100%) */
-				   /* drop-shadow(5px 5px 2px grey); */
-		/* } */
-	 /* 10%{ */
-			/* height:70%; */
-			/* width:39%; */
-			/* margin:8% 55%; */
-			/* filter:brightness(0%) invert(100%) */
-				   /* drop-shadow(5px 5px 2px grey); */
-	    /* } */
-	/* 12%{ */
-			/* height:72%; */
-			/* width:40%; */
-			/* margin:14% 51%; */
-			/* filter:brightness(0%) invert(100%) */
-				   /* drop-shadow(5px 5px 2px grey); */
-		/* }	 */
-	/* 14%{ */
-		/* height:73%; */
-		/* width:41%; */
-		/* margin:15% 51%; */
-		/* filter:brightness(0%) invert(100%) */
-			   /* drop-shadow(5px 5px 2px grey); */
-		/* }	 */
-	/* 16%{ */
-		/* height:94%; */
-		/* width:49%; */
-		/* margin:5% 46%; */
-		/* filter:brightness(0%) invert(100%) */
-			   /* drop-shadow(5px 5px 2px grey); */
-		/* }		 */
-	/* 17%{ */
-		/* height:100%; */
-		/* width:55%; */
-		/* margin:5% 42%; */
-		/* filter:brightness(120%) invert(29%)  */
-		/* contrast(150%); */
-		/* }	 */
-	/* 18%{ */
-		/* height:125%; */
-		/* width:61%; */
-		/* margin:-2% 37%; */
-		/* filter:brightness(120%) invert(29%)  */
-		/* contrast(250%); */
-	/* }	 */
-	/* 19%{ */
-		/* height:168%; */
-		/* width:86%; */
-		/* margin:-15% 24%; */
-		/* filter:brightness(0%) invert(100%) */
-		/* drop-shadow(7px 5px 8px white); */
-	/* } */
-	/* 20%{ */
-		/* height:180%; */
-		/* width:96%; */
-		/* margin:-17% 21%; */
-		/* filter:brightness(130%) invert(20%) contrast(80%) */
-				 /* blur(1px); */
-	/* } */
-	/* 21%{ */
-		/* height: 235%; */
-		/* width: 125%; */
-		/* margin: -23% 3%; */
-		/* filter: brightness(130%) invert(20%) contrast(80%) */
-		 /* blur(2px); */
-	/* } */
-	/* 22%{ */
-		/* height: 260%; */
-		/* width: 140%; */
-		/* margin: -25% -4%; */
-		/* filter: brightness(100%); */
-	/* } */
-	/* 100%{ */
-		/* height: 265%; */
-		/* width: 145%; */
-		/* margin: -25% -4%; */
-		/* filter: brightness(100%); */
-		/* }	 */
-	/* } */
-	/* @-webkit-keyframes elfMovement { */
-			  /* 0%{	 */
-			/* height:60%; */
-			/* width:31%; */
-			/* margin:6% -27%; */
-			/* filter:brightness(0%) */
-				   /* drop-shadow(5px 5px 3px black); */
-		/* } */
-	 /* 2%{ */
-			/* height:60%; */
-			/* width:31%; */
-			/* margin:5% -5%; */
-			/* filter:brightness(0%) */
-				   /* drop-shadow(5px 5px 3px black); */
-	    /* } */
-	 /* 4%{ */
-			/* height:68%; */
-			/* width:32%; */
-			/* margin:-3% 18%; */
-			/* filter:brightness(0%) */
-				   /* drop-shadow(5px 5px 2px black); */
-		/* } */
-	 /* 6%{ */
-			/* height:68%; */
-			/* width:35%; */
-			/* margin:-8% 40%; */
-			/* filter:brightness(0%) */
-				   /* drop-shadow(5px 5px 2px black); */
-		/* } */
-	 /* 8%{	 */
-			/* height:68%; */
-			/* width:35%; */
-			/* margin:4% 60%; */
-			/* filter:brightness(0%) invert(100%) */
-				   /* drop-shadow(5px 5px 2px grey); */
-		/* } */
-	 /* 10%{ */
-			/* height:70%; */
-			/* width:39%; */
-			/* margin:8% 55%; */
-			/* filter:brightness(0%) invert(100%) */
-				   /* drop-shadow(5px 5px 2px grey); */
-	    /* } */
-	/* 12%{ */
-			/* height:72%; */
-			/* width:40%; */
-			/* margin:14% 51%; */
-			/* filter:brightness(0%) invert(100%) */
-				   /* drop-shadow(5px 5px 2px grey); */
-		/* }	 */
-	/* 14%{ */
-		/* height:73%; */
-		/* width:41%; */
-		/* margin:15% 51%; */
-		/* filter:brightness(0%) invert(100%) */
-			   /* drop-shadow(5px 5px 2px grey); */
-		/* }	 */
-	/* 16%{ */
-		/* height:94%; */
-		/* width:49%; */
-		/* margin:5% 46%; */
-		/* filter:brightness(0%) invert(100%) */
-			   /* drop-shadow(5px 5px 2px grey); */
-		/* }		 */
-	/* 17%{ */
-		/* height:100%; */
-		/* width:55%; */
-		/* margin:5% 42%; */
-		/* filter:brightness(120%) invert(29%)  */
-		/* contrast(150%); */
-		/* }	 */
-	/* 18%{ */
-		/* height:125%; */
-		/* width:61%; */
-		/* margin:-2% 37%; */
-		/* filter:brightness(120%) invert(29%)  */
-		/* contrast(250%); */
-	/* }	 */
-	/* 19%{ */
-		/* height:168%; */
-		/* width:86%; */
-		/* margin:-15% 24%; */
-		/* filter:brightness(0%) invert(100%) */
-		/* drop-shadow(7px 5px 8px white); */
-	/* } */
-	/* 20%{ */
-		/* height:180%; */
-		/* width:96%; */
-		/* margin:-17% 21%; */
-		/* filter:brightness(130%) invert(20%) contrast(80%) */
-				 /* blur(1px); */
-	/* } */
-	/* 21%{ */
-		/* height: 235%; */
-		/* width: 125%; */
-		/* margin: -23% 3%; */
-		/* filter: brightness(130%) invert(20%) contrast(80%) */
-		 /* blur(2px); */
-	/* } */
-	/* 22%{ */
-		/* height: 260%; */
-		/* width: 140%; */
-		/* margin: -25% -4%; */
-		/* filter: brightness(100%); */
-	/* } */
-	/* 100%{ */
-		/* height: 265%; */
-		/* width: 145%; */
-		/* margin: -25% -4%; */
-		/* filter: brightness(100%); */
-		/* }	 */
-	/* } */
+	@-moz-keyframes elfMovement {
+	  0%{	
+			height:60%;
+			width:31%;
+			margin:6% -27%;
+			filter:brightness(0%)
+				   drop-shadow(5px 5px 3px black);
+		}
+	 2%{
+			height:60%;
+			width:31%;
+			margin:5% -5%;
+			filter:brightness(0%)
+				   drop-shadow(5px 5px 3px black);
+	    }
+	 4%{
+			height:68%;
+			width:32%;
+			margin:-3% 18%;
+			filter:brightness(0%)
+				   drop-shadow(5px 5px 2px black);
+		}
+	 6%{
+			height:68%;
+			width:35%;
+			margin:-8% 40%;
+			filter:brightness(0%)
+				   drop-shadow(5px 5px 2px black);
+		}
+	 8%{	
+			height:68%;
+			width:35%;
+			margin:4% 60%;
+			filter:brightness(0%) invert(100%)
+				   drop-shadow(5px 5px 2px grey);
+		}
+	 10%{
+			height:70%;
+			width:39%;
+			margin:8% 55%;
+			filter:brightness(0%) invert(100%)
+				   drop-shadow(5px 5px 2px grey);
+	    }
+	12%{
+			height:72%;
+			width:40%;
+			margin:14% 51%;
+			filter:brightness(0%) invert(100%)
+				   drop-shadow(5px 5px 2px grey);
+		}	
+	14%{
+		height:73%;
+		width:41%;
+		margin:15% 51%;
+		filter:brightness(0%) invert(100%)
+			   drop-shadow(5px 5px 2px grey);
+		}	
+	16%{
+		height:94%;
+		width:49%;
+		margin:5% 46%;
+		filter:brightness(0%) invert(100%)
+			   drop-shadow(5px 5px 2px grey);
+		}		
+	18%{
+		height: 235%;
+		width: 125%;
+		margin: -23% 3%;
+		filter: brightness(130%) invert(20%) contrast(80%)
+		 blur(2px);
+	}
+	20%{
+		height: 260%;
+		width: 140%;
+		margin: -25% -4%;
+		filter: brightness(100%);
+	}
+	100%{
+		height: 265%;
+		width: 145%;
+		margin: -25% -4%;
+		filter: brightness(100%);
+		}	
+	}
+	@-webkit-keyframes elfMovement {
+	  0%{	
+			height:60%;
+			width:31%;
+			margin:6% -27%;
+			filter:brightness(0%)
+				   drop-shadow(5px 5px 3px black);
+		}
+	 2%{
+			height:60%;
+			width:31%;
+			margin:5% -5%;
+			filter:brightness(0%)
+				   drop-shadow(5px 5px 3px black);
+	    }
+	 4%{
+			height:68%;
+			width:32%;
+			margin:-3% 18%;
+			filter:brightness(0%)
+				   drop-shadow(5px 5px 2px black);
+		}
+	 6%{
+			height:68%;
+			width:35%;
+			margin:-8% 40%;
+			filter:brightness(0%)
+				   drop-shadow(5px 5px 2px black);
+		}
+	 8%{	
+			height:68%;
+			width:35%;
+			margin:4% 60%;
+			filter:brightness(0%) invert(100%)
+				   drop-shadow(5px 5px 2px grey);
+		}
+	 10%{
+			height:70%;
+			width:39%;
+			margin:8% 55%;
+			filter:brightness(0%) invert(100%)
+				   drop-shadow(5px 5px 2px grey);
+	    }
+	12%{
+			height:72%;
+			width:40%;
+			margin:14% 51%;
+			filter:brightness(0%) invert(100%)
+				   drop-shadow(5px 5px 2px grey);
+		}	
+	14%{
+		height:73%;
+		width:41%;
+		margin:15% 51%;
+		filter:brightness(0%) invert(100%)
+			   drop-shadow(5px 5px 2px grey);
+		}	
+	16%{
+		height:94%;
+		width:49%;
+		margin:5% 46%;
+		filter:brightness(0%) invert(100%)
+			   drop-shadow(5px 5px 2px grey);
+		}		
+	18%{
+		height: 235%;
+		width: 125%;
+		margin: -23% 3%;
+		filter: brightness(130%) invert(20%) contrast(80%)
+		 blur(2px);
+	}
+	20%{
+		height: 260%;
+		width: 140%;
+		margin: -25% -4%;
+		filter: brightness(100%);
+	}
+	100%{
+		height: 265%;
+		width: 145%;
+		margin: -25% -4%;
+		filter: brightness(100%);
+		}	
+	}
 	
 	#elf2{
 		position: absolute;
@@ -692,82 +608,82 @@
 				opacity: 1;
 		}
 	}
-	/* @-moz-keyframes elfEffect { */
-		/* 0%{	 */
-			/* opacity:0; */
-		/* } */
-		/* 18%{ */
-			/* opacity: 0; */
-		/* } */
-		/* 19%{ */
-			/* opacity: 1; */
-		/* } */
-		/* 20%{ */
-			/* height: 95%; */
-			/* width: 95%; */
-			/* margin: 0% 2%; */
-			/* filter:brightness(98%) invert(30%); */
-			/* opacity: 1; */
-		/* } */
-		/* 21%{ */
-			/* height: 120%; */
-			/* width: 130%; */
-			/* margin: -1% -13%; */
-			/* filter: brightness(100%) invert(30%) blur(2px); */
-			/* opacity: 1; */
-		/* } */
-		/* 22%{ */
-			/* height: 125%; */
-			/* width: 150%; */
-			/* margin:1% -24%; */
-			/* filter: brightness(100%); */
-		/* } */
-		/* 100%{	 */
-			    /* height: 127%; */
-				/* width: 152%; */
-				/* margin: 1% -24%; */
-				/* filter: brightness(100%); */
-				/* opacity: 1; */
-		/* } */
-	/* } */
-	/* @-webkit-keyframes elfEffect { */
-		/* 0%{	 */
-			/* opacity:0; */
-		/* } */
-		/* 18%{ */
-			/* opacity: 0; */
-		/* } */
-		/* 19%{ */
-			/* opacity: 1; */
-		/* } */
-		/* 20%{ */
-			/* height: 95%; */
-			/* width: 95%; */
-			/* margin: 0% 2%; */
-			/* filter:brightness(98%) invert(30%); */
-			/* opacity: 1; */
-		/* } */
-		/* 21%{ */
-			/* height: 120%; */
-			/* width: 130%; */
-			/* margin: -1% -13%; */
-			/* filter: brightness(100%) invert(30%) blur(2px); */
-			/* opacity: 1; */
-		/* } */
-		/* 22%{ */
-			/* height: 125%; */
-			/* width: 150%; */
-			/* margin:1% -24%; */
-			/* filter: brightness(100%); */
-		/* } */
-		/* 100%{	 */
-			    /* height: 127%; */
-				/* width: 152%; */
-				/* margin: 1% -24%; */
-				/* filter: brightness(100%); */
-				/* opacity: 1; */
-		/* } */
-	/* } */
+	@-moz-keyframes elfEffect {
+ 0%{	
+			opacity:0;
+		}
+		15%{
+			opacity: 0;
+		}
+		16%{
+			opacity: 1;
+		}
+		17%{
+			height: 95%;
+			width: 95%;
+			margin: 0% 2%;
+			filter:brightness(98%) invert(30%);
+			opacity: 1;
+		}
+		18%{
+			height: 120%;
+			width: 130%;
+			margin: -1% -13%;
+			filter: brightness(100%) invert(30%) blur(2px);
+			opacity: 1;
+		}
+		20%{
+			height: 125%;
+			width: 150%;
+			margin:1% -24%;
+			filter: brightness(100%);
+		}
+		100%{	
+			    height: 127%;
+				width: 152%;
+				margin: 1% -24%;
+				filter: brightness(100%);
+				opacity: 1;
+		}
+	}
+	@-webkit-keyframes elfEffect {
+ 0%{	
+			opacity:0;
+		}
+		15%{
+			opacity: 0;
+		}
+		16%{
+			opacity: 1;
+		}
+		17%{
+			height: 95%;
+			width: 95%;
+			margin: 0% 2%;
+			filter:brightness(98%) invert(30%);
+			opacity: 1;
+		}
+		18%{
+			height: 120%;
+			width: 130%;
+			margin: -1% -13%;
+			filter: brightness(100%) invert(30%) blur(2px);
+			opacity: 1;
+		}
+		20%{
+			height: 125%;
+			width: 150%;
+			margin:1% -24%;
+			filter: brightness(100%);
+		}
+		100%{	
+			    height: 127%;
+				width: 152%;
+				margin: 1% -24%;
+				filter: brightness(100%);
+				opacity: 1;
+		}
+	}
 	
 	#startBtn{
 		height: 23%;
