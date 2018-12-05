@@ -132,8 +132,7 @@
 		height: 235%;
 		width: 125%;
 		margin: -23% 3%;
-		filter: brightness(130%) invert(20%) contrast(80%)
-		 blur(2px);
+		filter: brightness(130%) invert(20%) contrast(80%);
 	}
 	20%{
 		height: 260%;
@@ -216,8 +215,7 @@
 		height: 235%;
 		width: 125%;
 		margin: -23% 3%;
-		filter: brightness(130%) invert(20%) contrast(80%)
-		 blur(2px);
+		filter: brightness(130%) invert(20%) contrast(80%);
 	}
 	20%{
 		height: 260%;
@@ -300,8 +298,7 @@
 		height: 235%;
 		width: 125%;
 		margin: -23% 3%;
-		filter: brightness(130%) invert(20%) contrast(80%)
-		 blur(2px);
+		filter: brightness(130%) invert(20%) contrast(80%);
 	}
 	20%{
 		height: 260%;
@@ -591,7 +588,7 @@
 			height: 120%;
 			width: 130%;
 			margin: -1% -13%;
-			filter: brightness(100%) invert(30%) blur(2px);
+			filter: brightness(100%) invert(30%);
 			opacity: 1;
 		}
 		20%{
@@ -629,7 +626,7 @@
 			height: 120%;
 			width: 130%;
 			margin: -1% -13%;
-			filter: brightness(100%) invert(30%) blur(2px);
+			filter: brightness(100%) invert(30%);
 			opacity: 1;
 		}
 		20%{
@@ -667,7 +664,7 @@
 			height: 120%;
 			width: 130%;
 			margin: -1% -13%;
-			filter: brightness(100%) invert(30%) blur(2px);
+			filter: brightness(100%) invert(30%);
 			opacity: 1;
 		}
 		20%{
