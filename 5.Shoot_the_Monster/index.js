@@ -74,25 +74,49 @@
 		elf.style.MozAnimationName = "elfRemove";
 		elf.style.animationName = "elfRemove";
 		
+		elf.style.WebkitanimationDuration = "1s";
+		elf.style.MozanimationDuration = "1s";
+		elf.style.animationDuration = "1s";
+		
 		elfEffect.style.WebkitAnimationName = "elfEffectRemove";
 		elfEffect.style.MozAnimationName = "elfEffectRemove";
 		elfEffect.style.animationName = "elfEffectRemove";	
+		
+		elfEffect.style.WebkitanimationDuration = "1s";
+		elfEffect.style.MozanimationDuration = "1s";
+		elfEffect.style.animationDuration = "1s";
 		
 		gameContainerBg.style.AnimationPlayState="running";
 		gameContainerBg.style.MozAnimationPlayState="running";
 		gameContainerBg.style.WebkitAnimationPlayState="running";
 	
+		gameContainerBg.style.WebkitanimationDuration = "1s";
+		gameContainerBg.style.MozanimationDuration = "1s";
+		gameContainerBg.style.animationDuration = "1s";
+	
 		startBtn.style.WebkitAnimationName = "startBtnRemove";
 		startBtn.style.MozAnimationName = "startBtnRemove";
 		startBtn.style.animationName = "startBtnRemove";
 
+		startBtn.style.WebkitanimationDuration = "1s";
+		startBtn.style.MozanimationDuration = "1s";
+		startBtn.style.animationDuration = "1s";
+		
 		glowLeft.style.WebkitAnimationName = "glowLeftRemove";
 		glowLeft.style.MozAnimationName = "glowLeftRemove";
 		glowLeft.style.animationName = "glowLeftRemove";
 		
+		glowLeft.style.WebkitanimationDuration = "1s";
+		glowLeft.style.MozanimationDuration = "1s";
+		glowLeft.style.animationDuration = "1s";
+		
 		glowRight.style.WebkitAnimationName = "glowRightRemove";
 		glowRight.style.MozAnimationName = "glowRightRemove";
 		glowRight.style.animationName = "glowRightRemove";
+		
+		glowRight.style.WebkitanimationDuration = "1s";
+		glowRight.style.MozanimationDuration = "1s";
+		glowRight.style.animationDuration = "1s";
 	}
 	
 	
