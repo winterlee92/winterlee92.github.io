@@ -743,7 +743,146 @@
 			opacity: 0.6;
 		}
 	}
-	
+	@-moz-keyframes elfRemove {
+		0%{
+			height: 265%;
+			width: 145%;
+			margin: -25% -4%;
+			filter: brightness(100%);
+		}
+		
+		10%
+		{
+			height: 265%;
+			width: 145%;
+			margin: -25% -4%;
+			filter: brightness(100%);
+		}
+		30%{
+			height: 90%;
+			width: 50%;
+			margin: 10% 42%;
+			filter: brightness(100%);
+			
+		}
+		35%{
+			height: 160%;
+			width: 90%;
+			margin: 0% 16%;
+			filter: brightness(100%);
+		}
+		40%{
+			height: 192%;
+			width: 100%;
+			margin: -15% -5%;
+			filter: brightness(100%);
+		}
+		45%{
+			height: 290%;
+			width: 158%;
+			margin: -20% -50%;
+			filter: brightness(100%);
+			opacity:0.9;
+		}
+		50%{
+			height: 290%;
+			width: 158%;
+			margin: 1% -54%;
+			filter: brightness(100%);
+			opacity: 0.6;
+		}
+		55%{
+			height: 290%;
+			width: 158%;
+			margin: 19% -60%;
+			filter: brightness(100%);
+			opacity: 0.6;
+		}
+		60%{
+			height: 290%;
+			width: 158%;
+			margin: 60% -70%;
+			filter: brightness(100%);
+			opacity: 0.6;
+		}	
+		100%{
+			height: 290%;
+			width: 158%;
+			margin: 60% -70%;
+			filter: brightness(100%);
+			opacity: 0.6;
+		}
+	}
+	@-webkit-keyframes elfRemove {
+		0%{
+			height: 265%;
+			width: 145%;
+			margin: -25% -4%;
+			filter: brightness(100%);
+		}
+		
+		10%
+		{
+			height: 265%;
+			width: 145%;
+			margin: -25% -4%;
+			filter: brightness(100%);
+		}
+		30%{
+			height: 90%;
+			width: 50%;
+			margin: 10% 42%;
+			filter: brightness(100%);
+			
+		}
+		35%{
+			height: 160%;
+			width: 90%;
+			margin: 0% 16%;
+			filter: brightness(100%);
+		}
+		40%{
+			height: 192%;
+			width: 100%;
+			margin: -15% -5%;
+			filter: brightness(100%);
+		}
+		45%{
+			height: 290%;
+			width: 158%;
+			margin: -20% -50%;
+			filter: brightness(100%);
+			opacity:0.9;
+		}
+		50%{
+			height: 290%;
+			width: 158%;
+			margin: 1% -54%;
+			filter: brightness(100%);
+			opacity: 0.6;
+		}
+		55%{
+			height: 290%;
+			width: 158%;
+			margin: 19% -60%;
+			filter: brightness(100%);
+			opacity: 0.6;
+		}
+		60%{
+			height: 290%;
+			width: 158%;
+			margin: 60% -70%;
+			filter: brightness(100%);
+			opacity: 0.6;
+		}	
+		100%{
+			height: 290%;
+			width: 158%;
+			margin: 60% -70%;
+			filter: brightness(100%);
+			opacity: 0.6;
+		}
+	}
 	
 	#elfEffect{
 		position: absolute;
@@ -922,7 +1061,72 @@
 			opacity: 0;
 		}
 	}
-	
+	@-moz-keyframes elfEffectRemove{
+		0%{
+			height: 127%;
+			width: 152%;
+			margin: 1% -24%;
+			filter: brightness(100%);
+			opacity: 1;
+		}
+		
+		10%
+		{
+			height: 127%;
+			width: 152%;
+			margin: 1% -24%;
+			filter: brightness(100%);
+			opacity: 0.7;
+		}
+		
+		20%{
+			height: 110%;
+			width: 132%;
+			margin: 1% -11%;
+			filter: brightness(100%);
+			opacity: 0.4;
+			
+		}
+		21%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 0;
+		}
+	}
+	@-webkit-keyframes elfEffectRemove{
+		0%{
+			height: 127%;
+			width: 152%;
+			margin: 1% -24%;
+			filter: brightness(100%);
+			opacity: 1;
+		}
+		
+		10%
+		{
+			height: 127%;
+			width: 152%;
+			margin: 1% -24%;
+			filter: brightness(100%);
+			opacity: 0.7;
+		}
+		
+		20%{
+			height: 110%;
+			width: 132%;
+			margin: 1% -11%;
+			filter: brightness(100%);
+			opacity: 0.4;
+			
+		}
+		21%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 0;
+		}
+	}
 	
 	#startBtn{
 		height: 20%;
@@ -1035,7 +1239,6 @@
 		}
 	}
 	
-	
 	#glowLeft{
 		position:absolute;	
 		height: 50%;
@@ -1137,9 +1340,89 @@
 		}
 	}
 	
-	
-	
 	@keyframes glowLeftRemove{
+		0%{
+			height: 52%;
+			width: 42%;	
+			margin: 25% -10%;
+			opacity:1;
+		}
+		
+		10%
+		{
+			height: 52%;
+			width: 42%;	
+			margin: 25% -10%;
+			opacity:1;
+		}
+		30%{
+			height: 20%;
+			width: 20%;
+			margin: 26% 37%;
+			opacity: 0.5;
+			
+		}
+		35%{
+			height: 30%;
+			width: 30%;
+			margin: 24% -9%;
+			opacity: 0.5;
+		}
+		40%{
+			height: 30%;
+			width: 30%;
+			margin: 40% -20%;
+			opacity: 0.5;
+		}
+		100%{
+			height: 30%;
+			width: 30%;
+			margin: 40% -20%;
+			opacity: 0.5;
+		}
+	}
+	@-moz-keyframes glowLeftRemove{
+		0%{
+			height: 52%;
+			width: 42%;	
+			margin: 25% -10%;
+			opacity:1;
+		}
+		
+		10%
+		{
+			height: 52%;
+			width: 42%;	
+			margin: 25% -10%;
+			opacity:1;
+		}
+		30%{
+			height: 20%;
+			width: 20%;
+			margin: 26% 37%;
+			opacity: 0.5;
+			
+		}
+		35%{
+			height: 30%;
+			width: 30%;
+			margin: 24% -9%;
+			opacity: 0.5;
+		}
+		40%{
+			height: 30%;
+			width: 30%;
+			margin: 40% -20%;
+			opacity: 0.5;
+		}
+		100%{
+			height: 30%;
+			width: 30%;
+			margin: 40% -20%;
+			opacity: 0.5;
+		}
+	}
+	@-webkit-keyframes glowLeftRemove{
 		0%{
 			height: 52%;
 			width: 42%;	
@@ -1286,6 +1569,88 @@
 	}
 	
 	@keyframes glowRightRemove {
+		0%{
+			height: 52%;
+			width: 42%;	
+			margin: 39% 70%;
+			opacity:1;
+		}
+		
+		10%
+		{
+			height: 52%;
+			width: 42%;	
+			margin: 39% 70%;
+			opacity:1;
+		}
+		30%{
+			height: 20%;
+			width: 20%;
+			margin: 31% 65%;
+			opacity: 0.5;
+			
+		}
+		35%{
+			height: 30%;
+			width: 30%;
+			margin: 34% 46%;
+			opacity: 0.5;
+		}
+		40%{
+			height: 30%;
+			width: 30%;
+			margin: 54% 75%;
+			opacity: 0.5;
+		}
+		100%{
+			height: 30%;
+			width: 30%;
+			margin: 54% 75%;
+			opacity: 0.5;
+		}
+	}
+	@-moz-keyframes glowRightRemove {
+		0%{
+			height: 52%;
+			width: 42%;	
+			margin: 39% 70%;
+			opacity:1;
+		}
+		
+		10%
+		{
+			height: 52%;
+			width: 42%;	
+			margin: 39% 70%;
+			opacity:1;
+		}
+		30%{
+			height: 20%;
+			width: 20%;
+			margin: 31% 65%;
+			opacity: 0.5;
+			
+		}
+		35%{
+			height: 30%;
+			width: 30%;
+			margin: 34% 46%;
+			opacity: 0.5;
+		}
+		40%{
+			height: 30%;
+			width: 30%;
+			margin: 54% 75%;
+			opacity: 0.5;
+		}
+		100%{
+			height: 30%;
+			width: 30%;
+			margin: 54% 75%;
+			opacity: 0.5;
+		}
+	}
+	@-webkit-keyframes glowRightRemove {
 		0%{
 			height: 52%;
 			width: 42%;	
