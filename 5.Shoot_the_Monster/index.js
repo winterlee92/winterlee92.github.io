@@ -35,13 +35,38 @@
 	}());
 	
 	var mv;
-	function lp() {; mv = setTimeout(main, 500);}
+	function lp() {mv = setTimeout(main, 500);}
 		
 	var gameContainer = document.getElementById("gameContainer");
+	var elf = document.getElementById("elf");
+	var elfEffect  = document.getElementById("elfEffect");
+	var startBtn = document.getElementById("startBtn");
+	
 	function main(){
 		document.getElementById("loader").style.display = "none";	
 		gameContainer.style.display = "block";
+		
 	}
+	
+	function mouseDown(event) {
+		var data = event.target.id;
+		elf.style.WebkitAnimationName = "elfRemove";
+		elf.style.MozAnimationName = "elfRemove";
+		elf.style.animationName = "elfRemove";
+		
+		elfEffect.style.WebkitAnimationName = "elfEffectRemove";
+		elfEffect.style.MozAnimationName = "elfEffectRemove";
+		elfEffect.style.animationName = "elfEffectRemove";	
+		
+		gameContainerBg.style.AnimationPlayState="running";
+		gameContainerBg.style.MozAnimationPlayState="running";
+		gameContainerBg.style.WebkitAnimationPlayState="running";
+	
+		startBtn.style.WebkitAnimationName = "startBtnRemove";
+		startBtn.style.MozAnimationName = "startBtnRemove";
+		startBtn.style.animationName = "startBtnRemove";	
+	}
+	
 	
 	(function () {
   
