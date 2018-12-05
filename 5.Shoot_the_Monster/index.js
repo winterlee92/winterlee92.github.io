@@ -46,6 +46,7 @@
 	var startBtn = document.getElementById("startBtn");
 	var glowLeft = document.getElementById("glowLeft");
 	var glowRight = document.getElementById("glowRight");
+	var font = document.getElementById("font");
 	
 	function main(){
 		document.getElementById("loader").style.display = "none";	
@@ -117,6 +118,14 @@
 		glowRight.style.WebkitanimationDuration = "1s";
 		glowRight.style.MozanimationDuration = "1s";
 		glowRight.style.animationDuration = "1s";
+		
+		font.style.WebkitAnimationName = "fontRemove";
+		font.style.MozAnimationName = "fontRemove";
+		font.style.animationName = "fontRemove";
+		
+		font.style.WebkitanimationDuration = "1s";
+		font.style.MozanimationDuration = "1s";
+		font.style.animationDuration = "1s";
 	}
 	
 	
