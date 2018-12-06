@@ -62,6 +62,11 @@
 	var t9 = document.getElementById("t9");
 	var t10 = document.getElementById("t10");
 	
+	var count0 = document.getElementsByClassName("count0");	
+	var count1 = document.getElementsByClassName("count1");	
+	var count2 = document.getElementsByClassName("count2");	
+	var count3 = document.getElementsByClassName("count3");		
+
 	function main(){
 		document.getElementById("loader").style.display = "none";	
 		gameContainer.style.display = "block";
@@ -69,19 +74,15 @@
 		heartImage[1].style.left = "110%";
 		heartImage[2].style.left = "220%";
 		var countImage = document.getElementsByClassName("count");
-		countImage[4].style.opacity = "0";
-		countImage[5].style.opacity = "0";
-		countImage[6].style.opacity = "0";
-		countImage[7].style.opacity = "0";
+		// countImage[4].style.opacity = "0";
+		// countImage[5].style.opacity = "0";
+		// countImage[6].style.opacity = "0";
+		// countImage[7].style.opacity = "0";
 		countImage[0].style.margin = "0% 87%";
 		countImage[1].style.margin = "3% 75%";
 		countImage[2].style.margin = "0% 63%";
 		countImage[3].style.margin = "3% 51%";
-		countImage[4].style.margin = "0% 39%";
-		countImage[5].style.margin = "3% 27%";
-		countImage[6].style.margin = "0% 15%";
-		countImage[7].style.margin = "3% 3%";
-		
+		count0[0].style.margin = "0% 39%";
 	}
 	
 	function createImage(){
@@ -100,9 +101,9 @@
 		
 		var countArray = ['count.png'];
 		var i;
-		for(i=0; i<8; i++)
+		for(i=0; i<4; i++)
 		{	 
-			if(i < 8)
+			if(i < 4)
 			{
 				var countImage = document.createElement("IMG");
 				countImage.setAttribute("src", countArray[0]);	
@@ -110,6 +111,18 @@
 				count.appendChild(countImage);
 			}
 		}
+		
+		for(i=0; i<4; i++)
+		{	 
+			if(i < 4)
+			{
+				var countImage = document.createElement("IMG");
+				countImage.setAttribute("src", countArray[0]);	
+				countImage.setAttribute("class","count"+i);
+				count.appendChild(countImage);
+			}
+		}
+		
 	}
 
 	function mouseDown(event) {
@@ -223,6 +236,22 @@
 		t10.style.AnimationPlayState="running";
 		t10.style.MozAnimationPlayState="running";
 		t10.style.WebkitAnimationPlayState="running";
+		
+		count0[0].style.AnimationPlayState="running";
+		count0[0].style.MozAnimationPlayState="running";
+		count0[0].style.WebkitAnimationPlayState="running";
+		
+		count1[0].style.AnimationPlayState="running";
+		count1[0].style.MozAnimationPlayState="running";
+		count1[0].style.WebkitAnimationPlayState="running";
+		
+		count2[0].style.AnimationPlayState="running";
+		count2[0].style.MozAnimationPlayState="running";
+		count2[0].style.WebkitAnimationPlayState="running";
+		
+		count3[0].style.AnimationPlayState="running";
+		count3[0].style.MozAnimationPlayState="running";
+		count3[0].style.WebkitAnimationPlayState="running";
 		
 	}
 	

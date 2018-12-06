@@ -2170,7 +2170,7 @@
 		z-index:99;
 		
 		animation-name: count;
-		animation-duration: 2s;
+		animation-duration: 1s;
 		animation-delay:1s;
 		animation-fill-mode: forwards;
 		animation-play-state: paused;
@@ -2192,7 +2192,7 @@
 		width: 100%;
 	}
 	
-	.count{
+	.count,.count0,.count1,.count2,.count3{
 		position: absolute;
 		height: 90%;
 		width: 13%;
@@ -2201,6 +2201,105 @@
 		margin:0% 0%;
 	}
 	
+	.count0{
+		opacity:0;
+		margin:0% 39%;
+		
+		animation-name: displayIcon;
+		animation-duration: 1s;
+		animation-delay:2s;
+		animation-fill-mode: forwards;
+		animation-play-state: paused;
+		-moz-animation-name:displayIcon;
+		-moz-animation-duration:1s;	
+		-moz-animation-delay:2s;
+		-moz-animation-fill-mode: forwards;
+		-moz-animation-play-state: paused;
+		-webkit-animation-name: displayIcon;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-delay:2s;
+		-webkit-animation-fill-mode: forwards;
+		-webkit-animation-play-state: paused;
+	}
+	
+	@keyframes displayIcon{
+		0%{
+			opacity:0;
+		}
+		50%{
+			opacity:1;
+		}
+		100%{
+			opacity:1;
+		}
+	}
+	@-moz-keyframes count1{
+	}
+	@webkit-keyframes count1{
+	}
+	
+	.count1{
+		opacity:0;
+		margin:3% 27%;
+		
+		animation-name: displayIcon;
+		animation-duration: 1s;
+		animation-delay:2.5s;
+		animation-fill-mode: forwards;
+		animation-play-state: paused;
+		-moz-animation-name:displayIcon;
+		-moz-animation-duration:1s;	
+		-moz-animation-delay:2.5s;
+		-moz-animation-fill-mode: forwards;
+		-moz-animation-play-state: paused;
+		-webkit-animation-name: displayIcon;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-delay:2.5s;
+		-webkit-animation-fill-mode: forwards;
+		-webkit-animation-play-state: paused;
+	}
+	
+	.count2{
+		opacity:0;
+		margin:0% 15%;
+		
+		animation-name: displayIcon;
+		animation-duration: 1s;
+		animation-delay:3s;
+		animation-fill-mode: forwards;
+		animation-play-state: paused;
+		-moz-animation-name:displayIcon;
+		-moz-animation-duration:1s;	
+		-moz-animation-delay:3s;
+		-moz-animation-fill-mode: forwards;
+		-moz-animation-play-state: paused;
+		-webkit-animation-name: displayIcon;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-delay:3s;
+		-webkit-animation-fill-mode: forwards;
+		-webkit-animation-play-state: paused;
+	}
+	
+	.count3{
+		opacity:0;
+		margin:3% 3%;
+		
+		animation-name: displayIcon;
+		animation-duration: 1s;
+		animation-delay:3.5s;
+		animation-fill-mode: forwards;
+		animation-play-state: paused;
+		-moz-animation-name:displayIcon;
+		-moz-animation-duration:1s;	
+		-moz-animation-delay:3.5s;
+		-moz-animation-fill-mode: forwards;
+		-moz-animation-play-state: paused;
+		-webkit-animation-name: displayIcon;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-delay:3.5s;
+		-webkit-animation-fill-mode: forwards;
+		-webkit-animation-play-state: paused;
+	}
 	
 	@keyframes count{
 		0%{
@@ -2228,7 +2327,7 @@
 	}
 	
 
-#t1,#t2,#t3,#t3,#t4,#t5,#t6,#t7,#t8,#t9,#t10{
+#t1,#t2,#t3,#t4,#t5,#t6,#t7,#t8,#t9,#t10{
 	position: absolute;
 	background-size: 100% 100%;
 	background-Repeat: no-repeat;
@@ -2236,17 +2335,14 @@
 	
 	animation-name: tree;
 	animation-duration: 1s;
-	animation-delay:1s;
 	animation-fill-mode: forwards;
 	animation-play-state: paused;
 	-moz-animation-name:tree;
 	-moz-animation-duration:1s;	
-	-moz-animation-delay:1s;
 	-moz-animation-fill-mode: forwards;
 	-moz-animation-play-state: paused;
 	-webkit-animation-name: tree;
 	-webkit-animation-duration: 1s;
-	-webkit-animation-delay:1s;
 	-webkit-animation-fill-mode: forwards;
 	-webkit-animation-play-state: paused;
 }
@@ -2255,12 +2351,9 @@
 	0%{
 		opacity:0;
 		}
-	1%{
+	50%{
 		opacity:0;
-	}	
-	2%{
-		opacity:1;
-	}
+	}		
 	100%{
 		opacity:1;
 	}
