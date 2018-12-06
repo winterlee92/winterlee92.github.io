@@ -51,21 +51,28 @@
 	var arrow = document.getElementById("arrow");
 	var heart = document.getElementById("heart");
 	var count = document.getElementById("count");
+	var t1 = document.getElementById("t1");
+	var t2 = document.getElementById("t2");
+	var t3 = document.getElementById("t3");
+	var t4 = document.getElementById("t4");
+	var t5 = document.getElementById("t5");
+	var t6 = document.getElementById("t6");
+	var t7 = document.getElementById("t7");
+	var t8 = document.getElementById("t8");
+	var t9 = document.getElementById("t9");
+	var t10 = document.getElementById("t10");
 	
 	function main(){
 		document.getElementById("loader").style.display = "none";	
 		gameContainer.style.display = "block";
 		var heartImage = document.getElementsByClassName("heart");			
-		heartImage[1].style.margin = "0% 110%";
-		heartImage[2].style.margin = "0% 220%";
+		heartImage[1].style.left = "110%";
+		heartImage[2].style.left = "220%";
 		var countImage = document.getElementsByClassName("count");
-		// countImage[0].style.opacity = "0";
-		// countImage[1].style.opacity = "0";
-		// countImage[2].style.opacity = "0";
-		// countImage[3].style.opacity = "0";
-		// heartImage[4].style.margin = "0% 110%";
-		// heartImage[5].style.margin = "0% 220%";
-		// heartImage[6].style.margin = "0% 220%";
+		countImage[4].style.opacity = "0";
+		countImage[5].style.opacity = "0";
+		countImage[6].style.opacity = "0";
+		countImage[7].style.opacity = "0";
 		countImage[0].style.margin = "0% 87%";
 		countImage[1].style.margin = "3% 75%";
 		countImage[2].style.margin = "0% 63%";
@@ -74,6 +81,7 @@
 		countImage[5].style.margin = "3% 27%";
 		countImage[6].style.margin = "0% 15%";
 		countImage[7].style.margin = "3% 3%";
+		
 	}
 	
 	function createImage(){
@@ -175,7 +183,47 @@
 		profile.style.AnimationPlayState="running";
 		profile.style.MozAnimationPlayState="running";
 		profile.style.WebkitAnimationPlayState="running";
-	
+		
+		t1.style.AnimationPlayState="running";
+		t1.style.MozAnimationPlayState="running";
+		t1.style.WebkitAnimationPlayState="running";
+		
+		t2.style.AnimationPlayState="running";
+		t2.style.MozAnimationPlayState="running";
+		t2.style.WebkitAnimationPlayState="running";
+		
+		t3.style.AnimationPlayState="running";
+		t3.style.MozAnimationPlayState="running";
+		t3.style.WebkitAnimationPlayState="running";
+		
+		t4.style.AnimationPlayState="running";
+		t4.style.MozAnimationPlayState="running";
+		t4.style.WebkitAnimationPlayState="running";
+		
+		t5.style.AnimationPlayState="running";
+		t5.style.MozAnimationPlayState="running";
+		t5.style.WebkitAnimationPlayState="running";
+			
+		t6.style.AnimationPlayState="running";
+		t6.style.MozAnimationPlayState="running";
+		t6.style.WebkitAnimationPlayState="running";
+		
+		t7.style.AnimationPlayState="running";
+		t7.style.MozAnimationPlayState="running";
+		t7.style.WebkitAnimationPlayState="running";
+		
+		t8.style.AnimationPlayState="running";
+		t8.style.MozAnimationPlayState="running";
+		t8.style.WebkitAnimationPlayState="running";
+		
+		t9.style.AnimationPlayState="running";
+		t9.style.MozAnimationPlayState="running";
+		t9.style.WebkitAnimationPlayState="running";
+		
+		t10.style.AnimationPlayState="running";
+		t10.style.MozAnimationPlayState="running";
+		t10.style.WebkitAnimationPlayState="running";
+		
 	}
 	
 	

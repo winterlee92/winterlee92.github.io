@@ -2068,8 +2068,10 @@
 		position: absolute;
 		height: 9%;
 		width: 5.5%;
-		margin: 45.5% 21%;
+		top: 80.5%;
+		left: 21%;
 		opacity: 0;
+		z-index:99;
 		
 		animation-name: heart;
 		animation-duration: 1s;
@@ -2126,8 +2128,10 @@
 		position: absolute;
 		height: 26%;
 		width: 13%;
-		margin: 39% 7%;
+		top: 68%;
+		left: 7%;
 		opacity: 0;
+		z-index:99;
 		
 		animation-name: heart;
 		animation-duration: 1s;
@@ -2157,11 +2161,13 @@
 	
 	#countDisplay{
 		position: absolute;
-		height: 15%;
+		height: 10%;
 		width: 42%;
-		margin: 1% 57%;
+		top:1%;
+		left:57%;
 		opacity: 0;
 		overflow:hidden;
+		z-index:99;
 		
 		animation-name: count;
 		animation-duration: 2s;
@@ -2188,7 +2194,7 @@
 	
 	.count{
 		position: absolute;
-		height: 65%;
+		height: 90%;
 		width: 13%;
 		background-size: 100% 100%;
 		background-Repeat: no-repeat;
@@ -2221,11 +2227,130 @@
 		}
 	}
 	
+
+#t1,#t2,#t3,#t3,#t4,#t5,#t6,#t7,#t8,#t9,#t10{
+	position: absolute;
+	background-size: 100% 100%;
+	background-Repeat: no-repeat;
+	opacity:0;
 	
+	animation-name: tree;
+	animation-duration: 1s;
+	animation-delay:1s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-moz-animation-name:tree;
+	-moz-animation-duration:1s;	
+	-moz-animation-delay:1s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-webkit-animation-name: tree;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-delay:1s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: paused;
+}
+
+@keyframes tree{
+	0%{
+		opacity:0;
+		}
+	1%{
+		opacity:0;
+	}	
+	2%{
+		opacity:1;
+	}
+	100%{
+		opacity:1;
+	}
+}
+
+@-moz-keyframes tree{
+}
+
+@-webkit-keyframes tree{
+}
+
+#t1{
+	height: 83%;
+    width: 11%;
+    top: 20%;
+	background-image: url(t1.png);
+	z-index:98;
+}
 	
-	
-	
-	
+#t2{
+	height: 100%;
+    width: 9%;
+	background-image: url(t2.png);
+	z-index:97;
+}
+
+#t3{
+	height: 100%;
+    width: 43%;
+    left: 7%;
+    background-image: url(t3.png);
+    z-index: 97;
+}
+
+#t4{
+	height: 82%;
+    width: 10%;
+    left: 27%;
+    background-image: url(t4.png);
+    z-index: 96;
+}
+
+#t5{
+	height: 79%;
+    width: 12.5%;
+    left: 41%;
+    background-image: url(t5.png);
+    z-index: 96;
+}
+
+#t6{
+	height: 92%;
+    width: 12.5%;
+    left: 65%;
+    background-image: url(t6.png);
+    z-index: 96;
+}
+
+#t7{
+	height: 89%;
+    width: 22.5%;
+    left: 77%;
+    background-image: url(t7.png);
+    z-index: 97;
+}
+
+#t8{
+	height: 79%;
+    width: 14%;
+    left: 92%;
+    background-image: url(t8.png);
+    z-index: 96;
+}
+
+#t9{
+	height: 72%;
+    width: 10%;
+    left: 52%;
+    background-image: url(t9.png);
+    z-index: 96;
+}
+
+#t10{
+	height: 74%;
+    width: 9%;
+    left: 58%;
+    background-image: url(t10.png);
+    z-index: 95;
+}
+
 	
 	
 	
