@@ -286,7 +286,59 @@
 		font.style.MozanimationDuration = "1s";
 		font.style.animationDuration = "1s";
 		
-		arrow.style.display = "none"
+		arrow.style.display = "none"	
+		
+		countDisplay.style.AnimationPlayState="running";
+		countDisplay.style.MozAnimationPlayState="running";
+		countDisplay.style.WebkitAnimationPlayState="running";
+		
+		heart.style.AnimationPlayState="running";
+		heart.style.MozAnimationPlayState="running";
+		heart.style.WebkitAnimationPlayState="running";
+		
+		profile.style.AnimationPlayState="running";
+		profile.style.MozAnimationPlayState="running";
+		profile.style.WebkitAnimationPlayState="running";
+		
+		t1.style.AnimationPlayState="running";
+		t1.style.MozAnimationPlayState="running";
+		t1.style.WebkitAnimationPlayState="running";
+		
+		t2.style.AnimationPlayState="running";
+		t2.style.MozAnimationPlayState="running";
+		t2.style.WebkitAnimationPlayState="running";
+		
+		t3.style.AnimationPlayState="running";
+		t3.style.MozAnimationPlayState="running";
+		t3.style.WebkitAnimationPlayState="running";
+		
+		t4.style.AnimationPlayState="running";
+		t4.style.MozAnimationPlayState="running";
+		t4.style.WebkitAnimationPlayState="running";
+		
+		t5.style.AnimationPlayState="running";
+		t5.style.MozAnimationPlayState="running";
+		t5.style.WebkitAnimationPlayState="running";
+			
+		t6.style.AnimationPlayState="running";
+		t6.style.MozAnimationPlayState="running";
+		t6.style.WebkitAnimationPlayState="running";
+		
+		t7.style.AnimationPlayState="running";
+		t7.style.MozAnimationPlayState="running";
+		t7.style.WebkitAnimationPlayState="running";
+		
+		t8.style.AnimationPlayState="running";
+		t8.style.MozAnimationPlayState="running";
+		t8.style.WebkitAnimationPlayState="running";
+		
+		t9.style.AnimationPlayState="running";
+		t9.style.MozAnimationPlayState="running";
+		t9.style.WebkitAnimationPlayState="running";
+		
+		t10.style.AnimationPlayState="running";
+		t10.style.MozAnimationPlayState="running";
+		t10.style.WebkitAnimationPlayState="running";
 	}
 	
 	(function () {
