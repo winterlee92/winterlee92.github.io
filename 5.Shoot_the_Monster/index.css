@@ -1189,55 +1189,68 @@
 	
 	@keyframes startBtnRemove{
 		0%{
+			margin: 42% 30%;
 			opacity:1;
 		}
-		40%{
-		    opacity: 0.6;
+		5%{
+			margin: 44% 30%;		
+		}
+		6%{
+			margin: 42% 30%;
+		}
+		11%{
+			margin: 44% 30%;
+		}
+		12%{
+			margin: 44% 30%;
 		}
 		45%{
+			margin: 44% 30%;
+			opacity: 1;
+		}
+		80%{
+			margin: 44% 30%;
 			opacity: 0.4;
 		}
-		50%{
-			opacity: 0;
-		}
 		100%{
+			margin: 44% 30%;
 			opacity: 0;
 		}
 	}
-	@-moz-keyframes startBtnRemove{
-		0%{
-			opacity:1;
-		}
-		40%{
-		    opacity: 0.6;
-		}
-		45%{
-			opacity: 0.4;
-		}
-		50%{
-			opacity: 0;
-		}
-		100%{
-			opacity: 0;
-		}
-	}
-	@-webkit-keyframes startBtnRemove{
-		0%{
-			opacity:1;
-		}
-		40%{
-		    opacity: 0.6;
-		}
-		45%{
-			opacity: 0.4;
-		}
-		50%{
-			opacity: 0;
-		}
-		100%{
-			opacity: 0;
-		}
-	}
+	/* @-moz-keyframes startBtnRemove{ */
+		/* 0%{ */
+			/* opacity:1; */
+		/* } */
+		/* 40%{ */
+		    /* opacity: 0.6; */
+		/* } */
+		/* 45%{ */
+			/* opacity: 0.4; */
+		/* } */
+		/* 50%{ */
+			/* opacity: 0; */
+		/* } */
+		/* 100%{ */
+			/* opacity: 0; */
+		/* } */
+	/* } */
+	/* @-webkit-keyframes startBtnRemove{ */
+		/* 0%{ */
+			/* opacity:1; */
+		/* } */
+		/* 40%{ */
+		    /* opacity: 0.6; */
+		/* } */
+		/* 45%{ */
+			/* opacity: 0.4; */
+		/* } */
+		/* 50%{ */
+			/* opacity: 0; */
+		/* } */
+		/* 100%{ */
+			/* opacity: 0; */
+		/* } */
+	/* } */
 	
 	#glowLeft{
 		position:absolute;	

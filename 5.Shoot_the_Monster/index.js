@@ -47,6 +47,7 @@
 	var glowLeft = document.getElementById("glowLeft");
 	var glowRight = document.getElementById("glowRight");
 	var font = document.getElementById("font");
+	var arrow = document.getElementById("arrow");
 	
 	function main(){
 		document.getElementById("loader").style.display = "none";	
@@ -126,6 +127,8 @@
 		font.style.WebkitanimationDuration = "1s";
 		font.style.MozanimationDuration = "1s";
 		font.style.animationDuration = "1s";
+		
+		arrow.style.display = "none"
 	}
 	
 	
