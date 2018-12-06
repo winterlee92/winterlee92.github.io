@@ -87,6 +87,7 @@
 		-webkit-animation-fill-mode: forwards;
 		-webkit-animation-play-state: paused;
 	}
+	
 	@keyframes bgZoom{
 		0%{
 			height: 132%;
@@ -421,6 +422,7 @@
 		-moz-transform: translateZ(0);
 		backface-visibility: hidden;
 		transform: translateZ(0);
+		Animation-Play-State:running;
 	}
 	
 	@keyframes elfMovement {
@@ -1129,6 +1131,7 @@
 	}
 	
 	#startBtn{
+		position:absolute;	
 		height: 20%;
 		width: 49%;
 		margin: 44% 30%;
@@ -1217,40 +1220,66 @@
 			opacity: 0;
 		}
 	}
-	/* @-moz-keyframes startBtnRemove{ */
-		/* 0%{ */
-			/* opacity:1; */
-		/* } */
-		/* 40%{ */
-		    /* opacity: 0.6; */
-		/* } */
-		/* 45%{ */
-			/* opacity: 0.4; */
-		/* } */
-		/* 50%{ */
-			/* opacity: 0; */
-		/* } */
-		/* 100%{ */
-			/* opacity: 0; */
-		/* } */
-	/* } */
-	/* @-webkit-keyframes startBtnRemove{ */
-		/* 0%{ */
-			/* opacity:1; */
-		/* } */
-		/* 40%{ */
-		    /* opacity: 0.6; */
-		/* } */
-		/* 45%{ */
-			/* opacity: 0.4; */
-		/* } */
-		/* 50%{ */
-			/* opacity: 0; */
-		/* } */
-		/* 100%{ */
-			/* opacity: 0; */
-		/* } */
-	/* } */
+	@-moz-keyframes startBtnRemove{
+		0%{
+			margin: 42% 30%;
+			opacity:1;
+		}
+		5%{
+			margin: 44% 30%;		
+		}
+		6%{
+			margin: 42% 30%;
+		}
+		11%{
+			margin: 44% 30%;
+		}
+		12%{
+			margin: 44% 30%;
+		}
+		45%{
+			margin: 44% 30%;
+			opacity: 1;
+		}
+		80%{
+			margin: 44% 30%;
+			opacity: 0.4;
+		}
+		100%{
+			margin: 44% 30%;
+			opacity: 0;
+		}
+	}
+	@-webkit-keyframes startBtnRemove{
+		0%{
+			margin: 42% 30%;
+			opacity:1;
+		}
+		5%{
+			margin: 44% 30%;		
+		}
+		6%{
+			margin: 42% 30%;
+		}
+		11%{
+			margin: 44% 30%;
+		}
+		12%{
+			margin: 44% 30%;
+		}
+		45%{
+			margin: 44% 30%;
+			opacity: 1;
+		}
+		80%{
+			margin: 44% 30%;
+			opacity: 0.4;
+		}
+		100%{
+			margin: 44% 30%;
+			opacity: 0;
+		}
+	}
 	
 	#glowLeft{
 		position:absolute;	
@@ -2035,17 +2064,162 @@
 		}
 	}
 	
+	#heart{
+		position: absolute;
+		height: 9%;
+		width: 5.5%;
+		margin: 45.5% 21%;
+		opacity: 0;
+		
+		animation-name: heart;
+		animation-duration: 1s;
+		animation-delay:1s;
+		animation-fill-mode: forwards;
+		animation-play-state: paused;
+		-moz-animation-name:heart;
+		-moz-animation-duration:1s;	
+		-moz-animation-delay:1s;
+		-moz-animation-fill-mode: forwards;
+		-moz-animation-play-state: paused;
+		-webkit-animation-name: heart;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-delay:1s;
+		-webkit-animation-fill-mode: forwards;
+		-webkit-animation-play-state: paused;
+	}
+	
+	@keyframes heart{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity:1;
+		}
+	}
+	@-moz-keyframes heart{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity:1;
+		}
+	}
+	@webkit-keyframes heart{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity:1;
+		}
+	}
+	
+	.heart{
+		position:absolute;
+		height: 100%;
+		width: 100%;
+		background-position: 100% 100%;
+		background-Repeat: no-repeat;
+		margin:0% 0%;
+	}
+	
+	#profile{
+		position: absolute;
+		height: 26%;
+		width: 13%;
+		margin: 39% 7%;
+		opacity: 0;
+		
+		animation-name: heart;
+		animation-duration: 1s;
+		animation-delay:1s;
+		animation-fill-mode: forwards;
+		animation-play-state: paused;
+		-moz-animation-name:heart;
+		-moz-animation-duration:1s;	
+		-moz-animation-delay:1s;
+		-moz-animation-fill-mode: forwards;
+		-moz-animation-play-state: paused;
+		-webkit-animation-name: heart;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-delay:1s;
+		-webkit-animation-fill-mode: forwards;
+		-webkit-animation-play-state: paused;
+	}
+	
+	#profilePImg{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-image: url('profile.png');
+		background-size: 100% 100%;
+		background-Repeat: no-repeat;
+	}
+	
+	#countDisplay{
+		position: absolute;
+		height: 15%;
+		width: 42%;
+		margin: 1% 57%;
+		opacity: 0;
+		overflow:hidden;
+		
+		animation-name: count;
+		animation-duration: 2s;
+		animation-delay:1s;
+		animation-fill-mode: forwards;
+		animation-play-state: paused;
+		-moz-animation-name:count;
+		-moz-animation-duration:1s;	
+		-moz-animation-delay:1s;
+		-moz-animation-fill-mode: forwards;
+		-moz-animation-play-state: paused;
+		-webkit-animation-name: count;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-delay:1s;
+		-webkit-animation-fill-mode: forwards;
+		-webkit-animation-play-state: paused;
+	}
+	
+	#count{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+	
+	.count{
+		position: absolute;
+		height: 65%;
+		width: 13%;
+		background-size: 100% 100%;
+		background-Repeat: no-repeat;
+		margin:0% 0%;
+	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@keyframes count{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity:0.5;
+		}
+	}
+	@-moz-keyframes count{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity:0.5;
+		}
+	}
+	@webkit-keyframes count{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity:0.5;
+		}
+	}
 	
 	
 	
