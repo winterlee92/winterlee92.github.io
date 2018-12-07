@@ -67,6 +67,15 @@
 	var count2 = document.getElementsByClassName("count2");	
 	var count3 = document.getElementsByClassName("count3");		
 
+	var guide = document.getElementById("guide");
+	var hiddenBox1 = document.getElementById("hiddenBox1");
+	var attackBox1 = document.getElementById("attackBox1");
+	var apes1 = document.getElementById("apes1");
+	var light1 = document.getElementById("light1");
+	var hand = document.getElementById("hand");
+	var shootBox1 = document.getElementById("shootBox1");
+	var shoot = document.getElementById("shoot");
+	
 	function main(){
 		document.getElementById("loader").style.display = "none";	
 		gameContainer.style.display = "block";
@@ -83,6 +92,7 @@
 		countImage[2].style.margin = "0% 63%";
 		countImage[3].style.margin = "3% 51%";
 		count0[0].style.margin = "0% 39%";
+		
 	}
 	
 	function createImage(){
@@ -127,6 +137,8 @@
 
 	function mouseDown(event) {
 		var data = event.target.id;
+		console.log(data);
+
 		elf.style.WebkitAnimationName = "elfRemove";
 		elf.style.MozAnimationName = "elfRemove";
 		elf.style.animationName = "elfRemove";
@@ -253,12 +265,66 @@
 		count3[0].style.MozAnimationPlayState="running";
 		count3[0].style.WebkitAnimationPlayState="running";
 		
+		guide.style.AnimationPlayState="running";
+		guide.style.MozAnimationPlayState="running";
+		guide.style.WebkitAnimationPlayState="running";
+		
+		hiddenBox1.style.AnimationPlayState="running";
+		hiddenBox1.style.MozAnimationPlayState="running";
+		hiddenBox1.style.WebkitAnimationPlayState="running";
+		
+		attackBox1.style.AnimationPlayState="running";
+		attackBox1.style.MozAnimationPlayState="running";
+		attackBox1.style.WebkitAnimationPlayState="running";
+		
+		apes1.style.AnimationPlayState="running";
+		apes1.style.MozAnimationPlayState="running";
+		apes1.style.WebkitAnimationPlayState="running";
+		
+		light1.style.AnimationPlayState="running";
+		light1.style.MozAnimationPlayState="running";
+		light1.style.WebkitAnimationPlayState="running";
+		
+		hand.style.AnimationPlayState="running";
+		hand.style.MozAnimationPlayState="running";
+		hand.style.WebkitAnimationPlayState="running";
+		
+		if (data === "attackBox1"){
+			attackBox1.style.zIndex = "0";
+			
+			shootBox1.style.AnimationPlayState="running";
+			shootBox1.style.MozAnimationPlayState="running";
+			shootBox1.style.WebkitAnimationPlayState="running";
+			
+			shoot.style.AnimationPlayState="running";
+			shoot.style.MozAnimationPlayState="running";
+			shoot.style.WebkitAnimationPlayState="running";
+			
+			apes1.style.WebkitAnimationName = "killApes1";
+			apes1.style.MozAnimationName = "killApes1";
+			apes1.style.animationName = "killApes1";
+			
+			apes1.style.WebkitanimationDelay = "0s";
+			apes1.style.MozanimationDelay = "0s";
+			apes1.style.animationDelay = "0s";
+			
+			guide.style.display = "none";
+			guide.style.zIndex = "0";
+			
+			hand.style.WebkitAnimationName = "handRemove";
+			hand.style.MozAnimationName = "handRemove";
+			hand.style.animationName = "handRemove";
+			
+			hand.style.WebkitanimationDelay = "0s";
+			hand.style.MozanimationDelay = "0s";
+			hand.style.animationDelay = "0s";
+		}
 	}
-	
-	
 	
 	function touchstart(event){
 		var data = event.target.id;
+		console.log(data);
+
 		elf.style.WebkitAnimationName = "elfRemove";
 		elf.style.MozAnimationName = "elfRemove";
 		elf.style.animationName = "elfRemove";
@@ -368,6 +434,77 @@
 		t10.style.AnimationPlayState="running";
 		t10.style.MozAnimationPlayState="running";
 		t10.style.WebkitAnimationPlayState="running";
+		
+		count0[0].style.AnimationPlayState="running";
+		count0[0].style.MozAnimationPlayState="running";
+		count0[0].style.WebkitAnimationPlayState="running";
+		
+		count1[0].style.AnimationPlayState="running";
+		count1[0].style.MozAnimationPlayState="running";
+		count1[0].style.WebkitAnimationPlayState="running";
+		
+		count2[0].style.AnimationPlayState="running";
+		count2[0].style.MozAnimationPlayState="running";
+		count2[0].style.WebkitAnimationPlayState="running";
+		
+		count3[0].style.AnimationPlayState="running";
+		count3[0].style.MozAnimationPlayState="running";
+		count3[0].style.WebkitAnimationPlayState="running";
+		
+		guide.style.AnimationPlayState="running";
+		guide.style.MozAnimationPlayState="running";
+		guide.style.WebkitAnimationPlayState="running";
+		
+		hiddenBox1.style.AnimationPlayState="running";
+		hiddenBox1.style.MozAnimationPlayState="running";
+		hiddenBox1.style.WebkitAnimationPlayState="running";
+		
+		attackBox1.style.AnimationPlayState="running";
+		attackBox1.style.MozAnimationPlayState="running";
+		attackBox1.style.WebkitAnimationPlayState="running";
+		
+		apes1.style.AnimationPlayState="running";
+		apes1.style.MozAnimationPlayState="running";
+		apes1.style.WebkitAnimationPlayState="running";
+		
+		light1.style.AnimationPlayState="running";
+		light1.style.MozAnimationPlayState="running";
+		light1.style.WebkitAnimationPlayState="running";
+		
+		hand.style.AnimationPlayState="running";
+		hand.style.MozAnimationPlayState="running";
+		hand.style.WebkitAnimationPlayState="running";
+		
+		if (data === "attackBox1"){
+			attackBox1.style.zIndex = "0";
+			
+			shootBox1.style.AnimationPlayState="running";
+			shootBox1.style.MozAnimationPlayState="running";
+			shootBox1.style.WebkitAnimationPlayState="running";
+			
+			shoot.style.AnimationPlayState="running";
+			shoot.style.MozAnimationPlayState="running";
+			shoot.style.WebkitAnimationPlayState="running";
+			
+			apes1.style.WebkitAnimationName = "killApes1";
+			apes1.style.MozAnimationName = "killApes1";
+			apes1.style.animationName = "killApes1";
+			
+			apes1.style.WebkitanimationDelay = "0s";
+			apes1.style.MozanimationDelay = "0s";
+			apes1.style.animationDelay = "0s";
+			
+			guide.style.display = "none";
+			guide.style.zIndex = "0";
+			
+			hand.style.WebkitAnimationName = "handRemove";
+			hand.style.MozAnimationName = "handRemove";
+			hand.style.animationName = "handRemove";
+			
+			hand.style.WebkitanimationDelay = "0s";
+			hand.style.MozanimationDelay = "0s";
+			hand.style.animationDelay = "0s";
+		}
 	}
 	
 	(function () {
