@@ -2850,7 +2850,6 @@
     width: 70%;
     top: 0%;
     left: 67%;
-    background-image: url(apes.png);
     background-size: 100% 100%;
     background-Repeat: no-repeat;
     z-index: 95;
@@ -3270,7 +3269,6 @@
     top: 90%;
     left: 4%;
     transform: rotate(-17deg);
-    background-image: url(shoot.png);
     background-size: 100% 100%;
     background-Repeat: no-repeat;
     z-index: 96;

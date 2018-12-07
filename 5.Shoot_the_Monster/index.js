@@ -83,10 +83,7 @@
 		heartImage[1].style.left = "110%";
 		heartImage[2].style.left = "220%";
 		var countImage = document.getElementsByClassName("count");
-		// countImage[4].style.opacity = "0";
-		// countImage[5].style.opacity = "0";
-		// countImage[6].style.opacity = "0";
-		// countImage[7].style.opacity = "0";
+
 		countImage[0].style.margin = "0% 87%";
 		countImage[1].style.margin = "3% 75%";
 		countImage[2].style.margin = "0% 63%";
@@ -133,6 +130,11 @@
 			}
 		}
 		
+		var apesArray = ["url('apes.png')"];
+		apes1.style.backgroundImage = apesArray[0];
+		var shootArray = ["url('shoot.png')"];
+		shoot.style.backgroundImage = shootArray[0];
+				
 	}
 
 	function mouseDown(event) {
