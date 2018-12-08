@@ -76,6 +76,7 @@
 	var shootBox1 = document.getElementById("shootBox1");
 	var shoot = document.getElementById("shoot");
 	var sparkBox =  document.getElementById("spark");
+	var reward1 =  document.getElementById("reward1"); 
 	
 	function main(){
 		document.getElementById("loader").style.display = "none";	
@@ -149,7 +150,10 @@
 				sparkImage.setAttribute("class","spark");
 				spark.appendChild(sparkImage);
 			}
-		}		
+		}
+
+		var rewardArray = ["url('reward.png')"];
+		reward1.style.backgroundImage = rewardArray[0];
 	}
 
 	
@@ -157,17 +161,7 @@
 	
 	function sparkAnimation(){
 		var myIndex = 0;	
-		var spark = document.getElementsByClassName("spark");
-		// var min=0; 
-		// var max=360;  
-		// var random =Math.floor(Math.random() * (+max - +min)) + +min; 
-		// sparkBox.style.transform = "rotate(" + random + "deg)";
-		// var rect = sparkBox.getBoundingClientRect();					
-		// var rx = (rect.left + rect.width) * 0.5;   
-		// var ry = (rect.top + rect.height) * 0.5;				
-		// var x = mx - rx;           
-		// var y = my - ry;		
-		// sparkBox.style.cssText = "left:" + x + "px; top:" + y + "px";					
+		var spark = document.getElementsByClassName("spark");				
 		loopSpark();
 		function loopSpark(){
 			var i;
@@ -189,10 +183,7 @@
 		}
 	} 
 	
-	function mouseDown(e) {
-		var data = e.target.id;
-		console.log(data);
-
+	function begin(){
 		elf.style.WebkitAnimationName = "elfRemove";
 		elf.style.MozAnimationName = "elfRemove";
 		elf.style.animationName = "elfRemove";
@@ -346,8 +337,13 @@
 		shootBox1.style.AnimationPlayState="running";
 		shootBox1.style.MozAnimationPlayState="running";
 		shootBox1.style.WebkitAnimationPlayState="running";
-		
-		
+	}
+	
+	function mouseDown(e) {
+		var data = e.target.id;
+		console.log(data);
+
+		 begin();
 		
 		if (data === "attackBox1"){
 
@@ -381,6 +377,12 @@
 			hand.style.WebkitanimationDelay = "0s";
 			hand.style.MozanimationDelay = "0s";
 			hand.style.animationDelay = "0s";
+			
+			reward1.style.display = "block";
+			reward1.style.AnimationPlayState="running";
+			reward1.style.MozAnimationPlayState="running";
+			reward1.style.WebkitAnimationPlayState="running";
+			
 		}
 	}
 	

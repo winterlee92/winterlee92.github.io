@@ -2449,7 +2449,7 @@
     width: 12.5%;
     left: 65%;
     background-image: url(t6.png);
-    z-index: 96;
+    z-index: 1;
 }
 
 #t7{
@@ -2473,7 +2473,7 @@
     width: 10%;
     left: 52%;
     background-image: url(t9.png);
-    z-index: 94;
+    z-index: 1;
 }
 
 #t10{
@@ -3156,9 +3156,9 @@
 
 	position: absolute;
     height: 36%;
-    width: 5%;
+    width: 0%;
     top: 52%;
-    left: 61%;
+    left: 74%;
     z-index: 101;
 	transform: rotate(10deg);
 	opacity: 0;
@@ -3399,9 +3399,86 @@
 	display:none;
 }
 	
+#reward1{
+	height: 14%;
+    width: 8%;
+	left: 52%;
+    top: 82%;
+	position: absolute;
+	background-size: 100% 100%;
+	background-Repeat: no-repeat;
+	z-index:2;
+	display:none;
+	animation-name: reward1;
+	animation-duration: 1s;
+	animation-delay:0s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-moz-animation-name:reward1;
+	-moz-animation-duration:1s;	
+	-moz-animation-delay:0s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-webkit-animation-name: reward1;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-delay:0s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: paused;
 	
+}	
 	
-	
+@keyframes reward1{
+	0%{
+		left: 52%;
+		top: 82%;
+	}
+	5%{
+		left: 57%;
+		top: 51%;
+	}
+	10%{
+		left: 55%;
+		top: 51%;
+	}
+	15%{
+		left: 53%;
+		top: 55%;
+	}
+	20%{
+		left: 53%;
+		top: 64%;
+	}	
+	25%{
+		left: 53%;
+		top: 73%;
+	}	
+	30%{
+		left: 52%;
+		top: 81%;
+	}
+	35%{
+		left: 52%;
+		top: 79%;
+	}
+	40%{
+		left: 52%;
+		top: 80%;
+	}
+	45%{
+		left: 52%;
+		top: 84%;
+	}
+	100%{
+		left: 52%;
+		top: 84%;
+	}
+}	
+@-moz-keyframes reward1{
+
+}	
+@-webkit-keyframes reward1{
+
+}
 	
 	
 	
