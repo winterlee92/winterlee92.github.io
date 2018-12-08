@@ -2480,7 +2480,7 @@
     width: 9%;
     left: 58%;
     background-image: url(t10.png);
-    z-index: 95;
+    z-index: -2;
 }
 
 #guide{
@@ -2785,7 +2785,7 @@
     width: 19%;
     top: 43%;   
     left: 54%;
-    z-index: 95;
+    z-index: -1;
 	opacity:0;
 	
 	animation-name: hiddenBox1;
@@ -2852,7 +2852,6 @@
     left: 67%;
     background-size: 100% 100%;
     background-Repeat: no-repeat;
-    /* z-index: 95; */
     opacity: 1;
 	filter: brightness(0);
 	
@@ -2942,10 +2941,66 @@
 	}
 }
 @-moz-keyframes killApes1{
-	
+	0%{
+		left: 19%;
+		opacity:1;
+		filter: brightness(1);
+	}
+	1%{
+		top: 2%;
+		left: 19%;
+		opacity:1;
+		filter:invert(30%) brightness(40%) sepia(1) hue-rotate(-30deg) saturate(400%) contrast(2);
+	}
+	11%{
+		top: 0%;
+	}
+	22%{
+		top: 2%;
+	}
+	33%{
+		top: 0%;
+	}
+	44%{
+		top: 2%;
+		opacity:1;
+	}
+	100%{
+		left: 19%;
+		opacity:0;
+		filter:invert(30%) brightness(40%) sepia(1) hue-rotate(-30deg) saturate(400%) contrast(2);
+	}
 }
 @-webkit-keyframes killApes1{
-	
+	0%{
+		left: 19%;
+		opacity:1;
+		filter: brightness(1);
+	}
+	1%{
+		top: 2%;
+		left: 19%;
+		opacity:1;
+		filter:invert(30%) brightness(40%) sepia(1) hue-rotate(-30deg) saturate(400%) contrast(2);
+	}
+	11%{
+		top: 0%;
+	}
+	22%{
+		top: 2%;
+	}
+	33%{
+		top: 0%;
+	}
+	44%{
+		top: 2%;
+		opacity:1;
+	}
+	100%{
+		left: 19%;
+		opacity:0;
+		filter:invert(30%) brightness(40%) sepia(1) hue-rotate(-30deg) saturate(400%) contrast(2);
+	}
 }	
 	
 #light1{
@@ -3324,6 +3379,22 @@
 		top: -55%;
 	}
 }	
+	
+#spark{
+	position:absolute;
+	height: 40%;
+    width: 26%;
+	z-index:100;
+}	
+
+.spark{
+	height:100%;
+	width:100%;
+	position: absolute;
+	background-size: 100% 100%;
+	background-Repeat: no-repeat;
+	display:none;
+}
 	
 	
 	

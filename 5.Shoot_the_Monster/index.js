@@ -75,6 +75,7 @@
 	var hand = document.getElementById("hand");
 	var shootBox1 = document.getElementById("shootBox1");
 	var shoot = document.getElementById("shoot");
+	var sparkBox =  document.getElementById("spark");
 	
 	function main(){
 		document.getElementById("loader").style.display = "none";	
@@ -132,13 +133,64 @@
 		
 		var apesArray = ["url('apes.png')"];
 		apes1.style.backgroundImage = apesArray[0];
+		
 		var shootArray = ["url('shoot.png')"];
 		shoot.style.backgroundImage = shootArray[0];
 				
+		var sparkArray = ['spark1.png','spark2.png','spark3.png','spark4.png',
+		'spark5.png','spark6.png','spark7.png','spark8.png','spark9.png'];	
+				
+			for(i=0; i<9; i++)
+		{	 
+			if(i < 9)
+			{
+				var sparkImage = document.createElement("IMG");
+				sparkImage.setAttribute("src", sparkArray[i]);	
+				sparkImage.setAttribute("class","spark");
+				spark.appendChild(sparkImage);
+			}
+		}		
 	}
 
-	function mouseDown(event) {
-		var data = event.target.id;
+	
+	var renderSpark;
+	
+	function sparkAnimation(mx,my){
+		var myIndex = 0;	
+		var spark = document.getElementsByClassName("spark");
+		var min=0; 
+		var max=360;  
+		var random =Math.floor(Math.random() * (+max - +min)) + +min; 
+		sparkBox.style.transform = "rotate(" + random + "deg)";
+		var rect = sparkBox.getBoundingClientRect();					
+		var rx = (rect.left + rect.width) * 0.5;   
+		var ry = (rect.top + rect.height) * 0.5;				
+		var x = mx - rx;           
+		var y = my - ry;		
+		sparkBox.style.cssText = "left:" + x + "px; top:" + y + "px";					
+		loopSpark();
+		function loopSpark(){
+			var i;
+			for (i=0;i<spark.length;i++)
+			{
+				spark[i].style.display="none";
+			}
+			myIndex++;
+			if (myIndex > spark.length){}
+			console.log(myIndex-1);
+			spark[myIndex-1].style.display = "block";
+			renderSpark = setTimeout(loopSpark,50);			
+			
+			if (myIndex === 9){
+				sparkBox.style.display = "none";
+				clearTimeout(renderSpark);			
+			}	
+			
+		}
+	} 
+	
+	function mouseDown(e) {
+		var data = e.target.id;
 		console.log(data);
 
 		elf.style.WebkitAnimationName = "elfRemove";
@@ -291,8 +343,17 @@
 		hand.style.MozAnimationPlayState="running";
 		hand.style.WebkitAnimationPlayState="running";
 		
+		shootBox1.style.AnimationPlayState="running";
+		shootBox1.style.MozAnimationPlayState="running";
+		shootBox1.style.WebkitAnimationPlayState="running";
+		
+		
+		
 		if (data === "attackBox1"){
-			attackBox1.style.zIndex = "0";
+
+			sparkAnimation(e.pageX, e.pageY);
+			
+			attackBox1.style.zIndex = "-30";
 			
 			shootBox1.style.AnimationPlayState="running";
 			shootBox1.style.MozAnimationPlayState="running";
@@ -323,8 +384,8 @@
 		}
 	}
 	
-	function touchstart(event){
-		var data = event.target.id;
+	function touchstart(e){
+		var data = e.target.id;
 		console.log(data);
 
 		elf.style.WebkitAnimationName = "elfRemove";
@@ -477,8 +538,17 @@
 		hand.style.MozAnimationPlayState="running";
 		hand.style.WebkitAnimationPlayState="running";
 		
+		shootBox1.style.AnimationPlayState="running";
+		shootBox1.style.MozAnimationPlayState="running";
+		shootBox1.style.WebkitAnimationPlayState="running";
+		
+		
+		
 		if (data === "attackBox1"){
-			attackBox1.style.zIndex = "0";
+
+			sparkAnimation(e.changedTouches[0].pageX, e.changedTouches[0].pageY);
+			
+			attackBox1.style.zIndex = "-30";
 			
 			shootBox1.style.AnimationPlayState="running";
 			shootBox1.style.MozAnimationPlayState="running";
@@ -508,8 +578,8 @@
 			hand.style.animationDelay = "0s";
 		}
 	}
-	
-	(function () {
+
+(function () {
   
 	if (window.matchMedia("(orientation: portrait)").matches) {
 		
@@ -518,7 +588,7 @@
 		gameContainer.style.msTransform     = 'rotate(90deg)'; 
 		gameContainer.style.oTransform      = 'rotate(90deg)'; 
 		gameContainer.style.transform       = 'rotate(90deg)'; 
-	
+		
 		 window.addEventListener('orientationchange', function() { location.reload(); }, false);
 		
 		var game = {
