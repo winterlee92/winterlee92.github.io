@@ -2262,7 +2262,7 @@
 		}
 	}
 	
-		@keyframes removeIcon{
+	@keyframes removeIcon{
 		0%{
 			opacity: 1;
 		}
@@ -2486,7 +2486,7 @@
     width: 43%;
     left: 7%;
     background-image: url(t3.png);
-    z-index: 97;
+    z-index: 0;
 }
 
 #t4{
@@ -2494,7 +2494,7 @@
     width: 10%;
     left: 27%;
     background-image: url(t4.png);
-    z-index: 96;
+    z-index: -1;
 }
 
 #t5{
@@ -2502,7 +2502,7 @@
     width: 12.5%;
     left: 41%;
     background-image: url(t5.png);
-    z-index: 96;
+    z-index: -1;
 }
 
 #t6{
@@ -2844,11 +2844,11 @@
 	position: absolute;
     overflow: hidden;
     height: 45%;
-    width: 19%;
+    width: 0%;
     top: 43%;   
-    left: 54%;
+    left: 67%;
     z-index: -1;
-	opacity:0;
+	opacity:1;
 	
 	animation-name: hiddenBox1;
 	animation-duration: 2s;
@@ -2937,36 +2937,30 @@
 @keyframes apes1{
 	0%{
 		left: 67%;
-		opacity:0;
 		filter: brightness(0);
 	 }
 	 100%{
 		left: 19%;
-		opacity:1;
 		filter: brightness(1);
 	 }
 }
 @-moz-keyframes apes1{
 	0%{
 		left: 67%;
-		opacity:0;
 		filter: brightness(0);
 	 }
 	 100%{
 		left: 19%;
-		opacity:1;
 		filter: brightness(1);
 	 }
 }
 @-webkit-keyframes apes1{
 	0%{
 		left: 67%;
-		opacity:0;
 		filter: brightness(0);
 	 }
 	 100%{
 		left: 19%;
-		opacity:1;
 		filter: brightness(1);
 	 }
 }
@@ -3173,7 +3167,7 @@
 		left: 15%;
 	}
 }
-@-webkit-keyframes apes1{
+@-webkit-keyframes light1{
 	0%{
 		height: 0%;
 		width: 0%;
@@ -3288,9 +3282,8 @@
     top: 61%;
     left: 55%;
     z-index: 96;
-    
     transform: rotate(30deg);
-	opacity:0;
+	opacity:1;
 	
 	animation-name: shootBox1;
 	animation-duration: 1.5s;
@@ -3541,12 +3534,771 @@
 
 }
 	
+ #hiddenBox2{
+
+	position: absolute;
+    overflow: hidden;
+    height: 71%;
+    width: 0%;
+    top: 28%;
+    left: 12%;
+    z-index: -1;
+	opacity:1;
 	
+	animation-name: hiddenBox2;
+	animation-duration: 1s;
+	animation-delay:0s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-moz-animation-name:hiddenBox2;
+	-moz-animation-duration:1s;	
+	-moz-animation-delay:0s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-webkit-animation-name: hiddenBox2;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-delay:0s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: paused;
 	
+ }	
+ 
+  @keyframes hiddenBox2{
+	0%{
+		width: 0%;
+		left: 12%;
+		opacity:0;
+	 }
+	 100%{
+		width: 31%;
+		left: 12%;
+		opacity: 1;
+	 }
+ }
+ @-moz-keyframes hiddenBox2{
+	0%{
+		width: 0%;
+		left: 12%;
+		opacity:0;
+	 }
+	 100%{
+		width: 31%;
+		left: 12%;
+		opacity: 1;
+	 }
+ }
+ @-webkit-keyframes hiddenBox2{
+	0%{
+		width: 0%;
+		left: 12%;
+		opacity:0;
+	 }
+	 100%{
+		width: 31%;
+		left: 12%;
+		opacity: 1;
+	 }
+ }
+ 
+  #orc1{
+	 
+	position: absolute;
+    height: 100%;
+    width: 90%;
+    top: 0%;
+    left: -45%;
+    background-size: 100% 100%;
+    background-Repeat: no-repeat;
+    opacity: 1;
+	filter: brightness(0);
 	
+	animation-name: orc1;
+	animation-duration: 1s;
+	animation-delay:1s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-moz-animation-name:orc1;
+	-moz-animation-duration:1s;	
+	-moz-animation-delay:1s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-webkit-animation-name: orc1;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-delay:1s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: paused;	
 	
+	}
+@keyframes orc1{
+	0%{
+		left: -45%;
+		filter: brightness(0);
+	 }
+	 100%{
+		left: -1%;
+		filter: brightness(1);
+	 }
+}
+@-moz-keyframes orc1{
+	0%{
+		left: -45%;
+		filter: brightness(0);
+	 }
+	 100%{
+		left: -1%;
+		filter: brightness(1);
+	 }
+}
+@-webkit-keyframes orc1{
+	0%{
+		left: -45%;
+		filter: brightness(0);
+	 }
+	 100%{
+		left: -1%;
+		filter: brightness(1);
+	 }
+}
 	
+@keyframes killOrc1{
+	0%{
+		left: -1%;
+		opacity:1;
+		filter: brightness(1);
+	}
+	1%{
+		top: 2%;
+		left: -1%;
+		opacity:1;
+		filter:invert(30%) brightness(40%) sepia(1) hue-rotate(-30deg) saturate(400%) contrast(2);
+	}
+	11%{
+		top: 0%;
+	}
+	22%{
+		top: 2%;
+	}
+	33%{
+		top: 0%;
+	}
+	44%{
+		top: 2%;
+		left: -1%;
+		opacity:1;
+	}
+	100%{
+		left: -1%;
+		opacity:0;
+		filter:invert(30%) brightness(40%) sepia(1) hue-rotate(-30deg) saturate(400%) contrast(2);
+	}
+}
+@-moz-keyframes killOrc1{
+	0%{
+		left: -1%;
+		opacity:1;
+		filter: brightness(1);
+	}
+	1%{
+		top: 2%;
+		left: -1%;
+		opacity:1;
+		filter:invert(30%) brightness(40%) sepia(1) hue-rotate(-30deg) saturate(400%) contrast(2);
+	}
+	11%{
+		top: 0%;
+	}
+	22%{
+		top: 2%;
+	}
+	33%{
+		top: 0%;
+	}
+	44%{
+		top: 2%;
+		left: -1%;
+		opacity:1;
+	}
+	100%{
+		left: -1%;
+		opacity:0;
+		filter:invert(30%) brightness(40%) sepia(1) hue-rotate(-30deg) saturate(400%) contrast(2);
+	}
+}
+@-webkit-keyframes killOrc1{
+	0%{
+		left: -1%;
+		opacity:1;
+		filter: brightness(1);
+	}
+	1%{
+		top: 2%;
+		left: -1%;
+		opacity:1;
+		filter:invert(30%) brightness(40%) sepia(1) hue-rotate(-30deg) saturate(400%) contrast(2);
+	}
+	11%{
+		top: 0%;
+	}
+	22%{
+		top: 2%;
+	}
+	33%{
+		top: 0%;
+	}
+	44%{
+		top: 2%;
+		left: -1%;
+		opacity:1;
+	}
+	100%{
+		left: -1%;
+		opacity:0;
+		filter:invert(30%) brightness(40%) sepia(1) hue-rotate(-30deg) saturate(400%) contrast(2);
+	}
+}	
 	
+#light2{
 	
+	position: absolute;
+    height: 0%;
+	width: 0%;
+	top: 62%;
+	left: 84%;
+	transform: rotate(65deg);
+    background-size: 100% 100%;
+    background-Repeat: no-repeat;
+    z-index: 95;
+    opacity: 1;
 	
+	animation-name: light2;
+	animation-duration: 1s;
+	animation-delay:2s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-moz-animation-name:light2;
+	-moz-animation-duration:1s;	
+	-moz-animation-delay:3s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-webkit-animation-name: light2;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-delay:2s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: paused;
 	
+}	
+	
+@keyframes light2{
+	0%{
+		height: 0%;
+		width: 0%;
+		top: 62%;
+		left: 84%;
+	}
+	1%{
+		height: 10%;
+		width: 10%;
+		top: 58%;
+		left: 80%;
+	}
+	25%{
+		height: 40%;
+		width: 65%;
+		top: 42%;
+		left: 52%;
+		filter: brightness(1.5);
+	}
+	50%{
+		height: 10%;
+		width: 10%;
+		top: 58%;
+		left: 80%;
+	}
+	51%{
+		height: 0%;
+		width: 0%;
+		top: 62%;
+		left: 84%;
+	}
+	100%{
+		height: 0%;
+		width: 0%;
+		top: 62%;
+		left: 84%;
+	}
+}
+@-moz-keyframes light2{
+0%{
+		height: 0%;
+		width: 0%;
+		top: 62%;
+		left: 84%;
+	}
+	1%{
+		height: 10%;
+		width: 10%;
+		top: 58%;
+		left: 80%;
+	}
+	25%{
+		height: 40%;
+		width: 65%;
+		top: 42%;
+		left: 52%;
+		filter: brightness(1.5);
+	}
+	50%{
+		height: 10%;
+		width: 10%;
+		top: 58%;
+		left: 80%;
+	}
+	51%{
+		height: 0%;
+		width: 0%;
+		top: 62%;
+		left: 84%;
+	}
+	100%{
+		height: 0%;
+		width: 0%;
+		top: 62%;
+		left: 84%;
+	}
+}
+@-webkit-keyframes light2{
+	0%{
+		height: 0%;
+		width: 0%;
+		top: 62%;
+		left: 84%;
+	}
+	1%{
+		height: 10%;
+		width: 10%;
+		top: 58%;
+		left: 80%;
+	}
+	25%{
+		height: 40%;
+		width: 65%;
+		top: 42%;
+		left: 52%;
+		filter: brightness(1.5);
+	}
+	50%{
+		height: 10%;
+		width: 10%;
+		top: 58%;
+		left: 80%;
+	}
+	51%{
+		height: 0%;
+		width: 0%;
+		top: 62%;
+		left: 84%;
+	}
+	100%{
+		height: 0%;
+		width: 0%;
+		top: 62%;
+		left: 84%;
+	}
+}
+	
+#attackBox2{
+
+	position: absolute;
+    height: 48%;
+    width: 0%;
+    top: 45%;
+    left: 27%;
+    z-index: 101;
+	opacity: 0;
+	
+	animation-name: attackBox2;
+	animation-duration: 1s;
+	animation-delay:1s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-moz-animation-name:attackBox2;
+	-moz-animation-duration:1s;	
+	-moz-animation-delay:2s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-webkit-animation-name: attackBox2;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-delay:1s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: paused;
+	
+ }	
+ 
+@keyframes attackBox2{
+	0%{
+		width: 0%;
+		left: 27%;
+		opacity:0;
+	 }
+	 
+	 100%{
+		width: 8%;
+		left: 27%;
+		opacity:1;
+	 }
+}
+@-moz-keyframes attackBox2{
+		0%{
+		width: 0%;
+		left: 27%;
+		opacity:0;
+	 }
+	 
+	 100%{
+		width: 8%;
+		left: 27%;
+		opacity:1;
+	 }
+}
+@-webkit-keyframes attackBox2{
+		0%{
+		width: 0%;
+		left: 27%;
+		opacity:0;
+	 }
+	 
+	 100%{
+		width: 8%;
+		left: 27%;
+		opacity:1;
+	 }
+}
+	
+#shootBox2{
+	position: absolute;
+    overflow: hidden;
+    height: 0%;
+	width: 0%;
+    top: 61%;
+    left: 35%;
+    z-index: 96;
+    transform: rotate(-30deg);
+	opacity:1;
+	
+	animation-name: shootBox2;
+	animation-duration: 1.5s;
+	animation-delay:0s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-moz-animation-name:shootBox2;
+	-moz-animation-duration:1.5s;	
+	-moz-animation-delay:0s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-webkit-animation-name: shootBox2;
+	-webkit-animation-duration: 1.5s;
+	-webkit-animation-delay:0s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: paused;
+}	
+
+@keyframes shootBox2{
+	0%{
+		height: 0%;
+		width: 0%;
+		opacity:0;
+		z-index: 96;
+	}
+	1%{
+		height: 45%;
+		width: 5%;
+		opacity:1;
+		z-index: 96;
+	}
+	99%{
+		z-index: 96;
+	}
+	100%{
+		height: 43%;
+		width: 5%;
+		opacity:1;
+		z-index: -30;
+	}
+}	
+@-moz-keyframes shootBox2{
+	0%{
+		height: 0%;
+		width: 0%;
+		opacity:0;
+		z-index: 96;
+	}
+	1%{
+		height: 45%;
+		width: 5%;
+		opacity:1;
+		z-index: 96;
+	}
+	99%{
+		z-index: 96;
+	}
+	100%{
+		height: 43%;
+		width: 5%;
+		opacity:1;
+		z-index: -30;
+	}
+}	
+@-webkit-keyframes shootBox2{
+	0%{
+		height: 0%;
+		width: 0%;
+		opacity:0;
+		z-index: 96;
+	}
+	1%{
+		height: 45%;
+		width: 5%;
+		opacity:1;
+		z-index: 96;
+	}
+	99%{
+		z-index: 96;
+	}
+	100%{
+		height: 43%;
+		width: 5%;
+		opacity:1;
+		z-index: -30;
+	}
+}	
+
+#shoot2{
+	position: absolute;
+    height: 59%;
+    width: 100%;
+    top: 90%;
+    left: 4%;
+    transform: rotate(-18deg);
+    background-size: 100% 100%;
+    background-Repeat: no-repeat;
+    z-index: 96;
+    opacity: 1;
+	
+	animation-name: shoot2;
+	animation-duration: 1s;
+	animation-delay:0s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-moz-animation-name:shoot2;
+	-moz-animation-duration:1s;	
+	-moz-animation-delay:0s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-webkit-animation-name: shoot2;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-delay:0s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: paused;
+}
+	
+@keyframes shoot2{
+	0%{
+		top: 90%;
+	}
+	30%{
+		top: -55%;
+	}
+	100%{
+		top: -55%;
+	}
+}	
+@-moz-keyframes shoot2{
+	0%{
+		top: 90%;
+	}
+	30%{
+		top: -55%;
+	}
+	100%{
+		top: -55%;
+	}
+}	
+@-webkit-keyframes shoot2{
+	0%{
+		top: 90%;
+	}
+	30%{
+		top: -55%;
+	}
+	100%{
+		top: -55%;
+	}
+}		
+	
+#reward2{
+	
+	height: 18%;
+    width: 10%;
+	left: 28%;
+    top: 60%;
+	position: absolute;
+	background-size: 100% 100%;
+	background-Repeat: no-repeat;
+	z-index:2;
+	display:none;
+	animation-name: reward2;
+	animation-duration: 1s;
+	animation-delay:0s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-moz-animation-name:reward2;
+	-moz-animation-duration:1s;	
+	-moz-animation-delay:0s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-webkit-animation-name: reward2;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-delay:0s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: paused;
+	
+}	
+	
+@keyframes reward2{
+	0%{
+		left: 28%;
+		top: 60%;
+	}
+	5%{
+		left: 30%;
+		top: 50%;
+	}
+	10%{
+		left: 31%;
+		top: 44%;
+	}
+	15%{
+		left: 33%;
+		top: 46%;
+	}
+	20%{
+		left: 33%;
+		top: 64%;
+	}	
+	25%{
+		left: 35%;
+		top: 75%;
+	}	
+	30%{
+		left: 35%;
+		top: 86%;
+	}
+	35%{
+		left: 35%;
+		top: 79%;
+	}
+	40%{
+		left: 35%;
+		top: 82%;
+	}
+	45%{
+		left: 35%;
+		top: 84%;
+	}
+	100%{
+		left: 35%;
+		top: 84%;
+	}
+}	
+@-moz-keyframes reward2{
+	0%{
+		left: 28%;
+		top: 60%;
+	}
+	5%{
+		left: 30%;
+		top: 50%;
+	}
+	10%{
+		left: 31%;
+		top: 44%;
+	}
+	15%{
+		left: 33%;
+		top: 46%;
+	}
+	20%{
+		left: 33%;
+		top: 64%;
+	}	
+	25%{
+		left: 35%;
+		top: 75%;
+	}	
+	30%{
+		left: 35%;
+		top: 86%;
+	}
+	35%{
+		left: 35%;
+		top: 79%;
+	}
+	40%{
+		left: 35%;
+		top: 82%;
+	}
+	45%{
+		left: 35%;
+		top: 84%;
+	}
+	100%{
+		left: 35%;
+		top: 84%;
+	}
+}	
+@-webkit-keyframes reward2{
+	0%{
+		left: 28%;
+		top: 60%;
+	}
+	5%{
+		left: 30%;
+		top: 50%;
+	}
+	10%{
+		left: 31%;
+		top: 44%;
+	}
+	15%{
+		left: 33%;
+		top: 46%;
+	}
+	20%{
+		left: 33%;
+		top: 64%;
+	}	
+	25%{
+		left: 35%;
+		top: 75%;
+	}	
+	30%{
+		left: 35%;
+		top: 86%;
+	}
+	35%{
+		left: 35%;
+		top: 79%;
+	}
+	40%{
+		left: 35%;
+		top: 82%;
+	}
+	45%{
+		left: 35%;
+		top: 84%;
+	}
+	100%{
+		left: 35%;
+		top: 84%;
+	}
+}

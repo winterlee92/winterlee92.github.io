@@ -70,15 +70,24 @@
 	var count5 = document.getElementsByClassName("count5");	
 
 	var guide = document.getElementById("guide");
+	var hand = document.getElementById("hand");
+	var sparkBox =  document.getElementById("spark");
+	
 	var hiddenBox1 = document.getElementById("hiddenBox1");
-	var attackBox1 = document.getElementById("attackBox1");
 	var apes1 = document.getElementById("apes1");
 	var light1 = document.getElementById("light1");
-	var hand = document.getElementById("hand");
+	var attackBox1 = document.getElementById("attackBox1");
 	var shootBox1 = document.getElementById("shootBox1");
 	var shoot = document.getElementById("shoot");
-	var sparkBox =  document.getElementById("spark");
 	var reward1 =  document.getElementById("reward1"); 
+	
+	var hiddenBox2 = document.getElementById("hiddenBox2");
+	var orc1 = document.getElementById("orc1");
+	var light2 = document.getElementById("light2");
+	var attackBox2 = document.getElementById("attackBox2");
+	var shootBox2 = document.getElementById("shootBox2");
+	var shoot2 = document.getElementById("shoot2");
+	var reward2 =  document.getElementById("reward2");
 	
 	function main(){
 		document.getElementById("loader").style.display = "none";	
@@ -138,6 +147,14 @@
 		
 		var shootArray = ["url('shoot.png')"];
 		shoot.style.backgroundImage = shootArray[0];
+		shoot2.style.backgroundImage = shootArray[0];
+				
+		var orcArray = ["url('orc.png')"];
+		orc1.style.backgroundImage = orcArray[0];
+
+		var lightArray = ["url('glow.png')"];		
+		light1.style.backgroundImage = lightArray[0];
+		light2.style.backgroundImage = lightArray[0];
 				
 		var sparkArray = ['spark1.png','spark2.png','spark3.png','spark4.png',
 		'spark5.png','spark6.png','spark7.png','spark8.png','spark9.png'];	
@@ -155,6 +172,8 @@
 
 		var rewardArray = ["url('reward.png')"];
 		reward1.style.backgroundImage = rewardArray[0];
+		reward2.style.backgroundImage = rewardArray[0];
+		
 	}
 
 	var renderSpark;
@@ -171,7 +190,6 @@
 			}
 			myIndex++;
 			if (myIndex > spark.length){}
-			console.log(myIndex-1);
 			spark[myIndex-1].style.display = "block";
 			renderSpark = setTimeout(loopSpark,50);			
 			
@@ -399,6 +417,63 @@
 			count5[0].style.MozanimationDelay = "0s";
 			count5[0].style.animationDelay = "0s";
 			
+			hiddenBox2.style.AnimationPlayState="running";
+			hiddenBox2.style.MozAnimationPlayState="running";
+			hiddenBox2.style.WebkitAnimationPlayState="running";
+			
+			attackBox2.style.AnimationPlayState="running";
+			attackBox2.style.MozAnimationPlayState="running";
+			attackBox2.style.WebkitAnimationPlayState="running";
+			
+			orc1.style.AnimationPlayState="running";
+			orc1.style.MozAnimationPlayState="running";
+			orc1.style.WebkitAnimationPlayState="running";
+			
+			light2.style.AnimationPlayState="running";
+			light2.style.MozAnimationPlayState="running";
+			light2.style.WebkitAnimationPlayState="running";
+			
+		}
+		if (data === "attackBox2")
+		{
+			hiddenBox1.style.zIndex = "-30";
+			shootBox1.style.zIndex = "-30";
+			attackBox2.style.zIndex = "-30";
+			
+			sparkBox.style.display = "block";
+			sparkBox.style.left = "18%";
+			sparkBox.style.top = "39%";
+	
+			sparkAnimation();
+			
+			shootBox2.style.AnimationPlayState="running";
+			shootBox2.style.MozAnimationPlayState="running";
+			shootBox2.style.WebkitAnimationPlayState="running";
+			
+			shoot2.style.AnimationPlayState="running";
+			shoot2.style.MozAnimationPlayState="running";
+			shoot2.style.WebkitAnimationPlayState="running";
+			
+			orc1.style.WebkitAnimationName = "killOrc1";
+			orc1.style.MozAnimationName = "killOrc1";
+			orc1.style.animationName = "killOrc1";
+			
+			orc1.style.WebkitanimationDelay = "0s";
+			orc1.style.MozanimationDelay = "0s";
+			orc1.style.animationDelay = "0s";
+			
+			count4[0].style.WebkitAnimationName = "removeIcon";
+			count4[0].style.MozAnimationName = "removeIcon";
+			count4[0].style.animationName = "removeIcon";
+			
+			count4[0].style.WebkitanimationDelay = "0s";
+			count4[0].style.MozanimationDelay = "0s";
+			count4[0].style.animationDelay = "0s";
+			
+			reward2.style.display = "block";
+			reward2.style.AnimationPlayState="running";
+			reward2.style.MozAnimationPlayState="running";
+			reward2.style.WebkitAnimationPlayState="running";
 		}
 	}
 	
@@ -453,6 +528,22 @@
 			count5[0].style.WebkitanimationDelay = "0s";
 			count5[0].style.MozanimationDelay = "0s";
 			count5[0].style.animationDelay = "0s";
+			
+			hiddenBox2.style.AnimationPlayState="running";
+			hiddenBox2.style.MozAnimationPlayState="running";
+			hiddenBox2.style.WebkitAnimationPlayState="running";
+			
+			attackBox2.style.AnimationPlayState="running";
+			attackBox2.style.MozAnimationPlayState="running";
+			attackBox2.style.WebkitAnimationPlayState="running";
+			
+			orc1.style.AnimationPlayState="running";
+			orc1.style.MozAnimationPlayState="running";
+			orc1.style.WebkitAnimationPlayState="running";
+			
+			light2.style.AnimationPlayState="running";
+			light2.style.MozAnimationPlayState="running";
+			light2.style.WebkitAnimationPlayState="running";
 	
 		}
 	}
