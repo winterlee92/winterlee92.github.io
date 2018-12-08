@@ -1139,7 +1139,7 @@
 		overflow:hidden;
 		background-Size : 100% 100%; 
 		background-image: url('start.png');
-		z-index:100;
+		z-index:102;
 		opacity:0;
 		
 		animation-name: startBtn;
@@ -1193,7 +1193,7 @@
 		0%{
 			margin: 42% 30%;
 			opacity:1;
-			z-index:100;
+			z-index:102;
 		}
 		5%{
 			margin: 44% 30%;		
@@ -1225,7 +1225,7 @@
 		0%{
 			margin: 42% 30%;
 			opacity:1;
-			z-index:100;
+			z-index:102;
 		}
 		5%{
 			margin: 44% 30%;		
@@ -1257,7 +1257,7 @@
 		0%{
 			margin: 42% 30%;
 			opacity:1;
-			z-index:100;
+			z-index:102;
 		}
 		5%{
 			margin: 44% 30%;		
@@ -1946,7 +1946,7 @@
 		width: 8%;
 		height: 13%;
 		margin: 48% 71%;
-		z-index: 101;
+		z-index: 103;
 		background-Repeat: no-repeat;
 		overflow:hidden;
 		background-Size : 100% 100%; 
@@ -1970,6 +1970,7 @@
 		0%{
 			opacity:1;
 			margin: 48% 71%;
+			
 		}
 		10%{	
 			opacity:1;
@@ -3158,7 +3159,7 @@
     width: 5%;
     top: 52%;
     left: 61%;
-    z-index: 110;
+    z-index: 101;
 	transform: rotate(10deg);
 	opacity: 0;
 	
@@ -3384,6 +3385,8 @@
 	position:absolute;
 	height: 40%;
     width: 26%;
+	left: 50%;
+    top: 45%;
 	z-index:100;
 }	
 

@@ -155,19 +155,19 @@
 	
 	var renderSpark;
 	
-	function sparkAnimation(mx,my){
+	function sparkAnimation(){
 		var myIndex = 0;	
 		var spark = document.getElementsByClassName("spark");
-		var min=0; 
-		var max=360;  
-		var random =Math.floor(Math.random() * (+max - +min)) + +min; 
-		sparkBox.style.transform = "rotate(" + random + "deg)";
-		var rect = sparkBox.getBoundingClientRect();					
-		var rx = (rect.left + rect.width) * 0.5;   
-		var ry = (rect.top + rect.height) * 0.5;				
-		var x = mx - rx;           
-		var y = my - ry;		
-		sparkBox.style.cssText = "left:" + x + "px; top:" + y + "px";					
+		// var min=0; 
+		// var max=360;  
+		// var random =Math.floor(Math.random() * (+max - +min)) + +min; 
+		// sparkBox.style.transform = "rotate(" + random + "deg)";
+		// var rect = sparkBox.getBoundingClientRect();					
+		// var rx = (rect.left + rect.width) * 0.5;   
+		// var ry = (rect.top + rect.height) * 0.5;				
+		// var x = mx - rx;           
+		// var y = my - ry;		
+		// sparkBox.style.cssText = "left:" + x + "px; top:" + y + "px";					
 		loopSpark();
 		function loopSpark(){
 			var i;
@@ -351,7 +351,7 @@
 		
 		if (data === "attackBox1"){
 
-			sparkAnimation(e.pageX, e.pageY);
+			sparkAnimation();
 			
 			attackBox1.style.zIndex = "-30";
 			
@@ -542,11 +542,9 @@
 		shootBox1.style.MozAnimationPlayState="running";
 		shootBox1.style.WebkitAnimationPlayState="running";
 		
-		
-		
 		if (data === "attackBox1"){
 
-			sparkAnimation(e.changedTouches[0].pageX, e.changedTouches[0].pageY);
+			sparkAnimation();
 			
 			attackBox1.style.zIndex = "-30";
 			
