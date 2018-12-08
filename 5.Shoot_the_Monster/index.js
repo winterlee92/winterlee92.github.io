@@ -66,6 +66,8 @@
 	var count1 = document.getElementsByClassName("count1");	
 	var count2 = document.getElementsByClassName("count2");	
 	var count3 = document.getElementsByClassName("count3");		
+	var count4 = document.getElementsByClassName("count4");	
+	var count5 = document.getElementsByClassName("count5");	
 
 	var guide = document.getElementById("guide");
 	var hiddenBox1 = document.getElementById("hiddenBox1");
@@ -86,12 +88,11 @@
 		heartImage[2].style.left = "220%";
 		var countImage = document.getElementsByClassName("count");
 
-		countImage[0].style.margin = "0% 87%";
-		countImage[1].style.margin = "3% 75%";
-		countImage[2].style.margin = "0% 63%";
-		countImage[3].style.margin = "3% 51%";
-		count0[0].style.margin = "0% 39%";
-		
+		countImage[0].style.margin = "0% 91%";
+		countImage[1].style.margin = "3% 82%";
+		countImage[2].style.margin = "0% 73%";
+		countImage[3].style.margin = "3% 64%";
+		count0[0].style.margin = "0% 55%";
 	}
 	
 	function createImage(){
@@ -121,9 +122,9 @@
 			}
 		}
 		
-		for(i=0; i<4; i++)
+		for(i=0; i<6; i++)
 		{	 
-			if(i < 4)
+			if(i < 6)
 			{
 				var countImage = document.createElement("IMG");
 				countImage.setAttribute("src", countArray[0]);	
@@ -156,7 +157,6 @@
 		reward1.style.backgroundImage = rewardArray[0];
 	}
 
-	
 	var renderSpark;
 	
 	function sparkAnimation(){
@@ -310,6 +310,14 @@
 		count3[0].style.MozAnimationPlayState="running";
 		count3[0].style.WebkitAnimationPlayState="running";
 		
+		count4[0].style.AnimationPlayState="running";
+		count4[0].style.MozAnimationPlayState="running";
+		count4[0].style.WebkitAnimationPlayState="running";
+		
+		count5[0].style.AnimationPlayState="running";
+		count5[0].style.MozAnimationPlayState="running";
+		count5[0].style.WebkitAnimationPlayState="running";
+		
 		guide.style.AnimationPlayState="running";
 		guide.style.MozAnimationPlayState="running";
 		guide.style.WebkitAnimationPlayState="running";
@@ -383,6 +391,14 @@
 			reward1.style.MozAnimationPlayState="running";
 			reward1.style.WebkitAnimationPlayState="running";
 			
+			count5[0].style.WebkitAnimationName = "removeIcon";
+			count5[0].style.MozAnimationName = "removeIcon";
+			count5[0].style.animationName = "removeIcon";
+			
+			count5[0].style.WebkitanimationDelay = "0s";
+			count5[0].style.MozanimationDelay = "0s";
+			count5[0].style.animationDelay = "0s";
+			
 		}
 	}
 	
@@ -428,8 +444,16 @@
 			reward1.style.display = "block";
 			reward1.style.AnimationPlayState="running";
 			reward1.style.MozAnimationPlayState="running";
-			reward1.style.WebkitAnimationPlayState="running";	
+			reward1.style.WebkitAnimationPlayState="running";
 			
+			count5[0].style.WebkitAnimationName = "removeIcon";
+			count5[0].style.MozAnimationName = "removeIcon";
+			count5[0].style.animationName = "removeIcon";
+			
+			count5[0].style.WebkitanimationDelay = "0s";
+			count5[0].style.MozanimationDelay = "0s";
+			count5[0].style.animationDelay = "0s";
+	
 		}
 	}
 
