@@ -390,159 +390,7 @@
 		var data = e.target.id;
 		console.log(data);
 
-		elf.style.WebkitAnimationName = "elfRemove";
-		elf.style.MozAnimationName = "elfRemove";
-		elf.style.animationName = "elfRemove";
-		
-		elf.style.WebkitanimationDuration = "1s";
-		elf.style.MozanimationDuration = "1s";
-		elf.style.animationDuration = "1s";
-		
-		elfEffect.style.WebkitAnimationName = "elfEffectRemove";
-		elfEffect.style.MozAnimationName = "elfEffectRemove";
-		elfEffect.style.animationName = "elfEffectRemove";	
-		
-		elfEffect.style.WebkitanimationDuration = "1s";
-		elfEffect.style.MozanimationDuration = "1s";
-		elfEffect.style.animationDuration = "1s";
-		
-		gameContainerBg.style.AnimationPlayState="running";
-		gameContainerBg.style.MozAnimationPlayState="running";
-		gameContainerBg.style.WebkitAnimationPlayState="running";
-	
-		gameContainerBg.style.WebkitanimationDuration = "1s";
-		gameContainerBg.style.MozanimationDuration = "1s";
-		gameContainerBg.style.animationDuration = "1s";
-	
-		startBtn.style.WebkitAnimationName = "startBtnRemove";
-		startBtn.style.MozAnimationName = "startBtnRemove";
-		startBtn.style.animationName = "startBtnRemove";
-
-		startBtn.style.WebkitanimationDuration = "1s";
-		startBtn.style.MozanimationDuration = "1s";
-		startBtn.style.animationDuration = "1s";
-		
-		glowLeft.style.WebkitAnimationName = "glowLeftRemove";
-		glowLeft.style.MozAnimationName = "glowLeftRemove";
-		glowLeft.style.animationName = "glowLeftRemove";
-		
-		glowLeft.style.WebkitanimationDuration = "1s";
-		glowLeft.style.MozanimationDuration = "1s";
-		glowLeft.style.animationDuration = "1s";
-		
-		glowRight.style.WebkitAnimationName = "glowRightRemove";
-		glowRight.style.MozAnimationName = "glowRightRemove";
-		glowRight.style.animationName = "glowRightRemove";
-		
-		glowRight.style.WebkitanimationDuration = "1s";
-		glowRight.style.MozanimationDuration = "1s";
-		glowRight.style.animationDuration = "1s";
-		
-		font.style.WebkitAnimationName = "fontRemove";
-		font.style.MozAnimationName = "fontRemove";
-		font.style.animationName = "fontRemove";
-		
-		font.style.WebkitanimationDuration = "1s";
-		font.style.MozanimationDuration = "1s";
-		font.style.animationDuration = "1s";
-		
-		arrow.style.display = "none"	
-		
-		countDisplay.style.AnimationPlayState="running";
-		countDisplay.style.MozAnimationPlayState="running";
-		countDisplay.style.WebkitAnimationPlayState="running";
-		
-		heart.style.AnimationPlayState="running";
-		heart.style.MozAnimationPlayState="running";
-		heart.style.WebkitAnimationPlayState="running";
-		
-		profile.style.AnimationPlayState="running";
-		profile.style.MozAnimationPlayState="running";
-		profile.style.WebkitAnimationPlayState="running";
-		
-		t1.style.AnimationPlayState="running";
-		t1.style.MozAnimationPlayState="running";
-		t1.style.WebkitAnimationPlayState="running";
-		
-		t2.style.AnimationPlayState="running";
-		t2.style.MozAnimationPlayState="running";
-		t2.style.WebkitAnimationPlayState="running";
-		
-		t3.style.AnimationPlayState="running";
-		t3.style.MozAnimationPlayState="running";
-		t3.style.WebkitAnimationPlayState="running";
-		
-		t4.style.AnimationPlayState="running";
-		t4.style.MozAnimationPlayState="running";
-		t4.style.WebkitAnimationPlayState="running";
-		
-		t5.style.AnimationPlayState="running";
-		t5.style.MozAnimationPlayState="running";
-		t5.style.WebkitAnimationPlayState="running";
-			
-		t6.style.AnimationPlayState="running";
-		t6.style.MozAnimationPlayState="running";
-		t6.style.WebkitAnimationPlayState="running";
-		
-		t7.style.AnimationPlayState="running";
-		t7.style.MozAnimationPlayState="running";
-		t7.style.WebkitAnimationPlayState="running";
-		
-		t8.style.AnimationPlayState="running";
-		t8.style.MozAnimationPlayState="running";
-		t8.style.WebkitAnimationPlayState="running";
-		
-		t9.style.AnimationPlayState="running";
-		t9.style.MozAnimationPlayState="running";
-		t9.style.WebkitAnimationPlayState="running";
-		
-		t10.style.AnimationPlayState="running";
-		t10.style.MozAnimationPlayState="running";
-		t10.style.WebkitAnimationPlayState="running";
-		
-		count0[0].style.AnimationPlayState="running";
-		count0[0].style.MozAnimationPlayState="running";
-		count0[0].style.WebkitAnimationPlayState="running";
-		
-		count1[0].style.AnimationPlayState="running";
-		count1[0].style.MozAnimationPlayState="running";
-		count1[0].style.WebkitAnimationPlayState="running";
-		
-		count2[0].style.AnimationPlayState="running";
-		count2[0].style.MozAnimationPlayState="running";
-		count2[0].style.WebkitAnimationPlayState="running";
-		
-		count3[0].style.AnimationPlayState="running";
-		count3[0].style.MozAnimationPlayState="running";
-		count3[0].style.WebkitAnimationPlayState="running";
-		
-		guide.style.AnimationPlayState="running";
-		guide.style.MozAnimationPlayState="running";
-		guide.style.WebkitAnimationPlayState="running";
-		
-		hiddenBox1.style.AnimationPlayState="running";
-		hiddenBox1.style.MozAnimationPlayState="running";
-		hiddenBox1.style.WebkitAnimationPlayState="running";
-		
-		attackBox1.style.AnimationPlayState="running";
-		attackBox1.style.MozAnimationPlayState="running";
-		attackBox1.style.WebkitAnimationPlayState="running";
-		
-		apes1.style.AnimationPlayState="running";
-		apes1.style.MozAnimationPlayState="running";
-		apes1.style.WebkitAnimationPlayState="running";
-		
-		light1.style.AnimationPlayState="running";
-		light1.style.MozAnimationPlayState="running";
-		light1.style.WebkitAnimationPlayState="running";
-		
-		hand.style.AnimationPlayState="running";
-		hand.style.MozAnimationPlayState="running";
-		hand.style.WebkitAnimationPlayState="running";
-		
-		shootBox1.style.AnimationPlayState="running";
-		shootBox1.style.MozAnimationPlayState="running";
-		shootBox1.style.WebkitAnimationPlayState="running";
+		 begin();
 		
 		if (data === "attackBox1"){
 
@@ -576,6 +424,12 @@
 			hand.style.WebkitanimationDelay = "0s";
 			hand.style.MozanimationDelay = "0s";
 			hand.style.animationDelay = "0s";
+			
+			reward1.style.display = "block";
+			reward1.style.AnimationPlayState="running";
+			reward1.style.MozAnimationPlayState="running";
+			reward1.style.WebkitAnimationPlayState="running";	
+			
 		}
 	}
 
