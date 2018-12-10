@@ -92,14 +92,13 @@
 	
 	var innerContainer =  document.getElementById("innerContainer");
 	var redLayer = document.getElementById("redLayer");
-	
-	
+		
 	function main(){
 		document.getElementById("loader").style.display = "none";	
 		gameContainer.style.display = "block";
-		var heartImage = document.getElementsByClassName("heart");			
+		var heartImage = document.getElementsByClassName("heart");
 		heartImage[1].style.left = "110%";
-		heartImage[2].style.left = "220%";
+		heartImage[2].style.left = "220%";			
 		var countImage = document.getElementsByClassName("count");
 
 		countImage[0].style.margin = "0% 91%";
@@ -107,6 +106,8 @@
 		countImage[2].style.margin = "0% 73%";
 		countImage[3].style.margin = "3% 64%";
 		count0[0].style.margin = "0% 55%";
+		
+		
 	}
 	
 	function createImage(){
@@ -442,6 +443,41 @@
 		redLayer.style.display = "none";
 	}
 	
+	var live = 3 ;
+	var countTime = document.getElementById('countTime').innerHTML;
+	
+	function lifeCount(timestamp){
+		var heartImage = document.getElementsByClassName("heart");
+		
+		if (498 > countTime){
+			countTime ++;
+			lifeDetect = requestAnimationFrame(lifeCount);
+		}
+		if(150 === countTime){		
+			live = live - 1;
+			heartImage[2].style.filter = "brightness(20%)";
+			heartImage[2].style.WebkitFilter = "brightness(20%)";
+			console.log(live);
+		}
+		if(324 === countTime){
+			live = live - 1;
+			heartImage[1].style.filter = "brightness(20%)";
+			heartImage[1].style.WebkitFilter = "brightness(20%)";
+			console.log(live);
+		}
+		if(498 === countTime){
+			live = live - 1;
+			heartImage[0].style.filter = "brightness(20%)";
+			heartImage[0].style.WebkitFilter = "brightness(20%)";
+			console.log(live);
+		}
+		
+		if (live === 0){
+			cancelAnimationFrame(lifeDetect);
+		}
+		
+	}	
+	
 	function mouseDown(e) {
 		var data = e.target.id;
 		console.log(data);
@@ -514,10 +550,12 @@
 			fire2.style.WebkitAnimationPlayState="running";
 			
 			getHurt();
+			lifeDetect = requestAnimationFrame(lifeCount);
 			
 		}
 		if (data === "attackBox2"){
 			stopHurt();
+			cancelAnimationFrame(lifeDetect);
 			
 			hiddenBox1.style.zIndex = "-30";
 			shootBox1.style.zIndex = "-30";
