@@ -68,19 +68,19 @@
 		
 		animation-name: innerContainer;
 		animation-duration: 3s;
-		animation-delay: 3.2s;
+		animation-delay: 3s;
 		animation-fill-mode: forwards;
 		animation-play-state: paused;
 		animation-iteration-count: 3;
 		-moz-animation-name:innerContainer;
 		-moz-animation-duration:3s;	
-		-moz-animation-delay: 3.2s;
+		-moz-animation-delay: 3s;
 		-moz-animation-fill-mode: forwards;
 		-moz-animation-play-state: paused;
 		-moz-animation-iteration-count: 3;
 		-webkit-animation-name: innerContainer;
 		-webkit-animation-duration: 3s;
-		-webkit-animation-delay: 3.2s;
+		-webkit-animation-delay: 3s;
 		-webkit-animation-fill-mode: forwards;
 		-webkit-animation-play-state: paused;
 		-webkit-animation-iteration-count: 3;
