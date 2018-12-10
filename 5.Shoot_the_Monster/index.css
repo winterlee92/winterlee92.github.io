@@ -2818,14 +2818,14 @@
     width: 11%;
     top: 20%;
 	background-image: url(t1.png);
-	z-index:98;
+	z-index:1;
 }
 	
 #t2{
 	height: 100%;
     width: 9%;
 	background-image: url(t2.png);
-	z-index:97;
+	z-index:0;
 }
 
 #t3{
@@ -2833,7 +2833,7 @@
     width: 43%;
     left: 7%;
     background-image: url(t3.png);
-    z-index: -2;
+    z-index: 0;
 }
 
 #t4{
