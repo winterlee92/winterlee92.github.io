@@ -393,17 +393,17 @@
 			gameContainerBg.style.margin = "0% 0%"
 			gameContainerBg.style.filter ="brightness(100%)";
 			
-			gameContainerBg.style.WebkitanimationDuration = "3s";
-			gameContainerBg.style.MozanimationDuration = "3s";
-			gameContainerBg.style.animationDuration= "3s";
+			// gameContainerBg.style.WebkitanimationDuration = "3s";
+			// gameContainerBg.style.MozanimationDuration = "3s";
+			// gameContainerBg.style.animationDuration= "3s";
 			
-			gameContainerBg.style.WebkitanimationDelay = "3s";
-			gameContainerBg.style.MozanimationDelay = "3s";
-			gameContainerBg.style.animationDelay = "3s";
+			// gameContainerBg.style.WebkitanimationDelay = "3s";
+			// gameContainerBg.style.MozanimationDelay = "3s";
+			// gameContainerBg.style.animationDelay = "3s";
 			
-			gameContainerBg.style.animationIterationCount = "3";
-			gameContainerBg.style.MozAnimationIterationCount = "3";
-			gameContainerBg.style.WebkitAnimationIterationCount = "3";
+			// gameContainerBg.style.animationIterationCount = "3";
+			// gameContainerBg.style.MozAnimationIterationCount = "3";
+			// gameContainerBg.style.WebkitAnimationIterationCount = "3";
 			
 			innerContainer.style.AnimationPlayState="running";
 			innerContainer.style.MozAnimationPlayState="running";

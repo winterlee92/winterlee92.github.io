@@ -68,19 +68,19 @@
 		
 		animation-name: innerContainer;
 		animation-duration: 3s;
-		animation-delay: 3s;
+		animation-delay: 2.5s;
 		animation-fill-mode: forwards;
 		animation-play-state: paused;
 		animation-iteration-count: 3;
 		-moz-animation-name:innerContainer;
 		-moz-animation-duration:3s;	
-		-moz-animation-delay: 3s;
+		-moz-animation-delay: 2.5s;
 		-moz-animation-fill-mode: forwards;
 		-moz-animation-play-state: paused;
 		-moz-animation-iteration-count: 3;
 		-webkit-animation-name: innerContainer;
 		-webkit-animation-duration: 3s;
-		-webkit-animation-delay: 3s;
+		-webkit-animation-delay: 2.5s;
 		-webkit-animation-fill-mode: forwards;
 		-webkit-animation-play-state: paused;
 		-webkit-animation-iteration-count: 3;
@@ -142,19 +142,19 @@
 		
 		animation-name: redLayer;
 		animation-duration: 3s;
-		animation-delay: 3s;
+		animation-delay: 2.7s;
 		animation-fill-mode: forwards;
 		animation-play-state: paused;
 		animation-iteration-count: 3;
 		-moz-animation-name:redLayer;
 		-moz-animation-duration:3s;	
-		-moz-animation-delay: 3s;
+		-moz-animation-delay: 2.7s;
 		-moz-animation-fill-mode: forwards;
 		-moz-animation-play-state: paused;
 		-moz-animation-iteration-count: 3;
 		-webkit-animation-name: redLayer;
 		-webkit-animation-duration: 3s;
-		-webkit-animation-delay: 3s;
+		-webkit-animation-delay: 2.7s;
 		-webkit-animation-fill-mode: forwards;
 		-webkit-animation-play-state: paused;
 		-webkit-animation-iteration-count: 3;
@@ -166,10 +166,10 @@
 		1%{
 			z-index:100;
 		}
-		9%{
+		8%{
 			z-index:100;
 		}
-		10%{
+		9%{
 			z-index:-30;
 		}
 		100%{
