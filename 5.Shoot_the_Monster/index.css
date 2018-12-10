@@ -159,7 +159,6 @@
 		-webkit-animation-play-state: paused;
 		-webkit-animation-iteration-count: 3;
 	}
-	
 	@keyframes redLayer{
 		0%{
 			z-index:-30;
@@ -4480,19 +4479,19 @@
 	
 	animation-name: fire2;
 	animation-duration: 3s;
-	animation-delay:2.8s;
+	animation-delay:2.5s;
 	animation-fill-mode: forwards;
 	animation-play-state: paused;
 	animation-iteration-count:3;
 	-moz-animation-name:fire2;
 	-moz-animation-duration:3s;	
-	-moz-animation-delay:2.8s;
+	-moz-animation-delay:2.5s;
 	-moz-animation-fill-mode: forwards;
 	-moz-animation-play-state: paused;
 	-moz-animation-iteration-count:3;
 	-webkit-animation-name: fire2;
 	-webkit-animation-duration: 3s;
-	-webkit-animation-delay:2.8s;
+	-webkit-animation-delay:2.5s;
 	-webkit-animation-fill-mode: forwards;
 	-webkit-animation-play-state: paused;
 	-webkit-animation-iteration-count:3;
