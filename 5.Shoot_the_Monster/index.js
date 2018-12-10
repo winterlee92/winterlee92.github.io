@@ -165,8 +165,17 @@
 		var fireArray = ["url('fire.png')"];	
 		fire2.style.backgroundImage = fireArray[0];
 		
-		var sparkArray = ['spark1.png','spark2.png','spark3.png','spark4.png',
-		'spark5.png','spark6.png','spark7.png','spark8.png','spark9.png'];	
+		var sparkArray =[
+							'spark1.png',
+							'spark2.png',
+							'spark3.png',
+							'spark4.png',
+							'spark5.png',
+							'spark6.png',
+							'spark7.png',
+							'spark8.png',
+							'spark9.png'
+						];	
 				
 			for(i=0; i<9; i++)
 		{	 
@@ -507,8 +516,7 @@
 			getHurt();
 			
 		}
-		if (data === "attackBox2")
-		{
+		if (data === "attackBox2"){
 			stopHurt();
 			
 			hiddenBox1.style.zIndex = "-30";
@@ -550,6 +558,7 @@
 			reward2.style.AnimationPlayState="running";
 			reward2.style.MozAnimationPlayState="running";
 			reward2.style.WebkitAnimationPlayState="running";
+			
 			
 		}
 	}
