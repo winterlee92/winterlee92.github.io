@@ -69,6 +69,9 @@
 	var count4 = document.getElementsByClassName("count4");	
 	var count5 = document.getElementsByClassName("count5");	
 
+	var innerContainer =  document.getElementById("innerContainer");
+	var redLayer = document.getElementById("redLayer");
+	
 	var guide = document.getElementById("guide");
 	var hand = document.getElementById("hand");
 	var sparkBox =  document.getElementById("spark");
@@ -90,8 +93,16 @@
 	var shoot2 = document.getElementById("shoot2");
 	var reward2 =  document.getElementById("reward2");
 	
-	var innerContainer =  document.getElementById("innerContainer");
-	var redLayer = document.getElementById("redLayer");
+	var hiddenBox3 = document.getElementById("hiddenBox3");
+	var orc2 = document.getElementById("orc2");
+	var light3 = document.getElementById("light3");
+	var fire3 = document.getElementById("fire3");
+	var attackBox3 = document.getElementById("attackBox3");
+	var shootBox3 = document.getElementById("shootBox3");
+	var shoot3 = document.getElementById("shoot3");
+	var reward3 =  document.getElementById("reward3");
+	
+	
 		
 	function main(){
 		document.getElementById("loader").style.display = "none";	
@@ -151,20 +162,28 @@
 		var apesArray = ["url('apes.png')"];
 		apes1.style.backgroundImage = apesArray[0];
 		
-		var shootArray = ["url('shoot.png')"];
-		shoot.style.backgroundImage = shootArray[0];
-		shoot2.style.backgroundImage = shootArray[0];
-				
-				
 		var orcArray = ["url('orc.png')"];
 		orc1.style.backgroundImage = orcArray[0];
+		orc2.style.backgroundImage = orcArray[0];
+		
+		var shootArray = ["url('shoot.png')"];
+		shoot.style.backgroundImage = shootArray[0];
+		shoot2.style.backgroundImage = shootArray[0];	
+		shoot3.style.backgroundImage = shootArray[0];
 
 		var lightArray = ["url('glow.png')"];		
 		light1.style.backgroundImage = lightArray[0];
 		light2.style.backgroundImage = lightArray[0];
+		light3.style.backgroundImage = lightArray[0];
 				
 		var fireArray = ["url('fire.png')"];	
 		fire2.style.backgroundImage = fireArray[0];
+		fire3.style.backgroundImage = fireArray[0];
+		
+		var rewardArray = ["url('reward.png')"];
+		reward1.style.backgroundImage = rewardArray[0];
+		reward2.style.backgroundImage = rewardArray[0];
+		reward3.style.backgroundImage = rewardArray[0];
 		
 		var sparkArray =[
 							'spark1.png',
@@ -189,16 +208,16 @@
 			}
 		}
 
-		var rewardArray = ["url('reward.png')"];
-		reward1.style.backgroundImage = rewardArray[0];
-		reward2.style.backgroundImage = rewardArray[0];
-		
 	}
 
 	var renderSpark;
 	
 	function sparkAnimation(){
 		var myIndex = 0;	
+		var min = 0;
+		var max = 360;
+		var random = Math.floor(Math.random() * (max - min + 1)) + min;
+		sparkBox.style.transform ="rotate("+random+"deg)";
 		var spark = document.getElementsByClassName("spark");				
 		loopSpark();
 		function loopSpark(){
@@ -432,15 +451,20 @@
 		fire2.style.AnimationPlayState="paused";
 		fire2.style.MozAnimationPlayState="paused";
 		fire2.style.WebkitAnimationPlayState="paused";
-
+				
 		fire2.style.zIndex = "-30";
 		fire2.style.display = "none";
+		
+		light2.style.AnimationPlayState="paused";
+		light2.style.MozAnimationPlayState="paused";
+		light2.style.WebkitAnimationPlayState="paused";
 
 		light2.style.zIndex = "-30";
 		light2.style.display = "none";
-		
+
 		redLayer.style.zIndex = "-30";
 		redLayer.style.display = "none";
+		
 	}
 	
 	var live = 3 ;
@@ -574,8 +598,7 @@
 			shoot2.style.AnimationPlayState="running";
 			shoot2.style.MozAnimationPlayState="running";
 			shoot2.style.WebkitAnimationPlayState="running";
-			
-			
+						
 			orc1.style.WebkitAnimationName = "killOrc1";
 			orc1.style.MozAnimationName = "killOrc1";
 			orc1.style.animationName = "killOrc1";
@@ -597,12 +620,73 @@
 			reward2.style.MozAnimationPlayState="running";
 			reward2.style.WebkitAnimationPlayState="running";
 			
+			hiddenBox3.style.AnimationPlayState="running";
+			hiddenBox3.style.MozAnimationPlayState="running";
+			hiddenBox3.style.WebkitAnimationPlayState="running";
 			
+			attackBox3.style.AnimationPlayState="running";
+			attackBox3.style.MozAnimationPlayState="running";
+			attackBox3.style.WebkitAnimationPlayState="running";
+			
+			orc2.style.AnimationPlayState="running";
+			orc2.style.MozAnimationPlayState="running";
+			orc2.style.WebkitAnimationPlayState="running";
+			
+			light3.style.AnimationPlayState="running";
+			light3.style.MozAnimationPlayState="running";
+			light3.style.WebkitAnimationPlayState="running";
+			
+			fire3.style.AnimationPlayState="running";
+			fire3.style.MozAnimationPlayState="running";
+			fire3.style.WebkitAnimationPlayState="running";
+			
+			// getHurt();
+			
+		}
+		if (data === "attackBox3"){
+			
+			stopHurt();
+			
+			sparkBox.style.display = "block";
+			sparkBox.style.left = "-6%";
+			sparkBox.style.top = "1%";
+			
+			sparkAnimation();
+			
+			count3[0].style.WebkitAnimationName = "removeIcon";
+			count3[0].style.MozAnimationName = "removeIcon";
+			count3[0].style.animationName = "removeIcon";
+			
+			count3[0].style.WebkitanimationDelay = "0s";
+			count3[0].style.MozanimationDelay = "0s";
+			count3[0].style.animationDelay = "0s";
+			
+			orc2.style.WebkitAnimationName = "killOrc2";
+			orc2.style.MozAnimationName = "killOrc2";
+			orc2.style.animationName = "killOrc2";
+			
+			orc2.style.WebkitanimationDelay = "0s";
+			orc2.style.MozanimationDelay = "0s";
+			orc2.style.animationDelay = "0s";
+			
+			fire3.style.zIndex = "-30";
+			fire3.style.display = "none";
+			
+			fire3.style.AnimationPlayState="paused";
+			fire3.style.MozAnimationPlayState="paused";
+			fire3.style.WebkitAnimationPlayState="paused";
+			
+			light3.style.zIndex = "-30";
+			light3.style.display = "none";
+			
+			light3.style.AnimationPlayState="paused";
+			light3.style.MozAnimationPlayState="paused";
+			light3.style.WebkitAnimationPlayState="paused";
 		}
 	}
 	
 	function touchstart(e){
-		var data = e.target.id;
+	var data = e.target.id;
 		console.log(data);
 		begin();		
 		
@@ -673,11 +757,12 @@
 			fire2.style.WebkitAnimationPlayState="running";
 			
 			getHurt();
+			lifeDetect = requestAnimationFrame(lifeCount);
 			
 		}
-	if (data === "attackBox2")
-		{
+		if (data === "attackBox2"){
 			stopHurt();
+			cancelAnimationFrame(lifeDetect);
 			
 			hiddenBox1.style.zIndex = "-30";
 			shootBox1.style.zIndex = "-30";
@@ -696,8 +781,7 @@
 			shoot2.style.AnimationPlayState="running";
 			shoot2.style.MozAnimationPlayState="running";
 			shoot2.style.WebkitAnimationPlayState="running";
-			
-			
+						
 			orc1.style.WebkitAnimationName = "killOrc1";
 			orc1.style.MozAnimationName = "killOrc1";
 			orc1.style.animationName = "killOrc1";
@@ -718,6 +802,69 @@
 			reward2.style.AnimationPlayState="running";
 			reward2.style.MozAnimationPlayState="running";
 			reward2.style.WebkitAnimationPlayState="running";
+			
+			hiddenBox3.style.AnimationPlayState="running";
+			hiddenBox3.style.MozAnimationPlayState="running";
+			hiddenBox3.style.WebkitAnimationPlayState="running";
+			
+			attackBox3.style.AnimationPlayState="running";
+			attackBox3.style.MozAnimationPlayState="running";
+			attackBox3.style.WebkitAnimationPlayState="running";
+			
+			orc2.style.AnimationPlayState="running";
+			orc2.style.MozAnimationPlayState="running";
+			orc2.style.WebkitAnimationPlayState="running";
+			
+			light3.style.AnimationPlayState="running";
+			light3.style.MozAnimationPlayState="running";
+			light3.style.WebkitAnimationPlayState="running";
+			
+			fire3.style.AnimationPlayState="running";
+			fire3.style.MozAnimationPlayState="running";
+			fire3.style.WebkitAnimationPlayState="running";
+			
+			// getHurt();
+			
+		}
+		if (data === "attackBox3"){
+			
+			stopHurt();
+			
+			sparkBox.style.display = "block";
+			sparkBox.style.left = "-6%";
+			sparkBox.style.top = "1%";
+			
+			sparkAnimation();
+			
+			count3[0].style.WebkitAnimationName = "removeIcon";
+			count3[0].style.MozAnimationName = "removeIcon";
+			count3[0].style.animationName = "removeIcon";
+			
+			count3[0].style.WebkitanimationDelay = "0s";
+			count3[0].style.MozanimationDelay = "0s";
+			count3[0].style.animationDelay = "0s";
+			
+			orc2.style.WebkitAnimationName = "killOrc2";
+			orc2.style.MozAnimationName = "killOrc2";
+			orc2.style.animationName = "killOrc2";
+			
+			orc2.style.WebkitanimationDelay = "0s";
+			orc2.style.MozanimationDelay = "0s";
+			orc2.style.animationDelay = "0s";
+			
+			fire3.style.zIndex = "-30";
+			fire3.style.display = "none";
+			
+			fire3.style.AnimationPlayState="paused";
+			fire3.style.MozAnimationPlayState="paused";
+			fire3.style.WebkitAnimationPlayState="paused";
+			
+			light3.style.zIndex = "-30";
+			light3.style.display = "none";
+			
+			light3.style.AnimationPlayState="paused";
+			light3.style.MozAnimationPlayState="paused";
+			light3.style.WebkitAnimationPlayState="paused";
 			
 		}
 	}
