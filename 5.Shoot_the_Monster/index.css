@@ -487,6 +487,7 @@
 		position: absolute;
 		height: 100%;
 		width: 100%;
+		z-index:-1;
 		background-Repeat:no-repeat;
 		background-Size : 100% 100%; 	
 		
@@ -529,25 +530,26 @@
 	
 	#inkBox{
 		position: absolute;
-		height: 50%;
+		height: 65%;
 		width: 0%;
 		bottom: 0;
 		opacity: 0.9;	
+		z-index:0;
 		overflow:hidden;
 		
 		animation-name: inkBox;
 		animation-duration: 1s;
-		animation-delay: 3s;
+		animation-delay: 2.5s;
 		animation-fill-mode: forwards;
 		animation-play-state: paused;
 		-moz-animation-name:inkBox;
 		-moz-animation-duration:1s;	
-		-moz-animation-delay: 3s;
+		-moz-animation-delay: 2.5s;
 		-moz-animation-fill-mode: forwards;
 		-moz-animation-play-state: paused;
 		-webkit-animation-name: inkBox;
 		-webkit-animation-duration: 1s;
-		-webkit-animation-delay: 3s;
+		-webkit-animation-delay: 2.5s;
 		-webkit-animation-fill-mode: forwards;
 		-webkit-animation-play-state: paused;
 	}
@@ -594,17 +596,17 @@
 		animation-duration: 1s;
 		animation-delay: 2s;
 		animation-fill-mode: forwards;
-		/* animation-play-state: paused; */
+		animation-play-state: paused;
 		-moz-animation-name:ink;
 		-moz-animation-duration:1s;	
 		-moz-animation-delay: 2s;
 		-moz-animation-fill-mode: forwards;
-		/* -moz-animation-play-state: paused; */
+		-moz-animation-play-state: paused;
 		-webkit-animation-name: ink;
 		-webkit-animation-duration: 1s;
 		-webkit-animation-delay: 2s;
 		-webkit-animation-fill-mode: forwards;
-		/* -webkit-animation-play-state: paused; */
+		-webkit-animation-play-state: paused;
 	}
 	
 	@keyframes ink{
@@ -635,6 +637,72 @@
 	@-webkit-keyframes ink{
 	}
 	
+	#againFontBG{
+		position: absolute;
+		height: 100%;
+		width: 49%;
+		bottom: -23%;
+		left: 50%;
+		transform: scale(3.5);
+		filter: brightness(2); 
+		opacity:0;
+		background-Repeat:no-repeat;
+		background-Size : 100% 100%; 
+		background-Image : url(againFontBG.png);
+		
+		animation-name: againFontBG;
+		animation-duration: 1s;
+		animation-delay: 5s;
+		animation-fill-mode: forwards;
+		animation-play-state: paused;
+		-moz-animation-name:againFontBG;
+		-moz-animation-duration:1s;	
+		-moz-animation-delay: 5s;
+		-moz-animation-fill-mode: forwards;
+		-moz-animation-play-state: paused;
+		-webkit-animation-name: againFontBG;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-delay: 5s;
+		-webkit-animation-fill-mode: forwards;
+		-webkit-animation-play-state: paused;
+	}
+	
+	@keyframes againFontBG{
+	
+		0%{
+			opacity:0;
+			width: 49%;
+			bottom: -23%;
+			left: 50%;
+			transform: scale(3.5);
+			filter: brightness(2)
+		}
+		10%{
+				opacity:1;
+			    position: absolute;
+				height: 71%;
+				width: 35%;
+				bottom: -18%;
+				left: 63%;
+				transform: scale(1);
+				filter: brightness(1.5);
+		}
+		100%{
+			opacity:1;
+			    position: absolute;
+				height: 71%;
+				width: 35%;
+				bottom: -18%;
+				left: 63%;
+				transform: scale(1);
+				filter: brightness(1.5);
+		}
+	}
+	@-moz-keyframes againFontBG{
+	}
+	@-webkit-keyframes againFontBG{
+	}
+	
 	#DontGiveUpFont{
 		position: absolute;
 		height: 24%;
@@ -645,8 +713,18 @@
 		background-Repeat:no-repeat;
 		background-Size : 100% 100%; 
 	}
-	
-	.DontGiveUpFont{
+	#againFont{
+		position: absolute;
+		height: 30%;
+		width: 28%;
+		bottom: 0%;
+		left: 67%;
+		display:none;
+		background-Repeat:no-repeat;
+		background-Size : 100% 100%; 
+	}
+
+	.DontGiveUpFont,.againFont{
 		position: absolute;
 		height: 100%;
 		width: 100%;  

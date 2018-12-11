@@ -71,8 +71,10 @@
 
 	var innerContainer =  document.getElementById("innerContainer");
 	var redLayer = document.getElementById("redLayer");
+	
 	var grayscaleElf = document.getElementById("grayscaleElf");
 	var dGUFont = document.getElementById("DontGiveUpFont");
+	var againFont = document.getElementById("againFont");
 	
 	var guide = document.getElementById("guide");
 	var hand = document.getElementById("hand");
@@ -121,6 +123,32 @@
 		countImage[3].style.margin = "3% 64%";
 		count0[0].style.margin = "0% 55%";
 
+		
+			// grayscaleElf.style.animationPlayState="running";
+			// grayscaleElf.style.mozAnimationPlayState="running";
+			// grayscaleElf.style.webkitAnimationPlayState="running";
+			
+			// inkBox.style.animationPlayState="running";
+			// inkBox.style.mozAnimationPlayState="running";
+			// inkBox.style.webkitAnimationPlayState="running";
+			
+			// inkBox.style.animationPlayState="running";
+			// inkBox.style.mozAnimationPlayState="running";
+			// inkBox.style.webkitAnimationPlayState="running";
+			
+			// dguDetect = requestAnimationFrame(dguCount);
+			
+			// loseLayer.style.animationPlayState="running";
+			// loseLayer.style.mozAnimationPlayState="running";
+			// loseLayer.style.webkitAnimationPlayState="running";
+			
+			// loseLayerBG.style.animationPlayState="running";
+			// loseLayerBG.style.mozAnimationPlayState="running";
+			// loseLayerBG.style.webkitAnimationPlayState="running";
+			
+			// againFontBG.style.animationPlayState="running";
+			// againFontBG.style.mozAnimationPlayState="running";
+			// againFontBG.style.webkitAnimationPlayState="running";
 	}
 	
 	function createImage(){
@@ -250,6 +278,43 @@
 			}
 		}
 		
+		var againFontArray =[
+							'againFont1.png',
+							'againFont2.png',
+							'againFont3.png',
+							'againFont4.png',
+							'againFont5.png',
+							'againFont6.png',
+							'againFont7.png',
+							'againFont8.png',
+							'againFont9.png',
+							'againFont10.png',
+							'againFont11.png',
+							'againFont12.png',
+							'againFont13.png',
+							'againFont14.png',
+							'againFont15.png',
+							'againFont16.png',
+							'againFont17.png',
+							'againFont18.png',
+							'againFont19.png',
+							'againFont20.png',
+							'againFont21.png',
+							'againFont22.png',
+							'againFont23.png'
+						];	
+
+			for(i=0; i<23; i++)
+		{	 
+			if(i < 23)
+			{
+				var againFontImage = document.createElement("IMG");
+				againFontImage.setAttribute("src", againFontArray[i]);	
+				againFontImage.setAttribute("class","againFont");
+				againFont.appendChild(againFontImage);
+			}
+		}
+		
 	}
 	var dguTime = 0;
 	function dguCount(timestamp){
@@ -266,7 +331,7 @@
 	}
 	
 	var renderdgu;
-	var dgu = document.getElementsByClassName("DontGiveUpFont");	
+	var dgu = document.getElementsByClassName("DontGiveUpFont");
 	
 	function dguAnimation(){
 		var myIndex = 0;	
@@ -613,7 +678,7 @@
 	function lifeCount(timestamp){
 		var heartImage = document.getElementsByClassName("heart");
 
-		if (498 > countTime){
+		if (515 > countTime){
 			countTime ++;
 			lifeDetect = requestAnimationFrame(lifeCount);
 		}
@@ -636,31 +701,31 @@
 			console.log(live);
 		}
 		
-		if (live === 0){
+		if (515 > countTime && live === 0){
+			// stopHurt();
+			// gameContainerBg.style.animationIterationCount = "1";
+			// gameContainerBg.style.mozAnimationIterationCount = "1";
+			// gameContainerBg.style.webkitAnimationIterationCount = "1";
 			
-			gameContainerBg.style.animationIterationCount = "1";
-			gameContainerBg.style.mozAnimationIterationCount = "1";
-			gameContainerBg.style.webkitAnimationIterationCount = "1";
+			// innerContainer.style.animationIterationCount = "1";
+			// innerContainer.style.mozAnimationIterationCount = "1";
+			// innerContainer.style.webkitAnimationIterationCount = "1";
 			
-			innerContainer.style.animationIterationCount = "1";
-			innerContainer.style.mozAnimationIterationCount = "1";
-			innerContainer.style.webkitAnimationIterationCount = "1";
+			// redLayer.style.animationIterationCount = "1";
+			// redLayer.style.mozAnimationIterationCount = "1";
+			// redLayer.style.webkitAnimationIterationCount = "1";
 			
-			redLayer.style.animationIterationCount = "1";
-			redLayer.style.mozAnimationIterationCount = "1";
-			redLayer.style.webkitAnimationIterationCount = "1";
+			// orc2.style.AnimationPlayState="paused";
+			// orc2.style.mozAnimationPlayState="paused";
+			// orc2.style.webkitAnimationPlayState="paused";
 			
-			orc2.style.AnimationPlayState="paused";
-			orc2.style.mozAnimationPlayState="paused";
-			orc2.style.webkitAnimationPlayState="paused";
+			// light3.style.AnimationPlayState="paused";
+			// light3.style.mozAnimationPlayState="paused";
+			// light3.style.webkitAnimationPlayState="paused";
 			
-			light3.style.AnimationPlayState="paused";
-			light3.style.mozAnimationPlayState="paused";
-			light3.style.webkitAnimationPlayState="paused";
-			
-			fire3.style.AnimationPlayState="paused";
-			fire3.style.mozAnimationPlayState="paused";
-			fire3.style.webkitAnimationPlayState="paused";
+			// fire3.style.AnimationPlayState="paused";
+			// fire3.style.mozAnimationPlayState="paused";
+			// fire3.style.webkitAnimationPlayState="paused";	
 			
 			cancelAnimationFrame(lifeDetect);
 			
@@ -685,6 +750,10 @@
 			loseLayerBG.style.animationPlayState="running";
 			loseLayerBG.style.mozAnimationPlayState="running";
 			loseLayerBG.style.webkitAnimationPlayState="running";
+			
+			againFontBG.style.animationPlayState="running";
+			againFontBG.style.mozAnimationPlayState="running";
+			againFontBG.style.webkitAnimationPlayState="running";
 		}
 		
 	}	
@@ -694,6 +763,9 @@
 		console.log(data);
 		begin();		
 		
+		if(data === "againFontBG"){
+			window.location.reload();
+		}
 		if (data === "attackBox1"){
 
 			sparkAnimation();
@@ -848,7 +920,6 @@
 			
 			console.log(live);
 			console.log(countTime);
-			stopHurt();
 			
 			sparkBox.style.display = "block";
 			sparkBox.style.left = "-6%";
@@ -887,6 +958,7 @@
 			light3.style.WebkitAnimationPlayState="paused";
 			
 			countTime = 0;
+			stopHurt();
 		}
 	}
 	
@@ -895,6 +967,10 @@
 		console.log(data);
 		begin();		
 		
+	
+		if(data === "againFontBG"){
+			window.location.reload();
+		}
 		if (data === "attackBox1"){
 
 			sparkAnimation();
@@ -1027,13 +1103,28 @@
 			fire3.style.AnimationPlayState="running";
 			fire3.style.MozAnimationPlayState="running";
 			fire3.style.WebkitAnimationPlayState="running";
+			console.log(live);
+			console.log(countTime);
 			
-			// getHurt2();
+			getHurt2();	
+			if (live === 3){
+				countTime = 0;
+			}
+			if (live === 2){
+				countTime = 150;
+			}
+			if (live === 1){
+				countTime = 324;
+			}
+			lifeDetect = requestAnimationFrame(lifeCount);
 			
 		}
 		if (data === "attackBox3"){
 			
-			stopHurt();
+			cancelAnimationFrame(lifeDetect);
+			
+			console.log(live);
+			console.log(countTime);
 			
 			sparkBox.style.display = "block";
 			sparkBox.style.left = "-6%";
@@ -1071,6 +1162,8 @@
 			light3.style.MozAnimationPlayState="paused";
 			light3.style.WebkitAnimationPlayState="paused";
 			
+			countTime = 0;
+			stopHurt();
 		}
 	}
 
