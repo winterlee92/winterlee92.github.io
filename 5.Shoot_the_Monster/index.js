@@ -264,12 +264,13 @@
 							'f11.png',
 							'f12.png',
 							'f13.png',
-							'f14.png'
+							'f14.png',
+							'f15.png'
 						];	
 
-			for(i=0; i<14; i++)
+			for(i=0; i<15; i++)
 		{	 
-			if(i < 14)
+			if(i < 15)
 			{
 				var dontGiveUpFontImage = document.createElement("IMG");
 				dontGiveUpFontImage.setAttribute("src", DontGiveUpFontArray[i]);	
@@ -348,8 +349,8 @@
 			dgu[myIndex-1].style.display = "block";
 			renderdgu = setTimeout(loopdgu,50);			
 			
-			if (myIndex === 13){
-				dgu[13].style.display = "block";
+			if (myIndex === 14){
+				dgu[14].style.display = "block";
 				clearTimeout(renderdgu);			
 			}			
 		}
@@ -583,8 +584,8 @@
 		
 			redLayer.style.display = "block";
 		
-			gameContainerBg.style.WebkitAnimationName = "getHurt2";
-			gameContainerBg.style.MozAnimationName = "getHurt2";
+			gameContainerBg.style.webkitAnimationName = "getHurt2";
+			gameContainerBg.style.mozAnimationName = "getHurt2";
 			gameContainerBg.style.animationName = "getHurt2";
 			
 			gameContainerBg.style.height ="100%";
@@ -596,33 +597,33 @@
 			gameContainerBg.style.mozAnimationDuration = "3s";
 			gameContainerBg.style.animationDuration= "3s";
 			
-			gameContainerBg.style.webkitAnimationDelay = "3s";
-			gameContainerBg.style.mozAnimationDelay = "3s";
-			gameContainerBg.style.animationDelay = "3s";
+			gameContainerBg.style.webkitAnimationDelay = "2.7s";
+			gameContainerBg.style.mozAnimationDelay = "2.7s";
+			gameContainerBg.style.animationDelay = "2.7s";
 			
-			innerContainer.style.WebkitAnimationName = "innerContainer2";
-			innerContainer.style.MozAnimationName = "innerContainer2";
+			innerContainer.style.webkitAnimationName = "innerContainer2";
+			innerContainer.style.mozAnimationName = "innerContainer2";
 			innerContainer.style.animationName = "innerContainer2";
 			
 			innerContainer.style.webkitAnimationDuration = "3s";
 			innerContainer.style.mozAnimationDuration = "3s";
 			innerContainer.style.animationDuration= "3s";
 			
-			innerContainer.style.webkitAnimationDelay = "3s";
-			innerContainer.style.mozAnimationDuration = "3s";
-			innerContainer.style.animationDelay = "3s";
+			innerContainer.style.webkitAnimationDelay = "2.7s";
+			innerContainer.style.mozAnimationDelay= "2.7s";
+			innerContainer.style.animationDelay = "2.7s";
 			
-			redLayer.style.WebkitAnimationName = "redLayer2";
-			redLayer.style.MozAnimationName = "redLayer2";
+			redLayer.style.webkitAnimationName = "redLayer2";
+			redLayer.style.mozAnimationName = "redLayer2";
 			redLayer.style.animationName = "redLayer2";
 			
 			redLayer.style.webkitAnimationDuration = "3s";
 			redLayer.style.mozAnimationDuration = "3s";
 			redLayer.style.animationDuration= "3s";
 			
-			redLayer.style.webkitAnimationDelay = "3s";
-			redLayer.style.mozAnimationDuration = "3s";
-			redLayer.style.animationDelay = "3s";
+			redLayer.style.webkitAnimationDelay = "2.7s";
+			redLayer.style.mozAnimationDelay = "2.7s";
+			redLayer.style.animationDelay = "2.7s";
 			
 	}
 	
@@ -700,20 +701,20 @@
 			heartImage[0].style.WebkitFilter = "brightness(20%)";
 			console.log(live);
 		}
-		
-		if (515 > countTime && live === 0){
-			// stopHurt();
-			// gameContainerBg.style.animationIterationCount = "1";
-			// gameContainerBg.style.mozAnimationIterationCount = "1";
-			// gameContainerBg.style.webkitAnimationIterationCount = "1";
+				
+		if (515 === countTime && live === 0){
+
+			gameContainerBg.style.animationIterationCount = "1";
+			gameContainerBg.style.mozAnimationIterationCount = "1";
+			gameContainerBg.style.webkitAnimationIterationCount = "1";
 			
-			// innerContainer.style.animationIterationCount = "1";
-			// innerContainer.style.mozAnimationIterationCount = "1";
-			// innerContainer.style.webkitAnimationIterationCount = "1";
+			innerContainer.style.animationIterationCount = "1";
+			innerContainer.style.mozAnimationIterationCount = "1";
+			innerContainer.style.webkitAnimationIterationCount = "1";
 			
-			// redLayer.style.animationIterationCount = "1";
-			// redLayer.style.mozAnimationIterationCount = "1";
-			// redLayer.style.webkitAnimationIterationCount = "1";
+			redLayer.style.animationIterationCount = "1";
+			redLayer.style.mozAnimationIterationCount = "1";
+			redLayer.style.webkitAnimationIterationCount = "1";
 			
 			// orc2.style.AnimationPlayState="paused";
 			// orc2.style.mozAnimationPlayState="paused";
@@ -754,6 +755,9 @@
 			againFontBG.style.animationPlayState="running";
 			againFontBG.style.mozAnimationPlayState="running";
 			againFontBG.style.webkitAnimationPlayState="running";
+			
+			attackBox2.style.zIndex = "-30";
+			attackBox3.style.zIndex = "-30";
 		}
 		
 	}	
@@ -927,6 +931,14 @@
 			
 			sparkAnimation();
 			
+			shootBox3.style.AnimationPlayState="running";
+			shootBox3.style.MozAnimationPlayState="running";
+			shootBox3.style.WebkitAnimationPlayState="running";
+			
+			shoot3.style.AnimationPlayState="running";
+			shoot3.style.MozAnimationPlayState="running";
+			shoot3.style.WebkitAnimationPlayState="running";
+			
 			count3[0].style.WebkitAnimationName = "removeIcon";
 			count3[0].style.MozAnimationName = "removeIcon";
 			count3[0].style.animationName = "removeIcon";
@@ -967,7 +979,6 @@
 		console.log(data);
 		begin();		
 		
-	
 		if(data === "againFontBG"){
 			window.location.reload();
 		}
