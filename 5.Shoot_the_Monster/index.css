@@ -6225,3 +6225,748 @@
 		opacity: 0;
 	}
 }
+
+#hiddenBox4{
+
+	position: absolute;
+    overflow: hidden;
+	height: 44%;
+    width: 0%;
+    top: 37%;
+    left: 100%;
+    z-index: -1;
+	opacity:1;
+	
+	animation-name: hiddenBox4;
+	animation-duration: 0.5s;
+	animation-delay:0s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-moz-animation-name:hiddenBox4;
+	-moz-animation-duration:0.5s;	
+	-moz-animation-delay:0s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-webkit-animation-name: hiddenBox4;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-delay:0s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: paused;
+	
+ }	
+ 
+  @keyframes hiddenBox4{
+	0%{
+		width: 0%;
+		left: 100%;
+		opacity:0;
+	 }
+	 100%{
+		width: 7%;
+		left: 93%;
+		opacity: 1;
+	 }
+ }
+ @-moz-keyframes hiddenBox4{
+	0%{
+		width: 0%;
+		left: 100%;
+		opacity:0;
+	 }
+	 100%{
+		width: 7%;
+		left: 93%;
+		opacity: 1;
+	 }
+ }
+ @-webkit-keyframes hiddenBox4{
+	0%{
+		width: 0%;
+		left: 100%;
+		opacity:0;
+	 }
+	 100%{
+		width: 7%;
+		left: 93%;
+		opacity: 1;
+	 }
+ }
+ 
+#apes2{
+	 
+	position: absolute;
+    height: 100%;
+    width: 173%;
+    top: 0%;
+    left: 98%;
+    background-size: 100% 100%;
+    background-Repeat: no-repeat;
+    opacity: 1;
+	filter: brightness(0);
+	
+	animation-name: apes2;
+	animation-duration: 1s;
+	animation-delay:0s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-moz-animation-name:apes2;
+	-moz-animation-duration:1s;	
+	-moz-animation-delay:0s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-webkit-animation-name: apes2;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-delay:0s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: paused;	
+	}
+	
+@keyframes apes2{
+	0%{
+		left: 98%;
+		filter: brightness(0);
+	 }
+	 100%{
+		left: 0%;
+		filter: brightness(1);
+	 }
+}
+@-moz-keyframes apes2{
+	0%{
+		left: 98%;
+		filter: brightness(0);
+	 }
+	 100%{
+		left: 0%;
+		filter: brightness(1);
+	 }
+}
+@-webkit-keyframes apes2{
+	0%{
+		left: 98%;
+		filter: brightness(0);
+	 }
+	 100%{
+		left: 0%;
+		filter: brightness(1);
+	 }
+}
+	
+@keyframes killApes2{
+	0%{
+		left: 0%;
+		opacity:1;
+		filter: brightness(1);
+	}
+	1%{
+		top: 2%;
+		left: 0%;
+		opacity:1;
+		filter:invert(30%) brightness(40%) sepia(1) hue-rotate(-30deg) saturate(400%) contrast(2);
+	}
+	11%{
+		top: 0%;
+	}
+	22%{
+		top: 2%;
+	}
+	33%{
+		top: 0%;
+	}
+	44%{
+		top: 2%;
+		opacity:1;
+	}
+	100%{
+		left: 0%;
+		opacity:0;
+		filter:invert(30%) brightness(40%) sepia(1) hue-rotate(-30deg) saturate(400%) contrast(2);
+	}
+}
+@-moz-keyframes killApes2{
+	0%{
+		left: 19%;
+		opacity:1;
+		filter: brightness(1);
+	}
+	1%{
+		top: 2%;
+		left: 19%;
+		opacity:1;
+		filter:invert(30%) brightness(40%) sepia(1) hue-rotate(-30deg) saturate(400%) contrast(2);
+	}
+	11%{
+		top: 0%;
+	}
+	22%{
+		top: 2%;
+	}
+	33%{
+		top: 0%;
+	}
+	44%{
+		top: 2%;
+		opacity:1;
+	}
+	100%{
+		left: 19%;
+		opacity:0;
+		filter:invert(30%) brightness(40%) sepia(1) hue-rotate(-30deg) saturate(400%) contrast(2);
+	}
+}
+@-webkit-keyframes killApes2{
+	0%{
+		left: 19%;
+		opacity:1;
+		filter: brightness(1);
+	}
+	1%{
+		top: 2%;
+		left: 19%;
+		opacity:1;
+		filter:invert(30%) brightness(40%) sepia(1) hue-rotate(-30deg) saturate(400%) contrast(2);
+	}
+	11%{
+		top: 0%;
+	}
+	22%{
+		top: 2%;
+	}
+	33%{
+		top: 0%;
+	}
+	44%{
+		top: 2%;
+		opacity:1;
+	}
+	100%{
+		left: 19%;
+		opacity:0;
+		filter:invert(30%) brightness(40%) sepia(1) hue-rotate(-30deg) saturate(400%) contrast(2);
+	}
+}	
+	
+#light4{
+	
+	position: absolute;
+    height: 0%;
+    width: 0%;
+	top: 26%;
+	left: 12%;
+	transform: rotate(65deg);
+    background-size: 100% 100%;
+    background-Repeat: no-repeat;
+    z-index: 95;
+    opacity: 1;
+	
+	animation-name: light4;
+	animation-duration: 2s;
+	animation-delay:1s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	animation-iteration-count:3;
+	-moz-animation-name:light4;
+	-moz-animation-duration:2s;	
+	-moz-animation-delay:1s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-moz-animation-iteration-count:3;
+	-webkit-animation-name: light4;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-delay:1s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: paused;
+	-webkit-animation-iteration-count:3;
+	
+}	
+	
+@keyframes light4{
+	0%{
+		height: 0%;
+		width: 0%;
+		top: 31%;
+		left: 13%;
+	}
+	1%{
+		height: 10%;
+		width: 10%;
+		top: 26%;
+		left: 12%;
+	}
+	5%{
+		height: 20%;
+		width: 100%;
+		top: 23%;
+		left: -29%;
+		filter: brightness(1.5);
+	}
+	10%{
+		height: 10%;
+		width: 10%;
+		top: 26%;
+		left: 12%;
+	}
+	11%{
+		height: 0%;
+		width: 0%;
+		top: 31%;
+		left: 13%;
+	}
+	100%{
+		height: 0%;
+		width: 0%;
+		top: 31%;
+		left: 13%;
+	}
+}
+@-moz-keyframes light4{
+	0%{
+		height: 0%;
+		width: 0%;
+		top: 31%;
+		left: 13%;
+	}
+	1%{
+		height: 10%;
+		width: 10%;
+		top: 26%;
+		left: 12%;
+	}
+	5%{
+		height: 20%;
+		width: 100%;
+		top: 23%;
+		left: -29%;
+		filter: brightness(1.5);
+	}
+	10%{
+		height: 10%;
+		width: 10%;
+		top: 26%;
+		left: 12%;
+	}
+	11%{
+		height: 0%;
+		width: 0%;
+		top: 31%;
+		left: 13%;
+	}
+	100%{
+		height: 0%;
+		width: 0%;
+		top: 31%;
+		left: 13%;
+	}
+}
+@-webkit-keyframes light4{
+	0%{
+		height: 0%;
+		width: 0%;
+		top: 31%;
+		left: 13%;
+	}
+	1%{
+		height: 10%;
+		width: 10%;
+		top: 26%;
+		left: 12%;
+	}
+	5%{
+		height: 20%;
+		width: 100%;
+		top: 23%;
+		left: -29%;
+		filter: brightness(1.5);
+	}
+	10%{
+		height: 10%;
+		width: 10%;
+		top: 26%;
+		left: 12%;
+	}
+	11%{
+		height: 0%;
+		width: 0%;
+		top: 31%;
+		left: 13%;
+	}
+	100%{
+		height: 0%;
+		width: 0%;
+		top: 31%;
+		left: 13%;
+	}
+}
+
+#fire4{
+	position: absolute;
+	height: 13%;
+    width: 10%;
+    top: 59%;
+    left: 86%;
+    background-size: 100% 100%;
+    background-Repeat: no-repeat;
+	transform: rotate(-10deg);
+    z-index: 3;
+    opacity: 0;
+	
+	animation-name: fire4;
+	animation-duration: 2s;
+	animation-delay:1.5s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	animation-iteration-count:3;
+	-moz-animation-name:fire4;
+	-moz-animation-duration:2s;	
+	-moz-animation-delay:1.5s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-moz-animation-iteration-count:3;
+	-webkit-animation-name: fire4;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-delay:1.5s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: paused;
+	-webkit-animation-iteration-count:3;
+}
+
+@keyframes fire4{
+	0%{
+		height: 13%;
+		width: 10%;
+		top: 59%;
+		left: 86%;
+		opacity: 0;
+	}
+	1%{
+		height: 13%;
+		width: 10%;
+		top: 59%;
+		left: 86%;
+		opacity: 1;
+	}
+	8%{
+		height: 23%;
+		width: 13%;
+		top: 100%;
+		left: 57%;
+		opacity: 1;
+	}
+	9%{		
+		height: 13%;
+		width: 10%;
+		top: 59%;
+		left: 86%;
+		opacity: 0;
+	}
+	100%{
+		height: 13%;
+		width: 10%;
+		top: 59%;
+		left: 86%;
+		opacity: 0;
+	}
+}
+@-moz-keyframes fire4{
+	0%{
+		height: 13%;
+		width: 10%;
+		top: 59%;
+		left: 86%;
+		opacity: 0;
+	}
+	1%{
+		height: 13%;
+		width: 10%;
+		top: 59%;
+		left: 86%;
+		opacity: 1;
+	}
+	8%{
+		height: 23%;
+		width: 13%;
+		top: 100%;
+		left: 57%;
+		opacity: 1;
+	}
+	9%{		
+		height: 13%;
+		width: 10%;
+		top: 59%;
+		left: 86%;
+		opacity: 0;
+	}
+	100%{
+		height: 13%;
+		width: 10%;
+		top: 59%;
+		left: 86%;
+		opacity: 0;
+	}
+}
+@-webkit-keyframes fire4{
+	0%{
+		height: 13%;
+		width: 10%;
+		top: 59%;
+		left: 86%;
+		opacity: 0;
+	}
+	1%{
+		height: 13%;
+		width: 10%;
+		top: 59%;
+		left: 86%;
+		opacity: 1;
+	}
+	8%{
+		height: 23%;
+		width: 13%;
+		top: 100%;
+		left: 57%;
+		opacity: 1;
+	}
+	9%{		
+		height: 13%;
+		width: 10%;
+		top: 59%;
+		left: 86%;
+		opacity: 0;
+	}
+	100%{
+		height: 13%;
+		width: 10%;
+		top: 59%;
+		left: 86%;
+		opacity: 0;
+	}
+}
+
+#attackBox4{
+
+	position: absolute;
+    height: 29%;
+    width: 0%;
+	top: 46%;
+    left: 95%;
+    z-index: 101;
+	opacity: 1;
+	
+	animation-name: attackBox4;
+	animation-duration: 0.5s;
+	animation-delay:0s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-moz-animation-name:attackBox4;
+	-moz-animation-duration:1s;	
+	-moz-animation-delay:0.5s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-webkit-animation-name: attackBox4;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-delay:0s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: paused;
+	
+ }	
+ 
+@keyframes attackBox4{
+	0%{
+		width: 0%;
+		left: 0%;
+		opacity:0;
+	 }
+	 
+	 100%{
+		width: 5%;
+	    left: 95%;
+		opacity:1;
+	 }
+}
+@-moz-keyframes attackBox4{
+	0%{
+		width: 0%;
+		left: 0%;
+		opacity:0;
+	 }
+	 
+	 100%{
+		width: 5%;
+	    left: 95%;
+		opacity:1;
+	 }
+}
+@-webkit-keyframes attackBox4{
+	0%{
+		width: 0%;
+		left: 0%;
+		opacity:0;
+	 }
+	 
+	 100%{
+		width: 5%;
+	    left: 95%;
+		opacity:1;
+	 }
+}
+	
+#shootBox4{
+	position: absolute;
+    overflow: hidden;
+    height: 0%;
+	width: 0%;
+    top: 48%;
+    left: 81%;
+    z-index: 96;
+    transform: rotate(50deg);
+	opacity:1;
+	
+	animation-name: shootBox4;
+	animation-duration: 1.5s;
+	animation-delay:0s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-moz-animation-name:shootBox4;
+	-moz-animation-duration:1.5s;	
+	-moz-animation-delay:0s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-webkit-animation-name: shootBox4;
+	-webkit-animation-duration: 1.5s;
+	-webkit-animation-delay:0s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: paused;
+}	
+
+@keyframes shootBox4{
+	0%{
+		height: 0%;
+		width: 0%;
+		opacity:0;
+		z-index: 96;
+	}
+	1%{
+		height: 65%;
+		width: 5%;
+		opacity:1;
+		z-index: 96;
+	}
+	99%{
+		z-index: 96;
+	}
+	100%{
+		height: 65%;
+		width: 5%;
+		opacity:1;
+		z-index: -30;
+	}
+}	
+@-moz-keyframes shootBox4{
+	0%{
+		height: 0%;
+		width: 0%;
+		opacity:0;
+		z-index: 96;
+	}
+	1%{
+		height: 65%;
+		width: 5%;
+		opacity:1;
+		z-index: 96;
+	}
+	99%{
+		z-index: 96;
+	}
+	100%{
+		height: 65%;
+		width: 5%;
+		opacity:1;
+		z-index: -30;
+	}
+}	
+@-webkit-keyframes shootBox4{
+	0%{
+		height: 0%;
+		width: 0%;
+		opacity:0;
+		z-index: 96;
+	}
+	1%{
+		height: 65%;
+		width: 5%;
+		opacity:1;
+		z-index: 96;
+	}
+	99%{
+		z-index: 96;
+	}
+	100%{
+		height: 65%;
+		width: 5%;
+		opacity:1;
+		z-index: -30;
+	}
+}	
+
+#shoot4{
+	position: absolute;
+    height: 35%;
+    width: 74%;
+	top: 100%;
+    left: 4%;
+    transform: rotate(-12deg);
+    background-size: 100% 100%;
+    background-Repeat: no-repeat;
+    z-index: 96;
+    opacity: 1;
+	
+	animation-name: shoot4;
+	animation-duration: 1s;
+	animation-delay:0s;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+	-moz-animation-name:shoot4;
+	-moz-animation-duration:1s;	
+	-moz-animation-delay:0s;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-play-state: paused;
+	-webkit-animation-name: shoot4;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-delay:0s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-play-state: paused;
+}
+	
+@keyframes shoot4{
+	0%{
+		top: 100%;
+	}
+	30%{
+		top: -35%;
+	}
+	100%{
+		top: -35%;
+	}
+}	
+@-moz-keyframes shoot4{
+	0%{
+		top: 100%;
+	}
+	30%{
+		top: -35%;
+	}
+	100%{
+		top: -35%;
+	}
+}	
+@-webkit-keyframes shoot4{
+	0%{
+		top: 100%;
+	}
+	30%{
+		top: -35%;
+	}
+	100%{
+		top: -35%;
+	}
+}		
