@@ -6425,8 +6425,8 @@
 	position: absolute;
     height: 0%;
     width: 0%;
-	top: 26%;
-	left: 12%;
+    top: 31%;
+    left: 6%;
 	transform: rotate(65deg);
     background-size: 100% 100%;
     background-Repeat: no-repeat;
@@ -6459,38 +6459,38 @@
 		height: 0%;
 		width: 0%;
 		top: 31%;
-		left: 13%;
+		left: 6%;
 	}
 	1%{
 		height: 10%;
 		width: 10%;
 		top: 26%;
-		left: 12%;
+		left: 2%;
 	}
 	5%{
 		height: 20%;
 		width: 100%;
-		top: 23%;
-		left: -29%;
+		top: 21%;
+		left: -42%;
 		filter: brightness(1.5);
 	}
 	10%{
 		height: 10%;
 		width: 10%;
 		top: 26%;
-		left: 12%;
+		left: 2%;
 	}
 	11%{
 		height: 0%;
 		width: 0%;
-		top: 31%;
-		left: 13%;
+		top: 26%;
+		left: 2%;
 	}
 	100%{
 		height: 0%;
 		width: 0%;
-		top: 31%;
-		left: 13%;
+		top: 26%;
+		left: 2%;
 	}
 }
 @-moz-keyframes light4{
@@ -6498,38 +6498,38 @@
 		height: 0%;
 		width: 0%;
 		top: 31%;
-		left: 13%;
+		left: 6%;
 	}
 	1%{
 		height: 10%;
 		width: 10%;
 		top: 26%;
-		left: 12%;
+		left: 2%;
 	}
 	5%{
 		height: 20%;
 		width: 100%;
-		top: 23%;
-		left: -29%;
+		top: 21%;
+		left: -42%;
 		filter: brightness(1.5);
 	}
 	10%{
 		height: 10%;
 		width: 10%;
 		top: 26%;
-		left: 12%;
+		left: 2%;
 	}
 	11%{
 		height: 0%;
 		width: 0%;
-		top: 31%;
-		left: 13%;
+		top: 26%;
+		left: 2%;
 	}
 	100%{
 		height: 0%;
 		width: 0%;
-		top: 31%;
-		left: 13%;
+		top: 26%;
+		left: 2%;
 	}
 }
 @-webkit-keyframes light4{
@@ -6537,38 +6537,38 @@
 		height: 0%;
 		width: 0%;
 		top: 31%;
-		left: 13%;
+		left: 6%;
 	}
 	1%{
 		height: 10%;
 		width: 10%;
 		top: 26%;
-		left: 12%;
+		left: 2%;
 	}
 	5%{
 		height: 20%;
 		width: 100%;
-		top: 23%;
-		left: -29%;
+		top: 21%;
+		left: -42%;
 		filter: brightness(1.5);
 	}
 	10%{
 		height: 10%;
 		width: 10%;
 		top: 26%;
-		left: 12%;
+		left: 2%;
 	}
 	11%{
 		height: 0%;
 		width: 0%;
-		top: 31%;
-		left: 13%;
+		top: 26%;
+		left: 2%;
 	}
 	100%{
 		height: 0%;
 		width: 0%;
-		top: 31%;
-		left: 13%;
+		top: 26%;
+		left: 2%;
 	}
 }
 
