@@ -104,7 +104,6 @@
 	var attackBox3 = document.getElementById("attackBox3");
 	var shootBox3 = document.getElementById("shootBox3");
 	var shoot3 = document.getElementById("shoot3");
-	var reward3 =  document.getElementById("reward3");
 	
 	var hiddenBox4 = document.getElementById("hiddenBox4");
 	var apes2 = document.getElementById("apes2");
@@ -113,6 +112,7 @@
 	var attackBox4 = document.getElementById("attackBox4");
 	var shootBox4 = document.getElementById("shootBox4");
 	var shoot4 = document.getElementById("shoot4");
+	var reward3 =  document.getElementById("reward3");
 	
 	var loseLayer =  document.getElementById("loseLayer");
 	var loseLayerBG =  document.getElementById("loseLayerBG");
@@ -641,44 +641,48 @@
 	
 	function getHurt3(){
 		
+			// gameContainerBg.style.webkitAnimationName = "getHurt";
+			// gameContainerBg.style.mozAnimationName = "getHurt";
+			// gameContainerBg.style.animationName = "getHurt";
+			
+			// gameContainerBg.style.height ="100%";
+			// gameContainerBg.style.width ="103%";
+			// gameContainerBg.style.margin = "0% 0%";
+			// gameContainerBg.style.filter ="brightness(100%)";
+			
+			// gameContainerBg.style.webkitAnimationDuration = "2s";
+			// gameContainerBg.style.mozAnimationDuration = "2s";
+			// gameContainerBg.style.animationDuration= "2s";
+			
+			// gameContainerBg.style.webkitAnimationDelay = "2s";
+			// gameContainerBg.style.mozAnimationDelay =  "2s";
+			// gameContainerBg.style.animationDelay = "2s";
+			
 			redLayer.style.display = "block";
 			
-			gameContainerBg.style.height ="100%";
-			gameContainerBg.style.width ="103%";
-			gameContainerBg.style.margin = "0% 0%";
-			gameContainerBg.style.filter ="brightness(100%)";
-			
-			gameContainerBg.style.webkitAnimationDuration = "2.5s";
-			gameContainerBg.style.mozAnimationDuration = "2.5s";
-			gameContainerBg.style.animationDuration= "2.5s";
-			
-			gameContainerBg.style.webkitAnimationDelay = "3.2s";
-			gameContainerBg.style.mozAnimationDelay =  "3.2s";
-			gameContainerBg.style.animationDelay = "3.2s";
-			
-			innerContainer.style.webkitAnimationName = "innerContainer2";
-			innerContainer.style.mozAnimationName = "innerContainer2";
-			innerContainer.style.animationName = "innerContainer2";
+			innerContainer.style.webkitAnimationName = "innerContainer";
+			innerContainer.style.mozAnimationName = "innerContainer";
+			innerContainer.style.animationName = "innerContainer";
 			
 			innerContainer.style.webkitAnimationDuration = "2s";
 			innerContainer.style.mozAnimationDuration = "2s";
 			innerContainer.style.animationDuration= "2s";
 			
-			innerContainer.style.webkitAnimationDelay = "3.2s";
-			innerContainer.style.mozAnimationDelay = "3.2s";
-			innerContainer.style.animationDelay = "3.2s";
+			innerContainer.style.webkitAnimationDelay = "1.7s";
+			innerContainer.style.mozAnimationDelay = "1.7s";
+			innerContainer.style.animationDelay = "1.7s";
 			
-			redLayer.style.webkitAnimationName = "redLayer2";
-			redLayer.style.mozAnimationName = "redLayer2";
-			redLayer.style.animationName = "redLayer2";
+			redLayer.style.webkitAnimationName = "redLayer";
+			redLayer.style.mozAnimationName = "redLayer";
+			redLayer.style.animationName = "redLayer";
 			
 			redLayer.style.webkitAnimationDuration = "2s";
 			redLayer.style.mozAnimationDuration = "2s";
 			redLayer.style.animationDuration= "2s";
 			
-			redLayer.style.webkitAnimationDelay = "3.2s";
-			redLayer.style.mozAnimationDelay = "3.2s";
-			redLayer.style.animationDelay = "3.2s";
+			redLayer.style.webkitAnimationDelay = "1.7s";
+			redLayer.style.mozAnimationDelay = "1.7s";
+			redLayer.style.animationDelay = "1.7s";
 			
 	}
 	
@@ -843,7 +847,7 @@
 			console.log(live);
 		}
 				
-		if (365 === countTime && live === 0){
+		if (365 === countTime){
 
 			gameContainerBg.style.animationIterationCount = "1";
 			gameContainerBg.style.mozAnimationIterationCount = "1";
@@ -900,6 +904,26 @@
 			attackBox2.style.zIndex = "-30";
 			attackBox3.style.zIndex = "-30";
 			attackBox4.style.zIndex = "-30";
+		}
+		
+		if(live === 0){
+			
+			attackBox4.style.zIndex = "-30";
+			
+			fire4.style.zIndex = "-30";
+			fire4.style.display = "none";
+			
+			fire4.style.AnimationPlayState="paused";
+			fire4.style.MozAnimationPlayState="paused";
+			fire4.style.WebkitAnimationPlayState="paused";
+			
+			light4.style.zIndex = "-30";
+			light4.style.display = "none";
+			
+			light4.style.AnimationPlayState="paused";
+			light4.style.MozAnimationPlayState="paused";
+			light4.style.WebkitAnimationPlayState="paused";
+			
 		}
 		
 	}	
@@ -1047,7 +1071,7 @@
 			
 			getHurt2();	
 			if (live === 3){
-					countTime = 0;
+				countTime = 0;
 				}
 			if (live === 2){
 				countTime = 150;
@@ -1146,6 +1170,7 @@
 		}
 		if (data === "attackBox4"){
 			
+			
 			cancelAnimationFrame(lifeDetect2);
 			
 			sparkBox.style.display = "block";
@@ -1192,7 +1217,12 @@
 			shoot4.style.AnimationPlayState="running";
 			shoot4.style.MozAnimationPlayState="running";
 			shoot4.style.WebkitAnimationPlayState="running";
+
+			reward3.style.display="block";
 			
+			reward3.style.AnimationPlayState="running";
+			reward3.style.MozAnimationPlayState="running";
+			reward3.style.WebkitAnimationPlayState="running";
 		}
 	}
 	
@@ -1422,19 +1452,19 @@
 			attackBox4.style.MozAnimationPlayState="running";
 			attackBox4.style.WebkitAnimationPlayState="running";
 			
-			getHurt3();
+			getHurt2();
 			
 			if (live === 3){
 				countTime = 0;
-			}
+				}
 			if (live === 2){
-				countTime = 116;
+				countTime = 150;
 			}
 			if (live === 1){
-				countTime = 232;
+				countTime = 324;
 			}
 			
-			lifeDetect2 = requestAnimationFrame(lifeCount2);
+			lifeDetect = requestAnimationFrame(lifeCount);
 		}
 		if (data === "attackBox4"){
 			
@@ -1484,7 +1514,12 @@
 			shoot4.style.AnimationPlayState="running";
 			shoot4.style.MozAnimationPlayState="running";
 			shoot4.style.WebkitAnimationPlayState="running";
+
+			reward3.style.display="block";
 			
+			reward3.style.AnimationPlayState="running";
+			reward3.style.MozAnimationPlayState="running";
+			reward3.style.WebkitAnimationPlayState="running";
 		}
 	}
 
