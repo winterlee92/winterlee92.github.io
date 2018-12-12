@@ -1087,6 +1087,9 @@
 			
 			cancelAnimationFrame(lifeDetect);
 			
+			attackBox3.style.display = "none";
+			attackBox3.style.zIndex = "-30";
+			
 			sparkBox.style.display = "block";
 			sparkBox.style.left = "-6%";
 			sparkBox.style.top = "1%";
@@ -1369,7 +1372,7 @@
 			
 			getHurt2();	
 			if (live === 3){
-					countTime = 0;
+				countTime = 0;
 				}
 			if (live === 2){
 				countTime = 150;
@@ -1384,6 +1387,9 @@
 		if (data === "attackBox3"){
 			
 			cancelAnimationFrame(lifeDetect);
+			
+			attackBox3.style.display = "none";
+			attackBox3.style.zIndex = "-30";
 			
 			sparkBox.style.display = "block";
 			sparkBox.style.left = "-6%";
@@ -1452,21 +1458,22 @@
 			attackBox4.style.MozAnimationPlayState="running";
 			attackBox4.style.WebkitAnimationPlayState="running";
 			
-			getHurt2();
+			getHurt3();
 			
 			if (live === 3){
 				countTime = 0;
-				}
+			}
 			if (live === 2){
-				countTime = 150;
+				countTime = 116;
 			}
 			if (live === 1){
-				countTime = 324;
+				countTime = 232;
 			}
 			
-			lifeDetect = requestAnimationFrame(lifeCount);
+			lifeDetect2 = requestAnimationFrame(lifeCount2);
 		}
 		if (data === "attackBox4"){
+			
 			
 			cancelAnimationFrame(lifeDetect2);
 			

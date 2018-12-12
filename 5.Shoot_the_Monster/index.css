@@ -64,7 +64,7 @@
 	#innerContainer{
 		position: absolute;
 		height: 100%;
-		width: 100%;
+		width: 98%;
 		
 		animation-name: innerContainer;
 		animation-duration: 3s;
@@ -6207,7 +6207,7 @@
 	height: 44%;
     width: 0%;
     top: 37%;
-    left: 100%;
+    left: 105%;
     z-index: -1;
 	opacity:1;
 	
@@ -6229,39 +6229,39 @@
 	
  }	
  
-  @keyframes hiddenBox4{
+ @keyframes hiddenBox4{
 	0%{
 		width: 0%;
-		left: 100%;
+		left: 102%;
 		opacity:0;
 	 }
 	 100%{
-		width: 7%;
-		left: 93%;
+		width: 15%;
+		left: 94%;
 		opacity: 1;
 	 }
  }
  @-moz-keyframes hiddenBox4{
 	0%{
 		width: 0%;
-		left: 100%;
+		left: 102%;
 		opacity:0;
 	 }
 	 100%{
-		width: 7%;
-		left: 93%;
+		width: 15%;
+		left: 94%;
 		opacity: 1;
 	 }
  }
  @-webkit-keyframes hiddenBox4{
 	0%{
 		width: 0%;
-		left: 100%;
+		left: 102%;
 		opacity:0;
 	 }
 	 100%{
-		width: 7%;
-		left: 93%;
+		width: 15%;
+		left: 94%;
 		opacity: 1;
 	 }
  }
@@ -6270,9 +6270,9 @@
 	 
 	position: absolute;
     height: 100%;
-    width: 173%;
+    width: 85%;
     top: 0%;
-    left: 98%;
+    left: 58%;
     background-size: 100% 100%;
     background-Repeat: no-repeat;
     opacity: 1;
@@ -6297,7 +6297,7 @@
 	
 @keyframes apes2{
 	0%{
-		left: 98%;
+		left: 58%;
 		filter: brightness(0);
 	 }
 	 100%{
@@ -6307,7 +6307,7 @@
 }
 @-moz-keyframes apes2{
 	0%{
-		left: 98%;
+		left: 58%;
 		filter: brightness(0);
 	 }
 	 100%{
@@ -6317,7 +6317,7 @@
 }
 @-webkit-keyframes apes2{
 	0%{
-		left: 98%;
+		left: 58%;
 		filter: brightness(0);
 	 }
 	 100%{
@@ -6722,7 +6722,7 @@
     height: 29%;
     width: 0%;
 	top: 46%;
-    left: 95%;
+    left: 97%;
     z-index: 101;
 	opacity: 1;
 	
@@ -6752,7 +6752,7 @@
 	 }
 	 
 	 100%{
-		width: 5%;
+		width: 8%;
 	    left: 95%;
 		opacity:1;
 	 }
@@ -6765,7 +6765,7 @@
 	 }
 	 
 	 100%{
-		width: 5%;
+		width: 8%;
 	    left: 95%;
 		opacity:1;
 	 }
@@ -6778,7 +6778,7 @@
 	 }
 	 
 	 100%{
-		width: 5%;
+		width: 8%;
 	    left: 95%;
 		opacity:1;
 	 }
