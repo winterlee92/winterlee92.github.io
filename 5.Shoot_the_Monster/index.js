@@ -1144,7 +1144,6 @@
 			
 			lifeDetect2 = requestAnimationFrame(lifeCount2);
 		}
-		
 		if (data === "attackBox4"){
 			
 			cancelAnimationFrame(lifeDetect2);
@@ -1322,13 +1321,13 @@
 			hiddenBox3.style.MozAnimationPlayState="running";
 			hiddenBox3.style.WebkitAnimationPlayState="running";
 			
-			attackBox3.style.AnimationPlayState="running";
-			attackBox3.style.MozAnimationPlayState="running";
-			attackBox3.style.WebkitAnimationPlayState="running";
-			
 			orc2.style.AnimationPlayState="running";
 			orc2.style.MozAnimationPlayState="running";
 			orc2.style.WebkitAnimationPlayState="running";
+			
+			attackBox3.style.AnimationPlayState="running";
+			attackBox3.style.MozAnimationPlayState="running";
+			attackBox3.style.WebkitAnimationPlayState="running";
 			
 			light3.style.AnimationPlayState="running";
 			light3.style.MozAnimationPlayState="running";
@@ -1337,19 +1336,18 @@
 			fire3.style.AnimationPlayState="running";
 			fire3.style.MozAnimationPlayState="running";
 			fire3.style.WebkitAnimationPlayState="running";
-			console.log(live);
-			console.log(countTime);
 			
 			getHurt2();	
 			if (live === 3){
-				countTime = 0;
-			}
+					countTime = 0;
+				}
 			if (live === 2){
 				countTime = 150;
 			}
 			if (live === 1){
 				countTime = 324;
 			}
+			
 			lifeDetect = requestAnimationFrame(lifeCount);
 			
 		}
@@ -1357,14 +1355,19 @@
 			
 			cancelAnimationFrame(lifeDetect);
 			
-			console.log(live);
-			console.log(countTime);
-			
 			sparkBox.style.display = "block";
 			sparkBox.style.left = "-6%";
 			sparkBox.style.top = "1%";
 			
 			sparkAnimation();
+			
+			shootBox3.style.AnimationPlayState="running";
+			shootBox3.style.MozAnimationPlayState="running";
+			shootBox3.style.WebkitAnimationPlayState="running";
+			
+			shoot3.style.AnimationPlayState="running";
+			shoot3.style.MozAnimationPlayState="running";
+			shoot3.style.WebkitAnimationPlayState="running";
 			
 			count3[0].style.WebkitAnimationName = "removeIcon";
 			count3[0].style.MozAnimationName = "removeIcon";
@@ -1398,6 +1401,90 @@
 			
 			countTime = 0;
 			stopHurt();
+			
+			hiddenBox4.style.AnimationPlayState="running";
+			hiddenBox4.style.MozAnimationPlayState="running";
+			hiddenBox4.style.WebkitAnimationPlayState="running";
+			
+			apes2.style.AnimationPlayState="running";
+			apes2.style.MozAnimationPlayState="running";
+			apes2.style.WebkitAnimationPlayState="running";
+			
+			light4.style.AnimationPlayState="running";
+			light4.style.MozAnimationPlayState="running";
+			light4.style.WebkitAnimationPlayState="running";
+			
+			fire4.style.AnimationPlayState="running";
+			fire4.style.MozAnimationPlayState="running";
+			fire4.style.WebkitAnimationPlayState="running";
+			
+			attackBox4.style.AnimationPlayState="running";
+			attackBox4.style.MozAnimationPlayState="running";
+			attackBox4.style.WebkitAnimationPlayState="running";
+			
+			getHurt3();
+			
+			if (live === 3){
+				countTime = 0;
+			}
+			if (live === 2){
+				countTime = 116;
+			}
+			if (live === 1){
+				countTime = 232;
+			}
+			
+			lifeDetect2 = requestAnimationFrame(lifeCount2);
+		}
+		if (data === "attackBox4"){
+			
+			cancelAnimationFrame(lifeDetect2);
+			
+			sparkBox.style.display = "block";
+			sparkBox.style.left = "84%";
+			sparkBox.style.top = "39%";
+			
+			sparkAnimation();
+			
+			countTime = 0;
+			stopHurt();
+			
+			attackBox4.style.zIndex = "-30";
+			
+			fire4.style.zIndex = "-30";
+			fire4.style.display = "none";
+			
+			fire4.style.AnimationPlayState="paused";
+			fire4.style.MozAnimationPlayState="paused";
+			fire4.style.WebkitAnimationPlayState="paused";
+			
+			light4.style.zIndex = "-30";
+			light4.style.display = "none";
+			
+			light4.style.AnimationPlayState="paused";
+			light4.style.MozAnimationPlayState="paused";
+			light4.style.WebkitAnimationPlayState="paused";
+			
+			apes2.style.WebkitAnimationName = "killApes2";
+			apes2.style.MozAnimationName = "killApes2";
+			apes2.style.animationName = "killApes2";
+			
+			count2[0].style.WebkitAnimationName = "removeIcon";
+			count2[0].style.MozAnimationName = "removeIcon";
+			count2[0].style.animationName = "removeIcon";
+			
+			count2[0].style.WebkitanimationDelay = "0s";
+			count2[0].style.MozanimationDelay = "0s";
+			count2[0].style.animationDelay = "0s";
+			
+			shootBox4.style.AnimationPlayState="running";
+			shootBox4.style.MozAnimationPlayState="running";
+			shootBox4.style.WebkitAnimationPlayState="running";
+			
+			shoot4.style.AnimationPlayState="running";
+			shoot4.style.MozAnimationPlayState="running";
+			shoot4.style.WebkitAnimationPlayState="running";
+			
 		}
 	}
 
