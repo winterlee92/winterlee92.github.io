@@ -2842,7 +2842,7 @@ window.requestAnimFrame = (function(){
 			swordBox.style.setProperty('top', y2+ 'px');
 			sword.style.setProperty('top', (swordStyle-y2) + 'px');
 
-			life = life - 5;
+			life -= 10;
 			bar.style.width = life + '%';
 			demonGetHurt.style.animation = "demonGetHurt 0.5s linear 0s 1";
 			demonGetHurt.style.webkitAnimation = "demonGetHurt 0.5s linear 0s 1";
@@ -3330,8 +3330,6 @@ window.requestAnimFrame = (function(){
 	 window.addEventListener("orientationchange", function() {location.reload();}, false);
      document.getElementById("x").innerHTML = "";
 	 
-	 
-
 </script>
 
 <noscript> 
