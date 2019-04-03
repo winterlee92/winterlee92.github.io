@@ -57,6 +57,22 @@ window.requestAnimFrame = (function(){
 		
 	}
 		
+
+	function showCoords(event) {
+		event.preventDefault();
+	  var x = event.clientX;
+	  var y = event.clientY;
+	  var coords = "X coords: " + x + ", Y coords: " + y;
+	   console.log(coords);
+	}	
+	
+	function showCoordinates(event) {
+	event.preventDefault();
+	  var x = event.touches[0].clientX;
+	  var y = event.touches[0].clientY;
+	  console.log(x,y);
+	}
+		
 	function sizeData(w,h){
 	
 		var newWidth = w;
@@ -71,10 +87,10 @@ window.requestAnimFrame = (function(){
 		else if ((newWidth === 1536 && newHeight === 2048)
 				||(newWidth === 2732 && newHeight === 2048 )||(newWidth === 2048 && newHeight === 1536)){widthToHeight = 4 / 3;}
 		// Chromebook Pixel,Iphone,Iphone 4, Surface Book
-		else if ((newWidth === 320 && newHeight === 480) || (newWidth === 640 && newHeight=== 960)
-				||(newWidth === 480 && newHeight === 320) || (newWidth === 960 && newHeight=== 640)
+		else if ((newWidth === 640 && newHeight=== 960) || (newWidth === 960 && newHeight=== 640)
 				||(newWidth === 2560 && newHeight=== 1700) ||(newWidth === 3000 && newHeight=== 2000)
 				||(newWidth === 2160 && newHeight=== 1440) ||(newWidth === 2736 && newHeight=== 1824)){widthToHeight = 3 / 2;}
+	else if ((newWidth === 480 && newHeight === 320) || (newWidth === 320 && newHeight === 480))	{widthToHeight = 2 / 3;}	
 		// Chromobox 30, Dell Venue 8,MacBook 12, MAcbook Air 13,Macbook Pro 13, Macbook Pro 15
 		// Nexus 15,Nexus 7, Samsung Galaxy Tab 10,Sony Xperia Z3/Z4 Tablet
 		else if ((newWidth === 800 && newHeight===480) || (newWidth === 1280 && newHeight === 800)
@@ -150,6 +166,6 @@ window.requestAnimFrame = (function(){
 	}
 	
 	 window.addEventListener("orientationchange", function() {location.reload();}, false);
-     document.getElementById("x").innerHTML = "";
+     document.getElementById("xJs").innerHTML = "";
 	 
 	 

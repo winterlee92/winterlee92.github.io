@@ -54,3 +54,17 @@ body{
 		 background-repeat:no-repeat;
 		 background-Size : 100% 100%; 
 	}
+	
+	#abc{ 
+		position:absolute;
+		height: 1%;
+		width: 1%;
+		margin-top: 50%;
+		margin-left: 50%;
+		border:1px solid red; 
+	}
+	#abcBox{
+		position:absolute;
+		height:100%;
+		width:100%;
+	}
