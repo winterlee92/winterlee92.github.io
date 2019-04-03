@@ -9,10 +9,6 @@ body {
   font-family: Helvetica, Verdana, Arial, sans-serif;
 }
 
-canvas{
-	overflow:hidden;
-}
-
 body, canvas, div {
   outline: none;
   -moz-user-select: none;
