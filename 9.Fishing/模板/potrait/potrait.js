@@ -72,7 +72,7 @@ window.requestAnimFrame = (function(){
 						]
 		
 		innerContainerA.style.backgroundImage = imageArray[0];
-		sakura.style.backgroundImage = imageArray[1];
+		document.getElementById("sakura").style.backgroundImage = imageArray[1];
 		lanternLeft.style.backgroundImage = imageArray[2];
 		lanternRight.style.backgroundImage = imageArray[3];
 		doorLeft.style.backgroundImage = imageArray[4];
@@ -80,185 +80,99 @@ window.requestAnimFrame = (function(){
 		lowerBg00.style.backgroundImage = imageArray[6];
 		guide.style.backgroundImage = imageArray[7];
 		
-		var startButtonArray = [
-									"startButton01.png",	
-									"startButton02.png",	
-									"startButton03.png",	
-									"startButton04.png",	
-									"startButton05.png",	
-									"startButton06.png",	
-									"startButton07.png",	
-									"startButton08.png",	
-									"startButton09.png",	
-									"startButton010.png",	
-									"startButton011.png",	
-									"startButton012.png",	
-									"startButton013.png",	
-									"startButton014.png",	
-									"startButton015.png",	
-									"startButton016.png",	
-									"startButton017.png",	
-									"startButton018.png",	
-									"startButton019.png",		
-									"startButton020.png",	
-									"startButton021.png",	
-									"startButton022.png",	
-									"startButton023.png",	
-									"startButton024.png",	
-									"startButton025.png",	
-									"startButton026.png",	
-									"startButton027.png",	
-									"startButton028.png",	
-									"startButton029.png",	
-									"startButton030.png",	
-									"startButton031.png",	
-									"startButton032.png",	
-									"startButton033.png",	
-									"startButton034.png",	
-									"startButton035.png"
+		var butterflyArray = [
+								"butterfly01.png",
+								"butterfly03.png",	
+								"butterfly05.png",	
+								"butterfly07.png",	
+								"butterfly09.png",		
+								"butterfly011.png",	
+								"butterfly013.png",	
+								"butterfly015.png",	
+								"butterfly017.png",		
+								"butterfly019.png",			
+								"butterfly021.png",	
+								"butterfly024.png"
 								]
-			var startButtonArray2 = [
-								"startButton058.png",	
-								"startButton059.png",	
-								"startButton060.png",	
-								"startButton061.png",	
-								"startButton062.png",	
-								"startButton063.png",	
-								"startButton064.png",	
-								"startButton065.png",	
-								"startButton066.png",	
-								"startButton067.png",	
-								"startButton068.png",	
-								"startButton069.png",	
-								"startButton070.png",	
-								"startButton071.png",	
-								"startButton072.png"
-							]						
 		
-		// startButton.style.backgroundImage = startButtonArray[0];
-		
-		for(i=0; i < startButtonArray.length; i++)
-		{	 
-			if(i <startButtonArray.length)
+		for(i=0; i < butterflyArray.length; i++){	 
+			if(i <butterflyArray.length)
 			{
-				var startButtonImage = document.createElement("IMG");
-				startButtonImage.setAttribute("src", startButtonArray[i]);	
-				startButtonImage.setAttribute("class","startButton");
-				startButton.appendChild(startButtonImage);
-			}
-		}
-		
-		for(i=0; i < startButtonArray2.length; i++)
-		{	 
-			if(i <startButtonArray2.length)
-			{
-				var startButtonImage = document.createElement("IMG");
-				startButtonImage.setAttribute("src", startButtonArray2[i]);	
-				startButtonImage.setAttribute("class","startButton2");
-				startButton2.appendChild(startButtonImage);
-			}
-		}
-		
-		startButtonAnimation();
-		var renderStartButton;
-		function startButtonAnimation(){
-			var myIndex = 0;			
-			var startBtn = document.getElementsByClassName("startButton");		
-			loopstartButton();
-			function loopstartButton(){
-				var i;
-				for (i=0;i<startBtn.length;i++)
-				{
-					startBtn[i].style.display="none";
-				}
-				myIndex++;
-				if (myIndex > startBtn.length){}
-				startBtn[myIndex-1].style.display = "block";
-				renderStartButton = setTimeout(loopstartButton,50);			
-				 
-				if (myIndex === 34){
-					clearTimeout(renderStartButton);
-				}	
-			}
-		} 
-		
-		startButton.addEventListener("click", function(){
-			startButton.style.display ="none";
-			startButtonClickAnimation();
-			clearTimeout(renderStartButton);
-			guide.style.animation = " guide3 1s forwards 1"
-			guide.style.webkitAnimation = " guide3 1s forwards 1 "
-			doorLeft.style.animationPlayState = "running";
-			doorLeft.style.webkitAnimationPlayState = "running";
-			doorRight.style.animationPlayState = "running";
-			doorRight.style.webkitAnimationPlayState = "running";
-		});
+				var butterflyLeftImage = document.createElement("IMG");
+				butterflyLeftImage.setAttribute("src", butterflyArray[i]);	
+				butterflyLeftImage.setAttribute("class","butterflyLeft");
+				butterflyLeft.appendChild(butterflyLeftImage);
 				
-		var renderstartButtonClick;
-		function startButtonClickAnimation(){
+				var butterflyRightImage = document.createElement("IMG");
+				butterflyRightImage.setAttribute("src", butterflyArray[i]);	
+				butterflyRightImage.setAttribute("class","butterflyRight");
+				butterflyRight.appendChild(butterflyRightImage);
+			}
+		}
+		
+		butterflyLeftAnimation();
+		butterflyRightAnimation();
+		
+		var renderButterflyLeft;
+		function butterflyLeftAnimation(){
 			var myIndex = 0;			
-			var startBtn2 = document.getElementsByClassName("startButton2");		
-			loopstartButtonClick();
-			function loopstartButtonClick(){
+			var butterflyLeft = document.getElementsByClassName("butterflyLeft");		
+			loopButterflyLeft();
+			function loopButterflyLeft(){
 				var i;
-				for (i=0;i<startBtn2.length;i++)
+				for (i=0;i<butterflyLeft.length;i++)
 				{
-					startBtn2[i].style.display="none";
+					butterflyLeft[i].style.display="none";
 				}
 				myIndex++;
-				if (myIndex > startBtn2.length){}
-				startBtn2[myIndex-1].style.display = "block";
-				console.log(myIndex);
-				renderStartButtonClick = setTimeout(loopstartButtonClick,50);			
+				if (myIndex > butterflyLeft.length){}
+				butterflyLeft[myIndex-1].style.display = "block";
+				renderButterflyLeft = setTimeout(loopButterflyLeft,100);			
 				 
-				if (myIndex === 14){
-					clearTimeout(renderstartButtonClick);
-					startButton2.style.display = "none";
+				if (myIndex === 12){
+					myIndex=0;
 				}	
 			}
 		} 
 		
-		for(i=0; i < startButtonArray.length; i++)
-		{	 
-			if(i <startButtonArray.length)
-			{
-				var startButtonImage = document.createElement("IMG");
-				startButtonImage.setAttribute("src", startButtonArray[i]);	
-				startButtonImage.setAttribute("class","startButton");
-				startButton.appendChild(startButtonImage);
+		var renderButterflyRight;
+		function butterflyRightAnimation(){
+			var myIndex = 0;			
+			var butterflyRight = document.getElementsByClassName("butterflyRight");		
+			loopButterflyRight();
+			function loopButterflyRight(){
+				var i;
+				for (i=0;i<butterflyRight.length;i++)
+				{
+					butterflyRight[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > butterflyRight.length){}
+				butterflyRight[myIndex-1].style.display = "block";
+				renderButterflyRight = setTimeout(loopButterflyRight,100);			
+				 
+				if (myIndex === 12){
+					myIndex=0;
+				}	
 			}
-		}
+		} 
 		
 		var lowerBackground = [
 								'lowerBg01.jpg',
-								'lowerBg03.jpg',
 								'lowerBg05.jpg',
-								'lowerBg07.jpg',
 								'lowerBg09.jpg',
-								'lowerBg011.jpg',
 								'lowerBg013.jpg',
-								'lowerBg015.jpg',
 								'lowerBg017.jpg',
-								'lowerBg019.jpg',
 								'lowerBg021.jpg',
-								'lowerBg023.jpg',
 								'lowerBg025.jpg',
-								'lowerBg027.jpg',
 								'lowerBg029.jpg',
-								'lowerBg031.jpg',
 								'lowerBg033.jpg',
-								'lowerBg035.jpg',
 								'lowerBg037.jpg',
-								'lowerBg039.jpg',
 								'lowerBg041.jpg',
-								'lowerBg043.jpg',
-								'lowerBg045.jpg',
 								'lowerBg047.jpg'							
-								]
-								
-			
-		for(i=0; i < lowerBackground.length; i++)
-		{	 
+							]
+							
+		for(i=0; i < lowerBackground.length; i++){	 
 			if(i <lowerBackground.length)
 			{
 				var lowerBgImage = document.createElement("IMG");
@@ -283,13 +197,176 @@ window.requestAnimFrame = (function(){
 				myIndex++;
 				if (myIndex > lowerBg.length){}
 				lowerBg[myIndex-1].style.display = "block";
-				renderLowerBackground = setTimeout(loopLowerBackground,120);			
+				renderLowerBackground = setTimeout(loopLowerBackground,100);			
 				 
-				if (myIndex === 24){
+				if (myIndex === 12){
 					myIndex = 0;			
 				}	
 			}
-		} 	
+		}
+
+		var startButtonArray = [
+							"startButton01.png",	
+							"startButton03.png",	
+							"startButton05.png",	
+							"startButton07.png",	
+							"startButton09.png",		
+							"startButton011.png",		
+							"startButton013.png",		
+							"startButton015.png",		
+							"startButton017.png",		
+							"startButton019.png",		
+							"startButton021.png",		
+							"startButton023.png",		
+							"startButton025.png",		
+							"startButton027.png",		
+							"startButton029.png",		
+							"startButton031.png",		
+							"startButton033.png",		
+							"startButton035.png"
+						]
+		var startButtonArray2 = [
+								"startButton058.png",		
+								"startButton060.png",		
+								"startButton062.png",		
+								"startButton064.png",		
+								"startButton066.png",		
+								"startButton068.png",		
+								"startButton070.png",		
+								"startButton072.png"
+							]						
+	
+		for(i=0; i < startButtonArray.length; i++){	 
+			if(i <startButtonArray.length)
+			{
+				var startButtonImage = document.createElement("IMG");
+				startButtonImage.setAttribute("src", startButtonArray[i]);	
+				startButtonImage.setAttribute("class","startButton");
+				startButton.appendChild(startButtonImage);
+			}
+		}
+		
+		for(i=0; i < startButtonArray2.length; i++){	 
+			if(i <startButtonArray2.length){
+				var startButtonImage = document.createElement("IMG");
+				startButtonImage.setAttribute("src", startButtonArray2[i]);	
+				startButtonImage.setAttribute("class","startButton2");
+				startButton2.appendChild(startButtonImage);
+			}
+		}
+		
+		startButtonAnimation();
+		var renderStartButton;
+		function startButtonAnimation(){
+			var myIndex = 0;			
+			var startBtn = document.getElementsByClassName("startButton");		
+			loopstartButton();
+			function loopstartButton(){
+				var i;
+				for (i=0;i<startBtn.length;i++)
+				{
+					startBtn[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > startBtn.length){}
+				startBtn[myIndex-1].style.display = "block";
+				renderStartButton = setTimeout(loopstartButton,100);			
+				 
+				if (myIndex === 18){
+					clearTimeout(renderStartButton);
+				}	
+			}
+		} 
+		
+		var renderstartButtonClick;
+		function startButtonClickAnimation(){
+			var myIndex = 0;			
+			var startBtn2 = document.getElementsByClassName("startButton2");		
+			loopstartButtonClick();
+			function loopstartButtonClick(){
+				var i;
+				for (i=0;i<startBtn2.length;i++)
+				{
+					startBtn2[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > startBtn2.length){}
+				startBtn2[myIndex-1].style.display = "block";
+				renderstartButtonClick = setTimeout(loopstartButtonClick,70);			
+				 
+				if (myIndex === 7){
+					startBtn2[myIndex-1].style.display = "none";
+					clearTimeout(renderstartButtonClick);
+				}	
+			}
+		} 
+		
+		for(i=0; i < startButtonArray.length; i++){	 
+			if(i <startButtonArray.length)
+			{
+				var startButtonImage = document.createElement("IMG");
+				startButtonImage.setAttribute("src", startButtonArray[i]);	
+				startButtonImage.setAttribute("class","startButton");
+				startButton.appendChild(startButtonImage);
+			}
+		}
+		
+		var starEffectArray = [
+						'starEffect01.png',
+						'starEffect02.png',
+						'starEffect03.png',
+						'starEffect04.png',	
+						'starEffect05.png'						
+					]
+					
+		for(i=0; i < starEffectArray.length; i++){	 
+			if(i <starEffectArray.length){
+				var starEffectImage = document.createElement("IMG");
+				starEffectImage.setAttribute("src", starEffectArray[i]);	
+				starEffectImage.setAttribute("class","starEffect");
+				starEffect.appendChild(starEffectImage);
+			}
+		}
+		
+		var renderStarEffect;
+		function starEffectAnimation(){
+			var myIndex = 0;			
+			var starEffect = document.getElementsByClassName("starEffect");		
+			loopStarEffect();
+			function loopStarEffect(){
+				var i;
+				for (i=0;i<starEffect.length;i++)
+				{
+					starEffect[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > starEffect.length){}
+				starEffect[myIndex-1].style.display = "block";
+				renderStarEffect = setTimeout(loopStarEffect,80);			
+				 
+				if (myIndex === 4){
+					starEffect[myIndex-1].style.display ="none";
+					clearTimeout(renderStarEffect);
+				}	
+			}
+		} 
+		
+		startButton.addEventListener("click", function(){
+			startButton.style.display ="none";
+			startButtonClickAnimation();
+			clearTimeout(renderStartButton);
+			guide.style.animation = " guide3 1s forwards 1"
+			guide.style.webkitAnimation = " guide3 1s forwards 1 "
+			doorLeft.style.animationPlayState = "running";
+			doorLeft.style.webkitAnimationPlayState = "running";
+			doorRight.style.animationPlayState = "running";
+			doorRight.style.webkitAnimationPlayState = "running";
+			butterflyRight.style.animationPlayState = "running";
+			butterflyRight.style.webkitAnimationPlayState = "running";
+			butterflyLeft.style.animationPlayState = "running";
+			butterflyLeft.style.webkitAnimationPlayState = "running";
+			starEffectAnimation();
+		});
 	}		
 	
 	function sizeData(w,h){

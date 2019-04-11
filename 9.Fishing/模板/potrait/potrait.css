@@ -300,3 +300,112 @@ body{
 				background-Size : 100% 100%; 
 				display:none;
 			}
+			#butterflyLeft{
+				position: absolute;
+				height: 25%;
+				width: 50%;
+				top: 7%;
+				left: -12%;
+				transform: scaleX(-1);
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				z-index:2;
+				
+				animation : butterflyLeft 1.5s forwards;
+				-webkit-animation : butterflyLeft 1.5s forwards;
+				
+				animation-play-state:paused;
+				-webkit-animation-play-state:paused; 
+			}
+				@keyframes butterflyLeft{
+					0%{
+						top: 7%;
+						left: -12%;
+					}
+					100%{
+						top: 2%;
+						left: 1%;
+					}
+				}
+				@-webkit-keyframes butterflyLeft{
+					0%{
+						top: 7%;
+						left: -12%;
+					}
+					100%{
+						top: 2%;
+						left: 1%;
+					}
+				}
+			.butterflyLeft{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				display:none;
+			}
+			#butterflyRight{
+				position: absolute;
+				height: 52%;
+				width: 50%;
+				top: 0%;
+				left: 58%;
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				z-index:2;
+				
+				animation : butterflyRight 1.5s forwards;
+				-webkit-animation : butterflyRight 1.5s forwards;
+				
+				animation-play-state:paused;
+				-webkit-animation-play-state:paused; 
+			}
+				@keyframes butterflyRight{
+					0%{
+						top: 0%;
+						left: 58%;
+					}
+					100%{
+						top: 14%;
+						left: 58%;
+					}
+				}
+				@-webkit-keyframes butterflyRight{
+					0%{
+						top: 0%;
+						left: 58%;
+					}
+					100%{
+						top: 14%;
+						left: 58%;
+					}
+				}
+			.butterflyRight{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				display:none;
+			}
+				
+			#starEffect{
+				position: absolute;
+				height: 15%;
+				width: 55%;
+				bottom: 0%;
+				left: 23%;
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				z-index:0;
+			}
+			
+			.starEffect{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				display:none;
+			}
