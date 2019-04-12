@@ -132,6 +132,163 @@ body{
 				background-Size : 100% 100%; 
 				z-index:2;
 			}
+			#chances{
+				position: absolute;
+				top: 4%;
+				left: -45%;
+				height: 22%;
+				width: 46%;
+				z-index:2;
+				
+				animation : chances 1s 1s forwards;
+				-webkit-animation : chances 1s 1s forwards;
+				
+				animation-play-state:paused;
+				-webkit-animation-play-state:paused; 
+			}
+				@keyframes chances{
+					0%{
+						left: -45%;
+					}
+					50%{
+						left: -16%;
+					}
+					100%{
+						left: -16%;
+					}
+				}
+				@-webkit-keyframes chances{
+					0%{
+						left: -45%;
+					}
+					50%{
+						left: -16%;
+					}
+					100%{
+						left: -16%;
+					}
+				}
+			#chancesBg{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				background-repeat:no-repeat;
+				background-Size : 100% 100%;
+			}
+			#tumblerDefault{
+				position: absolute;
+				top: -55%;
+				left: 22%;
+				height: 200%;
+				width: 70%;
+				z-index: 3;
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+			}
+			#tumbler{
+				position: absolute;
+				top: -55%;
+				left: 20%;
+				height: 200%;
+				width: 70%;
+				z-index: 3;
+			}
+			.tumbler{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				display:none;
+			}
+			#sushi1{
+				position: absolute;
+				height: 48%;
+				width: 16%;
+				top: 38%;
+				left: 63%;
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				z-index: 1;
+
+				transform: scale(0);
+				-webkit-transform: scale(0);
+				
+				animation : sushi 1s 1.75s forwards;
+				-webkit-animation : sushi 1s 1.75s forwards;
+				
+				animation-play-state:paused;
+				-webkit-animation-play-state:paused; 
+				
+			}
+			#sushi2{
+				position: absolute;
+				height: 48%;
+				width: 16%;
+				top: 38%;
+				left: 71%;
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				z-index: 1;
+				
+				transform: scale(0);
+				-webkit-transform: scale(0);				
+				
+				animation : sushi 1s 2s forwards;
+				-webkit-animation : sushi 1s 2s forwards;
+				
+				animation-play-state:paused;
+				-webkit-animation-play-state:paused; 
+				
+			}
+			#sushi3{
+				position: absolute;
+				height: 48%;
+				width: 16%;
+				top: 38%;
+				left: 79%;
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				z-index: 1;
+				
+				transform: scale(0);
+				-webkit-transform: scale(0);
+				
+				animation : sushi 1s 2.25s forwards;
+				-webkit-animation : sushi 1s 2.25s forwards;
+				
+				animation-play-state:paused;
+				-webkit-animation-play-state:paused; 
+				
+			}
+				@keyframes sushi{
+					0%{
+						transform: scale(0);
+						-webkit-transform: scale(0);
+					}
+					50%{
+						transform: scale(2);
+						-webkit-transform: scale(1.5);
+					}
+					100%{
+						transform: scale(1);
+						-webkit-transform: scale(1);
+					}
+				}
+				@-webkit-keyframes sushi{
+					0%{
+						transform: scale(0);
+						-webkit-transform: scale(0);
+					}
+					50%{
+						transform: scale(2);
+						-webkit-transform: scale(1.5);
+					}
+					100%{
+						transform: scale(1);
+						-webkit-transform: scale(1);
+					}
+				}
 		#innerContainerB{	
 			 position: absolute;
 			 bottom:0%;
@@ -148,6 +305,14 @@ body{
 				background-repeat:no-repeat;
 				background-Size : 100% 100%; 
 				z-index:1;
+			}
+			#lowerBg{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				z-index:0;
 			}
 			.lowerBg{
 				position: absolute;
@@ -273,7 +438,7 @@ body{
 				bottom: -4%;
 				background-repeat:no-repeat;
 				background-Size : 100% 100%; 
-				z-index:1;
+				z-index:2;
 			}
 			.startButton{
 				position: absolute;
@@ -389,7 +554,6 @@ body{
 				background-Size : 100% 100%; 
 				display:none;
 			}
-				
 			#starEffect{
 				position: absolute;
 				height: 15%;
@@ -400,8 +564,112 @@ body{
 				background-Size : 100% 100%; 
 				z-index:0;
 			}
-			
 			.starEffect{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				display:none;
+			}
+			#redFish{
+				position: absolute;
+				height: 35%;
+				width: 50%;
+				top: 57%;
+				right:-55%;
+				z-index: 1;
+				
+				animation : redFish 5s forwards;
+				-webkit-animation : redFish 5s forwards;
+			}
+				@keyframes redFish{
+					0%{
+						right: -55%;
+					}
+					100%{
+						right: 40%;
+					}
+				}
+				@-webkit-keyframes redFish{
+					0%{
+						right: -55%;
+					}
+					100%{
+						right: 40%;
+					}
+				}
+			.redFish{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				display:none;
+			}
+			#blueFish{
+				position: absolute;
+				height: 34%;
+				width: 50%;
+				top: 39%;
+				left:-55%;
+				z-index: 1;
+				
+				animation : blueFish 5s 1s forwards;
+				-webkit-animation : blueFish 5s 1s forwards;
+			}
+				@keyframes blueFish{
+					0%{
+						left: -55%;
+					}
+					100%{
+						left: 55%;
+					}
+				}
+				@-webkit-keyframes blueFish{
+					0%{
+						left: -55%;
+					}
+					100%{
+						left: 55%;
+					}
+				}
+			.blueFish{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				display:none;
+			}
+			#blackFish{
+				position: absolute;
+				height: 28%;
+				width: 60%;
+				top: 15%;
+				right: -55%;
+				z-index: 1;
+				
+				animation : blackFish 5s 0.5s forwards;
+				-webkit-animation : blackFish 5s 0.5s forwards;
+			}
+				@keyframes blackFish{
+					0%{
+						right: -55%;
+					}
+					100%{
+						right: 15%;
+					}
+				}
+				@-webkit-keyframes blackFish{
+					0%{
+						right: -55%;
+					}
+					100%{
+						right: 15%;
+					}
+				}
+			.blackFish{
 				position: absolute;
 				height:100%; 
 				width:100%; 

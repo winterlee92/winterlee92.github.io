@@ -36,7 +36,27 @@ window.requestAnimFrame = (function(){
 	}
 }());
 
+var timeouts;
+	function doTimer(length, resolution, oninstance, oncomplete){
+	var steps = (length / 100) * (resolution / 10),
+	speed = length / steps,
+	count = 0,
+	start = new Date().getTime();
 
+	function instance(){
+		if(count++ == steps){
+			oncomplete(steps, count);
+		}
+		else{
+			oninstance(steps, count);
+
+			var diff = (new Date().getTime() - start) - (count * speed);
+			window.setTimeout(instance, (speed - diff));
+		}
+	}
+	timeouts = window.setTimeout(instance, speed);
+}
+	
 	function lp() {
 			 mv = setTimeout(main, 500);
 	    }
@@ -60,26 +80,20 @@ window.requestAnimFrame = (function(){
 	}
 		
 	function createImage(){
+
+		// images array
 		var imageArray = [
-							"url('upperBg.png')",
-							"url('sakura.png')",
-							"url('lanternLeft.png')",
-							"url('lanternRight.png')",
-							"url('doorLeft.png')",
-							"url('doorRight.png')",
-							"url('lowerBg00.png')",
-							"url('guide.png')"
-						]
-		
-		innerContainerA.style.backgroundImage = imageArray[0];
-		document.getElementById("sakura").style.backgroundImage = imageArray[1];
-		lanternLeft.style.backgroundImage = imageArray[2];
-		lanternRight.style.backgroundImage = imageArray[3];
-		doorLeft.style.backgroundImage = imageArray[4];
-		doorRight.style.backgroundImage = imageArray[5];
-		lowerBg00.style.backgroundImage = imageArray[6];
-		guide.style.backgroundImage = imageArray[7];
-		
+					"url('upperBg.png')",
+					"url('sakura.png')",
+					"url('lanternLeft.png')",
+					"url('lanternRight.png')",
+					"url('doorLeft.png')",
+					"url('doorRight.png')",
+					"url('lowerBg00.png')",
+					"url('guide.png')",
+					"url('chancesBg.png')",
+					"url('sushi.png')"
+				]
 		var butterflyArray = [
 								"butterfly01.png",
 								"butterfly03.png",	
@@ -94,117 +108,35 @@ window.requestAnimFrame = (function(){
 								"butterfly021.png",	
 								"butterfly024.png"
 								]
-		
-		for(i=0; i < butterflyArray.length; i++){	 
-			if(i <butterflyArray.length)
-			{
-				var butterflyLeftImage = document.createElement("IMG");
-				butterflyLeftImage.setAttribute("src", butterflyArray[i]);	
-				butterflyLeftImage.setAttribute("class","butterflyLeft");
-				butterflyLeft.appendChild(butterflyLeftImage);
-				
-				var butterflyRightImage = document.createElement("IMG");
-				butterflyRightImage.setAttribute("src", butterflyArray[i]);	
-				butterflyRightImage.setAttribute("class","butterflyRight");
-				butterflyRight.appendChild(butterflyRightImage);
-			}
-		}
-		
-		butterflyLeftAnimation();
-		butterflyRightAnimation();
-		
-		var renderButterflyLeft;
-		function butterflyLeftAnimation(){
-			var myIndex = 0;			
-			var butterflyLeft = document.getElementsByClassName("butterflyLeft");		
-			loopButterflyLeft();
-			function loopButterflyLeft(){
-				var i;
-				for (i=0;i<butterflyLeft.length;i++)
-				{
-					butterflyLeft[i].style.display="none";
-				}
-				myIndex++;
-				if (myIndex > butterflyLeft.length){}
-				butterflyLeft[myIndex-1].style.display = "block";
-				renderButterflyLeft = setTimeout(loopButterflyLeft,100);			
-				 
-				if (myIndex === 12){
-					myIndex=0;
-				}	
-			}
-		} 
-		
-		var renderButterflyRight;
-		function butterflyRightAnimation(){
-			var myIndex = 0;			
-			var butterflyRight = document.getElementsByClassName("butterflyRight");		
-			loopButterflyRight();
-			function loopButterflyRight(){
-				var i;
-				for (i=0;i<butterflyRight.length;i++)
-				{
-					butterflyRight[i].style.display="none";
-				}
-				myIndex++;
-				if (myIndex > butterflyRight.length){}
-				butterflyRight[myIndex-1].style.display = "block";
-				renderButterflyRight = setTimeout(loopButterflyRight,100);			
-				 
-				if (myIndex === 12){
-					myIndex=0;
-				}	
-			}
-		} 
-		
-		var lowerBackground = [
-								'lowerBg01.jpg',
-								'lowerBg05.jpg',
-								'lowerBg09.jpg',
-								'lowerBg013.jpg',
-								'lowerBg017.jpg',
-								'lowerBg021.jpg',
-								'lowerBg025.jpg',
-								'lowerBg029.jpg',
-								'lowerBg033.jpg',
-								'lowerBg037.jpg',
-								'lowerBg041.jpg',
-								'lowerBg047.jpg'							
+		var tumblerArray = [
+							"tumbler01.png",	
+							"tumbler05.png",	
+							"tumbler09.png",	
+							"tumbler013.png",		
+							"tumbler017.png",		
+							"tumbler021.png",		
+							"tumbler025.png",		
+							"tumbler029.png",		
+							"tumbler033.png",		
+							"tumbler037.png",		
+							"tumbler041.png",		
+							"tumbler045.png",		
+							"tumbler048.png"
 							]
-							
-		for(i=0; i < lowerBackground.length; i++){	 
-			if(i <lowerBackground.length)
-			{
-				var lowerBgImage = document.createElement("IMG");
-				lowerBgImage.setAttribute("src", lowerBackground[i]);	
-				lowerBgImage.setAttribute("class","lowerBg");
-				innerContainerB.appendChild(lowerBgImage);
-			}
-		}
-
-		lowerBackgroundAnimation();
-		var renderLowerBackground;
-		function lowerBackgroundAnimation(){
-			var myIndex = 0;			
-			var lowerBg = document.getElementsByClassName("lowerBg");		
-			loopLowerBackground();
-			function loopLowerBackground(){
-				var i;
-				for (i=0;i<lowerBg.length;i++)
-				{
-					lowerBg[i].style.display="none";
-				}
-				myIndex++;
-				if (myIndex > lowerBg.length){}
-				lowerBg[myIndex-1].style.display = "block";
-				renderLowerBackground = setTimeout(loopLowerBackground,100);			
-				 
-				if (myIndex === 12){
-					myIndex = 0;			
-				}	
-			}
-		}
-
+		var lowerBackground = [
+						'lowerBg01.jpg',
+						'lowerBg05.jpg',
+						'lowerBg09.jpg',
+						'lowerBg013.jpg',
+						'lowerBg017.jpg',
+						'lowerBg021.jpg',
+						'lowerBg025.jpg',
+						'lowerBg029.jpg',
+						'lowerBg033.jpg',
+						'lowerBg037.jpg',
+						'lowerBg041.jpg',
+						'lowerBg047.jpg'							
+					]
 		var startButtonArray = [
 							"startButton01.png",	
 							"startButton03.png",	
@@ -234,8 +166,91 @@ window.requestAnimFrame = (function(){
 								"startButton068.png",		
 								"startButton070.png",		
 								"startButton072.png"
-							]						
-	
+							]		
+		var redFishArray = [
+					"redFish02.png",	
+					"redFish06.png",	
+					"redFish010.png",	
+					"redFish014.png",	
+					"redFish018.png",		
+					"redFish022.png",		
+					"redFish024.png"
+				]
+		var blueFishArray = [
+				"blueFish02.png",	
+				"blueFish06.png",	
+				"blueFish010.png",	
+				"blueFish014.png",	
+				"blueFish018.png",		
+				"blueFish022.png",		
+				"blueFish024.png"
+			]
+		var blackFishArray = [
+				"blackFish02.png",	
+				"blackFish06.png",	
+				"blackFish010.png",	
+				"blackFish014.png",	
+				"blackFish018.png",		
+				"blackFish022.png",		
+				"blackFish024.png"
+			]
+		var starEffectArray = [
+						'starEffect01.png',
+						'starEffect02.png',
+						'starEffect03.png',
+						'starEffect04.png',	
+						'starEffect05.png'						
+					]
+					
+		// use images from array
+		innerContainerA.style.backgroundImage = imageArray[0];
+		document.getElementById("sakura").style.backgroundImage = imageArray[1];
+		lanternLeft.style.backgroundImage = imageArray[2];
+		lanternRight.style.backgroundImage = imageArray[3];
+		doorLeft.style.backgroundImage = imageArray[4];
+		doorRight.style.backgroundImage = imageArray[5];
+		lowerBg00.style.backgroundImage = imageArray[6];
+		guide.style.backgroundImage = imageArray[7];
+		chancesBg.style.backgroundImage = imageArray[8];
+		tumblerDefault.style.backgroundImage = tumblerArray[0];
+		sushi1.style.backgroundImage = imageArray[9];
+		sushi2.style.backgroundImage = imageArray[9];
+		sushi3.style.backgroundImage = imageArray[9];
+		
+		
+		//  create and store Images		
+		for(i=0; i < butterflyArray.length; i++){	 
+			if(i <butterflyArray.length)
+			{
+				var butterflyLeftImage = document.createElement("IMG");
+				butterflyLeftImage.setAttribute("src", butterflyArray[i]);	
+				butterflyLeftImage.setAttribute("class","butterflyLeft");
+				butterflyLeft.appendChild(butterflyLeftImage);
+				
+				var butterflyRightImage = document.createElement("IMG");
+				butterflyRightImage.setAttribute("src", butterflyArray[i]);	
+				butterflyRightImage.setAttribute("class","butterflyRight");
+				butterflyRight.appendChild(butterflyRightImage);
+			}
+		}
+		for(i=0; i < tumblerArray.length; i++){	 
+			if(i <tumblerArray.length)
+			{
+				var tumblerImage = document.createElement("IMG");
+				tumblerImage.setAttribute("src", tumblerArray[i]);	
+				tumblerImage.setAttribute("class","tumbler");
+				tumbler.appendChild(tumblerImage);
+			}
+		}
+		for(i=0; i < lowerBackground.length; i++){	 
+			if(i <lowerBackground.length)
+			{
+				var lowerBgImage = document.createElement("IMG");
+				lowerBgImage.setAttribute("src", lowerBackground[i]);	
+				lowerBgImage.setAttribute("class","lowerBg");
+				lowerBg.appendChild(lowerBgImage);
+			}
+		}
 		for(i=0; i < startButtonArray.length; i++){	 
 			if(i <startButtonArray.length)
 			{
@@ -245,7 +260,6 @@ window.requestAnimFrame = (function(){
 				startButton.appendChild(startButtonImage);
 			}
 		}
-		
 		for(i=0; i < startButtonArray2.length; i++){	 
 			if(i <startButtonArray2.length){
 				var startButtonImage = document.createElement("IMG");
@@ -254,9 +268,136 @@ window.requestAnimFrame = (function(){
 				startButton2.appendChild(startButtonImage);
 			}
 		}
+		for(i=0; i < redFishArray.length; i++){	 
+			if(i <redFishArray.length)
+			{
+				var redFishImage = document.createElement("IMG");
+				redFishImage.setAttribute("src", redFishArray[i]);	
+				redFishImage.setAttribute("class","redFish");
+				redFish.appendChild(redFishImage);
+				
+				var blueFishImage = document.createElement("IMG");
+				blueFishImage.setAttribute("src", blueFishArray[i]);	
+				blueFishImage.setAttribute("class","blueFish");
+				blueFish.appendChild(blueFishImage);
+				
+				var blackFishImage = document.createElement("IMG");
+				blackFishImage.setAttribute("src", blackFishArray[i]);	
+				blackFishImage.setAttribute("class","blackFish");
+				blackFish.appendChild(blackFishImage);
+			}
+		}
+		for(i=0; i < startButtonArray.length; i++){	 
+			if(i <startButtonArray.length)
+			{
+				var startButtonImage = document.createElement("IMG");
+				startButtonImage.setAttribute("src", startButtonArray[i]);	
+				startButtonImage.setAttribute("class","startButton");
+				startButton.appendChild(startButtonImage);
+			}
+		}
+		for(i=0; i < starEffectArray.length; i++){	 
+			if(i <starEffectArray.length){
+				var starEffectImage = document.createElement("IMG");
+				starEffectImage.setAttribute("src", starEffectArray[i]);	
+				starEffectImage.setAttribute("class","starEffect");
+				starEffect.appendChild(starEffectImage);
+			}
+		}
 		
-		startButtonAnimation();
+		// declare render Image variable
+		var renderButterflyLeft;
+		var renderButterflyRight;
+		var renderTumbler;
+		var renderLowerBackground;
 		var renderStartButton;
+		var renderstartButtonClick;
+		var renderStarEffect;
+		var renderRedFish;
+		var renderBlueFish;
+		var renderBlackFish;
+		
+		// create render Image Function
+		function butterflyLeftAnimation(){
+			var myIndex = 0;			
+			var butterflyLeft = document.getElementsByClassName("butterflyLeft");		
+			loopButterflyLeft();
+			function loopButterflyLeft(){
+				var i;
+				for (i=0;i<butterflyLeft.length;i++)
+				{
+					butterflyLeft[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > butterflyLeft.length){}
+				butterflyLeft[myIndex-1].style.display = "block";
+				renderButterflyLeft = setTimeout(loopButterflyLeft,100);			
+				 
+				if (myIndex === 12){
+					myIndex=0;
+				}	
+			}
+		} 
+		function butterflyRightAnimation(){
+			var myIndex = 0;			
+			var butterflyRight = document.getElementsByClassName("butterflyRight");		
+			loopButterflyRight();
+			function loopButterflyRight(){
+				var i;
+				for (i=0;i<butterflyRight.length;i++)
+				{
+					butterflyRight[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > butterflyRight.length){}
+				butterflyRight[myIndex-1].style.display = "block";
+				renderButterflyRight = setTimeout(loopButterflyRight,100);			
+				 
+				if (myIndex === 12){
+					myIndex=0;
+				}	
+			}
+		} 
+		function tumblerAnimation(){
+			var myIndex = 0;			
+			var tumbler = document.getElementsByClassName("tumbler");		
+			loopTumbler();
+			function loopTumbler(){
+				var i;
+				for (i=0;i<tumbler.length;i++)
+				{
+					tumbler[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > tumbler.length){}
+				tumbler[myIndex-1].style.display = "block";
+				renderTumbler = setTimeout(loopTumbler,80);			
+				 
+				if (myIndex === 12){
+					clearTimeout(renderTumbler);		
+				}	
+			}
+		}
+		function lowerBackgroundAnimation(){
+			var myIndex = 0;			
+			var lowerBg = document.getElementsByClassName("lowerBg");		
+			loopLowerBackground();
+			function loopLowerBackground(){
+				var i;
+				for (i=0;i<lowerBg.length;i++)
+				{
+					lowerBg[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > lowerBg.length){}
+				lowerBg[myIndex-1].style.display = "block";
+				renderLowerBackground = setTimeout(loopLowerBackground,100);			
+				 
+				if (myIndex === 12){
+					myIndex = 0;			
+				}	
+			}
+		}
 		function startButtonAnimation(){
 			var myIndex = 0;			
 			var startBtn = document.getElementsByClassName("startButton");		
@@ -277,8 +418,6 @@ window.requestAnimFrame = (function(){
 				}	
 			}
 		} 
-		
-		var renderstartButtonClick;
 		function startButtonClickAnimation(){
 			var myIndex = 0;			
 			var startBtn2 = document.getElementsByClassName("startButton2");		
@@ -300,35 +439,66 @@ window.requestAnimFrame = (function(){
 				}	
 			}
 		} 
-		
-		for(i=0; i < startButtonArray.length; i++){	 
-			if(i <startButtonArray.length)
-			{
-				var startButtonImage = document.createElement("IMG");
-				startButtonImage.setAttribute("src", startButtonArray[i]);	
-				startButtonImage.setAttribute("class","startButton");
-				startButton.appendChild(startButtonImage);
+		function redFishAnimation(){
+			var myIndex = 0;			
+			var redFish = document.getElementsByClassName("redFish");		
+			loopRedFish();
+			function loopRedFish(){
+				var i;
+				for (i=0;i<redFish.length;i++)
+				{
+					redFish[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > redFish.length){}
+				redFish[myIndex-1].style.display = "block";
+				renderRedFish = setTimeout(loopRedFish,70);			
+				 
+				if (myIndex === 7){
+					myIndex = 0;
+				}	
 			}
-		}
-		
-		var starEffectArray = [
-						'starEffect01.png',
-						'starEffect02.png',
-						'starEffect03.png',
-						'starEffect04.png',	
-						'starEffect05.png'						
-					]
-					
-		for(i=0; i < starEffectArray.length; i++){	 
-			if(i <starEffectArray.length){
-				var starEffectImage = document.createElement("IMG");
-				starEffectImage.setAttribute("src", starEffectArray[i]);	
-				starEffectImage.setAttribute("class","starEffect");
-				starEffect.appendChild(starEffectImage);
+		} 
+		function blueFishAnimation(){
+			var myIndex = 0;			
+			var blueFish = document.getElementsByClassName("blueFish");		
+			loopblueFish();
+			function loopblueFish(){
+				var i;
+				for (i=0;i<blueFish.length;i++)
+				{
+					blueFish[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > blueFish.length){}
+				blueFish[myIndex-1].style.display = "block";
+				renderBlueFish = setTimeout(loopblueFish,70);			
+				 
+				if (myIndex === 7){
+					myIndex = 0;
+				}	
 			}
-		}
-		
-		var renderStarEffect;
+		} 
+		function blackFishAnimation(){
+			var myIndex = 0;			
+			var blackFish = document.getElementsByClassName("blackFish");		
+			loopblackFish();
+			function loopblackFish(){
+				var i;
+				for (i=0;i<blackFish.length;i++)
+				{
+					blackFish[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > blackFish.length){}
+				blackFish[myIndex-1].style.display = "block";
+				renderBlackFish = setTimeout(loopblackFish,70);			
+				 
+				if (myIndex === 7){
+					myIndex = 0;
+				}	
+			}
+		} 
 		function starEffectAnimation(){
 			var myIndex = 0;			
 			var starEffect = document.getElementsByClassName("starEffect");		
@@ -351,6 +521,17 @@ window.requestAnimFrame = (function(){
 			}
 		} 
 		
+		// call render Image Function
+		butterflyLeftAnimation();
+		butterflyRightAnimation();
+		tumblerAnimation();
+		startButtonAnimation();
+		lowerBackgroundAnimation();
+		redFishAnimation();
+		blueFishAnimation();
+		blackFishAnimation();
+		
+		// startButton Event
 		startButton.addEventListener("click", function(){
 			startButton.style.display ="none";
 			startButtonClickAnimation();
@@ -365,6 +546,26 @@ window.requestAnimFrame = (function(){
 			butterflyRight.style.webkitAnimationPlayState = "running";
 			butterflyLeft.style.animationPlayState = "running";
 			butterflyLeft.style.webkitAnimationPlayState = "running";
+			chances.style.animationPlayState = "running";
+			chances.style.webkitAnimationPlayState = "running";
+			redFish.style.animationPlayState = "running";
+			redFish.style.webkitAnimationPlayState = "running";
+			blackFish.style.animationPlayState = "running";
+			blackFish.style.webkitAnimationPlayState = "running";
+			sushi1.style.animationPlayState = "running";
+			sushi1.style.webkitAnimationPlayState = "running";			
+			sushi2.style.animationPlayState = "running";
+			sushi2.style.webkitAnimationPlayState = "running";
+			sushi3.style.animationPlayState = "running";
+			sushi3.style.webkitAnimationPlayState = "running";
+			
+			
+			
+			doTimer(
+			1500,60,function(steps){},
+					function(){tumblerAnimation();}						
+			);
+			
 			starEffectAnimation();
 		});
 	}		
