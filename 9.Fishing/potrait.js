@@ -95,18 +95,18 @@ var timeouts;
 					"url('sushi.png')"
 				]
 		var butterflyArray = [
-								"butterfly01.png",
-								"butterfly03.png",	
-								"butterfly05.png",	
-								"butterfly07.png",	
-								"butterfly09.png",		
-								"butterfly011.png",	
-								"butterfly013.png",	
-								"butterfly015.png",	
-								"butterfly017.png",		
-								"butterfly019.png",			
-								"butterfly021.png",	
-								"butterfly024.png"
+								"Butterfly01.png",
+								"Butterfly03.png",	
+								"Butterfly05.png",	
+								"Butterfly07.png",	
+								"Butterfly09.png",		
+								"Butterfly011.png",	
+								"Butterfly013.png",	
+								"Butterfly015.png",	
+								"Butterfly017.png",		
+								"Butterfly019.png",			
+								"Butterfly021.png",	
+								"Butterfly024.png"
 								]
 		var tumblerArray = [
 							"tumbler01.png",	
