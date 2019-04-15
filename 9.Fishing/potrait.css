@@ -577,7 +577,7 @@ body{
 				height: 35%;
 				width: 50%;
 				top: 57%;
-				right:-55%;
+				left:100%;
 				z-index: 1;
 				
 				animation : redFish 5s forwards;
@@ -585,18 +585,18 @@ body{
 			}
 				@keyframes redFish{
 					0%{
-						right: -55%;
+						left: 100%;
 					}
 					100%{
-						right: 40%;
+						left: 15%;
 					}
 				}
 				@-webkit-keyframes redFish{
 					0%{
-						right: -55%;
+						left: 100%;
 					}
 					100%{
-						right: 40%;
+						left: 15%;
 					}
 				}
 			.redFish{
@@ -647,7 +647,7 @@ body{
 				height: 28%;
 				width: 60%;
 				top: 15%;
-				right: -55%;
+				left: 100%;
 				z-index: 1;
 				
 				animation : blackFish 5s 0.5s forwards;
@@ -655,18 +655,18 @@ body{
 			}
 				@keyframes blackFish{
 					0%{
-						right: -55%;
+						left: 100%;
 					}
 					100%{
-						right: 15%;
+						left:25%;
 					}
 				}
 				@-webkit-keyframes blackFish{
 					0%{
-						right: -55%;
+						left: 100%;
 					}
 					100%{
-						right: 15%;
+						left:25%;
 					}
 				}
 			.blackFish{

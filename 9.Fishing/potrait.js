@@ -559,7 +559,7 @@ var timeouts;
 			sushi3.style.animationPlayState = "running";
 			sushi3.style.webkitAnimationPlayState = "running";
 			
-			
+			fishElements();
 			
 			doTimer(
 			1500,60,function(steps){},
@@ -569,6 +569,148 @@ var timeouts;
 			starEffectAnimation();
 		});
 	}		
+	
+	function fishElements(){
+		
+			var fishElementsDetect = requestAnimationFrame(fishElements);
+		
+			var innerContainerBElement  = document.querySelector('#innerContainerB');
+			var innerContainerBTopValue = getComputedStyle(innerContainerBElement).getPropertyValue("height").split("px")[0];
+			var innerContainerBLeftValue = getComputedStyle(innerContainerBElement).getPropertyValue("width").split("px")[0];
+		
+			var blackFishElement  = document.querySelector('#blackFish');
+			var blackFishTopValue = getComputedStyle(blackFishElement).getPropertyValue("top").split("px")[0];
+			var blackFishLeftValue = getComputedStyle(blackFishElement).getPropertyValue("left").split("px")[0];	
+			var blackFishTop = (100*blackFishTopValue)/innerContainerBTopValue;
+			var blackFishLeft = (100*blackFishLeftValue)/innerContainerBLeftValue;
+		
+			var redFishElement  = document.querySelector('#redFish');
+			var redFishTopValue = getComputedStyle(redFishElement).getPropertyValue("top").split("px")[0];
+			var redFishLeftValue = getComputedStyle(redFishElement).getPropertyValue("left").split("px")[0];
+			var redFishTop = (100*redFishTopValue)/innerContainerBTopValue;
+			var redFishLeft = (100*redFishLeftValue)/innerContainerBLeftValue;
+			
+			var blueFishElement  = document.querySelector('#blueFish');
+			var blueFishTopValue = getComputedStyle(blueFishElement).getPropertyValue("top").split("px")[0];
+			var blueFishLeftValue = getComputedStyle(blueFishElement).getPropertyValue("left").split("px")[0];	
+			var blueFishTop = (100*blueFishTopValue)/innerContainerBTopValue;
+			var blueFishLeft = (100*blueFishLeftValue)/innerContainerBLeftValue;	
+			
+			var blackFishFrames = document.createElement('style');
+			blackFishFrames.type = 'text/css';
+			var keyFrames = '\
+			@keyframes blackFishReplace{\
+				0%{\
+					top: 15%;\
+					left: blackFishLeft%;\
+				}\
+				100%{\
+					top: 15%;\
+					left: -55%;\
+				}\
+			}\
+			@-webkit-keyframes blackFishReplace{\
+				0%{\
+					top: 15%;\
+					left: blackFishLeft%;\
+				}\
+				100%{\
+					top: 15%;\
+					left: -55%;\
+				}\
+			}';
+			
+			var blackFishValue = {
+								'blackFishLeft':blackFishLeft,
+							};
+			
+			blackFishFrames.innerHTML = keyFrames.replace(/blackFishLeft/g, m => blackFishValue[m]);
+			document.getElementsByTagName('div')[23].appendChild(blackFishFrames);
+			blackFish.style.animation = "blackFishReplace 5s forwards 1"
+			blackFish.style.webkitAnimation = " blackFishReplace 5s forwards 1 "
+			
+			var redFishFrames = document.createElement('style');
+			redFishFrames.type = 'text/css';
+			var keyFrames = '\
+			@keyframes redFishReplace{\
+				0%{\
+					top: 57%;\
+					left: redFishLeft%;\
+				}\
+				50%{\
+					top: 57%;\
+					left: -55%;\
+				}\
+				100%{\
+					top: 57%;\
+					left: -55%;\
+				}\
+			}\
+			@-webkit-keyframes redFishReplace{\
+				0%{\
+					top: 57%;\
+					left: redFishLeft%;\
+				}\
+				50%{\
+					top: 57%;\
+					left: -55%;\
+				}\
+				100%{\
+					top: 57%;\
+					left: -55%;\
+				}\
+			}';
+			
+			var redFishValue = {
+								'redFishLeft':redFishLeft,
+							};
+			
+			redFishFrames.innerHTML = keyFrames.replace(/redFishLeft/g, m => redFishValue[m]);
+			document.getElementsByTagName('div')[23].appendChild(redFishFrames);
+			redFish.style.animation = " redFishReplace 5s forwards 1"
+			redFish.style.webkitAnimation = " redFishReplace 5s forwards 1 "
+			
+			var blueFishFrames = document.createElement('style');
+			blueFishFrames.type = 'text/css';
+			var keyFrames = '\
+			@keyframes blueFishReplace{\
+				0%{\
+					top: 39%;\
+					left: blueFishLeft%;\
+				}\
+				50%{\
+					top: 39%;\
+					left: 100%;\
+				}\
+				100%{\
+					top: 39%;\
+					left: 100%;\
+				}\
+			}\
+			@-webkit-keyframes blueFishReplace{\
+				0%{\
+					top: 39%;\
+					left: blueFishLeft%;\
+				}\
+				50%{\
+					top: 39%;\
+					left: 100%;\
+				}\
+				100%{\
+					top: 39%;\
+					left: -100%;\
+				}\
+			}';
+			
+			var blueFishValue = {
+								'blueFishLeft':blueFishLeft,
+							};
+			
+			blueFishFrames.innerHTML = keyFrames.replace(/blueFishLeft/g, m => blueFishValue[m]);
+			document.getElementsByTagName('div')[23].appendChild(blueFishFrames);
+			blueFish.style.animation = " blueFishReplace 5s forwards 1"
+			blueFish.style.webkitAnimation = " blueFishReplace 5s forwards 1 "
+	}
 	
 	function sizeData(w,h){
 	
