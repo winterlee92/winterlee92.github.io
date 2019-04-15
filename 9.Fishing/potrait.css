@@ -677,3 +677,136 @@ body{
 				background-Size : 100% 100%; 
 				display:none;
 			}
+		#innerContainerD{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				display:none;
+			}
+			#glowRotate{
+				position: absolute;
+				height: 100%;
+				width: 150%;
+				left: -30%;
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				transform: rotate(0deg);
+				-webkit-transform: rotate(0deg);
+				z-index:1;
+				top: 3%;
+				animation : glowRotate 10s linear infinite;
+				-webkit-animation : glowRotate 10s linear infinite;
+			}
+				@keyframes glowRotate{
+					0%{
+						transform: rotate(0deg);
+					 }
+					100%{
+						transform: rotate(360deg);
+					}
+				}
+				@-webkit-keyframes glowRotate{
+					0%{
+						-webkit-transform: rotate(0deg);
+					 }
+					100%{
+						-webkit-transform: rotate(0deg);
+					}
+				}
+			#glow{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				transform: scaleX(0) scaleY(0);
+				-webkit-transform: scaleX(0) scaleY(0);
+				z-index:1;
+				
+				animation : glow 3s 0.5s forwards;
+				-webkit-animation : glow 3s 0.5s forwards;
+			}
+				@keyframes glow{
+					0%{
+						transform: scaleX(0) scaleY(0);
+					 }
+					100%{
+						transform: scaleX(1) scaleY(1);
+					}
+				}
+				@-webkit-keyframes glow{
+					0%{
+						-webkit-transform: scaleX(0) scaleY(0);
+					 }
+					100%{
+						-webkit-transform: scaleX(1) scaleY(1);
+					 }
+				}
+			#umbrella{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				/* top:-6%; */
+				left:-3%;
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				transform: scaleX(0) scaleY(0);
+				-webkit-transform: scaleX(0) scaleY(0);
+				z-index:1;
+				
+				animation : umbrella 2s 1.2s forwards;
+				-webkit-animation : umbrella 2s 1.2s forwards;
+			}
+				@keyframes umbrella{
+					0%{
+						transform: scaleX(0) scaleY(0);
+					 }
+					100%{
+						transform: scaleX(0.89) scaleY(0.55);
+					}
+				}
+				@-webkit-keyframes umbrella{
+					0%{
+						-webkit-transform: scaleX(0) scaleY(0);
+					 }
+					100%{
+						-webkit-transform: scaleX(0.89) scaleY(0.55);
+					}
+				}
+			#reward{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				top:3%;
+				left:-6%;
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				transform: scaleX(0) scaleY(0);
+				-webkit-transform: scaleX(0) scaleY(0);
+				z-index:2;
+				
+				animation : reward 2s 1s forwards;
+				-webkit-animation : reward 2s 1s forwards;
+			}
+				 @keyframes reward{
+					0%{
+						transform: scaleX(0) scaleY(0);
+					 }
+					80%{
+						transform: scaleX(1) scaleY(0.8);
+					}
+					100%{
+						transform: scaleX(0.8) scaleY(0.6);
+					}
+				 }
+				@-webkit-keyframes reward{
+					0%{
+						-webkit-transform: scaleX(0) scaleY(0);
+					 }
+					80%{
+						-webkit-transform: scaleX(1) scaleY(0.8);
+					 }
+					100%{
+						-webkit-transform: scaleX(0.9) scaleY(0.65);
+					}
+				}	

@@ -201,7 +201,12 @@ var timeouts;
 						'starEffect04.png',	
 						'starEffect05.png'						
 					]
-					
+		var winImageArray = [
+								"url('glow.png')",
+								"url('reward.png')",
+								"url('umbrella.png')",
+							]		
+			
 		// use images from array
 		innerContainerA.style.backgroundImage = imageArray[0];
 		document.getElementById("sakura").style.backgroundImage = imageArray[1];
@@ -217,6 +222,9 @@ var timeouts;
 		sushi2.style.backgroundImage = imageArray[9];
 		sushi3.style.backgroundImage = imageArray[9];
 		
+		glow.style.backgroundImage = winImageArray[0];
+		reward.style.backgroundImage = winImageArray[1];
+		umbrella.style.backgroundImage = winImageArray[2];
 		
 		//  create and store Images		
 		for(i=0; i < butterflyArray.length; i++){	 
@@ -560,6 +568,7 @@ var timeouts;
 			sushi3.style.webkitAnimationPlayState = "running";
 			
 			fishElements();
+			winInterface();
 			
 			doTimer(
 			1500,60,function(steps){},
@@ -710,6 +719,18 @@ var timeouts;
 			document.getElementsByTagName('div')[23].appendChild(blueFishFrames);
 			blueFish.style.animation = " blueFishReplace 5s forwards 1"
 			blueFish.style.webkitAnimation = " blueFishReplace 5s forwards 1 "
+			
+			cancelAnimationFrame(fishElementsDetect);
+	}
+	
+	function winInterface(){
+		
+			innerContainerD.style.display = "block";
+			
+			doorLeft.style.animation = " doorLeft 1s forwards 1 reverse"
+			doorLeft.style.webkitAnimation = " doorLeft 1s forwards 1 reverse"
+			doorRight.style.animation = " doorRight 1s forwards 1 reverse"
+			doorRight.style.webkitAnimation = " doorRight 1s forwards 1 reverse"
 	}
 	
 	function sizeData(w,h){
