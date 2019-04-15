@@ -685,15 +685,15 @@ body{
 			}
 			#glowRotate{
 				position: absolute;
-				height: 100%;
-				width: 150%;
-				left: -30%;
+				height: 80%;
+				width: 120%;
+				left: -15%;
 				background-repeat:no-repeat;
 				background-Size : 100% 100%; 
 				transform: rotate(0deg);
 				-webkit-transform: rotate(0deg);
 				z-index:1;
-				top: 3%;
+				top: 13%;
 				animation : glowRotate 10s linear infinite;
 				-webkit-animation : glowRotate 10s linear infinite;
 			}
@@ -785,8 +785,8 @@ body{
 				-webkit-transform: scaleX(0) scaleY(0);
 				z-index:2;
 				
-				animation : reward 2s 1s forwards;
-				-webkit-animation : reward 2s 1s forwards;
+				animation : reward 1.5s 1s forwards;
+				-webkit-animation : reward 1.5s 1s forwards;
 			}
 				 @keyframes reward{
 					0%{
