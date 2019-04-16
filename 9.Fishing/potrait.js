@@ -205,8 +205,72 @@ var timeouts;
 								"url('glow.png')",
 								"url('reward.png')",
 								"url('umbrella.png')",
+								"url('fontEffect_Glow.png')",
+								"url('fontEffect_Sakura.png')",
+								"url('buttonEffect_Sakura.png')",
+								"url('stamp.png')",
 							]		
-			
+		var rewardFontArray = [
+								'rewardFont01.png',
+								'rewardFont05.png',
+								'rewardFont09.png',
+								'rewardFont013.png',	
+								'rewardFont017.png',	
+								'rewardFont021.png',
+								'rewardFont025.png',
+								'rewardFont029.png',
+								'rewardFont033.png',	
+								'rewardFont037.png',
+								'rewardFont041.png'
+								]		
+		var inGameButtonArray = [
+								'inGameButton01.png',
+								'inGameButton05.png',
+								'inGameButton09.png',
+								'inGameButton013.png',	
+								'inGameButton017.png',	
+								'inGameButton021.png',
+								'inGameButton025.png',
+								'inGameButton029.png',
+								'inGameButton033.png',	
+								'inGameButton037.png',
+								'inGameButton041.png'
+								]
+		var fireworksLeftArray = [
+							'fireworks02.png',
+							'fireworks06.png',
+							'fireworks010.png',
+							'fireworks014.png',	
+							'fireworks018.png',	
+							'fireworks022.png',
+							'fireworks024.png',
+							'fireworks026.png',
+							'fireworks030.png',	
+							'fireworks034.png',
+							'fireworks042.png',
+							'fireworks046.png',
+							'fireworks048.png',
+							]
+		var fireworksRightArray = [
+					'fireworksRight02.png',
+					'fireworksRight06.png',
+					'fireworksRight010.png',
+					'fireworksRight014.png',	
+					'fireworksRight018.png',	
+					'fireworksRight022.png',
+					'fireworksRight026.png',
+					'fireworksRight030.png',	
+					'fireworksRight034.png',
+					'fireworksRight042.png',
+					'fireworksRight046.png',
+					'fireworksRight050.png',
+					'fireworksRight054.png',
+					'fireworksRight058.png',
+					'fireworksRight062.png',
+					'fireworksRight066.png',	
+					'fireworksRight070.png',	
+					'fireworksRight074.png',
+					]					
 		// use images from array
 		innerContainerA.style.backgroundImage = imageArray[0];
 		document.getElementById("sakura").style.backgroundImage = imageArray[1];
@@ -225,6 +289,13 @@ var timeouts;
 		glow.style.backgroundImage = winImageArray[0];
 		reward.style.backgroundImage = winImageArray[1];
 		umbrella.style.backgroundImage = winImageArray[2];
+		stamp.style.backgroundImage = winImageArray[6];
+		fontEffect_Glow1.style.backgroundImage = winImageArray[3];
+		fontEffect_Glow2.style.backgroundImage = winImageArray[3];
+		fontEffect_Glow3.style.backgroundImage = winImageArray[3];
+		fontEffect_Glow4.style.backgroundImage = winImageArray[3];
+		fontEffect_Sakura.style.backgroundImage = winImageArray[4];
+		buttonEffect_Sakura.style.backgroundImage = winImageArray[5];
 		
 		//  create and store Images		
 		for(i=0; i < butterflyArray.length; i++){	 
@@ -312,7 +383,43 @@ var timeouts;
 				starEffect.appendChild(starEffectImage);
 			}
 		}
-		
+		for(i=0; i < rewardFontArray.length; i++){	 
+			if(i <rewardFontArray.length){
+				var rewardFontImage = document.createElement("IMG");
+				rewardFontImage.setAttribute("src", rewardFontArray[i]);	
+				rewardFontImage.setAttribute("class","rewardFont");
+				rewardFont.appendChild(rewardFontImage);
+			}
+		}	
+		for(i=0; i < inGameButtonArray.length; i++){	 
+			if(i <inGameButtonArray.length){
+				var inGameImage = document.createElement("IMG");
+				inGameImage.setAttribute("src", inGameButtonArray[i]);	
+				inGameImage.setAttribute("class","inGameButton");
+				inGameButton.appendChild(inGameImage);
+			}
+		}
+		for(i=0; i < fireworksLeftArray.length; i++){	 
+			if(i <fireworksLeftArray.length){
+				var fireworksLeftImage = document.createElement("IMG");
+				fireworksLeftImage.setAttribute("src", fireworksLeftArray[i]);	
+				fireworksLeftImage.setAttribute("class","fireworksLeft");
+				fireworksLeft.appendChild(fireworksLeftImage);
+				
+				var fireworksLeftImage2 = document.createElement("IMG");
+				fireworksLeftImage2.setAttribute("src", fireworksLeftArray[i]);	
+				fireworksLeftImage2.setAttribute("class","fireworksLeft2");
+				fireworksLeft2.appendChild(fireworksLeftImage2);
+			}
+		}
+		for(i=0; i < fireworksRightArray.length; i++){	 
+			if(i <fireworksRightArray.length){
+				var fireworksRightImage = document.createElement("IMG");
+				fireworksRightImage.setAttribute("src", fireworksRightArray[i]);	
+				fireworksRightImage.setAttribute("class","fireworksRight");
+				fireworksRight.appendChild(fireworksRightImage);
+			}
+		}		
 		// declare render Image variable
 		var renderButterflyLeft;
 		var renderButterflyRight;
@@ -324,6 +431,11 @@ var timeouts;
 		var renderRedFish;
 		var renderBlueFish;
 		var renderBlackFish;
+		var renderRewardFont;
+		var renderinGameButton;
+		var renderFireworksLeft;
+		var renderFireworksLeft2;
+		var renderFireworksRight;
 		
 		// create render Image Function
 		function butterflyLeftAnimation(){
@@ -528,7 +640,7 @@ var timeouts;
 				}	
 			}
 		} 
-		
+
 		// call render Image Function
 		butterflyLeftAnimation();
 		butterflyRightAnimation();
@@ -725,12 +837,172 @@ var timeouts;
 	
 	function winInterface(){
 		
-			innerContainerD.style.display = "block";
+		innerContainerD.style.display = "block";
+		chances.style.display = "none";
+		butterflyRight.style.opacity = "0";
+		butterflyLeft.style.opacity = "0";
+		
+		doorLeft.style.animation = " doorLeft 1s forwards 1 reverse"
+		doorLeft.style.webkitAnimation = " doorLeft 1s forwards 1 reverse"
+		doorRight.style.animation = " doorRight 1s forwards 1 reverse"
+		doorRight.style.webkitAnimation = " doorRight 1s forwards 1 reverse"
+		stamp.style.animationPlayState = "running";
+		stamp.style.webkitAnimationPlayState = "running";
+		fontEffect_Sakura.style.animationPlayState = "running";
+		fontEffect_Sakura.style.webkitAnimationPlayState = "running";
+		butterflyRight.style.animation = " butterFlyRightReplace 3s 4s forwards 1"
+		butterflyRight.style.webkitAnimation = " butterFlyRightReplace 3s 4s forwards 1 "
+		butterflyLeft.style.animation = " butterFlyLeftReplace 3s 4s forwards 1"
+		butterflyLeft.style.webkitAnimation = " butterFlyLeftReplace 3s 4s forwards 1 "	
 			
-			doorLeft.style.animation = " doorLeft 1s forwards 1 reverse"
-			doorLeft.style.webkitAnimation = " doorLeft 1s forwards 1 reverse"
-			doorRight.style.animation = " doorRight 1s forwards 1 reverse"
-			doorRight.style.webkitAnimation = " doorRight 1s forwards 1 reverse"
+		doTimer(
+			2200,60,function(steps){},
+					function(){
+						rewardFontAnimation();
+						inGameButtonAnimation();
+						}						
+		);			
+		
+		doTimer(
+			2700,60,function(steps){},
+					function(){
+							fireworksRightAnimation();
+						}						
+		);	
+		doTimer(
+			3200,60,function(steps){},
+					function(){
+						fireworksLeftAnimation();
+						}						
+		);	
+		doTimer(
+			4500,60,function(steps){},
+					function(){
+						fireworksRight.style.display = "block";
+						fireworksRight.style.top = "6%";
+						fireworksRight.style.left= "-31%";
+						fireworksRightAnimation();
+						}						
+		);			
+		doTimer(
+			4000,60,function(steps){},
+					function(){
+							fireworksLeft2Animation();
+						}						
+		);	
+		doTimer(
+			5400,60,function(steps){},
+					function(){
+							fireworksLeft.style.display = "block";
+						    fireworksLeft.style.top = "4%";
+							fireworksLeft.style.left= "34%";
+							fireworksLeftAnimation();
+						}						
+		);	
+		
+		function rewardFontAnimation(){
+			var myIndex = 0;			
+			var rF = document.getElementsByClassName("rewardFont");		
+			loopRewardFont();
+			function loopRewardFont(){
+				var i;
+				for (i=0;i<rF.length;i++)
+				{
+					rF[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > rF.length){}
+				rF[myIndex-1].style.display = "block";
+				renderRewardFont = setTimeout(loopRewardFont,80);			
+				 
+				if (myIndex === 9){
+					clearTimeout(renderRewardFont);
+				}	
+			}
+		}
+		function inGameButtonAnimation(){
+			var myIndex = 0;			
+			var iGB = document.getElementsByClassName("inGameButton");		
+			loopInGameButton();
+			function loopInGameButton(){
+				var i;
+				for (i=0;i<iGB.length;i++)
+				{
+					iGB[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > iGB.length){}
+				iGB[myIndex-1].style.display = "block";
+				inGameButtonAnimation = setTimeout(loopInGameButton,100);			
+				 
+				if (myIndex === 9){
+					clearTimeout(inGameButtonAnimation);
+				}	
+			}
+		} 
+		function fireworksLeftAnimation(){
+			var myIndex = 0;			
+			var fL = document.getElementsByClassName("fireworksLeft");		
+			loopFireworksLeft();
+			function loopFireworksLeft(){
+				var i;
+				for (i=0;i<fL.length;i++)
+				{
+					fL[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > fL.length){}
+				fL[myIndex-1].style.display = "block";
+				renderFireworksLeft = setTimeout(loopFireworksLeft,100);			
+				 
+				if (myIndex === 12){
+					fireworksLeft.style.display = "none";
+					clearTimeout(renderFireworksLeft);
+				}	
+			}
+		} 	
+		function fireworksLeft2Animation(){
+			var myIndex = 0;			
+			var fL2 = document.getElementsByClassName("fireworksLeft2");		
+			loopFireworksLeft2();
+			function loopFireworksLeft2(){
+				var i;
+				for (i=0;i<fL2.length;i++)
+				{
+					fL2[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > fL2.length){}
+				fL2[myIndex-1].style.display = "block";
+				renderFireworksLeft2 = setTimeout(loopFireworksLeft2,100);			
+				 
+				if (myIndex === 12){
+					fireworksLeft2.style.display = "none";
+					clearTimeout(renderFireworksLeft2);
+				}	
+			}
+		} 	
+		function fireworksRightAnimation(){
+			var myIndex = 0;			
+			var fR = document.getElementsByClassName("fireworksRight");		
+			loopFireworksRight();
+			function loopFireworksRight(){
+				var i;
+				for (i=0;i<fR.length;i++)
+				{
+					fR[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > fR.length){}
+				fR[myIndex-1].style.display = "block";
+				renderFireworksRight = setTimeout(loopFireworksRight,100);			
+				 
+				if (myIndex === 18){
+					fireworksRight.style.display = "none";
+					clearTimeout(renderFireworksRight);
+				}	
+			}
+		}		
 	}
 	
 	function sizeData(w,h){

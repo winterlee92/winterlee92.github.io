@@ -474,7 +474,7 @@ body{
 				transform: scaleX(-1);
 				background-repeat:no-repeat;
 				background-Size : 100% 100%; 
-				z-index:2;
+				z-index:3;
 				
 				animation : butterflyLeft 1.5s forwards;
 				-webkit-animation : butterflyLeft 1.5s forwards;
@@ -512,13 +512,13 @@ body{
 			}
 			#butterflyRight{
 				position: absolute;
-				height: 52%;
+				height: 26%;
 				width: 50%;
 				top: 0%;
 				left: 58%;
 				background-repeat:no-repeat;
 				background-Size : 100% 100%; 
-				z-index:2;
+				z-index:3;
 				
 				animation : butterflyRight 1.5s forwards;
 				-webkit-animation : butterflyRight 1.5s forwards;
@@ -532,7 +532,7 @@ body{
 						left: 58%;
 					}
 					100%{
-						top: 14%;
+						top: 5%;
 						left: 58%;
 					}
 				}
@@ -542,7 +542,7 @@ body{
 						left: 58%;
 					}
 					100%{
-						top: 14%;
+						top: 5%;
 						left: 58%;
 					}
 				}
@@ -746,7 +746,7 @@ body{
 				position: absolute;
 				height:100%; 
 				width:100%; 
-				left:-3%;
+				left:-2%;
 				background-repeat:no-repeat;
 				background-Size : 100% 100%; 
 				transform: scaleX(0) scaleY(0);
@@ -772,6 +772,45 @@ body{
 						-webkit-transform: scaleX(0.89) scaleY(0.55);
 					}
 				}
+			#stamp{
+				position: absolute;
+				height: 40%;
+				width: 60%;
+				left: -6%;
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				z-index:1;
+				transform: scaleX(0) scaleY(0);
+				-webkit-transform: scaleX(0) scaleY(0);
+				
+				animation : stamp 1s 3s forwards;
+				-webkit-animation : stamp 1s 3s forwards;
+				
+				animation-play-state:paused;
+				-webkit-animation-play-state:paused; 
+			}	
+				@keyframes stamp{
+					0%{
+						transform: scaleX(3) scaleY(3);
+					 }
+					 20%{
+						transform: scaleX(1) scaleY(1);
+					 }
+					100%{
+						transform: scaleX(1) scaleY(1);
+					}
+				}
+				@-webkit-keyframes stamp{
+					0%{
+						transform: scaleX(3) scaleY(3);
+					 }
+					 20%{
+						transform: scaleX(1) scaleY(1);
+					 }
+					100%{
+						transform: scaleX(1) scaleY(1);
+					}
+				}
 			#reward{
 				position: absolute;
 				height:100%; 
@@ -784,8 +823,8 @@ body{
 				-webkit-transform: scaleX(0) scaleY(0);
 				z-index:2;
 				
-				animation : reward 1.5s 1s forwards;
-				-webkit-animation : reward 1.5s 1s forwards;
+				animation : reward 1.2s 1s forwards;
+				-webkit-animation : reward 1.2s 1s forwards;
 			}
 				 @keyframes reward{
 					0%{
@@ -795,7 +834,7 @@ body{
 						transform: scaleX(1) scaleY(0.8);
 					}
 					100%{
-						transform: scaleX(0.8) scaleY(0.6);
+						transform: scaleX(0.9) scaleY(0.65);
 					}
 				 }
 				@-webkit-keyframes reward{
@@ -809,3 +848,310 @@ body{
 						-webkit-transform: scaleX(0.9) scaleY(0.65);
 					}
 				}	
+			#rewardFont{
+				position: absolute;
+				height: 52%;
+				width: 80%;
+				top: 45%;
+				left: 31%;
+				z-index: 3;
+			}
+			.rewardFont{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				display:none;
+			}	
+			#fireworksLeft{
+				position: absolute;
+				height: 60%;
+				width: 100%;
+				top: 6%;
+				left: -31%;
+				z-index: 4;
+			}
+			.fireworksLeft{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				display:none;
+			}
+			#fireworksLeft2{
+				position: absolute;
+				height: 60%;
+				width: 100%;
+				top: -14%;
+				left: 3%;
+				z-index: 4;
+			}
+			.fireworksLeft2{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				display:none;
+			}
+			#fireworksRight{
+				position: absolute;
+				height: 60%;
+				width: 100%;
+				top: 4%;
+				left: 34%;
+				z-index: 4;
+			}
+			.fireworksRight{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				display:none;
+			}
+			#fontEffect_Glow1{
+				position: absolute;
+				height: 15%;
+				width: 15%;
+				top: 55%;
+				left: 53%;
+				z-index: 4;
+				opacity:0;
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				filter:brightness(100%);
+				animation : fontEffect_Glow1 3s 3s linear infinite;
+				-webkit-animation : fontEffect_Glow1 3s 3s linear infinite;
+			}
+				@keyframes fontEffect_Glow1{
+					0%{
+						opacity:0;
+					 }
+					50%{
+						opacity:1;
+					 }
+					100%{
+						opacity:0;
+					}
+				}
+				@-webkit-keyframes fontEffect_Glow1{
+					0%{
+						opacity:0;
+					 }
+					50%{
+						opacity:1;
+					 }
+					100%{
+						opacity:0;
+					}
+				}
+			#fontEffect_Glow2{
+				position: absolute;
+				height: 15%;
+				width: 15%;
+				top: 70%;
+				left: 60%;
+				z-index: 4;
+				opacity:0;
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				
+				animation : fontEffect_Glow1 3s 2s linear infinite;
+				-webkit-animation : fontEffect_Glow1 3s 2s linear infinite;
+			}	
+			#fontEffect_Glow3{
+				position: absolute;
+				height: 10%;
+				width: 10%;
+				top: 51%;
+				left: 67%;
+				z-index: 4;
+				opacity:0;
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				
+				animation : fontEffect_Glow1 3s 2s linear infinite;
+				-webkit-animation : fontEffect_Glow1 3s 2s linear infinite;
+			}	
+			#fontEffect_Glow4{
+				position: absolute;
+				height: 15%;
+				width: 15%;
+				top: 61.5%;
+				left: 76%;
+				z-index: 4;
+				opacity:0;
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				
+				animation : fontEffect_Glow1 3s 3s linear infinite;
+				-webkit-animation : fontEffect_Glow1 3s 3s linear infinite;
+			}	
+			#fontEffect_SakuraRotate{
+				position: absolute;
+				height: 14%;
+				width: 25%;
+				top: 59%;
+				left: 67%;
+				z-index: 4;
+				
+				animation : glowRotate 10s linear infinite;
+				-webkit-animation : glowRotate 10s linear infinite;
+			}
+			#fontEffect_Sakura{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				
+				transform: scaleX(0) scaleY(0);
+				-webkit-transform: scaleX(0) scaleY(0);		
+				
+				animation : fontEffect_Sakura 1s 2s forwards;
+				-webkit-animation : fontEffect_Sakura 1s 2s forwards;
+				
+				animation-play-state:paused;
+				-webkit-animation-play-state:paused; 
+			}
+				@keyframes fontEffect_Sakura{
+					0%{
+						transform: scaleX(0) scaleY(0);
+					 }
+					100%{
+						transform: scaleX(1) scaleY(1);
+					}
+				}
+				@-webkit-keyframes fontEffect_Sakura{
+					0%{
+						-webkit-transform: scaleX(0) scaleY(0);
+					 }
+					100%{
+						-webkit-transform: scaleX(1) scaleY(1);
+					}
+				}
+			#buttonEffect_SakuraRotate{
+				position: absolute;
+				height: 13%;
+				width: 19%;
+				top: 85%;
+				left: 38%;
+				z-index: 3;
+				
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				
+				animation : glowRotate 10s linear infinite;
+				-webkit-animation : glowRotate 10s linear infinite;
+			}	
+			#buttonEffect_Sakura{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				opacity:0;
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				
+				animation : buttonEffect_Sakura 1s 2s forwards;
+				-webkit-animation : buttonEffect_Sakura 1s 2s forwards;
+			}
+			@keyframes buttonEffect_Sakura{
+					0%{
+						opacity:0;
+					 }
+					100%{
+						opacity:1;
+					}
+				}
+				@-webkit-keyframes buttonEffect_Sakura{
+					0%{
+						opacity:0;
+					 }
+					100%{
+						opacity:1;
+					}
+				}
+			#inGameButton{
+				position: absolute;
+				height: 25%;
+				width: 52%;
+				top: 78%;
+				left: 22%;
+				z-index: 4;
+			}
+			.inGameButton{
+				position: absolute;
+				height:100%; 
+				width:100%; 
+				background-repeat:no-repeat;
+				background-Size : 100% 100%; 
+				display:none;
+			}	
+				@keyframes butterFlyLeftReplace{
+					0%{
+						height: 22%;
+						width: 44%;
+						top: 37%;
+						left: -11%;
+						opacity:0;
+					}
+					100%{
+						height: 22%;
+						width: 44%;
+						top: 37%;
+						left: -11%;
+						opacity:0.8;
+					}
+				}
+				@keyframes butterFlyLeftReplace{
+					0%{
+						height: 22%;
+						width: 44%;
+						top: 37%;
+						left: -11%;
+						opacity:0;
+					}
+					100%{
+						height: 22%;
+						width: 44%;
+						top: 37%;
+						left: -11%;
+						opacity:0.8;
+					}
+				}
+				@keyframes butterFlyRightReplace{
+					0%{
+						height: 27%;
+						width: 40%;
+						top: 52%;
+						left: 68%;
+						opacity:0;
+					}
+					100%{
+						height: 27%;
+						width: 40%;
+						top: 52%;
+						left: 68%;
+						opacity:0.8;
+					}
+				}
+				@keyframes butterFlyRightReplace{
+					0%{
+						height: 23%;
+						width: 40%;
+						top: 53%;
+						left: 67%;
+						opacity:0;
+					}
+					100%{
+						height: 23%;
+						width: 40%;
+						top: 53%;
+						left: 67%;
+						opacity:0.8;
+					}
+				}
+				    
