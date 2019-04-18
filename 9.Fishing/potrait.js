@@ -58,7 +58,7 @@ var timeouts;
 }
 	
 	function lp() {
-			 mv = setTimeout(main, 500);
+			 mv = setTimeout(main, 1000);
 	    }
 	
 	function main(){
@@ -270,7 +270,23 @@ var timeouts;
 					'fireworksRight066.png',	
 					'fireworksRight070.png',	
 					'fireworksRight074.png',
-					]					
+					]	
+		var flagsArray = [
+					'flag02.png',
+					'flag06.png',
+					'flag010.png',
+					'flag014.png',	
+					'flag018.png',	
+					'flag022.png',
+					'flag024.png',
+					'flag026.png',
+					'flag030.png',	
+					'flag034.png',
+					'flag038.png',
+					'flag042.png',
+					'flag046.png',
+				]	
+					
 		// use images from array
 		innerContainerA.style.backgroundImage = imageArray[0];
 		document.getElementById("sakura").style.backgroundImage = imageArray[1];
@@ -296,6 +312,7 @@ var timeouts;
 		fontEffect_Glow4.style.backgroundImage = winImageArray[3];
 		fontEffect_Sakura.style.backgroundImage = winImageArray[4];
 		buttonEffect_Sakura.style.backgroundImage = winImageArray[5];
+		flagsScale.style.backgroundImage = "url("+flagsArray[0]+")";
 		
 		//  create and store Images		
 		for(i=0; i < butterflyArray.length; i++){	 
@@ -419,7 +436,15 @@ var timeouts;
 				fireworksRightImage.setAttribute("class","fireworksRight");
 				fireworksRight.appendChild(fireworksRightImage);
 			}
-		}		
+		}	
+		for(i=0; i < flagsArray.length; i++){	 
+			if(i <flagsArray.length){
+				var flagsImage = document.createElement("IMG");
+				flagsImage.setAttribute("src", flagsArray[i]);	
+				flagsImage.setAttribute("class","flags");
+				flags.appendChild(flagsImage);
+			}
+		}			
 		// declare render Image variable
 		var renderButterflyLeft;
 		var renderButterflyRight;
@@ -436,6 +461,7 @@ var timeouts;
 		var renderFireworksLeft;
 		var renderFireworksLeft2;
 		var renderFireworksRight;
+		var renderFlags;
 		
 		// create render Image Function
 		function butterflyLeftAnimation(){
@@ -640,7 +666,7 @@ var timeouts;
 				}	
 			}
 		} 
-
+		
 		// call render Image Function
 		butterflyLeftAnimation();
 		butterflyRightAnimation();
@@ -680,7 +706,7 @@ var timeouts;
 			sushi3.style.webkitAnimationPlayState = "running";
 			
 			fishElements();
-			winInterface();
+			// winInterface();
 			
 			doTimer(
 			1500,60,function(steps){},
@@ -858,8 +884,11 @@ var timeouts;
 		doTimer(
 			2200,60,function(steps){},
 					function(){
+						flagsScale.style.display = "none";
+						
 						rewardFontAnimation();
 						inGameButtonAnimation();
+						flagsAnimation();
 						}						
 		);			
 		
@@ -879,8 +908,8 @@ var timeouts;
 			4500,60,function(steps){},
 					function(){
 						fireworksRight.style.display = "block";
-						fireworksRight.style.top = "6%";
-						fireworksRight.style.left= "-31%";
+						fireworksRight.style.top = "15%";
+						fireworksRight.style.left= "-8%";
 						fireworksRightAnimation();
 						}						
 		);			
@@ -894,8 +923,8 @@ var timeouts;
 			5400,60,function(steps){},
 					function(){
 							fireworksLeft.style.display = "block";
-						    fireworksLeft.style.top = "4%";
-							fireworksLeft.style.left= "34%";
+						    fireworksLeft.style.top = "15%";
+							fireworksLeft.style.left= "48%";
 							fireworksLeftAnimation();
 						}						
 		);	
@@ -953,7 +982,7 @@ var timeouts;
 				myIndex++;
 				if (myIndex > fL.length){}
 				fL[myIndex-1].style.display = "block";
-				renderFireworksLeft = setTimeout(loopFireworksLeft,100);			
+				renderFireworksLeft = setTimeout(loopFireworksLeft,80);			
 				 
 				if (myIndex === 12){
 					fireworksLeft.style.display = "none";
@@ -974,7 +1003,7 @@ var timeouts;
 				myIndex++;
 				if (myIndex > fL2.length){}
 				fL2[myIndex-1].style.display = "block";
-				renderFireworksLeft2 = setTimeout(loopFireworksLeft2,100);			
+				renderFireworksLeft2 = setTimeout(loopFireworksLeft2,80);			
 				 
 				if (myIndex === 12){
 					fireworksLeft2.style.display = "none";
@@ -1002,7 +1031,28 @@ var timeouts;
 					clearTimeout(renderFireworksRight);
 				}	
 			}
-		}		
+		}
+		function flagsAnimation(){
+			var myIndex = 0;			
+			var flag = document.getElementsByClassName("flags");		
+			loopflags();
+			function loopflags(){
+				var i;
+				for (i=0;i<flag.length;i++)
+				{
+					flag[i].style.display="none";
+				}
+				myIndex++;
+				if (myIndex > flag.length){}
+				flag[myIndex-1].style.display = "block";
+				renderFlags = setTimeout(loopflags,80);			
+				 
+				if (myIndex === 12){
+					myIndex=0;
+				}	
+			}
+		} 		
+	
 	}
 	
 	function sizeData(w,h){
