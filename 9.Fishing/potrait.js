@@ -92,78 +92,54 @@ var timeouts;
 					"url('lowerBg00.png')",
 					"url('guide.png')",
 					"url('chancesBg.png')",
-					"url('sushi.png')"
+					"url('sushi.png')",
+					"url('tumbler01.png')",
 				]
 		var butterflyArray = [
 								"butterfly01.png",
-								"butterfly03.png",	
 								"butterfly05.png",	
-								"butterfly07.png",	
 								"butterfly09.png",		
-								"butterfly011.png",	
 								"butterfly013.png",	
-								"butterfly015.png",	
-								"butterfly017.png",		
-								"butterfly019.png",			
+								"butterfly017.png",				
 								"butterfly021.png",	
 								"butterfly024.png"
 								]
-		var tumblerArray = [
-							"tumbler01.png",	
-							"tumbler05.png",	
-							"tumbler09.png",	
-							"tumbler013.png",		
-							"tumbler017.png",		
-							"tumbler021.png",		
-							"tumbler025.png",		
-							"tumbler029.png",		
-							"tumbler033.png",		
-							"tumbler037.png",		
-							"tumbler041.png",		
-							"tumbler045.png",		
-							"tumbler048.png"
-							]
 		var lowerBackground = [
 						'lowerBg01.jpg',
-						'lowerBg05.jpg',
 						'lowerBg09.jpg',
-						'lowerBg013.jpg',
 						'lowerBg017.jpg',
-						'lowerBg021.jpg',
 						'lowerBg025.jpg',
-						'lowerBg029.jpg',
 						'lowerBg033.jpg',
-						'lowerBg037.jpg',
 						'lowerBg041.jpg',
 						'lowerBg047.jpg'							
 					]
 		var startButtonArray = [
 							"startButton01.png",	
-							"startButton03.png",	
+							// "startButton03.png",	
 							"startButton05.png",	
-							"startButton07.png",	
+							// "startButton07.png",	
 							"startButton09.png",		
-							"startButton011.png",		
+							// "startButton011.png",		
 							"startButton013.png",		
-							"startButton015.png",		
+							// "startButton015.png",		
 							"startButton017.png",		
-							"startButton019.png",		
+							// "startButton019.png",		
 							"startButton021.png",		
-							"startButton023.png",		
+							// "startButton023.png",		
 							"startButton025.png",		
-							"startButton027.png",		
+							// "startButton027.png",		
 							"startButton029.png",		
-							"startButton031.png",		
+							// "startButton031.png",		
 							"startButton033.png",		
 							"startButton035.png"
 						]
 		var startButtonArray2 = [
 								"startButton058.png",		
-								"startButton060.png",		
+								// "startButton060.png",		
 								"startButton062.png",		
-								"startButton064.png",		
+								// "startButton064.png",		
 								"startButton066.png",		
-								"startButton068.png",		
+								// "startButton068.png",		
 								"startButton070.png",		
 								"startButton072.png"
 							]		
@@ -171,7 +147,6 @@ var timeouts;
 					"redFish02.png",	
 					"redFish06.png",	
 					"redFish010.png",	
-					"redFish014.png",	
 					"redFish018.png",		
 					"redFish022.png",		
 					"redFish024.png"
@@ -180,7 +155,6 @@ var timeouts;
 				"blueFish02.png",	
 				"blueFish06.png",	
 				"blueFish010.png",	
-				"blueFish014.png",	
 				"blueFish018.png",		
 				"blueFish022.png",		
 				"blueFish024.png"
@@ -189,7 +163,6 @@ var timeouts;
 				"blackFish02.png",	
 				"blackFish06.png",	
 				"blackFish010.png",	
-				"blackFish014.png",	
 				"blackFish018.png",		
 				"blackFish022.png",		
 				"blackFish024.png"
@@ -225,15 +198,10 @@ var timeouts;
 								]		
 		var inGameButtonArray = [
 								'inGameButton01.png',
-								'inGameButton05.png',
-								'inGameButton09.png',
-								'inGameButton013.png',	
+								'inGameButton09.png',	
 								'inGameButton017.png',	
-								'inGameButton021.png',
 								'inGameButton025.png',
-								'inGameButton029.png',
 								'inGameButton033.png',	
-								'inGameButton037.png',
 								'inGameButton041.png'
 								]
 		var fireworksLeftArray = [
@@ -273,23 +241,18 @@ var timeouts;
 					]	
 		var flagsArray = [
 					'flag02.png',
-					'flag06.png',
 					'flag010.png',
-					'flag014.png',	
 					'flag018.png',	
-					'flag022.png',
 					'flag024.png',
-					'flag026.png',
 					'flag030.png',	
-					'flag034.png',
 					'flag038.png',
-					'flag042.png',
 					'flag046.png',
+					'flag048.png',
 				]	
 					
 		// use images from array
 		innerContainerA.style.backgroundImage = imageArray[0];
-		document.getElementById("sakura").style.backgroundImage = imageArray[1];
+		sakura.style.backgroundImage = imageArray[1];
 		lanternLeft.style.backgroundImage = imageArray[2];
 		lanternRight.style.backgroundImage = imageArray[3];
 		doorLeft.style.backgroundImage = imageArray[4];
@@ -297,10 +260,10 @@ var timeouts;
 		lowerBg00.style.backgroundImage = imageArray[6];
 		guide.style.backgroundImage = imageArray[7];
 		chancesBg.style.backgroundImage = imageArray[8];
-		tumblerDefault.style.backgroundImage = tumblerArray[0];
 		sushi1.style.backgroundImage = imageArray[9];
 		sushi2.style.backgroundImage = imageArray[9];
 		sushi3.style.backgroundImage = imageArray[9];
+		tumbler.style.backgroundImage = imageArray[10];
 		
 		glow.style.backgroundImage = winImageArray[0];
 		reward.style.backgroundImage = winImageArray[1];
@@ -327,15 +290,6 @@ var timeouts;
 				butterflyRightImage.setAttribute("src", butterflyArray[i]);	
 				butterflyRightImage.setAttribute("class","butterflyRight");
 				butterflyRight.appendChild(butterflyRightImage);
-			}
-		}
-		for(i=0; i < tumblerArray.length; i++){	 
-			if(i <tumblerArray.length)
-			{
-				var tumblerImage = document.createElement("IMG");
-				tumblerImage.setAttribute("src", tumblerArray[i]);	
-				tumblerImage.setAttribute("class","tumbler");
-				tumbler.appendChild(tumblerImage);
 			}
 		}
 		for(i=0; i < lowerBackground.length; i++){	 
@@ -465,7 +419,7 @@ var timeouts;
 		
 		// create render Image Function
 		function butterflyLeftAnimation(){
-			var myIndex = 0;			
+			var myIndex = 5;			
 			var butterflyLeft = document.getElementsByClassName("butterflyLeft");		
 			loopButterflyLeft();
 			function loopButterflyLeft(){
@@ -477,9 +431,9 @@ var timeouts;
 				myIndex++;
 				if (myIndex > butterflyLeft.length){}
 				butterflyLeft[myIndex-1].style.display = "block";
-				renderButterflyLeft = setTimeout(loopButterflyLeft,100);			
+				renderButterflyLeft = setTimeout(loopButterflyLeft,150);			
 				 
-				if (myIndex === 12){
+				if (myIndex === 6){
 					myIndex=0;
 				}	
 			}
@@ -497,33 +451,13 @@ var timeouts;
 				myIndex++;
 				if (myIndex > butterflyRight.length){}
 				butterflyRight[myIndex-1].style.display = "block";
-				renderButterflyRight = setTimeout(loopButterflyRight,100);			
+				renderButterflyRight = setTimeout(loopButterflyRight,150);			
 				 
-				if (myIndex === 12){
+				if (myIndex === 6){
 					myIndex=0;
 				}	
 			}
 		} 
-		function tumblerAnimation(){
-			var myIndex = 0;			
-			var tumbler = document.getElementsByClassName("tumbler");		
-			loopTumbler();
-			function loopTumbler(){
-				var i;
-				for (i=0;i<tumbler.length;i++)
-				{
-					tumbler[i].style.display="none";
-				}
-				myIndex++;
-				if (myIndex > tumbler.length){}
-				tumbler[myIndex-1].style.display = "block";
-				renderTumbler = setTimeout(loopTumbler,80);			
-				 
-				if (myIndex === 12){
-					clearTimeout(renderTumbler);		
-				}	
-			}
-		}
 		function lowerBackgroundAnimation(){
 			var myIndex = 0;			
 			var lowerBg = document.getElementsByClassName("lowerBg");		
@@ -539,7 +473,7 @@ var timeouts;
 				lowerBg[myIndex-1].style.display = "block";
 				renderLowerBackground = setTimeout(loopLowerBackground,100);			
 				 
-				if (myIndex === 12){
+				if (myIndex === 6){
 					myIndex = 0;			
 				}	
 			}
@@ -559,7 +493,7 @@ var timeouts;
 				startBtn[myIndex-1].style.display = "block";
 				renderStartButton = setTimeout(loopstartButton,100);			
 				 
-				if (myIndex === 18){
+				if (myIndex === 10){
 					clearTimeout(renderStartButton);
 				}	
 			}
@@ -579,7 +513,7 @@ var timeouts;
 				startBtn2[myIndex-1].style.display = "block";
 				renderstartButtonClick = setTimeout(loopstartButtonClick,70);			
 				 
-				if (myIndex === 7){
+				if (myIndex === 5){
 					startBtn2[myIndex-1].style.display = "none";
 					clearTimeout(renderstartButtonClick);
 				}	
@@ -600,7 +534,7 @@ var timeouts;
 				redFish[myIndex-1].style.display = "block";
 				renderRedFish = setTimeout(loopRedFish,70);			
 				 
-				if (myIndex === 7){
+				if (myIndex === 6){
 					myIndex = 0;
 				}	
 			}
@@ -620,7 +554,7 @@ var timeouts;
 				blueFish[myIndex-1].style.display = "block";
 				renderBlueFish = setTimeout(loopblueFish,70);			
 				 
-				if (myIndex === 7){
+				if (myIndex === 6){
 					myIndex = 0;
 				}	
 			}
@@ -640,7 +574,7 @@ var timeouts;
 				blackFish[myIndex-1].style.display = "block";
 				renderBlackFish = setTimeout(loopblackFish,70);			
 				 
-				if (myIndex === 7){
+				if (myIndex === 6){
 					myIndex = 0;
 				}	
 			}
@@ -670,7 +604,6 @@ var timeouts;
 		// call render Image Function
 		butterflyLeftAnimation();
 		butterflyRightAnimation();
-		tumblerAnimation();
 		startButtonAnimation();
 		lowerBackgroundAnimation();
 		redFishAnimation();
@@ -706,13 +639,7 @@ var timeouts;
 			sushi3.style.webkitAnimationPlayState = "running";
 			
 			fishElements();
-			// winInterface();
-			
-			doTimer(
-			1500,60,function(steps){},
-					function(){tumblerAnimation();}						
-			);
-			
+			winInterface();
 			starEffectAnimation();
 		});
 	}		
@@ -964,7 +891,7 @@ var timeouts;
 				iGB[myIndex-1].style.display = "block";
 				inGameButtonAnimation = setTimeout(loopInGameButton,100);			
 				 
-				if (myIndex === 9){
+				if (myIndex === 5){
 					clearTimeout(inGameButtonAnimation);
 				}	
 			}
@@ -1045,9 +972,9 @@ var timeouts;
 				myIndex++;
 				if (myIndex > flag.length){}
 				flag[myIndex-1].style.display = "block";
-				renderFlags = setTimeout(loopflags,80);			
+				renderFlags = setTimeout(loopflags,100);			
 				 
-				if (myIndex === 12){
+				if (myIndex === 7){
 					myIndex=0;
 				}	
 			}

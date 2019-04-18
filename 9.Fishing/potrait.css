@@ -175,16 +175,6 @@ body{
 				background-repeat:no-repeat;
 				background-Size : 100% 100%;
 			}
-			#tumblerDefault{
-				position: absolute;
-				top: -55%;
-				left: 22%;
-				height: 200%;
-				width: 70%;
-				z-index: 3;
-				background-repeat:no-repeat;
-				background-Size : 100% 100%; 
-			}
 			#tumbler{
 				position: absolute;
 				top: -55%;
@@ -192,14 +182,8 @@ body{
 				height: 200%;
 				width: 70%;
 				z-index: 3;
-			}
-			.tumbler{
-				position: absolute;
-				height:100%; 
-				width:100%; 
 				background-repeat:no-repeat;
 				background-Size : 100% 100%; 
-				display:none;
 			}
 			#sushi1{
 				position: absolute;
@@ -470,11 +454,11 @@ body{
 			}
 			#butterflyLeft{
 				position: absolute;
-				height: 25%;
-				width: 50%;
+				height: 15%;
+				width: 25%;
 				top: 7%;
 				left: -12%;
-				transform: scaleX(-1);
+
 				background-repeat:no-repeat;
 				background-Size : 100% 100%; 
 				z-index:3;
@@ -487,22 +471,22 @@ body{
 			}
 				@keyframes butterflyLeft{
 					0%{
-						top: 7%;
-						left: -12%;
+						top: 8%;
+						left: 0%;
 					}
 					100%{
-						top: 2%;
-						left: 1%;
+						top: 5%;
+						left: 12%;
 					}
 				}
 				@-webkit-keyframes butterflyLeft{
 					0%{
-						top: 7%;
-						left: -12%;
+						top: 8%;
+						left: 0%;
 					}
 					100%{
-						top: 2%;
-						left: 1%;
+						top: 5%;
+						left: 12%;
 					}
 				}
 			.butterflyLeft{
@@ -515,13 +499,16 @@ body{
 			}
 			#butterflyRight{
 				position: absolute;
-				height: 26%;
-				width: 50%;
-				top: 0%;
-				left: 58%;
+				height: 13%;
+				width: 23%;
+				top: 3%;
+				left: 73%;
 				background-repeat:no-repeat;
 				background-Size : 100% 100%; 
 				z-index:3;
+				
+				transform: scaleX(-1);
+				-webkit-transform: scaleX(-1);
 				
 				animation : butterflyRight 1.5s forwards;
 				-webkit-animation : butterflyRight 1.5s forwards;
@@ -531,22 +518,22 @@ body{
 			}
 				@keyframes butterflyRight{
 					0%{
-						top: 0%;
-						left: 58%;
+						top: 3%;
+						left: 73%;
 					}
 					100%{
-						top: 5%;
-						left: 58%;
+						top: 9%;
+						left: 73%;
 					}
 				}
 				@-webkit-keyframes butterflyRight{
 					0%{
-						top: 0%;
-						left: 58%;
+						top: 3%;
+						left: 73%;
 					}
 					100%{
-						top: 5%;
-						left: 58%;
+						top: 9%;
+						left: 73%;
 					}
 				}
 			.butterflyRight{
@@ -1174,66 +1161,66 @@ body{
 			}	
 				@keyframes butterFlyLeftReplace{
 					0%{
-						height: 22%;
-						width: 44%;
-						top: 37%;
-						left: -11%;
+						height: 15%;
+						width: 25%;
+						top: 38%;
+						left: -1%;
 						opacity:0;
 					}
 					100%{
-						height: 22%;
-						width: 44%;
-						top: 37%;
-						left: -11%;
-						opacity:0.8;
+						height: 15%;
+						width: 25%;
+						top: 38%;
+						left: -1%;
+						opacity: 1;
 					}
 				}
 				@keyframes butterFlyLeftReplace{
 					0%{
-						height: 22%;
-						width: 44%;
-						top: 37%;
-						left: -11%;
+						height: 15%;
+						width: 25%;
+						top: 38%;
+						left: -1%;
 						opacity:0;
 					}
 					100%{
-						height: 22%;
-						width: 44%;
-						top: 37%;
-						left: -11%;
-						opacity:0.8;
+						height: 15%;
+						width: 25%;
+						top: 38%;
+						left: -1%;
+						opacity: 1;
 					}
 				}
 				@keyframes butterFlyRightReplace{
 					0%{
-						height: 27%;
-						width: 40%;
-						top: 52%;
-						left: 68%;
+						height: 15%;
+						width: 25%;
+						top: 55%;
+						left: 75%;
 						opacity:0;
 					}
 					100%{
-						height: 27%;
-						width: 40%;
-						top: 52%;
-						left: 68%;
-						opacity:0.8;
+						height: 15%;
+						width: 25%;
+						top: 55%;
+						left: 75%;
+						opacity:1;
 					}
 				}
 				@keyframes butterFlyRightReplace{
 					0%{
-						height: 23%;
-						width: 40%;
-						top: 53%;
-						left: 67%;
+						height: 15%;
+						width: 25%;
+						top: 55%;
+						left: 75%;
 						opacity:0;
 					}
 					100%{
-						height: 23%;
-						width: 40%;
-						top: 53%;
-						left: 67%;
-						opacity:0.8;
+						height: 15%;
+						width: 25%;
+						top: 55%;
+						left: 75%;
+						opacity:1;
 					}
 				}
 				    
