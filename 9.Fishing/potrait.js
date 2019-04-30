@@ -1076,9 +1076,8 @@ var timeouts;
 		var deltaY = event.changedTouches[0].clientY - clientY;
 		var coords = "X coords: " + deltaX + ", Y coords: " + deltaY;
 		console.log(coords);
-		touch.style.opacity = 0;
-		touch.style.zIndex = 0;
-			
+		
+		touchBox.style.display="none";
 		touchBg.style.animationPlayState = "paused";
 		touchBg.style.webkitAnimationPlayState = "paused";	
 	});
