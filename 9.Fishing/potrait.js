@@ -999,7 +999,7 @@ var timeouts;
 		touchBox.style.opacity = 1;
 		touchBox.style.zIndex = 5;
 		touchBox.style.top = (y-(y*0.25)) +'px';
-		touchBox.style.left = (x-(x*0.25)) +'px';
+		touchBox.style.left = (x-(x*0.35)) +'px';
 		
 		touchBg.style.animationPlayState = "running";
 		touchBg.style.webkitAnimationPlayState = "running";
@@ -1063,7 +1063,7 @@ var timeouts;
 		touchBox.style.opacity = 1;
 		touchBox.style.zIndex = 5;
 		touchBox.style.top = (y-(y*0.25)) +'px';
-		touchBox.style.left = (x-(x*0.25)) +'px';
+		touchBox.style.left = (x-(x*0.35)) +'px';
 		
 		touchBg.style.animationPlayState = "running";
 		touchBg.style.webkitAnimationPlayState = "running";

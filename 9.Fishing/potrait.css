@@ -1238,8 +1238,8 @@ body{
 				}
 		#touchBox{
 			position: absolute;
-			height: 28%;
-			width: 30%;
+			height:33%;
+			width: 37%;
 			z-index: 0;
 			opacity:0;
 		}	    
