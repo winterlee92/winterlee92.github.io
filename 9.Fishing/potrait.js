@@ -998,8 +998,8 @@ var timeouts;
   
 		touchBox.style.opacity = 1;
 		touchBox.style.zIndex = 5;
-		touchBox.style.top = (y-(y*0.25)) +'px';
-		touchBox.style.left = (x-(x*0.35)) +'px';
+		touchBox.style.top = (y-(y*0.5)) +'px';
+		touchBox.style.left = (x-(x*0.65)) +'px';
 		
 		touchBg.style.animationPlayState = "running";
 		touchBg.style.webkitAnimationPlayState = "running";
@@ -1007,41 +1007,24 @@ var timeouts;
 	
 	innerContainerC.addEventListener("mouseup", function(event){
 
-		var deltaX, deltaY;
-		var deltaX = event.clientX - clientX;
-		var deltaY = event.clientY - clientY;
-
-		touchBox.style.opacity = 0;
+		// touchBox.style.display="none";
 		touchBox.style.zIndex = 0;
-			
 		touchBg.style.animationPlayState = "paused";
 		touchBg.style.webkitAnimationPlayState = "paused";	
 	});
 	
 	touch.addEventListener("mouseup", function(event){
 
-		var deltaX, deltaY;
-		var deltaX = event.clientX - clientX;
-		var deltaY = event.clientY - clientY;
-		var coords = "X coords: " + deltaX + ", Y coords: " + deltaY;
-		console.log(coords);
-		touchBox.style.opacity = 0;
+		// touchBox.style.display="none";
 		touchBox.style.zIndex = 0;
-			
 		touchBg.style.animationPlayState = "paused";
 		touchBg.style.webkitAnimationPlayState = "paused";		
 	});
 	
 	blueFish1.addEventListener("mouseup", function(event){
 
-		var deltaX, deltaY;
-		var deltaX = event.clientX - clientX;
-		var deltaY = event.clientY - clientY;
-		var coords = "X coords: " + deltaX + ", Y coords: " + deltaY;
-		console.log(coords);
-		touchBox.style.opacity = 0;
+		// touchBox.style.display="none";
 		touchBox.style.zIndex = 0;
-			
 		touchBg.style.animationPlayState = "paused";
 		touchBg.style.webkitAnimationPlayState = "paused";		
 	});
@@ -1057,8 +1040,6 @@ var timeouts;
 		
 		var x = clientX - rect.left;
 		var y = clientY - rect.top; 
-		
-		console.log(clientX);
   
 		touchBox.style.opacity = 1;
 		touchBox.style.zIndex = 5;
@@ -1071,12 +1052,6 @@ var timeouts;
 	});
 	
 	blueFish1.addEventListener("touchend", function(event){
-		var deltaX, deltaY;
-		var deltaX = event.changedTouches[0].clientX - clientX;
-		var deltaY = event.changedTouches[0].clientY - clientY;
-		var coords = "X coords: " + deltaX + ", Y coords: " + deltaY;
-		console.log(coords);
-		
 		touchBox.style.display="none";
 		touchBg.style.animationPlayState = "paused";
 		touchBg.style.webkitAnimationPlayState = "paused";	

@@ -1238,8 +1238,8 @@ body{
 				}
 		#touchBox{
 			position: absolute;
-			height:33%;
-			width: 37%;
+			height:64%;
+			width: 71%;
 			z-index: 0;
 			opacity:0;
 		}	    
@@ -1263,66 +1263,117 @@ body{
 			background-repeat:no-repeat;
 			background-Size : 100% 100%; 
 		}
-		#fishingCircle{
-			display: inline-flex;
-			position:absolute;
-			overflow: hidden;
-			height: 100%;
-			width: 100%;
-		}
-		#halfCircle1{
-			height: 100%;
-			width: 50%;
-			position: absolute;
-			overflow: hidden;
-		}		
 		
-		#halfCircle1:before {
-		  height: inherit;
-		  width: inherit;
-		  position: absolute;
-		  content: "";
-		  border-radius: 100px 0 0 100px;
-		  background-color: lime;
-		  transform-origin: 100% 50%;
-		  /* hidden by default */
-		  transform: rotate(180deg);
-		  opacity: 0.65;
-		  animation-name: rotateHalfCircle1;
-		  animation-duration: 4s;
-		  animation-timing-function: linear;
-		  animation-iteration-count: infinite;
-		}
-		
-		#halfCircle2{
-		  transform: scale(-1, -1);
-		}
+.wrapper {
+  position: absolute;
+  margin: 11% auto;
+}
 
-		#circle halfCircle2:before {
-		  animation-name: rotateHalfCircle2;
-		}
-		
-		@keyframes rotateHalfCircle1 {
-		  0% {
-			transform: rotate(180deg);
-		  }
-		  50% {
-			transform: rotate(0deg);
-		  }
-		  100% {
-			transform: rotate(0deg);
-		  }
-		}
+.wrapper, .wrapper * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
-		@keyframes rotateHalfCircle2 {
-		  0% {
-			transform: rotate(180deg);
-		  }
-		  50% {
-			transform: rotate(180deg);
-		  }
-		  100% {
-			transform: rotate(0deg);
-		  }
-		}
+.wrapper {
+    width: 51%;
+    height: 51%;
+    left: 24.5%;
+    top: 12%;
+}
+
+.wrapper .pie {
+  width: 50%;
+  height: 100%;
+  transform-origin: 100% 50%;
+  position: absolute;
+  border: 5px solid rgba(92,255,77,1);
+}
+
+.wrapper .spinner {
+  border-radius: 100% 0 0 100% / 50% 0 0 50%;
+  z-index: 200;
+  border-right: none;
+  animation: rota 5s linear forwards;
+}
+
+.wrapper:hover .spinner,
+.wrapper:hover .filler,
+.wrapper:hover .mask {
+  animation-play-state: running;
+}
+
+.wrapper .filler {
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+  left: 50%;
+  opacity: 0;
+  z-index: 101;
+  animation: opa 5s steps(1, end) forwards reverse;
+  border-left: none;
+}
+
+.wrapper .filler2 {
+    border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+    left: -50%;
+    opacity: 1;
+    z-index: 201;
+    transform: scaleX(-1);
+    animation: filler2 5s steps(1, end) forwards;
+   
+    border: 6px solid gray; 
+	border-left: none;
+}
+
+.wrapper .filler3 {
+    border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+    left: 50%;
+    opacity: 1;
+    z-index: 100;
+    /* animation: filler3 5s steps(1, end) forwards reverse; */
+    border: 6px solid gray;
+    border-left: none;
+}
+
+.wrapper .mask {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  opacity: 1;
+  z-index: 300;
+  animation: opa 5s steps(1, end) forwards;
+}
+
+@keyframes rota {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes opa {
+  0% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+@keyframes filler2 {
+  0% {
+    z-index:201
+  }
+  50%, 100% {
+    z-index:100
+  }
+}
+/* @keyframes filler3 { */
+  /* 0% { */
+    /* z-index:100 */
+  /* } */
+  /* 50%, 100% { */
+    /* z-index:100 */
+  /* } */
+/* } */
 		/* background: rgb(92,255,77); */
