@@ -1006,21 +1006,16 @@ var timeouts;
 		touchBg.style.webkitAnimationPlayState = "running";
 	});
 	
-	innerContainerC.addEventListener("mouseup", function(event){
-
-		// touchBox.style.display="none";
-		touchBox.style.zIndex = 0;
-		touchBg.style.animationPlayState = "paused";
-		touchBg.style.webkitAnimationPlayState = "paused";	
-	});
-	
 	touchBox.addEventListener("mouseup", function(event){
 
 		touchBox.style.display="none";
-		// touchBox.style.zIndex = 0;
+		touchBox.style.zIndex = 0;
 		touchBg.style.animationPlayState = "paused";
 		touchBg.style.webkitAnimationPlayState = "paused";		
 	});
+	
+
+	
 	
 	blueFish1.addEventListener("touchstart", function(event){
 		event.preventDefault();

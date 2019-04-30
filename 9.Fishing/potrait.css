@@ -1299,9 +1299,7 @@ body{
   animation: rota 5s 1s linear forwards;
 }
 
-.spinner,
-.filler,
-.mask {
+.wrapper,.spinner,.filler,.filler2,.mask {
   animation-play-state: paused;
 }
 
