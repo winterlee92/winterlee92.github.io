@@ -249,7 +249,10 @@ var timeouts;
 					'flag046.png',
 					'flag048.png',
 				]	
-					
+		var	touchImage = [
+							"url('touch.png')",
+							]
+		blueFish1.style.backgroundImage = "url("+blueFishArray[0]+")";
 		// use images from array
 		innerContainerA.style.backgroundImage = imageArray[0];
 		sakura.style.backgroundImage = imageArray[1];
@@ -276,6 +279,7 @@ var timeouts;
 		fontEffect_Sakura.style.backgroundImage = winImageArray[4];
 		buttonEffect_Sakura.style.backgroundImage = winImageArray[5];
 		flagsScale.style.backgroundImage = "url("+flagsArray[0]+")";
+		touch.style.backgroundImage = touchImage[0];
 		
 		//  create and store Images		
 		for(i=0; i < butterflyArray.length; i++){	 
@@ -639,7 +643,7 @@ var timeouts;
 			sushi3.style.webkitAnimationPlayState = "running";
 			
 			fishElements();
-			winInterface();
+			// winInterface();
 			starEffectAnimation();
 		});
 	}		
@@ -675,21 +679,21 @@ var timeouts;
 			var keyFrames = '\
 			@keyframes blackFishReplace{\
 				0%{\
-					top: 15%;\
+					top: 37%;\
 					left: blackFishLeft%;\
 				}\
 				100%{\
-					top: 15%;\
+					top: 37%;\
 					left: -55%;\
 				}\
 			}\
 			@-webkit-keyframes blackFishReplace{\
 				0%{\
-					top: 15%;\
+					top: 37%;\
 					left: blackFishLeft%;\
 				}\
 				100%{\
-					top: 15%;\
+					top: 37%;\
 					left: -55%;\
 				}\
 			}';
@@ -708,29 +712,29 @@ var timeouts;
 			var keyFrames = '\
 			@keyframes redFishReplace{\
 				0%{\
-					top: 57%;\
+					top: 75%;\
 					left: redFishLeft%;\
 				}\
 				50%{\
-					top: 57%;\
+					top: 75%;\
 					left: -55%;\
 				}\
 				100%{\
-					top: 57%;\
+					top: 75%;\
 					left: -55%;\
 				}\
 			}\
 			@-webkit-keyframes redFishReplace{\
 				0%{\
-					top: 57%;\
+					top: 75%;\
 					left: redFishLeft%;\
 				}\
 				50%{\
-					top: 57%;\
+					top: 75%;\
 					left: -55%;\
 				}\
 				100%{\
-					top: 57%;\
+					top: 75%;\
 					left: -55%;\
 				}\
 			}';
@@ -749,30 +753,30 @@ var timeouts;
 			var keyFrames = '\
 			@keyframes blueFishReplace{\
 				0%{\
-					top: 39%;\
+					top: 56%;\
 					left: blueFishLeft%;\
 				}\
 				50%{\
-					top: 39%;\
+					top: 56%;\
 					left: 100%;\
 				}\
 				100%{\
-					top: 39%;\
+					top: 56%;\
 					left: 100%;\
 				}\
 			}\
 			@-webkit-keyframes blueFishReplace{\
 				0%{\
-					top: 39%;\
+					top: 56%;\
 					left: blueFishLeft%;\
 				}\
 				50%{\
-					top: 39%;\
+					top: 56%;\
 					left: 100%;\
 				}\
 				100%{\
-					top: 39%;\
-					left: -100%;\
+					top: 56%;\
+					left: 100%;\
 				}\
 			}';
 			
@@ -981,6 +985,87 @@ var timeouts;
 		} 		
 	
 	}
+	var clientX, clientY;
+	
+	blueFish1.addEventListener("mousedown", function(event){
+
+		var rect = innerContainerB.getBoundingClientRect();
+		
+		var x = event.clientX - rect.left;
+		var y = event.clientY - rect.top; 
+  
+		touch.style.opacity = 1;
+		touch.style.zIndex = 5;
+		touch.style.top = (y-(y*0.25)) +'px';
+		touch.style.left = (x-(x*0.25)) +'px';
+		
+	});
+	
+	innerContainerC.addEventListener("mouseup", function(event){
+
+		var deltaX, deltaY;
+		var deltaX = event.clientX - clientX;
+		var deltaY = event.clientY - clientY;
+
+		touch.style.opacity = 0;
+		touch.style.zIndex = 0;
+			
+	});
+	
+	touch.addEventListener("mouseup", function(event){
+
+		var deltaX, deltaY;
+		var deltaX = event.clientX - clientX;
+		var deltaY = event.clientY - clientY;
+		var coords = "X coords: " + deltaX + ", Y coords: " + deltaY;
+		console.log(coords);
+		touch.style.opacity = 0;
+		touch.style.zIndex = 0;
+			
+	});
+	
+	blueFish1.addEventListener("mouseup", function(event){
+
+		var deltaX, deltaY;
+		var deltaX = event.clientX - clientX;
+		var deltaY = event.clientY - clientY;
+		var coords = "X coords: " + deltaX + ", Y coords: " + deltaY;
+		console.log(coords);
+		touch.style.opacity = 0;
+		touch.style.zIndex = 0;
+			
+	});
+	
+	
+	blueFish1.addEventListener("touchstart", function(event){
+		event.preventDefault();
+
+		clientX = event.touches[0].clientX;
+		clientY = event.touches[0].clientY;
+		
+		var rect = innerContainerB.getBoundingClientRect();
+		
+		var x = clientX - rect.left;
+		var y = clientY - rect.top; 
+		
+		console.log(clientX);
+  
+		touch.style.opacity = 1;
+		touch.style.zIndex = 5;
+		touch.style.top = (y-(y*0.25)) +'px';
+		touch.style.left = (x-(x*0.25)) +'px';
+		
+	});
+	
+	blueFish1.addEventListener("touchend", function(event){
+			 var deltaX, deltaY;
+			var deltaX = event.changedTouches[0].clientX - clientX;
+			var deltaY = event.changedTouches[0].clientY - clientY;
+			var coords = "X coords: " + deltaX + ", Y coords: " + deltaY;
+			console.log(coords);
+			touch.style.opacity = 0;
+			touch.style.zIndex = 0;
+	});
 	
 	function sizeData(w,h){
 	
