@@ -251,6 +251,7 @@ var timeouts;
 				]	
 		var	touchImage = [
 							"url('touch.png')",
+							"url('touchBg.png')",
 							]
 		blueFish1.style.backgroundImage = "url("+blueFishArray[0]+")";
 		// use images from array
@@ -280,6 +281,7 @@ var timeouts;
 		buttonEffect_Sakura.style.backgroundImage = winImageArray[5];
 		flagsScale.style.backgroundImage = "url("+flagsArray[0]+")";
 		touch.style.backgroundImage = touchImage[0];
+		touchBg.style.backgroundImage = touchImage[1];
 		
 		//  create and store Images		
 		for(i=0; i < butterflyArray.length; i++){	 
@@ -994,11 +996,13 @@ var timeouts;
 		var x = event.clientX - rect.left;
 		var y = event.clientY - rect.top; 
   
-		touch.style.opacity = 1;
-		touch.style.zIndex = 5;
-		touch.style.top = (y-(y*0.25)) +'px';
-		touch.style.left = (x-(x*0.25)) +'px';
+		touchBox.style.opacity = 1;
+		touchBox.style.zIndex = 5;
+		touchBox.style.top = (y-(y*0.25)) +'px';
+		touchBox.style.left = (x-(x*0.25)) +'px';
 		
+		touchBg.style.animationPlayState = "running";
+		touchBg.style.webkitAnimationPlayState = "running";
 	});
 	
 	innerContainerC.addEventListener("mouseup", function(event){
@@ -1007,9 +1011,11 @@ var timeouts;
 		var deltaX = event.clientX - clientX;
 		var deltaY = event.clientY - clientY;
 
-		touch.style.opacity = 0;
-		touch.style.zIndex = 0;
+		touchBox.style.opacity = 0;
+		touchBox.style.zIndex = 0;
 			
+		touchBg.style.animationPlayState = "paused";
+		touchBg.style.webkitAnimationPlayState = "paused";	
 	});
 	
 	touch.addEventListener("mouseup", function(event){
@@ -1019,9 +1025,11 @@ var timeouts;
 		var deltaY = event.clientY - clientY;
 		var coords = "X coords: " + deltaX + ", Y coords: " + deltaY;
 		console.log(coords);
-		touch.style.opacity = 0;
-		touch.style.zIndex = 0;
+		touchBox.style.opacity = 0;
+		touchBox.style.zIndex = 0;
 			
+		touchBg.style.animationPlayState = "paused";
+		touchBg.style.webkitAnimationPlayState = "paused";		
 	});
 	
 	blueFish1.addEventListener("mouseup", function(event){
@@ -1031,9 +1039,11 @@ var timeouts;
 		var deltaY = event.clientY - clientY;
 		var coords = "X coords: " + deltaX + ", Y coords: " + deltaY;
 		console.log(coords);
-		touch.style.opacity = 0;
-		touch.style.zIndex = 0;
+		touchBox.style.opacity = 0;
+		touchBox.style.zIndex = 0;
 			
+		touchBg.style.animationPlayState = "paused";
+		touchBg.style.webkitAnimationPlayState = "paused";		
 	});
 	
 	
@@ -1050,21 +1060,27 @@ var timeouts;
 		
 		console.log(clientX);
   
-		touch.style.opacity = 1;
-		touch.style.zIndex = 5;
-		touch.style.top = (y-(y*0.25)) +'px';
-		touch.style.left = (x-(x*0.25)) +'px';
+		touchBox.style.opacity = 1;
+		touchBox.style.zIndex = 5;
+		touchBox.style.top = (y-(y*0.25)) +'px';
+		touchBox.style.left = (x-(x*0.25)) +'px';
+		
+		touchBg.style.animationPlayState = "running";
+		touchBg.style.webkitAnimationPlayState = "running";
 		
 	});
 	
 	blueFish1.addEventListener("touchend", function(event){
-			 var deltaX, deltaY;
-			var deltaX = event.changedTouches[0].clientX - clientX;
-			var deltaY = event.changedTouches[0].clientY - clientY;
-			var coords = "X coords: " + deltaX + ", Y coords: " + deltaY;
-			console.log(coords);
-			touch.style.opacity = 0;
-			touch.style.zIndex = 0;
+		var deltaX, deltaY;
+		var deltaX = event.changedTouches[0].clientX - clientX;
+		var deltaY = event.changedTouches[0].clientY - clientY;
+		var coords = "X coords: " + deltaX + ", Y coords: " + deltaY;
+		console.log(coords);
+		touch.style.opacity = 0;
+		touch.style.zIndex = 0;
+			
+		touchBg.style.animationPlayState = "paused";
+		touchBg.style.webkitAnimationPlayState = "paused";	
 	});
 	
 	function sizeData(w,h){
