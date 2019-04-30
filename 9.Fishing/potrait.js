@@ -1043,8 +1043,8 @@ var timeouts;
   
 		touchBox.style.opacity = 1;
 		touchBox.style.zIndex = 5;
-		touchBox.style.top = (y-(y*0.25)) +'px';
-		touchBox.style.left = (x-(x*0.35)) +'px';
+		touchBox.style.top = (y-(y*0.5)) +'px';
+		touchBox.style.left = (x-(x*0.65)) +'px';
 		
 		touchBg.style.animationPlayState = "running";
 		touchBg.style.webkitAnimationPlayState = "running";
@@ -1052,7 +1052,9 @@ var timeouts;
 	});
 	
 	blueFish1.addEventListener("touchend", function(event){
-		touchBox.style.display="none";
+		
+		// touchBox.style.display="none";
+		touchBox.style.zIndex = 0;
 		touchBg.style.animationPlayState = "paused";
 		touchBg.style.webkitAnimationPlayState = "paused";	
 	});
