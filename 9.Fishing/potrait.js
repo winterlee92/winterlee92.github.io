@@ -646,6 +646,7 @@ var timeouts;
 			
 			fishElements();
 			// winInterface();
+			blueFish1.style.display = "block";
 			starEffectAnimation();
 		});
 	}		
@@ -998,8 +999,8 @@ var timeouts;
   
 		touchBox.style.opacity = 1;
 		touchBox.style.zIndex = 5;
-		touchBox.style.top = (y-(y*0.5)) +'px';
-		touchBox.style.left = (x-(x*0.65)) +'px';
+		touchBox.style.top = (y-(y*0.45)) +'px';
+		touchBox.style.left = (x-(x*0.55)) +'px';
 		
 		touchBg.style.animationPlayState = "running";
 		touchBg.style.webkitAnimationPlayState = "running";
@@ -1013,22 +1014,13 @@ var timeouts;
 		touchBg.style.webkitAnimationPlayState = "paused";	
 	});
 	
-	touch.addEventListener("mouseup", function(event){
+	touchBox.addEventListener("mouseup", function(event){
 
-		// touchBox.style.display="none";
-		touchBox.style.zIndex = 0;
+		touchBox.style.display="none";
+		// touchBox.style.zIndex = 0;
 		touchBg.style.animationPlayState = "paused";
 		touchBg.style.webkitAnimationPlayState = "paused";		
 	});
-	
-	blueFish1.addEventListener("mouseup", function(event){
-
-		// touchBox.style.display="none";
-		touchBox.style.zIndex = 0;
-		touchBg.style.animationPlayState = "paused";
-		touchBg.style.webkitAnimationPlayState = "paused";		
-	});
-	
 	
 	blueFish1.addEventListener("touchstart", function(event){
 		event.preventDefault();
@@ -1052,9 +1044,7 @@ var timeouts;
 	});
 	
 	blueFish1.addEventListener("touchend", function(event){
-		
-		// touchBox.style.display="none";
-		touchBox.style.zIndex = 0;
+		touchBox.style.display="none";
 		touchBg.style.animationPlayState = "paused";
 		touchBg.style.webkitAnimationPlayState = "paused";	
 	});

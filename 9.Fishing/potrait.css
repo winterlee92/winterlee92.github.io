@@ -644,6 +644,8 @@ body{
 				transform: scaleX(-1);
 				background-repeat: no-repeat;
 				background-Size: 100% 100%;
+				
+				display:none;
 			}
 			#blackFish{
 				position: absolute;
@@ -1238,8 +1240,8 @@ body{
 				}
 		#touchBox{
 			position: absolute;
-			height:64%;
-			width: 71%;
+			height: 55%;
+			width: 60%;
 			z-index: 0;
 			opacity:0;
 		}	    
@@ -1297,10 +1299,10 @@ body{
   animation: rota 5s 1s linear forwards;
 }
 
-.wrapper:hover .spinner,
-.wrapper:hover .filler,
-.wrapper:hover .mask {
-  animation-play-state: running;
+.spinner,
+.filler,
+.mask {
+  animation-play-state: paused;
 }
 
 .wrapper .filler {
@@ -1367,12 +1369,3 @@ body{
     z-index:100
   }
 }
-/* @keyframes filler3 { */
-  /* 0% { */
-    /* z-index:100 */
-  /* } */
-  /* 50%, 100% { */
-    /* z-index:100 */
-  /* } */
-/* } */
-		/* background: rgb(92,255,77); */
