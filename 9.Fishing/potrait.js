@@ -1014,8 +1014,6 @@ var timeouts;
 		touchBg.style.webkitAnimationPlayState = "paused";		
 	});
 	
-
-	
 	
 	blueFish1.addEventListener("touchstart", function(event){
 		event.preventDefault();
@@ -1030,8 +1028,8 @@ var timeouts;
   
 		touchBox.style.opacity = 1;
 		touchBox.style.zIndex = 5;
-		touchBox.style.top = (y-(y*0.5)) +'px';
-		touchBox.style.left = (x-(x*0.65)) +'px';
+		touchBox.style.top = (y-(y*0.45)) +'px';
+		touchBox.style.left = (x-(x*0.55)) +'px';
 		
 		touchBg.style.animationPlayState = "running";
 		touchBg.style.webkitAnimationPlayState = "running";
